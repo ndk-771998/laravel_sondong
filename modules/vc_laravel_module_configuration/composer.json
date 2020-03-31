@@ -1,0 +1,46 @@
+{
+    "name": "vicoders/configuration",
+    "description": "Configuration step for web app",
+    "authors": [
+        {
+            "name": "sonhaichu",
+            "email": "sonhaichu@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "VCComponent\\Laravel\\Config\\": "src/app/"
+        },
+        "files": [
+            "src/app/Helpers/GetOption.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VCComponent\\Laravel\\Config\\Test\\": "tests/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.4",
+        "orchestra/testbench": "^4.3"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VCComponent\\Laravel\\Config\\Providers\\ConfigServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit --color=always"
+        ],
+        "coverage": [
+            "vendor/bin/phpunit --coverage-html coverages"
+        ]
+    }
+}

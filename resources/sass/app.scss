@@ -1,0 +1,53 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import "./page/style";
+@import "./ui/font";
+@import "./ui/color";
+@import "./ui/button";
+@import "./page/about";
+@import "./page/cart";
+@import "./page/contact";
+@import "./page/content";
+@import "./page/footer";
+@import "./page/forgot-password";
+@import "./page/header";
+@import "./page/home";
+@import "./page/login";
+@import "./page/new-detail";
+@import "./page/news";
+@import "./page/product";
+@import "./page/registration";
+@import "./page/service";
+
+body {
+    color: $default_text_color;
+    background-color: $default_bg_color;
+    font-size: $font_size_normal;
+
+    header {
+        .bg-dark {
+            background-color: $main_header_bg_color !important;
+        }
+
+    }
+
+    footer {
+        padding-top: 20px;
+        background: $main_footer_bg_color;
+        color: #fff;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: #2980b9;
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
+}

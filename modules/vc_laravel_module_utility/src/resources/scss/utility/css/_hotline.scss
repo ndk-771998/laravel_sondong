@@ -1,0 +1,151 @@
+.btn-call {
+    position: fixed;
+    bottom: 80px;
+    left: 15px;
+    z-index: 999999;
+    .hotline-phone {
+        width: 50px;
+        height: 50px;
+        top: 10px;
+        left: 10px;
+        position: absolute;
+        z-index: 99;
+        background-size: 20px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #04692f;
+        .hotline-circle {
+            width: 85px;
+            height: 85px;
+            // top: -18px;
+            // left: -18px;
+            position: absolute;
+            z-index: 19;
+            background-color: transparent;
+            border-radius: 100%;
+            border: 2px solid #00923f;
+            -webkit-animation: phone-circle 1.2s infinite ease-in-out;
+            animation: phone-circle 1.2s infinite ease-in-out;
+            transition: all 0.5s;
+            -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            opacity: 0.5;
+        }
+         .hotline-border {
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            z-index: 29;
+            background-color: #00923f;
+            opacity: 0.7;
+            border-radius: 100%;
+            border: 2px solid transparent;
+            -webkit-animation: phone-circle-fill 2.3s infinite ease-in-out;
+            animation: phone-circle-fill 2.3s infinite ease-in-out;
+            transition: all 0.5s;
+            -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+        .hotline-img{
+            width: 33px;
+            height: 33px;
+            top: 8px;
+            left: 8px;
+            position: absolute;
+            z-index: 39;
+            border-radius: 100%;
+            border: 2px solid transparent;
+            -webkit-animation: phone-img 1s infinite ease-in-out;
+            animation: phone-img 1s infinite ease-in-out;
+            -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+        .hotline-bar {
+            position: absolute;
+            background: #00923f;
+            height: 45px;
+            width: 185px;
+            line-height: 40px;
+            padding: 0 10px;
+            cursor: pointer;
+            transition: all 0.8s;
+            -webkit-transition: all 0.8s;
+            z-index: 9;
+            border-radius: 50px;
+            left: 20px;
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 700;
+                text-indent: 40px;
+                letter-spacing: 1px;
+                display: block;
+                line-height: 45px;
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .btn-call .hotline-bar {
+        display: none;
+    }
+}
+@-webkit-keyframes phone-circle {
+    0% {
+        -webkit-transform: rotate(0) scale(0.5) skew(1deg);
+        -webkit-opacity: 0.1;
+    }
+    30% {
+        -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+        -webkit-opacity: 0.5;
+    }
+    100% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+        -webkit-opacity: 0.1;
+    }
+}
+
+@-webkit-keyframes phone-circle-fill {
+    0% {
+        -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+        opacity: 0.6;
+    }
+    50% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+        opacity: 0.6;
+    }
+    100% {
+        -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+        opacity: 0.6;
+    }
+}
+
+@-webkit-keyframes phone-img {
+    0% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+    10% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    20% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    30% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    40% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    50% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+    100% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+}

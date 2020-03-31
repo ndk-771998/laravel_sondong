@@ -1,0 +1,174 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.2",
+        "artesaos/seotools": "^0.16.0",
+        "cviebrock/eloquent-sluggable": "^6.0",
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "^6.2",
+        "laravel/tinker": "^1.0",
+        "maatwebsite/excel": "^3.1",
+        "spatie/laravel-analytics": "^3.9",
+        "symfony/translation": "4.3.8",
+        "vicoders/analytic": "@dev",
+        "vicoders/categorymanager": "@dev",
+        "vicoders/comment": "@dev",
+        "vicoders/configuration": "@dev",
+        "vicoders/contact": "@dev",
+        "vicoders/core": "@dev",
+        "vicoders/media-manager": "@dev",
+        "vicoders/menu_manager": "@dev",
+        "vicoders/order": "@dev",
+        "vicoders/package-generator": "@dev",
+        "vicoders/postmanager": "@dev",
+        "vicoders/product_management": "@dev",
+        "vicoders/scriptmanager": "@dev",
+        "vicoders/seo": "@dev",
+        "vicoders/tagmanager": "@dev",
+        "vicoders/usermanager": "@dev",
+        "vicoders/utility": "@dev",
+        "vicoders/view_model": "@dev",
+        "vicoders/sitemap":"@dev",
+        "vicoders/payment-online":"@dev"
+    },
+    "require-dev": {
+        "facade/ignition": "^1.4",
+        "fzaninotto/faker": "^1.4",
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^3.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "test": [
+            "vendor/bin/phpunit --color=always"
+        ],
+        "coverage": [
+            "vendor/bin/phpunit --coverage-html coverages"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_core"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_menu_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_user_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_post_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/media-manager-api"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_category_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_configuration"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_product_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_generator"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_seo"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_contact_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_comment_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_tag_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_view_model"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_utility"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_order_manager/"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_script_manager"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_analytics"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_sitemap"
+        },
+        {
+            "type": "path",
+            "url": "./modules/vc_laravel_module_payment_online"
+        }
+    ]
+}

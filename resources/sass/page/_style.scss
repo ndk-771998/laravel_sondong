@@ -1,0 +1,27 @@
+#breadcrumb {
+    background: #d8d8d8;
+    .custom-breadcrumb {
+        list-style: none;
+        display: flex;
+        padding: 15px 0;
+    }
+    .custom-breadcrumb li a {
+        color: #242424;
+        font-style: italic;
+    }
+    .active {
+        color: #242424;
+        font-style: italic;
+    }
+}
+
+
+.mt-60 {
+    margin-top: 60px;
+}
+.my-24 {
+    margin: 24px 0;
+}
+@import "./product";
+@import "./cart";
+@import "./registration"

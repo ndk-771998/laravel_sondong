@@ -1,0 +1,27 @@
+{
+    "name": "vicoders/media-manager",
+    "authors": [
+        {
+            "name": "sonhaichu",
+            "email": "sonhaichu@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "VCComponent\\Laravel\\MediaManager\\": "src"
+        }
+    },
+    "require": {
+        "spatie/laravel-medialibrary": "^7.0",
+        "vicoders/core": "@dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VCComponent\\Laravel\\MediaManager\\MediaManagerProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<?php
+
+namespace VCComponent\Laravel\Generator\Test;
+
+use VCComponent\Laravel\Generator\Test\TestCase;
+
+class {{name}}Test extends TestCase
+{
+    /**
+     * @test
+     */
+    public function example()
+    {
+        $this->assertTrue(true);
+    }
+}
