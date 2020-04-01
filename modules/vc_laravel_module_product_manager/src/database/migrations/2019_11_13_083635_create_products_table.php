@@ -20,16 +20,18 @@ class CreateProductsTable extends Migration
             $table->string('quantity');
             $table->string('sold_quantity')->default(0);
             $table->string('code')->nullable();
+            $table->string('brand')->nullable();
             $table->string('thumbnail')->nullable();
+            $table->integer('order')->default(0);
             $table->integer('status')->default(0);
             $table->text('description')->nullable();
             $table->integer('price')->default(0);
+            $table->integer('original_price')->default(0);
             $table->tinyInteger('is_hot')->default(0);
             $table->unsignedBigInteger('author_id');
             $table->dateTime('published_date')->useCurrent();
             $table->string('sku')->unique()->nullable();
             $table->timestamps();
-            $table->foreign('author_id')->references('id')->on('users');
         });
     }
 

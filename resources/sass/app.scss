@@ -20,6 +20,9 @@
 @import "./page/product";
 @import "./page/registration";
 @import "./page/service";
+@import "./page/search";
+@import "./comments/comment";
+@import "./orders/cart";
 
 body {
     color: $default_text_color;

@@ -1,7 +1,30 @@
 @extends('layout.master')
 @section('content')
-
 <section>
+    <div class="header-slide">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="/assets/images/wallpaper.png">
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="/assets/images/wallpaper.png">
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="/assets/images/wallpaper.png">
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="/assets/images/wallpaper.png">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="main">
             <div class="row justify-content-center">
@@ -10,147 +33,35 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="home">
-                        <div class="product">
+                        <div class="product" id="product">
                             <h5>SẢN PHẨM</h5>
                             <div class="hr"></div>
                             <div class="row">
+                                @foreach($products as $product)
                                 <div class="col-6 col-md-4">
+                                    <a href="/">
                                     <div class="d-flex flex-column justify-content-center product-item">
                                         <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
+                                            <img src="{!! $product->thumbnail !!}"alt="">
                                         </div>
                                         <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
+                                            <p>{!! $product->name !!}</p>
                                         </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
+                                        <div class="product_author">
+                                            <p>Nhà thiết kế: Phi Tahc</p>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
+                                        <div class="product-price d-flex justify-content-between">
+                                            <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
+                                            <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
                                         </div>
                                     </div>
+                                    </a>
                                 </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
-                            <nav>
-                                <ul class="pagination justify-content-end">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Đầu <img src="/assets/images/logo/Rewird.png" alt=""></a>
-                                    </li>
-                                    <li class="page-item ">
-                                        <a class="page-link" href="#"><img src="/assets/images/logo/left.png" class="soft" alt=""></a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#"><img src="/assets/images/logo/right.png" class="soft" alt=""></a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#"><img src="/assets/images/logo/next.png" alt=""> Cuối </a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <div class="">
+                                {{ $products->fragment('product')->links('include.pagination') }}
+                            </div>
                         </div>
                         <div class="product">
                             <div class="row title">
@@ -168,13 +79,14 @@
                                 <div class="col-6 col-md-4">
                                     <div class="d-flex flex-column justify-content-center product-item">
                                         <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
+                                            <img src="/assets/images/LA_4894.png"alt="">
                                         </div>
                                         <div class="product-title">
                                             <p>Váy cưới khóa dây ren buộc trước</p>
                                         </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
+                                        <div class="product-price d-flex justify-content-between">
+                                            <div class="price"><p>1,000,000 đ</p></div>
+                                            <div class="original_price">1,200,000 đ</div>
                                         </div>
                                     </div>
                                 </div>
@@ -261,25 +173,18 @@
                             </div>
                         </div>
                         <div class="product">
-                            <h5>TIN TỨC(13)</h5>
+                            <div class="row title">
+                                <div class="col-6 ">
+                                    <h5>TIN TỨC</h5>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <a href="">
+                                        <p>Xem tất cả</p>
+                                    </a>
+                                </div>
+                            </div>
                             <div class="hr"></div>
                             <div class="d-flex flex-column news ">
-                                <div class="d-flex description">
-                                    <div><img src="/assets/images/news/img1.png" alt=""></div>
-                                    <div>
-                                        <h6>Cách chọn vàng trang sức cho ngày cưới</h6>
-                                        <p>Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.</p>
-                                        <a href="new-detail"><u>Xem chi tiết</u></a>
-                                    </div>
-                                </div>
-                                <div class="d-flex description">
-                                    <div><img src="/assets/images/news/img2.png" alt=""></div>
-                                    <div>
-                                        <h6>Cách chọn vàng trang sức cho ngày cưới</h6>
-                                        <p>Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.</p>
-                                        <a href="new-detail"><u>Xem chi tiết</u></a>
-                                    </div>
-                                </div>
                                 <div class="d-flex description">
                                     <div><img src="/assets/images/news/img1.png" alt=""></div>
                                     <div>

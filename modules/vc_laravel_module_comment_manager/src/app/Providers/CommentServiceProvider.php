@@ -25,7 +25,7 @@ class CommentServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../../config/comment.php' => config_path('comment.php'),
             __DIR__ . '/../../resources/sass/comments/_comment.scss' =>base_path('/resources/sass/comments/_comment.scss'),
-            __DIR__ . '/../../resources/sass/comments/user.png' => base_path('/public/images/comments/user/png'),
+            __DIR__ . '/../../resources/sass/comments/user.png' => base_path('/public/images/comments/user.png'),
         ]);
     }
 }
