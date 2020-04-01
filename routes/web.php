@@ -14,3 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Web\HomeController');
+Route::get('/abouts', 'Web\HomeController');
+Route::get('/products', 'Web\HomeController');
+Route::get('/services', 'Web\HomeController');
+Route::get('/news', 'Web\HomeController');
+Route::get('/contacts', 'Web\HomeController');

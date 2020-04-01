@@ -22934,7 +22934,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _order_cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./order/cart */ "./resources/js/order/cart.js");
 /* harmony import */ var _order_order_info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./order/order-info */ "./resources/js/order/order-info.js");
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./menu */ "./resources/js/menu.js");
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
+
 
 
 
@@ -22956,6 +22958,33 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     asNavFor: '.product-thumbnail',
     dots: false,
     focusOnSelect: true
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/menu.js":
+/*!******************************!*\
+  !*** ./resources/js/menu.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  var url = window.location.pathname;
+  var menuItems = document.getElementsByClassName('menu-item');
+  Array.from(menuItems).forEach(function (menu) {
+    var active = menu.dataset.name;
+    var id = menu.dataset.id;
+
+    if (active == url) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-' + id).addClass("active");
+    }
   });
 });
 

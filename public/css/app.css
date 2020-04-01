@@ -13070,6 +13070,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: #fb728b;
 }
 
+.header-nav a:hover {
+  color: #fb728b;
+}
+
 .header-nav .nav-mini a {
   color: black;
 }
@@ -13103,12 +13107,14 @@ a.text-dark:hover, a.text-dark:focus {
 
   .header-nav .nav-mini {
     display: block;
+    text-transform: uppercase;
   }
 }
 
 @media screen and (min-width: 1201px) {
   .header-nav .nav {
     display: block;
+    text-transform: uppercase;
   }
 
   .header-nav .nav-mini {

@@ -4,6 +4,7 @@ import "slick-carousel";
 import $ from 'jquery';
 import './order/cart';
 import './order/order-info';
+import './menu';
 
 console.log("My Kit is ready :)");
 
