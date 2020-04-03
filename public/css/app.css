@@ -13949,16 +13949,11 @@ a.text-dark:hover, a.text-dark:focus {
   width: 100%;
 }
 
-.header .bg-w .icon img {
-  width: 30px;
-  height: 30px;
-}
-
-.header .bg-w .icon .cart {
+.cart {
   position: relative;
 }
 
-.header .bg-w .icon .cart .cart__badge {
+.cart .cart__badge {
   content: "1";
   position: absolute;
   width: 14px;
@@ -13971,6 +13966,12 @@ a.text-dark:hover, a.text-dark:focus {
   left: 20px;
   font-weight: 500;
   color: white;
+}
+
+.cart img {
+  margin-top: -10px;
+  width: 30px;
+  height: 30px;
 }
 
 .cart {

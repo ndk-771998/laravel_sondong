@@ -1,7 +1,8 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <img src="/assets/images/logo/logo.png" class="logo" alt="logo">
+            <img src="{!! getOption('logo_footer') !!}" class="logo" alt="logo">
+
         </div>
         <div class="row">
             <div class="col-3 d-flex flex-column">

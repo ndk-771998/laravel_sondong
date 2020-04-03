@@ -1,33 +1,25 @@
-.header {
-    .bg-w {
-        .icon {
-            img {
-                width: 30px;
-                height: 30px;
-            }
+.cart {
+    position: relative;
 
-            .cart {
-                position: relative;
+    .cart__badge {
+        content: "1";
+        position: absolute;
+        width: 14px;
+        font-size: 10px;
+        height: 14px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        background-color: red;
+        border-radius: 50%;
+        text-align: center;
+        left: 20px;
+        font-weight: 500;
+        color: white;
+    }
 
-                .cart__badge {
-                    content: "1";
-                    position: absolute;
-                    width: 14px;
-                    font-size: 10px;
-                    height: 14px;
-                    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-                    background-color: red;
-                    border-radius: 50%;
-                    text-align: center;
-                    left: 20px;
-                    font-weight: 500;
-                    color: white;
-                }
-
-            }
-
-        }
-
+    img {
+        margin-top: -10px;
+        width: 30px;
+        height: 30px;
     }
 
 }

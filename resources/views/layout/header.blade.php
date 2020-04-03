@@ -7,7 +7,7 @@
                 <div class="col-12 col-md-4">
                     <div class="row justify-content-end">
                         <div class="col-4 col-md-2"><a href=""><img src="https://img.icons8.com/ios/50/707070/search--v1.png" class="icon-header"></a></div>
-                        <div class="col-4 col-md-2"><a href="cart"><img src="/assets/images/logo/card.png" class="icon-header"></a></div>
+                        <div class="col-4 col-md-2">@include('order::cartIcon')</div>
                         <div class="col-4 col-md-2"><a href="login"><img src="/assets/images/logo/logic.png" class="icon-header"></a></div>
                     </div>
                 </div>
