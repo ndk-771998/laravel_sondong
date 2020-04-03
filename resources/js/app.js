@@ -5,6 +5,7 @@ import $ from 'jquery';
 import './order/cart';
 import './order/order-info';
 import './menu';
+import './product-list';
 
 console.log("My Kit is ready :)");
 

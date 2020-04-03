@@ -18,7 +18,15 @@
                 <div class="col-12 col-md-6">
                     <div class="home">
                         <div class="product"  id="product">
-                            <h5>SẢN PHẨM</h5>
+                            <div class="row">
+                                <div class="col-4"> <h5>SẢN PHẨM</h5></div>
+                                <div class="col-8 d-flex justify-content-end">
+                                    <select id="orderProductsSelect" class="col-4" name="order_by" >
+                                        <option value="created_at|desc" {{ $activeFilter === 'created_at|desc' ? 'selected' : '' }}>Mới nhất</option>
+                                        <option value="order|desc" {{ $activeFilter === 'order|desc' ? 'selected' : '' }}>Hot nhất</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="hr"></div>
                             <div class="row">
                                 @foreach($products_custom as $product)
@@ -44,8 +52,8 @@
                                 @endforeach
                             </div>
                             <div class="d-flex justify-content-end">
-                                    {{ $products->fragment('product')->links('include.pagination') }}
-                                </div>
+                                {{ $products->fragment('product')->links('include.pagination') }}
+                            </div>
                         </div>
                     </div>
                 </div>
