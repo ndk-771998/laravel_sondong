@@ -8,7 +8,7 @@ use VCComponent\Laravel\Product\Entities\Product;
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
-        'name'           => 'Váy cưới khóa dây ren buộc trước',
+        'name'           => $faker->words(rand(4, 7), true),
         'description'    => $faker->sentences(rand(4, 7), true),
         'quantity'       => rand(0, 20),
         'code'           => $faker->swiftBicNumber,

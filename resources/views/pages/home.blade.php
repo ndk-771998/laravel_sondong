@@ -1,30 +1,7 @@
 @extends('layout.master')
 @section('content')
 <section>
-    <div class="header-slide">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="/assets/images/wallpaper.png">
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="/assets/images/wallpaper.png">
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="/assets/images/wallpaper.png">
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="/assets/images/wallpaper.png">
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('include.slides')
     <div class="container">
         <div class="main">
             <div class="row justify-content-center">
@@ -40,21 +17,21 @@
                                 @foreach($products as $product)
                                 <div class="col-6 col-md-4">
                                     <a href="/">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="{!! $product->thumbnail !!}"alt="">
+                                        <div class="d-flex flex-column justify-content-center product-item">
+                                            <div class="product-img">
+                                                <img src="{!! $product->thumbnail !!}"alt="">
+                                            </div>
+                                            <div class="product-title">
+                                                <p>{!! $product->name !!}</p>
+                                            </div>
+                                            <div class="product_author">
+                                                <p>Nhà thiết kế: Phi Tahc</p>
+                                            </div>
+                                            <div class="product-price d-flex justify-content-between">
+                                                <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
+                                                <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
+                                            </div>
                                         </div>
-                                        <div class="product-title">
-                                            <p>{!! $product->name !!}</p>
-                                        </div>
-                                        <div class="product_author">
-                                            <p>Nhà thiết kế: Phi Tahc</p>
-                                        </div>
-                                        <div class="product-price d-flex justify-content-between">
-                                            <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
-                                            <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
-                                        </div>
-                                    </div>
                                     </a>
                                 </div>
                                 @endforeach
@@ -178,7 +155,7 @@
                                     <h5>TIN TỨC</h5>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a href="">
+                                    <a href="/news">
                                         <p>Xem tất cả</p>
                                     </a>
                                 </div>
