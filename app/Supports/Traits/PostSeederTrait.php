@@ -15,32 +15,13 @@ trait PostSeederTrait {
                 $meta = [
                     [
                         'key'   => 'thumbnail',
-                        'value' => '/assets/images/wallpaper.png',
+                        'value' => '/assets/images/news.png',
                     ],
                 ];
                 $image->postMetas()->createMany($meta);
             });
     }
 
-    protected function seederPages()
-    {
-        return factory(Post::class)->states('pages')->create();
-    }
-
-    protected function seederConstructions()
-    {
-        return factory(Post::class, 30)->states('constructions')
-            ->create()
-            ->each(function ($image) {
-                $meta = [
-                    [
-                        'key'   => 'thumbnail',
-                        'value' => '/assets/images/wallpaper.png',
-                    ],
-                ];
-                $image->postMetas()->createMany($meta);
-            });
-    }
 
     protected function seederSlides()
     {

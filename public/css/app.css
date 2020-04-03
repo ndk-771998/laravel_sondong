@@ -13231,6 +13231,12 @@ a.text-dark:hover, a.text-dark:focus {
   text-decoration: line-through;
 }
 
+.home .product .news a:hover .description h6,
+.home .product .news a:hover .description p {
+  color: #e74c3c;
+  transition: 0.25s;
+}
+
 .home .product .news .description {
   margin: 12px 0;
 }
@@ -13251,9 +13257,10 @@ a.text-dark:hover, a.text-dark:focus {
 .home .product .news .description p {
   font-size: 12px;
   color: #242424;
+  font-weight: normal;
 }
 
-.home .product .news .description a {
+.home .product .news .description u {
   font-size: 14px;
   font-weight: 600;
   font-style: italic;

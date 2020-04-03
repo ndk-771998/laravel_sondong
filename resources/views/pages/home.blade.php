@@ -162,14 +162,18 @@
                             </div>
                             <div class="hr"></div>
                             <div class="d-flex flex-column news ">
-                                <div class="d-flex description">
-                                    <div><img src="/assets/images/news/img1.png" alt=""></div>
-                                    <div>
-                                        <h6>Cách chọn vàng trang sức cho ngày cưới</h6>
-                                        <p>Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.</p>
-                                        <a href="new-detail"><u>Xem chi tiết</u></a>
+                                @foreach($news as $newsItem)
+                                <a href="{{ url('posts/'.$newsItem->slug) }}">
+                                    <div class="d-flex description">
+                                        <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
+                                        <div>
+                                            <h6>{!! $newsItem->title !!}</h6>
+                                            <p>{!! $newsItem->description !!}</p>
+                                            <u>Xem chi tiết</u>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
+                                @endforeach
                             </div>
                         </div>
                     </div>
