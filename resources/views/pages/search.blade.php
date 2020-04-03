@@ -84,28 +84,96 @@
                             </div>
                             <div class="news">
                                 <div><i>Tin tức</i></div>
+                                @if ($news->count())
                                 <div>
-                                    <div class="d-flex flex-column">
+                                    <div class="d-flex flex-column" id="news">
+                                        @foreach($news as $newsItem)
                                         <div class="description">
-                                            <a href="" class="d-flex">
-                                                <div><img src="/assets/images/news/img1.png"alt=""></div>
+                                            <a href="{!! $newsItem->slug !!}" class="d-flex">
+                                                <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
                                                 <div class="news-info">
-                                                    <h6>Cách chọn vàng trang sức cho ngày cưới</h6>
-                                                    <p>Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.</p>
+                                                    <h6>{!! $newsItem->title !!}</h6>
+                                                    <p>{!! $newsItem->description !!}</p>
                                                     <div><u>Xem chi tiết</u></div>
                                                 </div>
                                             </a>
                                         </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @else
+                                <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile"role="tabpanel"aria-labelledby="pills-profile-tab">
+                            <div class="product">
+                                @if ($products_tabpane->count())
+                                <div class="row">
+                                    @foreach($products_tabpane as $product_tabpane)
+                                    <div class="col-4 col-md-2">
+                                        <a href="/">
+                                            <div class="d-flex flex-column justify-content-center product-item">
+                                                <div class="product-img">
+                                                    <img src="{!! $product_tabpane->thumbnail !!}"alt="">
+                                                </div>
+                                                <div class="product-title">
+                                                    <p>{!! $product_tabpane->name !!}</p>
+                                                </div>
+                                                <div class="product_author">
+                                                    <p>Nhà thiết kế: Phi Tahc</p>
+                                                </div>
+                                                <div class="product-price d-flex justify-content-between">
+                                                    <div class="price"><p>{!! number_format($product_tabpane->price) !!} đ</p></div>
+                                                    <div class="original_price">{!!number_format($product_tabpane->original_price) !!} đ</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    @endforeach
+                                    <div class="col-12 mt-2 d-flex justify-content-center">
+                                        {{ $products_tabpane->fragment('pills-profile')->links('include.pagination') }}
                                     </div>
                                 </div>
                             </div>
+                            @else
+                            <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                            @endif
                         </div>
-                        <div class="tab-pane fade"id="pills-profile"role="tabpanel"aria-labelledby="pills-profile-tab">...</div>
-                        <div class="tab-pane fade"id="pills-contact"role="tabpanel"aria-labelledby="pills-contact-tab">...</div>
+                         <div class="tab-pane fade"id="pills-contact"role="tabpanel"aria-labelledby="pills-contact-tab">
+                        <div class="news">
+                            <div><i>Tin tức</i></div>
+                            @if ($news_tabpane->count())
+                            <div>
+                                <div class="d-flex flex-column" id="news-pane">
+                                    @foreach($news_tabpane as $newsItem)
+                                    <div class="description">
+                                        <a href="{!! $newsItem->slug !!}" class="d-flex">
+                                            <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
+                                            <div class="news-info">
+                                                <h6>{!! $newsItem->title !!}</h6>
+                                                <p>{!! $newsItem->description !!}</p>
+                                                <div><u>Xem chi tiết</u></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    @endforeach
+                                    <div class="mt-2">
+                                        {{ $news_tabpane->fragment('news-pane')->links('include.pagination') }}
+                                    </div>
+                                </div>
+                            </div>
+                            @else
+                            <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                            @endif
+                        </div>
                     </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 </section>
 @endsection

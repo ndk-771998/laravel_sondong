@@ -36,7 +36,7 @@
                                 </div>
                                 @endforeach
                             </div>
-                            <div class="">
+                            <div class="d-flex justify-content-end">
                                 {{ $products->fragment('product')->links('include.pagination') }}
                             </div>
                         </div>

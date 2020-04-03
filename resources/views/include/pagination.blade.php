@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
 <nav>
-    <ul class="pagination justify-content-end">
+    <ul class="pagination">
         @if ($paginator->onFirstPage())
         <li class="page-item">
             <a class="page-link" href="{{ $paginator->url(1) }}">Đầu <img src="/assets/images/logo/Rewird.png" alt=""></a>

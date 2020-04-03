@@ -13134,33 +13134,6 @@ a.text-dark:hover, a.text-dark:focus {
   background: white;
 }
 
-.home .pagination .page-item.active .page-link {
-  background-color: #fff;
-  color: #fb728b;
-  border: 1px solid #d8d8d8;
-}
-
-.home .pagination .page-item .page-link {
-  background-color: #fff;
-  color: #707070;
-  border: 1px solid #d8d8d8;
-  font-weight: bold;
-}
-
-.home .pagination img {
-  width: 12px;
-  color: #6c757d;
-  margin-top: -2px;
-}
-
-.home .pagination .soft {
-  height: 10px;
-}
-
-.home .pagination a {
-  color: #6c757d;
-}
-
 .home .product a {
   text-decoration: none;
   color: #242424;
@@ -14431,5 +14404,32 @@ body footer a {
 body footer a:hover {
   color: #2980b9;
   text-decoration: none;
+}
+
+body .pagination .page-item.active .page-link {
+  background-color: #fff;
+  color: #fb728b;
+  border: 1px solid #d8d8d8;
+}
+
+body .pagination .page-item .page-link {
+  background-color: #fff;
+  color: #707070;
+  border: 1px solid #d8d8d8;
+  font-weight: bold;
+}
+
+body .pagination img {
+  width: 12px;
+  color: #6c757d;
+  margin-top: -2px;
+}
+
+body .pagination .soft {
+  height: 10px;
+}
+
+body .pagination a {
+  color: #6c757d;
 }
 
