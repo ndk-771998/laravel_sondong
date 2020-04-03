@@ -17,12 +17,17 @@ class MenuItemTableSeeder extends Seeder {
             ['menu_id' => '1', 'label' => 'dịch vụ', 'link' => '/service', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '1', 'label' => 'tin tức', 'link' => '/news', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '1', 'label' => 'liên hệ', 'link' => '/contact', 'type' => 'menu-header', 'parent_id' => 0],
-            ['menu_id' => '2', 'label' => 'Bàn trang điểm', 'link' => '/', 'type' => 'menu-header', 'parent_id' => 0],
-            ['menu_id' => '2', 'label' => 'Váy cưới', 'link' => '/product', 'type' => 'menu-header', 'parent_id' => 0],
-            ['menu_id' => '2', 'label' => 'Báo giá chụp ảnh', 'link' => '/', 'type' => 'menu-header', 'parent_id' => 0],
-            ['menu_id' => '2', 'label' => 'Wedding paner', 'link' => '/', 'type' => 'menu-header', 'parent_id' => 0],
-            ['menu_id' => '2', 'label' => 'Địa điểm cưới lãng mạng', 'link' => '/', 'type' => 'menu-header', 'parent_id' => 0],
-            ['menu_id' => '2', 'label' => 'Hỗ trợ triển lãm cưới', 'link' => '/', 'type' => 'menu-header', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Bàn trang điểm', 'link' => '/', 'type' => 'menu-sidebar', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Váy cưới', 'link' => '/product', 'type' => 'menu-sidebar', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Báo giá chụp ảnh', 'link' => '/', 'type' => 'menu-sidebar', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Wedding paner', 'link' => '/', 'type' => 'menu-sidebar', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Địa điểm cưới lãng mạng', 'link' => '/', 'type' => 'menu-sidebar', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Hỗ trợ triển lãm cưới', 'link' => '/', 'type' => 'menu-sidebar', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Về chúng tôi', 'link' => '/about', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Điều khoản sử dụng', 'link' => '/', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '4', 'label' => 'Sản xuất', 'link' => '/', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '4', 'label' => 'Chính sách riêng tư', 'link' => '/', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '4', 'label' => 'Hợp tác', 'link' => '/', 'type' => 'menu-footer', 'parent_id' => 0],
         ]);
     }
 }

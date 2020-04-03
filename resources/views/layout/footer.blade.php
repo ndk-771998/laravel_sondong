@@ -5,26 +5,18 @@
         </div>
         <div class="row">
             <div class="col-3 d-flex flex-column">
-                <a href="">
-                    <p>Về chúng tôi</p>
+                @foreach($footer_1 as $footer)
+                <a href="{!! $footer->link !!}">
+                    <p>{!! $footer->label !!}</p>
                 </a>
-                <a href="">
-                    <p>Điều khoản sử dụng</p>
-                </a>
-                <a href="">
-                    <p>Điều khoản sử dụng</p>
-                </a>
+                @endforeach
             </div>
             <div class="col-3 d-flex flex-column">
-                <a href="">
-                    <p>Sản xuất</p>
+                @foreach($footer_2 as $footer)
+                <a href="{!! $footer->link !!}">
+                    <p>{!! $footer->label !!}</p>
                 </a>
-                <a href="">
-                    <p>Chính sách riêng tư</p>
-                </a>
-                <a href="">
-                    <p>Hợp tác</p>
-                </a>
+                @endforeach
             </div>
             <div class="col-6">
                 <div class="row justify-content-center align-items-end contact">

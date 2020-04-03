@@ -15,6 +15,8 @@ class MenuTableSeeder extends Seeder {
         Menu::insert([
             ['name' => 'header'],
             ['name' => 'sidebar'],
+            ['name' => 'footer-1'],
+            ['name' => 'footer-2'],
             ]);
     }
 }
