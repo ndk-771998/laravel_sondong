@@ -12973,9 +12973,8 @@ a.text-dark:hover, a.text-dark:focus {
   height: 70%;
 }
 
-.footer .contact img {
-  width: 30px;
-  margin: 0 10px;
+.footer .contact i {
+  color: pink;
 }
 
 .footer .title {

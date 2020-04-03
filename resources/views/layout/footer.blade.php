@@ -20,12 +20,10 @@
             </div>
             <div class="col-6">
                 <div class="row justify-content-center align-items-end contact">
-                    <div><img src="/assets/images/logo/facebook.png" alt=""></div>
-                    <div><img src="/assets/images/logo/twitter.png" alt=""></div>
-                    <div><img src="/assets/images/logo/instagram.png" alt=""></div>
+                    {!! getOption('social_links') !!}
                 </div>
                 <div class="title">
-                    <p>Copyright by Dinks</p>
+                     {!! getOption('copyright') !!}
                 </div>
             </div>
             <div class="col note">
