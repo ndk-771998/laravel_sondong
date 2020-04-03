@@ -16,6 +16,7 @@ class OptionTableSeeder extends Seeder {
                     <div><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></div>'],
             ['key' => 'copyright', 'value' => '<p>Copyright by Dinks</p>'],
             ['key' => 'logo_footer', 'value' => '/assets/images/logo/logo.png'],
+            ['key' => 'giấy phép hoạt động', 'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016'],
 
 
         ]);

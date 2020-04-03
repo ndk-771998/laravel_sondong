@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="col note">
-                <p>Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016</p>
+                <p>{!! getOption('giấy phép hoạt động') !!}</p>
             </div>
         </div>
     </div>
