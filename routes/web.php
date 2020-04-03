@@ -14,8 +14,45 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Web\HomeController');
-Route::get('/abouts', 'Web\HomeController');
-Route::get('/products', 'Web\HomeController');
-Route::get('/services', 'Web\HomeController');
-Route::get('/news', 'Web\HomeController');
-Route::get('/contacts', 'Web\HomeController');
+
+Route::get('/about', function(){
+    return view('pages.about');
+});
+Route::get('/cart', function(){
+    return view('pages.cart');
+});
+Route::get('/contact', function(){
+    return view('pages.contact');
+});
+Route::get('/detail-product', function(){
+    return view('pages.detail-product');
+});
+Route::get('/forgot-password', function(){
+    return view('pages.forgot-password');
+});
+Route::get('/login', function(){
+    return view('pages.login');
+});
+Route::get('/new-detail', function(){
+    return view('pages.new-detail');
+});
+Route::get('/news', function(){
+    return view('pages.news');
+});
+
+Route::get('/product', function(){
+    return view('pages.products');
+});
+
+Route::get('/registration', function(){
+    return view('pages.registration');
+});
+
+Route::get('/search', function(){
+    return view('pages.search');
+});
+
+Route::get('/service', function(){
+    return view('pages.service');
+});
+
