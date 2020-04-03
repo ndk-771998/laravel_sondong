@@ -40,381 +40,32 @@
                         <div class="tab-pane fade show active"id="pills-home"role="tabpanel"aria-labelledby="pills-home-tab">
                             <div class="product">
                                 <div><i>Sản phẩm</i></div>
-                                {{--  <div class="row">
-                                    <div class="col-4 col-md-2">
-                                        <a href="product-detail">
-                                            <div class="d-flex flex-column justify-content-center product-item">
-                                                <div class="product-img">
-                                                    <img src="/assets/images/LA_4894.png"alt="">
-                                                </div>
-                                                <div class="product-title">
-                                                    <p>Váy cưới khóa dây ren buộc trước</p>
-                                                </div>
-                                                <div class="product_author">
-                                                    <p>Nhà thiết kế: Phi Tahc</p>
-                                                </div>
-                                                <div class="product-price d-flex justify-content-between">
-                                                    <div class="price"><p>1,000,000 đ</p></div>
-                                                    <div class="original_price">1,200,000 đ</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div> --}}
+                                @if ($products->count())
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
                                             <div class="row">
+                                                @foreach($products as $product)
                                                 <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
+                                                    <a href="/">
                                                         <div class="d-flex flex-column justify-content-center product-item">
                                                             <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
+                                                                <img src="{!! $product->thumbnail !!}"alt="">
                                                             </div>
                                                             <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
+                                                                <p>{!! $product->name !!}</p>
                                                             </div>
                                                             <div class="product_author">
                                                                 <p>Nhà thiết kế: Phi Tahc</p>
                                                             </div>
                                                             <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
+                                                                <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
+                                                                <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
                                                             </div>
                                                         </div>
                                                     </a>
                                                 </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="row">
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="row">
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-4 col-md-2">
-                                                    <a href="product-detail">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="/assets/images/LA_4894.png"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>Váy cưới khóa dây ren buộc trước</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>1,000,000 đ</p></div>
-                                                                <div class="original_price">1,200,000 đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -427,6 +78,9 @@
                                         <span class="sr-only">Next</span>
                                     </a>
                                 </div>
+                                @else
+                                <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                                @endif
                             </div>
                             <div class="news">
                                 <div><i>Tin tức</i></div>

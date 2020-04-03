@@ -32,9 +32,9 @@
                 </div>
             </div>
             <div class="col-5">
-                <form>
+                <form action="{{ route('search') }}" method="GET" >
                     <div class="input-group d-flex justify-content-end ">
-                        <input type="search" placeholder="Tìm kiếm..." aria-describedby="button-addon5" class="form-control col-md-7">
+                        <input type="search" placeholder="Tìm kiếm..." name="search" aria-describedby="button-addon5" class="form-control col-md-7">
                         <div class="input-group-append">
                             <button id="button-addon5" type="submit" class="btn d-flex"><i class="fa fa-search"></i></button>
                         </div>

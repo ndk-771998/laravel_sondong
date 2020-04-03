@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Web\HomeController');
 
+Route::get('search','Web\SearchController')->name('search');
+
 Route::get('/about', function(){
     return view('pages.about');
 });
@@ -46,10 +48,6 @@ Route::get('/product', function(){
 
 Route::get('/registration', function(){
     return view('pages.registration');
-});
-
-Route::get('/search', function(){
-    return view('pages.search');
 });
 
 Route::get('/service', function(){
