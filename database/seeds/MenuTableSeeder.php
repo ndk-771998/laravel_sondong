@@ -12,8 +12,9 @@ class MenuTableSeeder extends Seeder {
      */
     public function run()
     {
-        Menu::create([
-            'name' => 'header',
+        Menu::insert([
+            ['name' => 'header'],
+            ['name' => 'sidebar'],
             ]);
     }
 }
