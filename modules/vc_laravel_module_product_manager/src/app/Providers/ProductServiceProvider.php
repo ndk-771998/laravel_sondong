@@ -20,9 +20,9 @@ class ProductServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->publishes([
-        //     __DIR__ . '/../../database/migrations/' => database_path('migrations'),
-        // ], 'migrations');
+        $this->publishes([
+            __DIR__ . '/../../database/migrations/' => database_path('migrations'),
+        ], 'migrations');
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         $this->publishes([
@@ -46,7 +46,7 @@ class ProductServiceProvider extends ServiceProvider
 
     private function registerControllers()
     {
-        $this->app->bind(ViewProductListControllerInterface::class, ViewProductListController::class);
+
         $this->app->bind(ViewProductDetailControllerInterface::class, ViewProductDetailController::class);
     }
 }

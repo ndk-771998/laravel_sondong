@@ -5,10 +5,7 @@
                 <p>HỖ TRỢ TRỰC TUYẾN</p>
             </div>
             <div class="d-flex flex-column content-navrg ">
-                <p>Bộ phận kỹ thuật</p>
-                <h5>+ 84 868 21 08 62</h5>
-                <p>Bộ phận CSKH</p>
-                <h5>+ 84 868 21 08 62</h5>
+                {!! getOption('hotline') !!}
             </div>
         </div>
         <div class="nav-bg nav-news">

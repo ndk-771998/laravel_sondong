@@ -42,9 +42,7 @@ Route::get('/news', function(){
     return view('pages.news');
 });
 
-Route::get('/product', function(){
-    return view('pages.products');
-});
+Route::get('/product','Web\ProductListController@index');
 
 Route::get('/registration', function(){
     return view('pages.registration');
