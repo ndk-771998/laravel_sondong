@@ -26,13 +26,14 @@ class ProductListController extends BasePostListController implements ViewProduc
 
         if ($request->has('order_by')) {
             $orderBy = (array) json_decode($request->get('order_by'));
+
             $orderBy = collect($orderBy)->map(function ($value, $key) {
                 return $key . '|' . $value;
             })->toArray();
+
             $activeFilter = implode($orderBy);
+
         }
-
-
 
         return [
             'products_custom' => $products_custom,

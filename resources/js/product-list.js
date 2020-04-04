@@ -10,6 +10,7 @@ $(function() {
             e.preventDefault();
             const value = _.split(select.value, '|');
             window.location.href = `${url}?order_by=${JSON.stringify({[value[0]]: value[1]})}`;
+
         });
     }
 });

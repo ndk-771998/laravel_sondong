@@ -8,7 +8,17 @@
                     <div class="row justify-content-end">
                         <div class="col-4 col-md-2"><a href=""><img src="https://img.icons8.com/ios/50/707070/search--v1.png" class="icon-header"></a></div>
                         <div class="col-4 col-md-2">@include('order::cartIcon')</div>
-                        <div class="col-4 col-md-2"><a href="login"><img src="/assets/images/logo/logic.png" class="icon-header"></a></div>
+                        <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
+                             @if (Auth::check())
+                           <a href="login"><img src="/assets/images/logo/logic.png" class="icon-header"></a>
+                            @else
+                            <div class="login">
+                                <a href="login"><img src="/assets/images/logo/loginn.png" class="icon-header"></a>
+                                {{-- <a href="/login">Đăng nhập</a> <span> --}}
+                            </div>
+                            @endif
+
+                        </div>
                     </div>
                 </div>
             </div>

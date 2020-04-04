@@ -13052,6 +13052,16 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 5px 0;
 }
 
+.header-top a {
+  text-decoration: none;
+  color: #242424;
+}
+
+.header-top a:hover {
+  color: #e74c3c;
+  transition: 0.25s;
+}
+
 .header-nav {
   height: 50px;
   background: #683e7a;
@@ -13071,6 +13081,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .header-nav a:hover {
   color: #fb728b;
+  transition: 0.25s;
 }
 
 .header-nav .nav-mini a {
@@ -13168,6 +13179,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .home .product a:hover .product-item .product-title {
   color: #e74c3c;
+  transition: 0.25s;
 }
 
 .home .product .product-item .product-img {
