@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 use VCComponent\Laravel\Product\Entities\Product;
-use VCComponent\Laravel\Product\Http\Controllers\Web\ProductListController as BasePostListController;
+use VCComponent\Laravel\Product\Http\Controllers\Web\ProductListController as BaseProductListController;
 
-class ProductListController extends BasePostListController implements ViewProductListControllerInterface
+class ProductListController extends BaseProductListController implements ViewProductListControllerInterface
 {
     protected $activeFilter = 'id|desc';
 

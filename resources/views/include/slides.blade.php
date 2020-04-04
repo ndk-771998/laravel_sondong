@@ -35,5 +35,4 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <input type="" value="{!! getOption('slide_time_interval') !!}" id="slide_time_interval" hidden>
 </div>

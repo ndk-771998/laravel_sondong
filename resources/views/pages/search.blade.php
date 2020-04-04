@@ -67,41 +67,11 @@
                                                 </div>
                                                 @endforeach
                                             </div>
-                                            <div class="carousel-item active">
-                                            <div class="row">
-                                                @foreach($products as $product)
-                                                <div class="col-4 col-md-2">
-                                                    <a href="/">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
-                                                            <div class="product-img">
-                                                                <img src="{!! $product->thumbnail !!}"alt="">
-                                                            </div>
-                                                            <div class="product-title">
-                                                                <p>{!! $product->name !!}</p>
-                                                            </div>
-                                                            <div class="product_author">
-                                                                <p>Nhà thiết kế: Phi Tahc</p>
-                                                            </div>
-                                                            <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
-                                                                <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                @endforeach
-                                            </div>
-
                                         </div>
                                     </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                        <span class="" aria-hidden="true"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                        <span class="" aria-hidden="true"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
+                                    <div class="">
+                                        {{ $products->fragment('pills-home')->links('layout.search-pagination') }}
+                                    </div>
                                 </div>
                                 @else
                                 <h6 class="mt-1">Không tìm thấy kết quả !</h6>
@@ -165,36 +135,35 @@
                             <h6 class="mt-1">Không tìm thấy kết quả !</h6>
                             @endif
                         </div>
-                         <div class="tab-pane fade"id="pills-contact"role="tabpanel"aria-labelledby="pills-contact-tab">
-                        <div class="news">
-                            <div><i>Tin tức</i></div>
-                            @if ($news_tabpane->count())
-                            <div>
-                                <div class="d-flex flex-column" id="news-pane">
-                                    @foreach($news_tabpane as $newsItem)
-                                    <div class="description">
-                                        <a href="{!! $newsItem->slug !!}" class="d-flex">
-                                            <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
-                                            <div class="news-info">
-                                                <h6>{!! $newsItem->title !!}</h6>
-                                                <p>{!! $newsItem->description !!}</p>
-                                                <div><u>Xem chi tiết</u></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    @endforeach
-                                    <div class="mt-2">
-                                        {{ $news_tabpane->fragment('news-pane')->links('include.pagination') }}
+                        <div class="tab-pane fade"id="pills-contact"role="tabpanel"aria-labelledby="pills-contact-tab">
+                            <div class="news">
+                                <div><i>Tin tức</i></div>
+                                @if ($news_tabpane->count())
+                                <div>
+                                    <div class="d-flex flex-column" id="news-pane">
+                                        @foreach($news_tabpane as $newsItem)
+                                        <div class="description">
+                                            <a href="{!! $newsItem->slug !!}" class="d-flex">
+                                                <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
+                                                <div class="news-info">
+                                                    <h6>{!! $newsItem->title !!}</h6>
+                                                    <p>{!! $newsItem->description !!}</p>
+                                                    <div><u>Xem chi tiết</u></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        @endforeach
+                                        <div class="mt-2">
+                                            {{ $news_tabpane->fragment('news-pane')->links('include.pagination') }}
+                                        </div>
                                     </div>
                                 </div>
+                                @else
+                                <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                                @endif
                             </div>
-                            @else
-                            <h6 class="mt-1">Không tìm thấy kết quả !</h6>
-                            @endif
                         </div>
                     </div>
-                    </div>
-
                 </div>
             </div>
         </div>

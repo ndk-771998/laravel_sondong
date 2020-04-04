@@ -31,4 +31,12 @@ class ProductDetailViewModel extends BaseViewModel
     {
         return Str::limit($this->product->name, $limit);
     }
+
+    public function isAvailable()
+    {
+        if ($this->product->quantity) {
+            return true;
+        }
+        return false;
+    }
 }

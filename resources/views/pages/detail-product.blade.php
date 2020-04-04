@@ -3,13 +3,12 @@
 <nav aria-label="breadcrumb" id="breadcrumb">
     <div class="container">
         <ul class="custom-breadcrumb m-0">
-            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/product">Sản phẩm</a></li>
             <li class="breadcrumb-item active">Chi tiết</li>
         </ul>
     </div>
 </nav>
-
 <section>
     <div class="container">
         <div class="main">
@@ -26,46 +25,47 @@
                                     <div class="item" data-src="https://unsplash.it/870/870">
                                         <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/8612b3f4-9610-4237-9a0a-cbabf8cebb90.png" alt="" />
                                     </div>
-
                                     <div class="item" data-src="https://unsplash.it/871/870">
                                         <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/8612b3f4-9610-4237-9a0a-cbabf8cebb90.png" alt="" />
                                     </div>
-
                                     <div class="item" data-src="https://unsplash.it/872/870">
                                         <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/8612b3f4-9610-4237-9a0a-cbabf8cebb90.png" alt="" />
                                     </div>
-
                                     <div class="item" data-src="https://unsplash.it/873/870">
                                         <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/8612b3f4-9610-4237-9a0a-cbabf8cebb90.png" alt="" />
                                     </div>
                                 </div>
-
                                 <div class="product-thumbnail-child">
                                     <div class="item">
                                         <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/54431ad7-5d54-4397-a3b8-1705476ce4e1.png" alt="" />
                                     </div>
-
                                     <div class="item">
                                         <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/7210985b-19b4-419a-94c2-e9a4ece925c9.png" alt="" />
                                     </div>
-
                                     <div class="item">
                                         <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/957b0aae-7573-4939-a32c-6dfd29204d4b.png" alt="" />
                                     </div>
-
                                     <div class="item">
                                         <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/dcb6d6c9-d51d-4770-99d2-8beed3fc4973.png" alt="" />
                                     </div>
                                 </div>
                             </div>
                             <div class="right">
-                                <h4>Váy cưới khóa dây ren buộc trước</h4>
+                                <h4>{!! $product->name !!}</h4>
                                 <ul class="info-product">
-                                    <li>Mã sản phẩm:</li>
-                                    <li>Tình trạng: Hết hàng</li>
-                                    <li>Giá bán: <span class="cost">1,260,000 đ</span>/ sản phẩm</li>
-                                    <li>Số lượng: <input type="number" name="" id=""></li>
-                                    <li>Tổng tiền: <span class="total ">1,260,000 đ</span></li>
+                                    <li>Mã sản phẩm: {!! $product->code !!}</li>
+                                    <li class="design">Nhà thiết kế: Phi Tahc</li>
+                                    <li>Tình trạng:
+                                        @if ($isAvailable == true)
+                                        <span>Còn hàng</span>
+                                        @else
+                                        <span>Hết hàng</span>
+                                        @endif
+                                    </li>
+                                    <li class="original_price">Giá gốc: {!! number_format($product->original_price) !!} đ</li>
+                                    <li>Giá bán: <span class="cost">{!! number_format($product->price) !!} đ</span>/ sản phẩm</li>
+                                    {{-- <li>Số lượng: <input type="number" name="" id=""></li> --}}
+                                    <li>Tổng tiền: <span class="total ">{!! number_format($product->price) !!} đ</span></li>
                                 </ul>
                                 <ul class="buy d-flex flex-wrap align-items-center">
                                     <li class="mb-2 mb-md-0"><a href="">Mua ngay</a></li>
@@ -73,7 +73,6 @@
                                 </ul>
                                 <p><i class="fa fa-phone" aria-hidden="true"></i> Hottline:+84 868 21 08 62</p>
                             </div>
-
                         </div>
                         <div class="comment">
                             <h5>Bình luận</h5>
@@ -124,7 +123,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-12 col-md-3">

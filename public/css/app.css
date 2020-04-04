@@ -12419,6 +12419,17 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 0;
 }
 
+.product-detail .right .info-product .design {
+  color: #ff670a;
+  font-weight: bold;
+}
+
+.product-detail .right .info-product .original_price {
+  font-size: 12px;
+  color: #707070;
+  text-decoration: line-through;
+}
+
 .product-detail .right .info-product li {
   color: #707070;
   padding: 5px 0;
@@ -12555,7 +12566,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .related-list .item {
   margin-right: 20px;
-  width: calc( 33.3333333% - 20px);
+  width: calc(33.3333333% - 20px);
   margin-top: 20px;
   text-align: center;
 }
@@ -13483,6 +13494,17 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 0;
 }
 
+.product-detail .right .info-product .design {
+  color: #ff670a;
+  font-weight: bold;
+}
+
+.product-detail .right .info-product .original_price {
+  font-size: 12px;
+  color: #707070;
+  text-decoration: line-through;
+}
+
 .product-detail .right .info-product li {
   color: #707070;
   padding: 5px 0;
@@ -13619,7 +13641,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .related-list .item {
   margin-right: 20px;
-  width: calc( 33.3333333% - 20px);
+  width: calc(33.3333333% - 20px);
   margin-top: 20px;
   text-align: center;
 }

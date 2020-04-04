@@ -26,9 +26,8 @@ Route::get('/cart', function(){
 Route::get('/contact', function(){
     return view('pages.contact');
 });
-Route::get('/detail-product', function(){
-    return view('pages.detail-product');
-});
+Route::get('/product/{slug}','Web\ProductDetailController@show');
+
 Route::get('/forgot-password', function(){
     return view('pages.forgot-password');
 });
