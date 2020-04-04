@@ -40095,17 +40095,24 @@ __webpack_require__.r(__webpack_exports__);
 
 console.log("My Kit is ready :)");
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
+  var slideTime = document.getElementById('slide_time_interval');
+
+  if (slideTime.value == '') {
+    slideTime.value = 6;
+  }
+
+  console.log(slideTime.value);
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail').slick({
-    slidesToShow: 6,
-    slidesToScroll: 6,
+    slidesToShow: slideTime.value,
+    slidesToScroll: slideTime.value,
     arrows: false,
     fade: true,
     focusOnSelect: true,
     asNavFor: '.product-thumbnail-child'
   });
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail-child').slick({
-    slidesToShow: 6,
-    slidesToScroll: 6,
+    slidesToShow: slideTime.value,
+    slidesToScroll: slideTime.value,
     asNavFor: '.product-thumbnail',
     dots: false,
     focusOnSelect: true

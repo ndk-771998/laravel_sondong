@@ -10,17 +10,24 @@ import './product-list';
 console.log("My Kit is ready :)");
 
 $(document).ready(function () {
+    const slideTime = document.getElementById('slide_time_interval');
+
+    if(slideTime.value == ''){
+        slideTime.value = 6;
+    }
+
+    console.log(slideTime.value);
     $('.product-thumbnail').slick({
-        slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToShow: slideTime.value,
+        slidesToScroll: slideTime.value,
         arrows: false,
         fade: true,
         focusOnSelect: true,
         asNavFor: '.product-thumbnail-child'
       });
       $('.product-thumbnail-child').slick({
-        slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToShow: slideTime.value,
+        slidesToScroll: slideTime.value,
         asNavFor: '.product-thumbnail',
         dots: false,
         focusOnSelect: true
