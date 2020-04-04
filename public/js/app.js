@@ -40096,16 +40096,16 @@ __webpack_require__.r(__webpack_exports__);
 console.log("My Kit is ready :)");
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 6,
+    slidesToScroll: 6,
     arrows: false,
     fade: true,
     focusOnSelect: true,
     asNavFor: '.product-thumbnail-child'
   });
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail-child').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 6,
+    slidesToScroll: 6,
     asNavFor: '.product-thumbnail',
     dots: false,
     focusOnSelect: true

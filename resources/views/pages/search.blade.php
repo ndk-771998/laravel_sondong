@@ -3,7 +3,7 @@
 <nav aria-label="breadcrumb"id="breadcrumb">
     <div class="container">
         <ul class="custom-breadcrumb m-0">
-            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
             <li class="breadcrumb-item active">Tìm kiếm</li>
         </ul>
     </div>
@@ -14,9 +14,9 @@
             <div class="search-form">
                 <label>Tìm kiếm</label>
                 <div class="col-12 col-md-6 form">
-                    <form>
+                    <form action="{{ route('search') }}">
                         <div class="input-group row">
-                            <input type="search"placeholder="Tìm kiếm..."aria-describedby="button-addon5"class="form-control">
+                            <input type="search" name="search" placeholder="Tìm kiếm..."aria-describedby="button-addon5" class="form-control">
                             <div class="input-group-append">
                                 <button id="button-addon5"type="submit"class="btn d-flex"><i class="fa fa-search"></i></button>
                             </div>
@@ -67,6 +67,31 @@
                                                 </div>
                                                 @endforeach
                                             </div>
+                                            <div class="carousel-item active">
+                                            <div class="row">
+                                                @foreach($products as $product)
+                                                <div class="col-4 col-md-2">
+                                                    <a href="/">
+                                                        <div class="d-flex flex-column justify-content-center product-item">
+                                                            <div class="product-img">
+                                                                <img src="{!! $product->thumbnail !!}"alt="">
+                                                            </div>
+                                                            <div class="product-title">
+                                                                <p>{!! $product->name !!}</p>
+                                                            </div>
+                                                            <div class="product_author">
+                                                                <p>Nhà thiết kế: Phi Tahc</p>
+                                                            </div>
+                                                            <div class="product-price d-flex justify-content-between">
+                                                                <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
+                                                                <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                @endforeach
+                                            </div>
+
                                         </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

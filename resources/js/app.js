@@ -11,16 +11,16 @@ console.log("My Kit is ready :)");
 
 $(document).ready(function () {
     $('.product-thumbnail').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         arrows: false,
         fade: true,
         focusOnSelect: true,
         asNavFor: '.product-thumbnail-child'
       });
       $('.product-thumbnail-child').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         asNavFor: '.product-thumbnail',
         dots: false,
         focusOnSelect: true

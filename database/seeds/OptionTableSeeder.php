@@ -27,6 +27,7 @@ class OptionTableSeeder extends Seeder {
                             <p>Bộ phận CSKH</p>
                             <h5>+ 84 868 21 08 62</h5>'
             ],
+            ['key' => 'slide_time_interval', 'value' => '6'],
         ]);
     }
 }

@@ -15,7 +15,7 @@ class SlideComposer
      */
     public function compose(View $view)
     {
-        $slides  = Post::oftype('slides')->paginate(4);
+        $slides  = Post::oftype('slides')->orderBy('order','desc')->get();
         $view->with('slides', $slides);
     }
 }
