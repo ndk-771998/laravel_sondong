@@ -46,7 +46,7 @@
                                     <h5>HỖ TRỢ TRIỂN LÃM CƯỚI ({!! $exhibition_count !!})</h5>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a href="">
+                                    <a href="/exhibition">
                                         <p>Xem tất cả</p>
                                     </a>
                                 </div>
@@ -54,7 +54,7 @@
                             <div class="hr"></div>
                              <div class="d-flex flex-column news ">
                                 @foreach($exhibition as $Item)
-                                <a href="{{ url('posts/'.$Item->slug) }}">
+                                <a href="{{ url('exhibition/'.$Item->slug) }}">
                                     <div class="d-flex description">
                                         <div><img src="{!! $Item->getMetaField('thumbnail') !!}" alt=""></div>
                                         <div>
@@ -73,7 +73,7 @@
                                     <h5>ĐỊA ĐIỂM CƯỚI LÃNG MẠNG ({!! $place_count !!})</h5>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a href="">
+                                    <a href="/place">
                                         <p>Xem tất cả</p>
                                     </a>
                                 </div>
@@ -81,7 +81,7 @@
                             <div class="hr"></div>
                              <div class="d-flex flex-column news ">
                                 @foreach($place as $placeItem)
-                                <a href="{{ url('posts/'.$placeItem->slug) }}">
+                                <a href="{{ url('place/'.$placeItem->slug) }}">
                                     <div class="d-flex description">
                                         <div><img src="{!! $placeItem->getMetaField('thumbnail') !!}" alt=""></div>
                                         <div>

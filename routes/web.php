@@ -34,12 +34,6 @@ Route::get('/forgot-password', function(){
 Route::get('/login', function(){
     return view('pages.login');
 });
-Route::get('/new-detail', function(){
-    return view('pages.new-detail');
-});
-Route::get('/news', function(){
-    return view('pages.news');
-});
 
 Route::get('/product','Web\ProductListController@index');
 

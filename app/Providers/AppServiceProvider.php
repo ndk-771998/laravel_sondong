@@ -8,10 +8,12 @@ use App\Http\View\Composers\MenuComposer;
 use App\Http\View\Composers\SlideComposer;
 use App\Http\View\Composers\NewsComposer;
 use App\Http\View\Composers\CartComposer;
+use App\Http\Controllers\Web\PostListController;
 use App\Http\Controllers\Web\ProductListController;
 use App\Http\Controllers\Web\ProductDetailController;
 use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 use VCComponent\Laravel\Product\Contracts\ViewProductDetailControllerInterface;
+use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(ViewProductListControllerInterface::class, ProductListController::class);
         $this->app->bind(ViewProductDetailControllerInterface::class, ProductDetailController::class);
+        $this->app->bind(ViewPostListControllerInterface::class, PostListController::class);
     }
 
     /**

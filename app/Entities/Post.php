@@ -12,9 +12,9 @@ class Post extends BasePost {
 
     public function postTypes() {
         return [
-            'slides',
             'place',
-            'exhibition'
+            'exhibition',
+            'news',
         ];
     }
 
