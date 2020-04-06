@@ -12387,6 +12387,14 @@ a.text-dark:hover, a.text-dark:focus {
   width: 30%;
 }
 
+.product-detail .left .product-thumbnail img {
+  width: 162px;
+}
+
+.product-detail .left .product-thumbnail-child img {
+  width: 50px;
+}
+
 .product-detail .right {
   width: calc(70% - 20px);
   margin-left: 20px;
@@ -13456,6 +13464,14 @@ a.text-dark:hover, a.text-dark:focus {
 
 .product-detail .left {
   width: 30%;
+}
+
+.product-detail .left .product-thumbnail img {
+  width: 162px;
+}
+
+.product-detail .left .product-thumbnail-child img {
+  width: 50px;
 }
 
 .product-detail .right {

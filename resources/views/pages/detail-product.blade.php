@@ -21,7 +21,34 @@
                         <h3>Chi tiết sản phẩm</h3>
                         <div class="p-flex my-24">
                             <div class="left">
-
+                                <div class="product-thumbnail">
+                                    <div class="item">
+                                        <img src="{!! $product->thumbnail !!}" alt="" />
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/7210985b-19b4-419a-94c2-e9a4ece925c9.png" alt="" />
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/957b0aae-7573-4939-a32c-6dfd29204d4b.png" alt="" />
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/dcb6d6c9-d51d-4770-99d2-8beed3fc4973.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="product-thumbnail-child">
+                                    <div class="item">
+                                        <img src="{!! $product->thumbnail !!}" alt="" />
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/7210985b-19b4-419a-94c2-e9a4ece925c9.png" alt="" />
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/957b0aae-7573-4939-a32c-6dfd29204d4b.png" alt="" />
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/dcb6d6c9-d51d-4770-99d2-8beed3fc4973.png" alt="" />
+                                    </div>
+                                </div>
                             </div>
                             <div class="right">
                                 <h4>{!! $product->name !!}</h4>
