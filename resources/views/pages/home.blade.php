@@ -43,7 +43,7 @@
                         <div class="product">
                             <div class="row title">
                                 <div class="col-6 ">
-                                    <h5>HỖ TRỢ TRIỂN LÃM CƯỚI(3)</h5>
+                                    <h5>HỖ TRỢ TRIỂN LÃM CƯỚI({!! $exhibitionCount!!})</h5>
                                 </div>
                                 <div class="col-6 text-right">
                                     <a href="">
@@ -53,52 +53,28 @@
                             </div>
                             <div class="hr"></div>
                             <div class="row">
+                                @foreach($exhibition as $exhibitionItem)
                                 <div class="col-6 col-md-4">
                                     <div class="d-flex flex-column justify-content-center product-item">
                                         <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png"alt="">
+                                            <img src="{!! $exhibitionItem->thumbnail !!}"alt="">
                                         </div>
                                         <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
+                                            <p>{!! $exhibitionItem->name !!}</p>
                                         </div>
                                         <div class="product-price d-flex justify-content-between">
-                                            <div class="price"><p>1,000,000 đ</p></div>
-                                            <div class="original_price">1,200,000 đ</div>
+                                            <div class="price"><p>{!! number_format($exhibitionItem->price) !!} đ</p></div>
+                                            <div class="original_price">{!! number_format($exhibitionItem->original_price) !!} đ</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="product">
                             <div class="row title">
                                 <div class="col-6 ">
-                                    <h5>ĐỊA ĐIỂM CƯỚI LÃNG MẠNG(3)</h5>
+                                    <h5>ĐỊA ĐIỂM CƯỚI LÃNG MẠNG({!! $placeCount!!})</h5>
                                 </div>
                                 <div class="col-6 text-right">
                                     <a href="">
@@ -108,45 +84,22 @@
                             </div>
                             <div class="hr"></div>
                             <div class="row">
+                                @foreach($place as $placeItem)
                                 <div class="col-6 col-md-4">
                                     <div class="d-flex flex-column justify-content-center product-item">
                                         <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
+                                            <img src="{!! $placeItem->thumbnail !!}" alt="">
                                         </div>
                                         <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
+                                            <p>{!! $placeItem->name !!}</p>
                                         </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
+                                        <div class="product-price d-flex justify-content-between">
+                                            <div class="price"><p>{!! number_format($placeItem->price) !!} đ</p></div>
+                                            <div class="original_price">{!! number_format($placeItem->original_price) !!} đ</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="d-flex flex-column justify-content-center product-item">
-                                        <div class="product-img">
-                                            <img src="/assets/images/LA_4894.png" alt="">
-                                        </div>
-                                        <div class="product-title">
-                                            <p>Váy cưới khóa dây ren buộc trước</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <p>Giá bán: 1,000,000 đ</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="product">

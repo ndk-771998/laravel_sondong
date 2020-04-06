@@ -11,8 +11,8 @@ class SearchController extends Controller {
     public function __invoke(Request $request) {
         $products         = Product::query();
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
-        $products_result  = $products->OrderBy('id', 'desc')->paginate(6);
-        $products_tabpane = $products->OrderBy('id', 'desc')->paginate(12);
+        $products_result  = $products->where('brand' , 'váy cưới')->OrderBy('id', 'desc')->paginate(6);
+        $products_tabpane = $products->where('brand' , 'váy cưới')->OrderBy('id', 'desc')->paginate(12);
         $products_result->withPath('search?products');
         $products_tabpane->withPath('search?products_pane');
 
