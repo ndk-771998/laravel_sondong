@@ -16,3 +16,13 @@ $factory->state(Post::class, 'slides', function () {
         'type' => 'slides',
     ];
 });
+$factory->state(Post::class, 'place', function () {
+    return [
+        'type' => 'place',
+    ];
+});
+$factory->state(Post::class, 'exhibition', function () {
+    return [
+        'type' => 'exhibition',
+    ];
+});

@@ -14,5 +14,7 @@ class PostTableSeeder extends Seeder {
     public function run() {
         $this->seederPosts();
         $this->seederSlides();
+        $this->seederPlace();
+        $this->seederExhibition();
     }
 }

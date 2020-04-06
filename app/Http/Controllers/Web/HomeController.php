@@ -9,23 +9,25 @@ use VCComponent\Laravel\Product\Entities\Product;
 
 class HomeController extends Controller {
     public function __invoke() {
-        $products        = Product::where('brand', 'váy cưới')->OrderBy('id', 'desc')->paginate(9);
+        $products = Product::OrderBy('id', 'desc')->paginate(9);
 
-        $exhibition      = Product::where('brand', 'hỗ trợ triển lãm cưới')->OrderBy('id', 'desc')->limit(3)->get();
-        $exhibitionCount = Product::where('brand', 'hỗ trợ triển lãm cưới')->count();
+        $news         = Post::oftype('posts')->OrderBy('id', 'desc')->paginate(3);
 
-        $place           = Product::where('brand', 'địa điểm cưới lãng mạng')->OrderBy('id', 'desc')->limit(3)->get();
-        $placeCount      = Product::where('brand', 'địa điểm cưới lãng mạng')->count();
+        $place        = Post::oftype('place')->OrderBy('id', 'desc');
+        $place_result = $place->limit(3)->get();
+        $place_count  = $place->count();
 
-        $news = Post::oftype('posts')->OrderBy('id', 'desc')->paginate(3);
+        $exhibition        = Post::oftype('exhibition')->OrderBy('id', 'desc');
+        $exhibition_result = $exhibition->limit(3)->get();
+        $exhibition_count  = $exhibition->count();
 
         return view('index', [
-            'products'        => $products,
-            'place'           => $place,
-            'exhibition'      => $exhibition,
-            'exhibitionCount' => $exhibitionCount,
-            'placeCount'      => $placeCount,
-            'news'            => $news,
+            'products'   => $products,
+            'news'       => $news,
+            'place'      => $place_result,
+            'exhibition' => $exhibition_result,
+            'place_count'      => $place_count,
+            'exhibition_count' => $exhibition_count,
         ]);
     }
 }

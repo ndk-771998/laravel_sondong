@@ -25,12 +25,40 @@ trait PostSeederTrait {
 
     protected function seederSlides()
     {
-        return factory(Post::class, 10)->states('slides')->create()
+        return factory(Post::class, 5)->states('slides')->create()
             ->each(function ($image) {
                 $meta = [
                     [
                         'key'   => 'thumbnail',
                         'value' => '/assets/images/wallpaper.png',
+                    ],
+                ];
+                $image->postMetas()->createMany($meta);
+            });
+    }
+
+    protected function seederPlace()
+    {
+        return factory(Post::class, 10)->states('place')->create()
+            ->each(function ($image) {
+                $meta = [
+                    [
+                        'key'   => 'thumbnail',
+                        'value' => '/assets/images/news.png',
+                    ],
+                ];
+                $image->postMetas()->createMany($meta);
+            });
+    }
+
+    protected function seederExhibition()
+    {
+        return factory(Post::class, 10)->states('exhibition')->create()
+            ->each(function ($image) {
+                $meta = [
+                    [
+                        'key'   => 'thumbnail',
+                        'value' => '/assets/images/news.png',
                     ],
                 ];
                 $image->postMetas()->createMany($meta);
