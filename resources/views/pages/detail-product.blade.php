@@ -21,34 +21,7 @@
                         <h3>Chi tiết sản phẩm</h3>
                         <div class="p-flex my-24">
                             <div class="left">
-                                <div class="product-thumbnail">
-                                    <div class="item" data-src="https://unsplash.it/870/870">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/8612b3f4-9610-4237-9a0a-cbabf8cebb90.png" alt="" />
-                                    </div>
-                                    <div class="item" data-src="https://unsplash.it/871/870">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/8612b3f4-9610-4237-9a0a-cbabf8cebb90.png" alt="" />
-                                    </div>
-                                    <div class="item" data-src="https://unsplash.it/872/870">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/8612b3f4-9610-4237-9a0a-cbabf8cebb90.png" alt="" />
-                                    </div>
-                                    <div class="item" data-src="https://unsplash.it/873/870">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/8612b3f4-9610-4237-9a0a-cbabf8cebb90.png" alt="" />
-                                    </div>
-                                </div>
-                                <div class="product-thumbnail-child">
-                                    <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/54431ad7-5d54-4397-a3b8-1705476ce4e1.png" alt="" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/7210985b-19b4-419a-94c2-e9a4ece925c9.png" alt="" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/957b0aae-7573-4939-a32c-6dfd29204d4b.png" alt="" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/dcb6d6c9-d51d-4770-99d2-8beed3fc4973.png" alt="" />
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="right">
                                 <h4>{!! $product->name !!}</h4>
@@ -118,7 +91,7 @@
                                         <h5>Váy cưới khóa dây ren buộc trước</h5>
                                     </a>
                                     <div class="total">
-                                        Giá     bán: 1,000,000 đ
+                                        Giá bán: 1,000,000 đ
                                     </div>
                                 </div>
                             </div>

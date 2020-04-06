@@ -47,7 +47,7 @@
                                             <div class="row">
                                                 @foreach($products as $product)
                                                 <div class="col-4 col-md-2">
-                                                    <a href="/">
+                                                    <a href="product/{!! $product->slug !!}">
                                                         <div class="d-flex flex-column justify-content-center product-item">
                                                             <div class="product-img">
                                                                 <img src="{!! $product->thumbnail !!}"alt="">

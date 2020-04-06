@@ -16,19 +16,18 @@
     .left {
         width: 30%;
 
-        .product-thumbnail {
-            img {
-                width: 162px;
-            }
 
-        }
+    // #carousel img {
+    //     width: 200px;
+    //     display: block;
+    //     opacity: .5;
+    //     cursor: pointer;
+    // }
 
-        .product-thumbnail-child {
-            img {
-                width: 50px;
-            }
-
-        }
+    // #carousel .flex-active-slide img {
+    //     opacity: 1;
+    //     cursor: default;
+    // }
 
     }
 

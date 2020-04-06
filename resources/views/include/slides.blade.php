@@ -15,11 +15,11 @@
             @if ($slides->count())
             @foreach ($slides as $index => $slide)
             @if ($index === 0)
-            <div class="carousel-item active">
+            <div class="carousel-item active" data-interval="6000">
                 <img class="img-fluid" src="{!! $slide->getMetaField('thumbnail') !!}">
             </div>
             @else
-            <div class="carousel-item">
+            <div class="carousel-item" data-interval="6000">
                 <img class="img-fluid" src="{!! $slide->getMetaField('thumbnail') !!}">
             </div>
             @endif
