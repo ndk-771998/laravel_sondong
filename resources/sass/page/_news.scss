@@ -7,60 +7,55 @@
             line-height: 1.31;
             margin-bottom: 10px;
         }
-        .pagination {
-            img {
-              width: 12px;
-              color: #6c757d;
-              margin-top: -4px;
-            }
-            .soft {
-              height: 10px;
-            }
-            a {
-              color: #6c757d;
-            }
-          }
         .line {
             border-bottom: 2px solid #eee8e8;
             margin-top: 10px;
         }
+         .news {
+            a:hover {
+                text-decoration: none;
+                .description {
+                    h6, p {
+                        color: #e74c3c;
+                        transition: 0.25s;
+                    }
+                }
 
-        .new-item {
-            margin-top: 24px;
-            margin-bottom: 24px;
-            .news-title {
-                color: #242424;
-                font-size: 14px;
-                font-weight: 600;
-                line-height: 1.36;
-                margin-bottom: 10px;
             }
 
-            .news-content {
-                font-size: 12px;
-                line-height: 1.33;
-                color: #242424;
-                margin-top: 10px;
-                margin-bottom: 15px;
+            .description {
+                margin: 12px 0;
+
+                img {
+                    border-radius: 6px;
+                    width: 162px;
+                    height: 110px;
+                    margin-right: 24px;
+                }
+
+                h6 {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #242424;
+                }
+
+                p {
+                    font-size: 12px;
+                    color: #242424;
+                    font-weight: normal;
+                }
+
+                u {
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-style: italic;
+                    color: #683e7a;
+                }
+
             }
 
-            .view-details {
-                color: #683e7a;
-                font-style: italic;
-                line-height: 1.36;
-                font-size: 14px;
-                text-decoration: underline;
-            }
         }
-        .pagination{
-            .page-link{
-                color: #707070;
-                border: solid 1px #d8d8d8;
-            }
-            .active{
-                color: #fb728b;
-            }
-        }
+
 
         // .news-description{
         //     margin-top: 20px;

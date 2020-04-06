@@ -4,7 +4,7 @@
     <div class="container">
         <ul class="custom-breadcrumb m-0">
             <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-            <li class="breadcrumb-item">Tin tức</li>
+            <li class="breadcrumb-item">{!! $title !!}</li>
         </ul>
     </div>
 </nav>
@@ -18,24 +18,20 @@
                 <div class="col-12 col-md-6">
                     <div class="news-head" id="news">{!! $title !!}</div>
                     <div class="line"></div>
-                    @foreach($result as $item)
-                    <div class="new-item">
-                        <div class="row">
-                            <div class="col-4"><img class="img-fluid" src="assets/images/news.png" alt=""></div>
-                            <div class="pl-0 col-8">
-                                <div class="news-title">
-                                    {!! $item->title !!}
-                                </div>
-                                <div class="news-content">
-                                    {!! $item->description !!}
-                                </div>
+                    <div class="d-flex flex-column news ">
+                        @foreach($result as $item)
+                        <a href="{{ url($urlRedirect.'/'.$item->slug) }}">
+                            <div class="d-flex description">
+                                <div><img src="{!! $item->getMetaField('thumbnail') !!}" alt=""></div>
                                 <div>
-                                    <a class="view-details" href="new-detail">Xem chi tiết</a>
+                                    <h6>{!! $item->title !!}</h6>
+                                    <p>{!! $item->description !!}</p>
+                                    <u>Xem chi tiết</u>
                                 </div>
                             </div>
-                        </div>
+                        </a>
+                        @endforeach
                     </div>
-                    @endforeach
                     <div class="d-flex justify-content-end">
                         {{ $result->fragment('news')->links('include.pagination') }}
                     </div>

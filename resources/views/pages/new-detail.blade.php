@@ -4,8 +4,8 @@
     <div class="container">
         <ul class="custom-breadcrumb m-0">
             <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-            <li class="breadcrumb-item">Dịch vụ</li>
-
+            <li class="breadcrumb-item"><a href="/{!! $urlBreadcumb !!}">{!! $title !!}</a></li>
+            <li class="breadcrumb-item">{!! $post->title !!}</li>
         </ul>
     </div>
 </nav>
@@ -17,43 +17,18 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="new-detail-head">Dịch vụ</div>
+                    <div class="new-detail-head">{!! $title !!}</div>
                     <div class="line"></div>
                     <div class="new-detail-title">
-                        Cách điệu áo dài trong ngày cưới
+                        {!! $post->title !!}
                     </div>
                     <div class="new-detail-description">
-                        Thời trang là nền tảng của cuộc sống, trong mỗi chúng ta ai ai cũng đều ñịnh hình cho mình moät phong cách thời trang thể hiện cá tính và phù hợp với môi trường làm việc, tự tin trong cuộc sống. <br><br>
-
-                        Shop thời trang là shop tiên phong trong lĩnh vực thời trang, cung cấp sỉ và lẻ hàng xách tay như quần áo, túi xách, giày dép, thắt lưng, và một số trang sức phụ kiện khác…<br><br>
-
-                        Phân phối rộng rãi trên thị trường, giới thiệu đến khách hàng những mẫu mã mới nhaát phù hợp với xu hướng thời trang hiện nay.Shop thời trang thường xuyên tổ chức chương trình event và khuyến mãi lớn dành cho những khách hàng quen thuộc diễn ra hàng năm để tỏ lòng tri ân mà khách hàng đã dành cho shop.<br><br>
-
-                        Tuy xuất hiện trên thị trường chỉ hơn một năm qua nhưng Shop thời trang chiếm được cảm tình của đông đảo khách hàng và cung cách phục vụ và giá cả phải chăng,với phương châm “đáp ứng mọi nhu cầu khách hàng cần”.
+                        {!! $post->content !!}
                     </div>
                     <div class="text-center">
-                        <img class="img-fluid new-detail-img" src="assets/images/word.png" alt="">
+                        <img class="img-fluid new-detail-img" src="{!! $post->getMetaField('thumbnail') !!}" alt="">
                     </div>
-                    <div class="new-detail-description">
-                        Thời trang là nền tảng của cuộc sống, trong mỗi chúng ta ai ai cũng đều ñịnh hình cho mình moät phong cách thời trang thể hiện cá tính và phù hợp với môi trường làm việc, tự tin trong cuộc sống. <br><br>
-
-                        Shop thời trang là shop tiên phong trong lĩnh vực thời trang, cung cấp sỉ và lẻ hàng xách tay như quần áo, túi xách, giày dép, thắt lưng, và một số trang sức phụ kiện khác…<br><br>
-
-                        Phân phối rộng rãi trên thị trường, giới thiệu đến khách hàng những mẫu mã mới nhaát phù hợp với xu hướng thời trang hiện nay.Shop thời trang thường xuyên tổ chức chương trình event và khuyến mãi lớn dành cho những khách hàng quen thuộc diễn ra hàng năm để tỏ lòng tri ân mà khách hàng đã dành cho shop.<br><br>
-
-                        Tuy xuất hiện trên thị trường chỉ hơn một năm qua nhưng Shop thời trang chiếm được cảm tình của đông đảo khách hàng và cung cách phục vụ và giá cả phải chăng,với phương châm “đáp ứng mọi nhu cầu khách hàng cần”.
-                    </div>
-                    <div class="text-center">
-                        <img class="img-fluid new-detail-img" src="assets/images/word.png" alt="">
-                    </div>
-                    <div class="new-detail-description">
-                        Thời trang là nền tảng của cuộc sống, trong mỗi chúng ta ai ai cũng đều ñịnh hình cho mình moät phong cách thời trang thể hiện cá tính và phù hợp với môi trường làm việc, tự tin trong cuộc sống. <br><br>
-
-                        Shop thời trang là shop tiên phong trong lĩnh vực thời trang, cung cấp sỉ và lẻ hàng xách tay như quần áo, túi xách, giày dép, thắt lưng, và một số trang sức phụ kiện khác…<br><br>
-
-                        Phân phối rộng rãi trên thị trường, giới thiệu đến khách hàng những mẫu mã mới nhaát phù hợp với xu hướng thời trang hiện nay.Shop thời trang thường xuyên tổ chức chương trình event và khuyến mãi lớn dành cho những khách hàng quen thuộc diễn ra hàng năm để tỏ lòng tri ân mà khách hàng đã dành cho shop.<br><br>
-                    </div>
-                    <div class="comment">
+                    <div class="comment mt-5">
                         <h5>Bình luận</h5>
                         <form action="">
                             <div class="form-group">
@@ -64,17 +39,14 @@
                             </div>
                         </form>
                     </div>
-
                     <div class="news-relate">
                         <div class="news-relate-title">Tin tức liên quan:</div>
-                        <ul class="list-unstyled">
-                            <li>Giải pháp khi mặc váy cưới đuôi dài</li>
-                            <li>Tổng giờ ngủ bé cần mỗi ngày đêm</li>
-                            <li>Cách chọn vàng trang sức cho ngày cưới</li>
+                        <ul class="">
+                            @foreach($relatedPosts as $relatedPost)
+                            <li><a href="{!! $relatedPost->slug !!}">{!! $relatedPost->title !!}</a></li>
+                            @endforeach
                         </ul>
                     </div>
-
-
                 </div>
                 <div class="col-12 col-md-3">
                     @include('layout.nav-right')
@@ -83,5 +55,4 @@
         </div>
     </div>
 </section>
-
 @endsection

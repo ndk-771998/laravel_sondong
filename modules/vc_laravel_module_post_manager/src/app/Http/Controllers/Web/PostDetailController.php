@@ -33,6 +33,7 @@ class PostDetailController extends Controller implements ViewPostDetailControlle
         if (method_exists($this, 'beforeQuery')) {
             $this->beforeQuery($request);
         }
+
         $type = $this->getTypePost($request);
 
         $post = $this->entity->where([['slug', '=', $slug], ['type', '=', $type]])->firstOrFail();

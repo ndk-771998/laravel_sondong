@@ -15,7 +15,7 @@ class MenuItemTableSeeder extends Seeder {
             ['menu_id' => '1', 'label' => 'GIỚI THIỆU', 'link' => '/about', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '1', 'label' => 'SẢN PHẨM', 'link' => '/product', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '1', 'label' => 'dịch vụ', 'link' => '/service', 'type' => 'menu-header', 'parent_id' => 0],
-            ['menu_id' => '1', 'label' => 'tin tức', 'link' => '/news', 'type' => 'menu-header', 'parent_id' => 0],
+            ['menu_id' => '1', 'label' => 'tin tức', 'link' => '/posts', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '1', 'label' => 'liên hệ', 'link' => '/contact', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '2', 'label' => 'Váy cưới', 'link' => '/product', 'type' => 'menu-sidebar', 'parent_id' => 0],
             ['menu_id' => '2', 'label' => 'Địa điểm cưới lãng mạng', 'link' => '/place', 'type' => 'menu-sidebar', 'parent_id' => 0],

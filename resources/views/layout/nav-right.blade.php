@@ -15,7 +15,7 @@
             </div>
             <div class="d-flex flex-column content-navrg-2 ">
                 @foreach($news_side as $newsItem)
-                <a href="new-detail">
+                <a href="news/{!! $newsItem->slug !!}">
                     <div class="d-flex description">
                         <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
                         <div>

@@ -100,7 +100,7 @@
                                     <h5>TIN TỨC</h5>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a href="/news">
+                                    <a href="/posts">
                                         <p>Xem tất cả</p>
                                     </a>
                                 </div>
