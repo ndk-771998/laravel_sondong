@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
 use VCComponent\Laravel\Post\Http\Controllers\Web\PostListController as BasePostListController;
 
-class PostListController extends BasePostListController implements ViewPostListControllerInterface {
-    public function view() {
+class PostListController extends BasePostListController implements ViewPostListControllerInterface
+{
+    public function view()
+    {
         return 'pages.news';
     }
 

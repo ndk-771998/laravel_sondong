@@ -76,51 +76,43 @@
                         </div>
                         <div class="comment">
                             <h5>Bình luận</h5>
-                            <form action="">
+                            <form action="{{url('comment')}}" method="POST">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="text" class="form-control " placeholder="Nhập email của bạn . . .">
-                                    <input type="text" class="form-control " placeholder="Nhập tên của bạn . . .">
-                                    <textarea class="form-control " placeholder="Nhập nội dung bình luận . . ."></textarea>
+                                    <input type="text" class="form-control" required="" name="email" placeholder="Nhập email của bạn . . .">
+                                    <input type="text" class="form-control" required name="user" placeholder="Nhập tên của bạn . . .">
+                                    <textarea class="form-control" required name="content" placeholder="Nhập nội dung bình luận . . ."></textarea>
+                                    <input name="commentable_id" value="{{ $product->id }}" hidden>
+                                    <input name="commentable_type" value="products" hidden>
                                     <input type="submit" value="Gửi">
                                 </div>
                             </form>
                         </div>
+                        @include('comment::show')
                         <div class="related-posts mt-60">
                             <h3>Chi tiết sản phẩm</h3>
                             <div class="related-list d-flex flex-wrap mb-5">
+                                @foreach($relatedProducts as $ProductItem)
                                 <div class="item">
-                                    <a href="">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/e9fe5eec-ee2f-4ee4-b3a6-1bbe7fa59d41.png" alt="">
+                                    <a href="{!! $ProductItem->slug !!}">
+                                        <div class="d-flex flex-column justify-content-center product-item">
+                                            <div class="product-img">
+                                                <img src="{!! $ProductItem->thumbnail !!}"alt="">
+                                            </div>
+                                            <div class="product-title">
+                                                <p>{!! $ProductItem->name !!}</p>
+                                            </div>
+                                            <div class="product_author">
+                                                <p>Nhà thiết kế: Phi Tahc</p>
+                                            </div>
+                                            <div class="product-price d-flex justify-content-between">
+                                                <div class="price"><p>{!! number_format($ProductItem->price) !!} đ</p></div>
+                                                <div class="original_price">{!!number_format($ProductItem->original_price) !!} đ</div>
+                                            </div>
+                                        </div>
                                     </a>
-                                    <a href="">
-                                        <h5>Váy cưới khóa dây ren buộc trước</h5>
-                                    </a>
-                                    <div class="total">
-                                        Giá bán: 1,000,000 đ
-                                    </div>
                                 </div>
-                                <div class="item">
-                                    <a href="">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/e9fe5eec-ee2f-4ee4-b3a6-1bbe7fa59d41.png" alt="">
-                                    </a>
-                                    <a href="">
-                                        <h5>Váy cưới khóa dây ren buộc trước</h5>
-                                    </a>
-                                    <div class="total">
-                                        Giá bán: 1,000,000 đ
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <a href="">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/e9fe5eec-ee2f-4ee4-b3a6-1bbe7fa59d41.png" alt="">
-                                    </a>
-                                    <a href="">
-                                        <h5>Váy cưới khóa dây ren buộc trước</h5>
-                                    </a>
-                                    <div class="total">
-                                        Giá bán: 1,000,000 đ
-                                    </div>
-                                </div>
+                              @endforeach
                             </div>
                         </div>
                     </div>

@@ -7,10 +7,12 @@ use Illuminate\Support\Str;
 use VCComponent\Laravel\Comment\Traits\HasCommentTrait;
 use VCComponent\Laravel\Post\Entities\Post as BasePost;
 
-class Post extends BasePost {
+class Post extends BasePost
+{
     use HasCommentTrait;
 
-    public function postTypes() {
+    public function postTypes()
+    {
         return [
             'place',
             'exhibition',
@@ -18,7 +20,8 @@ class Post extends BasePost {
         ];
     }
 
-    public function slidesSchema() {
+    public function slidesSchema()
+    {
         return [
             'thumbnail' => [
                 'type' => 'string',
@@ -27,7 +30,9 @@ class Post extends BasePost {
         ];
     }
 
-    public function getLimitedName($limit = 10) {
+    public function getLimitedName($limit = 10)
+    {
         return Str::limit($this->name, $limit);
     }
 }
+

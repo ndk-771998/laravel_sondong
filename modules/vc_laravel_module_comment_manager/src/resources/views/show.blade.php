@@ -22,6 +22,8 @@
         </div>
     </div>
     @endforeach
+    @if(method_exists($comments,'links'))
     <div class="d-flex justify-content-end"> {{ $comments->links() }}</div>
+    @endif
     @endif
 </section>
