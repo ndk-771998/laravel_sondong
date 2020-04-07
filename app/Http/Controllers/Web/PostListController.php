@@ -32,6 +32,7 @@ class PostListController extends BasePostListController implements ViewPostListC
         $news        = Post::oftype('exhibition')->latest()->paginate(6);
         $title       = 'Hỗ trợ triển lãm cưới';
         $urlRedirect = 'exhibition';
+
         return [
             'result'      => $news,
             'title'       => $title,
@@ -47,6 +48,7 @@ class PostListController extends BasePostListController implements ViewPostListC
         $news        = Post::oftype('place')->latest()->paginate(6);
         $title       = 'Địa điểm cưới lãng mạng';
         $urlRedirect = 'place';
+
         return [
             'result'      => $news,
             'title'       => $title,

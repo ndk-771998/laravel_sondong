@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('commentable_id');
             $table->string('commentable_type');
-            $table->string('email');
+            $table->string('email')->->nullable();
             $table->string('name');
             $table->longText('content');
             $table->tinyInteger('status')->default(0);

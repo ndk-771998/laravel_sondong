@@ -22,10 +22,13 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
         $title        = 'Tin Tức';
         $urlBreadcumb = 'posts';
 
+        $comments = $post->getLatestComment(10);
+
         return [
             'title'        => $title,
             'relatedPosts' => $relatedPosts,
             'urlBreadcumb' => $urlBreadcumb,
+            'comments'     => $comments,
         ];
     }
 
@@ -43,10 +46,13 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
 
         $urlBreadcumb = 'exhibition';
 
+        $comments = $post->getLatestComment(10);
+
         return [
             'title'        => $title,
             'relatedPosts' => $relatedPosts,
             'urlBreadcumb' => $urlBreadcumb,
+            'comments'     => $comments,
         ];
     }
 
@@ -64,10 +70,13 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
 
         $urlBreadcumb = 'place';
 
+        $comments = $post->getLatestComment(10);
+
         return [
             'title'        => $title,
             'relatedPosts' => $relatedPosts,
             'urlBreadcumb' => $urlBreadcumb,
+            'comments'     => $comments,
         ];
     }
 }

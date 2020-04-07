@@ -28,6 +28,8 @@
                     <div class="text-center">
                         <img class="img-fluid new-detail-img" src="{!! $post->getMetaField('thumbnail') !!}" alt="">
                     </div>
+                     @include('comment::comment',['commentable_id' => $post->id, 'commentable_type' => $urlBreadcumb ])
+
                     <div class="comment mt-5">
                         <h5>Bình luận</h5>
                         <form action="">
