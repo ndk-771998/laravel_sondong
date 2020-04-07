@@ -6,7 +6,8 @@ $(document).ready(function() {
     Array.from(menuItems).forEach(menu => {
         var active = menu.dataset.name;
         var id = menu.dataset.id;
-        if (active == url) {
+        var link = '/' + (url.split("/").slice(1,2).toString());
+        if (active == link) {
             $('#menu-' + id).addClass("active");
         }
     });

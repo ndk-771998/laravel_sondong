@@ -40132,8 +40132,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   Array.from(menuItems).forEach(function (menu) {
     var active = menu.dataset.name;
     var id = menu.dataset.id;
+    var link = '/' + url.split("/").slice(1, 2).toString();
 
-    if (active == url) {
+    if (active == link) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-' + id).addClass("active");
     }
   });
