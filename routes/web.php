@@ -20,9 +20,7 @@ Route::get('search','Web\SearchController')->name('search');
 Route::get('/about', function(){
     return view('pages.about');
 });
-Route::get('/cart', function(){
-    return view('pages.cart');
-});
+
 Route::get('/contact', function(){
     return view('pages.contact');
 });

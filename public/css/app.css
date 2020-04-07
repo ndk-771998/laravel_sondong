@@ -14110,10 +14110,6 @@ a.text-dark:hover, a.text-dark:focus {
   height: 30px;
 }
 
-.cart {
-  margin-top: 60px;
-}
-
 .cart .line {
   border-bottom: 1px solid #d8d8d8;
   margin: 10px 0 20px 0;
@@ -14137,20 +14133,22 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .cart .check-table .table thead th {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 1.36;
   color: #242424;
 }
 
 .cart .check-table .table tbody {
-  background: #ffffff;
+  background: #fbfbfb;
+  color: #707070;
 }
 
 .cart .check-table .table tbody img {
-  width: 56px;
-  height: 52px;
-  margin: 5px;
+  margin-top: 0px;
+  width: 45px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .cart .check-table .table tbody .cart-quantity {
@@ -14162,13 +14160,9 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .cart .check-table .table tbody .total-price {
-  color: red;
+  color: #ff670a;
   font-weight: bold;
-  font-size: 16px;
-}
-
-.cart .check-table .table tbody .btn-danger {
-  background: linear-gradient(#cb2d3e, #ef473a);
+  font-size: 14px;
 }
 
 .cart .check-table .table-bordered th,
@@ -14183,8 +14177,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 .cart .btn-next-comeback .btn-next {
   background-color: #ffffff;
-  color: #0077e2;
-  border: solid 1px #0077e2;
+  color: #683e7a;
+  border: solid 1px #683e7a;
   padding: 9px 10px;
   border-radius: 6px;
   text-decoration: none;
@@ -14193,7 +14187,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .cart .btn-next-comeback .btn-order {
   text-decoration: none;
-  background: linear-gradient(#0072ff, #00c6ff);
+  background: #683e7a;
   color: white;
   border: solid 1px #fff;
   padding: 9px 48px;

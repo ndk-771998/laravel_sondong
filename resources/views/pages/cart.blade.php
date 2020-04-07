@@ -16,51 +16,76 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="cart">
-                        <h3>Giỏ hàng</h3>
-                        <div class="table-cart table-responsive my-24">
-                            <table class="table table-bordered m-0 bg-l">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">STT</th>
-                                        <th scope="col">TÊN SẢN PHẨM</th>
-                                        <th scope="col" style="    width: 18%;">SỐ LƯỢNG</th>
-                                        <th scope="col" style="    width: 21%;">ĐƠN GIÁ</th>
-                                        <th scope="col" style="    width: 22%;">THÀNH TIỀN</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="">
-                                        <th>1</th>
-                                        <td>
-                                            <div class="item d-flex">
-                                                <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/bf21cb26-66b8-4e83-b5e2-c6b559737962.png" alt="" style="width:45px; height:50px">
-                                                <p class=" ml-2 m-0">Váy cưới khóa dây ren buộc trước</p>
-                                            </div>
-
-                                        </td>
-                                        <td class="d-flex justify-content-center" style="border:none">
-                                            <input type="number" name="1" id="" value="1" style=" width: 50%; border: 1px solid #d8d8d8; border-radius: 6px; text-align: center;"></td>
-                                        <td>1,260,000 đ</td>
-                                        <td>1,260,000 đ</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" style=" text-align: right;  font-weight: 600;">TỔNG HÓA ĐƠN :</td>
-                                        <td style="font-weight: 600;  color: #ff670a; text-align: center;">1,260,000 đ</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                            <div class="d-flex mt-50 justify-content-end">
-                                <a href="" class="continue">Tiếp tục mua hàng</a>
-                                <a href="" class="pay">Đặt hàng</a>
-
+                    <section class="cart" id="cart">
+                        <div>
+                            <div class="d-flex justify-content-between main-header">
+                                <div class="text-uppercase cart-title">giỏ hàng</div>
                             </div>
+                            <div class="line"></div>
+                            @if(session('alert'))
+                            <div>{!! session('alert') !!}</div>
+                            @endif
+                            @if ($cartItemsCount)
+                            <div id="alert"></div>
+                            <div class="check-table table-responsive">
+                                <table class="table  table-bordered text-center table-md" >
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">STT</th>
+                                            <th scope="col" class="text-uppercase" width="38%">Tên sản phẩm </th>
+                                            <th scope="col" class="text-uppercase">Số lượng</th>
+                                            <th scope="col" class="text-uppercase" width="18%">Đơn giá </th>
+                                            <th scope="col" class="text-uppercase" width="20%">Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($carts->cartItems as $key => $cartItem)
+                                        <tr>
+                                            <th scope="row">{!! $key + 1 !!}</th>
+                                            <td>
+                                                <div class="row ml-0 mr-0">
+                                                    <span class="col-12 col-md-4 d-flex align-items-center"><img src="{!! $cartItem->product->thumbnail !!}" alt=""></span>
+                                                    <div class="col-12 col-md-8 text-left">{!! $cartItem->product->name !!}</div>
+                                                </div>
+                                            </td>
+                                            <td class="table-form-input">
+                                                <input id="cart-item-quantity" class="cart-quantity" data-id="{!! $cartItem->id !!}" name="quantity" value="{!! $cartItem->quantity !!}" type="number" min="1">
+                                            </td>
+                                            <td>{!! number_format($cartItem->price) !!} đ</td>
+                                            <td><span id="amount-{!! $cartItem->id !!}" class="amount" data-id={!! $cartItem->id !!}>{!! number_format($cartItem->amount) !!}</span> đ</td>
+                                        </tr>
+                                        <div id="confirmModal-{!! $cartItem->id !!}" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content mt-5">
+                                                    <div class="modal-body">
+                                                        <h4 class="text-center mt-3">Xóa khỏi giỏ hàng ?</h4>
+                                                        <div class="d-flex justify-content-center mt-4  ">
+                                                            <a href="{{ route('cart-items.delete', ['id' => $cartItem->id]) }}"  class="btn btn-danger text-white" >Xóa</a>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                        <tr>
+                                            <td class="text-right" colspan="4"><b class="text-uppercase"> Tổng hóa đơn:</b></td>
+                                            <td colspan="3" class="total-price"><span id="total">{!! number_format($carts->total) !!}</span> đ</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="btn-next-comeback d-flex justify-content-end mb-2 mb-lg-0">
+                                <a href="/" class="btn-next mr-2 mr-md-4">TIẾP TỤC MUA HÀNG</a>
+                                <a href="/order-info" class="btn-order">Đặt hàng</a>
+                            </div>
+                            @else
+                            <div class="alert alert-danger">
+                                <p>Không có sản phẩm nào trong giỏ hàng</p>
+                            </div>
+                            @endif
                         </div>
-
-
-                    </div>
+                    </section>
                 </div>
                 <div class="col-12 col-md-3">
                     @include('layout.nav-right')
@@ -69,5 +94,4 @@
         </div>
     </div>
 </section>
-
 @endsection
