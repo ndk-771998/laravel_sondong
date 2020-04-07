@@ -25,6 +25,7 @@ trait HasCommentTrait
 
     public function getLatestComment($page)
     {
+        dd($this->comments()->Orderby('id','desc')->toSQL());
         return  $this->comments()->Orderby('id','desc')->Paginate($page);
     }
 

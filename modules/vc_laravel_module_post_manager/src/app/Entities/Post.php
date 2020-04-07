@@ -13,10 +13,11 @@ use VCComponent\Laravel\Post\Contracts\PostSchema;
 use VCComponent\Laravel\Post\Traits\PostManagementTrait;
 use VCComponent\Laravel\Post\Traits\PostQueryTrait;
 use VCComponent\Laravel\Post\Traits\PostSchemaTrait;
+use VCComponent\Laravel\Comment\Traits\HasCommentTrait;
 
 class Post extends Model implements Transformable, PostSchema, PostManagement
 {
-    use TransformableTrait, PostSchemaTrait, PostManagementTrait, PostQueryTrait, Sluggable, SluggableScopeHelpers, SoftDeletes;
+    use TransformableTrait, PostSchemaTrait, PostManagementTrait, PostQueryTrait, Sluggable, SluggableScopeHelpers, SoftDeletes, HasCommentTrait;
 
     const STATUS_PENDING   = 0;
     const STATUS_PUBLISHED = 1;

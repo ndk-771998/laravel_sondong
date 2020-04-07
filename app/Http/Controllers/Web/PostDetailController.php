@@ -21,8 +21,7 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
 
         $title        = 'Tin Tức';
         $urlBreadcumb = 'posts';
-
-        $comments = $post->getLatestComment(10);
+        $comments     = $post->getLatestComment(10);
 
         return [
             'title'        => $title,

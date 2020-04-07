@@ -20,19 +20,9 @@ class Post extends BasePost
         ];
     }
 
-    public function slidesSchema()
-    {
-        return [
-            'thumbnail' => [
-                'type' => 'string',
-                'rule' => [],
-            ],
-        ];
-    }
-
     public function getLimitedName($limit = 10)
     {
         return Str::limit($this->name, $limit);
     }
-}
 
+}
