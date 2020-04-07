@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Entities\Post;
+use App\Entities\Product;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Http\View\Composers\MenuComposer;
@@ -16,6 +18,7 @@ use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 use VCComponent\Laravel\Product\Contracts\ViewProductDetailControllerInterface;
 use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
 use VCComponent\Laravel\Post\Contracts\ViewPostDetailControllerInterface;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -40,6 +43,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Relation::morphMap([
+            'posts'      => Post::class,
+            'products'   => Product::class,
+        ]);
+
        View::composer('*', MenuComposer::class);
        View::composer('*', SlideComposer::class);
        View::composer('*', NewsComposer::class);

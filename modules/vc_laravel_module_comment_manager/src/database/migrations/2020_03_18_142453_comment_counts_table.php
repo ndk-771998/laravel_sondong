@@ -30,6 +30,6 @@ class CommentCountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('count');
+        Schema::dropIfExists('comment_counts');
     }
 }

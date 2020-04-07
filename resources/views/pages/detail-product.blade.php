@@ -17,6 +17,8 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
+                    @include('include.errors')
+                    @include('include.messages')
                     <div class="product-detail">
                         <h3>Chi tiết sản phẩm</h3>
                         <div class="p-flex my-24">
@@ -68,26 +70,26 @@
                                     <li>Tổng tiền: <span class="total ">{!! number_format($product->price) !!} đ</span></li>
                                 </ul>
                                 <ul class="buy d-flex flex-wrap align-items-center">
-
-                                <form action="{{ route('cart-items.create') }}" method="post">
-                                    {!! csrf_field() !!}
-                                    <input class="productdetails-quantity" name="quantity" value="1" type="number" min=1 hidden>
-                                    <input name="product_id" value="{!! $product->id !!}" hidden>
-                                    <input name="product_price" value="{!! $product->price !!}" hidden>
-                                    <input name="redirect" value="cart" hidden>
-                                    <li><input id="purchase-product-{!! $product->id !!}-submit" type="submit" class="mb-2 mb-md-0" name="" value="Mua ngay"
-                                    ></li>
-                                </form>
-                                 <form action="{{ route('cart-items.create') }}" method="post">
-                                    {!! csrf_field() !!}
-                                    <input class="productdetails-quantity" name="quantity" value="1" type="number" min=1 hidden>
-                                    <input name="product_id" value="{!! $product->id !!}" hidden>
-                                    <input name="product_price" value="{!! $product->price !!}" hidden>
-                                    <li><input id="product-{!! $product->id !!}-submit" value="Thêm vào giỏ hàng" type="submit" name=""
-                                    ></li>
-                                </form>
-                                    {{-- <li class="mb-2 mb-md-0"><a href="">Mua ngay</a></li>
-                                    <li><a href="cart">Thêm vào giỏ hàng</a></li> --}}
+                                    {{ $product->quantity }}
+                                    @if($isAvailable)
+                                    <form action="{{ route('cart-items.create') }}" method="post">
+                                        {!! csrf_field() !!}
+                                        <input class="productdetails-quantity" name="quantity" value="1" type="number" min=1 hidden>
+                                        <input name="product_id" value="{!! $product->id !!}" hidden>
+                                        <input name="product_price" value="{!! $product->price !!}" hidden>
+                                        <input name="redirect" value="cart" hidden>
+                                        <li><input id="purchase-product-{!! $product->id !!}-submit" type="submit" class="btn-order" class="mb-2 mb-md-0" name="" value="Mua ngay"
+                                        ></li>
+                                    </form>
+                                    <form action="{{ route('cart-items.create') }}" method="post">
+                                        {!! csrf_field() !!}
+                                        <input class="productdetails-quantity" name="quantity" value="1" type="number" min=1 hidden>
+                                        <input name="product_id" value="{!! $product->id !!}" hidden>
+                                        <input name="product_price" value="{!! $product->price !!}" hidden>
+                                        <li><input id="product-{!! $product->id !!}-submit" value="Thêm vào giỏ hàng" class="btn-next" type="submit" name=""
+                                        ></li>
+                                    </form>
+                                    @endif
                                 </ul>
                                 <p><i class="fa fa-phone" aria-hidden="true"></i> Hottline:+84 868 21 08 62</p>
                             </div>
@@ -130,7 +132,7 @@
                                         </div>
                                     </a>
                                 </div>
-                              @endforeach
+                                @endforeach
                             </div>
                         </div>
                     </div>

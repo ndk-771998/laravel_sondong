@@ -4,7 +4,6 @@ namespace App\Supports\Traits;
 
 use App\Entities\Post;
 use Illuminate\Support\Str;
-use VCComponent\Laravel\MediaManager\Entities\Media;
 
 trait PostSeederTrait {
     protected function seederPosts()

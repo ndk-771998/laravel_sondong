@@ -30,6 +30,6 @@ class CreateDraftablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('draftable');
+        Schema::dropIfExists('draftables');
     }
 }

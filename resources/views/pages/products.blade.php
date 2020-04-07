@@ -20,8 +20,8 @@
                         <div class="product"  id="product">
                             <div class="row">
                                 <div class="col-4"> <h5>SẢN PHẨM</h5></div>
-                                <div class="col-8 d-flex justify-content-end">
-                                    <select id="orderProductsSelect" class="col-8" name="order_by" >
+                                <div class="col-8  d-flex justify-content-end">
+                                    <select id="orderProductsSelect" class="col-4" name="order_by" >
                                         <option>Sắp xếp</option>
                                         <option value="created_at|desc" {{ $activeFilter === 'created_at|desc' ? 'selected' : '' }}>Mới nhất</option>
                                         <option value="order|desc" {{ $activeFilter === 'order|desc' ? 'selected' : '' }}>Hot nhất</option>

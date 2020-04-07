@@ -20,12 +20,12 @@ trait HasCommentTrait
 
     public function getAllComments()
     {
-        return  $this->comments()->Orderby('id','desc')->get();
+        return  $this->comments()->orderBy('id','desc')->get();
     }
 
     public function getLatestComment($page)
     {
-        return  $this->comments()->Orderby('id','desc')->Paginate($page);
+        return  $this->comments()->orderBy('id','desc')->paginate($page);
     }
 
     public function datetimes()
