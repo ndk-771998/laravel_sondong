@@ -4,8 +4,8 @@
     <div class="container">
         <ul class="custom-breadcrumb m-0">
             <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Giới thiệu</li>
-         
+            <li class="breadcrumb-item active text-capitalize">{!! $post->title !!}</li>
+
         </ul>
     </div>
 </nav>
@@ -18,20 +18,14 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="about-head">Giới thiệu</div>
+                    <div class="about-head text-capitalize">{!! $post->title !!}</div>
                     <div class="line"></div>
 
-                    <div class="about-title">
-                        LỜI GIỚI THIỆU
+                    <div class="about-title text-uppercase">
+                        {!! $post->title !!}
                     </div>
-                    <div  class="about-description">
-                        Thời trang là nền tảng của cuộc sống, trong mỗi chúng ta ai ai cũng đều ñịnh hình cho mình moät phong cách thời trang thể hiện cá tính và phù hợp với môi trường làm việc, tự tin trong cuộc sống.<br><br>
-
-                        Shop thời trang là shop tiên phong trong lĩnh vực thời trang, cung cấp sỉ và lẻ hàng xách tay như quần áo, túi xách, giày dép, thắt lưng, và một số trang sức phụ kiện khác…<br><br>
-
-                        Phân phối rộng rãi trên thị trường, giới thiệu đến khách hàng những mẫu mã mới nhaát phù hợp với xu hướng thời trang hiện nay.Shop thời trang thường xuyên tổ chức chương trình event và khuyến mãi lớn dành cho những khách hàng quen thuộc diễn ra hàng năm để tỏ lòng tri ân mà khách hàng đã dành cho shop.<br><br>
-
-                        Tuy xuất hiện trên thị trường chỉ hơn một năm qua nhưng Shop thời trang chiếm được cảm tình của đông đảo khách hàng và cung cách phục vụ và giá cả phải chăng,với phương châm “đáp ứng mọi nhu cầu khách hàng cần”.<br><br>
+                    <div  class="about-description text-capitalize">
+                        {!! $post->content !!}
                     </div>
 
                 </div>

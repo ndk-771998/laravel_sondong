@@ -15,7 +15,7 @@ class Post extends BasePost
         return [
             'place',
             'exhibition',
-            'news',
+            'pages',
         ];
     }
 

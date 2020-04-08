@@ -78,4 +78,9 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
             'comments'     => $comments,
         ];
     }
+
+    public function viewPages()
+    {
+        return 'pages.about';
+    }
 }

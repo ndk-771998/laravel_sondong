@@ -63,4 +63,18 @@ trait PostSeederTrait {
                 $image->postMetas()->createMany($meta);
             });
     }
+
+    protected function seederAbout()
+    {
+        return factory(Post::class)->states('pages')->create([
+            'title' => 'about',
+        ]);
+    }
+
+    protected function seederService()
+    {
+        return factory(Post::class)->states('pages')->create([
+            'title' => 'service',
+        ]);
+    }
 }
