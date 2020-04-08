@@ -16,7 +16,7 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="news-head" id="news">{!! $title !!}</div>
+                    <div class="news-head text-uppercase" id="news">{!! $title !!}</div>
                     <div class="line"></div>
                     <div class="d-flex flex-column news ">
                         @foreach($result as $item)

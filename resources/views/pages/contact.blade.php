@@ -8,7 +8,6 @@
         </ul>
     </div>
 </nav>
-
 <section class="contact">
     <div class="container">
         <div class="main">
@@ -17,40 +16,34 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
+                    @include('include.errors')
+                    @include('include.messages')
                     <div class="contact-head">Liên hệ</div>
                     <div class="line"></div>
-
                     <div class="contact-body">
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <form action="">
+                                <form action="{!! url('contact') !!}" method="POST">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="">Họ tên :</label>
-                                        <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="text" required name="full_name" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Địa chỉ :</label>
-                                        <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="text" required name="address" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Số điện thoại :</label>
-                                        <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Số điện thoại cố định :</label>
-                                        <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Fax :</label>
-                                        <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="text" required name="phone_number" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Email :</label>
-                                        <input type="email" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="email" required name="email" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                     </div>
                                     <div class="form-group">
                                         <label for="my-textarea">Nội dung :</label>
-                                        <textarea id="my-textarea" class="form-control form-control-sm" name="" rows="3"></textarea>
+                                        <textarea id="my-textarea" required class="form-control form-control-sm" name="note" rows="3"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
@@ -59,11 +52,9 @@
                                         <img class="img-fluid capcha-img" src="assets/images/capcha.png" alt="">
                                         <i class="ml-4 fa fa-refresh"></i>
                                     </div>
-                                   
-
                                     <div class="btn-login">
-                                        <button class="btn  btn-cancel">Hủy</button>
-                                        <button class="btn  btn-submit">Gửi</button>
+                                        <a class="btn  btn-cancel" href="/">Hủy</a>
+                                        <button type="submit" class="btn  btn-submit">Gửi</button>
                                     </div>
                                 </form>
                             </div>
@@ -77,11 +68,9 @@
                     @include('layout.nav-right')
                 </div>
             </div>
-
-
             <div class="contact-info text-center">
                 <h5>
-                    Website Sản phẩm bán hàng
+                Website Sản phẩm bán hàng
                 </h5>
                 <div>
                     <p>Địa chỉ : Tầng 2, Số 42, Ngõ 178, Thái Hà, Trung Liệt, Đống Đa, Hà Nội</p>
@@ -90,9 +79,7 @@
                     <p>Hãy liên hệ với chúng tôi để có một sản phẩm tốt nhất cho bạn</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-
 @endsection

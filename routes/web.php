@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,35 +10,35 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
+
 
 Route::get('/', 'Web\HomeController');
 
-Route::get('search','Web\SearchController')->name('search');
+Route::get('search', 'Web\SearchController')->name('search');
 
-Route::get('/about', function(){
-    return view('pages.about');
-});
+Route::get('/contact', 'Web\ContactController@index');
+Route::post('/contact', 'Web\ContactController@store');
 
-Route::get('/contact', function(){
-    return view('pages.contact');
-});
-Route::get('/product/{slug}','Web\ProductDetailController@show');
+Route::get('/product/{slug}', 'Web\ProductDetailController@show');
 
-Route::get('/forgot-password', function(){
+Route::get('/forgot-password', function () {
     return view('pages.forgot-password');
 });
-Route::get('/login', function(){
+Route::post('forgot-password', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.forgot');
+
+Route::get('reset-password', function () {
+    return view('pages.reset-password');
+})->name('password.reset');
+Route::post('reset-password', 'Auth\ResetPasswordController@reset')->name('password.reset.post');
+
+Route::get('/login', function () {
     return view('pages.login');
 });
+Route::post('login', 'Auth\LoginController@login')->name('login');
 
-Route::get('/product','Web\ProductListController@index');
+Route::get('/product', 'Web\ProductListController@index');
 
-Route::get('/registration', function(){
+Route::get('/registration', function () {
     return view('pages.registration');
 });
-
-Route::get('/service', function(){
-    return view('pages.service');
-});
-

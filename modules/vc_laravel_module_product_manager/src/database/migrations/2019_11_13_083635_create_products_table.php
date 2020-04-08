@@ -32,6 +32,7 @@ class CreateProductsTable extends Migration
             $table->dateTime('published_date')->useCurrent();
             $table->string('sku')->unique()->nullable();
             $table->timestamps();
+            $table->foreign('author_id')->references('id')->on('users');
         });
     }
 

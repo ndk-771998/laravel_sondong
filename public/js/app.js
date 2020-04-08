@@ -40139,6 +40139,12 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     if (active == link) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-' + id).addClass("active");
     }
+
+    if (link == '/pages') {
+      if (active == url) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-' + id).addClass("active");
+      }
+    }
   });
 });
 

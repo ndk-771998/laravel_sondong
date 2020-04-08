@@ -1,4 +1,4 @@
-    {
+{
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
@@ -27,16 +27,16 @@
         "vicoders/menu_manager": "@dev",
         "vicoders/order": "@dev",
         "vicoders/package-generator": "@dev",
+        "vicoders/payment-online": "@dev",
         "vicoders/postmanager": "@dev",
         "vicoders/product_management": "@dev",
         "vicoders/scriptmanager": "@dev",
         "vicoders/seo": "@dev",
+        "vicoders/sitemap": "@dev",
         "vicoders/tagmanager": "@dev",
         "vicoders/usermanager": "@dev",
         "vicoders/utility": "@dev",
-        "vicoders/view_model": "@dev",
-        "vicoders/sitemap":"@dev",
-        "vicoders/payment-online":"@dev"
+        "vicoders/view_model": "@dev"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

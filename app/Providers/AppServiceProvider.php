@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\View;
 use App\Http\View\Composers\MenuComposer;
 use App\Http\View\Composers\SlideComposer;
 use App\Http\View\Composers\NewsComposer;
+use App\Http\View\Composers\AuthUserComposer;
 use App\Http\View\Composers\CartComposer;
 use App\Http\Controllers\Web\PostListController;
 use App\Http\Controllers\Web\PostDetailController;
@@ -52,5 +53,6 @@ class AppServiceProvider extends ServiceProvider
        View::composer('*', SlideComposer::class);
        View::composer('*', NewsComposer::class);
        View::composer('*', CartComposer::class);
+       View::composer('*', AuthUserComposer::class);
     }
 }

@@ -7,10 +7,16 @@ $(document).ready(function() {
     Array.from(menuItems).forEach(menu => {
         var active = menu.dataset.name;
         var id     = menu.dataset.id;
-        var link   = '/' + (url.split("/").slice(1,2).toString());
+        var link   = '/' + (url.split("/").slice(1, 2).toString());
 
         if (active == link) {
             $('#menu-' + id).addClass("active");
+        }
+
+        if (link == '/pages') {
+            if (active == url) {
+                $('#menu-' + id).addClass("active");
+            }
         }
     });
 });

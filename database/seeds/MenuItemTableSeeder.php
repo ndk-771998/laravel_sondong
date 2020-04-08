@@ -12,7 +12,7 @@ class MenuItemTableSeeder extends Seeder {
     public function run() {
         ItemMenu::insert([
             ['menu_id' => '1', 'label' => 'TRANG CHỦ', 'link' => '/', 'type' => 'menu-header', 'parent_id' => 0],
-            ['menu_id' => '1', 'label' => 'GIỚI THIỆU', 'link' => '/about', 'type' => 'menu-header', 'parent_id' => 0],
+            ['menu_id' => '1', 'label' => 'GIỚI THIỆU', 'link' => '/pages/about', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '1', 'label' => 'SẢN PHẨM', 'link' => '/product', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '1', 'label' => 'dịch vụ', 'link' => '/pages/service', 'type' => 'menu-header', 'parent_id' => 0],
             ['menu_id' => '1', 'label' => 'tin tức', 'link' => '/posts', 'type' => 'menu-header', 'parent_id' => 0],
