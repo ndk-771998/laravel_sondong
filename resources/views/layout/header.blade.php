@@ -10,11 +10,10 @@
                         <div class="col-4 col-md-2">@include('order::cartIcon')</div>
                         <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
                             @if (Auth::check())
-                            <a href="login"><img src="/assets/images/logo/logic.png" class="icon-header"></a>
+                            <a href="account"><img src="/assets/images/logo/logic.png" class="icon-header"></a>
                             @else
                             <div class="login">
                                 <a href="login"><img src="/assets/images/logo/loginn.png" class="icon-header"></a>
-                                {{-- <a href="/login">Đăng nhập</a> <span> --}}
                             </div>
                             @endif
                         </div>

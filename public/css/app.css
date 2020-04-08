@@ -14557,6 +14557,40 @@ a.text-dark:hover, a.text-dark:focus {
   border-top: 1px solid #d4d9dd;
 }
 
+.account-table {
+  background-color: #fbfbfb;
+  padding: 21px 0 21px 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .account-table {
+    padding: 21px 0px;
+  }
+}
+
+.account-table .account-type {
+  font-size: 14px;
+  line-height: 1.36;
+  color: #707070;
+  margin: 0 25px;
+  min-width: 90px;
+}
+
+.account-table .account-info {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.36;
+  text-align: left;
+  color: #242424;
+  margin: 0 25px;
+}
+
+.account-table .line {
+  border-bottom: 1px solid #d8d8d8;
+  margin: 10px 0 20px 0;
+  width: 90%;
+}
+
 body {
   color: #333;
   background-color: #fff;

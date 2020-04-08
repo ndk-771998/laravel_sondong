@@ -17,7 +17,7 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="new-detail-head">{!! $title !!}</div>
+                    <div class="new-detail-head text-uppercase">{!! $title !!}</div>
                     <div class="line"></div>
                     <div class="new-detail-title">
                         {!! $post->title !!}

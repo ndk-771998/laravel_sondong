@@ -20,7 +20,7 @@
                     @include('include.errors')
                     @include('include.messages')
                     <div class="product-detail">
-                        <h3>Chi tiết sản phẩm</h3>
+                        <h3 class="text-uppercase">Chi tiết sản phẩm</h3>
                         <div class="p-flex my-24">
                             <div class="left">
                                 <div class="product-thumbnail">

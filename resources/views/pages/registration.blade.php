@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="registration">
-                        <h3>Đăng ký</h3>
+                        <h3 class=" text-uppercase">Đăng ký</h3>
                         <div class=" row justify-content-center my-24">
                             <form action="" class="col-12 col-md-9">
                                 <div class="form-group">

@@ -32,6 +32,10 @@ Route::get('reset-password', function () {
 })->name('password.reset');
 Route::post('reset-password', 'Auth\ResetPasswordController@reset')->name('password.reset.post');
 
+Route::get('account', function(){
+    return view('pages.account');
+});
+
 Route::get('/login', function () {
     return view('pages.login');
 });

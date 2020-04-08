@@ -12,7 +12,7 @@
     <div class="container">
         <div class="search">
             <div class="search-form">
-                <label>Tìm kiếm</label>
+                <label class="text-uppercase">Tìm kiếm</label>
                 <div class="col-12 col-md-6 form">
                     <form action="{{ route('search') }}">
                         <div class="input-group row">

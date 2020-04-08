@@ -18,10 +18,10 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="about-head text-capitalize">{!! $post->title !!}</div>
+                    <div class="about-head text-uppercase">{!! $post->title !!}</div>
                     <div class="line"></div>
 
-                    <div class="about-title text-uppercase">
+                    <div class="about-title text-capitalize">
                         {!! $post->title !!}
                     </div>
                     <div  class="about-description text-capitalize">

@@ -18,7 +18,7 @@
                 <div class="col-12 col-12 col-md-6 col-lg-8 col-xl-9">
                     @include('include.messages')
                     @include('include.errors')
-                    <div class="text-uppercase forgotpassword-title">Tạo mật khẩu mới</div>
+                    <div class="text-uppercase forgotpassword-title text-uppercase">Tạo mật khẩu mới</div>
                     <div class="line"></div>
                     <form class=" col-12 col-lg-7" action="{{ route('password.reset.post') }}" method="POST">
                         {{ csrf_field() }}

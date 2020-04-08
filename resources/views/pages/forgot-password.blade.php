@@ -18,7 +18,7 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="forgot-password-head">Quên mật khẩu</div>
+                    <div class="forgot-password-head text-uppercase">Quên mật khẩu</div>
                     <div class="line"></div>
                     @include('include.messages')
                     @include('include.errors')

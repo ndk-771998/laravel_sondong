@@ -18,7 +18,7 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="login-head">Đăng nhập</div>
+                    <div class="login-head text-uppercase">Đăng nhập</div>
                     <div class="line"></div>
                     @include('include.errors')
                     <div class="login-form">

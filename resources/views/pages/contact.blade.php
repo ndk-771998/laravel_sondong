@@ -18,7 +18,7 @@
                 <div class="col-12 col-md-6">
                     @include('include.errors')
                     @include('include.messages')
-                    <div class="contact-head">Liên hệ</div>
+                    <div class="contact-head text-uppercase">Liên hệ</div>
                     <div class="line"></div>
                     <div class="contact-body">
                         <div class="row">
