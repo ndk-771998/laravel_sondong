@@ -6,6 +6,7 @@ import './order/cart';
 import './order/order-info';
 import './menu';
 import './product-list';
+import './product-detail';
 
 console.log("My Kit is ready :)");
 

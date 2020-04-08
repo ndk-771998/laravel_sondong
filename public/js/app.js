@@ -40085,7 +40085,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _order_order_info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./order/order-info */ "./resources/js/order/order-info.js");
 /* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./menu */ "./resources/js/menu.js");
 /* harmony import */ var _product_list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./product-list */ "./resources/js/product-list.js");
+/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./product-detail */ "./resources/js/product-detail.js");
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
+
 
 
 
@@ -40172,8 +40174,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         },
         dataType: 'json',
         success: function success(data) {
-          var amount = new Intl.NumberFormat('en-IN').format(data.result.amount);
-          var total = new Intl.NumberFormat('en-IN').format(data.cart.total);
+          var amount = new Intl.NumberFormat().format(data.result.amount);
+          var total = new Intl.NumberFormat().format(data.cart.total);
           jquery__WEBPACK_IMPORTED_MODULE_0___default()('#alert').html(data.error);
           jquery__WEBPACK_IMPORTED_MODULE_0___default()('#amount-' + id).html(amount);
           jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total').html(total);
@@ -40262,6 +40264,34 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".submit").click(function () {
     return false;
   });
+});
+
+/***/ }),
+
+/***/ "./resources/js/product-detail.js":
+/*!****************************************!*\
+  !*** ./resources/js/product-detail.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  var quantity = document.getElementById('quantity_product');
+
+  if (quantity) {
+    quantity.addEventListener('change', function () {
+      var number = quantity.value;
+      var quantity_send = document.getElementsByClassName('productdetails-quantity');
+      Array.from(quantity_send).forEach(function (input) {
+        input.value = number;
+      });
+    });
+  }
 });
 
 /***/ }),

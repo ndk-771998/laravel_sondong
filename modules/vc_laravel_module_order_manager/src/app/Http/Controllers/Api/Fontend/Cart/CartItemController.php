@@ -33,7 +33,7 @@ class CartItemController extends ApiController
             'id'       => $id,
             'quantity' => $request->input('quantity'),
         ];
-        dd($data);
+
         $cartItem = CartItem::findOrFail($id);
         $cart     = Cart::where('id', $cartItem->cart_id)->first();
         $product  = Product::where('id', $cartItem->product_id)->first();
@@ -44,9 +44,6 @@ class CartItemController extends ApiController
             $error = 'Số lượng của sản phẩm '. $product->name .' đã đạt đến giới hạn ! Bạn vẫn có thể đặt hàng nhưng với số lượng tối đa của sản phẩn này là : '. $product->quantity . ' . Xin lỗi vì sự bất tiện này !';
             return response()->json(['result' => $cartItem, 'cart' => $cart , 'error' => $error]);
         }
-        // if($request->input('quantity') == 0){
-        //     $cartItem->delete();
-        // }
 
         $cartItemAfter = $this->action->execute($data);
         $cartAfter     = Cart::where('id', $cartItem->cart_id)->first();

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Entities\Product;
 use Illuminate\Http\Request;
 use VCComponent\Laravel\Product\Contracts\ViewProductDetailControllerInterface;
-use VCComponent\Laravel\Product\Entities\Product;
 use VCComponent\Laravel\Product\Http\Controllers\Web\ProductDetailController as BaseProductDetailController;
 
 class ProductDetailController extends BaseProductDetailController implements ViewProductDetailControllerInterface
@@ -22,10 +22,12 @@ class ProductDetailController extends BaseProductDetailController implements Vie
             ->latest()
             ->limit(3)
             ->get();
+        $thumbnailProducts = $product->productMetas()->get();
 
         return [
-            'comments'        => $comments,
-            'relatedProducts' => $relatedProducts,
+            'comments'          => $comments,
+            'relatedProducts'   => $relatedProducts,
+            'thumbnailProducts' => $thumbnailProducts,
         ];
     }
 }

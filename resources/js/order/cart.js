@@ -8,9 +8,9 @@ $(document).ready(function() {
     Array.from(quantityChange).forEach(input => {
         input.addEventListener('change', function() {
 
-            var id = input.dataset.id;
+            var id       = input.dataset.id;
             var quantity = input.value;
-            var url = "api/cart_item/" + id + "/quantity";
+            var url      = "api/cart_item/" + id + "/quantity";
 
             $.ajax({
                 type: 'PUT',
@@ -18,8 +18,9 @@ $(document).ready(function() {
                 data: { "quantity": quantity },
                 dataType: 'json',
                 success: function(data) {
-                    var amount = new Intl.NumberFormat('en-IN').format(data.result.amount);
-                    var total  = new Intl.NumberFormat('en-IN').format(data.cart.total);
+                    var amount = new Intl.NumberFormat().format(data.result.amount);
+                    var total  = new Intl.NumberFormat().format(data.cart.total);
+
                     $('#alert').html(data.error);
                     $('#amount-' + id).html(amount);
                     $('#total').html(total);

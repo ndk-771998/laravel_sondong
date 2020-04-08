@@ -27,29 +27,21 @@
                                     <div class="item">
                                         <img src="{!! $product->thumbnail !!}" alt="" />
                                     </div>
+                                    @foreach($thumbnailProducts as $thumbnail)
                                     <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/7210985b-19b4-419a-94c2-e9a4ece925c9.png" alt="" />
+                                        <img src="{!! $thumbnail->value !!}" alt="" />
                                     </div>
-                                    <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/957b0aae-7573-4939-a32c-6dfd29204d4b.png" alt="" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/dcb6d6c9-d51d-4770-99d2-8beed3fc4973.png" alt="" />
-                                    </div>
+                                    @endforeach
                                 </div>
                                 <div class="product-thumbnail-child">
                                     <div class="item">
                                         <img src="{!! $product->thumbnail !!}" alt="" />
                                     </div>
+                                    @foreach($thumbnailProducts as $thumbnail)
                                     <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/7210985b-19b4-419a-94c2-e9a4ece925c9.png" alt="" />
+                                        <img src="{!! $thumbnail->value !!}" alt="" />
                                     </div>
-                                    <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/957b0aae-7573-4939-a32c-6dfd29204d4b.png" alt="" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/dcb6d6c9-d51d-4770-99d2-8beed3fc4973.png" alt="" />
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="right">
@@ -66,15 +58,14 @@
                                     </li>
                                     <li class="original_price">Giá gốc: {!! number_format($product->original_price) !!} đ</li>
                                     <li>Giá bán: <span class="cost">{!! number_format($product->price) !!} đ</span>/ sản phẩm</li>
-                                    {{-- <li>Số lượng: <input type="number" name="" id=""></li> --}}
+                                    <li>Số lượng: <input type="number" id="quantity_product" min="1" max="30" value="1"></li>
                                     <li>Tổng tiền: <span class="total ">{!! number_format($product->price) !!} đ</span></li>
                                 </ul>
                                 <ul class="buy d-flex flex-wrap align-items-center">
-                                    {{ $product->quantity }}
                                     @if($isAvailable)
                                     <form action="{{ route('cart-items.create') }}" method="post">
                                         {!! csrf_field() !!}
-                                        <input class="productdetails-quantity" name="quantity" value="1" type="number" min=1 hidden>
+                                        <input class="productdetails-quantity" name="quantity" value="1" type="number" hidden min=1 >
                                         <input name="product_id" value="{!! $product->id !!}" hidden>
                                         <input name="product_price" value="{!! $product->price !!}" hidden>
                                         <input name="redirect" value="cart" hidden>
@@ -83,7 +74,7 @@
                                     </form>
                                     <form action="{{ route('cart-items.create') }}" method="post">
                                         {!! csrf_field() !!}
-                                        <input class="productdetails-quantity" name="quantity" value="1" type="number" min=1 hidden>
+                                        <input class="productdetails-quantity" name="quantity" value="1" type="number" min=1 hidden >
                                         <input name="product_id" value="{!! $product->id !!}" hidden>
                                         <input name="product_price" value="{!! $product->price !!}" hidden>
                                         <li><input id="product-{!! $product->id !!}-submit" value="Thêm vào giỏ hàng" class="btn-next" type="submit" name=""
