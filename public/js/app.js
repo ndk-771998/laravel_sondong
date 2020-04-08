@@ -40282,11 +40282,14 @@ __webpack_require__.r(__webpack_exports__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   var quantity = document.getElementById('quantity_product');
+  var total = document.getElementById('total');
 
   if (quantity) {
     quantity.addEventListener('change', function () {
       var number = quantity.value;
       var quantity_send = document.getElementsByClassName('productdetails-quantity');
+      var price = document.getElementById('product_price');
+      total.innerHTML = new Intl.NumberFormat().format(price.value * number);
       Array.from(quantity_send).forEach(function (input) {
         input.value = number;
       });

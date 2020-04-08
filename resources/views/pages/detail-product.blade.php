@@ -59,7 +59,7 @@
                                     <li class="original_price">Giá gốc: {!! number_format($product->original_price) !!} đ</li>
                                     <li>Giá bán: <span class="cost">{!! number_format($product->price) !!} đ</span>/ sản phẩm</li>
                                     <li>Số lượng: <input type="number" id="quantity_product" min="1" max="30" value="1"></li>
-                                    <li>Tổng tiền: <span class="total ">{!! number_format($product->price) !!} đ</span></li>
+                                    <li>Tổng tiền: <span class="total " id="total">{!! number_format($product->price) !!}</span><span class="text-dark"> đ</span></li>
                                 </ul>
                                 <ul class="buy d-flex flex-wrap align-items-center">
                                     @if($isAvailable)
@@ -67,7 +67,7 @@
                                         {!! csrf_field() !!}
                                         <input class="productdetails-quantity" name="quantity" value="1" type="number" hidden min=1 >
                                         <input name="product_id" value="{!! $product->id !!}" hidden>
-                                        <input name="product_price" value="{!! $product->price !!}" hidden>
+                                        <input name="product_price" id="product_price" value="{!! $product->price !!}" hidden>
                                         <input name="redirect" value="cart" hidden>
                                         <li><input id="purchase-product-{!! $product->id !!}-submit" type="submit" class="btn-order" class="mb-2 mb-md-0" name="" value="Mua ngay"
                                         ></li>
