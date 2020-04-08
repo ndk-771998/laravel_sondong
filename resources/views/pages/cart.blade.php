@@ -36,6 +36,7 @@
                                             <th scope="col" class="text-uppercase">Số lượng</th>
                                             <th scope="col" class="text-uppercase" width="18%">Đơn giá </th>
                                             <th scope="col" class="text-uppercase" width="20%">Thành tiền</th>
+                                             <th  class="text-uppercase" >Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -43,9 +44,9 @@
                                         <tr>
                                             <th scope="row">{!! $key + 1 !!}</th>
                                             <td>
-                                                <div class="row ml-0 mr-0">
-                                                    <span class="col-12 col-md-4 d-flex align-items-center"><img src="{!! $cartItem->product->thumbnail !!}" alt=""></span>
-                                                    <div class="col-12 col-md-8 text-left">{!! $cartItem->product->name !!}</div>
+                                                <div class="d-flex ml-0 mr-0">
+                                                    <span class="d-flex align-items-center mr-1"><img src="{!! $cartItem->product->thumbnail !!}" alt=""></span>
+                                                    <div class="text-left">{!! $cartItem->product->name !!}</div>
                                                 </div>
                                             </td>
                                             <td class="table-form-input">
@@ -53,6 +54,9 @@
                                             </td>
                                             <td>{!! number_format($cartItem->price) !!} đ</td>
                                             <td><span id="amount-{!! $cartItem->id !!}" class="amount" data-id={!! $cartItem->id !!}>{!! number_format($cartItem->amount) !!}</span> đ</td>
+                                            <td>
+                                                <button type="button" class="btn" data-toggle="modal" data-target="#confirmModal-{!! $cartItem->id !!}"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            </td>
                                         </tr>
                                         <div id="confirmModal-{!! $cartItem->id !!}" class="modal fade" role="dialog">
                                             <div class="modal-dialog">
