@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 100);
             $table->string('first_name', 100)->nullable();
             $table->string('last_name', 100)->nullable();
-            $table->datetime('birth')->nullable();
+            $table->date('birth')->nullable();
             $table->integer('gender')->nullable();
             $table->string('password', 100)->nullable();
             $table->dateTime('last_login')->nullable();

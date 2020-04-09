@@ -40066,6 +40066,35 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/account.js":
+/*!*********************************!*\
+  !*** ./resources/js/account.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  var button = document.getElementById('show_edit_form');
+  var edit_form = document.getElementById('form_edit_info');
+  var info_form = document.getElementById('form_show_info');
+
+  if (button) {
+    edit_form.style.display = "none";
+
+    button.onclick = function () {
+      edit_form.style.display = "block";
+      info_form.style.display = "none";
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -40086,7 +40115,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./menu */ "./resources/js/menu.js");
 /* harmony import */ var _product_list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./product-list */ "./resources/js/product-list.js");
 /* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./product-detail */ "./resources/js/product-detail.js");
+/* harmony import */ var _account__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./account */ "./resources/js/account.js");
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
+
 
 
 

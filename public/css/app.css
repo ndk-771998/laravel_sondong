@@ -14573,6 +14573,15 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 10px 0;
 }
 
+.account-table .option {
+  padding: 0px 5px;
+  border-radius: 6px;
+  border: solid 0.5px #d8d8d8;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  height: 30px;
+}
+
 .account-table .form_acc {
   border-radius: 6px;
   border: solid 0.5px #d8d8d8;
@@ -14591,8 +14600,13 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 5px 14px;
 }
 
-.account-table input[type=radio] {
-  background: #683e7a;
+.account-table .date {
+  margin-right: 24px;
+}
+
+.account-table .date input {
+  outline: none;
+  padding: 5px 14px;
 }
 
 .account-table .account-type {
@@ -14618,11 +14632,15 @@ a.text-dark:hover, a.text-dark:focus {
   width: 100%;
 }
 
+.account-table .btn-next-comeback {
+  margin-top: 30px;
+}
+
 .account-table .btn-next-comeback .btn-next {
   background-color: #ffffff;
   color: #707070;
   border: solid 1px #707070;
-  padding: 9px 10px;
+  padding: 10px 25px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
@@ -14633,7 +14651,7 @@ a.text-dark:hover, a.text-dark:focus {
   background: #683e7a;
   color: white;
   border: solid 1px #fff;
-  padding: 9px 10px;
+  padding: 10px 42px;
   border-radius: 6px;
   font-weight: bold;
 }
@@ -14642,6 +14660,73 @@ a.text-dark:hover, a.text-dark:focus {
   .account-table .btn-next-comeback {
     padding-bottom: 50px;
   }
+}
+
+.account-table .checkbx {
+  /* On mouse-over*/
+  /* When the checkbox is checked */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+
+.account-table .checkbx .cbx {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+}
+
+.account-table .checkbx .cbx p {
+  color: #788995;
+  font-size: 16px;
+  margin-top: 11px;
+}
+
+.account-table .checkbx .cbx .cbx-width {
+  width: 100%;
+}
+
+.account-table .checkbx .cbx input {
+  opacity: 0;
+}
+
+.account-table .checkbx .cbx .checkmark {
+  position: absolute;
+  left: 0;
+  margin-top: 4px;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 1px solid #d6cece;
+  border-radius: 50%;
+}
+
+.account-table .checkbx .cbx .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.account-table .checkbx .cbx:hover input ~ .checkmark {
+  background-color: #d6cece;
+}
+
+.account-table .checkbx .cbx input:checked ~ .checkmark {
+  background-color: #fff;
+  border: 1px solid #683e7a;
+}
+
+.account-table .checkbx .cbx input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.account-table .checkbx .cbx .checkmark:after {
+  width: 8px;
+  margin: 4px;
+  height: 8px;
+  border-radius: 10px;
+  background: #683e7a;
 }
 
 body {

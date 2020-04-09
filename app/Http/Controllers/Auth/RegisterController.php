@@ -76,5 +76,4 @@ class RegisterController extends Controller
             'verify_token' => str::random(32),
         ]);
     }
-
 }

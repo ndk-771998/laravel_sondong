@@ -11,6 +11,15 @@
         margin: 10px 0;
     }
 
+    .option{
+        padding: 0px 5px;
+        border-radius: 6px;
+        border: solid 0.5px #d8d8d8;
+        background-color: #ffffff;
+        margin-bottom: 10px;
+        height: 30px;
+    }
+
     .form_acc {
         border-radius: 6px;
         border: solid 0.5px #d8d8d8;
@@ -29,8 +38,14 @@
         }
 
     }
-    input[type="radio"]{
-        background: #683e7a;
+
+    .date{
+        margin-right: 24px;
+        input{
+              outline: none;
+            padding: 5px 14px;
+        }
+
     }
 
     .account-type {
@@ -57,11 +72,12 @@
     }
 
     .btn-next-comeback {
+        margin-top: 30px;
         .btn-next {
             background-color: #ffffff;
             color: #707070;
             border: solid 1px #707070;
-            padding: 9px 10px;
+            padding: 10px 25px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
@@ -72,13 +88,81 @@
             background: #683e7a;
             color: white;
             border: solid 1px #fff;
-            padding: 9px 10px;
+            padding: 10px 42px;
             border-radius: 6px;
             font-weight: bold;
         }
 
         @media only screen and(max-width:991px) {
             padding-bottom: 50px;
+        }
+
+    }
+
+      .checkbx {
+        .cbx {
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+
+            p {
+                color: #788995;
+                font-size: 16px;
+                margin-top: 11px;
+            }
+
+            .cbx-width {
+                width: 100%;
+            }
+
+            input {
+                opacity: 0;
+            }
+
+            .checkmark {
+                position: absolute;
+                left: 0;
+                margin-top: 4px;
+                height: 18px;
+                width: 18px;
+                background-color: #fff;
+                border: 1px solid #d6cece;
+                border-radius: 50%;
+            }
+
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+        }
+
+        /* On mouse-over*/
+        .cbx:hover input ~ .checkmark {
+            background-color: #d6cece;
+        }
+
+        /* When the checkbox is checked */
+        .cbx input:checked ~ .checkmark {
+            background-color: #fff;
+            border: 1px solid #683e7a;
+        }
+
+        /* Show the checkmark when checked */
+        .cbx input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .cbx .checkmark:after {
+            width: 8px;
+            margin: 4px;
+            height: 8px;
+            border-radius: 10px;
+            background: #683e7a;
         }
 
     }

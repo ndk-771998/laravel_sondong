@@ -46,3 +46,4 @@ Route::get('/registration', function () {
     return view('pages.registration');
 });
 Route::post('register', 'Auth\RegisterController@register')->name('register');
+Route::post('info-edit', 'Auth\InformationController')->name('info.edit');
