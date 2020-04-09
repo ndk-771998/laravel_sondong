@@ -14559,13 +14559,40 @@ a.text-dark:hover, a.text-dark:focus {
 
 .account-table {
   background-color: #fbfbfb;
-  padding: 21px 0 21px 50px;
+  padding: 30px 40px 56px 40px;
 }
 
 @media only screen and (max-width: 500px) {
   .account-table {
     padding: 21px 0px;
   }
+}
+
+.account-table .label {
+  color: #707070;
+  margin: 10px 0;
+}
+
+.account-table .form_acc {
+  border-radius: 6px;
+  border: solid 0.5px #d8d8d8;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.account-table .form_name {
+  width: 47%;
+}
+
+.account-table .form_name input {
+  width: 100%;
+  outline: none;
+  padding: 5px 14px;
+}
+
+.account-table input[type=radio] {
+  background: #683e7a;
 }
 
 .account-table .account-type {
@@ -14588,7 +14615,7 @@ a.text-dark:hover, a.text-dark:focus {
 .account-table .line {
   border-bottom: 1px solid #d8d8d8;
   margin: 10px 0 20px 0;
-  width: 90%;
+  width: 100%;
 }
 
 .account-table .btn-next-comeback .btn-next {

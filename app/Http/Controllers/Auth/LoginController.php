@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use VCComponent\Laravel\User\Entities\User;
+use App\Entities\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;

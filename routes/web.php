@@ -47,3 +47,4 @@ Route::get('/product', 'Web\ProductListController@index');
 Route::get('/registration', function () {
     return view('pages.registration');
 });
+Route::post('register', 'Auth\RegisterController@register')->name('register');
