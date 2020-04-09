@@ -39,19 +39,19 @@
                                     <input type="text" name="username" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Mật khẩu </label>
+                                    <label for="">Mật khẩu (<b class="text-danger">*</b>)</label>
                                     <input type="password" name="password" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Xác nhận mật khẩu </label>
+                                    <label for="">Xác nhận mật khẩu (<b class="text-danger">*</b>)</label>
                                     <input type="password" name="password_confirmation" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Email</label>
+                                    <label for="">Email (<b class="text-danger">*</b>)</label>
                                     <input type="email" name="email" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Xác nhận email</label>
+                                    <label for="">Xác nhận email (<b class="text-danger">*</b>)</label>
                                     <input type="email" name="email_confirmation" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
@@ -59,7 +59,7 @@
                                     <input type="text" name="address" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Số điện thoại</label>
+                                    <label for="">Số điện thoại (<b class="text-danger">*</b>)</label>
                                     <input type="number" name="phone_number" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="btn-login d-flex justify-content-center">
