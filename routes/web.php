@@ -40,6 +40,7 @@ Route::get('/login', function () {
     return view('pages.login');
 });
 Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/product', 'Web\ProductListController@index');
 

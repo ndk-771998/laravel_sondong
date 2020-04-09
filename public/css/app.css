@@ -14591,6 +14591,32 @@ a.text-dark:hover, a.text-dark:focus {
   width: 90%;
 }
 
+.account-table .btn-next-comeback .btn-next {
+  background-color: #ffffff;
+  color: #707070;
+  border: solid 1px #707070;
+  padding: 9px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.account-table .btn-next-comeback .btn-order {
+  text-decoration: none;
+  background: #683e7a;
+  color: white;
+  border: solid 1px #fff;
+  padding: 9px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 991px) {
+  .account-table .btn-next-comeback {
+    padding-bottom: 50px;
+  }
+}
+
 body {
   color: #333;
   background-color: #fff;

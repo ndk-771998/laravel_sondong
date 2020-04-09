@@ -34,25 +34,25 @@
                                     <div class="d-flex justify-content-between">
                                         <div class="form-info">
                                             <p class="col-md-12">Họ</p>
-                                            <input type="text" name="first_name" value="{!! $authUser->first_name !!}">
+                                            <input type="text" name="first_name" value="{!! Auth::user()->first_name !!}">
                                         </div>
                                         <div class="form-info">
                                             <p>Tên (<b class="text-danger">*</b>)</p>
-                                            <input type="text"  name="last_name" value="{!! $authUser->last_name !!}">
+                                            <input type="text"  name="last_name" value="{!! Auth::user()->last_name !!}">
                                         </div>
                                     </div>
                                     <div class="address">
                                         <p>Địa chỉ (<b class="text-danger">*</b>)</p>
-                                        <input type="text" name="address" value="{!! $authUser->address !!}">
+                                        <input type="text" name="address" value="{!! Auth::user()->address !!}">
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <div class="form-info">
                                             <p>Email</p>
-                                            <input type="text" name="email" value="{!! $authUser->email !!}">
+                                            <input type="text" name="email" value="{!! Auth::user()->email !!}">
                                         </div>
                                         <div class="form-info">
                                             <p>Số điện thoại (<b class="text-danger">*</b>)</p>
-                                            <input type="text" name="phone_number" value="{!! $authUser->phone_number !!}">
+                                            <input type="text" name="phone_number" value="{!! Auth::user()->phone_number !!}">
                                         </div>
                                     </div>
                                     <div class="address">

@@ -28,5 +28,31 @@
         margin: 10px 0 20px 0;
         width: 90%;
     }
+  .btn-next-comeback {
+        .btn-next {
+            background-color: #ffffff;
+            color: #707070;
+            border: solid 1px #707070;
+            padding: 9px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
+        .btn-order {
+            text-decoration: none;
+            background: #683e7a;
+            color: white;
+            border: solid 1px #fff;
+            padding: 9px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        @media only screen and(max-width:991px) {
+            padding-bottom: 50px;
+        }
+
+    }
 }
+

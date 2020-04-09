@@ -36,7 +36,7 @@
                                             <th scope="col" class="text-uppercase">Số lượng</th>
                                             <th scope="col" class="text-uppercase" width="18%">Đơn giá </th>
                                             <th scope="col" class="text-uppercase" width="20%">Thành tiền</th>
-                                             <th  class="text-uppercase" >Xóa</th>
+                                            <th  class="text-uppercase" >Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
