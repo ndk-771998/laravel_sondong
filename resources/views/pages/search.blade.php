@@ -24,6 +24,7 @@
                     </form>
                 </div>
                 <div><i>Kết quả tìm kiếm:</i></div>
+                @if($result !== [] && $result['search'] !== null)
                 <div>
                     <ul class="nav nav-pills mb-3"id="pills-tab"role="tablist">
                         <li class="nav-item">
@@ -165,6 +166,9 @@
                         </div>
                     </div>
                 </div>
+                @else
+                <div class="mt-3 h5 text-danger">Hãy nhập từ khóa !</div>
+                @endif
             </div>
         </div>
     </div>

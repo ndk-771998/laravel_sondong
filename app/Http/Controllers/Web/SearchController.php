@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Web;
 use App\Entities\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use VCComponent\Laravel\Product\Entities\Product;
+use App\Entities\Product;
 
-class SearchController extends Controller {
-    public function __invoke(Request $request) {
+class SearchController extends Controller
+{
+    public function __invoke(Request $request)
+    {
+
         $products         = Product::query();
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
         $products_result  = $products->OrderBy('id', 'desc')->paginate(6);
@@ -24,6 +27,7 @@ class SearchController extends Controller {
             'products_tabpane' => $products_tabpane,
             'news'             => $news_result,
             'news_tabpane'     => $news_tabpane,
+            'result'           => $request->all(),
         ]);
     }
 

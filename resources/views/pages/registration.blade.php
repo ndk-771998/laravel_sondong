@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="btn-login d-flex justify-content-center">
                                     <button class="btn btn-dk">Đăng ký</button>
-                                    <button class="btn btn-submit">Đăng nhập</button>
+                                    <a href="login" class="btn btn-submit">Đăng nhập</a>
                                 </div>
                             </form>
                         </div>
