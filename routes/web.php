@@ -27,9 +27,7 @@ Route::get('/forgot-password', function () {
 });
 Route::post('forgot-password', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.forgot');
 
-Route::get('reset-password', function () {
-    return view('pages.reset-password');
-})->name('password.reset');
+Route::get('reset-password', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('reset-password', 'Auth\ResetPasswordController@reset')->name('password.reset.post');
 
 Route::get('account', function(){
