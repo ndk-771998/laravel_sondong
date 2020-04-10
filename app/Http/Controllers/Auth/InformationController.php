@@ -9,10 +9,22 @@ use Illuminate\Support\Facades\Auth;
 
 class InformationController extends Controller {
     public function index() {
-        $user       = User::whereId(Auth::user()->id)->with('sex')->first();
-        $gender     = $user->sex->value;
-        $date       = $user->birth->calendar();
-        $date_array = explode('/', $date);
+        $user   = User::whereId(Auth::user()->id)->with('sex')->first();
+        $gender = '';
+        if ($user->gender !== null) {
+            $gender = $user->sex->value;
+        }
+
+        $date_array = [
+            0 => "",
+            1 => "",
+            2 => "",
+        ];
+
+        if ($user->birh !== null) {
+            $date       = $user->birth->calendar();
+            $date_array = explode('/', $date);
+        }
 
         return view('pages.account', compact('gender', 'date_array'));
     }
