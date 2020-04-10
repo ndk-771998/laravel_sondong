@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24db26540d7cafbf9c6f7397e400c07c",
+    "content-hash": "95b1663effeacae3a2898c0f94dc0683",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -74,16 +74,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.134.5",
+            "version": "3.134.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f5a2d82660e73ed613643a5e7ad833d2569d5fdf"
+                "reference": "3ebf1d8b24dc38339d93d943971d7d3e1102327b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f5a2d82660e73ed613643a5e7ad833d2569d5fdf",
-                "reference": "f5a2d82660e73ed613643a5e7ad833d2569d5fdf",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3ebf1d8b24dc38339d93d943971d7d3e1102327b",
+                "reference": "3ebf1d8b24dc38339d93d943971d7d3e1102327b",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-04-07T18:11:11+00:00"
+            "time": "2020-04-08T18:27:07+00:00"
         },
         {
             "name": "cocur/slugify",
@@ -6323,7 +6323,7 @@
         },
         {
             "name": "vicoders/analytic",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_analytics",
@@ -6377,7 +6377,7 @@
         },
         {
             "name": "vicoders/categorymanager",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_category_manager",
@@ -6402,7 +6402,7 @@
         },
         {
             "name": "vicoders/comment",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_comment_manager",
@@ -6456,7 +6456,7 @@
         },
         {
             "name": "vicoders/configuration",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_configuration",
@@ -6506,7 +6506,7 @@
         },
         {
             "name": "vicoders/contact",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_contact_manager",
@@ -6560,7 +6560,7 @@
         },
         {
             "name": "vicoders/core",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_core",
@@ -6600,7 +6600,7 @@
         },
         {
             "name": "vicoders/media-manager",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/media-manager-api",
@@ -6632,7 +6632,7 @@
         },
         {
             "name": "vicoders/menu_manager",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_menu_manager",
@@ -6660,7 +6660,7 @@
         },
         {
             "name": "vicoders/order",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_order_manager",
@@ -6718,7 +6718,7 @@
         },
         {
             "name": "vicoders/package-generator",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_generator",
@@ -6772,7 +6772,7 @@
         },
         {
             "name": "vicoders/payment-online",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_payment_online",
@@ -6822,7 +6822,7 @@
         },
         {
             "name": "vicoders/postmanager",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_post_manager",
@@ -6866,7 +6866,7 @@
         },
         {
             "name": "vicoders/product_management",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_product_manager",
@@ -6919,7 +6919,7 @@
         },
         {
             "name": "vicoders/scriptmanager",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_script_manager",
@@ -6973,7 +6973,7 @@
         },
         {
             "name": "vicoders/seo",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_seo",
@@ -7028,11 +7028,11 @@
         },
         {
             "name": "vicoders/sitemap",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_sitemap",
-                "reference": "18f4c41f3d8620eb3f0d88ccdba37fbf08127dae"
+                "reference": "90b623a06b6fae413a5abc99f5bfa3ff7db89732"
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "^6.0",
@@ -7082,7 +7082,7 @@
         },
         {
             "name": "vicoders/tagmanager",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_tag_manager",
@@ -7137,7 +7137,7 @@
         },
         {
             "name": "vicoders/usermanager",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_user_manager",
@@ -7199,7 +7199,7 @@
         },
         {
             "name": "vicoders/utility",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_utility",
@@ -7253,7 +7253,7 @@
         },
         {
             "name": "vicoders/view_model",
-            "version": "dev-dev_huy",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_view_model",

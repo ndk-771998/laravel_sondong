@@ -80,6 +80,8 @@
                                         <li><input id="product-{!! $product->id !!}-submit" value="Thêm vào giỏ hàng" class="btn-next" type="submit" name=""
                                         ></li>
                                     </form>
+                                    @else
+                                    <div class="h6 text-danger">Hết hàng</div>
                                     @endif
                                 </ul>
                                 <p><i class="fa fa-phone" aria-hidden="true"></i> Hottline:+84 868 21 08 62</p>
