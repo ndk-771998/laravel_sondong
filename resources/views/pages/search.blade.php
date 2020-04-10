@@ -24,7 +24,8 @@
                     </form>
                 </div>
                 <div><i>Kết quả tìm kiếm:</i></div>
-                @if($result !== [] && $result['search'] !== null)
+
+                @if($result !== [] && isset($result['search']) !== null)
                 <div>
                     <ul class="nav nav-pills mb-3"id="pills-tab"role="tablist">
                         <li class="nav-item">
@@ -71,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="">
-                                        {{ $products->fragment('pills-home')->links('layout.search-pagination') }}
+                                        {{ $products->appends(['posts_page' => $posts->currentPage()])->fragment('pills-home')->links('layout.search-pagination') }}
                                     </div>
                                 </div>
                                 @else

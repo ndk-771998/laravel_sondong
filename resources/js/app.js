@@ -8,6 +8,7 @@ import './menu';
 import './product-list';
 import './product-detail';
 import './account';
+import './search';
 
 console.log("My Kit is ready :)");
 

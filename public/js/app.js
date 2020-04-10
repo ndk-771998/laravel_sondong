@@ -40116,7 +40116,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./product-list */ "./resources/js/product-list.js");
 /* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./product-detail */ "./resources/js/product-detail.js");
 /* harmony import */ var _account__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./account */ "./resources/js/account.js");
+/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./search */ "./resources/js/search.js");
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
+
 
 
 
@@ -40365,6 +40367,53 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 
       window.location.href = "".concat(url, "?order_by=").concat(JSON.stringify(_defineProperty({}, value[0], value[1])));
     });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/search.js":
+/*!********************************!*\
+  !*** ./resources/js/search.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  var tab_all = document.getElementById('pills-home-tab');
+  var tab_products = document.getElementById('pills-profile-tab');
+  var tab_posts = document.getElementById('pills-contact-tab');
+  var form_all = document.getElementById('pills-home');
+  var form_products = document.getElementById('pills-profile');
+  var form_posts = document.getElementById('pills-contact');
+
+  if (tab_all) {
+    form_products.style.display = "none";
+    form_posts.style.display = "none";
+    form_all.style.display = "block";
+
+    tab_all.onclick = function () {
+      form_products.style.display = "none";
+      form_posts.style.display = "none";
+      form_all.style.display = "block";
+    };
+
+    tab_products.onclick = function () {
+      form_products.style.display = "block";
+      form_posts.style.display = "none";
+      form_all.style.display = "none";
+    };
+
+    tab_posts.onclick = function () {
+      form_products.style.display = "none";
+      form_posts.style.display = "block";
+      form_all.style.display = "none";
+    };
   }
 });
 
