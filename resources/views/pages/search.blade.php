@@ -16,7 +16,7 @@
                 <div class="col-12 col-md-6 form">
                     <form action="{{ route('search') }}">
                         <div class="input-group row">
-                            <input type="search" name="search" placeholder="Tìm kiếm..."aria-describedby="button-addon5" class="form-control">
+                            <input type="search" name="search" value="{{ old('content') }}" placeholder="Tìm kiếm..."aria-describedby="button-addon5" class="form-control">
                             <div class="input-group-append">
                                 <button id="button-addon5"type="submit"class="btn d-flex"><i class="fa fa-search"></i></button>
                             </div>
@@ -24,7 +24,8 @@
                     </form>
                 </div>
                 <div><i>Kết quả tìm kiếm:</i></div>
-                @if($result !== [] && $result['search'] !== null)
+
+                @if($result !== [] && isset($result['search']) !== null)
                 <div>
                     <ul class="nav nav-pills mb-3"id="pills-tab"role="tablist">
                         <li class="nav-item">
@@ -71,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="">
-                                        {{ $products->fragment('pills-home')->links('layout.search-pagination') }}
+                                        {{ $products->appends(['posts_page' => $news->currentPage()])->fragment('pills-home')->links('layout.search-pagination') }}
                                     </div>
                                 </div>
                                 @else
@@ -117,7 +118,7 @@
                                                     <p>{!! $product_tabpane->name !!}</p>
                                                 </div>
                                                 <div class="product_author">
-                                                    <p>Nhà thiết kế: Phi Tahc</p>
+                                                    <p>Nhà thiết kế: {!! $product->brand !!}</p>
                                                 </div>
                                                 <div class="product-price d-flex justify-content-between">
                                                     <div class="price"><p>{!! number_format($product_tabpane->price) !!} đ</p></div>
@@ -154,9 +155,6 @@
                                             </a>
                                         </div>
                                         @endforeach
-                                        <div class="mt-2">
-                                            {{ $news_tabpane->fragment('news-pane')->links('include.pagination') }}
-                                        </div>
                                     </div>
                                 </div>
                                 @else

@@ -19,8 +19,9 @@ class SearchController extends Controller
 
         $news         = Post::query();
         $news         = $this->applySearchFromRequest($news, ['title'], $request);
-        $news_result  = $news->ofType('posts')->OrderBy('id', 'desc')->paginate(6);
-        $news_tabpane = $news->ofType('posts')->OrderBy('id', 'desc')->paginate(5);
+        $news_result  = $news->ofType('posts')->OrderBy('id', 'desc')->paginate(5);
+        $news_tabpane = $news->ofType('posts')->OrderBy('id', 'desc')->get();
+        $news_result->setPageName('posts_page');
 
         return view('pages.search', [
             'products'         => $products_result,
