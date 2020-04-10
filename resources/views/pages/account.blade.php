@@ -25,7 +25,7 @@
                         <div class="account-table col-12 col-sm-12 col-md-12">
                             <div class="d-flex">
                                 <div class="account-type">Họ và tên</div>
-                                <div class="account-info ">{!! Auth::user()->username !!}</div>
+                                <div class="account-info ">{!! Auth::user()->first_name." ". Auth::user()->last_name !!}</div>
                             </div>
                             <div class="line"></div>
                             <div class="d-flex">
@@ -35,7 +35,7 @@
                             <div class="line"></div>
                             <div class="d-flex">
                                 <div class="account-type">Giới tính</div>
-                                <div class="account-info ">{!! Auth::user()->gender !!}</div>
+                                <div class="account-info ">{!! $gender !!}</div>
                             </div>
                             <div class="line"></div>
                             <div class="d-sm-flex">
@@ -85,7 +85,7 @@
                                                                 <div>Nam</div>
                                                             </div>
                                                         </div>
-                                                        <input type="radio" value="1" name="gender">
+                                                        <input type="radio" value="1" name="gender" {!! Auth::user()->gender == '1' ? "checked" : "" !!} >
                                                         <span class="checkmark"></span>
                                                     </label>
                                                 </div>
@@ -98,7 +98,7 @@
                                                                 <div>Nữ</div>
                                                             </div>
                                                         </div>
-                                                        <input type="radio" value="2" name="gender">
+                                                        <input type="radio" value="2" name="gender" {!! Auth::user()->gender == '2' ? "checked" : "" !!} >
                                                         <span class="checkmark"></span>
                                                     </label>
                                                 </div>
@@ -111,7 +111,7 @@
                                                                 <div>Khác</div>
                                                             </div>
                                                         </div>
-                                                        <input type="radio" value="3" checked name="gender">
+                                                        <input type="radio" value="3"  name="gender" {!! Auth::user()->gender == '3' ? "checked" : ""!!} >
                                                         <span class="checkmark"></span>
                                                     </label>
                                                 </div>
@@ -121,9 +121,9 @@
                                     <div class="">
                                         <div class="label">Ngày sinh:</div>
                                         <div class="d-flex">
-                                            <div class="date"><input class="form-control form_acc" type="number" min="1" max="31" value="1" name="days"></div>
+                                            <div class="date"><input class="form-control form_acc" type="number" min="1" max="31" value="{!! $date_array[0] !!}" name="days"></div>
                                             <div class="date">
-                                                <select id="moth" name="moths" class="form-control option">
+                                                <select id="moth" value="{!! $date_array[1] !!}" name="moths" class="form-control option">
                                                     <option value="01">Tháng một</option>
                                                     <option value="02">Tháng hai</option>
                                                     <option value="03">Tháng ba</option>
@@ -138,7 +138,7 @@
                                                     <option value="12">Tháng mười hai</option>
                                                 </select>
                                             </div>
-                                            <div class="date"><input class="form-control form_acc" type="number" min="1990" max="2020" value="1990" name="years"></div>
+                                            <div class="date"><input class="form-control form_acc" type="number" min="1990" max="2020" value="{!! $date_array[2] !!}" name="years"></div>
                                         </div>
                                     </div>
                                     <div class="">

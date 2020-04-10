@@ -48,7 +48,7 @@
                                 <h4>{!! $product->name !!}</h4>
                                 <ul class="info-product">
                                     <li>Mã sản phẩm: {!! $product->code !!}</li>
-                                    <li class="design">Nhà thiết kế: Phi Tahc</li>
+                                    <li class="design">Nhà thiết kế:{!! $product->brand !!}</li>
                                     <li>Tình trạng:
                                         @if ($isAvailable == true)
                                         <span>Còn hàng</span>

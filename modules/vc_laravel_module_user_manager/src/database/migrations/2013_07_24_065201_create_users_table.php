@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->string('verify_token');
             $table->rememberToken();
             $table->timestamps();
+            // $table->foreign('gender')->references('id')->on('genders');
         });
     }
 
@@ -44,6 +45,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('users');
     }
 }

@@ -25,14 +25,13 @@ Route::get('/product/{slug}', 'Web\ProductDetailController@show');
 Route::get('/forgot-password', function () {
     return view('pages.forgot-password');
 });
+
 Route::post('forgot-password', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.forgot');
 
 Route::get('reset-password', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('reset-password', 'Auth\ResetPasswordController@reset')->name('password.reset.post');
 
-Route::get('account', function(){
-    return view('pages.account');
-});
+Route::get('account', 'Auth\InformationController@index')->middleware('auth');
 
 Route::get('/login', function () {
     return view('pages.login');
@@ -46,4 +45,4 @@ Route::get('/registration', function () {
     return view('pages.registration');
 });
 Route::post('register', 'Auth\RegisterController@register')->name('register');
-Route::post('info-edit', 'Auth\InformationController')->name('info.edit');
+Route::post('info-edit', 'Auth\InformationController@editInfo')->name('info.edit');

@@ -41,7 +41,7 @@
                                                 <p>{!! $product->name !!}</p>
                                             </div>
                                             <div class="product_author">
-                                                <p>Nhà thiết kế: Phi Tahc</p>
+                                                <p>Nhà thiết kế: {!! $product->brand !!}</p>
                                             </div>
                                             <div class="product-price d-flex justify-content-between">
                                                 <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
