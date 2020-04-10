@@ -45,9 +45,13 @@
                                         <label for="my-textarea">Nội dung :</label>
                                         <textarea id="my-textarea" required class="form-control form-control-sm" name="note" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group">
+                                   {{--  <div class="form-group">
                                         <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                     </div>
+                                    <div class="form-group">
+                                        <img class="img-fluid capcha-img" src="assets/images/capcha.png" alt="">
+                                        <i class="ml-4 fa fa-refresh"></i>
+                                    </div> --}}
                                     <div class="btn-login">
                                         <a class="btn  btn-cancel" href="/">Hủy</a>
                                         <button type="submit" class="btn  btn-submit">Gửi</button>
