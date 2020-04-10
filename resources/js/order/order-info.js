@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     $(".previous").click(function() {
 
-        current_fs = $(this).parent();
+        current_fs  = $(this).parent();
         previous_fs = $(this).parent().prev();
 
         //Remove class active

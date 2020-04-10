@@ -4,12 +4,10 @@
     <div class="container">
         <ul class="custom-breadcrumb m-0">
             <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-            <li class="breadcrumb-item">Tin tức</li>
-
+            <li class="breadcrumb-item">{!! $title !!}</li>
         </ul>
     </div>
 </nav>
-
 <section class="news">
     <div class="container">
         <div class="main">
@@ -18,131 +16,25 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="news-head">Tin tức</div>
+                    <div class="news-head text-uppercase" id="news">{!! $title !!}</div>
                     <div class="line"></div>
-                    <div class="new-item">
-                        <div class="row">
-                            <div class="col-4"><img class="img-fluid" src="assets/images/news.png" alt=""></div>
-                            <div class="pl-0 col-8">
-                                <div class="news-title">
-                                    Cách chọn vàng trang sức cho ngày cưới
-                                </div>
-                                <div class="news-content">
-                                    Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.
-                                </div>
+                    <div class="d-flex flex-column news ">
+                        @foreach($result as $item)
+                        <a href="{{ url($urlRedirect.'/'.$item->slug) }}">
+                            <div class="d-flex description">
+                                <div><img src="{!! $item->getMetaField('thumbnail') !!}" alt=""></div>
                                 <div>
-                                    <a class="view-details" href="new-detail">Xem chi tiết</a>
+                                    <h6>{!! $item->title !!}</h6>
+                                    <p>{!! $item->description !!}</p>
+                                    <u>Xem chi tiết</u>
                                 </div>
-
                             </div>
-                        </div>
+                        </a>
+                        @endforeach
                     </div>
-                    <div class="new-item">
-                        <div class="row">
-                            <div class="col-4"><img class="img-fluid" src="assets/images/news.png" alt=""></div>
-                            <div class="pl-0 col-8">
-                                <div class="news-title">
-                                    Cách chọn vàng trang sức cho ngày cưới
-                                </div>
-                                <div class="news-content">
-                                    Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.
-                                </div>
-                                <div>
-                                    <a class="view-details" href="new-detail">Xem chi tiết</a>
-                                </div>
-
-                            </div>
-                        </div>
+                    <div class="d-flex justify-content-end">
+                        {{ $result->fragment('news')->links('include.pagination') }}
                     </div>
-                    <div class="new-item">
-                        <div class="row">
-                            <div class="col-4"><img class="img-fluid" src="assets/images/news.png" alt=""></div>
-                            <div class="pl-0 col-8">
-                                <div class="news-title">
-                                    Cách chọn vàng trang sức cho ngày cưới
-                                </div>
-                                <div class="news-content">
-                                    Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.
-                                </div>
-                                <div>
-                                    <a class="view-details" href="new-detail">Xem chi tiết</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="new-item">
-                        <div class="row">
-                            <div class="col-4"><img class="img-fluid" src="assets/images/news.png" alt=""></div>
-                            <div class="pl-0 col-8">
-                                <div class="news-title">
-                                    Cách chọn vàng trang sức cho ngày cưới
-                                </div>
-                                <div class="news-content">
-                                    Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.
-                                </div>
-                                <div>
-                                    <a class="view-details" href="new-detail">Xem chi tiết</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="new-item">
-                        <div class="row">
-                            <div class="col-4"><img class="img-fluid" src="assets/images/news.png" alt=""></div>
-                            <div class="pl-0 col-8">
-                                <div class="news-title">
-                                    Cách chọn vàng trang sức cho ngày cưới
-                                </div>
-                                <div class="news-content">
-                                    Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.
-                                </div>
-                                <div>
-                                    <a class="view-details" href="new-detail">Xem chi tiết</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="new-item">
-                        <div class="row">
-                            <div class="col-4"><img class="img-fluid" src="assets/images/news.png" alt=""></div>
-                            <div class="pl-0 col-8">
-                                <div class="news-title">
-                                    Cách chọn vàng trang sức cho ngày cưới
-                                </div>
-                                <div class="news-content">
-                                    Nhiều gia đình muốn tặng cô dâu trang sức vàng 24K nhưng loại trang sức này khó sử dụng lại sau đám cưới và không thể bán đi.
-                                </div>
-                                <div>
-                                    <a class="view-details" href="new-detail">Xem chi tiết</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <nav>
-                        <ul class="pagination justify-content-end">
-                            <li class="page-item">
-                                <a class="page-link" href="#">Đầu <img src="/assets/images/logo/Rewird.png" alt=""></a>
-                            </li>
-                            <li class="page-item ">
-                                <a class="page-link" href="#"><img src="/assets/images/logo/left.png" class="soft" alt=""></a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#"><img src="/assets/images/logo/right.png" class="soft" alt=""></a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#"><img src="/assets/images/logo/next.png" alt=""> Cuối </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-
                 </div>
                 <div class="col-12 col-md-3">
                     @include('layout.nav-right')
@@ -151,5 +43,4 @@
         </div>
     </div>
 </section>
-
 @endsection

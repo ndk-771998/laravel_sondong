@@ -30,6 +30,7 @@ class CreateUserProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_product');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('user_products');
     }
 }

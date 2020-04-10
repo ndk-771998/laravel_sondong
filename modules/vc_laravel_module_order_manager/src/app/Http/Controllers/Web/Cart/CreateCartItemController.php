@@ -25,11 +25,12 @@ class CreateCartItemController extends BaseController
 
         $result = CartItem::where('cart_id', $cart_id)->where('product_id', $product_id)->first();
 
+
         if ($result) {
             $product = Product::where('id', $product_id)->first();
-            if ($product->quantity = $result->quantity) {
+            if ($product->quantity == $result->quantity) {
                 $quantity = $result->quantity;
-                $alert    = 'Số lượng sản phẩm ' . $product->name . ' đã đạt giới hạn !';
+                $alert    = 'Số lượng sản phẩm ' . $product->name . ' đã đạt giới hạn ! Sản phẩm đang tồn tại trong giỏ hàng với số lượng = '. $result->quantity ." !";
             } else {
                 $quantity = $result->quantity + $request->input('quantity');
             }

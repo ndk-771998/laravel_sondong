@@ -17,6 +17,7 @@ class CommentCountsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('commentable_id');
             $table->string('commentable_type');
+            $table->string('comment_type')->nullable();
             $table->Integer('count')->default(1);
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ class CommentCountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('count');
+        Schema::dropIfExists('comment_counts');
     }
 }

@@ -27,6 +27,8 @@ class CategoryServiceProvider extends ServiceProvider
             __DIR__ . '/../../migrations/' => database_path('migrations'),
         ], 'migrations');
 
+        $this->loadMigrationsFrom(__DIR__ . '/../../migrations');
+
         $this->publishes([
             __DIR__ . '/../../config/category.php' => config_path('category.php'),
         ], 'config');

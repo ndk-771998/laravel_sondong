@@ -13,9 +13,12 @@
                 </div>
                 <div class="comment_textarea">
                     <input type="text-area" value="{{ old('content') }}" class="textarea"
-                        placeholder="Nhập bình luận ..." name="content">
+                    placeholder="Nhập bình luận ..." name="content">
                     <input name="commentable_id" value="{{ $commentable_id }}" hidden>
                     <input name="commentable_type" value="{{ $commentable_type }}" hidden>
+                    @isset($comment_type)
+                    <input name="comment_type" value="{!! $comment_type !!}" hidden>
+                    @endisset
                 </div>
             </div>
             <div class="d-flex justify-content-end">
@@ -31,7 +34,6 @@
     @foreach ($comments as $comment)
     <div class="comment_show">
         <div class="d-flex">
-
             <div class="comment_ava">
                 <div class="comment_img">
                     <img src="/images/comments/user.png" alt="">
@@ -44,11 +46,11 @@
                 </div>
                 <div class="textarea" id="ShowInfo">{{ $comment->content }}</div>
             </div>
-
         </div>
     </div>
     @endforeach
+    @if(method_exists($comments,'links'))
     <div class="d-flex justify-content-end"> {{ $comments->links() }}</div>
-
+    @endif
     @endif
 </section>

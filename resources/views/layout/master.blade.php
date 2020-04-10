@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+    <input type="" value="{!! getOption('slide_time_interval') !!}" id="slide_time_interval" hidden>
     @section('header')
     @include('layout.header')
     @show

@@ -18,10 +18,12 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="login-head">Đăng nhập</div>
+                    <div class="login-head text-uppercase">Đăng nhập</div>
                     <div class="line"></div>
+                    @include('include.errors')
                     <div class="login-form">
-                        <form action="" method="">
+                        <form action="{{ url('login') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-12 col-md-2">
 
@@ -29,7 +31,7 @@
                                 <div class="col-12 col-md-8">
                                     <div class="form-group">
                                         <label for="">Tên đăng nhập</label>
-                                        <input type="email" name="" id="email" class="form-control  form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="text" name="username" class="form-control  form-control-sm" placeholder="" aria-describedby="helpId">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Mật khẩu</label>
@@ -42,8 +44,8 @@
 
                             </div>
                             <div class="text-center btn-forgot">
-                                <a href="registration" class="btn btn-res" >Đăng kí</a>
-                                <button class="btn btn-cancel">Hủy</button>
+                                <button type="submit" class="btn btn-res" >Đăng nhập</button>
+                                <a href="registration" class="btn btn-cancel" >Đăng ký</a>
                             </div>
 
 

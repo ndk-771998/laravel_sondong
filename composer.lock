@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3a33144ff1d517b3bc251bbb2e04114",
+    "content-hash": "24db26540d7cafbf9c6f7397e400c07c",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -74,16 +74,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.47",
+            "version": "3.134.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "706082d6a0e53c7656eca61866b456178112daf6"
+                "reference": "f5a2d82660e73ed613643a5e7ad833d2569d5fdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/706082d6a0e53c7656eca61866b456178112daf6",
-                "reference": "706082d6a0e53c7656eca61866b456178112daf6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f5a2d82660e73ed613643a5e7ad833d2569d5fdf",
+                "reference": "f5a2d82660e73ed613643a5e7ad833d2569d5fdf",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-03-30T18:15:57+00:00"
+            "time": "2020-04-07T18:11:11+00:00"
         },
         {
             "name": "cocur/slugify",
@@ -462,20 +462,21 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.8.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "904dca4eb10715b92569fbcd79e201d5c349b6bc"
+                "reference": "5eb79f3dbdffed6544e1fc287572c0f462bd29bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/904dca4eb10715b92569fbcd79e201d5c349b6bc",
-                "reference": "904dca4eb10715b92569fbcd79e201d5c349b6bc",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/5eb79f3dbdffed6544e1fc287572c0f462bd29bb",
+                "reference": "5eb79f3dbdffed6544e1fc287572c0f462bd29bb",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
+                "ext-tokenizer": "*",
                 "php": "^7.1"
             },
             "require-dev": {
@@ -485,7 +486,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7.x-dev"
+                    "dev-master": "1.9.x-dev"
                 }
             },
             "autoload": {
@@ -526,7 +527,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2019-10-01T18:55:10+00:00"
+            "time": "2020-04-02T12:33:25+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -1232,16 +1233,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.127",
+            "version": "v0.129",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "19eacad739807e522891bf3f911ffab4a4c29869"
+                "reference": "1b7d3bcd683603bcd42ea588923775a85a89222e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/19eacad739807e522891bf3f911ffab4a4c29869",
-                "reference": "19eacad739807e522891bf3f911ffab4a4c29869",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/1b7d3bcd683603bcd42ea588923775a85a89222e",
+                "reference": "1b7d3bcd683603bcd42ea588923775a85a89222e",
                 "shasum": ""
             },
             "require": {
@@ -1265,7 +1266,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-02-17T00:24:19+00:00"
+            "time": "2020-04-04T00:24:12+00:00"
         },
         {
             "name": "google/auth",
@@ -1618,6 +1619,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -1664,6 +1666,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -2901,16 +2904,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.32.1",
+            "version": "2.32.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "ecb525c766deb3bbbb6a0082ea0e41d3d9ae477c"
+                "reference": "f10e22cf546704fab1db4ad4b9dedbc5c797a0dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ecb525c766deb3bbbb6a0082ea0e41d3d9ae477c",
-                "reference": "ecb525c766deb3bbbb6a0082ea0e41d3d9ae477c",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/f10e22cf546704fab1db4ad4b9dedbc5c797a0dc",
+                "reference": "f10e22cf546704fab1db4ad4b9dedbc5c797a0dc",
                 "shasum": ""
             },
             "require": {
@@ -2968,7 +2971,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-03-26T13:04:10+00:00"
+            "time": "2020-03-31T13:43:19+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3466,16 +3469,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.26",
+            "version": "2.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "09655fcc1f8bab65727be036b28f6f20311c126c"
+                "reference": "34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/09655fcc1f8bab65727be036b28f6f20311c126c",
-                "reference": "09655fcc1f8bab65727be036b28f6f20311c126c",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc",
+                "reference": "34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc",
                 "shasum": ""
             },
             "require": {
@@ -3554,7 +3557,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2020-03-13T04:15:39+00:00"
+            "time": "2020-04-04T23:17:33+00:00"
         },
         {
             "name": "prettus/l5-repository",
@@ -6320,7 +6323,7 @@
         },
         {
             "name": "vicoders/analytic",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_analytics",
@@ -6374,7 +6377,7 @@
         },
         {
             "name": "vicoders/categorymanager",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_category_manager",
@@ -6399,7 +6402,7 @@
         },
         {
             "name": "vicoders/comment",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_comment_manager",
@@ -6453,7 +6456,7 @@
         },
         {
             "name": "vicoders/configuration",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_configuration",
@@ -6503,7 +6506,7 @@
         },
         {
             "name": "vicoders/contact",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_contact_manager",
@@ -6557,7 +6560,7 @@
         },
         {
             "name": "vicoders/core",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_core",
@@ -6597,7 +6600,7 @@
         },
         {
             "name": "vicoders/media-manager",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/media-manager-api",
@@ -6629,7 +6632,7 @@
         },
         {
             "name": "vicoders/menu_manager",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_menu_manager",
@@ -6657,7 +6660,7 @@
         },
         {
             "name": "vicoders/order",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_order_manager",
@@ -6715,7 +6718,7 @@
         },
         {
             "name": "vicoders/package-generator",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_generator",
@@ -6769,7 +6772,7 @@
         },
         {
             "name": "vicoders/payment-online",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_payment_online",
@@ -6819,7 +6822,7 @@
         },
         {
             "name": "vicoders/postmanager",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_post_manager",
@@ -6863,7 +6866,7 @@
         },
         {
             "name": "vicoders/product_management",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_product_manager",
@@ -6916,7 +6919,7 @@
         },
         {
             "name": "vicoders/scriptmanager",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_script_manager",
@@ -6970,7 +6973,7 @@
         },
         {
             "name": "vicoders/seo",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_seo",
@@ -7025,7 +7028,7 @@
         },
         {
             "name": "vicoders/sitemap",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_sitemap",
@@ -7079,7 +7082,7 @@
         },
         {
             "name": "vicoders/tagmanager",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_tag_manager",
@@ -7134,7 +7137,7 @@
         },
         {
             "name": "vicoders/usermanager",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_user_manager",
@@ -7196,7 +7199,7 @@
         },
         {
             "name": "vicoders/utility",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_module_utility",
@@ -7250,7 +7253,7 @@
         },
         {
             "name": "vicoders/view_model",
-            "version": "dev-master",
+            "version": "dev-dev_huy",
             "dist": {
                 "type": "path",
                 "url": "./modules/vc_laravel_view_model",
@@ -9213,16 +9216,16 @@
         "vicoders/menu_manager": 20,
         "vicoders/order": 20,
         "vicoders/package-generator": 20,
+        "vicoders/payment-online": 20,
         "vicoders/postmanager": 20,
         "vicoders/product_management": 20,
         "vicoders/scriptmanager": 20,
         "vicoders/seo": 20,
+        "vicoders/sitemap": 20,
         "vicoders/tagmanager": 20,
         "vicoders/usermanager": 20,
         "vicoders/utility": 20,
-        "vicoders/view_model": 20,
-        "vicoders/sitemap": 20,
-        "vicoders/payment-online": 20
+        "vicoders/view_model": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

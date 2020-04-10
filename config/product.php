@@ -5,7 +5,7 @@ return [
     'namespace'       => env('PRODUCT_COMPONENT_NAMESPACE', 'product-management'),
 
     'models'          => [
-        'product' => VCComponent\Laravel\Product\Entities\Product::class,
+        'product' => App\Entities\Product::class,
     ],
 
     'transformers'    => [

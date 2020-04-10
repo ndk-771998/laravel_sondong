@@ -18,10 +18,13 @@
                     @include('layout.nav-left')
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="forgot-password-head">Quên mật khẩu</div>
+                    <div class="forgot-password-head text-uppercase">Quên mật khẩu</div>
                     <div class="line"></div>
+                    @include('include.messages')
+                    @include('include.errors')
                     <div class="forgot-password-form">
-                        <form action="" method="">
+                        <form action="{{ route('password.forgot') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-12 col-md-2">
 
@@ -29,15 +32,15 @@
                                 <div class="col-12 col-md-8">
                                     <div  class="form-group">
                                         <label for="">Email đăng ký tài khoản</label>
-                                        <input type="text" name="" id="" class="form-control  form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="email" name="email" id="" class="form-control  form-control-sm" placeholder="" aria-describedby="helpId">
                                     </div>
 
                                 </div>
 
                             </div>
                             <div class="text-center btn-forgot">
-                                <button class="btn btn-res">Đăng kí</button>
-                                <button class="btn btn-cancel">Hủy</button>
+                                <button type="submit" class="btn btn-res">Gửi</button>
+                                <a href="{{ url('login') }}" class="btn btn-cancel">Hủy</a>
                             </div>
 
 

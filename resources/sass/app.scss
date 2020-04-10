@@ -20,6 +20,10 @@
 @import "./page/product";
 @import "./page/registration";
 @import "./page/service";
+@import "./page/search";
+@import "./comments/comment";
+@import "./orders/cart";
+@import "./page/account";
 
 body {
     color: $default_text_color;
@@ -46,6 +50,41 @@ body {
                 text-decoration: none;
             }
 
+        }
+
+    }
+    .pagination {
+        .page-item.active {
+            .page-link {
+                background-color: #fff;
+                color: #fb728b;
+                border: 1px solid #d8d8d8;
+            }
+
+        }
+
+        .page-item {
+            .page-link {
+                background-color: #fff;
+                color: #707070;
+                border: 1px solid #d8d8d8;
+                font-weight: bold;
+            }
+
+        }
+
+        img {
+            width: 12px;
+            color: #6c757d;
+            margin-top: -2px;
+        }
+
+        .soft {
+            height: 10px;
+        }
+
+        a {
+            color: #6c757d;
         }
 
     }
