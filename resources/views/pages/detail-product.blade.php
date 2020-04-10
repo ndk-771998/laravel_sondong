@@ -81,7 +81,7 @@
                                         ></li>
                                     </form>
                                     @else
-                                    <div class="h6 text-danger">Hết hàng</div>
+                                    <div class="h6 text-danger mt-2">Hết hàng</div>
                                     @endif
                                 </ul>
                                 <p><i class="fa fa-phone" aria-hidden="true"></i> Hottline:+84 868 21 08 62</p>
