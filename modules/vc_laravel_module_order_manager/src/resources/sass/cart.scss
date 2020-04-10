@@ -430,15 +430,13 @@
 
         .product-item {
             margin: 10px 0;
-
-            .product-item-info {
-            }
+            align-items: center;
 
             .img {
-                width: 88px;
-                height: 88px;
-                margin-top: 6%;
-                margin-right: 25px;
+                img {
+                    object-fit: contain;
+                }
+
             }
 
             .product-name {

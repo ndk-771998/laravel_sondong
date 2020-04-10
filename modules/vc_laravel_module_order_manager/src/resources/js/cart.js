@@ -18,8 +18,8 @@ $(document).ready(function() {
                 data: { "quantity": quantity },
                 dataType: 'json',
                 success: function(data) {
-                    var amount = new Intl.NumberFormat('en-IN').format(data.result.amount);
-                    var total  = new Intl.NumberFormat('en-IN').format(data.cart.total);
+                    var amount = new Intl.NumberFormat().format(data.result.amount);
+                    var total  = new Intl.NumberFormat().format(data.cart.total);
                     $('#alert').html(data.error);
                     $('#amount-' + id).html(amount);
                     $('#total').html(total);

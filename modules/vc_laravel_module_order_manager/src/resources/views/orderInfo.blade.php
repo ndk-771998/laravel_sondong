@@ -27,70 +27,31 @@
                                 <li class="active" id="account">01 THÔNG TIN KHÁCH HÀNG</li>
                                 <li id="personal">02 THÔNG TIN THANH TOÁN</li>
                             </ul>
-                            @if (Auth::check())
-                            <fieldset>
-                                <div class="form-card">
-                                    <h3>Thông tin khách hàng</h3>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="form-info">
-                                            <p class="col-md-12">Họ</p>
-                                            <input type="text" name="first_name" value="{!! Auth::user()->first_name !!}">
-                                        </div>
-                                        <div class="form-info">
-                                            <p>Tên (<b class="text-danger">*</b>)</p>
-                                            <input type="text"  name="last_name" value="{!! Auth::user()->last_name !!}">
-                                        </div>
-                                    </div>
-                                    <div class="address">
-                                        <p>Địa chỉ (<b class="text-danger">*</b>)</p>
-                                        <input type="text" name="address" value="{!! Auth::user()->address !!}">
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="form-info">
-                                            <p>Email</p>
-                                            <input type="text" name="email" value="{!! Auth::user()->email !!}">
-                                        </div>
-                                        <div class="form-info">
-                                            <p>Số điện thoại (<b class="text-danger">*</b>)</p>
-                                            <input type="text" name="phone_number" value="{!! Auth::user()->phone_number !!}">
-                                        </div>
-                                    </div>
-                                    <div class="address">
-                                        <p>Ghi chú</p>
-                                        <textarea name="note" placeholder="Note...."></textarea>
-                                    </div>
-                                </div>
-                                <div>
-                                <a href="/cart" class="btn-back"><b><i class="fa fa-arrow-left" aria-hidden="true"></i> Quay lại giỏ hàng</b></a>
-                                <input type="button" name="next" class="next action-button" value="Tiếp tục" />
-                                </div>
-                            </fieldset>
-                            @else
                             <fieldset>
                                 <div class="form-card">
                                     <h3>Thông tin khách hàng</h3>
                                     <div class="d-flex justify-content-between">
                                         <div class="form-info">
                                             <p>Họ</p>
-                                            <input type="text" name="first_name" value="">
+                                            <input type="text" name="first_name" value="{!! Auth::check() ? Auth::user()->first_name : '' !!}">
                                         </div>
                                         <div class="form-info">
                                             <p>Tên (<b class="text-danger">*</b>)</p>
-                                            <input type="text" name="last_name" value="">
+                                            <input type="text" name="last_name" value="{!! Auth::check() ? Auth::user()->last_name : '' !!}">
                                         </div>
                                     </div>
                                     <div class="address">
                                         <p>Địa chỉ (<b class="text-danger">*</b>)</p>
-                                        <input type="text" name="address" value="">
+                                        <input type="text" name="address" value="{!! Auth::check() ? Auth::user()->address : '' !!}">
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <div class="form-info">
                                             <p>Email</p>
-                                            <input type="text" name="email" value="">
+                                            <input type="text" name="email" value="{!! Auth::check() ? Auth::user()->email : '' !!}">
                                         </div>
                                         <div class="form-info">
                                             <p>Số điện thoại (<b class="text-danger">*</b>)</p>
-                                            <input type="text" name="phone_number" value="">
+                                            <input type="text" name="phone_number" value="{!! Auth::check() ? Auth::user()->phone_number : '' !!}">
                                         </div>
                                     </div>
                                     <div class="address">
@@ -101,7 +62,6 @@
                                 <a href="/cart" class="btn-back"><b><i class="fa fa-arrow-left" aria-hidden="true"></i> Quay lại giỏ hàng</b></a>
                                 <input type="button" name="next" class="next action-button" value="Tiếp tục" />
                             </fieldset>
-                            @endif
                             <fieldset>
                                 <div class="form-card">
                                     <h3>Phương thức thanh toán</h3>
@@ -118,7 +78,7 @@
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
-                                         <div class="checkbx col-12">
+                                        <div class="checkbx col-12">
                                             <label class="cbx">
                                                 <div>
                                                     <div class="cbx-width d-flex justify-content-between">
