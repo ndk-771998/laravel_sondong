@@ -16,12 +16,11 @@ class SearchController extends Controller
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
         $products_result  = $products->OrderBy('id', 'desc')->paginate(6);
         $products_tabpane = $products->OrderBy('id', 'desc')->paginate(12);
-        // $products_tabpane->setPageName('products_page');
 
         $news         = Post::query();
         $news         = $this->applySearchFromRequest($news, ['title'], $request);
-        $news_result  = $news->ofType('posts')->OrderBy('id', 'desc')->paginate(7);
-        $news_tabpane = $news->ofType('posts')->OrderBy('id', 'desc')->paginate(5);
+        $news_result  = $news->ofType('posts')->OrderBy('id', 'desc')->paginate(5);
+        $news_tabpane = $news->ofType('posts')->OrderBy('id', 'desc')->get();
         $news_result->setPageName('posts_page');
 
         return view('pages.search', [
