@@ -7,19 +7,16 @@ use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 use VCComponent\Laravel\Product\Entities\Product;
 use VCComponent\Laravel\Product\Http\Controllers\Web\ProductListController as BaseProductListController;
 
-class ProductListController extends BaseProductListController implements ViewProductListControllerInterface
-{
+class ProductListController extends BaseProductListController implements ViewProductListControllerInterface {
     protected $activeFilter = 'id|desc';
 
-    public function view()
-    {
+    public function view() {
         return 'pages.products';
     }
 
-    protected function viewData($products, Request $request)
-    {
-        $query = Product::query();
-        $query    = $this->applyOrderByFromRequest($query, $request);
+    protected function viewData($products, Request $request) {
+        $query           = Product::query();
+        $query           = $this->applyOrderByFromRequest($query, $request);
         $products_custom = $query->paginate(9);
 
         $activeFilter = $this->activeFilter;
@@ -41,8 +38,7 @@ class ProductListController extends BaseProductListController implements ViewPro
         ];
     }
 
-    protected function applyOrderByFromRequest($query, Request $request)
-    {
+    protected function applyOrderByFromRequest($query, Request $request) {
         if ($request->has('order_by')) {
             $orderBy = (array) json_decode($request->get('order_by'));
             if (count($orderBy) > 0) {

@@ -8,8 +8,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class ResetPasswordController extends Controller
-{
+class ResetPasswordController extends Controller {
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -30,15 +29,13 @@ class ResetPasswordController extends Controller
      */
     protected $redirectTo = '/';
 
-    public function showResetForm(Request $request, $token = null)
-    {
+    public function showResetForm(Request $request, $token = null) {
         return view('pages.reset-password')->with(
             ['token' => $request->token, 'email' => $request->email]
         );
     }
 
-    protected function rules()
-    {
+    protected function rules() {
         return [
             'token'    => 'required',
             'email'    => 'required|email',
