@@ -11,7 +11,7 @@ class HomeController extends Controller {
     public function __invoke() {
         $products = Product::OrderBy('id', 'desc')->paginate(9);
 
-        $news         = Post::oftype('posts')->OrderBy('id', 'desc')->paginate(3);
+        $news = Post::oftype('posts')->OrderBy('id', 'desc')->paginate(3);
 
         $place        = Post::oftype('place')->OrderBy('id', 'desc');
         $place_result = $place->limit(3)->get();
@@ -22,10 +22,10 @@ class HomeController extends Controller {
         $exhibition_count  = $exhibition->count();
 
         return view('index', [
-            'products'   => $products,
-            'news'       => $news,
-            'place'      => $place_result,
-            'exhibition' => $exhibition_result,
+            'products'         => $products,
+            'news'             => $news,
+            'place'            => $place_result,
+            'exhibition'       => $exhibition_result,
             'place_count'      => $place_count,
             'exhibition_count' => $exhibition_count,
         ]);

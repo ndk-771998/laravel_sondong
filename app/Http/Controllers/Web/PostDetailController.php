@@ -79,8 +79,7 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
         ];
     }
 
-    public function viewPages()
-    {
+    public function viewPages() {
         return 'pages.about';
     }
 }

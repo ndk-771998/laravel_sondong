@@ -3,14 +3,12 @@
 namespace App\Http\Controllers\Web;
 
 use App\Entities\Post;
+use App\Entities\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Entities\Product;
 
-class SearchController extends Controller
-{
-    public function __invoke(Request $request)
-    {
+class SearchController extends Controller {
+    public function __invoke(Request $request) {
 
         $products         = Product::query();
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
