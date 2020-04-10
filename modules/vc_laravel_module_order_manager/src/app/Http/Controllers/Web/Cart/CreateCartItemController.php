@@ -25,7 +25,6 @@ class CreateCartItemController extends BaseController
 
         $result = CartItem::where('cart_id', $cart_id)->where('product_id', $product_id)->first();
 
-
         if ($result) {
             $product = Product::where('id', $product_id)->first();
             if ($product->quantity == $result->quantity) {
