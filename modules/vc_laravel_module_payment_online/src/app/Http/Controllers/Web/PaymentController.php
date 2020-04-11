@@ -5,19 +5,30 @@ namespace VCComponent\Laravel\Payment\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use VCComponent\Laravel\Order\Entities\Order;
+use VCComponent\Laravel\Payment\Traits\Helpers;
 
 class PaymentController extends Controller
 {
+    use Helpers;
+
     public function __invoke(Request $request)
     {
         if ($request->all() == []) {
             return redirect('/');
         }
 
-        $vnp_Url        = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl  = 'http://laravel-core.com/payment';
-        $vnp_HashSecret = "TOAFFBVZDAEQOEDSOFDSWNJYOUUWPCJW";
-        $vnp_TmnCode    = "IN1FL50W";
+        $config = $this->config();
+
+        if($config['vnp_Returnurl'] == ''){
+            Order::where('cart_id', $data['order_id'])->delete();
+            return "Chưa config vnp_Returnurl cho Package Payment ! Chạy lệnh : php artisan vendor:pushlish -> payment";
+        }
+
+        $vnp_TmnCode    = $config['vnp_Url'];
+        $vnp_HashSecret = $config['vnp_HashSecret'];
+        $vnp_Url        = $config['vnp_Url'];
+        $vnp_Returnurl  = $config['vnp_Returnurl'].'/payment';
+
         $inputData      = array();
         $returnData     = array();
         $data           = $request->all();
@@ -51,7 +62,7 @@ class PaymentController extends Controller
         try {
             if ($secureHash == $vnp_SecureHash) {
                 $order = Order::where('cart_id', $order_id)->first();
-                if ($order != NULL) {
+                if ($order !== NULL) {
                     if ($order["payment_status"] !== NULL && $order["payment_status"] == 1) {
                         if ($inputData['vnp_ResponseCode'] == '00') {
                             $order->update(['payment_status' => 2]);

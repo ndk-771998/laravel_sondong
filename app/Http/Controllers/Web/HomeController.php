@@ -9,6 +9,7 @@ use VCComponent\Laravel\Product\Entities\Product;
 
 class HomeController extends Controller {
     public function __invoke() {
+        // dd(url()->previous());
         $products = Product::OrderBy('id', 'desc')->paginate(9);
 
         $news = Post::oftype('posts')->OrderBy('id', 'desc')->paginate(3);
