@@ -2,19 +2,29 @@
 
 namespace VCComponent\Laravel\Payment\Actions\Vnpay;
 
-class SendOrderAction
-{
-    public function excute(array $data)
-    {
-        $vnp_Url        = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl  = 'http://laravel-core.com/payment';
-        $vnp_HashSecret = "TOAFFBVZDAEQOEDSOFDSWNJYOUUWPCJW";
-        $vnp_TmnCode    = "IN1FL50W";
+use VCComponent\Laravel\Payment\Traits\Helpers;
+use VCComponent\Laravel\Order\Entities\Order;
 
-        $inputData  = array(
+class SendOrderAction {
+    use Helpers;
+
+    public function excute(array $data) {
+        $config = $this->config();
+
+        if($config['vnp_Returnurl'] == ''){
+            Order::where('cart_id', $data['order_id'])->delete();
+            return "Chưa config vnp_Returnurl cho Package Payment ! Chạy lệnh : php artisan vendor:pushlish -> payment";
+        }
+
+        $vnp_TmnCode    = $config['vnp_Url'];
+        $vnp_HashSecret = $config['vnp_HashSecret'];
+        $vnp_Url        = $config['vnp_Url'];
+        $vnp_Returnurl  = $config['vnp_Returnurl'].'/payment';
+
+        $inputData = array(
             "vnp_Version"    => "2.0.0",
             "vnp_TmnCode"    => $vnp_TmnCode,
-            "vnp_Amount"     => $data['total'] *100,
+            "vnp_Amount"     => $data['total'] * 100,
             "vnp_Command"    => "pay",
             "vnp_CreateDate" => date('YmdHis'),
             "vnp_CurrCode"   => "VND",
