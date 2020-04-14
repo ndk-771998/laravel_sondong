@@ -45,7 +45,7 @@ class OrderRepositoryEloquent extends BaseRepository implements OrderRepository
     public function updateStatus($request, $id)
     {
         $updateStatus         = $this->find($id);
-        $updateStatus->status = $request->input('status');
+        $updateStatus->status_id = $request->input('status');
         $updateStatus->save();
     }
 

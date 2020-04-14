@@ -25,7 +25,7 @@ class OrderTransformer extends TransformerAbstract {
             'address'        => $model->address,
             'username'       => $model->username,
             'total'          => $model->total,
-            'order_note'     => $model->order_notes,
+            'order_note'     => $model->order_note,
             'payment_method' => (int) $model->payment_method,
             'payment_status' => (int) $model->payment_status,
             'status_id'      => (int) $model->status_id,
