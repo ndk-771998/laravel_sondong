@@ -20,7 +20,7 @@ class GetStepConfigController extends BaseController
             $step['inputs'] = $has_value_inputs;
             return $step;
         })->toArray();
-        dd($steps);
+
         return response()->json($steps);
     }
 }

@@ -40385,35 +40385,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  var tab_all = document.getElementById('pills-home-tab');
-  var tab_products = document.getElementById('pills-profile-tab');
-  var tab_posts = document.getElementById('pills-contact-tab');
-  var form_all = document.getElementById('pills-home');
-  var form_products = document.getElementById('pills-profile');
-  var form_posts = document.getElementById('pills-contact');
+  var url = window.location.href;
+  var link = url.split("#").slice(1, 2).toString();
 
-  if (tab_all) {
-    form_products.style.display = "none";
-    form_posts.style.display = "none";
-    form_all.style.display = "block";
-
-    tab_all.onclick = function () {
-      form_products.style.display = "none";
-      form_posts.style.display = "none";
-      form_all.style.display = "block";
-    };
-
-    tab_products.onclick = function () {
-      form_products.style.display = "block";
-      form_posts.style.display = "none";
-      form_all.style.display = "none";
-    };
-
-    tab_posts.onclick = function () {
-      form_products.style.display = "none";
-      form_posts.style.display = "block";
-      form_all.style.display = "none";
-    };
+  if (link) {
+    if (link == "pills-profile") {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#pills-home').removeClass(['active', 'show']);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#pills-profile').addClass(['active', 'show']);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#pills-home-tab').removeClass('active');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#pills-profile-tab').addClass('active');
+    }
   }
 });
 
