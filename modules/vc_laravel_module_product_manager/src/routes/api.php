@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 if (config('product.models.product') !== null) {
     $model_class = config('product.models.product');
@@ -15,7 +15,7 @@ $api->version('v1', function ($api) {
             $api->get('products/export', 'VCComponent\Laravel\Product\Http\Controllers\Api\Admin\ProductController@exportExcel');
             $api->get('products/all', 'VCComponent\Laravel\Product\Http\Controllers\Api\Admin\ProductController@list');
             $api->put('products/status/bulk', 'VCComponent\Laravel\Product\Http\Controllers\Api\Admin\ProductController@bulkUpdateStatus');
-            $api->put('products/{id}/status', 'VCComponent\Laravel\Product\Http\Controllers\Api\Admin\ProductController@updateStatusItem');
+            $api->put('product/{id}/status', 'VCComponent\Laravel\Product\Http\Controllers\Api\Admin\ProductController@updateStatusItem');
             $api->resource('products', 'VCComponent\Laravel\Product\Http\Controllers\Api\Admin\ProductController');
             $api->put('product/{id}/date', 'VCComponent\Laravel\Product\Http\Controllers\Api\Admin\ProductController@changeDatetime');
             $api->get('product/{id}/stock', 'VCComponent\Laravel\Product\Http\Controllers\Api\Admin\ProductController@checkStock');

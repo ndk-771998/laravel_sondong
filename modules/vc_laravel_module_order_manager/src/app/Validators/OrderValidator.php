@@ -37,7 +37,7 @@ class OrderValidator extends AbstractValidator {
         ValidatorInterface::UPDATE_STATUS_ITEM => [
             'status' => ['required'],
         ],
-        "UPDATE_PAYMENT_STATUS "               => [
+        "UPDATE_PAYMENT_STATUS"               => [
             'payment_status' => ['required'],
         ],
     ];
