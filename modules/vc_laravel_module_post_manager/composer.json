@@ -19,7 +19,7 @@
     },
     "require": {
         "vicoders/core": "@dev",
-        "cviebrock/eloquent-sluggable": "^6.0",
+        "cviebrock/eloquent-sluggable": "^7.0.1",
         "vicoders/view_model": "@dev"
     },
     "require-dev": {

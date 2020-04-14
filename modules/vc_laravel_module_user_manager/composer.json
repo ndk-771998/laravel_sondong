@@ -27,7 +27,7 @@
     "require": {
         "vicoders/core": "@dev",
         "laravel/socialite": "^4.0",
-        "illuminate/support": "6.7",
+        "illuminate/support": "7.x-dev",
         "doctrine/dbal": "^2.10",
         "maatwebsite/excel": "^3.1"
     },
