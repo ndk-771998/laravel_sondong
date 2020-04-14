@@ -2,50 +2,48 @@
 
 return [
     [
-        'label': 'social_links',
+        'label'  => 'social_links',
         'inputs' => [
             [
-                'label' => 'logo Facebook',
-                'type'  => 'image',
+                'label' => 'social_links',
+                'type'  => 'text',
             ],
+        ],
+    ],
+    [
+        'label'  => 'copyright',
+        'inputs' => [
             [
-                'label' => 'logo Instar',
-                'type'  => 'image',
+                'label' => 'copyright',
+                'type'  => 'text',
             ],
+        ],
+    ],
+    [
+        'label'  => 'logo',
+        'inputs' => [
             [
-                'label' => 'logo Twitter',
+                'label' => 'logo_footer',
                 'type'  => 'image',
             ],
         ],
     ],
     [
-        'label'  : 'copyright',
-        'inputs' : 'Copyright by Drinks',
-    ],
-    [
-        'label'  : 'logo',
+        'label'  => 'Giấy phép hoạt động',
         'inputs' => [
             [
-                'label' => 'Footer logo',
-                'type'  => 'image',
-            ]
-        ],
-    ],
-    [
-        'label'  : 'Giấy phép hoạt động',
-        'inputs' : 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016',
-    ],
-    [
-        'label' : 'hotline',
-        'inputs' => [
-            [
-                'label' => 'Bộ phận kĩ thuật',
-                'type'  => 'number',
+                'label' => 'giấy phép hoạt động',
+                'type'  => 'text',
             ],
-            [
-                'label' => 'Bộ phận CSKH',
-                'type'  => 'number',
-            ]
         ],
-    ]
+    ],
+    [
+        'label'  => 'hotline',
+        'inputs' => [
+            [
+                'label' => 'hotline',
+                'type'  => 'text',
+            ],
+        ],
+    ],
 ];
