@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace VCComponent\Laravel\User\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use App\Entities\User;
+use VCComponent\Laravel\User\Entities\User;
+use Illuminate\Routing\Controller;
 
 class RegisterController extends Controller
 {
@@ -50,7 +50,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'email'        => ['required_without:username', 'string', 'email', 'max:255', 'unique:users'],
+            'username'     => ['required','alpha_dash'],
+            'email'        => ['required_without:username', 'email', 'unique:users'],
             'phone_number' => ['required', 'string', 'regex:/^\d*$/'],
             'password'     => ['required', 'string', 'min:6', 'confirmed'],
         ]);
