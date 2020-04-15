@@ -2,7 +2,7 @@
 
 namespace VCComponent\Laravel\User\Http\Controllers\Web;
 
-use App\Entities\User;
+use VCComponent\Laravel\User\Entities\User;
 use Illuminate\Routing\Controller;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('pages.login');
+        return view('auth.login');
     }
 
     public function username()

@@ -24,7 +24,7 @@ class InformationController extends Controller {
             $date = explode('-', $birthday);
         }
 
-        return view('pages.account', compact('gender', 'date'));
+        return view('auth.account', compact('gender', 'date'));
     }
 
     public function editInfo(Request $request) {

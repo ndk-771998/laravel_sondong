@@ -21,8 +21,7 @@ use VCComponent\Laravel\User\Repositories\UserRepositoryEloquent;
 use VCComponent\Laravel\User\Validators\AuthValidator;
 use VCComponent\Laravel\User\Validators\UserValidator;
 
-class UserComponentProvider extends ServiceProvider
-{
+class UserComponentProvider extends ServiceProvider {
     private $adminController;
     private $frontendController;
     private $authController;
@@ -39,8 +38,7 @@ class UserComponentProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
-    {
+    public function register() {
         $this->parseConfig();
 
         $this->registerRepositories();
@@ -57,17 +55,23 @@ class UserComponentProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
+    public function boot() {
         // $this->publishes([
         //     __DIR__ . '/../../migrations/' => database_path('migrations'),
         // ], 'migrations');
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
 
         $this->publishes([
-            __DIR__ . '/../../config/user.php'                   => config_path('user.php'),
-            __DIR__ . '/../../views/auth/errow-verify.blade.php' => base_path('/resources/views/auth/errow-verify.blade.php'),
-            __DIR__ . '/../../views/auth/verify.blade.php'       => base_path('/resources/views/auth/verify.blade.php'),
+            __DIR__ . '/../../config/user.php'                      => config_path('user.php'),
+            __DIR__ . '/../../views/auth/errow-verify.blade.php'    => base_path('/resources/views/auth/errow-verify.blade.php'),
+            __DIR__ . '/../../views/auth/verify.blade.php'          => base_path('/resources/views/auth/verify.blade.php'),
+            __DIR__ . '/../../resources/views/auth/account.blade.php'         => base_path('/resources/views/auth/account.blade.php'),
+            __DIR__ . '/../../resources/views/auth/forgot-password.blade.php' => base_path('/resources/views/auth/forgot-password.blade.php'),
+            __DIR__ . '/../../resources/views/auth/login.blade.php'           => base_path('/resources/views/auth/login.blade.php'),
+            __DIR__ . '/../../resources/views/auth/registration.blade.php'    => base_path('/resources/views/auth/reistration.blade.php'),
+            __DIR__ . '/../../resources/views/auth/reset-password.blade.php'  => base_path('/resources/views/auth/reset-password.blade.php'),
+            __DIR__ . '/../../resources/js/user/user.js'                      => base_path('/resources/js/user/user.js'),
+            __DIR__ . '/../../resources/sass/auth/login.scss'                 => base_path('/resources/sass/auth/login.scss'),
 
         ], 'config');
 
@@ -78,8 +82,7 @@ class UserComponentProvider extends ServiceProvider
         $this->registerMiddleware();
     }
 
-    protected function parseConfig()
-    {
+    protected function parseConfig() {
         if (config('user.controllers.admin') === null) {
             $this->adminController = AdminController::class;
         } else {
@@ -111,32 +114,27 @@ class UserComponentProvider extends ServiceProvider
         }
     }
 
-    protected function registerRepositories()
-    {
+    protected function registerRepositories() {
         $this->app->bind(UserRepository::class, UserRepositoryEloquent::class);
         $this->app->bind(StatusRepository::class, StatusRepositoryEloquent::class);
     }
 
-    protected function registerControllers()
-    {
+    protected function registerControllers() {
         $this->app->bind(AdminUserController::class, $this->adminController);
         $this->app->bind(FrontendUserController::class, $this->frontendController);
         $this->app->bind(Auth::class, $this->authController);
     }
 
-    protected function registerValidators()
-    {
+    protected function registerValidators() {
         $this->app->bind(UserValidatorInterface::class, $this->userValidator);
         $this->app->bind(AuthValidatorInterface::class, $this->authValidator);
     }
 
-    protected function registerFacades()
-    {
+    protected function registerFacades() {
         $this->app->bind('vcc.auth', AuthHelper::class);
     }
 
-    protected function registerMiddleware()
-    {
+    protected function registerMiddleware() {
         $router = $this->app['router'];
 
         $method = 'aliasMiddleware';

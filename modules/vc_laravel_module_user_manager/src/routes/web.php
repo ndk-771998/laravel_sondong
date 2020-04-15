@@ -19,8 +19,13 @@ Route::group(['prefix' => '/'], function () {
         Route::get('logout', 'VCComponent\Laravel\User\Http\Controllers\Web\LoginController@logout')->name('logout');
 
         Route::get('/registration', function () {
-            return view('pages.registration');
+            return view('user_component::auth.registration');
         });
+
+        Route::get('/forgot-password', function () {
+            return view('user_component::auth.forgot-password');
+        });
+
         Route::post('register', 'VCComponent\Laravel\User\Http\Controllers\Web\RegisterController@register')->name('register');
         Route::post('info-edit', 'VCComponent\Laravel\User\Http\Controllers\Web\InformationController@editInfo')->name('info.edit');
 

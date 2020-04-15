@@ -22,7 +22,3 @@ Route::post('/contact', 'Web\ContactController@store');
 
 Route::get('/product/{slug}', 'Web\ProductDetailController@show');
 Route::get('/product', 'Web\ProductListController@index');
-
-Route::get('/forgot-password', function () {
-    return view('pages.forgot-password');
-});

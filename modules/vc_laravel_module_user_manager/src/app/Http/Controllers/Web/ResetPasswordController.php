@@ -30,7 +30,7 @@ class ResetPasswordController extends Controller {
     protected $redirectTo = '/';
 
     public function showResetForm(Request $request, $token = null) {
-        return view('pages.reset-password')->with(
+        return view('auth.reset-password')->with(
             ['token' => $request->token, 'email' => $request->email]
         );
     }
