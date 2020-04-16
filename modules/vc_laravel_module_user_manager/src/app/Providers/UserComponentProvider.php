@@ -62,13 +62,13 @@ class UserComponentProvider extends ServiceProvider {
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
 
         $this->publishes([
-            __DIR__ . '/../../config/user.php'                      => config_path('user.php'),
-            __DIR__ . '/../../views/auth/errow-verify.blade.php'    => base_path('/resources/views/auth/errow-verify.blade.php'),
-            __DIR__ . '/../../views/auth/verify.blade.php'          => base_path('/resources/views/auth/verify.blade.php'),
+            __DIR__ . '/../../config/user.php'                                => config_path('user.php'),
+            __DIR__ . '/../../views/auth/errow-verify.blade.php'              => base_path('/resources/views/auth/errow-verify.blade.php'),
+            __DIR__ . '/../../views/auth/verify.blade.php'                    => base_path('/resources/views/auth/verify.blade.php'),
             __DIR__ . '/../../resources/views/auth/account.blade.php'         => base_path('/resources/views/auth/account.blade.php'),
             __DIR__ . '/../../resources/views/auth/forgot-password.blade.php' => base_path('/resources/views/auth/forgot-password.blade.php'),
             __DIR__ . '/../../resources/views/auth/login.blade.php'           => base_path('/resources/views/auth/login.blade.php'),
-            __DIR__ . '/../../resources/views/auth/registration.blade.php'    => base_path('/resources/views/auth/reistration.blade.php'),
+            __DIR__ . '/../../resources/views/auth/registration.blade.php'    => base_path('/resources/views/auth/registration.blade.php'),
             __DIR__ . '/../../resources/views/auth/reset-password.blade.php'  => base_path('/resources/views/auth/reset-password.blade.php'),
             __DIR__ . '/../../resources/js/user/user.js'                      => base_path('/resources/js/user/user.js'),
             __DIR__ . '/../../resources/sass/auth/login.scss'                 => base_path('/resources/sass/auth/login.scss'),

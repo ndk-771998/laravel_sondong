@@ -110,7 +110,7 @@
                                         <div class="">
                                             <div class="label">Date of birth :</div>
                                             <div class="d-flex">
-                                                <div class="date"><input class="wrap-input mb-3 input" type="number" value="{!! $date[2] !!}" min="1" max="31" name="days"></div>
+                                                <div class="date"><input class="wrap-input mb-3 input" type="number" placeholder="Day" value="{!! $date[2] !!}" min="1" max="31" name="days"></div>
                                                 <div class="date">
                                                     <select id="moth" name="moths" class="wrap-input input option">
                                                         <option {!! $date[1] == '01' ? "selected" : "" !!} value="01">January</option>
@@ -127,20 +127,20 @@
                                                         <option {!! $date[1] == '12' ? "selected" : "" !!}  value="12">December</option>
                                                     </select>
                                                 </div>
-                                                <div class="date"><input class="wrap-input mb-3 input" type="number" min="1990" max="2020" value="{!! $date[0] !!}" name="years"></div>
+                                                <div class="date"><input class="wrap-input mb-3 input" type="number" placeholder="Year" min="1990" max="2020" value="{!! $date[0] !!}" name="years"></div>
                                             </div>
                                         </div>
                                         <div class="">
                                             <div class="label">Email :</div>
-                                            <div><input type="email" class="wrap-input mb-3 input" value="{!! Auth::user()->email !!}" name="email"></div>
+                                            <div><input type="email" placeholder="Email" class="wrap-input mb-3 input" value="{!! Auth::user()->email !!}" name="email"></div>
                                         </div>
                                         <div class="">
                                             <div class="label">Phone :</div>
-                                            <div class=""><input type="number" class="wrap-input mb-3 input" value="{!! Auth::user()->phone_number !!}" name="phone_number"></div>
+                                            <div class=""><input placeholder="Phone number" type="number" class="wrap-input mb-3 input" value="{!! Auth::user()->phone_number !!}" name="phone_number"></div>
                                         </div>
                                         <div class="">
                                             <div class="label">Address :</div>
-                                            <div class=""><input type="text" class="wrap-input mb-3 input" value="{!! Auth::user()->address !!}" name="address"></div>
+                                            <div class=""><input type="text" placeholder="Address" class="wrap-input mb-3 input" value="{!! Auth::user()->address !!}" name="address"></div>
                                         </div>
                                         <div class="btn-next-comeback d-flex justify-content-center mb-2 mb-lg-0">
                                             <input type="submit" class="btn-order mr-3" value="Confirm Edit">

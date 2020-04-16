@@ -2,9 +2,9 @@
 
 namespace VCComponent\Laravel\User\Mail\V1;
 
-use VCComponent\Laravel\User\Mail\Mailable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
+use VCComponent\Laravel\User\Mail\Mailable;
 
 class CustomEmail extends Mailable
 {

@@ -20,7 +20,7 @@
     },
     "require": {
         "vicoders/core": "@dev",
-        "cviebrock/eloquent-sluggable": "^7.0.1"
+        "cviebrock/eloquent-sluggable": "6.x-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.4",

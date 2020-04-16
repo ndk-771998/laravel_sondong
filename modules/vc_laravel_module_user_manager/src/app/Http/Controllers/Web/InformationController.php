@@ -11,6 +11,7 @@ class InformationController extends Controller {
     public function index() {
         $user   = User::whereId(Auth::user()->id)->with('sex')->first();
         $gender = '';
+
         if ($user->gender !== null) {
             $gender = $user->sex->value;
         }

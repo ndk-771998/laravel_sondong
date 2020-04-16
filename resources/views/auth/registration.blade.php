@@ -11,7 +11,7 @@
     <body>
         <div class="limiter">
             <div class="container-login">
-                <div class="wrap-login">
+                <div class="wrap-account">
                     <div class="login-form validate-form">
                         <span class="login-form-title mb-5">
                             Sign Up

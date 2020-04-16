@@ -5,6 +5,8 @@ namespace VCComponent\Laravel\User\Traits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
@@ -14,6 +16,7 @@ use VCComponent\Laravel\User\Contracts\Events\UserUpdatedByAdminEventContract;
 use VCComponent\Laravel\User\Contracts\UserValidatorInterface;
 use VCComponent\Laravel\User\Exports\UserExports;
 use VCComponent\Laravel\User\Facades\VCCAuth;
+use VCComponent\Laravel\User\Notifications\AdminResendPasswordNotification;
 use VCComponent\Laravel\User\Notifications\AdminResendVerifiedNotification;
 use VCComponent\Laravel\User\Repositories\UserRepository;
 use VCComponent\Laravel\User\Transformers\UserTransformer;
@@ -130,7 +133,7 @@ trait UserMethodsAdmin
 
         $this->validator->isValid($data['default'], 'ADMIN_CREATE_USER');
         $this->validator->isSchemaValid($data['schema'], $schema_rules);
-
+        $data['default']['verify_token'] = Hash::make($request->email);
         VCCAuth::isEmpty($request);
 
         $user = $this->repository->create($data['default']);
@@ -335,6 +338,18 @@ trait UserMethodsAdmin
         return $this->success();
     }
 
+    public function resendPassword($id)
+    {
+        $user           = $this->repository->find($id);
+        $pass           = Str::random(6);
+        $user->password = $pass;
+        $user->update();
+
+        $user->notify(new AdminResendPasswordNotification($pass));
+
+        return $this->success();
+    }
+
     public function verifyEmail($id)
     {
         $user = $this->repository->find($id);
@@ -360,6 +375,5 @@ trait UserMethodsAdmin
         Excel::store(new $this->exports($users), 'users.xlsx', 'excel');
 
         return Response()->download(public_path('exports/users.xlsx'));
-
     }
 }

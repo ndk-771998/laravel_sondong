@@ -10,14 +10,14 @@
     "require": {
         "php": "^7.2",
         "artesaos/seotools": "v0.17.2",
-        "cviebrock/eloquent-sluggable": "^7.0.1",
+        "cviebrock/eloquent-sluggable": "6.x-dev",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "7.x-dev",
+        "laravel/framework": "6.x-dev",
         "laravel/tinker": "v2.4.0",
-        "laravel/ui": "^2.0",
+        "laravel/ui": "1.x-dev",
         "maatwebsite/excel": "^3.1",
         "spatie/laravel-analytics": "^3.9",
-        "symfony/translation": "v5.0.7",
+        "symfony/translation": "4.3.8",
         "vicoders/analytic": "@dev",
         "vicoders/categorymanager": "@dev",
         "vicoders/comment": "@dev",
@@ -40,12 +40,11 @@
         "vicoders/view_model": "@dev"
     },
     "require-dev": {
-        "facade/ignition": "2.x-dev",
+        "facade/ignition": "v1.x-dev",
         "fzaninotto/faker": "^1.9.1",
         "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "v4.2.0",
-        "phpunit/phpunit": "^8.0",
-        "symfony/http-kernel": "v5.0.7"
+        "nunomaduro/collision": "^3.0",
+        "phpunit/phpunit": "^8.0"
     },
     "config": {
         "optimize-autoloader": true,

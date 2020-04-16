@@ -18,12 +18,12 @@ Route::group(['prefix' => '/'], function () {
         Route::post('login', 'VCComponent\Laravel\User\Http\Controllers\Web\LoginController@login')->name('login');
         Route::get('logout', 'VCComponent\Laravel\User\Http\Controllers\Web\LoginController@logout')->name('logout');
 
-        Route::get('/registration', function () {
-            return view('user_component::auth.registration');
+        Route::get('/register', function () {
+            return view('auth.registration');
         });
 
         Route::get('/forgot-password', function () {
-            return view('user_component::auth.forgot-password');
+            return view('auth.forgot-password');
         });
 
         Route::post('register', 'VCComponent\Laravel\User\Http\Controllers\Web\RegisterController@register')->name('register');

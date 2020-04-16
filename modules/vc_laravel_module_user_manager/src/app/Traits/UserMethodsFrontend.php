@@ -110,7 +110,7 @@ trait UserMethodsFrontend
 
         $this->validator->isValid($data['default'], 'RULE_CREATE');
         $this->validator->isSchemaValid($data['schema'], $schema_rules);
-
+        $data['default']['verify_token'] = Hash::make($request->email);
         VCCAuth::isEmpty($request);
 
         $user = $this->repository->create($data['default']);
