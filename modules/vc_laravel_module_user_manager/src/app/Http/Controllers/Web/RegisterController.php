@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace VCComponent\Laravel\User\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use App\Entities\User;
+use VCComponent\Laravel\User\Entities\User;
 
-class RegisterController extends Controller
-{
+class RegisterController extends Controller {
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -36,8 +36,7 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('guest');
     }
 
@@ -47,10 +46,10 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
+    protected function validator(array $data) {
         return Validator::make($data, [
-            'email'        => ['required_without:username', 'string', 'email', 'max:255', 'unique:users'],
+            'username'     => ['required_without:email'],
+            'email'        => ['required_without:username'],
             'phone_number' => ['required', 'string', 'regex:/^\d*$/'],
             'password'     => ['required', 'string', 'min:6', 'confirmed'],
         ]);
@@ -63,8 +62,18 @@ class RegisterController extends Controller
      * @return \App\User
      */
 
-    protected function create(array $data)
-    {
+    protected function create(array $data) {
+        if ($data['email']) {
+            Validator::make($data, [
+                'email' => ['email', 'max:255', 'unique:users'],
+            ]);
+        }
+        if ($data['username'] !== null) {
+            Validator::make($data, [
+                'username' => ['unique:users'],
+            ]);
+
+        }
         return User::create([
             'username'     => $data['username'],
             'first_name'   => $data['first_name'],
@@ -72,7 +81,7 @@ class RegisterController extends Controller
             'email'        => $data['email'],
             'phone_number' => $data['phone_number'],
             'address'      => $data['address'],
-            'password'     => $data['password'],
+            'password'     => Hash::make($data['password']),
             'verify_token' => str::random(32),
         ]);
     }

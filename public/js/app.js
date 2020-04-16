@@ -40084,7 +40084,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   var info_form = document.getElementById('form_show_info');
 
   if (button) {
-    edit_form.style.display = "none";
+    edit_form.style.display = "block";
+    info_form.style.display = "none";
 
     button.onclick = function () {
       edit_form.style.display = "block";
@@ -40117,7 +40118,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./product-detail */ "./resources/js/product-detail.js");
 /* harmony import */ var _account__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./account */ "./resources/js/account.js");
 /* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./search */ "./resources/js/search.js");
+/* harmony import */ var _user_user_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user/user.js */ "./resources/js/user/user.js");
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
+
 
 
 
@@ -40395,6 +40398,50 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#pills-home-tab').removeClass('active');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#pills-profile-tab').addClass('active');
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/user/user.js":
+/*!***********************************!*\
+  !*** ./resources/js/user/user.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  var showPass = 0;
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.btn-show-pass').on('click', function () {
+    if (showPass == 0) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('input').attr('type', 'text');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('i').removeClass('fa-eye');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('i').addClass('fa-eye-slash');
+      showPass = 1;
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('input').attr('type', 'password');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('i').addClass('fa-eye');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('i').removeClass('fa-eye-slash');
+      showPass = 0;
+    }
+  });
+  var button = document.getElementById('user_component_show_edit_form');
+  var edit_form = document.getElementById('user_component_form_edit_info');
+  var info_form = document.getElementById('user_component_form_show_info');
+
+  if (button) {
+    edit_form.style.display = "none";
+    info_form.style.display = "block";
+
+    button.onclick = function () {
+      edit_form.style.display = "block";
+      info_form.style.display = "none";
+    };
   }
 });
 

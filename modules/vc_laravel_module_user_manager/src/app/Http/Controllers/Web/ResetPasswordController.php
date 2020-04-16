@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace VCComponent\Laravel\User\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Routing\Controller;
 
 class ResetPasswordController extends Controller {
     /*
@@ -30,7 +30,7 @@ class ResetPasswordController extends Controller {
     protected $redirectTo = '/';
 
     public function showResetForm(Request $request, $token = null) {
-        return view('pages.reset-password')->with(
+        return view('auth.reset-password')->with(
             ['token' => $request->token, 'email' => $request->email]
         );
     }

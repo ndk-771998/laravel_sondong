@@ -3,6 +3,8 @@
 namespace VCComponent\Laravel\Order\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use VCComponent\Laravel\Order\Http\View\Composers\CartComposer;
 use VCComponent\Laravel\Order\Contracts\ViewCartControllerInterface;
 use VCComponent\Laravel\Order\Contracts\ViewOrderControllerInterface;
 use VCComponent\Laravel\Order\Http\Controllers\Web\Cart\CartController;
@@ -38,6 +40,8 @@ class OrderServiceProvider extends ServiceProvider {
             __DIR__ . '/../../resources/sass/cart.png'    => public_path('/images/cart/cart.png'),
             __DIR__ . '/../../resources/sass/tich.png'    => public_path('/images/cart/tich.png'),
         ]);
+
+        View::composer('*', CartComposer::class);
     }
 
     private function registerControllers() {

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace VCComponent\Laravel\User\Http\Controllers\Web;
 
-use App\Entities\User;
-use App\Http\Controllers\Controller;
+use VCComponent\Laravel\User\Entities\User;
+use Illuminate\Routing\Controller;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +38,11 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
     }
 
     public function username()

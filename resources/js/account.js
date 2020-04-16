@@ -6,7 +6,8 @@ $(document).ready(function() {
     var info_form = document.getElementById('form_show_info');
 
     if (button) {
-        edit_form.style.display = "none";
+        edit_form.style.display = "block";
+        info_form.style.display = "none";
         button.onclick = function() {
             edit_form.style.display = "block";
             info_form.style.display = "none";

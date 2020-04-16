@@ -9,6 +9,7 @@ import './product-list';
 import './product-detail';
 import './account';
 import './search';
+import './user/user.js';
 
 console.log("My Kit is ready :)");
 

@@ -24,6 +24,7 @@
 @import "./comments/comment";
 @import "./orders/cart";
 @import "./page/account";
+@import "./auth/login";
 
 body {
     color: $default_text_color;

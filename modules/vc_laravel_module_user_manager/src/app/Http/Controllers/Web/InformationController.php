@@ -1,37 +1,38 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace VCComponent\Laravel\User\Http\Controllers\Web;
 
-use App\Entities\User;
-use App\Http\Controllers\Controller;
+use VCComponent\Laravel\User\Entities\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Controller;
 
 class InformationController extends Controller {
     public function index() {
         $user   = User::whereId(Auth::user()->id)->with('sex')->first();
         $gender = '';
+
         if ($user->gender !== null) {
             $gender = $user->sex->value;
         }
 
-        $date_array = [
-            0 => "",
-            1 => "",
-            2 => "",
+        $date = [
+            0 => "", 1 => "", 2 => "",
         ];
 
-        if ($user->birh !== null) {
-            $date       = $user->birth->calendar();
-            $date_array = explode('/', $date);
+        if ($user->birth !== null) {
+            $birthday       = $user->birth;
+            $date = explode('-', $birthday);
         }
 
-        return view('pages.account', compact('gender', 'date_array'));
+        return view('auth.account', compact('gender', 'date'));
     }
 
     public function editInfo(Request $request) {
-        $birth = $request['years'] . "-" . $request['moths'] . "-" . $request['days'];
-
+        $birth = null;
+        if ($request['years'] !== null && $request['moths'] !== null && $request['days'] !== null) {
+            $birth = $request['years'] . "-" . $request['moths'] . "-" . $request['days'];
+        }
         $data = [
             "first_name"   => $request['first_name'],
             "last_name"    => $request['last_name'],
