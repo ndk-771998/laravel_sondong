@@ -1,17 +1,17 @@
 .limiter {
+    background: #f2f2f2;
+
     input {
         border: none;
         outline: none;
     }
 
     .container-login {
-        width: 100%;
         min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 15px;
-        background: #f2f2f2;
 
         .wrap-login {
             width: 390px;
@@ -23,7 +23,6 @@
         }
 
         .wrap-account {
-            width: 40%;
             background: #fff;
             border-radius: 10px;
             overflow: hidden;
@@ -97,7 +96,8 @@
                 }
 
             }
-            .label{
+
+            .label {
                 margin-bottom: 10px;
             }
 
@@ -189,11 +189,14 @@
                 }
 
             }
-            table{
-                tr{
+
+            table {
+                tr {
                     height: 40px;
                 }
+
             }
+
         }
 
         .login-form {

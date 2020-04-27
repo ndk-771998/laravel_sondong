@@ -14775,19 +14775,21 @@ a.text-dark:hover, a.text-dark:focus {
   background: #683e7a;
 }
 
+.limiter {
+  background: #f2f2f2;
+}
+
 .limiter input {
   border: none;
   outline: none;
 }
 
 .limiter .container-login {
-  width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #f2f2f2;
 }
 
 .limiter .container-login .wrap-login {
@@ -14800,7 +14802,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .limiter .container-login .wrap-account {
-  width: 40%;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;

@@ -21,7 +21,7 @@ class PaymentController extends Controller
 
         if($config['vnp_Returnurl'] == ''){
             Order::where('cart_id', $data['order_id'])->delete();
-            return "Chưa config vnp_Returnurl cho Package Payment ! Chạy lệnh : php artisan vendor:pushlish -> payment";
+            return "Config lỗi ! Vui lòng liên hệ với quản trị viên !";
         }
 
         $vnp_TmnCode    = $config['vnp_Url'];
