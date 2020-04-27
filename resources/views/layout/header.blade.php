@@ -28,7 +28,7 @@
                 <div class="col-7">
                     <div class="row nav">
                         @foreach($menus_header as $menu)
-                        <a href="{!! $menu->link !!}" id="menu-{!! $menu->id  !!}" data-id="{!! $menu->id !!}" data-name="{!! $menu->link !!}" class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
+                        <a href="zxc{!! $menu->link !!}" id="menu-{!! $menu->id  !!}" data-id="{!! $menu->id !!}" data-name="{!! $menu->link !!}" class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
                         @endforeach
                     </div>
                     <div class="nav-mini"><a class="" data-toggle="dropdown" href="#"><img src="/assets/images/logo/menuhd.png" alt=""></a>
