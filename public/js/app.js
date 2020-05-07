@@ -40390,7 +40390,6 @@ __webpack_require__.r(__webpack_exports__);
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   var url = window.location.href;
   var link = url.split("#").slice(1, 2).toString();
-  console.log(url);
 
   if (link) {
     if (link == "pills-profile") {

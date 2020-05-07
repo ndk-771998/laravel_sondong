@@ -24,7 +24,6 @@
                     </form>
                 </div>
                 <div><i>Kết quả tìm kiếm:</i></div>
-
                 @if($result !== [] || isset($result['search']) !== null)
                 <div>
                     <ul class="nav nav-pills mb-3" id="pills-tab"role="tablist">
