@@ -40,8 +40,7 @@
                 </div>
             </div>
             <div class="col-5">
-                <form action="{{ route('search') }}" method="POST" >
-                    @csrf
+                <form action="{{ route('search') }}" method="get" >
                     <div class="input-group d-flex justify-content-end ">
                         <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control col-md-7">
                         <div class="input-group-append">
