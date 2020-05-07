@@ -28,7 +28,7 @@
                 <div class="col-7">
                     <div class="row nav">
                         @foreach($menus_header as $menu)
-                        <a href="zxc{!! $menu->link !!}" id="menu-{!! $menu->id  !!}" data-id="{!! $menu->id !!}" data-name="{!! $menu->link !!}" class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
+                        <a href="{!! $menu->link !!}" id="menu-{!! $menu->id  !!}" data-id="{!! $menu->id !!}" data-name="{!! $menu->link !!}" class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
                         @endforeach
                     </div>
                     <div class="nav-mini"><a class="" data-toggle="dropdown" href="#"><img src="/assets/images/logo/menuhd.png" alt=""></a>
@@ -40,11 +40,12 @@
                 </div>
             </div>
             <div class="col-5">
-                <form action="{{ route('search') }}" method="GET" >
+                <form action="{{ route('search') }}" method="POST" >
+                    @csrf
                     <div class="input-group d-flex justify-content-end ">
-                        <input type="search" placeholder="Tìm kiếm..." name="search" aria-describedby="button-addon5" class="form-control col-md-7">
+                        <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control col-md-7">
                         <div class="input-group-append">
-                            <button id="button-addon5" type="submit" class="btn d-flex"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn d-flex"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
                 </form>
