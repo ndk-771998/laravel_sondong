@@ -16,6 +16,6 @@ class DeleteCartItemAction
     {
         $cartItem = CartItem::findOrFail($id);
         $cartItem->delete();
-        $this->action->excute($cartItem->cart);
+        $this->action->execute($cartItem->cart);
     }
 }
