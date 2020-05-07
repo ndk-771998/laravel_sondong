@@ -18,7 +18,7 @@
                         <div class="input-group row">
                             <input type="search" name="search" value="{{ old('content') }}" placeholder="Tìm kiếm..."aria-describedby="button-addon5" class="form-control">
                             <div class="input-group-append">
-                                <button id="button-addon5"type="submit"class="btn d-flex"><i class="fa fa-search"></i></button>
+                                <button type="submit"class="btn d-flex"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </form>
