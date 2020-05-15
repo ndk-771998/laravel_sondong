@@ -108,7 +108,7 @@
                                 <div class="row">
                                     @foreach($products_tabpane as $product_tabpane)
                                     <div class="col-4 col-md-2">
-                                        <a href="/">
+                                        <a href="product/{!! $product_tabpane->slug !!}">
                                             <div class="d-flex flex-column justify-content-center product-item">
                                                 <div class="product-img">
                                                     <img src="{!! $product_tabpane->thumbnail !!}"alt="">
@@ -144,7 +144,7 @@
                                     <div class="d-flex flex-column" id="news-pane">
                                         @foreach($news_tabpane as $newsItem)
                                         <div class="description">
-                                            <a href="{!! $newsItem->slug !!}" class="d-flex">
+                                            <a href="posts/{!! $newsItem->slug !!}" class="d-flex">
                                                 <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
                                                 <div class="news-info">
                                                     <h6>{!! $newsItem->title !!}</h6>

@@ -12387,7 +12387,7 @@ a.text-dark:hover, a.text-dark:focus {
   width: 30%;
 }
 
-.product-detail .left .product-thumbnail img {
+.product-detail .left .product-thumbnail .img {
   width: 162px;
 }
 
@@ -13593,7 +13593,7 @@ a.text-dark:hover, a.text-dark:focus {
   width: 30%;
 }
 
-.product-detail .left .product-thumbnail img {
+.product-detail .left .product-thumbnail .img {
   width: 162px;
 }
 
@@ -15067,6 +15067,235 @@ a.text-dark:hover, a.text-dark:focus {
   height: 50px;
   background: #242424;
   transition: all 0.4s;
+}
+
+.tile {
+  position: relative;
+  float: left;
+  width: 162px;
+  height: 210px;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s ease-out;
+}
+
+.txt {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 10%;
+  left: 0;
+  font-family: "Roboto Slab", serif;
+  font-size: 9px;
+  line-height: 12px;
+  text-align: center;
+  cursor: default;
+}
+
+.x {
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.hotline-fixed {
+  position: fixed;
+  bottom: 80px;
+  left: 15px;
+  z-index: 999999;
+}
+
+.hotline-fixed .hotline-phone:hover .hotline-bar {
+  width: 185px;
+  height: 45px;
+}
+
+.hotline-fixed .hotline-phone {
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  z-index: 99;
+  background-size: 20px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #683E7A;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.hotline-fixed .hotline-phone .hotline-circle {
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 85px;
+  height: 85px;
+  position: absolute;
+  z-index: 19;
+  background-color: transparent;
+  border-radius: 100%;
+  border: 2px solid #683E7A;
+  -webkit-animation: phone-circle 1.2s infinite ease-in-out;
+  animation: phone-circle 1.2s infinite ease-in-out;
+  transition: all 0.5s;
+  transform-origin: 50% 50%;
+  opacity: 0.5;
+}
+
+.hotline-fixed .hotline-phone .hotline-border {
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.4);
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  z-index: 29;
+  background-color: #683E7A;
+  opacity: 0.7;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  -webkit-animation: phone-circle-fill 2.3s infinite ease-in-out;
+  animation: phone-circle-fill 2.3s infinite ease-in-out;
+  transition: all 0.5s;
+  transform-origin: 50% 50%;
+}
+
+.hotline-fixed .hotline-phone .hotline-img {
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 33px;
+  height: 33px;
+  top: 8px;
+  left: 8px;
+  position: absolute;
+  z-index: 39;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  -webkit-animation: phone-img 1s infinite ease-in-out;
+  animation: phone-img 1s infinite ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+.hotline-fixed .hotline-phone .hotline-bar {
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 0;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  background: #683E7A;
+  height: 0;
+  line-height: 40px;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: all 0.8s;
+  z-index: 9;
+  border-radius: 50px;
+  left: 20px;
+  transition: 0.5s ease;
+}
+
+.hotline-fixed .hotline-phone .hotline-bar a {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.78);
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  text-indent: 40px;
+  letter-spacing: 1px;
+  display: block;
+  line-height: 45px;
+}
+
+@-webkit-keyframes phone-circle {
+  0% {
+    -webkit-transform: rotate(0) scale(0.5) skew(1deg);
+    -webkit-opacity: 0.1;
+  }
+
+  30% {
+    -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+    -webkit-opacity: 0.5;
+  }
+
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+    -webkit-opacity: 0.1;
+  }
+}
+
+@-webkit-keyframes phone-circle-fill {
+  0% {
+    -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+    opacity: 0.6;
+  }
+
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+    opacity: 0.6;
+  }
+
+  100% {
+    -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+    opacity: 0.6;
+  }
+}
+
+@-webkit-keyframes phone-img {
+  0% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+}
+
+.hotline-static {
+  font-weight: bold;
+  color: red;
+  margin: 10px 0px;
+}
+
+.hotline ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.online-support {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.online-support ul {
+  padding: 0px;
+  list-style: none;
 }
 
 body {

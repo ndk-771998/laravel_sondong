@@ -13,7 +13,7 @@
                             <a href="account"><img src="/assets/images/logo/logic.png" class="icon-header"></a>
                             @else
                             <div class="login">
-                                <a href="login"><img src="/assets/images/logo/loginn.png" class="icon-header"></a>
+                                <a href="{{url('login')}}"><img src="/assets/images/logo/loginn.png" class="icon-header"></a>
                             </div>
                             @endif
                         </div>

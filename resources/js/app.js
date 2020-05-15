@@ -9,7 +9,10 @@ import './product-list';
 import './product-detail';
 import './account';
 import './search';
-import './user/user.js';
+import './user/user';
+import './zoomimg';
+import './zoom-image';
+import './main';
 
 console.log("My Kit is ready :)");
 

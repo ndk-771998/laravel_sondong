@@ -11,8 +11,6 @@
             <a href="tel:{!! $hotline !!}">
                 @if($hotline !== "")
                 <span class="text-hotline">{!! $hotline !!}</span>
-                @else
-                <span class="text-hotline">Empty !</span>
                 @endif
             </a>
         </div>
