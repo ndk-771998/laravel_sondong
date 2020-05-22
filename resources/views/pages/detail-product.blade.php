@@ -23,13 +23,13 @@
                         <h3 class="text-uppercase">Chi tiết sản phẩm</h3>
                         <div class="p-flex my-24">
                             <div class="left">
-                                <div class="product-thumbnail">
+                       <div class="product-thumbnail">
                                     <div class="item">
-                                        <img src="{!! $product->thumbnail !!}" alt="" />
+                                        <div class="tile" data-scale="4.0" data-image="{!! $product->thumbnail !!}"></div>
                                     </div>
                                     @foreach($thumbnailProducts as $thumbnail)
                                     <div class="item">
-                                        <img src="{!! $thumbnail->value !!}" alt="" />
+                                        <div class="tile" data-scale="4.0" data-image="{!! $thumbnail->value !!}"></div>
                                     </div>
                                     @endforeach
                                 </div>

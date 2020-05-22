@@ -25,7 +25,8 @@
 @import "./orders/cart";
 @import "./page/account";
 @import "./auth/login";
-
+@import "./page/zoomimg";
+@import "./utility/hotline";
 body {
     color: $default_text_color;
     background-color: $default_bg_color;

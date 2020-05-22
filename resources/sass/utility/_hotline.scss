@@ -21,7 +21,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #048ABF;
+        background-color: #683E7A;
         box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
 
         .hotline-circle {
@@ -32,7 +32,7 @@
             z-index: 19;
             background-color: transparent;
             border-radius: 100%;
-            border: 2px solid #048ABF;
+            border: 2px solid #683E7A;
             -webkit-animation: phone-circle 1.2s infinite ease-in-out;
             animation: phone-circle 1.2s infinite ease-in-out;
             transition: all 0.5s;
@@ -48,7 +48,7 @@
             height: 55px;
             position: absolute;
             z-index: 29;
-            background-color: #048ABF;
+            background-color: #683E7A;
             opacity: 0.7;
             border-radius: 100%;
             border: 2px solid transparent;
@@ -84,7 +84,7 @@
             width: 0;
             box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
             position: absolute;
-            background: #048ABF;
+            background: #683E7A;
             height: 0;
             line-height: 40px;
             padding: 0 10px;
