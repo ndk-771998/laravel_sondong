@@ -2,6 +2,7 @@
 @section('content')
 @endsection
  --}}
+
 @section('content')
 @include('pages.home')
 @endsection
