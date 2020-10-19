@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,9 +52,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
-
-    'asset_url' => env('ASSET_URL', null),
+    'url' => env('APP_URL', 'http://laravel_p16001.local.com'),
+    'admin_url' => env('ADMIN_URL', 'http://admin-core-staging.vicoders.com/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -165,24 +164,16 @@ return [
         /*
          * Package Service Providers...
          */
+        VCComponent\Laravel\Category\Providers\CategoryServiceProvider::class,
+        VCComponent\Laravel\Category\Providers\CategoryRouteProvider::class,
         VCComponent\Laravel\User\Providers\UserComponentProvider::class,
         VCComponent\Laravel\User\Providers\UserComponentRouteProvider::class,
         VCComponent\Laravel\User\Providers\UserComponentEventProvider::class,
         VCComponent\Laravel\Post\Providers\PostComponentProvider::class,
         VCComponent\Laravel\Post\Providers\PostComponentRouteProvider::class,
-        VCComponent\Laravel\Category\Providers\CategoryServiceProvider::class,
-        VCComponent\Laravel\Category\Providers\CategoryRouteProvider::class,
-        VCComponent\Laravel\Menu\Providers\MenuComponentProvider::class,
-        VCComponent\Laravel\Comment\Providers\CommentServiceProvider::class,
-        VCComponent\Laravel\Tag\Providers\TagServiceProvider::class,
-        VCComponent\Laravel\Utility\Providers\UtilityServiceProvider::class,
+        VCComponent\Laravel\Product\Providers\ProductServiceProvider::class,
+        VCComponent\Laravel\Product\Providers\ProductRouteProvider::class,
         VCComponent\Laravel\Order\Providers\OrderServiceProvider::class,
-        VCComponent\Laravel\Script\Providers\ScriptServiceProvider::class,
-        Spatie\Analytics\AnalyticsServiceProvider::class,
-        VCComponent\Laravel\Analytic\Providers\AnalyticServiceProvider::class,
-        VCComponent\Laravel\Sitemap\Providers\SitemapServiceProvider::class,
-        VCComponent\Laravel\Payment\Providers\PaymentServiceProvider::class,
-
         /*
          * Application Service Providers...
          */
@@ -191,6 +182,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        VCComponent\Laravel\Post\Providers\PostComponentProvider::class,
+        VCComponent\Laravel\Post\Providers\PostComponentRouteProvider::class,
+
 
     ],
 
@@ -241,9 +236,8 @@ return [
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Str' => Illuminate\Support\Str::class,
         'URL' => Illuminate\Support\Facades\URL::class,
-        'Validator' => Illuminate\Support\Facades\Validator::class,
+        'Validators' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
     ],
 
 ];

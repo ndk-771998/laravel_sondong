@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="{{url('/css/app.css')}}" />
     <script src="{{url('js/app.js')}}"></script>
-    <title>@yield('title','Vicoders HTML/CSS/JS Development Kit')</title>
+    <title>@yield('title','VMMS')</title>
 </head>
 
 <body>
@@ -20,7 +20,6 @@
     @section('footer')
     @include('layout.footer')
     @show
-
 </body>
 
 </html>
