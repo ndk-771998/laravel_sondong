@@ -25,24 +25,21 @@
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex flex-column">
                                     <div class="wrap-input-form-two">
-                                        <input class="input" type="text" placeholder="First name" name="first_name"
-                                            value="{{ old('first_name')  }}">
+                                        <input class="input" type="text" placeholder="First name" name="first_name">
                                         <span class="focus-input"></span>
                                     </div>
                                     <p class="text-danger">{{ $errors->first('first_name') }}</p>
                                 </div>
                                 <div class="d-flex flex-column">
                                     <div class="wrap-input-form-two">
-                                        <input class="input" type="text" placeholder="Last name" name="last_name"
-                                            value="{{ old('last_name')  }}">
+                                        <input class="input" type="text" placeholder="Last name" name="last_name">
                                         <span class="focus-input"></span>
                                     </div>
                                     <p class="text-danger">{{ $errors->first('last_name') }}</p>
                                 </div>
                             </div>
                             <div class="wrap-input">
-                                <input class="input" type="text" placeholder="Username (*)" name="username"
-                                    value="{{ old('username') }}">
+                                <input class="input" type="text" placeholder="Username (*)" name="username">
                                 <span class="focus-input"></span>
                             </div>
                             <p class="text-danger">{{ $errors->first('username') }}</p>
@@ -58,8 +55,7 @@
                             </div>
                             <p class="text-danger">{{ $errors->first('password') }}</p>
                             <div class="wrap-input">
-                                <input class="input" type="email" placeholder="Email" name="email"
-                                    value="{{ old('email')  }}">
+                                <input class="input" type="email" placeholder="Email" name="email">
                                 <span class="focus-input"></span>
                             </div>
                             <p class="text-danger">{{ $errors->first('email') }}</p>
@@ -69,14 +65,12 @@
                             </div>
                             <p class="text-danger">{{ $errors->first('email') }}</p>
                             <div class="wrap-input">
-                                <input class="input" type="text" placeholder="Address" name="address"
-                                    value="{{ old('address')  }}">
+                                <input class="input" type="text" placeholder="Address" name="address">
                                 <span class="focus-input"></span>
                             </div>
                             <p class="text-danger">{{ $errors->first('address') }}</p>
                             <div class="wrap-input">
-                                <input class="input" type="number" placeholder="Phone number (*)" name="phone_number"
-                                    value="{{ old('phone_number')  }}">
+                                <input class="input" type="number" placeholder="Phone number (*)" name="phone_number">
                                 <span class="focus-input"></span>
                             </div>
                             <p class="text-danger">{{ $errors->first('phone_number') }}</p>

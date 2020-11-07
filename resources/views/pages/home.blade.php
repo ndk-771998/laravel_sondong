@@ -1,8 +1,4 @@
 @extends('layout.master')
-@section('title')
-<title>{{ getOption('trang-chu-title') }}</title>
-
-@endsection
 @section('content')
 <section>
     @include('include.slides')
