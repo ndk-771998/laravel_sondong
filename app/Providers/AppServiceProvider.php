@@ -12,6 +12,7 @@ use App\Http\Controllers\Web\ProductListController;
 use App\Http\View\Composers\CartComposer;
 use App\Http\View\Composers\MenuComposer;
 use App\Http\View\Composers\NewsComposer;
+use App\Http\View\Composers\OptionComposer;
 use App\Http\View\Composers\SlideComposer;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\View;
@@ -35,7 +36,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ViewProductDetailControllerInterface::class, ProductDetailController::class);
         $this->app->bind(ViewPostListControllerInterface::class, PostListController::class);
         $this->app->bind(ViewPostDetailControllerInterface::class, PostDetailController::class);
-
         $this->app->bind(ViewCartControllerInterface::class, CartController::class);
     }
 
@@ -55,5 +55,6 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', MenuComposer::class);
         View::composer('*', SlideComposer::class);
         View::composer('*', NewsComposer::class);
+        View::composer('*', OptionComposer::class);
     }
 }

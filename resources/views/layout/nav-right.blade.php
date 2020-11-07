@@ -5,7 +5,10 @@
             <p>HỖ TRỢ TRỰC TUYẾN</p>
         </div>
         <div class="d-flex flex-column content-navrg ">
-            {!! getOption('hotline') !!}
+        <p>Bộ phận kĩ thuật:</p>
+        {!! getOption('bo-phan-ki-thuat') !!}
+        <p>Bộ phận CSKH :</p>
+        {!! getOption('bo-phan-ki-thuat') !!}
         </div>
     </div>
     <div class="nav-bg nav-news">

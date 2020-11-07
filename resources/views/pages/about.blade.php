@@ -5,7 +5,6 @@
         <ul class="custom-breadcrumb m-0">
             <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
             <li class="breadcrumb-item active text-capitalize">{!! $post->title !!}</li>
-
         </ul>
     </div>
 </nav>

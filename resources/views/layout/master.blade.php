@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="{{url('/css/app.css')}}" />
     <script src="{{url('js/app.js')}}"></script>
-    <title>@yield('title','VMMS')</title>
+    @yield('title')
 </head>
 
 <body>
     <input type="" value="{!! getOption('slide_time_interval') !!}" id="slide_time_interval" hidden>
-    @include('utility::hotline-fixed', ['hotline' =>getOption('hotline')])
+    @include('utility::hotline-fixed', ['hotline' => getOption('bo-phan-ki-thuat')])
     @section('header')
     @include('layout.header')
     @show
