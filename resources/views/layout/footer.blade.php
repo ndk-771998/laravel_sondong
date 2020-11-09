@@ -20,15 +20,24 @@
                 @endforeach
             </div>
             <div class="col-6">
-                <div class="row justify-content-center align-items-end contact">
+                <div class="row justify-content-start align-items-center contact">
                     {!! getOption('social_links') !!}
+                <a href="{{getOption('footer-logo-facebook-link')}}"><img
+                            src="{{getOption('footer-logo-facebook')}}"
+                            alt=""></a>
+                    <a href="{{getOption('footer-logo-twitter-link')}}"> <img
+                            src="{{getOption('footer-logo-twitter')}}"
+                            alt=""></a>
+                    <a href="{{getOption('footer-logo-instagram-link')}}"><img
+                            src="{{getOption('footer-logo-instagram')}}"
+                            alt=""></a>
                 </div>
                 <div class="title">
-                     {!! getOption('copyright') !!}
+                    {!! getOption('footer-copyright-by') !!}
                 </div>
             </div>
             <div class="col note">
-                <p>{!! getOption('giấy phép hoạt động') !!}</p>
+                <p>{!! getOption('footer-operating-license') !!}</p>
             </div>
         </div>
     </div>

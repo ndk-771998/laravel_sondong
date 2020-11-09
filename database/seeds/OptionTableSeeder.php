@@ -12,23 +12,30 @@ class OptionTableSeeder extends Seeder {
     public function run() {
         Option::insert([
             [
-                'key'   => 'social_links',
-                'slug'  => 'social_links',
-                'value' => '<div><i class="fa fa-facebook-square fa-2x"></i></div>
-                            <div><i class="fa fa-twitter fa-2x ml-4 mr-4"></i></div>
-                            <div><i class="fa fa-instagram fa-2x"></i></div>',
+                'label'   => 'footer logo facebook',
+                'key'  => 'footer-logo-facebook',
+                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/f3ccce7b-9476-4682-9dd5-756c4082dd4c.svg',
             ],
-            ['key' => 'copyright','slug' => 'copyright', 'value' => '<p>Copyright by Dinks</p>'],
-            ['key' => 'logo_footer','slug' => 'logo_footer', 'value' => '/assets/images/logo/logo.png'],
-            ['key' => 'giấy phép hoạt động','slug' => 'giay_phep_hoat_dong',  'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016'],
             [
-                'key'   => 'hotline',
-                'slug'  => 'hotline',
-                'value' => '<p>Bộ phận kỹ thuật</p>
-                            <h5>+ 84 868 21 08 62</h5>
-                            <p>Bộ phận CSKH</p>
-                            <h5>+ 84 868 21 08 62</h5>',
-            ]
+                'label'   => 'footer logo twitter',
+                'key'  => 'footer-logo-twitter',
+                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/fe7c3857-6de3-44a9-a28c-c8ce3f8bb4ba.svg',
+            ],
+            [
+                'label'   => 'footer logo instagram',
+                'key'  => 'footer-logo-instagram',
+                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/bc749d9d-e72d-48d2-b3ef-e3ddf97a1bd4.svg',
+            ],
+            [
+                'label'   => 'footer copyright by',
+                'key'  => 'footer-copyright-by',
+                'value' => 'Copyright by Dinks',
+            ],
+            [
+                'label'   => 'footer operating license',
+                'key'  => 'footer-operating-license',
+                'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016',
+            ],
         ]);
     }
 }
