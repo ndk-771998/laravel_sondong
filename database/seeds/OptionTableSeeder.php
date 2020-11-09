@@ -12,23 +12,30 @@ class OptionTableSeeder extends Seeder {
     public function run() {
         Option::insert([
             [
-                'key'   => 'social_links',
-                'slug'  => 'social_links',
-                'value' => '<div><i class="fa fa-facebook-square fa-2x"></i></div>
-                            <div><i class="fa fa-twitter fa-2x ml-4 mr-4"></i></div>
-                            <div><i class="fa fa-instagram fa-2x"></i></div>',
+                'label'   => 'trang chủ slide 1',
+                'key'  => 'trang-chu-slide-1',
+                'value' => '/assets/images/wallpaper.png',
             ],
-            ['key' => 'copyright','slug' => 'copyright', 'value' => '<p>Copyright by Dinks</p>'],
-            ['key' => 'logo_footer','slug' => 'logo_footer', 'value' => '/assets/images/logo/logo.png'],
-            ['key' => 'giấy phép hoạt động','slug' => 'giay_phep_hoat_dong',  'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016'],
             [
-                'key'   => 'hotline',
-                'slug'  => 'hotline',
-                'value' => '<p>Bộ phận kỹ thuật</p>
-                            <h5>+ 84 868 21 08 62</h5>
-                            <p>Bộ phận CSKH</p>
-                            <h5>+ 84 868 21 08 62</h5>',
-            ]
+                'label'   => 'trang chủ slide 2',
+                'key'  => 'trang-chu-slide-2',
+                'value' => '/assets/images/wallpaper.png',
+            ],
+            [
+                'label'   => 'trang chủ slide 3',
+                'key'  => 'trang-chu-slide-3',
+                'value' => '/assets/images/wallpaper.png',
+            ],
+            [
+                'label'   => 'trang chủ slide 4',
+                'key'  => 'trang-chu-slide-4',
+                'value' => '/assets/images/wallpaper.png',
+            ],
+            [
+                'label'   => 'trang chủ slide 5',
+                'key'  => 'trang-chu-slide-5',
+                'value' => '/assets/images/wallpaper.png',
+            ],
         ]);
     }
 }
