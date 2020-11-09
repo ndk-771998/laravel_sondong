@@ -5,7 +5,7 @@
             <p>HỖ TRỢ TRỰC TUYẾN</p>
         </div>
         <div class="d-flex flex-column content-navrg ">
-            {!! getOption('hotline') !!}
+            {!! getOption('sidebar-right-hotline') !!}
         </div>
     </div>
     <div class="nav-bg nav-news">
@@ -15,7 +15,7 @@
         </div>
         <div class="d-flex flex-column content-navrg-2 ">
             @foreach($news_side as $newsItem)
-            <a href="posts/{!! $newsItem->slug !!}">
+            <a href="{{ url("posts/" .$newsItem->slug) }}">
                 <div class="d-flex description">
                     <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
                     <div>
