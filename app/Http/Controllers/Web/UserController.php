@@ -8,12 +8,6 @@ use VCComponent\Laravel\User\Http\Controllers\Web\RegisterController as WebUserC
 class UserController extends WebUserController
 {
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(array $data)
     {
         $validator = Validator::make($data, [

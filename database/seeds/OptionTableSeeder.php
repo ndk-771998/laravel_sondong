@@ -14,6 +14,11 @@ class OptionTableSeeder extends Seeder
     {
         Option::insert([
             [
+                'label' => 'Header Logo',
+                'key' => 'header-logo',
+                'value' => '/assets/images/logo/logo.png',
+            ],
+            [
                 'label' => "Social Links",
                 'key'   => 'social_links',
                 'value' => '<div><i class="fa fa-facebook-square fa-2x"></i></div>
