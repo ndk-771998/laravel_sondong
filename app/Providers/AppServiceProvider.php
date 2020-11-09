@@ -13,6 +13,7 @@ use App\Http\Controllers\Web\PostListController;
 use App\Http\Controllers\Web\PostDetailController;
 use App\Http\Controllers\Web\ProductListController;
 use App\Http\Controllers\Web\ProductDetailController;
+use App\Http\View\Composers\OptionComposer;
 use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 use VCComponent\Laravel\Product\Contracts\ViewProductDetailControllerInterface;
 use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
@@ -50,5 +51,6 @@ class AppServiceProvider extends ServiceProvider
        View::composer('*', MenuComposer::class);
        View::composer('*', SlideComposer::class);
        View::composer('*', NewsComposer::class);
+       View::composer('*', OptionComposer::class);
     }
 }
