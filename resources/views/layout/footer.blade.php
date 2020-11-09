@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <img src="{!! getOption('logo_footer') !!}" class="logo" alt="logo">
+           <a href="/"><img src="{!! getOption('footer-logo') !!}" class="logo" alt="logo"></a>
 
         </div>
         <div class="row">

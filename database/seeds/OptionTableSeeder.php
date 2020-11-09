@@ -12,22 +12,9 @@ class OptionTableSeeder extends Seeder {
     public function run() {
         Option::insert([
             [
-                'key'   => 'social_links',
-                'slug'  => 'social_links',
-                'value' => '<div><i class="fa fa-facebook-square fa-2x"></i></div>
-                            <div><i class="fa fa-twitter fa-2x ml-4 mr-4"></i></div>
-                            <div><i class="fa fa-instagram fa-2x"></i></div>',
-            ],
-            ['key' => 'copyright','slug' => 'copyright', 'value' => '<p>Copyright by Dinks</p>'],
-            ['key' => 'logo_footer','slug' => 'logo_footer', 'value' => '/assets/images/logo/logo.png'],
-            ['key' => 'giấy phép hoạt động','slug' => 'giay_phep_hoat_dong',  'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016'],
-            [
-                'key'   => 'hotline',
-                'slug'  => 'hotline',
-                'value' => '<p>Bộ phận kỹ thuật</p>
-                            <h5>+ 84 868 21 08 62</h5>
-                            <p>Bộ phận CSKH</p>
-                            <h5>+ 84 868 21 08 62</h5>',
+                'label'   => 'Footer logo',
+                'slug'  => 'footer-logo',
+                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/fafaeae0-c771-45b6-afa3-5a6439992b21.png',
             ]
         ]);
     }
