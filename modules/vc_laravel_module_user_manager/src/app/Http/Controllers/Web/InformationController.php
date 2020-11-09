@@ -29,6 +29,7 @@ class InformationController extends Controller {
     }
 
     public function editInfo(Request $request) {
+
         $birth = null;
         if ($request['years'] !== null && $request['moths'] !== null && $request['days'] !== null) {
             $birth = $request['years'] . "-" . $request['moths'] . "-" . $request['days'];
