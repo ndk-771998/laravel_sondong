@@ -1,7 +1,7 @@
 <?php
 return [
     'cache'           => [
-        'enabled' => true,
+        'enabled' => false,
         'minutes' => 5,
     ],
     'auth_middleware' => [

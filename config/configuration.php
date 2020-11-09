@@ -6,7 +6,7 @@ return [
         'inputs' => [
             [
                 'label' => 'Link mạng xã hội',
-                'key' => 'social-links',
+                'key'   => 'social-links',
                 'type'  => 'text',
             ],
         ],
@@ -16,7 +16,7 @@ return [
         'inputs' => [
             [
                 'label' => 'Bản quyền',
-                'key' => 'copyright',
+                'key'   => 'copyright',
                 'type'  => 'text',
             ],
         ],
@@ -26,7 +26,7 @@ return [
         'inputs' => [
             [
                 'label' => 'Logo chân trang',
-                'key' => 'logo_footer',
+                'key'   => 'logo_footer',
                 'type'  => 'image',
             ],
         ],
@@ -36,7 +36,7 @@ return [
         'inputs' => [
             [
                 'label' => 'giấy phép hoạt động',
-                'key' => 'giay_phep_hoat_dong',
+                'key'   => 'giay_phep_hoat_dong',
                 'type'  => 'text',
             ],
         ],
@@ -46,7 +46,7 @@ return [
         'inputs' => [
             [
                 'label' => 'Đường dây nóng',
-                'key' => 'hotline',
+                'key'   => 'hotline',
                 'type'  => 'text',
             ],
         ],
