@@ -10,4 +10,8 @@ class CartController extends BaseController implements ViewCartControllerInterfa
     public function viewCart() {
         return 'pages.cart';
     }
+    protected function viewData($carts, Request $request)
+    {
+        return [];
+    }
 }
