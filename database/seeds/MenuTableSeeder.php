@@ -3,7 +3,8 @@
 use Illuminate\Database\Seeder;
 use VCComponent\Laravel\Menu\Entities\Menu;
 
-class MenuTableSeeder extends Seeder {
+class MenuTableSeeder extends Seeder
+{
     /**
      * Run the database seeds.
      *
@@ -16,6 +17,6 @@ class MenuTableSeeder extends Seeder {
             ['name' => 'sidebar'],
             ['name' => 'footer-1'],
             ['name' => 'footer-2'],
-            ]);
+        ]);
     }
 }
