@@ -17,14 +17,19 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="home">
-                        <div class="product"  id="product">
+                        <div class="product" id="product">
                             <div class="row">
-                                <div class="col-4"> <h5>SẢN PHẨM</h5></div>
+                                <div class="col-4">
+                                    <h5>SẢN PHẨM</h5>
+                                </div>
                                 <div class="col-8  d-flex justify-content-end">
-                                    <select id="orderProductsSelect" class="col-4" name="order_by" >
+                                    <select id="orderProductsSelect" class="col-4" name="order_by">
                                         <option>Sắp xếp</option>
-                                        <option value="created_at|desc" {{ $activeFilter === 'created_at|desc' ? 'selected' : '' }}>Mới nhất</option>
-                                        <option value="order|desc" {{ $activeFilter === 'order|desc' ? 'selected' : '' }}>Hot nhất</option>
+                                        <option value="created_at|desc"
+                                            {{ $activeFilter === 'created_at|desc' ? 'selected' : '' }}>Mới nhất
+                                        </option>
+                                        <option value="order|desc"
+                                            {{ $activeFilter === 'order|desc' ? 'selected' : '' }}>Hot nhất</option>
                                     </select>
                                 </div>
                             </div>
@@ -35,7 +40,7 @@
                                     <a href="/product/{!! $product->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                                <img src="{!! $product->thumbnail !!}"alt="">
+                                                <img src="{!! $product->thumbnail !!}" alt="">
                                             </div>
                                             <div class="product-title">
                                                 <p>{!! $product->name !!}</p>
@@ -44,8 +49,11 @@
                                                 <p>Nhà thiết kế: {!! $product->brand !!}</p>
                                             </div>
                                             <div class="product-price d-flex justify-content-between">
-                                                <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
-                                                <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
+                                                <div class="price">
+                                                    <p>{!! number_format($product->price) !!} đ</p>
+                                                </div>
+                                                <div class="original_price">{!!number_format($product->original_price)
+                                                    !!} đ</div>
                                             </div>
                                         </div>
                                     </a>
@@ -53,7 +61,8 @@
                                 @endforeach
                             </div>
                             <div class="d-flex justify-content-end">
-                                {{ $products->fragment('product')->links('include.pagination') }}
+                                {{-- {{ $products->fragment('product')->links('include.pagination') }} --}}
+                                {{ $products->appends($_GET)->render('include.pagination') }}
                             </div>
                         </div>
                     </div>
@@ -62,5 +71,5 @@
                     @include('layout.nav-right')
                 </div>
             </div>
-        </section>
-        @endsection
+</section>
+@endsection
