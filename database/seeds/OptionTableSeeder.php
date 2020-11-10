@@ -38,6 +38,7 @@ class OptionTableSeeder extends Seeder
                 'key'  => 'footer-operating-license',
                 'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016',
             ],
+            [
                 'label' => 'Footer logo',
                 'key'   => 'footer-logo',
                 'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/fafaeae0-c771-45b6-afa3-5a6439992b21.png',
@@ -45,7 +46,8 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Header logo',
                 'key'   => 'header-logo',
-                'value' => 'http://l72-lp16001-dev.vicoders.com/assets/images/logo/logo.png'],
+                'value' => 'http://l72-lp16001-dev.vicoders.com/assets/images/logo/logo.png',
+            ],
         ]);
     }
 }
