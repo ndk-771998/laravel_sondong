@@ -62,7 +62,7 @@
                             </div>
                             <div class="d-flex justify-content-end">
                                 {{-- {{ $products->fragment('product')->links('include.pagination') }} --}}
-                                {{ $products->appends($_GET)->render('include.pagination') }}
+                                {{ $products_custom->appends($_GET)->render('include.pagination') }}
                             </div>
                         </div>
                     </div>
