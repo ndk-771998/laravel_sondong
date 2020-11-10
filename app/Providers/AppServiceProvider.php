@@ -4,21 +4,24 @@ namespace App\Providers;
 
 use App\Entities\Post;
 use App\Entities\Product;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
+use App\Http\Controllers\Web\CartController;
+use App\Http\Controllers\Web\PostDetailController;
+use App\Http\Controllers\Web\PostListController;
+use App\Http\Controllers\Web\ProductDetailController;
+use App\Http\Controllers\Web\ProductListController;
+use App\Http\View\Composers\CartComposer;
 use App\Http\View\Composers\MenuComposer;
-use App\Http\View\Composers\SlideComposer;
 use App\Http\View\Composers\NewsComposer;
 use App\Http\View\Composers\OptionComposer;
-use App\Http\Controllers\Web\PostListController;
-use App\Http\Controllers\Web\PostDetailController;
-use App\Http\Controllers\Web\ProductListController;
-use App\Http\Controllers\Web\ProductDetailController;
-use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
-use VCComponent\Laravel\Product\Contracts\ViewProductDetailControllerInterface;
-use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
-use VCComponent\Laravel\Post\Contracts\ViewPostDetailControllerInterface;
+use App\Http\View\Composers\SlideComposer;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+use VCComponent\Laravel\Order\Contracts\ViewCartControllerInterface;
+use VCComponent\Laravel\Post\Contracts\ViewPostDetailControllerInterface;
+use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
+use VCComponent\Laravel\Product\Contracts\ViewProductDetailControllerInterface;
+use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ViewPostListControllerInterface::class, PostListController::class);
         $this->app->bind(ViewPostDetailControllerInterface::class, PostDetailController::class);
 
+        $this->app->bind(ViewCartControllerInterface::class, CartController::class);
     }
 
     /**
@@ -44,13 +48,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Relation::morphMap([
-            'posts'      => Post::class,
-            'products'   => Product::class,
+            'posts'    => Post::class,
+            'products' => Product::class,
         ]);
 
-       View::composer('*', MenuComposer::class);
-       View::composer('*', SlideComposer::class);
-       View::composer('*', NewsComposer::class);
-       View::composer('*', OptionComposer::class);
+        View::composer('*', CartComposer::class);
+        View::composer('*', MenuComposer::class);
+        View::composer('*', SlideComposer::class);
+        View::composer('*', NewsComposer::class);
+        View::composer('*', OptionComposer::class);
     }
 }

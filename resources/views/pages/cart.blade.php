@@ -26,6 +26,7 @@
                             <div>{!! session('alert') !!}</div>
                             @endif
                             @if ($cartItemsCount)
+
                             <div id="alert"></div>
                             <div class="check-table table-responsive">
                                 <table class="table  table-bordered text-center table-md" >
