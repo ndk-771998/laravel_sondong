@@ -14,39 +14,29 @@ class OptionTableSeeder extends Seeder
     {
         Option::insert([
             [
-                'label' => 'Header Logo',
-                'key' => 'header-logo',
-                'value' => '/assets/images/logo/logo.png',
+                'label'   => 'trang chủ slide 1',
+                'key'  => 'trang-chu-slide-1',
+                'value' => '/assets/images/wallpaper.png',
             ],
             [
-                'label' => "Social Links",
-                'key'   => 'social_links',
-                'value' => '<div><i class="fa fa-facebook-square fa-2x"></i></div>
-                            <div><i class="fa fa-twitter fa-2x ml-4 mr-4"></i></div>
-                            <div><i class="fa fa-instagram fa-2x"></i></div>',
+                'label'   => 'trang chủ slide 2',
+                'key'  => 'trang-chu-slide-2',
+                'value' => '/assets/images/wallpaper.png',
             ],
             [
-                'label' => "Copyright",
-                'key'   => 'copyright',
-                'value' => '<p>Copyright by Dinks</p>',
+                'label'   => 'trang chủ slide 3',
+                'key'  => 'trang-chu-slide-3',
+                'value' => '/assets/images/wallpaper.png',
             ],
             [
-                'label' => "logo footer",
-                'key'   => 'logo_footer',
-                'value' => '/assets/images/logo/logo.png',
+                'label'   => 'trang chủ slide 4',
+                'key'  => 'trang-chu-slide-4',
+                'value' => '/assets/images/wallpaper.png',
             ],
             [
-                "label" => "Giấy phép hoạt động",
-                'key'   => 'giay-phep-hoat-dong',
-                'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016',
-            ],
-            [
-                'label' => ' Hotline',
-                'key'   => 'hotline',
-                'value' => '<p>Bộ phận kỹ thuật</p>
-                            <h5>+ 84 868 21 08 62</h5>
-                            <p>Bộ phận CSKH</p>
-                            <h5>+ 84 868 21 08 62</h5>',
+                'label'   => 'trang chủ slide 5',
+                'key'  => 'trang-chu-slide-5',
+                'value' => '/assets/images/wallpaper.png',
             ],
         ]);
     }
