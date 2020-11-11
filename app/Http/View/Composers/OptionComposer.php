@@ -25,7 +25,7 @@ class OptionComposer
             'footer-logo-instagram-link',
             'footer-logo-instagram',
             'footer-copyright-by',
-            'footer-operating-license'
+            'footer-operating-license',
         ]);
     }
 }
