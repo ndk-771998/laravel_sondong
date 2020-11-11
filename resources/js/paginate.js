@@ -5,7 +5,6 @@ $(document).ready(function () {
     $('li.page-item').each(function () {
         var link_paginate = $(this).find('a.page-link').attr('href');
         var new_link_paginate;
-        console.log(link_paginate);
         if(checkLinkPaginate(link_paginate) == true ){
             new_link_paginate = editLinkPaginate(link_paginate);
             $(this).find('a.page-link').attr('href', new_link_paginate);

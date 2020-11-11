@@ -40621,7 +40621,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.page-item').each(function () {
     var link_paginate = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('a.page-link').attr('href');
     var new_link_paginate;
-    console.log(link_paginate);
 
     if (checkLinkPaginate(link_paginate) == true) {
       new_link_paginate = editLinkPaginate(link_paginate);
