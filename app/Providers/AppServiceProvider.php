@@ -52,9 +52,10 @@ class AppServiceProvider extends ServiceProvider
             'products' => Product::class,
         ]);
 
-       View::composer('*', MenuComposer::class);
-       View::composer('*', SlideComposer::class);
-       View::composer('*', NewsComposer::class);
-       View::composer('*', OptionComposer::class);
+        View::composer('*', CartComposer::class);
+        View::composer('*', MenuComposer::class);
+        View::composer('*', SlideComposer::class);
+        View::composer('*', NewsComposer::class);
+        View::composer('*', OptionComposer::class);
     }
 }
