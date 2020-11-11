@@ -15,6 +15,7 @@ class OptionComposer
     public function compose(View $view)
     {
         prepareOption([
+            'sidebar-right-hotline',
             'header-logo',
             'footer-logo',
             'footer-logo-facebook-link',
