@@ -5,7 +5,7 @@
         <ul class="custom-breadcrumb m-0">
             <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
             <li class="breadcrumb-item"><a href="/product">Sản phẩm</a></li>
-            <li class="breadcrumb-item active">Chi tiết</li>
+            <li class="breadcrumb-item active">{{$product->name}}</li>
         </ul>
     </div>
 </nav>
@@ -23,9 +23,10 @@
                         <h3 class="text-uppercase">Chi tiết sản phẩm</h3>
                         <div class="p-flex my-24">
                             <div class="left">
-                       <div class="product-thumbnail">
+                                <div class="product-thumbnail">
                                     <div class="item">
-                                        <div class="tile" data-scale="4.0" data-image="{!! $product->thumbnail !!}"></div>
+                                        <div class="tile" data-scale="4.0" data-image="{!! $product->thumbnail !!}">
+                                        </div>
                                     </div>
                                     @foreach($thumbnailProducts as $thumbnail)
                                     <div class="item">
@@ -56,29 +57,36 @@
                                         <span>Hết hàng</span>
                                         @endif
                                     </li>
-                                    <li class="original_price">Giá gốc: {!! number_format($product->original_price) !!} đ</li>
-                                    <li>Giá bán: <span class="cost">{!! number_format($product->price) !!} đ</span>/ sản phẩm</li>
-                                    <li>Số lượng: <input type="number" id="quantity_product" min="1" max="30" value="1"></li>
-                                    <li>Tổng tiền: <span class="total " id="total">{!! number_format($product->price) !!}</span><span class="text-dark"> đ</span></li>
+                                    <li class="original_price">Giá gốc: {!! number_format($product->original_price) !!}
+                                        đ</li>
+                                    <li>Giá bán: <span class="cost">{!! number_format($product->price) !!} đ</span>/ sản
+                                        phẩm</li>
+                                    <li>Số lượng: <input type="number" id="quantity_product" min="1" max="30" value="1">
+                                    </li>
+                                    <li>Tổng tiền: <span class="total " id="total">{!! number_format($product->price)
+                                            !!}</span><span class="text-dark"> đ</span></li>
                                 </ul>
                                 <ul class="buy d-flex flex-wrap align-items-center">
                                     @if($isAvailable)
                                     <form action="{{ route('cart-items.create') }}" method="post">
                                         {!! csrf_field() !!}
-                                        <input class="productdetails-quantity" name="quantity" value="1" type="number" hidden min=1 >
+                                        <input class="productdetails-quantity" name="quantity" value="1" type="number"
+                                            hidden min=1>
                                         <input name="product_id" value="{!! $product->id !!}" hidden>
-                                        <input name="product_price" id="product_price" value="{!! $product->price !!}" hidden>
+                                        <input name="product_price" id="product_price" value="{!! $product->price !!}"
+                                            hidden>
                                         <input name="redirect" value="cart" hidden>
-                                        <li><input id="purchase-product-{!! $product->id !!}-submit" type="submit" class="btn-order" class="mb-2 mb-md-0" name="" value="Mua ngay"
-                                        ></li>
+                                        <li><input id="purchase-product-{!! $product->id !!}-submit" type="submit"
+                                                class="btn-order" class="mb-2 mb-md-0" name="" value="Mua ngay"></li>
                                     </form>
                                     <form action="{{ route('cart-items.create') }}" method="post">
                                         {!! csrf_field() !!}
-                                        <input class="productdetails-quantity" name="quantity" value="1" type="number" min=1 hidden >
+                                        <input class="productdetails-quantity" name="quantity" value="1" type="number"
+                                            min=1 hidden>
                                         <input name="product_id" value="{!! $product->id !!}" hidden>
                                         <input name="product_price" value="{!! $product->price !!}" hidden>
-                                        <li><input id="product-{!! $product->id !!}-submit" value="Thêm vào giỏ hàng" class="btn-next" type="submit" name=""
-                                        ></li>
+                                        <li><input id="product-{!! $product->id !!}-submit" value="Thêm vào giỏ hàng"
+                                                class="btn-next" type="submit" name=""></li>
                                     </form>
                                     @else
                                     <div class="h6 text-danger mt-2">Hết hàng</div>
@@ -92,9 +100,12 @@
                             <form action="{{url('comment')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required="" name="email" placeholder="Nhập email của bạn . . .">
-                                    <input type="text" class="form-control" required name="user" placeholder="Nhập tên của bạn . . .">
-                                    <textarea class="form-control" required name="content" placeholder="Nhập nội dung bình luận . . ."></textarea>
+                                    <input type="text" class="form-control" required="" name="email"
+                                        placeholder="Nhập email của bạn . . .">
+                                    <input type="text" class="form-control" required name="user"
+                                        placeholder="Nhập tên của bạn . . .">
+                                    <textarea class="form-control" required name="content"
+                                        placeholder="Nhập nội dung bình luận . . ."></textarea>
                                     <input name="commentable_id" value="{{ $product->id }}" hidden>
                                     <input name="commentable_type" value="products" hidden>
                                     <input type="submit" value="Gửi">
@@ -110,7 +121,7 @@
                                     <a href="{!! $ProductItem->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                                <img src="{!! $ProductItem->thumbnail !!}"alt="">
+                                                <img src="{!! $ProductItem->thumbnail !!}" alt="">
                                             </div>
                                             <div class="product-title">
                                                 <p>{!! $ProductItem->name !!}</p>
@@ -119,8 +130,11 @@
                                                 <p>Nhà thiết kế: Phi Tahc</p>
                                             </div>
                                             <div class="product-price d-flex justify-content-between">
-                                                <div class="price"><p>{!! number_format($ProductItem->price) !!} đ</p></div>
-                                                <div class="original_price">{!!number_format($ProductItem->original_price) !!} đ</div>
+                                                <div class="price">
+                                                    <p>{!! number_format($ProductItem->price) !!} đ</p>
+                                                </div>
+                                                <div class="original_price">
+                                                    {!!number_format($ProductItem->original_price) !!} đ</div>
                                             </div>
                                         </div>
                                     </a>
