@@ -7,7 +7,7 @@
         <div class="d-flex flex-column content-navlf">
             <div class="content-navlf-mg">
                 @foreach($sides_bar as $side_bar)
-                <a href="{!! $side_bar->link !!}" id="menu-{!! $side_bar->id  !!}" data-id="{!! $side_bar->id !!}" data-name="{!! $side_bar->link !!}" class="menu-item"> <p>{!! $side_bar->label !!}</p></a>
+                <a href="{!! URL::to($side_bar->link)  !!}" id="menu-{!! $side_bar->id  !!}" data-id="{!! $side_bar->id !!}" data-name="{!! $side_bar->link !!}" class="menu-item"> <p>{!! $side_bar->label !!}</p></a>
                 @endforeach
             </div>
         </div>
