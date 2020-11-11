@@ -15,7 +15,8 @@ class PostListController extends BasePostListController implements ViewPostListC
     }
 
     public function viewData($posts, Request $request) {
-        $news        = Post::oftype('posts')->latest()->paginate(6);
+        $news        = Post::oftype('posts')->orderBy('id','desc')->paginate(6);
+        // dd($news);
         $title       = 'Tin Tức';
         $urlRedirect = 'posts';
 
@@ -31,7 +32,7 @@ class PostListController extends BasePostListController implements ViewPostListC
     }
 
     public function viewDataExhibition($posts, Request $request) {
-        $news        = Post::oftype('exhibition')->latest()->paginate(6);
+        $news        = Post::oftype('exhibition')->orderBy('id','desc')->paginate(6);
         $title       = 'Hỗ trợ triển lãm cưới';
         $urlRedirect = 'exhibition';
 
@@ -47,7 +48,7 @@ class PostListController extends BasePostListController implements ViewPostListC
     }
 
     public function viewDataPlace($posts, Request $request) {
-        $news        = Post::oftype('place')->latest()->paginate(6);
+        $news        = Post::oftype('place')->orderBy('id','desc')->paginate(6);
         $title       = 'Địa điểm cưới lãng mạng';
         $urlRedirect = 'place';
 
