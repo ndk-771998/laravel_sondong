@@ -1,20 +1,14 @@
-@php
-function fixUrl($string){
-$url = str_replace(array("%7B%22", "%22%3A%22", "%22%7D"), array('{"', '":"', '"}'), $string);
-return $url;
-}
-@endphp
 @if ($paginator->hasPages())
 <nav>
     <ul class="pagination">
         @if ($paginator->onFirstPage())
         <li class="page-item">
-            <a class="page-link" href="{{ fixUrl($paginator->url(1)) }}">Đầu <img src="/assets/images/logo/Rewird.png"
+            <a class="page-link" href="{{ $paginator->url(1) }}">Đầu <img src="/assets/images/logo/Rewird.png"
                     alt=""></a>
         </li>
         @else
         <li class="page-item">
-            <a class="page-link" href="{{ fixUrl($paginator->url(1)) }}">Đầu <img src="/assets/images/logo/Rewird.png"
+            <a class="page-link" href="{{ $paginator->url(1) }}">Đầu <img src="/assets/images/logo/Rewird.png"
                     alt=""></a>
         </li>
         <li class="page-item ">
@@ -33,7 +27,7 @@ return $url;
         <li class="page-item active" aria-current="page"><span class="page-link">{{ $page }}</span></li>
         @elseif (($page == $paginator->currentPage() + 1 || $page == $paginator->currentPage() + 2) || $page ==
         $paginator->lastPage())
-        <li class="page-item"><a class="page-link" href="{{ fixUrl($url) }}">{{ $page }}</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
         @elseif ($page == $paginator->lastPage() - 1)
         <li class="page-item disabled"><span class="page-link">...</span></li>
         @endif
@@ -47,12 +41,12 @@ return $url;
                     class="soft" alt=""></a>
         </li>
         <li class="page-item">
-            <a class="page-link" href="{{ fixUrl($paginator->url($paginator->lastPage())) }}"><img
+            <a class="page-link" href="{{ $paginator->url($paginator->lastPage()) }}"><img
                     src="/assets/images/logo/next.png" alt=""> Cuối </a>
         </li>
         @else
         <li class="page-item">
-            <a class="page-link" href="{{ fixUrl($paginator->url($paginator->lastPage())) }}"><img
+            <a class="page-link" href="{{ $paginator->url($paginator->lastPage()) }}"><img
                     src="/assets/images/logo/next.png" alt=""> Cuối </a>
         </li>
         @endif

@@ -52,8 +52,7 @@
                                                 <div class="price">
                                                     <p>{!! number_format($product->price) !!} đ</p>
                                                 </div>
-                                                <div class="original_price">{!!number_format($product->original_price)
-                                                    !!} đ</div>
+                                                <div class="original_price">{!!number_format($product->original_price)!!} đ</div>
                                             </div>
                                         </div>
                                     </a>
