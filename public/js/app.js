@@ -40397,6 +40397,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _zoom_image__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./zoom-image */ "./resources/js/zoom-image.js");
 /* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./main */ "./resources/js/main.js");
 /* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_main__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _paginate__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./paginate */ "./resources/js/paginate.js");
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
 
 
@@ -40412,7 +40413,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log("My Kit is ready :)");
+
+console.log("My Kit is  ready :)");
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail').slick({
     slidesToShow: 1,
@@ -40598,6 +40600,47 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".submit").click(function () {
     return false;
   });
+});
+
+/***/ }),
+
+/***/ "./resources/js/paginate.js":
+/*!**********************************!*\
+  !*** ./resources/js/paginate.js ***!
+  \**********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  var url = window.location.href;
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.page-item').each(function () {
+    var link_paginate = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('a.page-link').attr('href');
+    var new_link_paginate;
+
+    if (checkLinkPaginate(link_paginate) == true) {
+      new_link_paginate = editLinkPaginate(link_paginate);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('a.page-link').attr('href', new_link_paginate);
+    }
+  });
+
+  function checkLinkPaginate($string) {
+    if ($string !== undefined) {
+      if ($string.includes('%7B%22') && $string.includes('%22%3A%22') && $string.includes('%22%7D')) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
+  function editLinkPaginate($string) {
+    return $string.replace('%7B%22', '{"').replace('%22%3A%22', '":"').replace('%22%7D', '"}');
+  }
 });
 
 /***/ }),
