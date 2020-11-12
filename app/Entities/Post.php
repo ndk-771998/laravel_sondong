@@ -13,9 +13,8 @@ class Post extends BasePost
     public function postTypes()
     {
         return [
-            'place',
-            'exhibition',
-            'pages',
+            'Địa điểm cưới lãng mạng' => "place",
+            'Hỗ trợ tiệc cưới' => "exhibition",
         ];
     }
 
