@@ -12,7 +12,7 @@ return [
     ConfigMenu::SYSTEM_SITEMAP,
     ConfigMenu::USER,
     ConfigMenu::CONTACT,
-    // ConfigMenu::LANGUAGE,
+    ConfigMenu::LANGUAGE,
     // ConfigMenu::SUBSCRIBE,
     ConfigMenu::MEDIA,
     ConfigMenu::POST,

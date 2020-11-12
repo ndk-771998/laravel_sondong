@@ -19,6 +19,7 @@ class Post extends BasePost
         return [
             'Địa điểm cưới lãng mạng' => "place",
             'Hỗ trợ tiệc cưới' => "exhibition",
+            'trang' => 'pages',
         ];
     }
 
