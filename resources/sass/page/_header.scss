@@ -2,6 +2,8 @@
     .logo {
         margin-top: 10px;
         width: 246px;
+        height:60px;
+        object-fit: cover;
     }
 
     .icon-header {
@@ -117,7 +119,17 @@
 
     }
        .carousel-item{
-        transition: transform 6s ease-in-out;
+        transition: transform 1s ease-in-out;
     }
-
+}
+@media only screen and (max-width: 1600px) and (min-width: 1199px)
+{
+    .carousel-item{
+        transition: transform 6s ease-in-out;
+        img{
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
 }
