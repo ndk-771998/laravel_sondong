@@ -13170,6 +13170,9 @@ a.text-dark:hover, a.text-dark:focus {
 .header-top .logo {
   margin-top: 10px;
   width: 246px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header-top .icon-header {
