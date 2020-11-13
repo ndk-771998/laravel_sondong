@@ -18,13 +18,16 @@ return [
     ],
     'auth_middleware' => [
         'admin'    => [
-            'middleware' => '',
-            'except'     => [],
+            // 'middleware' => '',
+            // 'except'     => [],
         ],
         'frontend' => [
-            'middleware' => '',
-            'except'     => [],
+            // 'middleware' => '',
+            // 'except'     => [],
         ],
     ],
-
+    'cache'           => [
+        'enabled' => false,
+        'minutes' => 1,
+    ],
 ];
