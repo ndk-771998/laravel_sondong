@@ -72,7 +72,7 @@ class OptionTableSeeder extends Seeder
                 'value' => 'Copyright by Dinks',
             ],
             [
-                'label' => 'footer operating license',
+                'label' => 'Footer giấy phép hoạt động',
                 'key'   => 'footer-operating-license',
                 'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016',
             ],
