@@ -13,10 +13,11 @@ import './user/user';
 import './zoomimg';
 import './zoom-image';
 import './main';
-
-console.log("My Kit is ready :)");
+import './paginate';
+console.log("My Kit is  ready :)");
 
 $(document).ready(function() {
+
     $('.product-thumbnail').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
