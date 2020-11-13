@@ -13042,6 +13042,9 @@ a.text-dark:hover, a.text-dark:focus {
 .footer .logo {
   margin-bottom: 15px;
   width: 255px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .footer .contact {
