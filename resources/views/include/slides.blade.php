@@ -33,7 +33,7 @@
             <div class="carousel-item active" data-interval="2000">
                 <img class="img-fluid" src="{!! getOption('trang-chu-slide-1') !!}">
             </div>
-            <div class="carousel-item " data-interval="2000">
+            <div class="carousel-item " data-interval="3000">
                 <img class="img-fluid" src="{!! getOption('trang-chu-slide-2') !!}">
             </div>
             <div class="carousel-item " data-interval="2000">

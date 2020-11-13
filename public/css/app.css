@@ -13266,7 +13266,20 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-slide .carousel-item {
-  transition: transform 6s ease-in-out;
+  transition: transform 1s ease-in-out;
+}
+
+@media only screen and (max-width: 1600px) and (min-width: 1199px) {
+  .carousel-item {
+    transition: transform 6s ease-in-out;
+  }
+
+  .carousel-item img {
+    height: 300px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 .home .product a {
