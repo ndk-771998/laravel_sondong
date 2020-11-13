@@ -5,7 +5,7 @@
             <p>HỖ TRỢ TRỰC TUYẾN</p>
         </div>
         <div class="d-flex flex-column content-navrg ">
-            {!! getOption('sidebar-right-hotline') !!}
+            {!! getOption('ho-tro-truc-tuyen') !!}
         </div>
     </div>
     <div class="nav-bg nav-news">

@@ -15,27 +15,27 @@ class OptionTableSeeder extends Seeder
         Option::insert([
 
             [
-                'label' => 'trang chủ slide 1',
+                'label' => 'slide 1',
                 'key'   => 'trang-chu-slide-1',
                 'value' => '/assets/images/wallpaper.png',
             ],
             [
-                'label' => 'trang chủ slide 2',
+                'label' => 'slide 2',
                 'key'   => 'trang-chu-slide-2',
                 'value' => '/assets/images/wallpaper.png',
             ],
             [
-                'label' => 'trang chủ slide 3',
+                'label' => 'slide 3',
                 'key'   => 'trang-chu-slide-3',
                 'value' => '/assets/images/wallpaper.png',
             ],
             [
-                'label' => 'trang chủ slide 4',
+                'label' => 'slide 4',
                 'key'   => 'trang-chu-slide-4',
                 'value' => '/assets/images/wallpaper.png',
             ],
             [
-                'label' => 'trang chủ slide 5',
+                'label' => 'slide 5',
                 'key'   => 'trang-chu-slide-5',
                 'value' => '/assets/images/wallpaper.png',
             ],
@@ -72,7 +72,7 @@ class OptionTableSeeder extends Seeder
                 'value' => 'Copyright by Dinks',
             ],
             [
-                'label' => 'footer operating license',
+                'label' => 'Footer giấy phép hoạt động',
                 'key'   => 'footer-operating-license',
                 'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016',
             ],
@@ -87,8 +87,8 @@ class OptionTableSeeder extends Seeder
                 'value' => 'http://l72-lp16001-dev.vicoders.com/assets/images/logo/logo.png',
             ],
             [
-                'label' => 'Sidebar Right Hotline',
-                'key'   => 'sidebar-right-hotline',
+                'label' => 'Hỗ trợ trực tuyến',
+                'key'   => 'ho-tro-truc-tuyen',
                 'value' => '<p>Bộ phận kỹ thuật</p>
                 <h5>+ 84 868 21 08 62</h5>
                 <p>Bộ phận CSKH</p>
