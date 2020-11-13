@@ -13052,12 +13052,18 @@ a.text-dark:hover, a.text-dark:focus {
   color: pink;
 }
 
+.footer .contact img {
+  margin-right: 20px;
+}
+
 .footer .title {
-  text-align: center;
+  text-align: start;
+  color: #707070;
 }
 
 .footer .note {
   margin-top: 1%;
+  color: #707070;
 }
 
 .forgot-password .main .forgot-password-head {
