@@ -9,7 +9,6 @@ use VCComponent\Laravel\Comment\Traits\HasCommentTrait;
 use VCComponent\Laravel\MediaManager\HasMediaTrait;
 use VCComponent\Laravel\Post\Entities\Post as BasePost;
 use VCComponent\Laravel\Tag\Traits\HasTagsTraits;
-
 class Post extends BasePost
 {
     use HasCommentTrait, HasCategoriesTrait, HasTagsTraits, HasMediaTrait;
@@ -30,9 +29,9 @@ class Post extends BasePost
     public function exhibitionSchema()
     {
         return [
-            'thumbnail' => [
+            'is_hot' => [
                 'type'  => 'string',
-                'label' => 'Ảnh bìa',
+                'label' => 'Nổi bật',
                 'rule'  => [],
             ],
         ];
@@ -40,9 +39,9 @@ class Post extends BasePost
     public function placeSchema()
     {
         return [
-            'thumbnail' => [
+            'is_hot' => [
                 'type'  => 'string',
-                'label' => 'Ảnh bìa',
+                'label' => 'Nổi bật',
                 'rule'  => [],
             ],
         ];

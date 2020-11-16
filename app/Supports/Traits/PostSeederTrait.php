@@ -23,29 +23,16 @@ trait PostSeederTrait
     {
         return factory(Post::class, 10)
             ->states('place')
-            ->create()
-            ->each(function ($post) {
-                $meta = [
-                    [
-                        'key'   => 'thumbnail',
-                        'value' => '/assets/images/news.png',
-                    ],
-                ];
-                $post->postMetas()->createMany($meta);
-            });
+            ->create([
+                'thumbnail' => '/assets/images/news.png',
+            ]);
     }
 
     protected function seederExhibition()
     {
-        return factory(Post::class, 10)->states('exhibition')->create()->each(function ($post) {
-            $meta = [
-                [
-                    'key'   => 'thumbnail',
-                    'value' => '/assets/images/news.png',
-                ],
-            ];
-            $post->postMetas()->createMany($meta);
-        });
+        return factory(Post::class, 10)->states('exhibition')  ->create([
+            'thumbnail' => '/assets/images/news.png',
+        ]);
     }
 
     protected function seederAbout()
