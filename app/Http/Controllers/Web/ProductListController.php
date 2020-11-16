@@ -7,14 +7,17 @@ use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 use VCComponent\Laravel\Product\Entities\Product;
 use VCComponent\Laravel\Product\Http\Controllers\Web\ProductListController as BaseProductListController;
 
-class ProductListController extends BaseProductListController implements ViewProductListControllerInterface {
+class ProductListController extends BaseProductListController implements ViewProductListControllerInterface
+{
     protected $activeFilter = 'id|desc';
 
-    public function view() {
+    public function view()
+    {
         return 'pages.products';
     }
 
-    protected function viewData($products, Request $request) {
+    protected function viewData($products, Request $request)
+    {
         $query           = Product::query();
         $query           = $this->applyOrderByFromRequest($query, $request);
         $products_custom = $query->paginate(9);
@@ -23,22 +26,20 @@ class ProductListController extends BaseProductListController implements ViewPro
 
         if ($request->has('order_by')) {
             $orderBy = (array) json_decode($request->get('order_by'));
-
             $orderBy = collect($orderBy)->map(function ($value, $key) {
                 return $key . '|' . $value;
             })->toArray();
 
             $activeFilter = implode($orderBy);
-
         }
-
         return [
             'products_custom' => $products_custom,
             'activeFilter'    => $activeFilter,
         ];
     }
 
-    protected function applyOrderByFromRequest($query, Request $request) {
+    protected function applyOrderByFromRequest($query, Request $request)
+    {
         if ($request->has('order_by')) {
             $orderBy = (array) json_decode($request->get('order_by'));
             if (count($orderBy) > 0) {

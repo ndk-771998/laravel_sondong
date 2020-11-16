@@ -3,27 +3,27 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class=" col-12 col-md-8">
-                    <img src="{{getOption('header-logo')}}" class="logo" alt="logo"></div>
+                    <a href="/"><img src="{{getOption('header-logo')}}" class="logo" alt="logo"></a></div>
                 <div class="col-12 col-md-4">
                     <div class="row justify-content-end">
                         <div class="col-4 col-md-2"><a href="/search"><img
                                     src="https://img.icons8.com/ios/50/707070/search--v1.png" class="icon-header"></a>
                         </div>
                         <div class="col-4 col-md-2">@include('order::cartIcon')</div>
-                        <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
+                        {{-- <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
                             @if (Auth::check())
                             <a href="account"><img src="/assets/images/logo/logic.png" class="icon-header"></a>
                             @else
                             <div class="login">
                                 <a href="{{url('login')}}"><img src="/assets/images/logo/loginn.png"
-                                        class="icon-header"></a>
-                            </div>
-                            @endif
-                        </div>
+                            class="icon-header"></a>
                     </div>
-                </div>
+                    @endif
+                </div> --}}
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <div class="header-nav">
         <div class="container">

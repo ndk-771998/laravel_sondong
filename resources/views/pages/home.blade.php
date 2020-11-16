@@ -19,7 +19,7 @@
                                     <a href="product/{!! $product->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                                <img src="{!! $product->thumbnail !!}"alt="">
+                                                <img src="{!! $product->thumbnail !!}" alt="">
                                             </div>
                                             <div class="product-title">
                                                 <p>{!! $product->name !!}</p>
@@ -28,8 +28,11 @@
                                                 <p>Nhà thiết kế: {!! $product->brand !!}</p>
                                             </div>
                                             <div class="product-price d-flex justify-content-between">
-                                                <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
-                                                <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
+                                                <div class="price">
+                                                    <p>{!! number_format($product->price) !!} đ</p>
+                                                </div>
+                                                <div class="original_price">{!!number_format($product->original_price)
+                                                    !!} đ</div>
                                             </div>
                                         </div>
                                     </a>
@@ -52,11 +55,15 @@
                                 </div>
                             </div>
                             <div class="hr"></div>
-                             <div class="d-flex flex-column news ">
+                            <div class="d-flex flex-column news ">
                                 @foreach($exhibition as $Item)
                                 <a href="{{ url('exhibition/'.$Item->slug) }}">
                                     <div class="d-flex description">
-                                        <div><img src="{!! $Item->thumbnail !!}" alt=""></div>
+                                        @if ($Item->getMetaField('thumbnail'))
+                                        <div><img src="{!! $Item->getMetaField('thumbnail')  !!}" alt=""></div>
+                                        @else
+                                        <div><img src="{!! $Item->thumbnail  !!}" alt=""></div>
+                                        @endif
                                         <div>
                                             <h6>{!! $Item->title !!}</h6>
                                             <p>{!! $Item->description !!}</p>
@@ -79,11 +86,15 @@
                                 </div>
                             </div>
                             <div class="hr"></div>
-                             <div class="d-flex flex-column news ">
+                            <div class="d-flex flex-column news ">
                                 @foreach($place as $placeItem)
                                 <a href="{{ url('place/'.$placeItem->slug) }}">
                                     <div class="d-flex description">
-                                        <div><img src="{!! $placeItem->thumbnail !!}" alt=""></div>
+                                        @if ($placeItem->getMetaField('thumbnail'))
+                                        <div><img src="{!! $placeItem->getMetaField('thumbnail')  !!}" alt=""></div>
+                                        @else
+                                        <div><img src="{!! $placeItem->thumbnail  !!}" alt=""></div>
+                                        @endif
                                         <div>
                                             <h6>{!! $placeItem->title !!}</h6>
                                             <p>{!! $placeItem->description !!}</p>

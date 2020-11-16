@@ -26,16 +26,23 @@
                         {!! $post->content !!}
                     </div>
                     <div class="text-center">
+                        @if ($post->getMetaField('thumbnail'))
+                        <img class="img-fluid new-detail-img" src="{!! $post->getMetaField('thumbnail')  !!}" alt="">
+                        @else
                         <img class="img-fluid new-detail-img" src="{!! $post->thumbnail !!}" alt="">
+                        @endif
                     </div>
                     <div class="comment mt-5">
                         <h5>Bình luận</h5>
                         <form action="{{url('comment')}}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" required="" name="email" placeholder="Nhập email của bạn . . .">
-                                <input type="text" class="form-control" required name="user" placeholder="Nhập tên của bạn . . .">
-                                <textarea class="form-control" required name="content" placeholder="Nhập nội dung bình luận . . ."></textarea>
+                                <input type="text" class="form-control" required="" name="email"
+                                    placeholder="Nhập email của bạn . . .">
+                                <input type="text" class="form-control" required name="user"
+                                    placeholder="Nhập tên của bạn . . .">
+                                <textarea class="form-control" required name="content"
+                                    placeholder="Nhập nội dung bình luận . . ."></textarea>
                                 <input name="commentable_id" value="{{ $post->id }}" hidden>
                                 <input name="commentable_type" value="posts" hidden>
                                 <input name="comment_type" value="{!! $urlBreadcumb !!}" hidden>

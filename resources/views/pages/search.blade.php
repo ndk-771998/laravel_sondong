@@ -85,8 +85,12 @@
                                     <div class="d-flex flex-column" id="news">
                                         @foreach($news as $newsItem)
                                         <div class="description">
-                                            <a href="{!! $newsItem->slug !!}" class="d-flex">
-                                                <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
+                                            <a href="/posts/{!! $newsItem->slug !!}" class="d-flex">
+                                                @if ($newsItem->getMetaField('thumbnail'))
+                                                <div><img src="{!! $newsItem->getMetaField('thumbnail')  !!}" alt=""></div>
+                                                @else
+                                                <div><img src="{!! $newsItem->thumbnail  !!}" alt=""></div>
+                                                @endif
                                                 <div class="news-info">
                                                     <h6>{!! $newsItem->title !!}</h6>
                                                     <p>{!! $newsItem->description !!}</p>
@@ -145,7 +149,11 @@
                                         @foreach($news_tabpane as $newsItem)
                                         <div class="description">
                                             <a href="posts/{!! $newsItem->slug !!}" class="d-flex">
-                                                <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
+                                                @if ($newsItem->getMetaField('thumbnail'))
+                                                <div><img src="{!! $newsItem->getMetaField('thumbnail')  !!}" alt=""></div>
+                                                @else
+                                                <div><img src="{!! $newsItem->thumbnail  !!}" alt=""></div>
+                                                @endif
                                                 <div class="news-info">
                                                     <h6>{!! $newsItem->title !!}</h6>
                                                     <p>{!! $newsItem->description !!}</p>

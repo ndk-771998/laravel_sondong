@@ -43,6 +43,13 @@
                     font-size: 12px;
                     color: #242424;
                     font-weight: normal;
+                    height: 53px;
+                    line-height: 19px;
+                    color: #242424;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
                 }
 
                 u {

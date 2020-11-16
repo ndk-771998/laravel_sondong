@@ -21,42 +21,52 @@ return [
             ],
             [
                 'label' => 'Footer Link Facebook',
-                'key'   => 'footer-link-facebook',
+                'key'   => 'footer-logo-facebook-link',
                 'type'  => 'text',
             ],
             [
                 'label' => 'Footer Link Twitter',
-                'key'   => 'footer-link-twitter',
+                'key'   => 'footer-logo-twitter-link',
                 'type'  => 'text',
             ],
             [
                 'label' => 'Footer Link Instagram',
-                'key'   => 'footer-link-instagram',
+                'key'   => 'footer-logo-instagram-link',
                 'type'  => 'text',
             ],
             [
-                'label' => 'Footer copy by',
-                'key'   => 'footer-copy-by',
+                'label' => 'Footer copyright by',
+                'key'   => 'footer-copyright-by',
                 'type'  => 'text',
             ],
             [
                 'label' => 'Footer giấy phép hoạt động',
-                'key'   => 'footer-giay-phep-hoat-dong',
+                'key'   => 'footer-operating-license',
                 'type'  => 'text',
             ],
         ],
     ],
     [
-        'label'  => 'Sidebar-Right',
+        'label'  => 'Sidebar Right Hotline',
         'inputs' => [
             [
                 'label' => 'Bộ phận kỹ thuật',
-                'key'   => 'bo-phan-ki-thuat',
+                'key'   => 'bo-phan-ky-thuat',
                 'type'  => 'text',
             ],
             [
-                'label' => 'Bộ phận chăm sóc khách hàng',
+                'label' => 'Bộ phận cskh',
                 'key'   => 'bo-phan-cham-soc-khach-hang',
+                'type'  => 'text',
+            ],
+        ],
+    ],
+    [
+        'label'  => 'Hotline',
+        'inputs' => [
+            [
+                'label' => 'Hotline',
+                'key'   => 'hotline',
                 'type'  => 'text',
             ],
         ],
@@ -76,27 +86,27 @@ return [
             ],
             [
                 'label' => 'slide 1',
-                'key'   => 'slide-1',
+                'key'   => 'trang-chu-slide-1',
                 'type'  => 'image',
             ],
             [
                 'label' => 'slide 2',
-                'key'   => 'slide-2',
+                'key'   => 'trang-chu-slide-2',
                 'type'  => 'image',
             ],
             [
                 'label' => 'slide 3',
-                'key'   => 'slide-3',
+                'key'   => 'trang-chu-slide-3',
                 'type'  => 'image',
             ],
             [
                 'label' => 'slide 4',
-                'key'   => 'slide-4',
+                'key'   => 'trang-chu-slide-4',
                 'type'  => 'image',
             ],
             [
                 'label' => 'slide 5',
-                'key'   => 'slide-5',
+                'key'   => 'trang-chu-slide-5',
                 'type'  => 'image',
             ],
         ],
@@ -127,6 +137,16 @@ return [
             [
                 'label' => 'Sản phẩm description',
                 'key'   => 'san-pham-description',
+                'type'  => 'text',
+            ],
+        ],
+    ],
+    [
+        'label'  => 'Chi tiết Sản phẩm',
+        'inputs' => [
+            [
+                'label' => 'Chi tiết sản phẩm Hotline',
+                'key'   => 'chi-tiet-san-pham-hot-line',
                 'type'  => 'text',
             ],
         ],
@@ -175,8 +195,18 @@ return [
                 'type'  => 'text',
             ],
             [
+                'label' => 'Liên hệ website title',
+                'key'   => 'lien-he-website-title',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Liên hệ address',
+                'key'   => 'lien-he-address',
+                'type'  => 'text',
+            ],
+            [
                 'label' => 'Liên hệ Google Map',
-                'key'   => 'google-map',
+                'key'   => 'lien-he-google-map',
                 'type'  => 'text',
             ],
         ],
