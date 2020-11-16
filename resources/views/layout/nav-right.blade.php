@@ -17,7 +17,7 @@
             @foreach($news_side as $newsItem)
             <a href="{{ url("posts/" .$newsItem->slug) }}">
                 <div class="d-flex description">
-                    <div><img src="{!! $newsItem->getMetaField('thumbnail') !!}" alt=""></div>
+                    <div><img src="{!! $newsItem->thumbnail !!}" alt=""></div>
                     <div>
                         <p>{!! $newsItem->title !!}</p>
                     </div>

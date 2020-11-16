@@ -16,19 +16,19 @@ class ProductTableSeeder extends Seeder {
         factory(Product::class, 100)->create()->each(function ($image) {
             $image->productMetas()->saveMany([
                 new ProductMeta([
-                    'key'   => 'thumbnail',
+                    'key'   => 'banner',
                     'value' => '/assets/images/products/product_1.png',
                 ]),
                 new ProductMeta([
-                    'key'   => 'thumbnail',
+                    'key'   => 'banner',
                     'value' => '/assets/images/products/product_3.png',
                 ]),
                 new ProductMeta([
-                    'key'   => 'thumbnail',
+                    'key'   => 'banner',
                     'value' => '/assets/images/products/product_5.png',
                 ]),
                 new ProductMeta([
-                    'key'   => 'thumbnail',
+                    'key'   => 'banner',
                     'value' => '/assets/images/products/product_7.png',
                 ]),
 

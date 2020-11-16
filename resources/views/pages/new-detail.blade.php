@@ -26,7 +26,7 @@
                         {!! $post->content !!}
                     </div>
                     <div class="text-center">
-                        <img class="img-fluid new-detail-img" src="{!! $post->getMetaField('thumbnail') !!}" alt="">
+                        <img class="img-fluid new-detail-img" src="{!! $post->thumbnail !!}" alt="">
                     </div>
                     <div class="comment mt-5">
                         <h5>Bình luận</h5>
