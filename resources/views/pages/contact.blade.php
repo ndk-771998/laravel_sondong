@@ -27,7 +27,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="">Họ tên :</label>
-                                        <input type="text" required name="full_name" id=""
+                                        <input type="text" required name="last_name" id=""
                                             class="form-control form-control-sm" placeholder=""
                                             aria-describedby="helpId" required>
                                     </div>
@@ -54,6 +54,8 @@
                                         <textarea id="my-textarea" required class="form-control form-control-sm"
                                             name="note" rows="3"></textarea>
                                     </div>
+                                    <input type="text" name="status" value="2" hidden>
+                                    <input type="text" name="type" value="contacts" hidden>
                                     {{--  <div class="form-group">
                                         <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                     </div>
