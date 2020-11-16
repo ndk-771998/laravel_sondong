@@ -59,11 +59,7 @@
                                 @foreach($exhibition as $Item)
                                 <a href="{{ url('exhibition/'.$Item->slug) }}">
                                     <div class="d-flex description">
-                                        @if ($Item->getMetaField('thumbnail'))
-                                        <div><img src="{!! $Item->getMetaField('thumbnail')  !!}" alt=""></div>
-                                        @else
-                                        <div><img src="{!! $Item->thumbnail  !!}" alt=""></div>
-                                        @endif
+                                        <div><img src="{!! $Item->thumbnail !!}" alt=""></div>
                                         <div>
                                             <h6>{!! $Item->title !!}</h6>
                                             <p>{!! $Item->description !!}</p>
@@ -90,11 +86,7 @@
                                 @foreach($place as $placeItem)
                                 <a href="{{ url('place/'.$placeItem->slug) }}">
                                     <div class="d-flex description">
-                                        @if ($placeItem->getMetaField('thumbnail'))
-                                        <div><img src="{!! $placeItem->getMetaField('thumbnail')  !!}" alt=""></div>
-                                        @else
                                         <div><img src="{!! $placeItem->thumbnail  !!}" alt=""></div>
-                                        @endif
                                         <div>
                                             <h6>{!! $placeItem->title !!}</h6>
                                             <p>{!! $placeItem->description !!}</p>

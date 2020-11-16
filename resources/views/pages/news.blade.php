@@ -22,11 +22,7 @@
                         @foreach($result as $item)
                         <a href="{{ url($urlRedirect.'/'.$item->slug) }}">
                             <div class="d-flex description">
-                                @if ($item->getMetaField('thumbnail'))
-                                <div><img src="{!! $item->getMetaField('thumbnail')  !!}" alt=""></div>
-                                @else
                                 <div><img src="{!! $item->thumbnail  !!}" alt=""></div>
-                                @endif
                                 <div>
                                     <h6>{!! $item->title !!}</h6>
                                     <p>{!! $item->description !!}</p>

@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-<nav aria-label="breadcrumb"id="breadcrumb">
+<nav aria-label="breadcrumb" id="breadcrumb">
     <div class="container">
         <ul class="custom-breadcrumb m-0">
             <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
@@ -16,9 +16,10 @@
                 <div class="col-12 col-md-6 form">
                     <form action="{{ route('search') }}">
                         <div class="input-group row">
-                            <input type="search" name="search" value="{{ old('content') }}" placeholder="Tìm kiếm..."aria-describedby="button-addon5" class="form-control">
+                            <input type="search" name="search" value="{{ old('content') }}" placeholder="Tìm kiếm..."
+                                aria-describedby="button-addon5" class="form-control">
                             <div class="input-group-append">
-                                <button type="submit"class="btn d-flex"><i class="fa fa-search"></i></button>
+                                <button type="submit" class="btn d-flex"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </form>
@@ -26,19 +27,23 @@
                 <div><i>Kết quả tìm kiếm:</i></div>
                 @if($result !== [] || isset($result['search']) !== null)
                 <div>
-                    <ul class="nav nav-pills mb-3" id="pills-tab"role="tablist">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active"id="pills-home-tab"data-toggle="pill"href="#pills-home"role="tab"aria-controls="pills-home"aria-selected="true">Tất cả</a>
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                role="tab" aria-controls="pills-home" aria-selected="true">Tất cả</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"id="pills-profile-tab"data-toggle="pill"href="#pills-profile"role="tab"aria-controls="pills-profile"aria-selected="false">Sản phẩm</a>
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                                role="tab" aria-controls="pills-profile" aria-selected="false">Sản phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"id="pills-contact-tab"data-toggle="pill"href="#pills-contact"role="tab"aria-controls="pills-contact"aria-selected="false">Tin tức</a>
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
+                                role="tab" aria-controls="pills-contact" aria-selected="false">Tin tức</a>
                         </li>
                     </ul>
-                    <div class="tab-content"id="pills-tabContent">
-                        <div class="tab-pane fade show active"id="pills-home"role="tabpanel"aria-labelledby="pills-home-tab">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                            aria-labelledby="pills-home-tab">
                             <div class="product">
                                 <div><i>Sản phẩm</i></div>
                                 @if ($products->count())
@@ -49,9 +54,10 @@
                                                 @foreach($products as $product)
                                                 <div class="col-4 col-md-2">
                                                     <a href="product/{!! $product->slug !!}">
-                                                        <div class="d-flex flex-column justify-content-center product-item">
+                                                        <div
+                                                            class="d-flex flex-column justify-content-center product-item">
                                                             <div class="product-img">
-                                                                <img src="{!! $product->thumbnail !!}"alt="">
+                                                                <img src="{!! $product->thumbnail !!}" alt="">
                                                             </div>
                                                             <div class="product-title">
                                                                 <p>{!! $product->name !!}</p>
@@ -60,8 +66,12 @@
                                                                 <p>Nhà thiết kế: {!! $product->brand !!}</p>
                                                             </div>
                                                             <div class="product-price d-flex justify-content-between">
-                                                                <div class="price"><p>{!! number_format($product->price) !!} đ</p></div>
-                                                                <div class="original_price">{!!number_format($product->original_price) !!} đ</div>
+                                                                <div class="price">
+                                                                    <p>{!! number_format($product->price) !!} đ</p>
+                                                                </div>
+                                                                <div class="original_price">
+                                                                    {!!number_format($product->original_price) !!} đ
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -86,11 +96,7 @@
                                         @foreach($news as $newsItem)
                                         <div class="description">
                                             <a href="/posts/{!! $newsItem->slug !!}" class="d-flex">
-                                                @if ($newsItem->getMetaField('thumbnail'))
-                                                <div><img src="{!! $newsItem->getMetaField('thumbnail')  !!}" alt=""></div>
-                                                @else
                                                 <div><img src="{!! $newsItem->thumbnail  !!}" alt=""></div>
-                                                @endif
                                                 <div class="news-info">
                                                     <h6>{!! $newsItem->title !!}</h6>
                                                     <p>{!! $newsItem->description !!}</p>
@@ -106,7 +112,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-profile"role="tabpanel"aria-labelledby="pills-profile-tab">
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                            aria-labelledby="pills-profile-tab">
                             <div class="product">
                                 @if ($products_tabpane->count())
                                 <div class="row">
@@ -115,7 +122,7 @@
                                         <a href="product/{!! $product_tabpane->slug !!}">
                                             <div class="d-flex flex-column justify-content-center product-item">
                                                 <div class="product-img">
-                                                    <img src="{!! $product_tabpane->thumbnail !!}"alt="">
+                                                    <img src="{!! $product_tabpane->thumbnail !!}" alt="">
                                                 </div>
                                                 <div class="product-title">
                                                     <p>{!! $product_tabpane->name !!}</p>
@@ -124,8 +131,11 @@
                                                     <p>Nhà thiết kế: {!! $product->brand !!}</p>
                                                 </div>
                                                 <div class="product-price d-flex justify-content-between">
-                                                    <div class="price"><p>{!! number_format($product_tabpane->price) !!} đ</p></div>
-                                                    <div class="original_price">{!!number_format($product_tabpane->original_price) !!} đ</div>
+                                                    <div class="price">
+                                                        <p>{!! number_format($product_tabpane->price) !!} đ</p>
+                                                    </div>
+                                                    <div class="original_price">
+                                                        {!!number_format($product_tabpane->original_price) !!} đ</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -140,7 +150,8 @@
                             <h6 class="mt-1">Không tìm thấy kết quả !</h6>
                             @endif
                         </div>
-                        <div class="tab-pane fade"id="pills-contact"role="tabpanel"aria-labelledby="pills-contact-tab">
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                            aria-labelledby="pills-contact-tab">
                             <div class="news">
                                 <div><i>Tin tức</i></div>
                                 @if ($news_tabpane->count())
@@ -149,11 +160,7 @@
                                         @foreach($news_tabpane as $newsItem)
                                         <div class="description">
                                             <a href="posts/{!! $newsItem->slug !!}" class="d-flex">
-                                                @if ($newsItem->getMetaField('thumbnail'))
-                                                <div><img src="{!! $newsItem->getMetaField('thumbnail')  !!}" alt=""></div>
-                                                @else
                                                 <div><img src="{!! $newsItem->thumbnail  !!}" alt=""></div>
-                                                @endif
                                                 <div class="news-info">
                                                     <h6>{!! $newsItem->title !!}</h6>
                                                     <p>{!! $newsItem->description !!}</p>
@@ -177,6 +184,6 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 </section>
 @endsection
