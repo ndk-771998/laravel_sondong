@@ -34,3 +34,4 @@ $factory->state(Post::class, 'pages', function () {
         'type' => 'pages',
     ];
 });
+

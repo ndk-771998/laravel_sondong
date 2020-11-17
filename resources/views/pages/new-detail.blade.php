@@ -26,11 +26,7 @@
                         {!! $post->content !!}
                     </div>
                     <div class="text-center">
-                        @if ($post->getMetaField('thumbnail'))
-                        <img class="img-fluid new-detail-img" src="{!! $post->getMetaField('thumbnail')  !!}" alt="">
-                        @else
                         <img class="img-fluid new-detail-img" src="{!! $post->thumbnail !!}" alt="">
-                        @endif
                     </div>
                     <div class="comment mt-5">
                         <h5>Bình luận</h5>

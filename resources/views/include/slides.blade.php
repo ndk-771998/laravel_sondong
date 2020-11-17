@@ -17,19 +17,6 @@
             <li data-target="#slider" class="" data-slide-to="5" class=""></li>
         </ol>
         <div class="carousel-inner">
-            {{-- @if ($slides->count())
-            @foreach ($slides as $index => $slide)
-            @if ($index === 0)
-            <div class="carousel-item active" data-interval="6000">
-                <img class="img-fluid" src="{!! $slide->getMetaField('thumbnail') !!}">
-            </div>
-            @else
-            <div class="carousel-item" data-interval="6000">
-                <img class="img-fluid" src="{!! $slide->getMetaField('thumbnail') !!}">
-            </div>
-            @endif
-            @endforeach
-            @endif --}}
             <div class="carousel-item active" data-interval="2000">
                 <img class="img-fluid" src="{!! getOption('trang-chu-slide-1') !!}">
             </div>

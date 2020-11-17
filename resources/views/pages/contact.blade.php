@@ -27,32 +27,29 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="">Họ tên :</label>
-                                        <input type="text" required name="last_name" id=""
-                                            class="form-control form-control-sm" placeholder=""
-                                            aria-describedby="helpId" required>
+                                        <input type="text" name="last_name" id="" class="form-control form-control-sm"
+                                            placeholder="" aria-describedby="helpId" value="{{old('last_name')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Địa chỉ :</label>
-                                        <input type="text" required name="address" id=""
-                                            class="form-control form-control-sm" placeholder=""
-                                            aria-describedby="helpId">
+                                        <input type="text" name="address" id="" class="form-control form-control-sm"
+                                            placeholder="" aria-describedby="helpId" value="{{old('address')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Số điện thoại :</label>
-                                        <input type="text" required name="phone_number" id=""
+                                        <input type="number" name="phone_number" id=""
                                             class="form-control form-control-sm" placeholder=""
-                                            aria-describedby="helpId">
+                                            aria-describedby="helpId" value="{{old('phone_number')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Email :</label>
-                                        <input type="email" required name="email" id=""
-                                            class="form-control form-control-sm" placeholder=""
-                                            aria-describedby="helpId">
+                                        <input type="email" name="email" class="form-control form-control-sm"
+                                            placeholder="" aria-describedby="helpId" value="{{old('email')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="my-textarea">Nội dung :</label>
-                                        <textarea id="my-textarea" required class="form-control form-control-sm"
-                                            name="note" rows="3"></textarea>
+                                        <textarea id="my-textarea" class="form-control form-control-sm" name="note"
+                                            rows="3" value="{{old('note')}}"></textarea>
                                     </div>
                                     <input type="text" name="status" value="2" hidden>
                                     <input type="text" name="type" value="contacts" hidden>

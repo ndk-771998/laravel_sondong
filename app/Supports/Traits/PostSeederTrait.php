@@ -48,4 +48,28 @@ trait PostSeederTrait
             'title' => 'Dịch vụ',
         ]);
     }
+    protected function seederTermsOfUse()
+    {
+        return factory(Post::class)->states('pages')->create([
+            'title' => 'Điều khoản sử dụng',
+        ]);
+    }
+    protected function seederManufacturing()
+    {
+        return factory(Post::class)->states('pages')->create([
+            'title' => 'Sản xuất',
+        ]);
+    }
+    protected function seederPolicy()
+    {
+        return factory(Post::class)->states('pages')->create([
+            'title' => 'Chính sách riêng tư',
+        ]);
+    }
+    protected function seederCooperate()
+    {
+        return factory(Post::class)->states('pages')->create([
+            'title' => 'Hợp tác',
+        ]);
+    }
 }

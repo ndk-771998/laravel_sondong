@@ -2,13 +2,13 @@
 
 namespace App\Entities;
 
-use Exception;
 use Illuminate\Support\Str;
 use VCComponent\Laravel\Category\Traits\HasCategoriesTrait;
 use VCComponent\Laravel\Comment\Traits\HasCommentTrait;
 use VCComponent\Laravel\MediaManager\HasMediaTrait;
 use VCComponent\Laravel\Post\Entities\Post as BasePost;
 use VCComponent\Laravel\Tag\Traits\HasTagsTraits;
+
 class Post extends BasePost
 {
     use HasCommentTrait, HasCategoriesTrait, HasTagsTraits, HasMediaTrait;
@@ -45,17 +45,5 @@ class Post extends BasePost
                 'rule'  => [],
             ],
         ];
-    }
-
-    public function getMetaField($key)
-    {
-        if (!$this->postMetas->count()) {
-            return '';
-        }
-        try {
-            return $this->postMetas->where('key', $key)->first()->value;
-        } catch (Exception $e) {
-            return '';
-        }
     }
 }

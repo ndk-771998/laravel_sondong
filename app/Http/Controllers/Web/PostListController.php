@@ -16,7 +16,6 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewData($posts, Request $request) {
         $news        = Post::oftype('posts')->orderBy('id','desc')->paginate(6);
-        // dd($news);
         $title       = 'Tin Tức';
         $urlRedirect = 'posts';
 
