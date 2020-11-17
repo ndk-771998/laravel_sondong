@@ -14,8 +14,9 @@ class PostListController extends BasePostListController implements ViewPostListC
         return 'pages.news';
     }
 
-    public function viewData($posts, Request $request) {
-        $news        = Post::oftype('posts')->orderBy('id','desc')->paginate(6);
+    public function viewData($posts, Request $request)
+    {
+        $news        = Post::oftype('posts')->orderBy('id', 'desc')->where('status', '1')->paginate(6);
         $title       = 'Tin Tức';
         $urlRedirect = 'posts';
 
@@ -26,12 +27,14 @@ class PostListController extends BasePostListController implements ViewPostListC
         ];
     }
 
-    public function viewExhibition() {
+    public function viewExhibition()
+    {
         return 'pages.news';
     }
 
-    public function viewDataExhibition($posts, Request $request) {
-        $news        = Post::oftype('exhibition')->orderBy('id','desc')->paginate(6);
+    public function viewDataExhibition($posts, Request $request)
+    {
+        $news        = Post::oftype('exhibition')->orderBy('id', 'desc')->where('stauts', '1')->paginate(6);
         $title       = 'Hỗ trợ triển lãm cưới';
         $urlRedirect = 'exhibition';
 
@@ -42,12 +45,14 @@ class PostListController extends BasePostListController implements ViewPostListC
         ];
     }
 
-    public function viewPlace() {
+    public function viewPlace()
+    {
         return 'pages.news';
     }
 
-    public function viewDataPlace($posts, Request $request) {
-        $news        = Post::oftype('place')->orderBy('id','desc')->paginate(6);
+    public function viewDataPlace($posts, Request $request)
+    {
+        $news        = Post::oftype('place')->orderBy('id', 'desc')->where('status', '1')->paginate(6);
         $title       = 'Địa điểm cưới lãng mạng';
         $urlRedirect = 'place';
 
