@@ -46,4 +46,8 @@ class Post extends BasePost
             ],
         ];
     }
+    public function scopeGetBy($query, $type, $status)
+    {
+        return $query->where('type',$type)->where('status', $status)->orderBy('id','desc');
+    }
 }
