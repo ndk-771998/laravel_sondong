@@ -10,20 +10,20 @@
                                     src="https://img.icons8.com/ios/50/707070/search--v1.png" class="icon-header"></a>
                         </div>
                         <div class="col-4 col-md-2">@include('order::cartIcon')</div>
-                        <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
+                        {{-- <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
                             @if (Auth::check())
                             <a href="account"><img src="/assets/images/logo/logic.png" class="icon-header"></a>
                             @else
                             <div class="login">
                                 <a href="{{url('login')}}"><img src="/assets/images/logo/loginn.png"
-                                        class="icon-header"></a>
-                            </div>
-                            @endif
-                        </div>
+                            class="icon-header"></a>
                     </div>
-                </div>
+                    @endif
+                </div> --}}
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <div class="header-nav">
         <div class="container">

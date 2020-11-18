@@ -25,22 +25,26 @@
                             <div class="left">
                                 <div class="product-thumbnail">
                                     <div class="item">
-                                        <div class="tile" data-scale="4.0" data-image="{!! $product->thumbnail !!}">
+                                        <div class="tile" data-scale="4.0" data-image="{!! $product->thumbnail !!}"
+                                            id="imgmain">
                                         </div>
                                     </div>
-                                    @foreach($thumbnailProducts as $thumbnail)
+                                    @foreach($product->media as $media)
                                     <div class="item">
-                                        <div class="tile" data-scale="4.0" data-image="{!! $thumbnail->value !!}"></div>
+                                        <div class="tile" data-scale="4.0" data-image="{!! $media->getFullUrl() !!}">
+                                        </div>
                                     </div>
                                     @endforeach
+
                                 </div>
                                 <div class="product-thumbnail-child">
                                     <div class="item">
                                         <img src="{!! $product->thumbnail !!}" alt="" />
                                     </div>
-                                    @foreach($thumbnailProducts as $thumbnail)
+                                    @foreach($product->media as $media)
                                     <div class="item">
-                                        <img src="{!! $thumbnail->value !!}" alt="" />
+                                        <img src="{!! $media->getFullUrl() !!}" id="{{$media->id}}"
+                                            onclick="chanceimg('{{$media->id}}')" alt="" />
                                     </div>
                                     @endforeach
                                 </div>
@@ -61,7 +65,12 @@
                                         đ</li>
                                     <li>Giá bán: <span class="cost">{!! number_format($product->price) !!} đ</span>/ sản
                                         phẩm</li>
-                                    <li>Số lượng: <input type="number" id="quantity_product" min="1" max="30" value="1">
+                                    <li>Số lượng:
+                                        @if($isAvailable)
+                                        <input type="number" id="quantity_product" min="1" max="30" value="1">
+                                        @else
+                                        <input type="number" id="quantity_product" min="1" max="30" value="1" disabled>
+                                        @endif
                                     </li>
                                     <li>Tổng tiền: <span class="total " id="total">{!! number_format($product->price)
                                             !!}</span><span class="text-dark"> đ</span></li>
@@ -92,7 +101,8 @@
                                     <div class="h6 text-danger mt-2">Hết hàng</div>
                                     @endif
                                 </ul>
-                                <p><i class="fa fa-phone" aria-hidden="true"></i> Hottline:+84 868 21 08 62</p>
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> Hottline:
+                                    {{getOption('chi-tiet-san-pham-hot-line')}}</p>
                             </div>
                         </div>
                         <div class="comment">
@@ -152,3 +162,10 @@
     </div>
 </section>
 @endsection
+<script>
+    function chanceimg(id) {
+        console.log(id);
+        var imgpath = document.getElementById(id).getAttribute('src');
+        document.getElementById('imgmain').setAttribute('src', imgpath);
+    }
+</script>

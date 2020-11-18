@@ -40425,12 +40425,17 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     asNavFor: '.product-thumbnail-child'
   });
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail-child').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     asNavFor: '.product-thumbnail',
     dots: false,
-    focusOnSelect: true
-  });
+    focusOnSelect: true,
+    arrows: false
+  }); // function chanceimg(id) {
+  //     console.log(id);
+  //     var imgpath = document.getElementById(id).getAttribute('src');
+  //     document.getElementById('imgmain').setAttribute('data-image', imgpath);
+  // }
 });
 
 /***/ }),

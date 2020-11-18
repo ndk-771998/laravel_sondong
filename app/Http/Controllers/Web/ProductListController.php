@@ -20,7 +20,7 @@ class ProductListController extends BaseProductListController implements ViewPro
     {
         $query           = Product::query();
         $query           = $this->applyOrderByFromRequest($query, $request);
-        $products_custom = $query->paginate(9);
+        $products_custom = $query->where('status', '1')->paginate(9);
 
         $activeFilter = $this->activeFilter;
 

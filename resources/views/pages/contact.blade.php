@@ -27,25 +27,33 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="">Họ tên :</label>
-                                        <input type="text" required name="full_name" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId" required>
+                                        <input type="text" name="last_name" id="" class="form-control form-control-sm"
+                                            placeholder="" aria-describedby="helpId" value="{{old('last_name')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Địa chỉ :</label>
-                                        <input type="text" required name="address" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="text" name="address" id="" class="form-control form-control-sm"
+                                            placeholder="" aria-describedby="helpId" value="{{old('address')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Số điện thoại :</label>
-                                        <input type="text" required name="phone_number" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="number" name="phone_number" id=""
+                                            class="form-control form-control-sm" placeholder=""
+                                            aria-describedby="helpId" value="{{old('phone_number')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Email :</label>
-                                        <input type="email" required name="email" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                                        <input type="email" name="email" class="form-control form-control-sm"
+                                            placeholder="" aria-describedby="helpId" value="{{old('email')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="my-textarea">Nội dung :</label>
-                                        <textarea id="my-textarea" required class="form-control form-control-sm" name="note" rows="3"></textarea>
+                                        <textarea id="my-textarea" class="form-control form-control-sm" name="note"
+                                            rows="3" value="{{old('note')}}"></textarea>
                                     </div>
-                                   {{--  <div class="form-group">
+                                    <input type="text" name="status" value="2" hidden>
+                                    <input type="text" name="type" value="contacts" hidden>
+                                    {{--  <div class="form-group">
                                         <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                                     </div>
                                     <div class="form-group">
@@ -59,7 +67,7 @@
                                 </form>
                             </div>
                             <div class="col-12 col-md-6">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.462181800355!2d105.8185442154272!3d21.01418519365045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab7c5b98159d%3A0x3d64918eb33c3a4b!2zNDIgTmfDtSAxNzggVGjDoWkgSMOgLCBUcnVuZyBMaeG7h3QsIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1575019632832!5m2!1svi!2s" width="100%" height="460" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                                {!!getOption('lien-he-google-map')!!}
                             </div>
                         </div>
                     </div>
@@ -70,10 +78,10 @@
             </div>
             <div class="contact-info text-center">
                 <h5>
-                Website Sản phẩm bán hàng
+                    {{getOption('lien-he-website-title')}}
                 </h5>
                 <div>
-                    <p>Địa chỉ : Tầng 2, Số 42, Ngõ 178, Thái Hà, Trung Liệt, Đống Đa, Hà Nội</p>
+                    <p>{{getOption('lien-he-address')}}</p>
                 </div>
                 <div>
                     <p>Hãy liên hệ với chúng tôi để có một sản phẩm tốt nhất cho bạn</p>

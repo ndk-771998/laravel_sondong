@@ -50,8 +50,23 @@ return [
         'label'  => 'Sidebar Right Hotline',
         'inputs' => [
             [
-                'label' => 'Hỗ trợ trực tuyến',
-                'key'   => 'ho-tro-truc-tuyen',
+                'label' => 'Bộ phận kỹ thuật',
+                'key'   => 'bo-phan-ky-thuat',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Bộ phận cskh',
+                'key'   => 'bo-phan-cham-soc-khach-hang',
+                'type'  => 'text',
+            ],
+        ],
+    ],
+    [
+        'label'  => 'Hotline',
+        'inputs' => [
+            [
+                'label' => 'Hotline',
+                'key'   => 'hotline',
                 'type'  => 'text',
             ],
         ],
@@ -122,6 +137,16 @@ return [
             [
                 'label' => 'Sản phẩm description',
                 'key'   => 'san-pham-description',
+                'type'  => 'text',
+            ],
+        ],
+    ],
+    [
+        'label'  => 'Chi tiết Sản phẩm',
+        'inputs' => [
+            [
+                'label' => 'Chi tiết sản phẩm Hotline',
+                'key'   => 'chi-tiet-san-pham-hot-line',
                 'type'  => 'text',
             ],
         ],

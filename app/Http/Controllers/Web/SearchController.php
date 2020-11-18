@@ -7,21 +7,23 @@ use App\Entities\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SearchController extends Controller {
-    public function __invoke(Request $request) {
+class SearchController extends Controller
+{
+    public function __invoke(Request $request)
+    {
 
         $products         = Product::query();
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
-        $products_result  = $products->OrderBy('id', 'desc')->paginate(6);
-        $products_tabpane = $products->OrderBy('id', 'desc')->paginate(12);
+        $products_result  = $products->OrderBy('id', 'desc')->where('status', '1')->paginate(6);
+        $products_tabpane = $products->OrderBy('id', 'desc')->where('status', '1')->paginate(12);
 
-        $products_result->setPath('/search?search='.$request['search']);
-        $products_tabpane->setPath('/search?search='.$request['search']);
+        $products_result->setPath('/search?search=' . $request['search']);
+        $products_tabpane->setPath('/search?search=' . $request['search']);
 
         $news         = Post::query();
         $news         = $this->applySearchFromRequest($news, ['title'], $request);
-        $news_result  = $news->ofType('posts')->OrderBy('id', 'desc')->limit(5)->get();
-        $news_tabpane = $news->ofType('posts')->OrderBy('id', 'desc')->get();
+        $news_result  = $news->ofType('posts')->OrderBy('id', 'desc')->where('status', '1')->limit(5)->get();
+        $news_tabpane = $news->ofType('posts')->OrderBy('id', 'desc')->where('status', '1')->get();
 
         return view('pages.search', [
             'products'         => $products_result,
@@ -32,7 +34,8 @@ class SearchController extends Controller {
         ]);
     }
 
-    protected function applySearchFromRequest($query, array $fields, Request $request) {
+    protected function applySearchFromRequest($query, array $fields, Request $request)
+    {
         if ($request->has('search')) {
             $search = $request->get('search');
             if (count($fields)) {

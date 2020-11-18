@@ -1,5 +1,4 @@
 <?php
-
 return [
 
     'namespace'       => env('CONTACT_COMPONENT_NAMESPACE', 'contact-management'),
@@ -14,13 +13,12 @@ return [
 
     'auth_middleware' => [
         'admin'    => [
-            'middleware' => '',
-            'except'     => [],
+            [
+                'middleware' => 'auth.jwt',
+                'except'     => [],
+            ],
         ],
-        'frontend' => [
-            'middleware' => '',
-            'except'     => [],
-        ],
+        'frontend' => [],
     ],
 
 ];
