@@ -29,7 +29,7 @@
 
                             <div id="alert"></div>
                             <div class="check-table table-responsive">
-                                <table class="table  table-bordered text-center table-md" >
+                                <table class="table  table-bordered text-center table-md">
                                     <thead>
                                         <tr>
                                             <th scope="col">STT</th>
@@ -37,7 +37,7 @@
                                             <th scope="col" class="text-uppercase">Số lượng</th>
                                             <th scope="col" class="text-uppercase" width="18%">Đơn giá </th>
                                             <th scope="col" class="text-uppercase" width="20%">Thành tiền</th>
-                                            <th  class="text-uppercase" >Xóa</th>
+                                            <th class="text-uppercase">Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -46,17 +46,25 @@
                                             <th scope="row">{!! $key + 1 !!}</th>
                                             <td>
                                                 <div class="d-flex ml-0 mr-0">
-                                                    <span class="d-flex align-items-center mr-1"><img src="{!! $cartItem->product->thumbnail !!}" alt=""></span>
+                                                    <span class="d-flex align-items-center mr-1"><img
+                                                            src="{!! $cartItem->product->thumbnail !!}"
+                                                            alt="{!! $cartItem->product->name !!}"></span>
                                                     <div class="text-left">{!! $cartItem->product->name !!}</div>
                                                 </div>
                                             </td>
                                             <td class="table-form-input">
-                                                <input id="cart-item-quantity" class="cart-quantity" data-id="{!! $cartItem->id !!}" name="quantity" value="{!! $cartItem->quantity !!}" type="number" min="1">
+                                                <input id="cart-item-quantity" class="cart-quantity"
+                                                    data-id="{!! $cartItem->id !!}" name="quantity"
+                                                    value="{!! $cartItem->quantity !!}" type="number" min="1">
                                             </td>
                                             <td>{!! number_format($cartItem->price) !!} đ</td>
-                                            <td><span id="amount-{!! $cartItem->id !!}" class="amount" data-id={!! $cartItem->id !!}>{!! number_format($cartItem->amount) !!}</span> đ</td>
+                                            <td><span id="amount-{!! $cartItem->id !!}" class="amount" data-id={!!
+                                                    $cartItem->id !!}>{!! number_format($cartItem->amount) !!}</span> đ
+                                            </td>
                                             <td>
-                                                <button type="button" class="btn" data-toggle="modal" data-target="#confirmModal-{!! $cartItem->id !!}"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                <button type="button" class="btn" data-toggle="modal"
+                                                    data-target="#confirmModal-{!! $cartItem->id !!}"><i
+                                                        class="fa fa-trash-o" aria-hidden="true"></i></button>
                                             </td>
                                         </tr>
                                         <div id="confirmModal-{!! $cartItem->id !!}" class="modal fade" role="dialog">
@@ -65,8 +73,10 @@
                                                     <div class="modal-body">
                                                         <h4 class="text-center mt-3">Xóa khỏi giỏ hàng ?</h4>
                                                         <div class="d-flex justify-content-center mt-4  ">
-                                                            <a href="{{ route('cart-items.delete', ['id' => $cartItem->id]) }}"  class="btn btn-danger text-white" >Xóa</a>
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
+                                                            <a href="{{ route('cart-items.delete', ['id' => $cartItem->id]) }}"
+                                                                class="btn btn-danger text-white">Xóa</a>
+                                                            <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Hủy bỏ</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -74,8 +84,10 @@
                                         </div>
                                         @endforeach
                                         <tr>
-                                            <td class="text-right" colspan="4"><b class="text-uppercase"> Tổng hóa đơn:</b></td>
-                                            <td colspan="3" class="total-price"><span id="total">{!! number_format($carts->total) !!}</span> đ</td>
+                                            <td class="text-right" colspan="4"><b class="text-uppercase"> Tổng hóa
+                                                    đơn:</b></td>
+                                            <td colspan="3" class="total-price"><span id="total">{!!
+                                                    number_format($carts->total) !!}</span> đ</td>
                                         </tr>
                                     </tbody>
                                 </table>

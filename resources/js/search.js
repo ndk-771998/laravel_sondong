@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-$(document).ready(function() {
+$(document).ready(function () {
     var url = window.location.href;
     var link = url.split("#").slice(1, 2).toString();
 
@@ -12,4 +12,40 @@ $(document).ready(function() {
             $('#pills-profile-tab').addClass('active');
         }
     }
+    $('.product-slide').slick({
+        dots: false,
+        infinite: false,
+        speed: 300,
+        autoplay: false,
+        arrows: true,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: false,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: false,
+                }
+            }
+        ]
+    });
 });

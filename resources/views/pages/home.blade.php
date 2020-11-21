@@ -19,13 +19,13 @@
                                     <a href="product/{!! $product->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                                <img src="{!! $product->thumbnail !!}" alt="">
+                                                <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}">
                                             </div>
                                             <div class="product-title">
                                                 <p>{!! $product->name !!}</p>
                                             </div>
                                             <div class="product_author">
-                                                <p>Nhà thiết kế: {!! $product->brand !!}</p>
+                                                <p>Nhà thiết kế: {!! $product->getMetaField('brand_name') !!}</p>
                                             </div>
                                             <div class="product-price d-flex justify-content-between">
                                                 <div class="price">
@@ -59,7 +59,7 @@
                                 @foreach($exhibition as $Item)
                                 <a href="{{ url('exhibition/'.$Item->slug) }}">
                                     <div class="d-flex description">
-                                        <div><img src="{!! $Item->thumbnail !!}" alt=""></div>
+                                        <div><img src="{!! $Item->thumbnail !!}" alt="{!! $Item->title !!}"></div>
                                         <div>
                                             <h6>{!! $Item->title !!}</h6>
                                             <p>{!! $Item->description !!}</p>
@@ -73,7 +73,7 @@
                         <div class="product">
                             <div class="row title">
                                 <div class="col-6 ">
-                                    <h5>ĐỊA ĐIỂM CƯỚI LÃNG MẠNG ({!! $place_count !!})</h5>
+                                    <h5>ĐỊA ĐIỂM CƯỚI LÃNG MẠN ({!! $place_count !!})</h5>
                                 </div>
                                 <div class="col-6 text-right">
                                     <a href="/place">
@@ -86,7 +86,8 @@
                                 @foreach($place as $placeItem)
                                 <a href="{{ url('place/'.$placeItem->slug) }}">
                                     <div class="d-flex description">
-                                        <div><img src="{!! $placeItem->thumbnail  !!}" alt=""></div>
+                                        <div><img src="{!! $placeItem->thumbnail  !!}" alt="{!! $placeItem->title !!}">
+                                        </div>
                                         <div>
                                             <h6>{!! $placeItem->title !!}</h6>
                                             <p>{!! $placeItem->description !!}</p>
@@ -113,7 +114,8 @@
                                 @foreach($news as $newsItem)
                                 <a href="{{ url('posts/'.$newsItem->slug) }}">
                                     <div class="d-flex description">
-                                        <div><img src="{!! $newsItem->thumbnail !!}" alt=""></div>
+                                        <div><img src="{!! $newsItem->thumbnail !!}" alt="{!! $newsItem->title !!}">
+                                        </div>
                                         <div>
                                             <h6>{!! $newsItem->title !!}</h6>
                                             <p>{!! $newsItem->description !!}</p>

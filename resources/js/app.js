@@ -14,16 +14,15 @@ import './zoomimg';
 import './zoom-image';
 import './main';
 import './paginate';
-console.log("My Kit is  ready :)");
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     $('.product-thumbnail').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         fade: true,
-        focusOnSelect: true,
+        // focusOnSelect: true,
         asNavFor: '.product-thumbnail-child'
     });
     $('.product-thumbnail-child').slick({
@@ -32,11 +31,8 @@ $(document).ready(function() {
         asNavFor: '.product-thumbnail',
         dots: false,
         focusOnSelect: true,
-        arrows:false
+        arrows: false
     });
-    // function chanceimg(id) {
-    //     console.log(id);
-    //     var imgpath = document.getElementById(id).getAttribute('src');
-    //     document.getElementById('imgmain').setAttribute('data-image', imgpath);
-    // }
+
 });
+

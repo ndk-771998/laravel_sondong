@@ -3,22 +3,20 @@
 namespace App\Http\Controllers\Web;
 
 use App\Entities\Post as EntitiesPost;
+use App\Entities\Product;
 use App\Http\Controllers\Controller;
-use VCComponent\Laravel\Product\Entities\Product;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class HomeController extends Controller
 {
     public function __invoke()
     {
-        // dd(url()->previous());
-        // $news = Post::oftype('posts')->OrderBy('id', 'desc')->where('status', '1')->paginate(3);
-        // $place        = Post::oftype('place')->OrderBy('id', 'desc')->where('status', '1');
-        // $place_result = $place->limit(3)->get();
-        // $place_count  = $place->count();
-        // $exhibition        = Post::oftype('exhibition')->OrderBy('id', 'desc')->where('status', '1');
-        // $exhibition_result = $exhibition->limit(3)->get();
-        // $exhibition_count  = $exhibition->count();
-
+        SEOMeta::setTitle(getOption('trang-chu-title'));
+        SEOMeta::setDescription(getOption('trang-chu-description'));
+        OpenGraph::setTitle(getOption('trang-chu-title'));
+        OpenGraph::setDescription(getOption('trang-chu-description'));
+        OpenGraph::addImage(getOption('header-logo'));
         $products          = Product::orderBy('id', 'desc')->where('status', '1')->paginate(9);
         $news              = EntitiesPost::getBy('posts', 1)->limit(3)->get();
         $place_result      = EntitiesPost::getBy('place', 1)->limit(3)->get();

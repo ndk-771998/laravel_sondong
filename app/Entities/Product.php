@@ -2,6 +2,7 @@
 
 namespace App\Entities;
 
+use Exception;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
@@ -18,4 +19,25 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
 {
     use TransformableTrait, ProductSchemaTrait, ProductManagementTrait, HasCategoriesTrait, HasMediaTrait, HasCommentTrait;
 
+    public function schema()
+    {
+        return [
+            'brand_name' => [
+                'type'  => 'string',
+                'label' => 'Nhà thiết kế',
+                'rule'  => [],
+            ],
+        ];
+    }
+    public function getMetaField($key)
+    {
+        if (!$this->productMetas->count()) {
+            return '';
+        }
+        try {
+            return $this->productMetas()->where('key', $key)->first()->value;
+        } catch (Exception $e) {
+            return '';
+        }
+    }
 }

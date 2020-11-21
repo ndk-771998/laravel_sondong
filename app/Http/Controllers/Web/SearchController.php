@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Web;
 use App\Entities\Post;
 use App\Entities\Product;
 use App\Http\Controllers\Controller;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -12,18 +14,21 @@ class SearchController extends Controller
     public function __invoke(Request $request)
     {
 
+        SEOMeta::setTitle('Kết quả tìm kiếm ' . $request->search);
+        SEOMeta::setDescription(getOption('trang-chu-description'));
+        OpenGraph::setTitle('Kết quả tìm kiếm ' . $request->search);
+        OpenGraph::setDescription(getOption('trang-chu-description'));
+
         $products         = Product::query();
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
-        $products_result  = $products->OrderBy('id', 'desc')->where('status', '1')->paginate(6);
+        $products_result  = $products->OrderBy('id', 'desc')->where('status', '1')->get();
         $products_tabpane = $products->OrderBy('id', 'desc')->where('status', '1')->paginate(12);
-
-        $products_result->setPath('/search?search=' . $request['search']);
         $products_tabpane->setPath('/search?search=' . $request['search']);
 
         $news         = Post::query();
         $news         = $this->applySearchFromRequest($news, ['title'], $request);
         $news_result  = $news->ofType('posts')->OrderBy('id', 'desc')->where('status', '1')->limit(5)->get();
-        $news_tabpane = $news->ofType('posts')->OrderBy('id', 'desc')->where('status', '1')->get();
+        $news_tabpane = $news->ofType('posts')->OrderBy('id', 'desc')->where('status', '1')->paginate(12);
 
         return view('pages.search', [
             'products'         => $products_result,

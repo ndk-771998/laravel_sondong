@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Validators\ContactValidator;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use VCComponent\Laravel\Contact\Repositories\ContactRepository;
 
@@ -18,6 +20,11 @@ class ContactController extends Controller
 
     public function index()
     {
+        SEOMeta::setTitle(getOption('lien-he-title'));
+        SEOMeta::setDescription(getOption('lien-he-description'));
+        OpenGraph::setTitle(getOption('lien-he-title'));
+        OpenGraph::setDescription(getOption('lien-he-description'));
+        OpenGraph::addImage(getOption('header-logo'));
         return view('pages.contact');
     }
 

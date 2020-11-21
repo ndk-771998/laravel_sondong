@@ -9,6 +9,11 @@ return [
                 'key'   => 'header-logo',
                 'type'  => 'image',
             ],
+            [
+                'label' => 'Website Favicon',
+                'key'   => 'website-favicon',
+                'type'  => 'image',
+            ],
         ],
     ],
     [
@@ -207,6 +212,21 @@ return [
             [
                 'label' => 'Liên hệ Google Map',
                 'key'   => 'lien-he-google-map',
+                'type'  => 'text',
+            ],
+        ],
+    ],
+    [
+        'label'  => 'Giỏ hàng',
+        'inputs' => [
+            [
+                'label' => 'Giỏ hàng title',
+                'key'   => 'gio-hang-title',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Giỏ hàng description',
+                'key'   => 'gio-hang-description',
                 'type'  => 'text',
             ],
         ],
