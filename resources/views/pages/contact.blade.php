@@ -1,7 +1,4 @@
 @extends('layout.master')
-@section('title')
-<title>{!! getOption('lien-he-title') !!}</title>
-@endsection
 @section('content')
 <nav aria-label="breadcrumb" id="breadcrumb">
     <div class="container">
@@ -48,7 +45,8 @@
                                         <label for="">Email :</label>
                                         <input type="email" name="email" class="form-control form-control-sm"
                                             placeholder="" aria-describedby="helpId" value="{{old('email')}}"
-                                            oninvalid="this.setCustomValidity('Email không hợp lệ')" onchange="this.setCustomValidity('')">
+                                            oninvalid="this.setCustomValidity('Email không hợp lệ')"
+                                            onchange="this.setCustomValidity('')">
                                     </div>
                                     <div class="form-group">
                                         <label for="my-textarea">Nội dung :</label>

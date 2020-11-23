@@ -40395,11 +40395,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user/user */ "./resources/js/user/user.js");
 /* harmony import */ var _zoomimg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./zoomimg */ "./resources/js/zoomimg.js");
 /* harmony import */ var _zoom_image__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./zoom-image */ "./resources/js/zoom-image.js");
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./main */ "./resources/js/main.js");
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_main__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _paginate__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./paginate */ "./resources/js/paginate.js");
+/* harmony import */ var _paginate__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./paginate */ "./resources/js/paginate.js");
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
-
 
 
 
@@ -40420,7 +40417,6 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    // focusOnSelect: true,
     asNavFor: '.product-thumbnail-child'
   });
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail-child').slick({
@@ -40432,17 +40428,6 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     arrows: false
   });
 });
-
-/***/ }),
-
-/***/ "./resources/js/main.js":
-/*!******************************!*\
-  !*** ./resources/js/main.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
 
 /***/ }),
 

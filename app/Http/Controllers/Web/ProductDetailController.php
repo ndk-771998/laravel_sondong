@@ -18,11 +18,10 @@ class ProductDetailController extends BaseProductDetailController implements Vie
 
     public function viewData($product, Request $request)
     {
-
-        SEOMeta::setTitle(getOption('lien-he-title'));
-        SEOMeta::setDescription(getOption('lien-he-description'));
-        OpenGraph::setTitle(getOption('lien-he-title'));
-        OpenGraph::setDescription(getOption('lien-he-description'));
+        SEOMeta::setTitle($product->name);
+        SEOMeta::setDescription($product->description);
+        OpenGraph::setTitle($product->name);
+        OpenGraph::setDescription($product->description);
         OpenGraph::addImage($product->thumbnail);
         $comments        = $product->getLatestComment(10)->where('status', 1);
         $relatedProducts = Product::where('id', '<>', $product->id)
@@ -30,7 +29,6 @@ class ProductDetailController extends BaseProductDetailController implements Vie
             ->limit(3)
             ->get();
         $thumbnailProducts = $product->productMetas()->get();
-
         return [
             'comments'          => $comments,
             'relatedProducts'   => $relatedProducts,

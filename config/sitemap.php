@@ -9,7 +9,10 @@ return [
 
     'auth_middleware' => [
         'admin' => [
-            'middleware' => '',
+            [
+                'middleware' => 'auth.jwt',
+                'except'     => [],
+            ]
         ],
     ],
 ];
