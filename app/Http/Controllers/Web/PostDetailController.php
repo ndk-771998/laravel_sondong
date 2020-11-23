@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Web;
 
 use App\Entities\Post;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use VCComponent\Laravel\Post\Contracts\ViewPostDetailControllerInterface;
 use VCComponent\Laravel\Post\Http\Controllers\Web\PostDetailController as BasePostDetailController;
-use Artesaos\SEOTools\Facades\SEOMeta;
-use Artesaos\SEOTools\Facades\OpenGraph;
+
 class PostDetailController extends BasePostDetailController implements ViewPostDetailControllerInterface
 {
     public function view()
@@ -73,7 +74,7 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
 
     public function viewDataPlace($post, Request $request)
     {
-        $title        = 'Địa điểm cưới lãng mạng';
+        $title        = 'Địa điểm cưới lãng mạn';
         $relatedPosts = Post::ofType('place')
             ->where('id', '<>', $post->id)
             ->latest()

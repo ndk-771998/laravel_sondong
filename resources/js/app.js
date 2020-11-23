@@ -12,7 +12,6 @@ import './search';
 import './user/user';
 import './zoomimg';
 import './zoom-image';
-import './main';
 import './paginate';
 
 $(document).ready(function () {
@@ -22,7 +21,6 @@ $(document).ready(function () {
         slidesToScroll: 1,
         arrows: false,
         fade: true,
-        // focusOnSelect: true,
         asNavFor: '.product-thumbnail-child'
     });
     $('.product-thumbnail-child').slick({
