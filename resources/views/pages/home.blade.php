@@ -15,7 +15,7 @@
                             <div class="hr"></div>
                             <div class="row">
                                 @foreach($products as $product)
-                                <div class="col-6 col-md-4">
+                                <div class="col-6 col-md-6 col-lg-4">
                                     <a href="product/{!! $product->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
@@ -39,7 +39,7 @@
                                 </div>
                                 @endforeach
                             </div>
-                            <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-end justify-content-sm-center">
                                 {{ $products->fragment('product')->links('include.pagination') }}
                             </div>
                         </div>

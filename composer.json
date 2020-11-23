@@ -26,7 +26,7 @@
         "webpress/core": "^0.0.1",
         "webpress/dynamic": "^1.0",
         "webpress/media-manager": "0.0.5",
-        "webpress/menu-manager": "^0.0.6",
+        "webpress/menu-manager": "^0.0.7",
         "webpress/order-manager": "^0.0.6",
         "webpress/payment": "^0.0.3",
         "webpress/post-manager": "^0.0.6",

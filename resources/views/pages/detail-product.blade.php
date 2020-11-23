@@ -47,7 +47,7 @@
                                     @foreach($product->media as $media)
                                     <div class="item">
                                         <img src="{!! $media->getFullUrl() !!}" id="{{$media->id}}"
-                                            onclick="chanceimg('{{$media->id}}')" alt="{!! $media->alt_img !!}" />
+                                            alt="{!! $media->alt_img !!}" />
                                     </div>
                                     @endforeach
                                 </div>
@@ -134,7 +134,8 @@
                                     <a href="{!! $ProductItem->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                                <img src="{!! $ProductItem->thumbnail !!}" alt="{!! $ProductItem->name !!}">
+                                                <img src="{!! $ProductItem->thumbnail !!}"
+                                                    alt="{!! $ProductItem->name !!}">
                                             </div>
                                             <div class="product-title">
                                                 <p>{!! $ProductItem->name !!}</p>
