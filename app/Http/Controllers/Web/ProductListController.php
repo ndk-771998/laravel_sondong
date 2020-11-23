@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Entities\Product;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
-use VCComponent\Laravel\Product\Entities\Product;
 use VCComponent\Laravel\Product\Http\Controllers\Web\ProductListController as BaseProductListController;
 
 class ProductListController extends BaseProductListController implements ViewProductListControllerInterface
@@ -18,6 +20,11 @@ class ProductListController extends BaseProductListController implements ViewPro
 
     protected function viewData($products, Request $request)
     {
+        SEOMeta::setTitle(getOption('san-pham-title'));
+        SEOMeta::setDescription(getOption('san-pham-description'));
+        OpenGraph::setTitle(getOption('san-pham-title'));
+        OpenGraph::setDescription(getOption('san-pham-description'));
+        OpenGraph::addImage(getOption('header-logo'));
         $query           = Product::query();
         $query           = $this->applyOrderByFromRequest($query, $request);
         $products_custom = $query->where('status', '1')->paginate(9);

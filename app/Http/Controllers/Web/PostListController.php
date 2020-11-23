@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Web;
 
 use App\Entities\Post;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
 use VCComponent\Laravel\Post\Http\Controllers\Web\PostListController as BasePostListController;
@@ -16,7 +18,11 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewData($posts, Request $request)
     {
-        // $news        = Post::oftype('posts')->orderBy('id', 'desc')->where('status', '1')->paginate(6);
+        SEOMeta::setTitle(getOption('tin-tuc-title'));
+        SEOMeta::setDescription(getOption('tin-tuc-description'));
+        OpenGraph::setTitle(getOption('tin-tuc-title'));
+        OpenGraph::setDescription(getOption('tin-tuc-description'));
+        OpenGraph::addImage(getOption('header-logo'));
         $news        = Post::getBy('posts', '1')->paginate(6);
         $title       = 'Tin Tức';
         $urlRedirect = 'posts';

@@ -15,7 +15,7 @@ class NewsComposer
      */
     public function compose(View $view)
     {
-        $news_side  = Post::oftype('posts')->OrderBy('id','desc')->limit(4)->get();
+        $news_side  = Post::oftype('posts')->OrderBy('id','desc')->where('status','1')->limit(4)->get();
         $view->with('news_side', $news_side);
     }
 }

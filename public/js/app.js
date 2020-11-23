@@ -40414,14 +40414,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log("My Kit is  ready :)");
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    focusOnSelect: true,
+    // focusOnSelect: true,
     asNavFor: '.product-thumbnail-child'
   });
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail-child').slick({
@@ -40431,11 +40430,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     dots: false,
     focusOnSelect: true,
     arrows: false
-  }); // function chanceimg(id) {
-  //     console.log(id);
-  //     var imgpath = document.getElementById(id).getAttribute('src');
-  //     document.getElementById('imgmain').setAttribute('data-image', imgpath);
-  // }
+  });
 });
 
 /***/ }),
@@ -40739,6 +40734,39 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#pills-profile-tab').addClass('active');
     }
   }
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-slide').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    autoplay: false,
+    arrows: true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: false
+      }
+    }]
+  });
 });
 
 /***/ }),

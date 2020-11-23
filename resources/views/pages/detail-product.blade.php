@@ -1,4 +1,7 @@
 @extends('layout.master')
+@section('title')
+<title>{!! $product->name !!}</title>
+@endsection
 @section('content')
 <nav aria-label="breadcrumb" id="breadcrumb">
     <div class="container">
@@ -39,12 +42,12 @@
                                 </div>
                                 <div class="product-thumbnail-child">
                                     <div class="item">
-                                        <img src="{!! $product->thumbnail !!}" alt="" />
+                                        <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}" />
                                     </div>
                                     @foreach($product->media as $media)
                                     <div class="item">
                                         <img src="{!! $media->getFullUrl() !!}" id="{{$media->id}}"
-                                            onclick="chanceimg('{{$media->id}}')" alt="" />
+                                            onclick="chanceimg('{{$media->id}}')" alt="{!! $media->alt_img !!}" />
                                     </div>
                                     @endforeach
                                 </div>
@@ -52,8 +55,8 @@
                             <div class="right">
                                 <h4>{!! $product->name !!}</h4>
                                 <ul class="info-product">
-                                    <li>Mã sản phẩm: {!! $product->code !!}</li>
-                                    <li class="design">Nhà thiết kế:{!! $product->brand !!}</li>
+                                    <li>Mã sản phẩm: {!! $product->sku !!}</li>
+                                    <li class="design">Nhà thiết kế:{!! $product->getMetaField('brand_name') !!}</li>
                                     <li>Tình trạng:
                                         @if ($isAvailable == true)
                                         <span>Còn hàng</span>
@@ -131,13 +134,13 @@
                                     <a href="{!! $ProductItem->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                                <img src="{!! $ProductItem->thumbnail !!}" alt="">
+                                                <img src="{!! $ProductItem->thumbnail !!}" alt="{!! $ProductItem->name !!}">
                                             </div>
                                             <div class="product-title">
                                                 <p>{!! $ProductItem->name !!}</p>
                                             </div>
                                             <div class="product_author">
-                                                <p>Nhà thiết kế: Phi Tahc</p>
+                                                <p>Nhà thiết kế: {!!$ProductItem->getMetaField('brand_name')!!}</p>
                                             </div>
                                             <div class="product-price d-flex justify-content-between">
                                                 <div class="price">
@@ -162,10 +165,3 @@
     </div>
 </section>
 @endsection
-<script>
-    function chanceimg(id) {
-        console.log(id);
-        var imgpath = document.getElementById(id).getAttribute('src');
-        document.getElementById('imgmain').setAttribute('src', imgpath);
-    }
-</script>

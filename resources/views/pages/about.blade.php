@@ -1,4 +1,7 @@
 @extends('layout.master')
+@section('title')
+<title>{!! getOption('gioi-thieu-title') !!}</title>
+@endsection
 @section('content')
 <nav aria-label="breadcrumb" id="breadcrumb">
     <div class="container">

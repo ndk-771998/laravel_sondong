@@ -1,0 +1,20 @@
+.error__page--alert {
+    .error__form--alert {
+        margin-top: 130px !important;
+        margin-bottom: 130px !important;
+        a{
+           color: #683e7a;
+           font-weight: bold;
+        }
+        button{
+            border: 1px solid #ccc;
+            position: relative;
+            width: 40px;
+            i{
+                position: absolute;
+                top: 10px;
+                right: 11px;
+            }
+        }
+    }
+}

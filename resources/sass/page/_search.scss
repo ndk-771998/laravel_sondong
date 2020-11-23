@@ -13,6 +13,9 @@
                 border-radius: 0 5px 5px 0;
                 background: #f6f6f6;
                 color: #707070;
+                .fa.fa-search{
+                    margin-top: 3px;
+                }
             }
 
         }
@@ -64,6 +67,7 @@
                             img {
                                 border-radius: 6px;
                                 width: 100%;
+                                object-fit: cover;
                             }
 
                         }
@@ -145,6 +149,7 @@
                             width: 162px;
                             height: 110px;
                             margin-right: 24px;
+                            object-fit: cover;
                         }
 
                         h6 {
@@ -165,11 +170,48 @@
                     }
 
                 }
-
-            }
+                .product-slide{
+                    margin-left:2px;
+                    .product-item{
+                        margin-top:11px;
+                        height: 284px;
+                        width: 162px;
+                    }
+                }
+                .slick-prev.slick-arrow, .slick-next.slick-arrow {
+                    width: 40px;
+                    height: 40px;
+                    background: white;
+                    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+                    opacity: 1;
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+                .slick-next{
+                    right: -5px;
+                }
+                .slick-slide{
+                    outline: none !important;
+                }
+                .slick-prev:before, .slick-next:before {
+                    color:#d8d8d8;
+                }
+              }
 
         }
 
     }
-
+    @media only screen and (max-width: 1600px) and (min-width: 1199px) {
+        .carousel-item img {
+            height: 200px;
+            width: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
+    @media only screen and (max-width: 368px) {
+        .product-item{
+            width: 150px !important;
+        }
+    }
 }

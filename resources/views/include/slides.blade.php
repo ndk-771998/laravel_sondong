@@ -18,19 +18,19 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active" data-interval="2000">
-                <img class="img-fluid" src="{!! getOption('trang-chu-slide-1') !!}">
+                <img class="img-fluid" src="{!! getOption('trang-chu-slide-1') !!}" alt="slide-banner-1">
             </div>
             <div class="carousel-item " data-interval="3000">
-                <img class="img-fluid" src="{!! getOption('trang-chu-slide-2') !!}">
+                <img class="img-fluid" src="{!! getOption('trang-chu-slide-2') !!}" alt="slide-banner-2">
             </div>
             <div class="carousel-item " data-interval="2000">
-                <img class="img-fluid" src="{!! getOption('trang-chu-slide-3') !!}">
+                <img class="img-fluid" src="{!! getOption('trang-chu-slide-3') !!}" alt="slide-banner-3">
             </div>
             <div class="carousel-item " data-interval="2000">
-                <img class="img-fluid" src="{!! getOption('trang-chu-slide-4') !!}">
+                <img class="img-fluid" src="{!! getOption('trang-chu-slide-4') !!}" alt="slide-banner-4">
             </div>
             <div class="carousel-item " data-interval="2000">
-                <img class="img-fluid" src="{!! getOption('trang-chu-slide-5') !!}">
+                <img class="img-fluid" src="{!! getOption('trang-chu-slide-5') !!}" alt="slide-banner-5">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

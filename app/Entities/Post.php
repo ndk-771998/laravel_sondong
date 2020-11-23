@@ -16,9 +16,9 @@ class Post extends BasePost
     public function postTypes()
     {
         return [
-            'Địa điểm cưới lãng mạng' => "place",
-            'Hỗ trợ tiệc cưới'        => "exhibition",
-            'trang'                   => 'pages',
+            'Địa điểm cưới lãng mạn' => "place",
+            'Hỗ trợ tiệc cưới'       => "exhibition",
+            'trang'                  => 'pages',
         ];
     }
 
@@ -48,6 +48,6 @@ class Post extends BasePost
     }
     public function scopeGetBy($query, $type, $status)
     {
-        return $query->where('type',$type)->where('status', $status)->orderBy('id','desc');
+        return $query->where('type', $type)->where('status', $status)->orderBy('id', 'desc');
     }
 }

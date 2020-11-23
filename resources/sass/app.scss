@@ -27,18 +27,18 @@
 @import "./auth/login";
 @import "./page/zoomimg";
 @import "./utility/hotline";
+@import "./page/error-404";
 body {
     color: $default_text_color;
     background-color: $default_bg_color;
     font-size: $font_size_normal;
-
+    font-family: SegoeUI;
     header {
         .bg-dark {
             background-color: $main_header_bg_color !important;
         }
 
     }
-
     footer {
         padding-top: 20px;
         background: $main_footer_bg_color;

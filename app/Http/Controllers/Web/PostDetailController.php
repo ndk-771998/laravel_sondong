@@ -6,7 +6,8 @@ use App\Entities\Post;
 use Illuminate\Http\Request;
 use VCComponent\Laravel\Post\Contracts\ViewPostDetailControllerInterface;
 use VCComponent\Laravel\Post\Http\Controllers\Web\PostDetailController as BasePostDetailController;
-
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
 class PostDetailController extends BasePostDetailController implements ViewPostDetailControllerInterface
 {
     public function view()
@@ -16,6 +17,11 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
 
     public function viewData($post, Request $request)
     {
+        SEOMeta::setTitle($post->title);
+        SEOMeta::setDescription($post->description);
+        OpenGraph::setTitle($post->title);
+        OpenGraph::setDescription($post->description);
+        OpenGraph::addImage($post->thumbnail);
         $relatedPosts = Post::ofType('posts')
             ->where('id', '<>', $post->id)
             ->latest()
@@ -24,7 +30,7 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
 
         $title        = 'Tin Tức';
         $urlBreadcumb = 'posts';
-        $comments     = $post->getLatestComment(10);
+        $comments     = $post->getLatestComment(10)->where('status', 1);
 
         return [
             'title'        => $title,

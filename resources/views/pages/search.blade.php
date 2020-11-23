@@ -16,7 +16,8 @@
                 <div class="col-12 col-md-6 form">
                     <form action="{{ route('search') }}">
                         <div class="input-group row">
-                            <input type="search" name="search" value="{{ old('content') }}" placeholder="Tìm kiếm..."
+                            <input type="search" name="search"
+                                value="{{ (isset($_GET['search']) ? $_GET['search'] : "") }}" placeholder="Tìm kiếm..."
                                 aria-describedby="button-addon5" class="form-control">
                             <div class="input-group-append">
                                 <button type="submit" class="btn d-flex"><i class="fa fa-search"></i></button>
@@ -47,17 +48,17 @@
                             <div class="product">
                                 <div><i>Sản phẩm</i></div>
                                 @if ($products->count())
-                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                {{-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <div class="row">
+                                            <div class="row slick-slide">
                                                 @foreach($products as $product)
                                                 <div class="col-4 col-md-2">
                                                     <a href="product/{!! $product->slug !!}">
                                                         <div
                                                             class="d-flex flex-column justify-content-center product-item">
                                                             <div class="product-img">
-                                                                <img src="{!! $product->thumbnail !!}" alt="">
+                                                                <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}">
                                                             </div>
                                                             <div class="product-title">
                                                                 <p>{!! $product->name !!}</p>
@@ -82,107 +83,137 @@
                                     </div>
                                     <div class="">
                                         {{ $products->fragment('pills-home')->links('layout.search-pagination') }}
-                                    </div>
-                                </div>
-                                @else
-                                <h6 class="mt-1">Không tìm thấy kết quả !</h6>
-                                @endif
                             </div>
-                            <div class="news">
-                                <div><i>Tin tức</i></div>
-                                @if ($news->count())
-                                <div>
-                                    <div class="d-flex flex-column" id="news">
-                                        @foreach($news as $newsItem)
-                                        <div class="description">
-                                            <a href="/posts/{!! $newsItem->slug !!}" class="d-flex">
-                                                <div><img src="{!! $newsItem->thumbnail  !!}" alt=""></div>
-                                                <div class="news-info">
-                                                    <h6>{!! $newsItem->title !!}</h6>
-                                                    <p>{!! $newsItem->description !!}</p>
-                                                    <div><u>Xem chi tiết</u></div>
-                                                </div>
-                                            </a>
+                        </div> --}}
+
+                        <div class="row product-slide">
+                            @foreach($products as $product)
+                            <div class="product-slide-item">
+                                <a href="product/{!! $product->slug !!}">
+                                    <div class="d-flex flex-column justify-content-center product-item">
+                                        <div class="product-img">
+                                            <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}">
                                         </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                                @else
-                                <h6 class="mt-1">Không tìm thấy kết quả !</h6>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                            aria-labelledby="pills-profile-tab">
-                            <div class="product">
-                                @if ($products_tabpane->count())
-                                <div class="row">
-                                    @foreach($products_tabpane as $product_tabpane)
-                                    <div class="col-4 col-md-2">
-                                        <a href="product/{!! $product_tabpane->slug !!}">
-                                            <div class="d-flex flex-column justify-content-center product-item">
-                                                <div class="product-img">
-                                                    <img src="{!! $product_tabpane->thumbnail !!}" alt="">
-                                                </div>
-                                                <div class="product-title">
-                                                    <p>{!! $product_tabpane->name !!}</p>
-                                                </div>
-                                                <div class="product_author">
-                                                    <p>Nhà thiết kế: {!! $product->brand !!}</p>
-                                                </div>
-                                                <div class="product-price d-flex justify-content-between">
-                                                    <div class="price">
-                                                        <p>{!! number_format($product_tabpane->price) !!} đ</p>
-                                                    </div>
-                                                    <div class="original_price">
-                                                        {!!number_format($product_tabpane->original_price) !!} đ</div>
-                                                </div>
+                                        <div class="product-title">
+                                            <p>{!! $product->name !!}</p>
+                                        </div>
+                                        <div class="product_author">
+                                            <p>Nhà thiết kế: {!! $product->brand !!}</p>
+                                        </div>
+                                        <div class="product-price d-flex justify-content-between">
+                                            <div class="price">
+                                                <p>{!! number_format($product->price) !!} đ</p>
                                             </div>
-                                        </a>
-                                    </div>
-                                    @endforeach
-                                    <div class="col-12 mt-2 d-flex justify-content-center">
-                                        {{ $products_tabpane->fragment('pills-profile')->links('include.pagination') }}
-                                    </div>
-                                </div>
-                            </div>
-                            @else
-                            <h6 class="mt-1">Không tìm thấy kết quả !</h6>
-                            @endif
-                        </div>
-                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                            aria-labelledby="pills-contact-tab">
-                            <div class="news">
-                                <div><i>Tin tức</i></div>
-                                @if ($news_tabpane->count())
-                                <div>
-                                    <div class="d-flex flex-column" id="news-pane">
-                                        @foreach($news_tabpane as $newsItem)
-                                        <div class="description">
-                                            <a href="posts/{!! $newsItem->slug !!}" class="d-flex">
-                                                <div><img src="{!! $newsItem->thumbnail  !!}" alt=""></div>
-                                                <div class="news-info">
-                                                    <h6>{!! $newsItem->title !!}</h6>
-                                                    <p>{!! $newsItem->description !!}</p>
-                                                    <div><u>Xem chi tiết</u></div>
-                                                </div>
-                                            </a>
+                                            <div class="original_price">
+                                                {!!number_format($product->original_price) !!} đ
+                                            </div>
                                         </div>
-                                        @endforeach
                                     </div>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+
+                        @else
+                        <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                        @endif
+                    </div>
+                    <div class="news">
+                        <div><i>Tin tức</i></div>
+                        @if ($news->count())
+                        <div>
+                            <div class="d-flex flex-column" id="news">
+                                @foreach($news as $newsItem)
+                                <div class="description">
+                                    <a href="/posts/{!! $newsItem->slug !!}" class="d-flex">
+                                        <div><img src="{!! $newsItem->thumbnail  !!}" alt="{!! $newsItem->title !!}">
+                                        </div>
+                                        <div class="news-info">
+                                            <h6>{!! $newsItem->title !!}</h6>
+                                            <p>{!! $newsItem->description !!}</p>
+                                            <div><u>Xem chi tiết</u></div>
+                                        </div>
+                                    </a>
                                 </div>
-                                @else
-                                <h6 class="mt-1">Không tìm thấy kết quả !</h6>
-                                @endif
+                                @endforeach
+                            </div>
+                        </div>
+                        @else
+                        <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                        @endif
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="product">
+                        @if ($products_tabpane->count())
+                        <div class="row">
+                            @foreach($products_tabpane as $product_tabpane)
+                            <div class="col-4 col-md-2">
+                                <a href="product/{!! $product_tabpane->slug !!}">
+                                    <div class="d-flex flex-column justify-content-center product-item">
+                                        <div class="product-img">
+                                            <img src="{!! $product_tabpane->thumbnail !!}"
+                                                alt="{!! $product_tabpane->name !!}">
+                                        </div>
+                                        <div class="product-title">
+                                            <p>{!! $product_tabpane->name !!}</p>
+                                        </div>
+                                        <div class="product_author">
+                                            <p>Nhà thiết kế: {!! $product->brand !!}</p>
+                                        </div>
+                                        <div class="product-price d-flex justify-content-between">
+                                            <div class="price">
+                                                <p>{!! number_format($product_tabpane->price) !!} đ</p>
+                                            </div>
+                                            <div class="original_price">
+                                                {!!number_format($product_tabpane->original_price) !!} đ</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
+                            <div class="col-12 mt-2 d-flex justify-content-center">
+                                {{ $products_tabpane->fragment('pills-profile')->links('include.pagination') }}
                             </div>
                         </div>
                     </div>
+                    @else
+                    <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                    @endif
                 </div>
-                @else
-                <div class="mt-3 h5 text-danger">Hãy nhập từ khóa !</div>
-                @endif
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="news">
+                        <div><i>Tin tức</i></div>
+                        @if ($news_tabpane->count())
+                        <div>
+                            <div class="d-flex flex-column" id="news-pane">
+                                @foreach($news_tabpane as $newsItem)
+                                <div class="description">
+                                    <a href="posts/{!! $newsItem->slug !!}" class="d-flex">
+                                        <div><img src="{!! $newsItem->thumbnail  !!}" alt="{!! $newsItem->title !!}">
+                                        </div>
+                                        <div class="news-info">
+                                            <h6>{!! $newsItem->title !!}</h6>
+                                            <p>{!! $newsItem->description !!}</p>
+                                            <div><u>Xem chi tiết</u></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        @else
+                        <h6 class="mt-1">Không tìm thấy kết quả !</h6>
+                        @endif
+                    </div>
+                </div>
             </div>
         </div>
+        @else
+        <div class="mt-3 h5 text-danger">Hãy nhập từ khóa !</div>
+        @endif
+    </div>
+    </div>
     </div>
     </div>
 </section>

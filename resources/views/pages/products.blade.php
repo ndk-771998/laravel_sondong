@@ -1,4 +1,7 @@
 @extends('layout.master')
+@section('title')
+<title>{!! getOption('san-pham-title') !!}</title>
+@endsection
 @section('content')
 <nav aria-label="breadcrumb" id="breadcrumb">
     <div class="container">
@@ -28,8 +31,8 @@
                                         <option value="created_at|desc"
                                             {{ $activeFilter === 'created_at|desc' ? 'selected' : '' }}>Mới nhất
                                         </option>
-                                        <option value="order|desc"
-                                            {{ $activeFilter === 'order|desc' ? 'selected' : '' }}>Hot nhất</option>
+                                        <option value="is_hot|desc"
+                                            {{ $activeFilter === 'is_hot|desc' ? 'selected' : '' }}>Hot nhất</option>
                                     </select>
                                 </div>
                             </div>
@@ -40,19 +43,20 @@
                                     <a href="/product/{!! $product->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                                <img src="{!! $product->thumbnail !!}" alt="">
+                                            <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}">
                                             </div>
                                             <div class="product-title">
                                                 <p>{!! $product->name !!}</p>
                                             </div>
                                             <div class="product_author">
-                                                <p>Nhà thiết kế: {!! $product->brand !!}</p>
+                                                <p>Nhà thiết kế: {!! $product->getMetafield('brand_name') !!}</p>
                                             </div>
                                             <div class="product-price d-flex justify-content-between">
                                                 <div class="price">
                                                     <p>{!! number_format($product->price) !!} đ</p>
                                                 </div>
-                                                <div class="original_price">{!!number_format($product->original_price)!!} đ</div>
+                                                <div class="original_price">
+                                                    {!!number_format($product->original_price)!!} đ</div>
                                             </div>
                                         </div>
                                     </a>
