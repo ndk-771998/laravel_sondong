@@ -98,7 +98,7 @@
                                             <p>{!! $product->name !!}</p>
                                         </div>
                                         <div class="product_author">
-                                            <p>Nhà thiết kế: {!! $product->brand !!}</p>
+                                            <p>Nhà thiết kế: {!! $product->getMetaField("brand_name") !!}</p>
                                         </div>
                                         <div class="product-price d-flex justify-content-between">
                                             <div class="price">
@@ -148,7 +148,7 @@
                         @if ($products_tabpane->count())
                         <div class="row">
                             @foreach($products_tabpane as $product_tabpane)
-                            <div class="col-4 col-md-2">
+                            <div class="col-6 col-md-3 col-lg-2">
                                 <a href="product/{!! $product_tabpane->slug !!}">
                                     <div class="d-flex flex-column justify-content-center product-item">
                                         <div class="product-img">
@@ -159,7 +159,7 @@
                                             <p>{!! $product_tabpane->name !!}</p>
                                         </div>
                                         <div class="product_author">
-                                            <p>Nhà thiết kế: {!! $product->brand !!}</p>
+                                            <p>Nhà thiết kế: {!! $product->getMetaField('brand_name') !!}</p>
                                         </div>
                                         <div class="product-price d-flex justify-content-between">
                                             <div class="price">

@@ -176,6 +176,11 @@
                         margin-top:11px;
                         height: 284px;
                         width: 162px;
+                        outline: none !important;
+                        img{
+                            height: 200px;
+                            object-fit: cover;
+                        }
                     }
                 }
                 .slick-prev.slick-arrow, .slick-next.slick-arrow {
@@ -192,6 +197,9 @@
                 }
                 .slick-slide{
                     outline: none !important;
+                    a{
+                        outline: none !important;
+                    }
                 }
                 .slick-prev:before, .slick-next:before {
                     color:#d8d8d8;
