@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5107162d136b675469e59718c9ca023b",
+    "content-hash": "d3a480dba6dc3db2cc13abd827e14a6a",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -126,16 +126,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.163.2",
+            "version": "3.163.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ef46d2daf80f2a21809608ada7ba76dddfd103cd"
+                "reference": "f6cd8fe1334b19e1dc0d841fa1b2da7cd30a1e8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ef46d2daf80f2a21809608ada7ba76dddfd103cd",
-                "reference": "ef46d2daf80f2a21809608ada7ba76dddfd103cd",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f6cd8fe1334b19e1dc0d841fa1b2da7cd30a1e8a",
+                "reference": "f6cd8fe1334b19e1dc0d841fa1b2da7cd30a1e8a",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-11-20T19:13:16+00:00"
+            "time": "2020-11-23T20:34:30+00:00"
         },
         {
             "name": "cocur/slugify",
@@ -7752,16 +7752,16 @@
         },
         {
             "name": "webpress/order-manager",
-            "version": "0.0.6",
+            "version": "0.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/order-manager.git",
-                "reference": "dcb8f52f7ce9664e06cce1958247fe73c4acb889"
+                "reference": "5d542eabd9bd2c7be99f6768c5aa9311216e383c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/order-manager/zipball/dcb8f52f7ce9664e06cce1958247fe73c4acb889",
-                "reference": "dcb8f52f7ce9664e06cce1958247fe73c4acb889",
+                "url": "https://api.github.com/repos/webpress-vn/order-manager/zipball/5d542eabd9bd2c7be99f6768c5aa9311216e383c",
+                "reference": "5d542eabd9bd2c7be99f6768c5aa9311216e383c",
                 "shasum": ""
             },
             "require": {
@@ -7802,7 +7802,7 @@
                     "email": "quanghuyhg007@gmail.com"
                 }
             ],
-            "time": "2020-09-22T09:00:56+00:00"
+            "time": "2020-11-24T02:18:01+00:00"
         },
         {
             "name": "webpress/payment",

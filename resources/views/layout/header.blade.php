@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class=" col-12 col-md-8">
-                    <a href="/"><img src="{{getOption('header-logo')}}" class="logo" alt="logo"></a></div>
+                    <a href="/"><img src="{{getOption('header-logo')}}" title="Quay lại trang chủ" class="logo" alt="logo"></a></div>
                 <div class="col-12 col-md-4">
                     <div class="row justify-content-end">
-                        <div class="col-4 col-md-2"><a href="/search"><img
+                        <div class="col-4 col-md-2"><a href="/search" title='Tìm kiếm'><img
                                     src="https://img.icons8.com/ios/50/707070/search--v1.png" class="icon-header"></a>
                         </div>
-                        <div class="col-4 col-md-2">@include('order::cartIcon')</div>
+                        <div class="col-4 col-md-2" title='Giỏ hàng'>@include('order::cartIcon')</div>
                         {{-- <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
                             @if (Auth::check())
                             <a href="account"><img src="/assets/images/logo/logic.png" class="icon-header"></a>
@@ -32,7 +32,7 @@
                     <div class="row nav">
                         @foreach($menus_header as $menu)
                         <a href="{!! $menu->link !!}" id="menu-{!! $menu->id  !!}" data-id="{!! $menu->id !!}"
-                            data-name="{!! $menu->link !!}" class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
+                            data-name="{!! $menu->link !!}" title="{!! $menu->label !!}" class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
                         @endforeach
                     </div>
                     <div class="nav-mini"><a class="" data-toggle="dropdown" href="#"><img
@@ -47,9 +47,9 @@
                 <div class="col-5">
                     <form action="{{ route('search') }}" method="get">
                         <div class="input-group d-flex justify-content-end ">
-                            <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control col-md-7">
+                            <input type="search" placeholder="Tìm kiếm..."  name="search" class="form-control col-md-7">
                             <div class="input-group-append">
-                                <button type="submit" class="btn d-flex"><i class="fa fa-search"></i></button>
+                                <button type="submit" class="btn d-flex" title='Tìm kiếm'><i class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </form>
