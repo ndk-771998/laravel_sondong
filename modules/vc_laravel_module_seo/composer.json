@@ -20,7 +20,7 @@
     },
     "require": {
         "vicoders/core": "@dev",
-        "artesaos/seotools": "^0.16.0"
+        "artesaos/seotools": "v0.17.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.4",

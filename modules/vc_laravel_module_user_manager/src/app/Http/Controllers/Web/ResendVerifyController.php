@@ -2,12 +2,12 @@
 
 namespace VCComponent\Laravel\User\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use VCComponent\Laravel\User\Entities\User;
 use VCComponent\Laravel\User\Repositories\UserRepository;
+use Illuminate\Routing\Controller;
 
 class ResendVerifyController extends Controller
 {

@@ -7,7 +7,6 @@ if (config('post.models.post') !== null) {
 
 $model     = new $model_class;
 $postTypes = $model->postTypes();
-
 Route::prefix(config('post.namespace'))
     ->middleware('web')
     ->group(function () use ($postTypes) {

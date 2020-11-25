@@ -20,6 +20,7 @@ use VCComponent\Laravel\User\Contracts\UserSchema;
 use VCComponent\Laravel\User\Notifications\MailResetPasswordToken;
 use VCComponent\Laravel\User\Traits\UserManagementTrait;
 use VCComponent\Laravel\User\Traits\UserSchemaTrait;
+use VCComponent\Laravel\User\Entities\Gender;
 
 class User extends Model implements AuthenticatableContract, JWTSubject, Transformable, UserManagement, UserSchema, CanResetPasswordContract, HasRoleAndPermissionContract
 {
@@ -44,6 +45,7 @@ class User extends Model implements AuthenticatableContract, JWTSubject, Transfo
         'first_name',
         'last_name',
         'avatar',
+        'password',
         'verify_token',
         'status',
         'email_verified_at',
@@ -97,5 +99,10 @@ class User extends Model implements AuthenticatableContract, JWTSubject, Transfo
     public function getToken()
     {
         return JWTAuth::fromUser($this);
+    }
+
+    public function sex()
+    {
+        return $this->hasOne(Gender::class,'id' , 'gender');
     }
 }

@@ -4,6 +4,7 @@ namespace VCComponent\Laravel\Comment\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use VCComponent\Laravel\Comment\Actions\CommentCountAction;
 use VCComponent\Laravel\Comment\Entities\Comment;
@@ -19,23 +20,25 @@ class CommentController extends BaseController {
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
+            return Redirect::back()->withErrors($validator);
         }
 
-        $email    = !$request['email'] ? 'null' : $request['email'];
         $username = !$request['user'] ? 'user' : $request['user'];
 
         Comment::create([
-            'commentable_id'   => $request['commentable_id'],
-            'commentable_type' => $request['commentable_type'],
-            'email'            => $email,
+            'commentable_id'   => $request->input('commentable_id'),
+            'commentable_type' => $request->input('commentable_type'),
+            'email'            => $request->input('email'),
             'name'             => $username,
-            'content'          => $request['content'],
+            'content'          => $request->input('content'),
         ]);
 
+        $comment_type = !$request['comment_type'] ? $request['commentable_type'] : $request['comment_type'];
+
         $dataCount = [
-            'commentable_id'   => $request['commentable_id'],
-            'commentable_type' => $request['commentable_type'],
+            'commentable_id'   => $request->input('commentable_id'),
+            'commentable_type' => $request->input('commentable_type'),
+            'comment_type'     => $comment_type,
         ];
 
         $this->action->addComment($dataCount);

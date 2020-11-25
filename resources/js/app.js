@@ -2,22 +2,35 @@
 import 'bootstrap';
 import "slick-carousel";
 import $ from 'jquery';
-console.log("My Kit is ready :)");
+import './order/cart';
+import './order/order-info';
+import './menu';
+import './product-list';
+import './product-detail';
+import './account';
+import './search';
+import './user/user';
+import './zoomimg';
+import './zoom-image';
+import './paginate';
 
 $(document).ready(function () {
+
     $('.product-thumbnail').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         fade: true,
-        focusOnSelect: true,
         asNavFor: '.product-thumbnail-child'
-      });
-      $('.product-thumbnail-child').slick({
-        slidesToShow: 3,
+    });
+    $('.product-thumbnail-child').slick({
+        slidesToShow: 4,
         slidesToScroll: 1,
         asNavFor: '.product-thumbnail',
         dots: false,
-        focusOnSelect: true
-      });
+        focusOnSelect: true,
+        arrows: false
+    });
+
 });
+

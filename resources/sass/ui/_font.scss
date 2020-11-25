@@ -1,2 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 $font_family: "SegoeUI", sans-serif;
+
+@font-face{
+    font-family: SegoeUI;
+    src: url("../../fonts/SegoeUI.ttf");
+}
+@font-face {
+    font-family: SegoeUI-Light;
+    src: url("../../fonts/segoeui-light.ttf");
+}
+
+@font-face {
+    font-family: SegoeUI-bold;
+    src: url("../../fonts/SegoeUIBold.ttf");
+}
+
+@font-face {
+    font-family: SegoeUI-Semibold;
+    src: url("../../fonts/seguisb.ttf");
+}

@@ -29,6 +29,6 @@ class PaymentStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statuses');
+        Schema::dropIfExists('payment_statuses');
     }
 }

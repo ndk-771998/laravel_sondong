@@ -13,7 +13,7 @@
         }
     },
     "require": {
-        "dingo/api": "^2.4",
+        "dingo/api": "v2.x-dev",
         "prettus/l5-repository": "^2.6",
         "tymon/jwt-auth": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
