@@ -44,20 +44,8 @@ steps:
     image: composer
     commands:
       - composer install
-    environment: COMPOSER_CACHE_DIR:/composer
-    # - name: deploy_prod
-    #   image: appleboy/drone-ssh
-    #   settings:
-    #     host:
-    #       from_secret: SERVER_IP
-    #     ssh_key:
-    #       from_secret: SERVER_SSH_KEY
-    #     port: 1080
-    #     script_stop: true
-    #     script:
-    #       - docker pull docker-registry.vicoders.com/pigeon_api:${DRONE_COMMIT_BRANCH}
-    #       - docker service update --image docker-registry.vicoders.com/pigeon_api:${DRONE_COMMIT_BRANCH} --force pigeon_app
-    #       - docker system prune -f
+    environment:
+      - COMPOSER_CACHE_DIR:/composer
     when:
       branch:
         - production
