@@ -61,6 +61,13 @@ steps:
     when:
       branch:
         - production
+  - name: compress
+    image: busybox
+    commands:
+      - ls -al
+    when:
+      branch:
+        - production
 volumes:
   - name: cache
     host:
