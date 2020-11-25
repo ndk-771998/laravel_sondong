@@ -1,0 +1,85 @@
+---
+kind: pipeline
+type: docker
+name: default
+globals:
+  - &docker_creds
+    username:
+      from_secret: docker_user
+    password:
+      from_secret: docker_password
+steps:
+  - name: prepare
+    image: busybox
+    commands:
+      - mkdir -p /cache/${DRONE_REPO}/docker
+    volumes:
+      - name: cache
+        path: /cache
+  - name: env_prod
+    image: nightfuryest/drone-plugin-secret-to-env
+    settings:
+      template: .deploy/.env.prod.template
+      file: .env
+      envs:
+        - APP_URL_PROD
+        - ADMIN_URL_PROD
+        - DB_NAME_PROD
+        - DB_USER_PROD
+        - DB_PASSWORD_PROD
+      APP_URL_PROD:
+        from_secret: APP_URL_PROD
+      ADMIN_URL_PROD:
+        from_secret: ADMIN_URL_PROD
+      DB_NAME_PROD:
+        from_secret: DB_NAME_PROD
+      DB_USER_PROD:
+        from_secret: DB_USER_PROD
+      DB_PASSWORD_PROD:
+        from_secret: DB_PASSWORD_PROD
+    when:
+      branch:
+        - production
+  - name: install
+    image: composer
+    commands:
+      - composer install
+    environment: COMPOSER_CACHE_DIR:/composer
+    # - name: deploy_prod
+    #   image: appleboy/drone-ssh
+    #   settings:
+    #     host:
+    #       from_secret: SERVER_IP
+    #     ssh_key:
+    #       from_secret: SERVER_SSH_KEY
+    #     port: 1080
+    #     script_stop: true
+    #     script:
+    #       - docker pull docker-registry.vicoders.com/pigeon_api:${DRONE_COMMIT_BRANCH}
+    #       - docker service update --image docker-registry.vicoders.com/pigeon_api:${DRONE_COMMIT_BRANCH} --force pigeon_app
+    #       - docker system prune -f
+    when:
+      branch:
+        - production
+  - name: compress
+    image: busybox
+    commands:
+      - ls -al
+    when:
+      branch:
+        - production
+volumes:
+  - name: cache
+    host:
+      path: /var/cache
+  - name: docker
+    host:
+      path: /var/cache/${DRONE_REPO}/docker
+  - name: composer
+    host:
+      path: /var/cache/${DRONE_REPO}/composer
+
+trigger:
+  branch:
+    - production
+    - staging
