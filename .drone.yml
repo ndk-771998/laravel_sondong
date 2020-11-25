@@ -40,25 +40,38 @@ steps:
     when:
       branch:
         - production
-  - name: install
-    image: nightfuryest/php-composer
-    commands:
-      - composer install
-    environment:
-      COMPOSER_CACHE_DIR: /composer
-    volumes:
-      - name: composer
-        path: /composer
-    when:
-      branch:
-        - production
+  # - name: install
+  #   image: nightfuryest/php-composer
+  #   commands:
+  #     - composer install
+  #   environment:
+  #     COMPOSER_CACHE_DIR: /composer
+  #   volumes:
+  #     - name: composer
+  #       path: /composer
+  #   when:
+  #     branch:
+  #       - production
   - name: compress
     image: busybox
     commands:
-      - ls -al
+      - zip -r workspace.zip *
     when:
       branch:
         - production
+  - name: scp files
+    image: appleboy/drone-scp
+    environment:
+      DOMAIN_PROD:
+        from_secret: DOMAIN_PROD
+    settings:
+      host: sv1app.webpress.vn
+      username: root
+      key:
+        from_secret: SERVER_PROD_SECRET_KEY
+      port: 22
+      target: /var/www/web/${DOMAIN_PROD}
+      source: workspace.zip
 volumes:
   - name: cache
     host:
