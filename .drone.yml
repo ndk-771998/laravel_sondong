@@ -64,16 +64,15 @@ steps:
     settings:
       host: sv1app.webpress.vn
       username: root
-      password:
-        from_secret: SERVER_PROD_PASSWORD
+      key:
+        from_secret: SERVER_PROD_SECRET_KEY
       port: 22
       target: /var/www/web/p16001.webpress.vn
       source: workspace.zip
   - name: deploy
     image: appleboy/drone-ssh
     settings:
-      host:
-        from_secret: SERVER_PROD_IP
+      host: sv1app.webpress.vn
       ssh_key:
         from_secret: SERVER_PROD_SECRET_KEY
       port: 22
