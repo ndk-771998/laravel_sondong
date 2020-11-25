@@ -85,7 +85,7 @@ steps:
         - rm -rf /var/www/web/p16001.webpress.vn/workspace.zip
     when:
       branch:
-        - staging
+        - production
 volumes:
   - name: cache
     host:
