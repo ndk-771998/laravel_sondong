@@ -61,16 +61,13 @@ steps:
         - production
   - name: scp files
     image: appleboy/drone-scp
-    environment:
-      DOMAIN_PROD:
-        from_secret: DOMAIN_PROD
     settings:
       host: sv1app.webpress.vn
       username: root
       password:
         from_secret: SERVER_PROD_PASSWORD
       port: 22
-      target: /var/www/web/${DOMAIN_PROD}
+      target: /var/www/web/p16001.webpress.vn
       source: workspace.zip
 volumes:
   - name: cache
