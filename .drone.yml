@@ -82,4 +82,3 @@ volumes:
 trigger:
   branch:
     - production
-    - staging
