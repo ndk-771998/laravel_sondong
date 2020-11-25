@@ -41,7 +41,7 @@ steps:
       branch:
         - production
   - name: install
-    image: composer
+    image: nightfuryest/php-composer
     commands:
       - composer install
     environment:
