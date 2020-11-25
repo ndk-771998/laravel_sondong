@@ -72,8 +72,7 @@ steps:
   - name: deploy
     image: appleboy/drone-ssh
     settings:
-      host:
-        from_secret: sv1app.webpress.vn
+      host: sv1app.webpress.vn
       ssh_key:
         from_secret: SERVER_PROD_SECRET_KEY
       port: 22
