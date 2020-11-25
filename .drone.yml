@@ -53,7 +53,7 @@ steps:
   #     branch:
   #       - production
   - name: compress
-    image: busybox
+    image: kramos/alpine-zip
     commands:
       - zip -r workspace.zip *
     when:
