@@ -67,8 +67,8 @@ steps:
     settings:
       host: sv1app.webpress.vn
       username: root
-      key:
-        from_secret: SERVER_PROD_SECRET_KEY
+      password:
+        from_secret: SERVER_PROD_PASSWORD
       port: 22
       target: /var/www/web/${DOMAIN_PROD}
       source: workspace.zip
