@@ -59,7 +59,7 @@ steps:
     when:
       branch:
         - production
-  - name: scp files
+  - name: transfer
     image: appleboy/drone-scp
     settings:
       host: sv1app.webpress.vn
@@ -69,6 +69,23 @@ steps:
       port: 22
       target: /var/www/web/p16001.webpress.vn
       source: workspace.zip
+  - name: deploy
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        from_secret: sv1app.webpress.vn
+      ssh_key:
+        from_secret: SERVER_PROD_SECRET_KEY
+      port: 22
+      script_stop: true
+      script:
+        - cd /var/www/web/p16001.webpress.vn
+        - rm -rf /var/www/web/p16001.webpress.vn/workspace
+        - unzip workspace.zip -d workspace
+        - rm -rf /var/www/web/p16001.webpress.vn/workspace.zip
+    when:
+      branch:
+        - staging
 volumes:
   - name: cache
     host:
