@@ -44,8 +44,11 @@ steps:
     image: composer
     commands:
       - composer install
-    # environment:
-    #   - COMPOSER_CACHE_DIR:/composer
+    environment:
+      COMPOSER_CACHE_DIR: /composer
+    volumes:
+      - name: composer
+        path: /composer
     when:
       branch:
         - production
