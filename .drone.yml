@@ -40,18 +40,18 @@ steps:
     when:
       branch:
         - production
-  # - name: install
-  #   image: nightfuryest/php-composer
-  #   commands:
-  #     - composer install
-  #   environment:
-  #     COMPOSER_CACHE_DIR: /composer
-  #   volumes:
-  #     - name: composer
-  #       path: /composer
-  #   when:
-  #     branch:
-  #       - production
+  - name: install
+    image: nightfuryest/php-composer
+    commands:
+      - composer install
+    environment:
+      COMPOSER_CACHE_DIR: /composer
+    volumes:
+      - name: composer
+        path: /composer
+    when:
+      branch:
+        - production
   - name: compress
     image: kramos/alpine-zip
     commands:
