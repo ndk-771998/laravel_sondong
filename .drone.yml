@@ -66,7 +66,7 @@ steps:
       username: root
       key:
         from_secret: SERVER_PROD_SECRET_KEY
-      port: 22
+      port: 1080
       target: /var/www/web/p16001.webpress.vn
       source: workspace.zip
   - name: deploy
@@ -75,7 +75,7 @@ steps:
       host: sv1app.webpress.vn
       ssh_key:
         from_secret: SERVER_PROD_SECRET_KEY
-      port: 22
+      port: 1080
       script_stop: true
       script:
         - cd /var/www/web/p16001.webpress.vn
