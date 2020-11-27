@@ -55,7 +55,7 @@ steps:
   - name: compress
     image: kramos/alpine-zip
     commands:
-      - zip -r workspace.zip *
+      - zip -r workspace.zip * .*
     when:
       branch:
         - production
