@@ -94,8 +94,8 @@ steps:
       script_stop: true
       script:
         - cd /var/www/web/p16001.webpress.vn
-        - rm -rf /var/www/web/p16001.webpress.vn/workspace
-        - unzip workspace.zip -d workspace
+        - rm -rf /var/www/web/p16001.webpress.vn/workspace/current
+        - unzip workspace.zip -d workspace/current
         - rm -rf /var/www/web/p16001.webpress.vn/workspace.zip
     when:
       branch:
