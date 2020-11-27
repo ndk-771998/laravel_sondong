@@ -40,7 +40,7 @@ steps:
     when:
       branch:
         - production
-  - name: install
+  - name: Install PHP Packages
     image: nightfuryest/php-composer
     commands:
       - composer install
@@ -52,10 +52,25 @@ steps:
     when:
       branch:
         - production
+  - name: Build assets
+    image: node:13-alpine
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn config set cache-folder /yarn
+      - yarn install --pure-lockfile
+      - yarn prod
+    volumes:
+      - name: yarn
+        path: /yarn
+    when:
+      branch:
+        - production
   - name: compress
     image: kramos/alpine-zip
     commands:
-      - zip -r workspace.zip * .*
+      - zip -r workspace.zip -x node_modules * .*
     when:
       branch:
         - production
@@ -95,6 +110,9 @@ volumes:
   - name: composer
     host:
       path: /var/cache/${DRONE_REPO}/composer
+  - name: yarn
+    host:
+      path: /var/cache/${DRONE_REPO}/yarn
 
 trigger:
   branch:
