@@ -158,7 +158,7 @@
                                                 alt="{!! $product_tabpane->name !!}">
                                         </div>
                                         <div class="product-title">
-                                            <p>{!! $product_tabpane->name !!}</p>
+                                            <h6>{!! $product_tabpane->name !!}</h6>
                                         </div>
                                         <div class="product_author">
                                             <p>Nhà thiết kế: {!! $product->getMetaField('brand_name') !!}</p>
