@@ -79,16 +79,6 @@ class OptionTableSeeder extends Seeder
                 'key'   => 'footer-operating-license',
                 'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016',
             ],
-            // [
-            //     'label' => 'Bộ phận kỹ thuật',
-            //     'key'   => 'bo-phan-ky-thuat',
-            //     'value' => '+ 84 868 21 08 62',
-            // ],
-            // [
-            //     'label' => 'Bộ phận cskh',
-            //     'key'   => 'bo-phan-cham-soc-khach-hang',
-            //     'value' => '+ 84 868 21 08 62',
-            // ],
             [
                 'label' => 'Hỗ trợ trực tuyến',
                 'key'   => 'ho-tro-truc-tuyen',

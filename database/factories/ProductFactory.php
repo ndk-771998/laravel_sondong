@@ -27,7 +27,6 @@ $factory->define(Product::class, function (Faker $faker) {
             '/assets/images/products/product_9.png',
         ]),
         'sku'            => Str::random(32),
-        // 'brand'          =>$faker->words(1, true),
     ];
 });
 
