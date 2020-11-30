@@ -73,11 +73,13 @@
                         }
 
                         .product-title {
-                            font-weight: bold;
-                            margin: 5px 0 2px 0;
-                            color: #242424;
-                            font-size: 12px;
-                            height: 40px;
+                            h6{
+                                font-weight: bold;
+                                margin: 5px 0 2px 0;
+                                color: #242424;
+                                font-size: 12px;
+                                height: 32px;
+                            }
                         }
 
                         .product_author {

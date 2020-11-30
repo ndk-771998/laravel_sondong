@@ -174,6 +174,8 @@ return [
         VCComponent\Laravel\Product\Providers\ProductServiceProvider::class,
         VCComponent\Laravel\Product\Providers\ProductRouteProvider::class,
         VCComponent\Laravel\Order\Providers\OrderServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -239,6 +241,8 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
         'JWTAuth'      => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory'   => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Debugbar'     => Barryvdh\Debugbar\Facade::class,
+
     ],
 
 ];

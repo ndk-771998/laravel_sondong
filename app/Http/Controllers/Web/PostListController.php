@@ -6,6 +6,7 @@ use App\Entities\Post;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
+use VCComponent\Laravel\Config\Services\Facades\Option;
 use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
 use VCComponent\Laravel\Post\Http\Controllers\Web\PostListController as BasePostListController;
 
@@ -18,6 +19,12 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewData($posts, Request $request)
     {
+        Option::prepare([
+            'tin-tuc-title',
+            'tin-tuc-description',
+            'header-logo',
+            'ho-tro-truc-tuyen',
+        ]);
         SEOMeta::setTitle(getOption('tin-tuc-title'));
         SEOMeta::setDescription(getOption('tin-tuc-description'));
         OpenGraph::setTitle(getOption('tin-tuc-title'));

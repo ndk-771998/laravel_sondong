@@ -92,10 +92,11 @@
                                 <a href="product/{!! $product->slug !!}">
                                     <div class="d-flex flex-column justify-content-center product-item">
                                         <div class="product-img">
-                                            <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}">
+                                            <img class="lazyload" data-src="{!! $product->thumbnail !!}"
+                                                alt="{!! $product->name !!}">
                                         </div>
                                         <div class="product-title">
-                                            <p>{!! $product->name !!}</p>
+                                            <h6>{!! $product->name !!}</h6>
                                         </div>
                                         <div class="product_author">
                                             <p>Nhà thiết kế: {!! $product->getMetaField("brand_name") !!}</p>
@@ -126,7 +127,8 @@
                                 @foreach($news as $newsItem)
                                 <div class="description">
                                     <a href="/posts/{!! $newsItem->slug !!}" class="d-flex">
-                                        <div><img src="{!! $newsItem->thumbnail  !!}" alt="{!! $newsItem->title !!}">
+                                        <div><img class="lazyload" data-src="{!! $newsItem->thumbnail  !!}"
+                                                alt="{!! $newsItem->title !!}">
                                         </div>
                                         <div class="news-info">
                                             <h6>{!! $newsItem->title !!}</h6>
@@ -152,7 +154,7 @@
                                 <a href="product/{!! $product_tabpane->slug !!}">
                                     <div class="d-flex flex-column justify-content-center product-item">
                                         <div class="product-img">
-                                            <img src="{!! $product_tabpane->thumbnail !!}"
+                                            <img class="lazyload" data-src="{!! $product_tabpane->thumbnail !!}"
                                                 alt="{!! $product_tabpane->name !!}">
                                         </div>
                                         <div class="product-title">
@@ -190,7 +192,8 @@
                                 @foreach($news_tabpane as $newsItem)
                                 <div class="description">
                                     <a href="posts/{!! $newsItem->slug !!}" class="d-flex">
-                                        <div><img src="{!! $newsItem->thumbnail  !!}" alt="{!! $newsItem->title !!}">
+                                        <div><img class="lazyload" data-src="{!! $newsItem->thumbnail  !!}"
+                                                alt="{!! $newsItem->title !!}">
                                         </div>
                                         <div class="news-info">
                                             <h6>{!! $newsItem->title !!}</h6>

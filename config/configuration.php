@@ -51,21 +51,33 @@ return [
             ],
         ],
     ],
+    // [
+    //     'label'  => 'Sidebar Right Hotline',
+    //     'inputs' => [
+    //         [
+    //             'label' => 'Bộ phận kỹ thuật',
+    //             'key'   => 'bo-phan-ky-thuat',
+    //             'type'  => 'text',
+    //         ],
+    //         [
+    //             'label' => 'Bộ phận cskh',
+    //             'key'   => 'bo-phan-cham-soc-khach-hang',
+    //             'type'  => 'text',
+    //         ],
+    //     ],
+    // ],
+
     [
-        'label'  => 'Sidebar Right Hotline',
+        'label'  => 'Hỗ trợ trực tuyến',
         'inputs' => [
             [
-                'label' => 'Bộ phận kỹ thuật',
-                'key'   => 'bo-phan-ky-thuat',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Bộ phận cskh',
-                'key'   => 'bo-phan-cham-soc-khach-hang',
-                'type'  => 'text',
+                'label' => 'Hỗ trợ trực tuyến',
+                'key'   => 'ho-tro-truc-tuyen',
+                'type'  => 'textarea',
             ],
         ],
     ],
+
     [
         'label'  => 'Hotline',
         'inputs' => [
@@ -87,6 +99,11 @@ return [
             [
                 'label' => 'Trang chủ description',
                 'key'   => 'trang-chu-description',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Tốc độ slide (VD: 2000 = 2 giây)',
+                'key'   => 'trang-chu-speed-slide',
                 'type'  => 'text',
             ],
             [
@@ -212,7 +229,7 @@ return [
             [
                 'label' => 'Liên hệ Google Map',
                 'key'   => 'lien-he-google-map',
-                'type'  => 'text',
+                'type'  => 'textarea',
             ],
         ],
     ],

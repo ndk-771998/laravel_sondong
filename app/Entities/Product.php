@@ -29,6 +29,7 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
             ],
         ];
     }
+
     public function getMetaField($key)
     {
         if (!$this->productMetas->count()) {

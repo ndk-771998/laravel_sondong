@@ -2,6 +2,8 @@
 import 'bootstrap';
 import "slick-carousel";
 import $ from 'jquery';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import './order/cart';
 import './order/order-info';
 import './menu';

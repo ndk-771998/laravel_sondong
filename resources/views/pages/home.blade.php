@@ -19,10 +19,10 @@
                                     <a href="product/{!! $product->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                                <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}">
+                                                <img class="lazyload" data-src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}">
                                             </div>
                                             <div class="product-title">
-                                                <p>{!! $product->name !!}</p>
+                                                <h6>{!! $product->name !!}</h6>
                                             </div>
                                             <div class="product_author">
                                                 <p>Nhà thiết kế: {!! $product->getMetaField('brand_name') !!}</p>
@@ -59,7 +59,7 @@
                                 @foreach($exhibition as $Item)
                                 <a href="{{ url('exhibition/'.$Item->slug) }}">
                                     <div class="d-flex description">
-                                        <div><img src="{!! $Item->thumbnail !!}" alt="{!! $Item->title !!}"></div>
+                                        <div><img class="lazyload" data-src="{!! $Item->thumbnail !!}" alt="{!! $Item->title !!}"></div>
                                         <div>
                                             <h6>{!! $Item->title !!}</h6>
                                             <p>{!! $Item->description !!}</p>
@@ -86,7 +86,7 @@
                                 @foreach($place as $placeItem)
                                 <a href="{{ url('place/'.$placeItem->slug) }}">
                                     <div class="d-flex description">
-                                        <div><img src="{!! $placeItem->thumbnail  !!}" alt="{!! $placeItem->title !!}">
+                                        <div><img class="lazyload" data-src="{!! $placeItem->thumbnail  !!}" alt="{!! $placeItem->title !!}">
                                         </div>
                                         <div>
                                             <h6>{!! $placeItem->title !!}</h6>
@@ -114,7 +114,7 @@
                                 @foreach($news as $newsItem)
                                 <a href="{{ url('posts/'.$newsItem->slug) }}">
                                     <div class="d-flex description">
-                                        <div><img src="{!! $newsItem->thumbnail !!}" alt="{!! $newsItem->title !!}">
+                                        <div><img class="lazyload" data-src="{!! $newsItem->thumbnail !!}" alt="{!! $newsItem->title !!}">
                                         </div>
                                         <div>
                                             <h6>{!! $newsItem->title !!}</h6>

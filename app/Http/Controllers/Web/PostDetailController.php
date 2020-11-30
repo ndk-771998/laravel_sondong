@@ -6,6 +6,7 @@ use App\Entities\Post;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
+use VCComponent\Laravel\Config\Services\Facades\Option;
 use VCComponent\Laravel\Post\Contracts\ViewPostDetailControllerInterface;
 use VCComponent\Laravel\Post\Http\Controllers\Web\PostDetailController as BasePostDetailController;
 
@@ -18,6 +19,9 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
 
     public function viewData($post, Request $request)
     {
+        Option::prepare([
+            'ho-tro-truc-tuyen',
+        ]);
         SEOMeta::setTitle($post->title);
         SEOMeta::setDescription($post->description);
         OpenGraph::setTitle($post->title);
