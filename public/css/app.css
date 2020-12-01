@@ -14097,7 +14097,7 @@ a.text-dark:hover, a.text-dark:focus {
 .search .search-form .tab-content .tab-pane .product .product-item .product-img img {
   border-radius: 6px;
   width: 100%;
-  height: 284px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
 }
