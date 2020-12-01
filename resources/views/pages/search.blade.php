@@ -90,7 +90,7 @@
                             @foreach($products as $product)
                             <div class="product-slide-item">
                                 <a href="product/{!! $product->slug !!}">
-                                    <div class="d-flex flex-column justify-content-center product-item">
+                                    <div class="product-item">
                                         <div class="product-img">
                                             <img class="lazyload" data-src="{!! $product->thumbnail !!}"
                                                 alt="{!! $product->name !!}">

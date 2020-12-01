@@ -26,7 +26,7 @@ class SearchController extends Controller
         OpenGraph::addImage(getOption('header-logo'));
         $products         = Product::query();
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
-        $products_result  = $products->where('status', '1')->OrderBy('id', 'desc')->with('productMetas')->simplePaginate(20);
+        $products_result  = $products->where('status', '1')->OrderBy('id', 'desc')->with('productMetas')->limit(20)->get();
         $products_tabpane = $products->where('status', '1')->OrderBy('id', 'desc')->with('productMetas')->paginate(12);
         $products_tabpane->setPath('/search?search=' . $request['search']);
 
