@@ -30,10 +30,7 @@ class HomeController extends Controller
         OpenGraph::setDescription(getOption('trang-chu-description'));
         OpenGraph::addImage(getOption('header-logo'));
 
-        $id_products = Product::select("id")->get();
-        $products    = Product::orderBy('id', 'desc')->where('status', '1')->with(['productMetas' => function ($query) use ($id_products) {
-            $query->where("product_id", $id_products);
-        }])->paginate(9);
+        $products          = Product::orderBy('id', 'desc')->where('status', '1')->with('productMetas')->paginate(9);
         $news              = EntitiesPost::getBy('posts', 1)->limit(3)->get();
         $place_result      = EntitiesPost::getBy('place', 1)->limit(3)->get();
         $exhibition_result = EntitiesPost::getBy('exhibition', 1)->limit(3)->get();

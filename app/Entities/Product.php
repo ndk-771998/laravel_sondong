@@ -36,7 +36,7 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
             return '';
         }
         try {
-            return $this->productMetas()->where('key', $key)->first()->value;
+            return $this->productMetas->where('key', $key)->first()->value;
         } catch (Exception $e) {
             return '';
         }
