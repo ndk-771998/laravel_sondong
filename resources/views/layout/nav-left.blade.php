@@ -6,7 +6,7 @@
         </div>
         <div class="d-flex flex-column content-navlf">
             <div class="content-navlf-mg">
-                @foreach($sides_bar as $side_bar)
+                @foreach($sides_bar->menuItems as $side_bar)
                 <a href="{!! URL::to($side_bar->link)  !!}" id="menu-{!! $side_bar->id  !!}"
                     data-id="{!! $side_bar->id !!}" data-name="{!! $side_bar->link !!}" class="menu-item">
                     <p>{!! $side_bar->label !!}</p>
@@ -26,7 +26,7 @@
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="d-flex flex-column content-navlf">
                 <div class="content-navlf-mg">
-                    @foreach($sides_bar as $side_bar)
+                    @foreach($sides_bar->menuItems as $side_bar)
                     <a href="{!! URL::to($side_bar->link)  !!}" id="menu-{!! $side_bar->id  !!}"
                         data-id="{!! $side_bar->id !!}" data-name="{!! $side_bar->link !!}" class="menu-item">
                         <p>{!! $side_bar->label !!}</p>

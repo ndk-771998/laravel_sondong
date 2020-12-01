@@ -6,6 +6,7 @@ use App\Entities\Product;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
+use VCComponent\Laravel\Config\Services\Facades\Option;
 use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 use VCComponent\Laravel\Product\Http\Controllers\Web\ProductListController as BaseProductListController;
 
@@ -20,6 +21,12 @@ class ProductListController extends BaseProductListController implements ViewPro
 
     protected function viewData($products, Request $request)
     {
+        Option::prepare([
+            'san-pham-title',
+            'san-pham-description',
+            'header-logo',
+            'ho-tro-truc-tuyen',
+        ]);
         SEOMeta::setTitle(getOption('san-pham-title'));
         SEOMeta::setDescription(getOption('san-pham-description'));
         OpenGraph::setTitle(getOption('san-pham-title'));
@@ -27,7 +34,7 @@ class ProductListController extends BaseProductListController implements ViewPro
         OpenGraph::addImage(getOption('header-logo'));
         $query           = Product::query();
         $query           = $this->applyOrderByFromRequest($query, $request);
-        $products_custom = $query->where('status', '1')->paginate(9);
+        $products_custom = $query->where('status', '1')->with('productMetas')->paginate(9);
 
         $activeFilter = $this->activeFilter;
 

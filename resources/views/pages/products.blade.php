@@ -43,10 +43,11 @@
                                     <a href="/product/{!! $product->slug !!}">
                                         <div class="d-flex flex-column justify-content-center product-item">
                                             <div class="product-img">
-                                            <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}">
+                                                <img class="lazyload" data-src="{!! $product->thumbnail !!}"
+                                                    alt="{!! $product->name !!}">
                                             </div>
                                             <div class="product-title">
-                                                <p>{!! $product->name !!}</p>
+                                                <h6>{!! $product->name !!}</h6>
                                             </div>
                                             <div class="product_author">
                                                 <p>Nhà thiết kế: {!! $product->getMetafield('brand_name') !!}</p>

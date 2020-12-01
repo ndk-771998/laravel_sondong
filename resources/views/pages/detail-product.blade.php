@@ -138,7 +138,7 @@
                                                     alt="{!! $ProductItem->name !!}">
                                             </div>
                                             <div class="product-title">
-                                                <p>{!! $ProductItem->name !!}</p>
+                                                <h6>{!! $ProductItem->name !!}</h6>
                                             </div>
                                             <div class="product_author">
                                                 <p>Nhà thiết kế: {!!$ProductItem->getMetaField('brand_name')!!}</p>

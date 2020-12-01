@@ -29,13 +29,14 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
             ],
         ];
     }
+
     public function getMetaField($key)
     {
         if (!$this->productMetas->count()) {
             return '';
         }
         try {
-            return $this->productMetas()->where('key', $key)->first()->value;
+            return $this->productMetas->where('key', $key)->first()->value;
         } catch (Exception $e) {
             return '';
         }
