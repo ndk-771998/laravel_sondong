@@ -3,11 +3,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class=" col-12 col-md-8">
-                    <a href="/"><img src="{{getOption('header-logo')}}" title="Quay lại trang chủ" class="logo" alt="logo"></a></div>
+                    <a href="/"><img src="{{getOption('header-logo')}}" title="Quay lại trang chủ" class="logo"
+                            alt="logo"></a></div>
                 <div class="col-12 col-md-4">
                     <div class="row justify-content-end">
                         <div class="col-4 col-md-2"><a href="/search" title='Tìm kiếm'><img
-                                    src="https://img.icons8.com/ios/50/707070/search--v1.png" class="icon-header"></a>
+                                    src="https://img.icons8.com/ios/50/707070/search--v1.png" alt="searh-logo-icon"
+                                    class="icon-header"></a>
                         </div>
                         <div class="col-4 col-md-2" title='Giỏ hàng'>@include('order::cartIcon')</div>
                         {{-- <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
@@ -30,15 +32,16 @@
             <div class="row align-items-center">
                 <div class="col-7">
                     <div class="row nav">
-                        @foreach($menus_header as $menu)
+                        @foreach($menus_header->menuItems as $menu)
                         <a href="{!! $menu->link !!}" id="menu-{!! $menu->id  !!}" data-id="{!! $menu->id !!}"
-                            data-name="{!! $menu->link !!}" title="{!! $menu->label !!}" class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
+                            data-name="{!! $menu->link !!}" title="{!! $menu->label !!}"
+                            class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
                         @endforeach
                     </div>
-                    <div class="nav-mini"><a class="" data-toggle="dropdown" href="#"><img
-                                src="/assets/images/logo/menuhd.png" alt=""></a>
+                    <div class="nav-mini"><a class="nav-mini-icon" data-toggle="dropdown" href="#"><img class="lazyload"
+                                data-src="/assets/images/logo/menuhd.png" alt=""></a>
                         <div class="dropdown-menu bg-white">
-                            @foreach($menus_header as $menu)
+                            @foreach($menus_header->menuItems as $menu)
                             <a href="{!! $menu->link !!}" class="menu-item dropdown-item">{!! $menu->label !!}</a>
                             @endforeach
                         </div>
@@ -47,9 +50,10 @@
                 <div class="col-5">
                     <form action="{{ route('search') }}" method="get">
                         <div class="input-group d-flex justify-content-end ">
-                            <input type="search" placeholder="Tìm kiếm..."  name="search" class="form-control col-md-7">
+                            <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control col-md-7">
                             <div class="input-group-append">
-                                <button type="submit" class="btn d-flex" title='Tìm kiếm'><i class="fa fa-search"></i></button>
+                                <button type="submit" class="btn d-flex" title='Tìm kiếm'><i
+                                        class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </form>

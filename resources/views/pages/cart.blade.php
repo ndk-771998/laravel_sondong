@@ -46,8 +46,8 @@
                                             <th scope="row">{!! $key + 1 !!}</th>
                                             <td>
                                                 <div class="d-flex ml-0 mr-0">
-                                                    <span class="d-flex align-items-center mr-1"><img
-                                                            src="{!! $cartItem->product->thumbnail !!}"
+                                                    <span class="d-flex align-items-center mr-1"><img class="lazyload"
+                                                            data-src="{!! $cartItem->product->thumbnail !!}"
                                                             alt="{!! $cartItem->product->name !!}"></span>
                                                     <div class="text-left">{!! $cartItem->product->name !!}</div>
                                                 </div>

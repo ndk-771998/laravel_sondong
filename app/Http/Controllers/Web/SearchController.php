@@ -8,21 +8,26 @@ use App\Http\Controllers\Controller;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
+use VCComponent\Laravel\Config\Services\Facades\Option;
 
 class SearchController extends Controller
 {
     public function __invoke(Request $request)
     {
 
+        Option::prepare([
+            'trang-chu-description',
+            'header-logo',
+        ]);
         SEOMeta::setTitle('Kết quả tìm kiếm ' . $request->search);
         SEOMeta::setDescription(getOption('trang-chu-description'));
         OpenGraph::setTitle('Kết quả tìm kiếm ' . $request->search);
         OpenGraph::setDescription(getOption('trang-chu-description'));
-
+        OpenGraph::addImage(getOption('header-logo'));
         $products         = Product::query();
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
-        $products_result  = $products->OrderBy('id', 'desc')->where('status', '1')->get();
-        $products_tabpane = $products->OrderBy('id', 'desc')->where('status', '1')->paginate(12);
+        $products_result  = $products->where('status', '1')->OrderBy('id', 'desc')->with('productMetas')->limit(20)->get();
+        $products_tabpane = $products->where('status', '1')->OrderBy('id', 'desc')->with('productMetas')->paginate(12);
         $products_tabpane->setPath('/search?search=' . $request['search']);
 
         $news         = Post::query();

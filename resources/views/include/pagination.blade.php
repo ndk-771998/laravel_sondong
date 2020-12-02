@@ -3,17 +3,17 @@
     <ul class="pagination">
         @if ($paginator->onFirstPage())
         <li class="page-item">
-            <a class="page-link" href="{{ $paginator->url(1) }}">Đầu <img src="/assets/images/logo/Rewird.png"
-                    alt=""></a>
+            <a class="page-link" href="{{ $paginator->url(1) }}">Đầu <img src="/assets/images/logo/rewird.png"
+                    alt="paginate-icon-rewird"></a>
         </li>
         @else
         <li class="page-item">
-            <a class="page-link" href="{{ $paginator->url(1) }}">Đầu <img src="/assets/images/logo/Rewird.png"
-                    alt=""></a>
+            <a class="page-link" href="{{ $paginator->url(1) }}">Đầu <img src="/assets/images/logo/rewird.png"
+                    alt="paginate-icon-rewird"></a>
         </li>
         <li class="page-item ">
             <a class="page-link" href="{{ $paginator->previousPageUrl() }}"><img src="/assets/images/logo/left.png"
-                    class="soft" alt=""></a>
+                    class="soft" alt="paginate-icon-left"></a>
         </li>
         @endif
 
@@ -38,16 +38,16 @@
         @if ($paginator->hasMorePages())
         <li class="page-item">
             <a class="page-link" href="{{ $paginator->nextPageUrl() }}"><img src="/assets/images/logo/right.png"
-                    class="soft" alt=""></a>
+                    class="soft" alt="paginate-icon-right"></a>
         </li>
         <li class="page-item">
             <a class="page-link" href="{{ $paginator->url($paginator->lastPage()) }}"><img
-                    src="/assets/images/logo/next.png" alt=""> Cuối </a>
+                    src="/assets/images/logo/next.png" alt="paginate-icon-next"> Cuối </a>
         </li>
         @else
         <li class="page-item">
             <a class="page-link" href="{{ $paginator->url($paginator->lastPage()) }}"><img
-                    src="/assets/images/logo/next.png" alt=""> Cuối </a>
+                    src="/assets/images/logo/next.png" alt="paginate-icon-next"> Cuối </a>
         </li>
         @endif
     </ul>

@@ -22,7 +22,7 @@
                         @foreach($result as $item)
                         <a href="{{ url($urlRedirect.'/'.$item->slug) }}">
                             <div class="d-flex description">
-                                <div><img src="{!! $item->thumbnail  !!}" alt=""></div>
+                                <div><img class="lazyload" data-src="{!! $item->thumbnail  !!}" alt=""></div>
                                 <div>
                                     <h6>{!! $item->title !!}</h6>
                                     <p>{!! $item->description !!}</p>

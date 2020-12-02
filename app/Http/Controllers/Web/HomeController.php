@@ -7,22 +7,35 @@ use App\Entities\Product;
 use App\Http\Controllers\Controller;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use VCComponent\Laravel\Config\Services\Facades\Option;
 
 class HomeController extends Controller
 {
     public function __invoke()
     {
+        Option::prepare([
+            'trang-chu-title',
+            'trang-chu-description',
+            'header-logo',
+            'ho-tro-truc-tuyen',
+            'trang-chu-slide-1',
+            'trang-chu-slide-2',
+            'trang-chu-slide-3',
+            'trang-chu-slide-4',
+            'trang-chu-slide-5',
+        ]);
         SEOMeta::setTitle(getOption('trang-chu-title'));
         SEOMeta::setDescription(getOption('trang-chu-description'));
         OpenGraph::setTitle(getOption('trang-chu-title'));
         OpenGraph::setDescription(getOption('trang-chu-description'));
         OpenGraph::addImage(getOption('header-logo'));
-        $products          = Product::orderBy('id', 'desc')->where('status', '1')->paginate(9);
+
+        $products          = Product::orderBy('id', 'desc')->where('status', '1')->with('productMetas')->paginate(9);
         $news              = EntitiesPost::getBy('posts', 1)->limit(3)->get();
         $place_result      = EntitiesPost::getBy('place', 1)->limit(3)->get();
         $exhibition_result = EntitiesPost::getBy('exhibition', 1)->limit(3)->get();
-        $place_count       = EntitiesPost::getBy('place', 1)->get()->count();
-        $exhibition_count  = EntitiesPost::getBy('exhibition', 1)->get()->count();
+        $place_count       = EntitiesPost::getBy('place', 1)->count();
+        $exhibition_count  = EntitiesPost::getBy('exhibition', 1)->count();
 
         return view('index', [
             'products'         => $products,
