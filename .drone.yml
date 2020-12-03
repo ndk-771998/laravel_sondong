@@ -70,6 +70,8 @@ steps:
   - name: compress
     image: kramos/alpine-zip
     commands:
+      - rm -rf node_modules
+      - rm -rf .git
       - zip -r workspace.zip * .* -x "node_modules/*" ".git/*"
     when:
       branch:
