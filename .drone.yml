@@ -91,6 +91,7 @@ steps:
       ssh_key:
         from_secret: SERVER_PROD_SECRET_KEY
       port: 1080
+      command_timeout: 20m
       script_stop: true
       script:
         - cd /var/www/web/p16001.webpress.vn
