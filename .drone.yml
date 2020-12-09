@@ -76,31 +76,42 @@ steps:
     when:
       branch:
         - production
-  - name: transfer
-    image: appleboy/drone-scp
-    settings:
-      host: sv1app.webpress.vn
-      username: root
-      key:
-        from_secret: SERVER_PROD_SECRET_KEY
-      port: 1080
-      target: /var/www/web/p16001.webpress.vn
-      source: workspace.zip
+  # - name: transfer
+  #   image: appleboy/drone-scp
+  #   settings:
+  #     host: sv1app.webpress.vn
+  #     username: root
+  #     key:
+  #       from_secret: SERVER_PROD_SECRET_KEY
+  #     port: 1080
+  #     target: /var/www/web/p16001.webpress.vn
+  #     source: workspace.zip
+  # - name: deploy
+  #   image: appleboy/drone-ssh
+  #   settings:
+  #     host: sv1app.webpress.vn
+  #     ssh_key:
+  #       from_secret: SERVER_PROD_SECRET_KEY
+  #     port: 1080
+  #     command_timeout: 20m
+  #     script_stop: true
+  #     script:
+  #       - cd /var/www/web/p16001.webpress.vn
+  #       - rm -rf /var/www/web/p16001.webpress.vn/workspace/current
+  #       - unzip workspace.zip -d workspace/current
+  #       - rm -rf /var/www/web/p16001.webpress.vn/workspace.zip
+  #       - chmod -R 777 /var/www/web/p16001.webpress.vn/workspace/current/storage
+  #   when:
+  #     branch:
+  #       - production
   - name: deploy
-    image: appleboy/drone-ssh
+    image: nightfuryest/drone-plugin-webpress-manager
     settings:
-      host: sv1app.webpress.vn
-      ssh_key:
-        from_secret: SERVER_PROD_SECRET_KEY
-      port: 1080
-      command_timeout: 20m
-      script_stop: true
-      script:
-        - cd /var/www/web/p16001.webpress.vn
-        - rm -rf /var/www/web/p16001.webpress.vn/workspace/current
-        - unzip workspace.zip -d workspace/current
-        - rm -rf /var/www/web/p16001.webpress.vn/workspace.zip
-        - chmod -R 777 /var/www/web/p16001.webpress.vn/workspace/current/storage
+      domain: p16001.webpress.vn
+      api_key:
+        from_secret: WEBPRESS_MANAGER_API_KEY
+      api_secret:
+        from_secret: WEBPRESS_MANAGER_API_SECRET
     when:
       branch:
         - production
