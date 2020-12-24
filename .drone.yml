@@ -16,7 +16,19 @@ steps:
     volumes:
       - name: cache
         path: /cache
-  - name: env_prod
+  - name: Setup Domain
+    image: nightfuryest/drone-plugin-webpress-dns
+    settings:
+      domain: p16001
+      domain_destination: sv1devapp.webpress.vn
+      admin_domain_destination: sv1devadmin.webpress.vn
+      cloudflare_email:
+        from_secret: CLOUDFLARE_EMAIL
+      cloudflare_token:
+        from_secret: CLOUDFLARE_TOKEN
+      cloudflare_zone_id:
+        from_secret: CLOUDFLARE_ZONE_ID
+  - name: env:prod
     image: nightfuryest/drone-plugin-secret-to-env
     settings:
       template: .deploy/.env.prod.template
@@ -25,12 +37,12 @@ steps:
         - DB_USERNAME
         - DB_PASSWORD
       DB_USERNAME:
-        from_secret: DEFAULT_DB_ROOT_USER
+        from_secret: DEFAULT_DB_ROOT_USER_DEV
       DB_PASSWORD:
-        from_secret: DEFAULT_DB_ROOT_PASSWORD
+        from_secret: DEFAULT_DB_ROOT_PASSWORD_DEV
     when:
       branch:
-        - production
+        - release/*
   - name: Install PHP Packages
     image: nightfuryest/php-composer
     commands:
@@ -40,9 +52,6 @@ steps:
     volumes:
       - name: composer
         path: /composer
-    when:
-      branch:
-        - production
   - name: Build assets
     image: node:13-alpine
     commands:
@@ -70,11 +79,8 @@ steps:
   - name: deploy
     image: nightfuryest/drone-plugin-webpress-manager
     settings:
-      domain: p16001.webpress.vn
-      # api_key:
-      #   from_secret: WEBPRESS_MANAGER_PRIVATE_API_KEY
-      # api_secret:
-      #   from_secret: WEBPRESS_MANAGER_PRIVATE_API_SECRET
+      domain: p16001
+      server_url: http://sv1devapp.webpress.vn
     when:
       branch:
         - production
@@ -94,4 +100,5 @@ volumes:
 
 trigger:
   branch:
-    - production
+    - staging/*
+    - release/*
