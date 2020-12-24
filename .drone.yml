@@ -64,26 +64,17 @@ steps:
     volumes:
       - name: yarn
         path: /yarn
-    when:
-      branch:
-        - production
   - name: compress
     image: kramos/alpine-zip
     commands:
       - rm -rf node_modules
       - rm -rf .git
       - zip -r workspace.zip * .* -x "node_modules/*" ".git/*"
-    when:
-      branch:
-        - production
   - name: deploy
     image: nightfuryest/drone-plugin-webpress-manager
     settings:
       domain: p16001
       server_url: http://sv1devapp.webpress.vn
-    when:
-      branch:
-        - production
 volumes:
   - name: cache
     host:
