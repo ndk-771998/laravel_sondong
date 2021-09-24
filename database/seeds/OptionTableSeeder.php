@@ -41,7 +41,7 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Header logo',
                 'key'   => 'header-logo',
-                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/6e98e7c5-5202-4868-9b06-528add66309e.png',
+                'value' => '/assets/images/logo/logo.png',
             ],
             [
                 'label' => 'Website Favicon',

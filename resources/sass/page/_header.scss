@@ -1,47 +1,97 @@
 .header-top {
     .logo {
-        margin-top: 10px;
-        width: 246px;
-        height:60px;
+        margin-top: 5px;
+        width: 87px;
+        height: 80px;
         object-fit: cover;
+        margin: 5px 0px 10px 0px;
     }
 
-    .icon-header {
-        width: 30px;
-        color: #707070;
+    form .header-search-wrap {
+        width: 100%;
+        .form-control:focus {
+            outline: none;
+        }
+        ::-webkit-input-placeholder {
+            font-style: italic;
+            color: $default_input_color;
+            font-size: 14px;
+        }
+
+        input {
+            height: 40px;
+            border-radius: 0 6px 6px 0;
+            border: 1px solid $default_border_color;
+            border-left: none;
+            background: $default_input_bg_color;
+        }
+        
+        button {
+            padding: 10px 0px 10px 20px;
+            height: 40px;
+            border-radius: 6px 0 0 6px;
+            border: 1px solid $default_border_color;
+            border-right: none;
+            background: $default_input_bg_color;
+        }
+
+    }
+
+    .giao-hang-toan-quoc-wrap {
+        color: $default_text_color;
         cursor: pointer;
-        margin-top:12px;
-    }
-    a{
-        text-decoration: none;
-        color: #242424;
-    }
-    a:hover{
-        color: #e74c3c;
-        transition: 0.25s;
+        background-color: rgba(0, 161, 41, .3);
+        border-radius: 6px;
+        height: 40px;
+        font-size: $font_size_small;
+        padding: 5px 15px;
+        width: fit-content;
     }
 
+    .header-hotline-wrap {
+        margin-left: 40px;
+
+        .header-hotline-logo {
+            margin: auto 8px auto 0px;
+        }
+
+        .header-hotline-label {
+            color: $highlight_text_color;
+            font-size: $font_size_smaller;
+        }
+
+        .header-hotline-number {
+            color: $deep_red_color;
+            font-size: $font_size_normal;
+            font-weight: 600;
+        }
+    }
 }
 
 .header-nav {
-    height: 50px;
-    background: #683e7a;
+    height: 60px;
+    background: $main_header_bg_color;
     display: flex;
     align-items: center;
 
     a {
-        color: white;
+        color: $main_header_color;
+        padding: 0px 30px;
+        font-size: $font_size_normal;
+        font-weight: bold;
+        text-align: left;
         text-decoration: none;
-        font-weight: 600;
-    }
-
-    a.active {
-        color: #fb728b;
+        border-left: 1px solid $main_header_color;
     }
 
     a:hover {
-        color: #fb728b;
+        color: $deep_red_color;
         transition: 0.25s;
+    }
+
+    a:first-of-type {
+        padding-left: 0px;
+        border-left: none;
     }
 
     .nav-mini {
@@ -52,27 +102,6 @@
                 width: 30px;
             }
 
-        }
-
-    }
-
-    form {
-        ::-webkit-input-placeholder {
-            font-style: italic;
-            color: #d8d8d8;
-        }
-
-        input {
-            height: 30px;
-            border-radius: 6px 0 0 6px;
-            border: none;
-        }
-
-        button {
-            height: 30px;
-            border-radius: 0 6px 6px 0;
-            background: white;
-            color: #707070;
         }
 
     }

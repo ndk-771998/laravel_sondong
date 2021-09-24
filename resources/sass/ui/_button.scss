@@ -1,0 +1,18 @@
+.btn-primary {
+    padding: 12px 47px;
+    background-color: $main_header_bg_color;
+    color: $bg_color;
+    text-align: center;
+    font-size: $font_size_small;  
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+
+    img {
+        height: 12px;
+        transform: translateY(-2px) rotate(90deg);
+        margin-left: 10px;
+        filter: brightness(10);
+    
+    }
+}

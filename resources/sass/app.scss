@@ -6,6 +6,8 @@
 @import "./ui/font";
 @import "./ui/color";
 @import "./ui/button";
+@import "./mixins/text.scss";
+@import "./includes/product-item.scss";
 @import "./page/about";
 @import "./page/cart";
 @import "./page/contact";
@@ -30,28 +32,12 @@
 @import "./page/error-404";
 body {
     color: $default_text_color;
-    background-color: $default_bg_color;
+    background-color: $bg_color;
     font-size: $font_size_normal;
     font-family: SegoeUI;
     header {
         .bg-dark {
             background-color: $main_header_bg_color !important;
-        }
-
-    }
-    footer {
-        padding-top: 20px;
-        background: $main_footer_bg_color;
-        color: #fff;
-
-        a {
-            color: #fff;
-
-            &:hover {
-                color: #2980b9;
-                text-decoration: none;
-            }
-
         }
 
     }
