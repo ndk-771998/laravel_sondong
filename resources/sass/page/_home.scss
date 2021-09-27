@@ -194,6 +194,10 @@
                 width: 40%;
                 height: fit-content;
 
+                @media screen and (max-width: 767px) {
+                    flex-direction: column;
+                }
+
                 .avatar {
                     img {
                         width: 50px;

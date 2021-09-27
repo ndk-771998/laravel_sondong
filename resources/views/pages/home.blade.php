@@ -33,12 +33,12 @@
                         Cảm nhận khách hàng
                     </div>
                     <div class="customer-feedback d-flex">
-                        <div class="info d-flex flex-row">
+                        <div class="info d-flex">
                             <div class="avatar"><img src="/assets/images/avatar.jpg" alt="avatar"></div>
                             <div class="text d-flex flex-column">
                                 <div class="name">Hoàng Văn</div>
                                 <div class="caption">Khách hàng thân thiết</div>
-                                <div class="vote d-flex flex-row">
+                                <div class="vote d-flex flex-row flex-wrap">
                                     <img src="/assets/images/logo/star.svg" alt="star">
                                     <img src="/assets/images/logo/star.svg" alt="star">
                                     <img src="/assets/images/logo/star.svg" alt="star">
@@ -54,12 +54,12 @@
                         </div>
                     </div>
                     <div class="customer-feedback d-flex">
-                        <div class="info d-flex flex-row">
+                        <div class="info d-flex">
                             <div class="avatar"><img src="/assets/images/avatar.jpg" alt="avatar"></div>
                             <div class="text d-flex flex-column">
                                 <div class="name">Hoàng Văn</div>
                                 <div class="caption">Khách hàng thân thiết</div>
-                                <div class="vote d-flex flex-row">
+                                <div class="vote d-flex flex-row flex-wrap">
                                     <img src="/assets/images/logo/star.svg" alt="star">
                                     <img src="/assets/images/logo/star.svg" alt="star">
                                     <img src="/assets/images/logo/star.svg" alt="star">
@@ -75,12 +75,12 @@
                         </div>
                     </div>
                     <div class="customer-feedback d-flex">
-                        <div class="info d-flex flex-row">
+                        <div class="info d-flex">
                             <div class="avatar"><img src="/assets/images/avatar.jpg" alt="avatar"></div>
                             <div class="text d-flex flex-column">
                                 <div class="name">Hoàng Văn</div>
                                 <div class="caption">Khách hàng thân thiết</div>
-                                <div class="vote d-flex flex-row">
+                                <div class="vote d-flex flex-row flex-wrap">
                                     <img src="/assets/images/logo/star.svg" alt="star">
                                     <img src="/assets/images/logo/star.svg" alt="star">
                                     <img src="/assets/images/logo/star.svg" alt="star">

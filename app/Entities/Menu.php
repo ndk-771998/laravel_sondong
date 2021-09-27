@@ -18,4 +18,9 @@ class Menu extends BaseMenu
             return Menu::select('id')->where('name', $position)->with('menuItems')->first();
         });
     }
+
+    public function menuItems()
+    {
+        return $this->hasMany(ItemMenu::class)->where('parent_id', 0)->with('subMenus')->orderBy('order_by', 'ASC');
+    }
 }
