@@ -1,6 +1,8 @@
 .list-product {
     .item-wrap {
         border: 1px solid transparent;
+        background-color: $default_bg_color;
+        
         .thumbnail {
             position: relative;
             display: flex;

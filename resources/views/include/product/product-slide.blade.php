@@ -16,14 +16,14 @@
         </div>
         <div class="product-slide">
 
-            @include('include.product.product-slide-item')
-            @include('include.product.product-slide-item')
-            @include('include.product.product-slide-item')
-            @include('include.product.product-slide-item')
-            @include('include.product.product-slide-item')
-            @include('include.product.product-slide-item')
-            @include('include.product.product-slide-item')
-            @include('include.product.product-slide-item')
+            @include('include.product.product-item')
+            @include('include.product.product-item')
+            @include('include.product.product-item')
+            @include('include.product.product-item')
+            @include('include.product.product-item')
+            @include('include.product.product-item')
+            @include('include.product.product-item')
+            @include('include.product.product-item')
 
         </div>
     </div>

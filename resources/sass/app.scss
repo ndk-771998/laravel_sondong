@@ -8,6 +8,9 @@
 @import "./ui/button";
 @import "./mixins/text.scss";
 @import "./includes/product-item.scss";
+@import "./includes/product-list.scss";
+@import "./includes/breadcrumb.scss";
+@import "./includes/sidebar-filter.scss";
 @import "./page/about";
 @import "./page/cart";
 @import "./page/contact";
@@ -42,39 +45,34 @@ body {
 
     }
     .pagination {
-        .page-item.active {
-            .page-link {
-                background-color: #fff;
-                color: #fb728b;
-                border: 1px solid #d8d8d8;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .page-item.active,  .page-item:hover{
+            .page-link, .page-link.no-border{
+                background-color: $default_bg_color;
+                color: $default_link_color;
+                border: 1px solid $default_link_color;
             }
 
         }
 
         .page-item {
             .page-link {
-                background-color: #fff;
-                color: #707070;
-                border: 1px solid #d8d8d8;
-                font-weight: bold;
+                background-color: transparent;
+                color: $default_input_color;
+                border: 1px solid $default_input_color;
+                font-size: $font_size_smaller;
+                border-radius: 2px;  
+                padding: 4px 9px;
+                margin: 5px;
+
+                &.no-border {
+                    border-color: transparent;
+                    font-size: 10px;
+                }
             }
-
         }
-
-        img {
-            width: 12px;
-            color: #6c757d;
-            margin-top: -2px;
-        }
-
-        .soft {
-            height: 10px;
-        }
-
-        a {
-            color: #6c757d;
-        }
-
     }
-
 }
