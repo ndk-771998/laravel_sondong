@@ -80,4 +80,21 @@ $(document).ready(function () {
             }
         ]
     });
+
+    $('.thumbnail-silde-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.thumbnail-silde-nav'
+    });
+    $('.thumbnail-silde-nav').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: '.thumbnail-silde-for',
+      prevArrow:"<img class='a-left control-c prev slick-prev' src='/assets/images/logo/chevron-up.svg'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/assets/images/logo/chevron-up.svg'>",
+      arrows: true,
+      focusOnSelect: true
+    });
 });

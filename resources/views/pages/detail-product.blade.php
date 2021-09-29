@@ -3,166 +3,225 @@
 <title>{!! $product->name !!}</title>
 @endsection
 @section('content')
-<nav aria-label="breadcrumb" id="breadcrumb">
-    <div class="container">
-        <ul class="custom-breadcrumb m-0">
-            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="/product">Sản phẩm</a></li>
-            <li class="breadcrumb-item active">{{$product->name}}</li>
-        </ul>
-    </div>
-</nav>
-<section>
-    <div class="container">
-        <div class="main">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-3">
-                    @include('layout.nav-left')
-                </div>
-                <div class="col-12 col-md-6">
-                    @include('include.errors')
-                    @include('include.messages')
-                    <div class="product-detail">
-                        <h3 class="text-uppercase">Chi tiết sản phẩm</h3>
-                        <div class="p-flex my-24">
-                            <div class="left">
-                                <div class="product-thumbnail">
-                                    <div class="item">
-                                        <div class="tile" data-scale="4.0" data-image="{!! $product->thumbnail !!}"
-                                            id="imgmain">
-                                        </div>
-                                    </div>
-                                    @foreach($product->media as $media)
-                                    <div class="item">
-                                        <div class="tile" data-scale="4.0" data-image="{!! $media->getFullUrl() !!}">
-                                        </div>
-                                    </div>
-                                    @endforeach
 
-                                </div>
-                                <div class="product-thumbnail-child">
-                                    <div class="item">
-                                        <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}" />
-                                    </div>
-                                    @foreach($product->media as $media)
-                                    <div class="item">
-                                        <img src="{!! $media->getFullUrl() !!}" id="{{$media->id}}"
-                                            alt="{!! $media->alt_img !!}" />
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="right">
-                                <h4>{!! $product->name !!}</h4>
-                                <ul class="info-product">
-                                    <li>Mã sản phẩm: {!! $product->sku !!}</li>
-                                    <li class="design">Nhà thiết kế:{!! $product->getMetaField('brand_name') !!}</li>
-                                    <li>Tình trạng:
-                                        @if ($isAvailable == true)
-                                        <span>Còn hàng</span>
-                                        @else
-                                        <span>Hết hàng</span>
-                                        @endif
-                                    </li>
-                                    <li class="original_price">Giá gốc: {!! number_format($product->original_price) !!}
-                                        đ</li>
-                                    <li>Giá bán: <span class="cost">{!! number_format($product->price) !!} đ</span>/ sản
-                                        phẩm</li>
-                                    <li>Số lượng:
-                                        @if($isAvailable)
-                                        <input type="number" id="quantity_product" min="1" max="30" value="1">
-                                        @else
-                                        <input type="number" id="quantity_product" min="1" max="30" value="1" disabled>
-                                        @endif
-                                    </li>
-                                    <li>Tổng tiền: <span class="total " id="total">{!! number_format($product->price)
-                                            !!}</span><span class="text-dark"> đ</span></li>
-                                </ul>
-                                <ul class="buy d-flex flex-wrap align-items-center">
-                                    @if($isAvailable)
-                                    <form action="{{ route('cart-items.create') }}" method="post">
-                                        {!! csrf_field() !!}
-                                        <input class="productdetails-quantity" name="quantity" value="1" type="number"
-                                            hidden min=1>
-                                        <input name="product_id" value="{!! $product->id !!}" hidden>
-                                        <input name="product_price" id="product_price" value="{!! $product->price !!}"
-                                            hidden>
-                                        <input name="redirect" value="cart" hidden>
-                                        <li><input id="purchase-product-{!! $product->id !!}-submit" type="submit"
-                                                class="btn-order" class="mb-2 mb-md-0" name="" value="Mua ngay"></li>
-                                    </form>
-                                    <form action="{{ route('cart-items.create') }}" method="post">
-                                        {!! csrf_field() !!}
-                                        <input class="productdetails-quantity" name="quantity" value="1" type="number"
-                                            min=1 hidden>
-                                        <input name="product_id" value="{!! $product->id !!}" hidden>
-                                        <input name="product_price" value="{!! $product->price !!}" hidden>
-                                        <li><input id="product-{!! $product->id !!}-submit" value="Thêm vào giỏ hàng"
-                                                class="btn-next" type="submit" name=""></li>
-                                    </form>
-                                    @else
-                                    <div class="h6 text-danger mt-2">Hết hàng</div>
-                                    @endif
-                                </ul>
-                                <p><i class="fa fa-phone" aria-hidden="true"></i> Hottline:
-                                    {{getOption('chi-tiet-san-pham-hot-line')}}</p>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            <h5>Bình luận</h5>
-                            <form action="{{url('comment')}}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <input type="text" class="form-control" required="" name="email"
-                                        placeholder="Nhập email của bạn . . .">
-                                    <input type="text" class="form-control" required name="user"
-                                        placeholder="Nhập tên của bạn . . .">
-                                    <textarea class="form-control" required name="content"
-                                        placeholder="Nhập nội dung bình luận . . ."></textarea>
-                                    <input name="commentable_id" value="{{ $product->id }}" hidden>
-                                    <input name="commentable_type" value="products" hidden>
-                                    <input type="submit" value="Gửi">
-                                </div>
-                            </form>
-                        </div>
-                        @include('comment::show')
-                        <div class="related-posts mt-60">
-                            <h3>Chi tiết sản phẩm</h3>
-                            <div class="related-list d-flex flex-wrap mb-5">
-                                @foreach($relatedProducts as $ProductItem)
+<section>
+    <div class="container product-detail-container">
+        <div class="row-padding-16px">
+            <div class="col-padding-16px w-100">
+                @include('include.breadcrumb', ['breadcrumb' => ['Sản phẩm' => '/products', 'HP Book ...']])
+            </div>
+            
+            <div class="col-padding-16px w-100 product-info-wrap">
+                <div class="product-info">
+                    <div class="row">
+                        <div class="col-12 col-md-5 medias">
+                            <div class="tag-sale">-10%</div>
+                            <div class="thumbnail-silde-for">
                                 <div class="item">
-                                    <a href="{!! $ProductItem->slug !!}">
-                                        <div class="d-flex flex-column justify-content-center product-item">
-                                            <div class="product-img">
-                                                <img src="{!! $ProductItem->thumbnail !!}"
-                                                    alt="{!! $ProductItem->name !!}">
-                                            </div>
-                                            <div class="product-title">
-                                                <h6>{!! $ProductItem->name !!}</h6>
-                                            </div>
-                                            <div class="product_author">
-                                                <p>Nhà thiết kế: {!!$ProductItem->getMetaField('brand_name')!!}</p>
-                                            </div>
-                                            <div class="product-price d-flex justify-content-between">
-                                                <div class="price">
-                                                    <p>{!! number_format($ProductItem->price) !!} đ</p>
-                                                </div>
-                                                <div class="original_price">
-                                                    {!!number_format($ProductItem->original_price) !!} đ</div>
-                                            </div>
-                                        </div>
-                                    </a>
+                                    <img src="/assets/images/word.png" alt="image">
                                 </div>
-                                @endforeach
+                                <div class="item">
+                                    <img src="/assets/images/LA_4894.png" alt="image">
+                                </div>
+                                <div class="item">
+                                    <img src="/assets/images/wallpaper.png" alt="image">
+                                </div>
+                                <div class="item">
+                                    <img src="/assets/images/news.png" alt="image">
+                                </div>
+                                <div class="item">
+                                    <img src="/assets/images/news.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="thumbnail-silde-nav">
+                                <div class="item">
+                                    <img src="/assets/images/word.png" alt="image">
+                                </div>
+                                <div class="item">
+                                    <img src="/assets/images/LA_4894.png" alt="image">
+                                </div>
+                                <div class="item">
+                                    <img src="/assets/images/wallpaper.png" alt="image">
+                                </div>
+                                <div class="item">
+                                    <img src="/assets/images/news.png" alt="image">
+                                </div>
+                                <div class="item">
+                                    <img src="/assets/images/news.png" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-7 info">
+                            <div class="title">Laptop Asus Vivibook A415EA-EB556T i3-1115G4/8GB/512BG SSD/14"FHD/14"FHD/Win 10</div>
+                            <div class="price">
+                                <div class="discount">8.287.000 đ</div>
+                                <div class="origin">10.980.000 đ</div>
+                            </div>
+                            <div class="manufacturer">Hãng sản xuất: <a href="#">Hp</a></div>
+                            <div class="sold">Lượt mua: 184</div>
+                            <div class="bonus">
+                                Tặng Balo Laptop
+                            </div>
+                            <div class="bonus">
+                                Tặng PMH 200.000đ mua máy in Brother
+                            </div>
+                            <div class="bonus">
+                                Tặng PMH 100.000đ mua Microsoft 365 Personal/Family/Home & Student khi mua Online đến 30/09
+                            </div>
+                            <div class="color">
+                                Chọn màu: 
+                                <select name="color" id="">
+                                    <option value="1">Xám</option>
+                                    <option value="2">Đen</option>
+                                    <option value="3">Hường</option>
+                                </select>
+                            </div>
+                            <div class="btn-buy mt-4" data-toggle="modal" data-target="#buyNow">
+                                Mua ngay
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-3">
-                    @include('layout.nav-right')
+            </div>
+
+            <div class="col-padding-16px product-content-wrap">
+                <div class="product-content">
+                    <div class="product-content-title">
+                        Đặc điểm nổi bật
+                    </div>
+                    <div class="content">
+                        <p><strong>Về thiết kế</strong></p>
+                        <p>HP Elitebook 850 G2 không khác gì so với người tiền nhiệm HP Elitebook 850 G1. Đáng nói, tốt nhất là kết nối wifi không dây mới Intel Wireless-AC 7265, hiện kiểm soát tất cả các chuẩn WLAN bao gồm 802.11ac (2×2, tối đa 867 Mbit/s) và Bluetooth 4.0. Ngoài ra, HP Elitebook 850 G2 tích hợp mô-đun LTE nhanh từ Qualcomm giúp truy cập internet với tốc độ nhanh và ổn định.</p>
+                        <p>Chiếc laptop HP Elitebook 850 G2 có thiết kế khá mỏng. Trọng lượng của nó có vẻ nhẹ hơn các dòng sản phẩm trước của HP nhưng vẫn còn nặng hơn một chút so với những sản phẩm hiện tại như Toshiba Tecra Z50 và Dell Latitude E7440. Nắp máy được làm từ chất liệu magie chống xước.</p>
+                        <p>Đây là chất lượng mà bạn vẫn thường thấy ở những chiếc xe hơi. Trong khi đó, phần thân được làm từ nhôm bóng màu bạc cao cấp tạo cho máy sự sang trọng, bóng bẩy. Ngoài ra, HP Elitebook 850 G2 được thiết kế với việc đáp ứng tiêu chuẩn MIL-STD-810 về độ bền. Vì thế, máy vẫn có thể chịu đựng được nhiệt độ khắc nghiệt hay áp suất cao. Đồng thời, bạn vẫn sẽ yên tâm máy hoàn toàn “khỏe mạnh” dù bị va đập nhẹ hay bị xóc trong balo khi bạn di chuyển trên đường.</p>
+                        <p><img src="/assets/images/word.png" alt="image"></p>
+                        <p><strong>Về bàn phím</strong></p>
+                        <p>HP Elitebook 850 G2 không khác gì so với người tiền nhiệm HP Elitebook 850 G1. Đáng nói, tốt nhất là kết nối wifi không dây mới Intel Wireless-AC 7265, hiện kiểm soát tất cả các chuẩn WLAN bao gồm 802.11ac (2×2, tối đa 867 Mbit/s) và Bluetooth 4.0. Ngoài ra, HP Elitebook 850 G2 tích hợp mô-đun LTE nhanh từ Qualcomm giúp truy cập internet với tốc độ nhanh và ổn định.</p>
+                        <p>Chiếc laptop HP Elitebook 850 G2 có thiết kế khá mỏng. Trọng lượng của nó có vẻ nhẹ hơn các dòng sản phẩm trước của HP nhưng vẫn còn nặng hơn một chút so với những sản phẩm hiện tại như Toshiba Tecra Z50 và Dell Latitude E7440. Nắp máy được làm từ chất liệu magie chống xước.</p>
+                        <p>Đây là chất lượng mà bạn vẫn thường thấy ở những chiếc xe hơi. Trong khi đó, phần thân được làm từ nhôm bóng màu bạc cao cấp tạo cho máy sự sang trọng, bóng bẩy. Ngoài ra, HP Elitebook 850 G2 được thiết kế với việc đáp ứng tiêu chuẩn MIL-STD-810 về độ bền. Vì thế, máy vẫn có thể chịu đựng được nhiệt độ khắc nghiệt hay áp suất cao. Đồng thời, bạn vẫn sẽ yên tâm máy hoàn toàn “khỏe mạnh” dù bị va đập nhẹ hay bị xóc trong balo khi bạn di chuyển trên đường.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-padding-16px product-parameter-wrap">
+                <div class="product-parameter">
+                    <div class="product-parameter-title">
+                        Thông số kỹ thuật
+                    </div>
+                    <table class="parameter table-striped">
+                        <tr>
+                            <td>CPU</td>
+                            <td>AMD Ryzen 5-5600H</td>
+                        </tr>
+                        <tr>
+                            <td>RAM</td>
+                            <td>8 GB, DDR4, 3200 MHz</td>
+                        </tr>
+                        <tr>
+                            <td>Màn hình	</td>
+                            <td>15.6", 1920 x 1080 Pixel, IPS, 144 Hz</td>
+                        </tr>
+                        <tr>
+                            <td>Đồ họa</td>
+                            <td>AMD Radeon RX 5500M 4 GB</td>
+                        </tr>
+                        <tr>
+                            <td>Ổ cứng</td>
+                            <td>SSD 512 GB</td>
+                        </tr>
+                        <tr>
+                            <td>Hệ điều hành	</td>
+                            <td>Window 10s</td>
+                        </tr>
+                        <tr>
+                            <td>Trọng lượng</td>
+                            <td>2.35</td>
+                        </tr>
+                        <tr>
+                            <td>Hệ điều hành		</td>
+                            <td>AMD Ryzen 5-5600H</td>
+                        </tr>
+                        <tr>
+                            <td>Kích thước (mm)</td>
+                            <td>359 x 254 x 24.9</td>
+                        </tr>
+                        <tr>
+                            <td>Xuất xứ</td>
+                            <td>Trung Quốc</td>
+                        </tr>
+                    </table>
+                    <div class="detail">
+                        <a href="#">Xem cấu hình chi tiết <i class="fa fa-chevron-down"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng'])
+    @include('include.product.product-slide', ['list_title' => 'Các sản phẩm tương tự'])
+
+    <div class="modal fade buy-now-modal" id="buyNow" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="product-info d-flex flex-row align-items-center">
+                        <div class="thumbnail">
+                            <img src="/assets/images/word.png" alt="thumbanil">
+                        </div>
+                        <div class="label">
+                            <div class="title">Laptop Asus Vivobook A415EA-EB556T i3-1115G4/8GB/512GB SSD/14"FHD/14"FHD/Win 10 </div>
+                            <div class="price">8.287.000 ₫</div>
+                        </div>
+                    </div>
+
+                    <div class="order-info">
+                        <form action="/order" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label>Giới tính:</label>
+                                <div class="radio">
+                                    <label><input type="radio" name="gender"> Nam</label>
+                                    <label><input type="radio" name="gender"> Nữ</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="full_name">Họ và tên:<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="full_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại:<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:<span class="required">*</span></label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Địa chỉ giao hàng/ ghi chú:<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="address">
+                            </div>
+                            <button type="submit" class="btn btn-primary p-2 w-25 d-block order-submit">ĐẶT HÀNG</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Session::has('orderSuccessfully'))
+    <div class="modal fade order-successfully" id="orderSuccessfully" role="dialog" aria-modal="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="/assets/images/logo/success.svg" alt="success">
+                    <h2>Xác nhận đặt hàng</h2>
+                    <p>Đơn hàng của bạn đã được gửi đi thành công, trong giờ mở cửa, chúng tôi sẽ liên hệ với quý khách trong ít phút.</p>
+                    <button type="button" class="btn btn-primary p-2 w-25 m-auto d-block order-submit">Đồng ý</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{Session::forget('orderSuccessfully')}}
+    @endif
 </section>
 @endsection

@@ -41428,6 +41428,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#orderSuccessfully').modal('show');
+});
 
 /***/ }),
 
@@ -41824,6 +41827,22 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         dots: false
       }
     }]
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.thumbnail-silde-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.thumbnail-silde-nav'
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.thumbnail-silde-nav').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.thumbnail-silde-for',
+    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/chevron-up.svg'>",
+    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/chevron-up.svg'>",
+    arrows: true,
+    focusOnSelect: true
   });
 });
 

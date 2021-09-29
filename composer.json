@@ -19,7 +19,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.1",
         "nesbot/carbon": "2.32.0",
-        "webpress/framework": "^3.0"
+        "webpress/framework": "^3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

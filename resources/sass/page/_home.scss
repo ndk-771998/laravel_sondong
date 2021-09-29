@@ -3,15 +3,6 @@
     margin-bottom: 30px;
 }
 
-@mixin section-title() {
-    font-size: $font_size_larger;
-    padding: 10px 0px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    border-bottom: 1px solid $default_border_color;
-    text-align: left;
-}
-
 @mixin section-wrap() {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     padding: 0px 20px 20px;

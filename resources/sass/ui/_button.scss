@@ -16,3 +16,18 @@
     
     }
 }
+
+.btn-buy {
+    padding: 12px 47px;
+    background-color: $deep_red_color;
+    color: $default_bg_color;
+    text-align: center;
+    font-size: $font_size_small;  
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    max-width: 352px;
+    cursor: pointer;
+}

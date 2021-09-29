@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +26,8 @@ Route::post('/contact', 'Web\ContactController@store');
 Route::get('/product/{slug}', 'Web\ProductDetailController@show');
 Route::get('/product', 'Web\ProductListController@index');
 Route::post('/register', 'Web\UserController@register')->name("web.register");
+
+Route::post('/order', function () {
+    Session::put('orderSuccessfully', 'value');
+    return  Redirect::back();
+});

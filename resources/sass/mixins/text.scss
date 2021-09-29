@@ -6,3 +6,12 @@
     /* number of lines to show */
     -webkit-box-orient: vertical;
 }
+
+@mixin section-title() {
+    font-size: $font_size_larger;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid $default_border_color;
+    text-align: left;
+}

@@ -16,3 +16,7 @@ import './zoomimg';
 import './zoom-image';
 import './paginate';
 import './slick-slide';
+
+$(document).ready(function () {
+    $('#orderSuccessfully').modal('show');
+});
