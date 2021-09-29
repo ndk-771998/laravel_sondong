@@ -31,3 +31,15 @@ Route::post('/order', function () {
     Session::put('orderSuccessfully', 'value');
     return  Redirect::back();
 });
+
+Route::get('/hinh-anh-khach-hang', function () {
+    return  View('pages.customer-medias');
+});
+
+Route::get('/page', function () {
+    return  View('pages.page');
+});
+
+Route::get('/flash-sale', function () {
+    return  View('pages.flash-sale');
+});

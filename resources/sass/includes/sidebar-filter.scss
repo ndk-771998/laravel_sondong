@@ -25,4 +25,23 @@
             }
         }
     }
+
+    .list {
+        font-size: $font_size_small;
+        color: $default_text_color;
+        background-color: $default_bg_color;
+        padding: 14px;
+        margin-bottom: 30px;
+
+        a {
+            color: $default_text_color;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        a:hover, a.active {
+            color: $default_link_color;
+        }
+    }
 }
