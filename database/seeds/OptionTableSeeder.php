@@ -14,174 +14,102 @@ class OptionTableSeeder extends Seeder
     {
         Option::insert([
             [
-                'label' => 'slide 1',
-                'key'   => 'trang-chu-slide-1',
-                'value' => '/assets/images/wallpaper.png',
-            ],
-            [
-                'label' => 'slide 2',
-                'key'   => 'trang-chu-slide-2',
-                'value' => '/assets/images/wallpaper.png',
-            ],
-            [
-                'label' => 'slide 3',
-                'key'   => 'trang-chu-slide-3',
-                'value' => '/assets/images/wallpaper.png',
-            ],
-            [
-                'label' => 'slide 4',
-                'key'   => 'trang-chu-slide-4',
-                'value' => '/assets/images/wallpaper.png',
-            ],
-            [
-                'label' => 'slide 5',
-                'key'   => 'trang-chu-slide-5',
-                'value' => '/assets/images/wallpaper.png',
-            ],
-            [
-                'label' => 'Header logo',
+                'label' => 'Header Logo',
                 'key'   => 'header-logo',
                 'value' => '/assets/images/logo/logo.png',
             ],
             [
                 'label' => 'Website Favicon',
                 'key'   => 'website-favicon',
-                'value' => '/assets/images/favicon.png',
+                'value' => '/assets/images/logo/logo.png',
             ],
             [
-                'label' => 'Footer logo',
-                'key'   => 'footer-logo',
-                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/fafaeae0-c771-45b6-afa3-5a6439992b21.png',
-            ],
-
-            [
-                'label' => 'footer logo facebook',
-                'key'   => 'footer-logo-facebook',
-                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/f3ccce7b-9476-4682-9dd5-756c4082dd4c.svg',
-            ],
-            [
-                'label' => 'footer logo twitter',
-                'key'   => 'footer-logo-twitter',
-                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/fe7c3857-6de3-44a9-a28c-c8ce3f8bb4ba.svg',
-            ],
-            [
-                'label' => 'footer logo instagram',
-                'key'   => 'footer-logo-instagram',
-                'value' => 'https://cdn.zeplin.io/5d8877494f3ff161cea03412/assets/bc749d9d-e72d-48d2-b3ef-e3ddf97a1bd4.svg',
-            ],
-            [
-                'label' => 'footer copyright by',
-                'key'   => 'footer-copyright-by',
-                'value' => 'Copyright by Dinks',
-            ],
-            [
-                'label' => 'Footer giấy phép hoạt động',
-                'key'   => 'footer-operating-license',
-                'value' => 'Giấy phép hoạt động trang thông tin điện tử tổng hợp số 36/GP-ICP-STTTT, HCM ngày 29/08/2016',
-            ],
-            [
-                'label' => 'Hỗ trợ trực tuyến',
-                'key'   => 'ho-tro-truc-tuyen',
-                'value' =>
-                '<p>Bộ phận kỹ thuật</p>
-                <h5>+ 84 868 21 08 62</h5>
-                <p>Bộ phận CSKH</p>
-                <h5>+ 84 868 21 08 62</h5>',
-            ],
-            [
-                'label' => 'Chi tiết sản phẩm hotline',
-                'key'   => 'chi-tiet-san-pham-hot-line',
-                'value' => '+ 84 868 21 08 62',
-            ],
-            [
-                'label' => 'Hotline',
+                'label' => 'Đường dây nóng',
                 'key'   => 'hotline',
-                'value' => '+ 84 868 21 08 62',
+                'value' => '1900.265.1254',
             ],
             [
-                'label' => 'Liên hệ title',
-                'key'   => 'lien-he-title',
-                'value' => 'Liên hệ',
+                'label' => 'Video kết nối cùng chúng tôi (footer)',
+                'key'   => 'connective-video',
+                'value' => '',
             ],
             [
-                'label' => 'Liên hệ description',
-                'key'   => 'lien-he-description',
-                'value' => 'Wedding Store - Chuyên váy cưới, hỗ trợ tổ chức tiệc cưới, địa điểm cưới',
+                'label' => 'Liên kết Facebook',
+                'key'   => 'link-facebook',
+                'value' => 'https://facebook.com',
             ],
             [
-                'label' => 'Liên hệ website title',
-                'key'   => 'lien-he-website-title',
-                'value' => 'Website sản phẩm bán hàng',
+                'label' => 'Liên kết Youtube',
+                'key'   => 'link-youtube',
+                'value' => 'https://youtube.com',
             ],
             [
-                'label' => 'Liên hệ address',
-                'key'   => 'lien-he-address',
-                'value' => 'Tầng 3, số 14 Pháo Đài Láng, P. Trung Liệt, Q. Đống Đa, TP. Hà Nội',
+                'label' => 'Liên kết LinkedIn',
+                'key'   => 'link-linkedin',
+                'value' => '#',
             ],
             [
-                'label' => 'Liên hệ Google Map',
-                'key'   => 'lien-he-google-map',
-                'value' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3201271892412!2d105.80386291472446!3d21.019873193457997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab677bc39f5d%3A0x26d043cd1bbe8c4d!2zMTQgUGjDoW8gxJDDoGkgTMOhbmcsIEzDoW5nIFRoxrDhu6NuZywgxJDhu5FuZyDEkGEsIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1605495481780!5m2!1svi!2s" width="250" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>',
+                'label' => 'Thông tin liên hệ (footer)',
+                'key'   => 'website-info',
+                'value' => '<p>Thienthanh - Chuyên cung thiết bị, dịch vụ, giải pháp máy văn phòng uy tín chất lượng</p>
+                <p>
+                Địa chỉ: 507 Liễu giai, Quận Ba Đình, Hà Nội.<br> 
+                Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.thienthanh.vn<br>
+                Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức A - Điện thoại liên hệ: 024 73081221 (ext 4678)<br>
+                Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015<br>
+                </p>
+                <p>© 2021 VMMS. Tất cả các quyền được bảo lưu.</p>
+                ',
             ],
             [
-                'label' => 'trang chủ title',
-                'key'   => 'trang-chu-title',
+                'label' => 'Tiêu đề SEO trang chủ',
+                'key'   => 'title-seo-home',
                 'value' => 'Trang chủ',
             ],
             [
-                'label' => 'trang chủ description',
-                'key'   => 'trang-chu-description',
-                'value' => 'Wedding Store - Chuyên váy cưới, hỗ trợ tổ chức tiệc cưới, địa điểm cưới',
+                'label' => 'Mô tả SEO trang chủ',
+                'key'   => 'desc-seo-home',
+                'value' => 'Website bán laptop, thiết bị máy thình tốt nhât',
             ],
             [
-                'label' => 'Giới thiệu title',
-                'key'   => 'gioi-thieu-title',
-                'value' => 'Giới thiệu',
+                'label' => 'Banner 1',
+                'key'   => 'banner-1',
+                'value' => '/assets/images/banner1.jpg',
             ],
             [
-                'label' => 'Giới thiệu description',
-                'key'   => 'gioi-thieu-description',
-                'value' => 'Wedding Store - Chuyên váy cưới, hỗ trợ tổ chức tiệc cưới, địa điểm cưới',
+                'label' => 'Đường dẫn banner 1',
+                'key'   => 'link-banner-1',
+                'value' => '#',
             ],
             [
-                'label' => 'Sản phẩm title',
-                'key'   => 'san-pham-title',
-                'value' => 'Sản phẩm',
+                'label' => 'Banner 2',
+                'key'   => 'banner-2',
+                'value' => '/assets/images/banner2.jpg',
             ],
             [
-                'label' => 'Sản phẩm description',
-                'key'   => 'san-pham-description',
-                'value' => 'Wedding Store - Chuyên váy cưới, hỗ trợ tổ chức tiệc cưới, địa điểm cưới',
+                'label' => 'Đường dẫn banner 2',
+                'key'   => 'link-banner-2',
+                'value' => '#',
             ],
             [
-                'label' => 'Dịch vụ title',
-                'key'   => 'dich-vu-title',
-                'value' => 'Dịch vụ',
+                'label' => 'Banner 3',
+                'key'   => 'banner-3',
+                'value' => '/assets/images/banner3.jpg',
             ],
             [
-                'label' => 'Dịch vụ description',
-                'key'   => 'dich-vu-description',
-                'value' => 'Wedding Store - Chuyên váy cưới, hỗ trợ tổ chức tiệc cưới, địa điểm cưới',
+                'label' => 'Đường dẫn banner 3',
+                'key'   => 'link-banner-3',
+                'value' => '#',
             ],
             [
-                'label' => 'Tin tức title',
-                'key'   => 'tin-tuc-title',
-                'value' => 'Tin tức',
+                'label' => 'Video 1',
+                'key'   => 'video-1',
+                'va;ue'  => '',
             ],
             [
-                'label' => 'Tin tức description',
-                'key'   => 'tin-tuc-description',
-                'value' => 'Wedding Store - Chuyên váy cưới, hỗ trợ tổ chức tiệc cưới, địa điểm cưới',
-            ],
-            [
-                'label' => 'Giỏ hàng title',
-                'key'   => 'gio-hang-title',
-                'value' => 'Giỏ hàng',
-            ],
-            [
-                'label' => 'Giỏ hàng description',
-                'key'   => 'gio-hang-description',
-                'value' => 'Wedding Store - Chuyên váy cưới, hỗ trợ tổ chức tiệc cưới, địa điểm cưới',
+                'label' => 'Tiêu đề video 1',
+                'key'   => 'title-video-1',
+                'value'  => '(Review) Lenovo Ideapad 5 (2021) Phá Đảo tầm giá 15 Triệu...!!!',
             ],
         ]);
     }
