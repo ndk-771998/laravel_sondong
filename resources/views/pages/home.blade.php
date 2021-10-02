@@ -19,11 +19,11 @@
 
     @include('include.flash-sale.flash-sale')
 
-    @include('include.product.product-slide', ['list_title' => 'Laptop mới'])
+    @include('include.product.product-slide', ['list_title' => 'Laptop mới', 'products' => $new_products])
 
-    @include('include.product.product-slide', ['list_title' => 'Laptop cũ'])
+    @include('include.product.product-slide', ['list_title' => 'Laptop cũ', 'products' => $old_products])
 
-    @include('include.product.product-slide', ['list_title' => 'Máy in'])
+    @include('include.product.product-slide', ['list_title' => 'Máy in', 'products' => $printers])
 
     <div class="customer-feedback-container container">
         <div class="row">
@@ -32,12 +32,13 @@
                     <div class="customer-feedback-title">
                         Cảm nhận khách hàng
                     </div>
+                    @foreach ($customerfeedbacks as $customerfeedback)
                     <div class="customer-feedback d-flex">
                         <div class="info d-flex">
-                            <div class="avatar"><img src="/assets/images/avatar.jpg" alt="avatar"></div>
+                            <div class="avatar"><img src="{{ $customerfeedback->thumbnail }}" alt="avatar"></div>
                             <div class="text d-flex flex-column">
-                                <div class="name">Hoàng Văn</div>
-                                <div class="caption">Khách hàng thân thiết</div>
+                                <div class="name">{{ $customerfeedback->title }}</div>
+                                <div class="caption">{{ $customerfeedback->description }}</div>
                                 <div class="vote d-flex flex-row flex-wrap">
                                     <img src="/assets/images/logo/star.svg" alt="star">
                                     <img src="/assets/images/logo/star.svg" alt="star">
@@ -47,54 +48,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content d-flex">
-                            Phần máy: Máy sử dụng tốt, đã dùng 1 năm với tần suất cao nhưng chưa bị hỏng hóc gì nhiều. Chế độ bảo hành: Siêu xuất sắc, tận tình tư vấn. Dù là hết hay còn trong thời gian bảo hành, mọi thứ vẫn đều thật yên tâm. Thái độ: Các bạn ở đây ai cũng dễ thương, hướng dẫn và giải đáp mọi thắc mắc với câu từ gần gũi.
-        
-                            THẬT SỰ RẤT ƯNG Ý VÀ MONG SHOP LUÔN HỒNG PHÁT!
+                        <div class="content">
+                            {!! $customerfeedback->content !!}
                         </div>
                     </div>
-                    <div class="customer-feedback d-flex">
-                        <div class="info d-flex">
-                            <div class="avatar"><img src="/assets/images/avatar.jpg" alt="avatar"></div>
-                            <div class="text d-flex flex-column">
-                                <div class="name">Hoàng Văn</div>
-                                <div class="caption">Khách hàng thân thiết</div>
-                                <div class="vote d-flex flex-row flex-wrap">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content d-flex">
-                            Phần máy: Máy sử dụng tốt, đã dùng 1 năm với tần suất cao nhưng chưa bị hỏng hóc gì nhiều. Chế độ bảo hành: Siêu xuất sắc, tận tình tư vấn. Dù là hết hay còn trong thời gian bảo hành, mọi thứ vẫn đều thật yên tâm. Thái độ: Các bạn ở đây ai cũng dễ thương, hướng dẫn và giải đáp mọi thắc mắc với câu từ gần gũi.
-        
-                            THẬT SỰ RẤT ƯNG Ý VÀ MONG SHOP LUÔN HỒNG PHÁT!
-                        </div>
-                    </div>
-                    <div class="customer-feedback d-flex">
-                        <div class="info d-flex">
-                            <div class="avatar"><img src="/assets/images/avatar.jpg" alt="avatar"></div>
-                            <div class="text d-flex flex-column">
-                                <div class="name">Hoàng Văn</div>
-                                <div class="caption">Khách hàng thân thiết</div>
-                                <div class="vote d-flex flex-row flex-wrap">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content d-flex">
-                            Phần máy: Máy sử dụng tốt, đã dùng 1 năm với tần suất cao nhưng chưa bị hỏng hóc gì nhiều. Chế độ bảo hành: Siêu xuất sắc, tận tình tư vấn. Dù là hết hay còn trong thời gian bảo hành, mọi thứ vẫn đều thật yên tâm. Thái độ: Các bạn ở đây ai cũng dễ thương, hướng dẫn và giải đáp mọi thắc mắc với câu từ gần gũi.
-        
-                            THẬT SỰ RẤT ƯNG Ý VÀ MONG SHOP LUÔN HỒNG PHÁT!
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
