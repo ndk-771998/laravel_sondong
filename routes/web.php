@@ -26,6 +26,7 @@ Route::post('/contact', 'Web\ContactController@store');
 Route::get('/product/{slug}', 'Web\ProductDetailController@show');
 Route::get('/product', 'Web\ProductListController@index');
 Route::post('/register', 'Web\UserController@register')->name("web.register");
+Route::get('/ajax-search', 'Web\SearchController@ajaxsearch');
 
 Route::post('/order-create', 'Web\OrderController@create')->name('order.create');
 

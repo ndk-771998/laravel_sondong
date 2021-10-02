@@ -102,4 +102,8 @@
             border: 1px solid $default_input_color;
         }
     }
+
+    a:hover {
+        text-decoration: unset;
+    }
 }

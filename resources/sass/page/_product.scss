@@ -265,6 +265,7 @@
             }
             .form-control {
                 height: 30px;
+                font-size: 14px;
             }
 
             .order-submit {
@@ -276,6 +277,11 @@
 
     .modal-content {
         border-radius: 0px;
+    }
+
+    .alert {
+        padding: 10px 20px;
+        font-size: $font_size_small;
     }
 }
 
