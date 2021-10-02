@@ -12558,6 +12558,10 @@ a.text-dark:hover, a.text-dark:focus {
   border: 1px solid #aaaaaa;
 }
 
+.list-product a:hover {
+  text-decoration: unset;
+}
+
 .product-container .product-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -12664,7 +12668,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: bold;
   color: #232323;
   background-color: #fff;
-  padding: 11.5px 16px;
+  padding: 10px 16px;
   margin-bottom: 12px;
 }
 
@@ -14240,6 +14244,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .buy-now-modal .modal-body .order-info .form-control {
   height: 30px;
+  font-size: 14px;
 }
 
 .buy-now-modal .modal-body .order-info .order-submit {
@@ -14249,6 +14254,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 .buy-now-modal .modal-content {
   border-radius: 0px;
+}
+
+.buy-now-modal .alert {
+  padding: 10px 20px;
+  font-size: 14px;
 }
 
 .order-successfully {

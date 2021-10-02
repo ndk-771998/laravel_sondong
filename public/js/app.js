@@ -41410,7 +41410,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _zoom_image__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./zoom-image */ "./resources/js/zoom-image.js");
 /* harmony import */ var _paginate__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./paginate */ "./resources/js/paginate.js");
 /* harmony import */ var _slick_slide__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./slick-slide */ "./resources/js/slick-slide.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_17__);
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
+
 
 
 
@@ -41430,6 +41433,84 @@ __webpack_require__.r(__webpack_exports__);
 
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('#orderSuccessfully').modal('show');
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#buyNowError').modal('show');
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#orderSuccessfullySubmit').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('#orderSuccessfully').modal('fade');
+  });
+});
+jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
+  var url = window.location.href;
+  var order_by;
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()(".filter-price-submit").each(function (i, obj) {
+    var filter_rq = url.slice(url.indexOf("price="), url.indexOf("&"));
+
+    if (filter_rq.replace("price=", "") === jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr("value")) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr("checked", "checked");
+    }
+
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).click(function () {
+      filter("");
+    });
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()(".filter-manufacturer-submit").each(function (i, obj) {
+    var filter_rq = url.slice(url.indexOf("manufacturer="), url.indexOf("&"));
+
+    if (filter_rq.replace("manufacturer=", "") === jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr("value")) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr("checked", "checked");
+    }
+
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).click(function () {
+      filter("");
+    });
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).on("click", ".page-link", function (event) {
+    event.preventDefault();
+    var page = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).attr("href").split("page=")[1];
+    order_by = document.getElementById('filter_order_by').value;
+    filter("", "", order_by, page);
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#filter_order_by').on('change', function () {
+    filter("", "", this.value);
+  });
+
+  function filter() {
+    var price = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    var manufacturer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+    var order_by = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+    var page = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
+    price = jquery__WEBPACK_IMPORTED_MODULE_2___default()("form#filter-price-form").serialize();
+    manufacturer = jquery__WEBPACK_IMPORTED_MODULE_2___default()("form#filter-manufacturer-form").serialize();
+    console.log(manufacturer);
+    var url = "/ajax-search";
+    var val = "";
+    var category_url = "";
+    var search = new URLSearchParams(window.location.search).get('search');
+    jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
+      headers: {
+        "X-CSRF-TOKEN": jquery__WEBPACK_IMPORTED_MODULE_2___default()('meta[name="csrf-token"]').attr("content")
+      }
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajax({
+      type: "GET",
+      url: url,
+      data: {
+        price: price,
+        order_by: order_by,
+        category_url: category_url,
+        page: page,
+        search: search,
+        manufacturer: manufacturer
+      },
+      success: function success(data) {
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()("#viewProductDefault").html(data);
+        var element = document.querySelector('#anchor-name');
+        element.scrollIntoView({
+          behavior: "smooth"
+        });
+      },
+      error: function error(jqXHR, textStatus, errorThrown) {}
+    });
+  }
 });
 
 /***/ }),
