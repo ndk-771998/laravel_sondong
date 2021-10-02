@@ -27,10 +27,7 @@ Route::get('/product/{slug}', 'Web\ProductDetailController@show');
 Route::get('/product', 'Web\ProductListController@index');
 Route::post('/register', 'Web\UserController@register')->name("web.register");
 
-Route::post('/order', function () {
-    Session::put('orderSuccessfully', 'value');
-    return  Redirect::back();
-});
+Route::post('/order-create', 'Web\OrderController@create')->name('order.create');
 
 Route::get('/hinh-anh-khach-hang', function () {
     return  View('pages.customer-medias');
