@@ -27,14 +27,17 @@ class ProductDetailController extends BaseProductDetailController implements Vie
         OpenGraph::setTitle($product->name);
         OpenGraph::setDescription($product->description);
         OpenGraph::addImage($product->thumbnail);
-        $comments        = $product->getLatestComment(10)->where('status', 1);
-        $relatedProducts = Product::where('id', '<>', $product->id)->with('productMetas')
+        $relatedProducts = Product::where('product_type', $product->product_type)->where('id', '<>', $product->id)->with('productMetas')
             ->latest()
-            ->limit(3)
+            ->limit(5)
+            ->get();
+        $accressories = Product::where('product_type', 'accessory')->where('id', '<>', $product->id)->with('productMetas')
+            ->latest()
+            ->limit(5)
             ->get();
         return [
-            'comments'        => $comments,
             'relatedProducts' => $relatedProducts,
+            'accressories'    => $accressories,
         ];
     }
 }

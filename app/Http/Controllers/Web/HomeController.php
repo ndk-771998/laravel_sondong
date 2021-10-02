@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Entities\Post as EntitiesPost;
+use App\Entities\Post;
 use App\Entities\Product;
 use App\Http\Controllers\Controller;
 use Artesaos\SEOTools\Facades\OpenGraph;
@@ -30,20 +30,22 @@ class HomeController extends Controller
         OpenGraph::setDescription(getOption('trang-chu-description'));
         OpenGraph::addImage(getOption('header-logo'));
 
-        $products          = Product::orderBy('id', 'desc')->where('status', '1')->with('productMetas')->paginate(9);
-        $news              = EntitiesPost::getBy('posts', 1)->limit(3)->get();
-        $place_result      = EntitiesPost::getBy('place', 1)->limit(3)->get();
-        $exhibition_result = EntitiesPost::getBy('exhibition', 1)->limit(3)->get();
-        $place_count       = EntitiesPost::getBy('place', 1)->count();
-        $exhibition_count  = EntitiesPost::getBy('exhibition', 1)->count();
+        $flash_sale          = Product::where('product_type', 'products')->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(10)->get();
+        $new_products          = Product::where('product_type', 'products')->whereHas('categories', function($query) {
+            $query->where('slug', 'laptop-moi');
+        })->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
+        $old_products          = Product::where('product_type', 'products')->whereHas('categories', function($query) {
+            $query->where('slug', 'laptop-cu');
+        })->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
+        $printer          = Product::where('product_type', 'printer')->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
+        $customerfeedbacks = Post::where('type', 'customerfeedback')->where('status', '1')->limit(3)->get();
 
         return view('index', [
-            'products'         => $products,
-            'news'             => $news,
-            'place'            => $place_result,
-            'exhibition'       => $exhibition_result,
-            'place_count'      => $place_count,
-            'exhibition_count' => $exhibition_count,
+            'flash_sale'         => $flash_sale,
+            'new_products'             => $new_products,
+            'old_products'            => $old_products,
+            'printers'       => $printer,
+            'customerfeedbacks' => $customerfeedbacks,
         ]);
     }
 }

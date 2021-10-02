@@ -16,14 +16,9 @@
         </div>
         <div class="product-slide">
 
-            @include('include.product.product-item')
-            @include('include.product.product-item')
-            @include('include.product.product-item')
-            @include('include.product.product-item')
-            @include('include.product.product-item')
-            @include('include.product.product-item')
-            @include('include.product.product-item')
-            @include('include.product.product-item')
+            @foreach ($products as $product)
+            @include('include.product.product-item', ['product' => $product])
+            @endforeach
 
         </div>
     </div>

@@ -5,7 +5,7 @@
 @section('content')
 
 <section>
-    <div class="container product-container">
+    <div class="container product-container" id="anchor-name">
         <div class="product-wrap row-padding-12px">
             <div class="col-padding-12px w-100">
                 @include('include.breadcrumb', ['breadcrumb' => ['Sản phẩm' => '/products', 'HP Book ...']])
@@ -28,22 +28,15 @@
                     </div>
                 </div>
             
-                <div class="products">
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                    @include('include.product.product-item')
-                </div>
-                <div class="d-flex justify-content-center">
-                    {{ $products->fragment('products')->links('include.pagination') }}
+                <div class="products" id="viewProductDefault">
+                    @foreach ($products as $product)
+                        @include('include.product.product-item', ['product' => $product])                        
+                    @endforeach
+
+                    <div class="d-flex justify-content-center w-100">
+                        {{ $products->links('include.pagination') }}
+                    </div>
+                    
                 </div>
             </div>
         </div>
