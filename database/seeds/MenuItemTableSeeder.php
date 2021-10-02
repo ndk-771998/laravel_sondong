@@ -70,13 +70,13 @@ class MenuItemTableSeeder extends Seeder {
                 ['menu_id' => '1', 'label' => 'Laptop cũ', 'link' => '#', 'type' => 'menu-header', 'parent_id' => 47],
 
             //seeding footer 1
-            ['menu_id' => '3', 'label' => 'Giới thiệu', 'link' => '/pages/gioi-thieu', 'type' => 'menu-footer', 'parent_id' => 0],
-            ['menu_id' => '3', 'label' => 'Khuyến mại', 'link' => '/pages/dieu-khoan-su-dung', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Giới thiệu', 'link' => '/pages/gioi-thieu', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Khuyến mại', 'link' => '/pages/dieu-khoan-su-dung', 'type' => 'menu-footer', 'parent_id' => 0],
             
             //seeding footer 2
-            ['menu_id' => '4', 'label' => 'Liên hệ', 'link' => '/pages/san-xuat', 'type' => 'menu-footer', 'parent_id' => 0],
-            ['menu_id' => '4', 'label' => 'Chính sách riêng tư', 'link' => '/pages/chinh-sach-rieng-tu', 'type' => 'menu-footer', 'parent_id' => 0],
-            ['menu_id' => '4', 'label' => 'Hợp tác', 'link' => '/pages/hop-tac', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Liên hệ', 'link' => '/pages/san-xuat', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Chính sách riêng tư', 'link' => '/pages/chinh-sach-rieng-tu', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Hợp tác', 'link' => '/pages/hop-tac', 'type' => 'menu-footer', 'parent_id' => 0],
         ]);
     }
 }
