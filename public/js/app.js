@@ -17328,11 +17328,20 @@ return jQuery;
 		module.exports = lazySizes;
 	}
 }(typeof window != 'undefined' ?
-      window : {}, function l(window, document, Date) { // Pass in the windoe Date function also for SSR because the Date class can be lost
+      window : {}, 
+/**
+ * import("./types/global")
+ * @typedef { import("./types/lazysizes-config").LazySizesConfigPartial } LazySizesConfigPartial
+ */
+function l(window, document, Date) { // Pass in the window Date function also for SSR because the Date class can be lost
 	'use strict';
 	/*jshint eqnull:true */
 
-	var lazysizes, lazySizesCfg;
+	var lazysizes,
+		/**
+		 * @type { LazySizesConfigPartial }
+		 */
+		lazySizesCfg;
 
 	(function(){
 		var prop;
@@ -17345,6 +17354,8 @@ return jQuery;
 			errorClass: 'lazyerror',
 			//strictClass: 'lazystrict',
 			autosizesClass: 'lazyautosizes',
+			fastLoadedClass: 'ls-is-cached',
+			iframeLoadMode: 0,
 			srcAttr: 'data-src',
 			srcsetAttr: 'data-srcset',
 			sizesAttr: 'data-sizes',
@@ -17372,7 +17383,13 @@ return jQuery;
 	if (!document || !document.getElementsByClassName) {
 		return {
 			init: function () {},
+			/**
+			 * @type { LazySizesConfigPartial }
+			 */
 			cfg: lazySizesCfg,
+			/**
+			 * @type { true }
+			 */
 			noSupport: true,
 		};
 	}
@@ -17405,6 +17422,10 @@ return jQuery;
 
 	var forEach = Array.prototype.forEach;
 
+	/**
+	 * @param ele {Element}
+	 * @param cls {string}
+	 */
 	var hasClass = function(ele, cls) {
 		if(!regClassCache[cls]){
 			regClassCache[cls] = new RegExp('(\\s|^)'+cls+'(\\s|$)');
@@ -17412,12 +17433,20 @@ return jQuery;
 		return regClassCache[cls].test(ele[_getAttribute]('class') || '') && regClassCache[cls];
 	};
 
+	/**
+	 * @param ele {Element}
+	 * @param cls {string}
+	 */
 	var addClass = function(ele, cls) {
 		if (!hasClass(ele, cls)){
 			ele.setAttribute('class', (ele[_getAttribute]('class') || '').trim() + ' ' + cls);
 		}
 	};
 
+	/**
+	 * @param ele {Element}
+	 * @param cls {string}
+	 */
 	var removeClass = function(ele, cls) {
 		var reg;
 		if ((reg = hasClass(ele,cls))) {
@@ -17435,6 +17464,14 @@ return jQuery;
 		});
 	};
 
+	/**
+	 * @param elem { Element }
+	 * @param name { string }
+	 * @param detail { any }
+	 * @param noBubbles { boolean }
+	 * @param noCancelable { boolean }
+	 * @returns { CustomEvent }
+	 */
 	var triggerEvent = function(elem, name, detail, noBubbles, noCancelable){
 		var event = document.createEvent('Event');
 
@@ -17468,6 +17505,13 @@ return jQuery;
 		return (getComputedStyle(elem, null) || {})[style];
 	};
 
+	/**
+	 *
+	 * @param elem { Element }
+	 * @param parent { Element }
+	 * @param [width] {number}
+	 * @returns {number}
+	 */
 	var getWidth = function(elem, parent, width){
 		width = width || elem.offsetWidth;
 
@@ -17764,9 +17808,12 @@ return jQuery;
 		};
 
 		var changeIframeSrc = function(elem, src){
-			try {
+			var loadMode = elem.getAttribute('data-load-mode') || lazySizesCfg.iframeLoadMode;
+
+			// loadMode can be also a string!
+			if (loadMode == 0) {
 				elem.contentWindow.location.replace(src);
-			} catch(e){
+			} else if (loadMode == 1) {
 				elem.src = src;
 			}
 		};
@@ -17848,7 +17895,7 @@ return jQuery;
 
 				if( !firesLoad || isLoaded){
 					if (isLoaded) {
-						addClass(elem, 'ls-is-cached');
+						addClass(elem, lazySizesCfg.fastLoadedClass);
 					}
 					switchLoadingClass(event);
 					elem._lazyCache = true;
@@ -17864,6 +17911,10 @@ return jQuery;
 			}, true);
 		});
 
+		/**
+		 *
+		 * @param elem { Element }
+		 */
 		var unveilElement = function (elem){
 			if (elem._lazyRace) {return;}
 			var detail;
@@ -18002,6 +18053,12 @@ return jQuery;
 				updatePolyfill(elem, event.detail);
 			}
 		});
+		/**
+		 *
+		 * @param elem {Element}
+		 * @param dataAttr
+		 * @param [width] { number }
+		 */
 		var getSizeElement = function (elem, dataAttr, width){
 			var event;
 			var parent = elem.parentNode;
@@ -18059,6 +18116,9 @@ return jQuery;
 	});
 
 	lazysizes = {
+		/**
+		 * @type { LazySizesConfigPartial }
+		 */
 		cfg: lazySizesCfg,
 		autoSizer: autoSizer,
 		loader: loader,
@@ -41349,6 +41409,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _zoomimg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./zoomimg */ "./resources/js/zoomimg.js");
 /* harmony import */ var _zoom_image__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./zoom-image */ "./resources/js/zoom-image.js");
 /* harmony import */ var _paginate__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./paginate */ "./resources/js/paginate.js");
+/* harmony import */ var _slick_slide__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./slick-slide */ "./resources/js/slick-slide.js");
 // Uncomment the next line if you want to use bootstrap, don't forget uncomment jQuery defination in webpack.common.js line 93
 
 
@@ -41366,22 +41427,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.product-thumbnail-child'
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.product-thumbnail-child').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: '.product-thumbnail',
-    dots: false,
-    focusOnSelect: true,
-    arrows: false
-  });
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#orderSuccessfully').modal('show');
 });
 
 /***/ }),
@@ -41399,21 +41447,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  var url = window.location.pathname;
-  var menuItems = document.getElementsByClassName('menu-item');
-  Array.from(menuItems).forEach(function (menu) {
-    var active = menu.dataset.name;
-    var id = menu.dataset.id;
-    var link = '/' + url.split("/").slice(1, 2).toString();
-
-    if (active == link) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-' + id).addClass("active");
+  // var url       = window.location.pathname;
+  // var menuItems = document.getElementsByClassName('menu-item');
+  // Array.from(menuItems).forEach(menu => {
+  //     var active = menu.dataset.name;
+  //     var id     = menu.dataset.id;
+  //     var link   = '/' + (url.split("/").slice(1, 2).toString());
+  //     if (active == link) {
+  //         $('#menu-' + id).addClass("active");
+  //     }
+  //     if (link == '/pages') {
+  //         if (active == url) {
+  //             $('#menu-' + id).addClass("active");
+  //         }
+  //     }
+  // });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.custom-dropdown-toggle').hover(function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(".dropdown-menu-broad").attr('custom-data-toggle') == jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('id')) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".dropdown-menu-broad").toggleClass("show");
     }
-
-    if (link == '/pages') {
-      if (active == url) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-' + id).addClass("active");
-      }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dropdown-menu-broad').hover(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).toggleClass("show");
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.nav-mini-icon').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-mini').addClass("show");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.faded-menu-mini').addClass("show");
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.faded-menu-mini').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-mini').removeClass("show");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.faded-menu-mini').removeClass("show");
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-mini-item-toggle').click(function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(".dropdown-menu-mini").attr('data-mini-toggle') == jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('id')) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".dropdown-menu-mini").toggleClass("show");
     }
   });
 });
@@ -41674,38 +41741,108 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#pills-profile-tab').addClass('active');
     }
   }
+});
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-slide').slick({
+/***/ }),
+
+/***/ "./resources/js/slick-slide.js":
+/*!*************************************!*\
+  !*** ./resources/js/slick-slide.js ***!
+  \*************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.flash-sale').slick({
     dots: false,
     infinite: false,
     speed: 300,
     autoplay: false,
+    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/slide-arrow.svg'>",
+    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/slide-arrow.svg'>",
     arrows: true,
-    slidesToShow: 6,
-    slidesToScroll: 1,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     responsive: [{
-      breakpoint: 1200,
+      breakpoint: 978,
       settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         infinite: true,
         dots: false
       }
     }, {
       breakpoint: 768,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: false
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: false
       }
     }, {
       breakpoint: 480,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false
+        dots: false
       }
     }]
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-slide').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    autoplay: false,
+    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/slide-arrow.svg'>",
+    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/slide-arrow.svg'>",
+    arrows: true,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    responsive: [{
+      breakpoint: 978,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: false
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: false
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false
+      }
+    }]
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.thumbnail-silde-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.thumbnail-silde-nav'
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.thumbnail-silde-nav').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.thumbnail-silde-for',
+    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/chevron-up.svg'>",
+    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/chevron-up.svg'>",
+    arrows: true,
+    focusOnSelect: true
   });
 });
 
@@ -41827,8 +41964,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\_l_p16001\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\_l_p16001\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\xampp\htdocs\thiethanhjsc.com\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\xampp\htdocs\thiethanhjsc.com\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

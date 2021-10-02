@@ -15,24 +15,8 @@ import './user/user';
 import './zoomimg';
 import './zoom-image';
 import './paginate';
+import './slick-slide';
 
 $(document).ready(function () {
-
-    $('.product-thumbnail').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.product-thumbnail-child'
-    });
-    $('.product-thumbnail-child').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        asNavFor: '.product-thumbnail',
-        dots: false,
-        focusOnSelect: true,
-        arrows: false
-    });
-
+    $('#orderSuccessfully').modal('show');
 });
-

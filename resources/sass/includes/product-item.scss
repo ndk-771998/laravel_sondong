@@ -1,0 +1,105 @@
+.list-product {
+    .item-wrap {
+        border: 1px solid transparent;
+        background-color: $default_bg_color;
+        
+        .thumbnail {
+            position: relative;
+            display: flex;
+            height: 206px;
+
+            img {
+                width: auto;
+                height: auto;
+                margin: auto;
+                max-height: 100%;
+                max-width: 100%;
+            }
+
+            .sale-tag {
+                position: absolute;
+                top: 0px;
+                left: 12px;
+                font-size: $font_size_small;
+                color: $default_bg_color;
+                background-color: $deep_red_color;
+                padding: 0px 10px;
+                border-radius: 0px 0px 6px 6px;
+            }
+        }
+
+        .vote {
+            margin: 10px;
+            color: $default_link_color;
+            
+            img {
+                width: 10px;
+                height: 10px;
+                margin-right: 5px;
+            }
+        }
+
+        .name {
+            margin: 10px;
+            font-size: $font_size_small;
+            font-weight: 600;
+            color: $default_text_color;
+            @include limitRowToDisplay(2);
+        }
+
+        .price {
+            margin: 10px;
+            margin-bottom: 10px;
+
+            .discount {
+                color: $default_price_color;
+                font-size: $font_size_larger;
+                font-weight: 600;
+            }
+
+            .origin-price {
+                font-size: $font_size_small;
+                color: $default_bottom_link_color;
+                text-decoration-line: line-through;
+            }
+        }
+
+        .sell-progress {
+            margin: 10px;
+
+            progress {
+                -webkit-appearance: none;
+                color: $main_header_color;
+                width: 100%;
+                height: 20px;
+                position: relative;            
+
+                &::-webkit-progress-bar {
+                    background-color: $secondary-sale-color;
+                    border-radius: 50px;
+                }
+
+                &::-webkit-progress-value {
+                    background-color: $default-sale-color;
+                    border-radius: 50px;
+                }
+
+                &:after {
+                    content: "Đã bán: "attr(value);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    padding: 0px 10px;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    @include limitRowToDisplay(1);
+                }
+            }
+        }
+
+        &:hover {
+            border: 1px solid $default_input_color;
+        }
+    }
+}
