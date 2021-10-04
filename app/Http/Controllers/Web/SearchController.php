@@ -45,6 +45,14 @@ class SearchController extends Controller
     public function ajaxsearch(Request $request)
     {
         $products         = Product::query();
+        if ($request->has('product_type')) {
+            $products = $products->where('product_type', $request->get('product_type'));
+        }
+        if ($request->has('product_category')) {
+            $products = $products->whereHas('categories', function ($query) use ($request) {
+                $query->where('slug', $request->get('product_category'));
+            });
+        }
         $products         = $this->applySearchFromRequest($products, ['name'], $request);
 
         $products = $this->applyPriceRangeFromRequest($products, $request);

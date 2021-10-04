@@ -65,11 +65,12 @@ $(document).ready(function() {
     function filter(price = "", manufacturer = "", order_by = "", page = 1) {
         price = $("form#filter-price-form").serialize();
         manufacturer = $("form#filter-manufacturer-form").serialize();
-        console.log(manufacturer);
         var url = "/ajax-search";
         var val = "";
         var category_url = "";
         var search = new URLSearchParams(window.location.search).get('search');
+        var product_type = $("#product_type").attr('value');
+        var product_category = $("#product_category").attr('value');
         $.ajaxSetup({
             headers: {
                 "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
@@ -85,7 +86,9 @@ $(document).ready(function() {
                 category_url: category_url,
                 page: page,
                 search: search,
-                manufacturer: manufacturer
+                product_type: product_type,
+                manufacturer: manufacturer,
+                product_category: product_category
             },
             success: function(data) {
                 $("#viewProductDefault").html(data);

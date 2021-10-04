@@ -107,7 +107,7 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
             $index = $this->categories->search(function ($category) use ($type) {
                 return $category->type == $type;
             });
-            if($index == false) {
+            if(is_numeric($index)) {
                 return $this->categories[$index]->name;
             } else {
                 return false;
