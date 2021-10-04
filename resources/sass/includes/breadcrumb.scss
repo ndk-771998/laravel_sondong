@@ -1,0 +1,23 @@
+.breadcrumb {
+    background-color: $default_bg_color;
+    border-left: 2px solid $main_header_bg_color;
+    display: block;
+    padding: 10px 16px;
+    border-radius: 0px;
+    margin-bottom: 12px;
+    width: 100%;
+    font-weight: bold;
+    font-size: $font_size_small;
+
+    i.home-icon, a {
+        color: $default_text_color;
+        font-size: $font_size_small;
+        font-weight: bold;
+    }
+
+    i {
+        color: $default_input_color;
+        font-size: $font_size_smaller;
+        font-weight: lighter;
+    }
+}

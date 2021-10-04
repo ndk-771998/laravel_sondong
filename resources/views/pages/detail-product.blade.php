@@ -3,166 +3,270 @@
 <title>{!! $product->name !!}</title>
 @endsection
 @section('content')
-<nav aria-label="breadcrumb" id="breadcrumb">
-    <div class="container">
-        <ul class="custom-breadcrumb m-0">
-            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="/product">Sản phẩm</a></li>
-            <li class="breadcrumb-item active">{{$product->name}}</li>
-        </ul>
-    </div>
-</nav>
-<section>
-    <div class="container">
-        <div class="main">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-3">
-                    @include('layout.nav-left')
-                </div>
-                <div class="col-12 col-md-6">
-                    @include('include.errors')
-                    @include('include.messages')
-                    <div class="product-detail">
-                        <h3 class="text-uppercase">Chi tiết sản phẩm</h3>
-                        <div class="p-flex my-24">
-                            <div class="left">
-                                <div class="product-thumbnail">
-                                    <div class="item">
-                                        <div class="tile" data-scale="4.0" data-image="{!! $product->thumbnail !!}"
-                                            id="imgmain">
-                                        </div>
-                                    </div>
-                                    @foreach($product->media as $media)
-                                    <div class="item">
-                                        <div class="tile" data-scale="4.0" data-image="{!! $media->getFullUrl() !!}">
-                                        </div>
-                                    </div>
-                                    @endforeach
 
+<section>
+    <div class="container product-detail-container">
+        <div class="row-padding-16px">
+            <div class="col-padding-16px w-100">
+                @include('include.breadcrumb', ['breadcrumb' => ['Sản phẩm' => '/product', $product->name => '']])
+            </div>
+            
+            <div class="col-padding-16px w-100 product-info-wrap">
+                <div class="product-info">
+                    <div class="row">
+                        <div class="col-12 col-md-5 medias">
+                            @if ($product->price && $product->original_price)
+                                <div class="tag-sale">
+                                    {{floor(($product->price - $product->original_price)/$product->original_price*100)}}%
                                 </div>
-                                <div class="product-thumbnail-child">
+                            @endif
+                            <div class="thumbnail-silde-for">
+                                <div class="item">
+                                    <img src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
+                                </div>
+                                @foreach ($product->media as $media)
                                     <div class="item">
-                                        <img src="{!! $product->thumbnail !!}" alt="{!! $product->name !!}" />
-                                    </div>
-                                    @foreach($product->media as $media)
-                                    <div class="item">
-                                        <img src="{!! $media->getFullUrl() !!}" id="{{$media->id}}"
+                                        <img src="{!! $media->getFullUrl() !!}" id="{{ $media->id }}"
                                             alt="{!! $media->alt_img !!}" />
                                     </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="right">
-                                <h4>{!! $product->name !!}</h4>
-                                <ul class="info-product">
-                                    <li>Mã sản phẩm: {!! $product->sku !!}</li>
-                                    <li class="design">Nhà thiết kế:{!! $product->getMetaField('brand_name') !!}</li>
-                                    <li>Tình trạng:
-                                        @if ($isAvailable == true)
-                                        <span>Còn hàng</span>
-                                        @else
-                                        <span>Hết hàng</span>
-                                        @endif
-                                    </li>
-                                    <li class="original_price">Giá gốc: {!! number_format($product->original_price) !!}
-                                        đ</li>
-                                    <li>Giá bán: <span class="cost">{!! number_format($product->price) !!} đ</span>/ sản
-                                        phẩm</li>
-                                    <li>Số lượng:
-                                        @if($isAvailable)
-                                        <input type="number" id="quantity_product" min="1" max="30" value="1">
-                                        @else
-                                        <input type="number" id="quantity_product" min="1" max="30" value="1" disabled>
-                                        @endif
-                                    </li>
-                                    <li>Tổng tiền: <span class="total " id="total">{!! number_format($product->price)
-                                            !!}</span><span class="text-dark"> đ</span></li>
-                                </ul>
-                                <ul class="buy d-flex flex-wrap align-items-center">
-                                    @if($isAvailable)
-                                    <form action="{{ route('cart-items.create') }}" method="post">
-                                        {!! csrf_field() !!}
-                                        <input class="productdetails-quantity" name="quantity" value="1" type="number"
-                                            hidden min=1>
-                                        <input name="product_id" value="{!! $product->id !!}" hidden>
-                                        <input name="product_price" id="product_price" value="{!! $product->price !!}"
-                                            hidden>
-                                        <input name="redirect" value="cart" hidden>
-                                        <li><input id="purchase-product-{!! $product->id !!}-submit" type="submit"
-                                                class="btn-order" class="mb-2 mb-md-0" name="" value="Mua ngay"></li>
-                                    </form>
-                                    <form action="{{ route('cart-items.create') }}" method="post">
-                                        {!! csrf_field() !!}
-                                        <input class="productdetails-quantity" name="quantity" value="1" type="number"
-                                            min=1 hidden>
-                                        <input name="product_id" value="{!! $product->id !!}" hidden>
-                                        <input name="product_price" value="{!! $product->price !!}" hidden>
-                                        <li><input id="product-{!! $product->id !!}-submit" value="Thêm vào giỏ hàng"
-                                                class="btn-next" type="submit" name=""></li>
-                                    </form>
-                                    @else
-                                    <div class="h6 text-danger mt-2">Hết hàng</div>
-                                    @endif
-                                </ul>
-                                <p><i class="fa fa-phone" aria-hidden="true"></i> Hottline:
-                                    {{getOption('chi-tiet-san-pham-hot-line')}}</p>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            <h5>Bình luận</h5>
-                            <form action="{{url('comment')}}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <input type="text" class="form-control" required="" name="email"
-                                        placeholder="Nhập email của bạn . . .">
-                                    <input type="text" class="form-control" required name="user"
-                                        placeholder="Nhập tên của bạn . . .">
-                                    <textarea class="form-control" required name="content"
-                                        placeholder="Nhập nội dung bình luận . . ."></textarea>
-                                    <input name="commentable_id" value="{{ $product->id }}" hidden>
-                                    <input name="commentable_type" value="products" hidden>
-                                    <input type="submit" value="Gửi">
-                                </div>
-                            </form>
-                        </div>
-                        @include('comment::show')
-                        <div class="related-posts mt-60">
-                            <h3>Chi tiết sản phẩm</h3>
-                            <div class="related-list d-flex flex-wrap mb-5">
-                                @foreach($relatedProducts as $ProductItem)
-                                <div class="item">
-                                    <a href="{!! $ProductItem->slug !!}">
-                                        <div class="d-flex flex-column justify-content-center product-item">
-                                            <div class="product-img">
-                                                <img src="{!! $ProductItem->thumbnail !!}"
-                                                    alt="{!! $ProductItem->name !!}">
-                                            </div>
-                                            <div class="product-title">
-                                                <h6>{!! $ProductItem->name !!}</h6>
-                                            </div>
-                                            <div class="product_author">
-                                                <p>Nhà thiết kế: {!!$ProductItem->getMetaField('brand_name')!!}</p>
-                                            </div>
-                                            <div class="product-price d-flex justify-content-between">
-                                                <div class="price">
-                                                    <p>{!! number_format($ProductItem->price) !!} đ</p>
-                                                </div>
-                                                <div class="original_price">
-                                                    {!!number_format($ProductItem->original_price) !!} đ</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
                                 @endforeach
+                            </div>
+                            <div class="thumbnail-silde-nav">
+                                <div class="item">
+                                    <img src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
+                                </div>
+                                @foreach ($product->media as $media)
+                                    <div class="item">
+                                        <img src="{!! $media->getFullUrl() !!}" id="{{ $media->id }}"
+                                            alt="{!! $media->alt_img !!}" />
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-7 info">
+                            <div class="title">{{ $product->name }}</div>
+                            <div class="price">
+                                <div class="discount">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
+                                <div class="origin">{{preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->original_price)}} ₫</div>
+                            </div>
+                            @if ($product->getFirstCategoryLabelByType('manufacturer'))
+                            <div class="manufacturer">Hãng sản xuất: <a href="#">{{ $product->getFirstCategoryLabelByType('manufacturer') }}</a></div>
+                            @endif
+                            <div class="sold">Lượt mua: {{ $product->sold_quantity }}</div>
+                            <div class="bonus">
+                                Tặng Balo Laptop
+                            </div>
+                            <div class="bonus">
+                                Tặng PMH 200.000đ mua máy in Brother
+                            </div>
+                            <div class="bonus">
+                                Tặng PMH 100.000đ mua Microsoft 365 Personal/Family/Home & Student khi mua Online đến 30/09
+                            </div>
+                            <div class="color">
+                                Chọn màu: 
+                                <select name="color" id="">
+                                    <option value="1">Xám</option>
+                                    <option value="2">Đen</option>
+                                    <option value="3">Hường</option>
+                                </select>
+                            </div>
+                            <div class="btn-buy mt-4" data-toggle="modal" data-target="#buyNow">
+                                Mua ngay
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-3">
-                    @include('layout.nav-right')
+            </div>
+
+            <div class="col-padding-16px product-content-wrap">
+                <div class="product-content">
+                    <div class="product-content-title">
+                        Đặc điểm nổi bật
+                    </div>
+                    <div class="content">
+                        {!! $product->description !!}
+                    </div>
+                </div>
+            </div>
+            <div class="col-padding-16px product-parameter-wrap">
+                <div class="product-parameter">
+                    <div class="product-parameter-title">
+                        Thông số kỹ thuật
+                    </div>
+                    <table class="parameter table-striped">
+                        <tr>
+                            <td>CPU</td>
+                            <td>{{ $product->getMetaField('cpu') }}</td>
+                        </tr>
+                        <tr>
+                            <td>RAM</td>
+                            <td>{{ $product->getMetaField('ram') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Màn hình</td>
+                            <td>{{ $product->getMetaField('screen') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Đồ họa</td>
+                            <td>{{ $product->getMetaField('graphics') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Ổ cứng</td>
+                            <td>{{ $product->getMetaField('hard_drive') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Hệ điều hành</td>
+                            <td>{{ $product->getMetaField('os') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Trọng lượng</td>
+                            <td>{{ $product->getMetaField('weight') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Kích thước (mm)</td>
+                            <td>{{ $product->getMetaField('size') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Xuất xứ</td>
+                            <td>{{ $product->getMetaField('origin') }}</td>
+                        </tr>
+                    </table>
+                    <div class="detail">
+                        <a href="#">Xem cấu hình chi tiết <i class="fa fa-chevron-down"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng', 'products' => $accressories])
+    @include('include.product.product-slide', ['list_title' => 'Các sản phẩm tương tự', 'products' => $relatedProducts])
+
+    <div class="modal fade buy-now-modal" id="buyNow" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="product-info d-flex flex-row align-items-center">
+                        <div class="thumbnail">
+                            <img src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
+                        </div>
+                        <div class="label">
+                            <div class="title">{{ $product->name }}</div>
+                            <div class="price">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
+                        </div>
+                    </div>
+
+                    <div class="order-info">
+                        <form action="{{route('order.create')}}" method="post">
+                            @csrf
+                            <input type="text" name="slug" value="{{$product->slug}}" style="display: none">
+                            <div class="form-group">
+                                <label>Giới tính:</label>
+                                <div class="radio">
+                                    <label><input type="radio" name="gender"> Nam</label>
+                                    <label><input type="radio" name="gender"> Nữ</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Họ và tên:<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="username" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại:<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:<span class="required">*</span></label>
+                                <input type="email" class="form-control" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Địa chỉ giao hàng/ ghi chú:<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="address" name="address">
+                            </div>
+                            <button type="submit" class="btn btn-primary p-2 w-25 d-block order-submit">ĐẶT HÀNG</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Session::has('message-create-order-succeed'))
+    <div class="modal fade order-successfully" id="orderSuccessfully" role="dialog" aria-modal="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="/assets/images/logo/success.svg" alt="success">
+                    <h2>Xác nhận đặt hàng</h2>
+                    <p>Đơn hàng của bạn đã được gửi đi thành công, trong giờ mở cửa, chúng tôi sẽ liên hệ với quý khách trong ít phút.</p>
+                    <button type="button" class="btn btn-primary p-2 w-25 m-auto d-block order-submit" id="orderSuccessfullySubmit">Đồng ý</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+    
+    @if ($errors->any())
+    <div class="modal fade buy-now-modal" id="buyNowError" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="product-info d-flex flex-row align-items-center">
+                        <div class="thumbnail">
+                            <img src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
+                        </div>
+                        <div class="label">
+                            <div class="title">{{ $product->name }}</div>
+                            <div class="price">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
+                        </div>
+                    </div>
+
+                    <div class="order-info">
+                        <form action="{{route('order.create')}}" method="post">
+                            @csrf
+                            <input type="text" name="slug" value="{{$product->slug}}" style="display: none">
+                            <div class="form-group">
+                                <label>Giới tính:</label>
+                                <div class="radio">
+                                    <label><input type="radio" name="gender"> Nam</label>
+                                    <label><input type="radio" name="gender"> Nữ</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Họ và tên:<span class="required">*</span></label>
+                                <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username">
+                                @error('username')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại:<span class="required">*</span></label>
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone">
+                                @error('phone')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:<span class="required">*</span></label>
+                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email">
+                                @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Địa chỉ giao hàng/ ghi chú:<span class="required">*</span></label>
+                                <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" id="address">
+                                @error('address')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <button type="submit" class="btn btn-primary p-2 w-25 d-block order-submit">ĐẶT HÀNG</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 </section>
 @endsection

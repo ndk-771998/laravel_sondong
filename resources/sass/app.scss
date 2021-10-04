@@ -6,21 +6,29 @@
 @import "./ui/font";
 @import "./ui/color";
 @import "./ui/button";
+@import "./mixins/text.scss";
+@import "./includes/product-item.scss";
+@import "./includes/product-list.scss";
+@import "./includes/breadcrumb.scss";
+@import "./includes/sidebar-filter.scss";
 @import "./page/about";
 @import "./page/cart";
 @import "./page/contact";
 @import "./page/content";
+@import "./page/customer-media";
 @import "./page/footer";
 @import "./page/forgot-password";
 @import "./page/header";
 @import "./page/home";
 @import "./page/login";
 @import "./page/new-detail";
+@import "./page/flash-sale";
 @import "./page/news";
 @import "./page/product";
 @import "./page/registration";
 @import "./page/service";
 @import "./page/search";
+@import "./page/page";
 @import "./comments/comment";
 @import "./orders/cart";
 @import "./page/account";
@@ -30,7 +38,7 @@
 @import "./page/error-404";
 body {
     color: $default_text_color;
-    background-color: $default_bg_color;
+    background-color: $bg_color;
     font-size: $font_size_normal;
     font-family: SegoeUI;
     header {
@@ -39,56 +47,35 @@ body {
         }
 
     }
-    footer {
-        padding-top: 20px;
-        background: $main_footer_bg_color;
-        color: #fff;
-
-        a {
-            color: #fff;
-
-            &:hover {
-                color: #2980b9;
-                text-decoration: none;
-            }
-
-        }
-
-    }
     .pagination {
-        .page-item.active {
-            .page-link {
-                background-color: #fff;
-                color: #fb728b;
-                border: 1px solid #d8d8d8;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .page-item.active,  .page-item:hover{
+            .page-link, .page-link.no-border{
+                background-color: $default_bg_color;
+                color: $default_link_color;
+                border: 1px solid $default_link_color;
             }
 
         }
 
         .page-item {
             .page-link {
-                background-color: #fff;
-                color: #707070;
-                border: 1px solid #d8d8d8;
-                font-weight: bold;
+                background-color: transparent;
+                color: $default_input_color;
+                border: 1px solid $default_input_color;
+                font-size: $font_size_smaller;
+                border-radius: 2px;  
+                padding: 4px 9px;
+                margin: 5px;
+
+                &.no-border {
+                    border-color: transparent;
+                    font-size: 10px;
+                }
             }
-
         }
-
-        img {
-            width: 12px;
-            color: #6c757d;
-            margin-top: -2px;
-        }
-
-        .soft {
-            height: 10px;
-        }
-
-        a {
-            color: #6c757d;
-        }
-
     }
-
 }

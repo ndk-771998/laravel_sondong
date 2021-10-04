@@ -3,7 +3,8 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-
+use App\Entities\User;
+use Illuminate\Support\Facades\DB;
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -33,6 +34,13 @@ class UsersTableSeeder extends Seeder
                 'verify_token' => Hash::make('vicoders@vicoders.com'),
             ],
         ]);
+        DB::table('roles')->insert([
+            ["name" => "Superadmin","slug" => "superadmin","description" => "","status" => "0","level" => "1"],
+        ]);
+        DB::table('role_user')->insert([
+            ["role_id" => 1,"user_id" => 1],
+        ]);
+
     }
 
 }

@@ -16,9 +16,11 @@ class Post extends BasePost
     public function postTypes()
     {
         return [
-            'Địa điểm cưới lãng mạn' => "place",
-            'Hỗ trợ tiệc cưới'       => "exhibition",
-            'trang'                  => 'pages',
+            'Chính sách'            => 'policy',
+            'Khuyến mại'            => 'promotion',
+            'Giới thiệu'            => 'aboutus',
+            'Dịch vụ sửa chữa'      => 'repairservice',
+            // 'Cảm nhận khách hàng'   => 'customerfeedback',
         ];
     }
 
@@ -26,26 +28,71 @@ class Post extends BasePost
     {
         return Str::limit($this->name, $limit);
     }
-    public function exhibitionSchema()
+
+    public function contactSchema()
     {
         return [
-            'is_hot' => [
-                'type'  => 'string',
-                'label' => 'Nổi bật',
+            'seo_title' => [
+                'type'  => 'text',
+                'label' => 'Tiêu đề SEO',
+                'rule'  => [],
+            ],
+            'seo_desc' => [
+                'type'  => 'textarea',
+                'label' => 'Mô tả SEO',
                 'rule'  => [],
             ],
         ];
     }
-    public function placeSchema()
+
+    public function repairserviceSchema()
     {
         return [
-            'is_hot' => [
-                'type'  => 'string',
-                'label' => 'Nổi bật',
+            'seo_title' => [
+                'type'  => 'text',
+                'label' => 'Tiêu đề SEO',
+                'rule'  => [],
+            ],
+            'seo_desc' => [
+                'type'  => 'textarea',
+                'label' => 'Mô tả SEO',
                 'rule'  => [],
             ],
         ];
     }
+
+    public function policySchema()
+    {
+        return [
+            'seo_title' => [
+                'type'  => 'text',
+                'label' => 'Tiêu đề SEO',
+                'rule'  => [],
+            ],
+            'seo_desc' => [
+                'type'  => 'textarea',
+                'label' => 'Mô tả SEO',
+                'rule'  => [],
+            ],
+        ];
+    }
+
+    public function promotionSchema()
+    {
+        return [
+            'seo_title' => [
+                'type'  => 'text',
+                'label' => 'Tiêu đề SEO',
+                'rule'  => [],
+            ],
+            'seo_desc' => [
+                'type'  => 'textarea',
+                'label' => 'Mô tả SEO',
+                'rule'  => [],
+            ],
+        ];
+    }
+
     public function scopeGetBy($query, $type, $status)
     {
         return $query->where('type', $type)->where('status', $status)->orderBy('id', 'desc');

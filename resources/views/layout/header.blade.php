@@ -2,61 +2,117 @@
     <div class="header-top">
         <div class="container">
             <div class="row align-items-center">
-                <div class=" col-12 col-md-8">
+                <div class=" col-3 col-lg-2">
                     <a href="/"><img src="{{getOption('header-logo')}}" title="Quay lại trang chủ" class="logo"
                             alt="logo"></a></div>
-                <div class="col-12 col-md-4">
-                    <div class="row justify-content-end">
-                        <div class="col-4 col-md-2"><a href="/search" title='Tìm kiếm'><img
-                                    src="https://img.icons8.com/ios/50/707070/search--v1.png" alt="searh-logo-icon"
-                                    class="icon-header"></a>
+                <div class="col-9 col-lg-5">
+                    <form action="{{ route('search') }}" method="get">
+                        <div class="input-group d-flex justify-content-start header-search-wrap">
+                            <button type="submit" class="btn d-flex input-group-append" title='Tìm kiếm'><img
+                                    src="/assets/images/logo/search.svg" alt=""></button>
+                            <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control">
                         </div>
-                        <div class="col-4 col-md-2" title='Giỏ hàng'>@include('order::cartIcon')</div>
-                        {{-- <div class="col-4 col-md-2 d-flex justify-content-center align-items-center">
-                            @if (Auth::check())
-                            <a href="account"><img src="/assets/images/logo/logic.png" class="icon-header"></a>
-                            @else
-                            <div class="login">
-                                <a href="{{url('login')}}"><img src="/assets/images/logo/loginn.png"
-                            class="icon-header"></a>
+                    </form>
+                </div>
+                <div class="col-lg-5 d-flex justify-content-end">
+                    <div class="giao-hang-toan-quoc-wrap">
+                        <img src="/assets/images/logo/giao-hang-toan-quoc.svg" alt="">
+                        Giao hàng toàn quốc
                     </div>
-                    @endif
-                </div> --}}
+                    <div class="header-hotline-wrap">
+                        <div class="d-flex flex-row">
+                            <div class="header-hotline-logo">
+                                <img src="/assets/images/logo/header-hotline.svg" alt="">
+                            </div>
+                            <div class="">
+                                <div class="header-hotline-label">Đường dây nóng</div>
+                                <div class="header-hotline-number">1900.265.1254</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
     </div>
     <div class="header-nav">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-7">
-                    <div class="row nav">
+                <div class="col-12">
+                    <div class="nav">
                         @foreach($menus_header->menuItems as $menu)
-                        <a href="{!! $menu->link !!}" id="menu-{!! $menu->id  !!}" data-id="{!! $menu->id !!}"
-                            data-name="{!! $menu->link !!}" title="{!! $menu->label !!}"
-                            class="menu-item col-4 col-md-2">{!! $menu->label !!}</a>
+
+                        @if (count($menu->subMenus))
+                        <a href="{!! $menu->link ? $menu->link : '#' !!}" id="menu-{!! $menu->id  !!}"
+                            data-id="{!! $menu->id !!}" data-name="{!! $menu->link !!}" title="{!! $menu->label !!}"
+                            class="menu-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            {{$menu->label}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="menu-{!! $menu->id  !!}">
+
+                            @foreach ($menu->subMenus as $sub_menu_lvl_2)
+                            <div class="dropright">
+                                <a class="dropdown-item custom-dropdown-toggle" href="{{$sub_menu_lvl_2->link ? $sub_menu_lvl_2->link : '#'}}" id="menu-{!! $menu->id  !!}-{!! $sub_menu_lvl_2->id!!}">
+                                    {{$sub_menu_lvl_2->label}}
+                                    @if (count($sub_menu_lvl_2->subMenus))
+                                        <img class="dropright-chevron" src="/assets/images/logo/chevron-up.svg" alt="chevron">
+                                    @endif
+                                </a>
+
+                                @if (count($sub_menu_lvl_2->subMenus))
+                                <div class="dropdown-menu-broad d-flex justify-content-row" custom-data-toggle="menu-{!! $menu->id  !!}-{!! $sub_menu_lvl_2->id!!}">
+                                    @foreach ($sub_menu_lvl_2->subMenus as $sub_menu_lvl_3)
+                                    <div class="dropdown-menu-broad-item">
+                                        <a class="menu-broad-header" href="{{ $sub_menu_lvl_3->link }}"> {{$sub_menu_lvl_3->label}}</a>
+                                        @if (count($sub_menu_lvl_3->subMenus))
+                                        @foreach ($sub_menu_lvl_3->subMenus as $item)
+                                        <a href="{{ $item->link }}">{{$item->label}}</a>
+                                        @endforeach
+                                        @endif
+                                    </div>
+                                    @endforeach
+                                </div>
+                                @endif
+                            </div>
+                            @endforeach
+
+                        </div>
+                        @else
+                        <a href="{!! $menu->link ? $menu->link : '#' !!}" id="menu-{!! $menu->id  !!}"
+                            class="menu-item">{{$menu->label}}</a>
+                        @endif
+
                         @endforeach
                     </div>
-                    <div class="nav-mini"><a class="nav-mini-icon" data-toggle="dropdown" href="#"><img class="lazyload"
-                                data-src="/assets/images/logo/menuhd.png" alt=""></a>
-                        <div class="dropdown-menu bg-white">
+                    <div class="nav-mini">
+                        <a class="nav-mini-icon" href="#">
+                            <img class="lazyload" data-src="/assets/images/logo/menuhd.png" alt="menu-mobile-toggle">
+                        </a>
+                        <div class="menu-mini">
+                            <a href="/"><img src="{{getOption('header-logo')}}" title="Quay lại trang chủ" class="logo"
+                                alt="logo"></a>
                             @foreach($menus_header->menuItems as $menu)
-                            <a href="{!! $menu->link !!}" class="menu-item dropdown-item">{!! $menu->label !!}</a>
+
+                                @if (count($menu->subMenus))
+                                <a href="{!! $menu->link ? $menu->link : '#'!!}" class="menu-mini-item-toggle menu-item" id="menu-mini-{{$menu->id}}">
+                                    {!! $menu->label !!}
+                                    <img class="dropdown-chevron" src="/assets/images/logo/chevron-up.svg" alt="chevron">
+                                </a>
+
+                                <div class="dropdown-menu-mini" data-mini-toggle="menu-mini-{{$menu->id}}">
+                                    @foreach ($menu->subMenus as $sub_menu)
+                                    <a class="dropdown-item" href="{{$sub_menu->link ? $sub_menu->link : '#'}}">{{$sub_menu->label}}</a>    
+                                    @endforeach
+                                </div>
+                                @else
+                                <a href="{!! $menu->link ? $menu->link : '#'!!}" class="menu-item dropdown-item">{!! $menu->label !!}</a>
+                                @endif
+
                             @endforeach
                         </div>
+
+                        <div class="faded-menu-mini"></div>
                     </div>
-                </div>
-                <div class="col-5">
-                    <form action="{{ route('search') }}" method="get">
-                        <div class="input-group d-flex justify-content-end ">
-                            <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control col-md-7">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn d-flex" title='Tìm kiếm'><i
-                                        class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

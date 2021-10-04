@@ -3,77 +3,61 @@
 <title>{!! getOption('san-pham-title') !!}</title>
 @endsection
 @section('content')
-<nav aria-label="breadcrumb" id="breadcrumb">
-    <div class="container">
-        <ul class="custom-breadcrumb m-0">
-            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-            <li class="breadcrumb-item">Sản phẩm</li>
-        </ul>
-    </div>
-</nav>
+
 <section>
-    <div class="container">
-        <div class="main">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-3">
-                    @include('layout.nav-left')
+    <div class="container product-container" id="anchor-name">
+        <div class="product-wrap row-padding-12px">
+            <div class="col-padding-12px w-100">
+                @include('include.breadcrumb', ['breadcrumb' => ['Sản phẩm' => '/products', 'HP Book ...']])
+            </div>
+
+            <div class="sidebar col-padding-12px">
+                @include('include.sidebar-filter')
+
+                @if (count($manufacturers))
+                <div class="title">
+                    Hãng sản xuất
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="home">
-                        <div class="product" id="product">
-                            <div class="row">
-                                <div class="col-4">
-                                    <h5>SẢN PHẨM</h5>
-                                </div>
-                                <div class="col-8  d-flex justify-content-end">
-                                    <select id="orderProductsSelect" class="col-4" name="order_by">
-                                        <option>Sắp xếp</option>
-                                        <option value="created_at|desc"
-                                            {{ $activeFilter === 'created_at|desc' ? 'selected' : '' }}>Mới nhất
-                                        </option>
-                                        <option value="is_hot|desc"
-                                            {{ $activeFilter === 'is_hot|desc' ? 'selected' : '' }}>Hot nhất</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="row">
-                                @foreach($products_custom as $product)
-                                <div class="col-6 col-md-4">
-                                    <a href="/product/{!! $product->slug !!}">
-                                        <div class="d-flex flex-column justify-content-center product-item">
-                                            <div class="product-img">
-                                                <img class="lazyload" data-src="{!! $product->thumbnail !!}"
-                                                    alt="{!! $product->name !!}">
-                                            </div>
-                                            <div class="product-title">
-                                                <h6>{!! $product->name !!}</h6>
-                                            </div>
-                                            <div class="product_author">
-                                                <p>Nhà thiết kế: {!! $product->getMetafield('brand_name') !!}</p>
-                                            </div>
-                                            <div class="product-price d-flex justify-content-between">
-                                                <div class="price">
-                                                    <p>{!! number_format($product->price) !!} đ</p>
-                                                </div>
-                                                <div class="original_price">
-                                                    {!!number_format($product->original_price)!!} đ</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                @endforeach
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                {{-- {{ $products->fragment('product')->links('include.pagination') }} --}}
-                                {{ $products_custom->appends($_GET)->render('include.pagination') }}
-                            </div>
+                <div class="filter">
+                    <form action="/search" method="GET" id="filter-manufacturer-form">
+                        @foreach ($manufacturers as $manufacturer)
+                        <div class="form-check">
+                            <input type="checkbox" name="manufacturer"
+                                class="form-check-input filter-manufacturer-submit" value="{{ $manufacturer->slug }}" id="{{ $manufacturer->slug }}">
+                            <label class="form-check-label" for="{{ $manufacturer->slug }}">{{ $manufacturer->name }}</label>
                         </div>
+                        @endforeach
+                    </form>
+                </div>
+                @endif
+                
+            </div>
+            <div class="main col-padding-12px">
+                <div class="breadcrumb d-flex flex-row align-items-center">
+                    <div class="label">
+                        Laptop mới
+                    </div>
+                    <div class="ml-auto order-by">
+                        Sắp xếp theo:
+                        <select name="order_by" id="filter_order_by">
+                            <option value="price_asc">Giá từ cao đến thấp</option>
+                            <option value="price_desc">Giá từ thấp đến cao</option>
+                        </select>
                     </div>
                 </div>
-                <div class="col-12 col-md-3">
-                    @include('layout.nav-right')
+
+                <div class="products" id="viewProductDefault">
+                    @foreach ($products as $product)
+                    @include('include.product.product-item', ['product' => $product])
+                    @endforeach
+
+                    <div class="d-flex justify-content-center w-100">
+                        {{ $products->links('include.pagination') }}
+                    </div>
+
                 </div>
             </div>
+        </div>
+        <input type="text" style="display: none" name="product_type" value="{{ $product_type }}" id="product_type">
 </section>
 @endsection

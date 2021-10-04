@@ -1,39 +1,74 @@
 .footer {
-    margin-top: 5%;
-    min-height: 100px;
-    background: #f6f6f6;
-    padding: 2% 0 1% 0;
+    background: $main_footer_bg_color;
 
-    p {
-        color: #707070;
-    }
+    .main-footer {
+        padding-bottom: 26.5px;
+        padding-top: 30px;
+        border-bottom: 1px solid $default_border_color;
 
-    .logo {
-        margin-bottom: 15px;
-        width: 255px;
-        height: 60px;
-        object-fit: cover;
-    }
-
-    .contact {
-        height: 70%;
-
-        i {
-            color: pink;
+        .col-title {
+            color: $default_text_color;  
+            height: 24px;
+            font-size: $font_size_large;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
-        img{
-            margin-right:20px;
+
+        a {
+            color: $default_bottom_link_color;
+            font-size: 14px;
+            margin-bottom: 10px;
+
+            p {
+                margin-bottom: 0px;
+            }
+        }
+
+        .contact {
+            span {
+                border-radius: 50%;
+                background-color: $default_input_bg_color;
+                display: flex;
+                height: 40px;
+                width: 40px;
+                margin-right: 30px;
+                font-size: $font_size_small;
+
+                img {
+                    padding: 10px;
+                    border: 50%;
+                }
+            }
+
+            a[title~="facebook"] span {
+                background-color: #005ad1;
+            }
+
+            a[title~="youtube"] span {
+                background-color: #cf0e0e;
+            }
+
+            a[title~="linkedIn"] span {
+                background-color: #007ab9;
+            }
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: auto;
         }
     }
 
-    .title {
-        text-align: start;
-        color: #707070;
+    .bottom-footer {
+        color: $default_text_color;
+        font-size: $font_size_small;
+        padding: 15px 0px 0px;
+        a {
+            color: $default_link_color;
+        }
+        &>div {
+            margin-bottom: 30px;
+        }
     }
-
-    .note {
-        margin-top: 1%;
-        color:#707070;
-    }
-
 }
