@@ -11,29 +11,26 @@ $factory->define(Post::class, function (Faker $faker) {
         'description' => $faker->sentences(rand(3, 4), true),
         'content'     => $faker->paragraphs(rand(4, 7), true),
         'status'      => Arr::random($status),
+        'thumbnail'         => $faker->randomElement([
+            '/assets/images/products/printer-1.png',
+            '/assets/images/products/printer-2.png',
+            '/assets/images/products/printer-3.png',
+            '/assets/images/products/printer-4.png',
+            '/assets/images/products/printer-5.png',
+            '/assets/images/products/laptop-1.png',
+            '/assets/images/products/laptop-2.png',
+            '/assets/images/products/laptop-3.png',
+            '/assets/images/products/laptop-4.png',
+            '/assets/images/products/laptop-5.png',
+            '/assets/images/products/laptop-6.png',
+            '/assets/images/products/laptop-7.png',
+            '/assets/images/products/laptop-8.png',
+        ]),
     ];
 });
 
-$factory->state(Post::class, 'slides', function () {
+$factory->state(Post::class, 'customermedias', function () {
     return [
-        'type' => 'slides',
-    ];
-});
-
-$factory->state(Post::class, 'place', function () {
-    return [
-        'type' => 'place',
-    ];
-});
-
-$factory->state(Post::class, 'exhibition', function () {
-    return [
-        'type' => 'exhibition',
-    ];
-});
-
-$factory->state(Post::class, 'pages', function () {
-    return [
-        'type' => 'pages',
+        'type' => 'customermedias',
     ];
 });

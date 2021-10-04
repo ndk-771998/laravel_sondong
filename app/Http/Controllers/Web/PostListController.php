@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Entities\Post;
+use App\Entities\Product;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
@@ -12,6 +13,12 @@ use VCComponent\Laravel\Post\Http\Controllers\Web\PostListController as BasePost
 
 class PostListController extends BasePostListController implements ViewPostListControllerInterface
 {
+    protected function beforeQuery(Request $request) {
+        $request->merge([
+            'per_page' => 12,
+        ]);
+    }
+
     public function viewPolicy() 
     {
         return 'pages.page';
@@ -113,6 +120,22 @@ class PostListController extends BasePostListController implements ViewPostListC
             'post'              => $post,
             'post_type_label'   => $post_type_label,
             'posts_menu'        => $posts_menu,
+        ];
+    }
+    
+    public function viewCustomermedias() 
+    {
+        return 'pages.customer-medias';
+    }
+
+    public function viewDataCustomermedias($posts, Request $request)
+    {
+        $posts = Post::where('type', 'customermedias')->paginate(12);
+        $products_best_buy = Product::where('status', 1)->orderBy('sold_quantity')->limit(5)->get();
+
+        return [
+            'posts' => $posts,
+            'products_best_buy' => $products_best_buy
         ];
     }
 }
