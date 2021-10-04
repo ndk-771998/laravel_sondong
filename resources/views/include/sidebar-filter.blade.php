@@ -30,32 +30,3 @@
         </div>
     </form>
 </div>
-
-
-<div class="title">
-    Hãng sản xuất
-</div>
-<div class="filter">
-    <form action="/search" method="GET" id="filter-manufacturer-form">
-        <div class="form-check">
-            <input type="checkbox" name="manufacturer" class="form-check-input filter-manufacturer-submit" value="asus" id="asus">
-            <label class="form-check-label" for="asus">Asus</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="manufacturer" class="form-check-input filter-manufacturer-submit" value="dell" id="dell">
-            <label class="form-check-label" for="dell">Dell</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="manufacturer" class="form-check-input filter-manufacturer-submit" value="lenovo" id="lenovo">
-            <label class="form-check-label" for="lenovo">Lenovo</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="manufacturer" class="form-check-input filter-manufacturer-submit" value="hp" id="hp">
-            <label class="form-check-label" for="hp">Hp</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="manufacturer" class="form-check-input filter-manufacturer-submit" value="acer" id="acer">
-            <label class="form-check-label" for="acer">Acer</label>
-        </div>
-    </form>
-</div>

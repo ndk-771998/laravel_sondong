@@ -41480,11 +41480,12 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     var page = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
     price = jquery__WEBPACK_IMPORTED_MODULE_2___default()("form#filter-price-form").serialize();
     manufacturer = jquery__WEBPACK_IMPORTED_MODULE_2___default()("form#filter-manufacturer-form").serialize();
-    console.log(manufacturer);
     var url = "/ajax-search";
     var val = "";
     var category_url = "";
     var search = new URLSearchParams(window.location.search).get('search');
+    var product_type = jquery__WEBPACK_IMPORTED_MODULE_2___default()("#product_type").attr('value');
+    var product_category = jquery__WEBPACK_IMPORTED_MODULE_2___default()("#product_category").attr('value');
     jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
       headers: {
         "X-CSRF-TOKEN": jquery__WEBPACK_IMPORTED_MODULE_2___default()('meta[name="csrf-token"]').attr("content")
@@ -41499,7 +41500,9 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
         category_url: category_url,
         page: page,
         search: search,
-        manufacturer: manufacturer
+        product_type: product_type,
+        manufacturer: manufacturer,
+        product_category: product_category
       },
       success: function success(data) {
         jquery__WEBPACK_IMPORTED_MODULE_2___default()("#viewProductDefault").html(data);

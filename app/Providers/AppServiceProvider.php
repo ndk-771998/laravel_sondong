@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Entities\Post;
 use App\Entities\Product;
 use App\Http\Controllers\Web\CartController;
+use App\Http\Controllers\Web\CategoryDetailController;
 use App\Http\Controllers\Web\OrderController;
 use App\Http\Controllers\Web\PostDetailController;
 use App\Http\Controllers\Web\PostListController;
@@ -17,6 +18,7 @@ use App\Http\View\Composers\OptionComposer;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use VCComponent\Laravel\Category\Contracts\ViewCategoryDetailControllerInterface;
 use VCComponent\Laravel\Order\Contracts\ViewCartControllerInterface;
 use VCComponent\Laravel\Order\Contracts\ViewOrderControllerInterface;
 use VCComponent\Laravel\Post\Contracts\ViewPostDetailControllerInterface;
@@ -41,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ViewPostDetailControllerInterface::class, PostDetailController::class);
         $this->app->bind(ViewCartControllerInterface::class, CartController::class);
         $this->app->bind(ViewOrderControllerInterface::class, OrderController::class);
+        $this->app->bind(ViewCategoryDetailControllerInterface::class, CategoryDetailController::class);
     }
 
     /**
