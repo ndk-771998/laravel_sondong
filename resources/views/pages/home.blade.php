@@ -100,33 +100,14 @@
             </div>
 
             <div class="customer-picture row align-items-center">
+                @foreach ($customermedias as $item)
                 <div class="col-6 col-sm-4 col-md-3">
-                    <img src="/assets/images/word.png" alt="picture">
+                    <img src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
                 </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                    <img src="/assets/images/LA_4894.png" alt="picture">
-                </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                    <img src="/assets/images/word.png" alt="picture">
-                </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                    <img src="/assets/images/LA_4894.png" alt="picture">
-                </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                    <img src="/assets/images/word.png" alt="picture">
-                </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                    <img src="/assets/images/LA_4894.png" alt="picture">
-                </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                    <img src="/assets/images/word.png" alt="picture">
-                </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                    <img src="/assets/images/LA_4894.png" alt="picture">
-                </div>
+                @endforeach
             </div>
 
-            <a class="btn-primary mb-3" href="#">
+            <a class="btn-primary mb-3" href="/customermedias">
                 Xem tất cả 
                 <img src="/assets/images/logo/chevron-up.svg" alt="chevron">
             </a>

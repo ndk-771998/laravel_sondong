@@ -39,6 +39,7 @@ class HomeController extends Controller
         })->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
         $printer          = Product::where('product_type', 'printer')->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
         $customerfeedbacks = Post::where('type', 'customerfeedback')->where('status', '1')->limit(3)->get();
+        $customermedias = Post::where('type', 'customermedias')->paginate(12);
 
         return view('index', [
             'flash_sale'         => $flash_sale,
@@ -46,6 +47,7 @@ class HomeController extends Controller
             'old_products'            => $old_products,
             'printers'       => $printer,
             'customerfeedbacks' => $customerfeedbacks,
+            'customermedias'    => $customermedias
         ]);
     }
 }
