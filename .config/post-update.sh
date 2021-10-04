@@ -4,7 +4,7 @@ php artisan migrate --force
 # php artisan migrate:refresh --force
 # php artisan db:seed --force
 
-#env DB_DATABASE=db_p16001_v01_webpress_com_vn php artisan migrate --force
+# env DB_DATABASE=db_p16001_v01_webpress_com_vn php artisan migrate --force
 # env DB_DATABASE=db_p16001_v01_webpress_com_vn php artisan migrate:refresh --force
 # env DB_DATABASE=db_p16001_v01_webpress_com_vn php artisan db:seed --force
 
