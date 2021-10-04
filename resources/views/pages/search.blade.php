@@ -35,7 +35,7 @@
                     @endforeach
 
                     <div class="d-flex justify-content-center w-100">
-                        {{ $products->links('include.pagination') }}
+                        {{ $products->links('include.ajax-pagination') }}
                     </div>
                 </div>
             </div>
