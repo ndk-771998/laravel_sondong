@@ -12,93 +12,63 @@ use VCComponent\Laravel\Post\Http\Controllers\Web\PostDetailController as BasePo
 
 class PostDetailController extends BasePostDetailController implements ViewPostDetailControllerInterface
 {
-    public function view()
+    public function viewPolicy() 
     {
-        return 'pages.new-detail';
+        return 'pages.page';
     }
 
-    public function viewData($post, Request $request)
+    public function viewDataPolicy($post, Request $request) 
     {
-        Option::prepare([
-            'ho-tro-truc-tuyen',
-        ]);
-        SEOMeta::setTitle($post->title);
-        SEOMeta::setDescription($post->description);
-        OpenGraph::setTitle($post->title);
-        OpenGraph::setDescription($post->description);
-        OpenGraph::addImage($post->thumbnail);
-        $relatedPosts = Post::ofType('posts')
-            ->where('id', '<>', $post->id)
-            ->latest()
-            ->limit(3)
-            ->get();
-
-        $title        = 'Tin Tức';
-        $urlBreadcumb = 'posts';
-        $comments     = $post->getLatestComment(10)->where('status', 1);
-
+        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', $post->type)->paginate(12);
+        $post_type_label = array_search($post->type ,$post->postTypes());
         return [
-            'title'        => $title,
-            'relatedPosts' => $relatedPosts,
-            'urlBreadcumb' => $urlBreadcumb,
-            'comments'     => $comments,
+            'posts_menu'        => $posts_menu,
+            'post_type_label'  => $post_type_label,
         ];
     }
-
-    public function viewExhibition()
+    
+    public function viewPromotion() 
     {
-        return 'pages.new-detail';
+        return 'pages.page';
     }
 
-    public function viewDataExhibition($post, Request $request)
+    public function viewDataPromotion($post, Request $request) 
     {
-        $title        = 'Hỗ trợ triển lãm cưới';
-        $relatedPosts = Post::ofType('exhibition')
-            ->where('id', '<>', $post->id)
-            ->latest()
-            ->limit(3)
-            ->get();
-
-        $urlBreadcumb = 'exhibition';
-
-        $comments = $post->getLatestComment(10);
-
+        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', $post->type)->paginate(12);
+        $post_type_label = array_search($post->type ,$post->postTypes());
         return [
-            'title'        => $title,
-            'relatedPosts' => $relatedPosts,
-            'urlBreadcumb' => $urlBreadcumb,
-            'comments'     => $comments,
+            'posts_menu'        => $posts_menu,
+            'post_type_label'  => $post_type_label,
         ];
     }
-
-    public function viewPlace()
+    
+    public function viewAboutus() 
     {
-        return 'pages.new-detail';
+        return 'pages.page';
     }
 
-    public function viewDataPlace($post, Request $request)
+    public function viewDataAboutus($post, Request $request) 
     {
-        $title        = 'Địa điểm cưới lãng mạn';
-        $relatedPosts = Post::ofType('place')
-            ->where('id', '<>', $post->id)
-            ->latest()
-            ->limit(3)
-            ->get();
-
-        $urlBreadcumb = 'place';
-
-        $comments = $post->getLatestComment(10);
-
+        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', $post->type)->paginate(12);
+        $post_type_label = array_search($post->type ,$post->postTypes());
         return [
-            'title'        => $title,
-            'relatedPosts' => $relatedPosts,
-            'urlBreadcumb' => $urlBreadcumb,
-            'comments'     => $comments,
+            'posts_menu'        => $posts_menu,
+            'post_type_label'  => $post_type_label,
         ];
     }
-
-    public function viewPages()
+    
+    public function viewRepairservice() 
     {
-        return 'pages.about';
+        return 'pages.page';
+    }
+
+    public function viewDataRepairservice($post, Request $request) 
+    {
+        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', $post->type)->paginate(12);
+        $post_type_label = array_search($post->type ,$post->postTypes());
+        return [
+            'posts_menu'        => $posts_menu,
+            'post_type_label'  => $post_type_label,
+        ];
     }
 }

@@ -1,10 +1,9 @@
 
 <div class="title breadcrumb">
-    chính sách
+    {{ $post_type_label }}
 </div>
 <div class="list">
-    <a href="#">Quy định đổi trả hàng</a>
-    <a href="#">Quy định thanh toán</a>
-    <a href="#">Chính sách giao hàng</a>
-    <a href="#">Hường dẫn mua hàng</a>
+    @foreach ($posts_menu as $item)
+    <a href="/{{ $item->type}}/{{ $item->slug }}">{{ $item->title }}</a>
+    @endforeach
 </div>

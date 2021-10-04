@@ -12,68 +12,107 @@ use VCComponent\Laravel\Post\Http\Controllers\Web\PostListController as BasePost
 
 class PostListController extends BasePostListController implements ViewPostListControllerInterface
 {
-    public function view()
+    public function viewPolicy() 
     {
-        return 'pages.news';
+        return 'pages.page';
     }
 
-    public function viewData($posts, Request $request)
+    public function viewDataPolicy($posts, Request $request)
     {
-        Option::prepare([
-            'tin-tuc-title',
-            'tin-tuc-description',
-            'header-logo',
-            'ho-tro-truc-tuyen',
-        ]);
-        SEOMeta::setTitle(getOption('tin-tuc-title'));
-        SEOMeta::setDescription(getOption('tin-tuc-description'));
-        OpenGraph::setTitle(getOption('tin-tuc-title'));
-        OpenGraph::setDescription(getOption('tin-tuc-description'));
-        OpenGraph::addImage(getOption('header-logo'));
-        $news        = Post::getBy('posts', '1')->paginate(6);
-        $title       = 'Tin Tức';
-        $urlRedirect = 'posts';
+        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', 'policy')->paginate(12);
 
+        $post = new Post();
+        $post_type_label = array_search('policy' ,$post->postTypes());
+        
+        if(count($posts)) {
+            return [
+                'post'              => $posts[0],
+                'posts_menu'        => $posts_menu,
+                'post_type_label'   => $post_type_label,
+            ];
+        }
         return [
-            'result'      => $news,
-            'title'       => $title,
-            'urlRedirect' => $urlRedirect,
+            'post'              => $post,
+            'post_type_label'   => $post_type_label,
+            'posts_menu'        => $posts_menu,
         ];
     }
-
-    public function viewExhibition()
+    
+    public function viewPromotion() 
     {
-        return 'pages.news';
+        return 'pages.page';
     }
 
-    public function viewDataExhibition($posts, Request $request)
+    public function viewDataPromotion($posts, Request $request)
     {
-        $news        = Post::getBy('exhibition', '1')->paginate(6);
-        $title       = 'Hỗ trợ triển lãm cưới';
-        $urlRedirect = 'exhibition';
+        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', 'promotion')->paginate(12);
 
+        $post = new Post();
+        $post_type_label = array_search('promotion' ,$post->postTypes());
+        
+        if(count($posts)) {
+            return [
+                'post'              => $posts[0],
+                'posts_menu'        => $posts_menu,
+                'post_type_label'   => $post_type_label,
+            ];
+        }
         return [
-            'result'      => $news,
-            'title'       => $title,
-            'urlRedirect' => $urlRedirect,
+            'post'              => $post,
+            'post_type_label'   => $post_type_label,
+            'posts_menu'        => $posts_menu,
         ];
     }
-
-    public function viewPlace()
+    
+    public function viewAboutus() 
     {
-        return 'pages.news';
+        return 'pages.page';
     }
 
-    public function viewDataPlace($posts, Request $request)
+    public function viewDataAboutus($posts, Request $request)
     {
-        $news        = Post::getBy('place', '1')->paginate(6);
-        $title       = 'Địa điểm cưới lãng mạng';
-        $urlRedirect = 'place';
+        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', 'aboutus')->paginate(12);
 
+        $post = new Post();
+        $post_type_label = array_search('aboutus' ,$post->postTypes());
+        
+        if(count($posts)) {
+            return [
+                'post'              => $posts[0],
+                'posts_menu'        => $posts_menu,
+                'post_type_label'   => $post_type_label,
+            ];
+        }
         return [
-            'result'      => $news,
-            'title'       => $title,
-            'urlRedirect' => $urlRedirect,
+            'post'              => $post,
+            'post_type_label'   => $post_type_label,
+            'posts_menu'        => $posts_menu,
+        ];
+    }
+    
+    public function viewRepairservice() 
+    {
+        return 'pages.page';
+    }
+
+    public function viewDataRepairservice($posts, Request $request)
+    {
+        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', 'repairservice')->paginate(12);
+
+        $post = new Post();
+        $post_type_label = array_search('repairservice' ,$post->postTypes());
+        
+        if(count($posts)) {
+            return [
+                'post'              => $posts[0],
+                'posts_menu'        => $posts_menu,
+                'post_type_label'   => $post_type_label,
+            ];
+        }
+        return [
+            'post'              => $post,
+            'post_type_label'   => $post_type_label,
+            'posts_menu'        => $posts_menu,
         ];
     }
 }
