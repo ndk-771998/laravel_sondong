@@ -13,21 +13,10 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        Option::prepare([
-            'trang-chu-title',
-            'trang-chu-description',
-            'header-logo',
-            'ho-tro-truc-tuyen',
-            'trang-chu-slide-1',
-            'trang-chu-slide-2',
-            'trang-chu-slide-3',
-            'trang-chu-slide-4',
-            'trang-chu-slide-5',
-        ]);
-        SEOMeta::setTitle(getOption('trang-chu-title'));
-        SEOMeta::setDescription(getOption('trang-chu-description'));
-        OpenGraph::setTitle(getOption('trang-chu-title'));
-        OpenGraph::setDescription(getOption('trang-chu-description'));
+        SEOMeta::setTitle(getOption('title-seo-home'));
+        SEOMeta::setDescription(getOption('desc-seo-home'));
+        OpenGraph::setTitle(getOption('title-seo-home'));
+        OpenGraph::setDescription(getOption('desc-seo-home'));
         OpenGraph::addImage(getOption('header-logo'));
 
         $flash_sale          = Product::where('product_type', 'products')->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(10)->get();

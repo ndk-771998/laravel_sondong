@@ -41463,7 +41463,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
       filter("");
     });
   });
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).on("click", ".page-link", function (event) {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).on("click", ".ajax-pagination .page-link", function (event) {
     event.preventDefault();
     var page = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).attr("href").split("page=")[1];
     order_by = document.getElementById('filter_order_by').value;

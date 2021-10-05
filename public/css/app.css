@@ -13714,6 +13714,26 @@ a.text-dark:hover, a.text-dark:focus {
   margin-bottom: 30px;
 }
 
+.home-logos-container .home-logos-wrap .logo-item {
+  background-color: #e9f1fb;
+  padding: 10px;
+  align-items: center;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.home-logos-container .home-logos-wrap .logo-item img {
+  width: 50px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.home-logos-container .home-logos-wrap .logo-item .label {
+  font-size: 16px;
+  color: #232323;
+  font-weight: bold;
+}
+
 .login .main .login-head {
   color: #fb728b;
   font-size: 16px;

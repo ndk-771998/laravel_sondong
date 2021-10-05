@@ -49,7 +49,7 @@ $(document).ready(function() {
         });
     });
 
-    $(document).on("click", ".page-link", function(event) {
+    $(document).on("click", ".ajax-pagination .page-link", function(event) {
         event.preventDefault();
         var page = $(this)
             .attr("href")

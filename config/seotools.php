@@ -9,9 +9,9 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "Wedding Store", // set false to total remove
+            'title'        => "Thiên Thanh", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'Website bán hàng online chuyên váy cưới, hỗ trợ tổ chức tiệc cưới', // set false to total remove
+            'description'  => false, // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [],
             'canonical'    => false, // Set null for using Url::current(), set false to total remove
