@@ -96,24 +96,42 @@
     .nav {
         position: relative;
 
-        a:hover {
-            color: $deep_red_color;
-            transition: 0.25s;
+        >a:hover {
+            padding-left: 40px;
+            background-color: $hover_header_bg_color;
         }
 
         >a {
-            border-left: 1px solid $main_header_color;
+            display: inline-block;
+            height: 60px;
+            padding-top: 18px;
+            position: relative;
+            
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0px;
+                height: 50%;
+                width: 1px;
+                background-color: $default_bg_color;
+                top: 25%;
+            }
         }
     
         >a:first-of-type {
             padding-left: 0px;
-            border-left: none;
+            &:before {
+                content: none;
+            }
+
+            &:hover {
+                padding-left: 10px;
+            }
         }
 
         .dropdown-menu {
             box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
             width: 20%;
-            top: 16px !important;
             border-radius: 0px;
             border: none;
 
@@ -133,6 +151,10 @@
                 text-align: left;
                 padding: 12px 14px;
                 border-bottom: 1px solid $bg_color;
+                
+                &:hover {
+                    padding-left: 22px;
+                }
             }
 
             .dropdown-menu-broad {
@@ -165,6 +187,7 @@
 
                         &:hover {
                             background-color: $bg_color;
+                            padding-left: 15px;
                         }
                     }
                 }
