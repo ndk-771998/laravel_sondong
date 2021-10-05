@@ -299,3 +299,28 @@
         }
     }
 }
+
+.home-logos-container {
+    .home-logos-wrap {
+
+        .logo-item {
+            background-color: $default-product-header-bg-color;
+            padding: 10px;
+            align-items: center;  
+            border-radius: 6px;
+            margin-bottom: 30px;
+
+            img {
+                width: 50px;
+                margin-right: 20px;
+                border-radius: 10px;
+            }
+
+            .label {
+                font-size: $font_size_normal;
+                color: $default_text_color;
+                font-weight: bold;
+            }
+        }
+    }
+}

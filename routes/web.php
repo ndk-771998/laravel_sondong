@@ -30,14 +30,4 @@ Route::get('/ajax-search', 'Web\SearchController@ajaxsearch');
 
 Route::post('/order-create', 'Web\OrderController@create')->name('order.create');
 
-Route::get('/hinh-anh-khach-hang', function () {
-    return  View('pages.customer-medias');
-});
-
-Route::get('/page', function () {
-    return  View('pages.page');
-});
-
-Route::get('/flash-sale', function () {
-    return  View('pages.flash-sale');
-});
+Route::get('/flash-sale', 'Web\FlashsaleController');

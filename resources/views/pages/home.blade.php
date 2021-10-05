@@ -4,14 +4,20 @@
     <div class="banner-container container">
         <div class="row">
             <div class="col-12 col-md-8">
-                <img class="lazyload" data-src="/assets/images/banner1.jpg" alt="banner1">
+                <a href="{{ getOption('link-banner-1')}}">
+                    <img class="lazyload" data-src="{{ getOption('banner-1') }}" alt="banner-home-page-1">
+                </a>
             </div>
             <div class="col-12 col-md-4 d-flex flex-column">
                 <div>
-                    <img class="lazyload" data-src="/assets/images/banner2.jpg" alt="banner2">
+                    <a href="{{getOption('link-banner-2')}}">
+                        <img class="lazyload" data-src="{{ getOption('banner-2') }}" alt="banner-home-page-2">
+                    </a>
                 </div>
                 <div class="mt-auto">
-                    <img class="lazyload" data-src="/assets/images/banner3.jpg" alt="banner3">
+                    <a href="{{ getOption('link-banner-3') }}">
+                        <img class="lazyload" data-src="{{ getOption('banner-3') }}" alt="banner-home-page-3">
+                    </a>
                 </div>
             </div>
         </div>
@@ -70,21 +76,21 @@
                         <div class="video-left">
                             <div class="d-flex flex-row video">
                                 <div class="">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/UPOT2tgY9QQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    {!! getOption('video-1') !!}
                                 </div>
-                                <div class=" video-title">(Review) Lenovo Ideapad 5 (2021) Phá Đảo tầm giá 15 Triệu...!!!</div>
+                                <div class=" video-title">{{ getOption('title-video-1')}}</div>
                             </div>
                             <div class="d-flex flex-row video">
                                 <div class="">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/UPOT2tgY9QQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    {!! getOption('video-2') !!}
                                 </div>
-                                <div class=" video-title">(Review) Lenovo Ideapad 5 (2021) Phá Đảo tầm giá 15 Triệu...!!!</div>
+                                <div class=" video-title">{{ getOption('title-video-2')}}</div>
                             </div>
                         </div>
                         <div class="video-right video">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/OpQFFLBMEPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            {!! getOption('video-3') !!}
                             <div class="video-title">
-                                (Review) Lenovo Ideapad 5 (2021) Phá Đảo tầm giá 15 Triệu...!!!
+                                {{ getOption('title-video-3')}}
                             </div>
                         </div>
                     </div>
@@ -111,6 +117,51 @@
                 Xem tất cả 
                 <img src="/assets/images/logo/chevron-up.svg" alt="chevron">
             </a>
+        </div>
+    </div>
+
+    <div class="home-logos-container container">
+        <div class="home-logos-wrap row-padding-16px">
+            <div class="col-padding-16px col-md-3 col-6">
+                <div class="d-flex flex-row logo-item">
+                    <div class="logo">
+                        <img src="{{ getOption('logo-giam-gia') }}" alt="logo-giam-gia">
+                    </div>
+                    <div class="label">
+                        Giảm giá cực sốc
+                    </div>
+                </div>
+            </div>
+            <div class="col-padding-16px col-md-3 col-6">
+                <div class="d-flex flex-row logo-item">
+                    <div class="logo">
+                        <img src="{{ getOption('logo-van-chuyen') }}" alt="logo-van-chuyen">
+                    </div>
+                    <div class="label">
+                        Miễn phí vận chuyển
+                    </div>
+                </div>
+            </div>
+            <div class="col-padding-16px col-md-3 col-6">
+                <div class="d-flex flex-row logo-item">
+                    <div class="logo">
+                        <img src="{{ getOption('logo-khach-hang-tin-dung') }}" alt="logo-khach-hang-tin-dung">
+                    </div>
+                    <div class="label">
+                        Khách hàng tin dùng
+                    </div>
+                </div>
+            </div>
+            <div class="col-padding-16px col-md-3 col-6">
+                <div class="d-flex flex-row logo-item">
+                    <div class="logo">
+                        <img src="{{ getOption('logo-bao-hanh') }}" alt="logo-bao-hanh">
+                    </div>
+                    <div class="label">
+                        Bảo hành dài hạn
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

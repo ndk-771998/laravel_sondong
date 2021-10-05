@@ -29,16 +29,10 @@ class ProductListController extends BaseProductListController implements ViewPro
 
     protected function viewData($products, Request $request)
     {
-        Option::prepare([
-            'san-pham-title',
-            'san-pham-description',
-            'header-logo',
-            'ho-tro-truc-tuyen',
-        ]);
-        SEOMeta::setTitle(getOption('san-pham-title'));
-        SEOMeta::setDescription(getOption('san-pham-description'));
-        OpenGraph::setTitle(getOption('san-pham-title'));
-        OpenGraph::setDescription(getOption('san-pham-description'));
+        SEOMeta::setTitle(getOption('title-seo-product'));
+        SEOMeta::setDescription(getOption('desc-seo-product'));
+        OpenGraph::setTitle(getOption('title-seo-product'));
+        OpenGraph::setDescription(getOption('desc-seo-product'));
         OpenGraph::addImage(getOption('header-logo'));
         $query           = Product::where('product_type', 'products');
         $query           = $this->applyOrderByFromRequest($query, $request);
@@ -59,16 +53,10 @@ class ProductListController extends BaseProductListController implements ViewPro
 
     protected function viewDataPrinter($products, Request $request)
     {
-        Option::prepare([
-            'san-pham-title',
-            'san-pham-description',
-            'header-logo',
-            'ho-tro-truc-tuyen',
-        ]);
-        SEOMeta::setTitle(getOption('san-pham-title'));
-        SEOMeta::setDescription(getOption('san-pham-description'));
-        OpenGraph::setTitle(getOption('san-pham-title'));
-        OpenGraph::setDescription(getOption('san-pham-description'));
+        SEOMeta::setTitle(getOption('titlle-seo-product'));
+        SEOMeta::setDescription(getOption('title-seo-product'));
+        OpenGraph::setTitle(getOption('titlle-seo-product'));
+        OpenGraph::setDescription(getOption('title-seo-product'));
         OpenGraph::addImage(getOption('header-logo'));
         $query           = Product::where('product_type', 'printer');
         $query           = $this->applyOrderByFromRequest($query, $request);
@@ -87,18 +75,12 @@ class ProductListController extends BaseProductListController implements ViewPro
 
     protected function viewDataAccessory($products, Request $request)
     {
-        Option::prepare([
-            'san-pham-title',
-            'san-pham-description',
-            'header-logo',
-            'ho-tro-truc-tuyen',
-        ]);
-        SEOMeta::setTitle(getOption('san-pham-title'));
-        SEOMeta::setDescription(getOption('san-pham-description'));
-        OpenGraph::setTitle(getOption('san-pham-title'));
-        OpenGraph::setDescription(getOption('san-pham-description'));
+        SEOMeta::setTitle(getOption('titlle-seo-product'));
+        SEOMeta::setDescription(getOption('title-seo-product'));
+        OpenGraph::setTitle(getOption('titlle-seo-product'));
+        OpenGraph::setDescription(getOption('title-seo-product'));
         OpenGraph::addImage(getOption('header-logo'));
-        $query           = Product::where('product_type', 'accressory');
+        $query           = Product::where('product_type', 'accessory');
         $query           = $this->applyOrderByFromRequest($query, $request);
         $products = $query->where('status', '1')->with('productMetas')->paginate(12);
 

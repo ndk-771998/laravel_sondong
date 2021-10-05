@@ -130,6 +130,12 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewDataCustomermedias($posts, Request $request)
     {
+        SEOMeta::setTitle(getOption('title-seo-customer-media'));
+        SEOMeta::setDescription(getOption('desc-seo-customer-media'));
+        OpenGraph::setTitle(getOption('title-seo-customer-media'));
+        OpenGraph::setDescription(getOption('desc-seo-customer-media'));
+        OpenGraph::addImage(getOption('header-logo'));
+
         $posts = Post::where('type', 'customermedias')->paginate(12);
         $products_best_buy = Product::where('status', 1)->orderBy('sold_quantity')->limit(5)->get();
 

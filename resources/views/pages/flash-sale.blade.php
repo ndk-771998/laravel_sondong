@@ -6,7 +6,7 @@
 
 <section>
     <div class="container flash-sale-banner-container">
-        <img class="lazyload" data-src="/assets/images/word.png" alt="flash banner">
+        <img class="lazyload" data-src="{{ getOption('banner-flash-sale') }}" alt="flash banner">
     </div>
 
     <div class="flash-sale-container container">
