@@ -82,6 +82,7 @@
                 &::-webkit-progress-value {
                     background-color: $default-sale-color;
                     border-radius: 50px;
+                    min-width: 20px;
                 }
 
                 &:after {
