@@ -13189,7 +13189,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav {
-  height: 60px;
+  min-height: 60px;
   background: #0c7eed;
   display: flex;
   align-items: center;
@@ -13209,21 +13209,22 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav .nav > a:hover {
-  padding-left: 40px;
   background-color: #2067C3;
+  transition: ease-in-out 0.25s;
 }
 
 .header-nav .nav > a {
   display: inline-block;
   height: 60px;
-  padding-top: 18px;
+  padding: 18px 20px 20px;
   position: relative;
+  margin: 0px 10px;
 }
 
 .header-nav .nav > a:before {
   content: "";
   position: absolute;
-  left: 0px;
+  left: -10px;
   height: 50%;
   width: 1px;
   background-color: #fff;
@@ -13231,15 +13232,11 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav .nav > a:first-of-type {
-  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .header-nav .nav > a:first-of-type:before {
   content: none;
-}
-
-.header-nav .nav > a:first-of-type:hover {
-  padding-left: 10px;
 }
 
 .header-nav .nav .dropdown-menu {
@@ -13269,6 +13266,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav .nav .dropdown-menu a:hover {
+  transition: ease-in-out 0.25s;
   padding-left: 22px;
 }
 
@@ -13304,6 +13302,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav .nav .dropdown-menu .dropdown-menu-broad .dropdown-menu-broad-item a:hover {
+  transition: ease-in-out 0.25s;
   background-color: #f5f8f7;
   padding-left: 15px;
 }
