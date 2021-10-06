@@ -2,7 +2,7 @@
 
 return [
     [
-        'label'  => 'Header',
+        'label'  => 'Cài đặt chung',
         'inputs' => [
             [
                 'label' => 'Header Logo',
@@ -14,77 +14,35 @@ return [
                 'key'   => 'website-favicon',
                 'type'  => 'image',
             ],
-        ],
-    ],
-    [
-        'label'  => 'Footer',
-        'inputs' => [
             [
-                'label' => 'Footer Logo',
-                'key'   => 'footer-logo',
-                'type'  => 'image',
-            ],
-            [
-                'label' => 'Footer Link Facebook',
-                'key'   => 'footer-logo-facebook-link',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Footer Link Twitter',
-                'key'   => 'footer-logo-twitter-link',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Footer Link Instagram',
-                'key'   => 'footer-logo-instagram-link',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Footer copyright by',
-                'key'   => 'footer-copyright-by',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Footer giấy phép hoạt động',
-                'key'   => 'footer-operating-license',
-                'type'  => 'text',
-            ],
-        ],
-    ],
-    // [
-    //     'label'  => 'Sidebar Right Hotline',
-    //     'inputs' => [
-    //         [
-    //             'label' => 'Bộ phận kỹ thuật',
-    //             'key'   => 'bo-phan-ky-thuat',
-    //             'type'  => 'text',
-    //         ],
-    //         [
-    //             'label' => 'Bộ phận cskh',
-    //             'key'   => 'bo-phan-cham-soc-khach-hang',
-    //             'type'  => 'text',
-    //         ],
-    //     ],
-    // ],
-
-    [
-        'label'  => 'Hỗ trợ trực tuyến',
-        'inputs' => [
-            [
-                'label' => 'Hỗ trợ trực tuyến',
-                'key'   => 'ho-tro-truc-tuyen',
-                'type'  => 'textarea',
-            ],
-        ],
-    ],
-
-    [
-        'label'  => 'Hotline',
-        'inputs' => [
-            [
-                'label' => 'Hotline',
+                'label' => 'Đường dây nóng',
                 'key'   => 'hotline',
                 'type'  => 'text',
+            ],
+            [
+                'label' => 'Video kết nối cùng chúng tôi (footer)',
+                'key'   => 'connective-video',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Liên kết Facebook',
+                'key'   => 'link-facebook',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Liên kết Youtube',
+                'key'   => 'link-youtube',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Liên kết LinkedIn',
+                'key'   => 'link-linkedin',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Thông tin liên hệ (footer)',
+                'key'   => 'website-info',
+                'type'  => 'textarea',
             ],
         ],
     ],
@@ -92,59 +50,94 @@ return [
         'label'  => 'Trang chủ',
         'inputs' => [
             [
-                'label' => 'Trang chủ title',
-                'key'   => 'trang-chu-title',
+                'label' => 'Tiêu đề SEO trang chủ',
+                'key'   => 'title-seo-home',
                 'type'  => 'text',
             ],
             [
-                'label' => 'Trang chủ description',
-                'key'   => 'trang-chu-description',
+                'label' => 'Mô tả SEO trang chủ',
+                'key'   => 'desc-seo-home',
+                'type'  => 'textarea',
+            ],
+            [
+                'label' => 'Banner 1',
+                'key'   => 'banner-1',
+                'type'  => 'image',
+            ],
+            [
+                'label' => 'Đường dẫn banner 1',
+                'key'   => 'link-banner-1',
                 'type'  => 'text',
             ],
             [
-                'label' => 'Tốc độ slide (VD: 2000 = 2 giây)',
-                'key'   => 'trang-chu-speed-slide',
+                'label' => 'Banner 2',
+                'key'   => 'banner-2',
+                'type'  => 'image',
+            ],
+            [
+                'label' => 'Đường dẫn banner 2',
+                'key'   => 'link-banner-2',
                 'type'  => 'text',
             ],
             [
-                'label' => 'slide 1',
-                'key'   => 'trang-chu-slide-1',
+                'label' => 'Banner 3',
+                'key'   => 'banner-3',
                 'type'  => 'image',
             ],
             [
-                'label' => 'slide 2',
-                'key'   => 'trang-chu-slide-2',
-                'type'  => 'image',
-            ],
-            [
-                'label' => 'slide 3',
-                'key'   => 'trang-chu-slide-3',
-                'type'  => 'image',
-            ],
-            [
-                'label' => 'slide 4',
-                'key'   => 'trang-chu-slide-4',
-                'type'  => 'image',
-            ],
-            [
-                'label' => 'slide 5',
-                'key'   => 'trang-chu-slide-5',
-                'type'  => 'image',
-            ],
-        ],
-    ],
-    [
-        'label'  => 'Giới thiệu',
-        'inputs' => [
-            [
-                'label' => 'Giới thiệu title',
-                'key'   => 'gioi-thieu-title',
+                'label' => 'Đường dẫn banner 3',
+                'key'   => 'link-banner-3',
                 'type'  => 'text',
             ],
             [
-                'label' => 'Giới thiệu description',
-                'key'   => 'gioi-thieu-description',
+                'label' => 'Video 1',
+                'key'   => 'video-1',
                 'type'  => 'text',
+            ],
+            [
+                'label' => 'Tiêu đề video 1',
+                'key'   => 'title-video-1',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Video 2',
+                'key'   => 'video-2',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Tiêu đề video 2',
+                'key'   => 'title-video-2',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Video 3',
+                'key'   => 'video-3',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Tiêu đề video 3',
+                'key'   => 'title-video-3',
+                'type'  => 'text',
+            ],
+            [
+                'label' => 'Logo giảm giá',
+                'key'   => 'logo-giam-gia',
+                'type'  => 'image',
+            ],
+            [
+                'label' => 'Logo vận chuyển',
+                'key'   => 'logo-van-chuyen',
+                'type'  => 'image',
+            ],
+            [
+                'label' => 'Logo khách hàng tìn dùng',
+                'key'   => 'logo-khach-hang-tin-dung',
+                'type'  => 'image',
+            ],
+            [
+                'label' => 'Logo bảo hành',
+                'key'   => 'logo-bao-hanh',
+                'type'  => 'image',
             ],
         ],
     ],
@@ -152,99 +145,49 @@ return [
         'label'  => 'Sản phẩm',
         'inputs' => [
             [
-                'label' => 'Sản phẩm title',
-                'key'   => 'san-pham-title',
+                'label' => 'Tiêu đề SEO sản phẩm',
+                'key'   => 'title-seo-product',
                 'type'  => 'text',
             ],
             [
-                'label' => 'Sản phẩm description',
-                'key'   => 'san-pham-description',
-                'type'  => 'text',
-            ],
-        ],
-    ],
-    [
-        'label'  => 'Chi tiết Sản phẩm',
-        'inputs' => [
-            [
-                'label' => 'Chi tiết sản phẩm Hotline',
-                'key'   => 'chi-tiet-san-pham-hot-line',
-                'type'  => 'text',
-            ],
-        ],
-    ],
-    [
-        'label'  => 'Dịch vụ',
-        'inputs' => [
-            [
-                'label' => 'Dịch vụ title',
-                'key'   => 'dich-vu-title',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Dịch vụ description',
-                'key'   => 'dich-vu-description',
-                'type'  => 'text',
-            ],
-        ],
-    ],
-    [
-        'label'  => 'Tin tức',
-        'inputs' => [
-            [
-                'label' => 'Tin tức title',
-                'key'   => 'tin-tuc-title',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Tin tức description',
-                'key'   => 'tin-tuc-description',
-                'type'  => 'text',
-            ],
-        ],
-    ],
-    [
-        'label'  => 'Liên hệ',
-        'inputs' => [
-            [
-                'label' => 'Liên hệ title',
-                'key'   => 'lien-he-title',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Liên hệ description',
-                'key'   => 'lien-he-description',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Liên hệ website title',
-                'key'   => 'lien-he-website-title',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Liên hệ address',
-                'key'   => 'lien-he-address',
-                'type'  => 'text',
-            ],
-            [
-                'label' => 'Liên hệ Google Map',
-                'key'   => 'lien-he-google-map',
+                'label' => 'Mô tả SEO sản phẩm',
+                'key'   => 'desc-seo-product',
                 'type'  => 'textarea',
             ],
         ],
     ],
     [
-        'label'  => 'Giỏ hàng',
+        'label'  => 'Hình ảnh khách hàng',
         'inputs' => [
             [
-                'label' => 'Giỏ hàng title',
-                'key'   => 'gio-hang-title',
+                'label' => 'Tiêu đề SEO hình ảnh khách hàng',
+                'key'   => 'title-seo-customer-media',
                 'type'  => 'text',
             ],
             [
-                'label' => 'Giỏ hàng description',
-                'key'   => 'gio-hang-description',
+                'label' => 'Mô tả SEO hình ảnh khách hàng',
+                'key'   => 'desc-seo-customer-media',
+                'type'  => 'textarea',
+            ],
+        ],
+    ],
+    [
+        'label'  => 'Flash sale',
+        'inputs' => [
+            [
+                'label' => 'Tiêu đề SEO flash sale',
+                'key'   => 'title-seo-flash-sale',
                 'type'  => 'text',
+            ],
+            [
+                'label' => 'Mô tả SEO flash sale',
+                'key'   => 'desc-seo-flash-sale',
+                'type'  => 'textarea',
+            ],
+            [
+                'label' => 'Banner flash sale',
+                'key'   => 'banner-flash-sale',
+                'type'  => 'image',
             ],
         ],
     ],

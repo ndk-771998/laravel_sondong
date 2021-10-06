@@ -26,7 +26,7 @@
                             </div>
                             <div class="">
                                 <div class="header-hotline-label">Đường dây nóng</div>
-                                <div class="header-hotline-number">1900.265.1254</div>
+                                <div class="header-hotline-number">{{ getOption('hotline') }}</div>
                             </div>
                         </div>
                     </div>

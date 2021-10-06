@@ -33,7 +33,7 @@
                         @endforeach
                     </div>
                     <div class="d-flex justify-content-end">
-                        {{ $result->fragment('news')->links('include.pagination') }}
+                        {{ $result->fragment('news')->links('include.ajax-pagination') }}
                     </div>
                 </div>
                 <div class="col-12 col-md-3">

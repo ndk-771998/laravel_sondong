@@ -20,6 +20,7 @@ class Post extends BasePost
             'Khuyến mại'            => 'promotion',
             'Giới thiệu'            => 'aboutus',
             'Dịch vụ sửa chữa'      => 'repairservice',
+            'Hình ảnh khách hàng'   => 'customermedias',
             // 'Cảm nhận khách hàng'   => 'customerfeedback',
         ];
     }

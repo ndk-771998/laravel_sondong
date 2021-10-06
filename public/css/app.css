@@ -12535,6 +12535,7 @@ a.text-dark:hover, a.text-dark:focus {
 .list-product .item-wrap .sell-progress progress::-webkit-progress-value {
   background-color: #ed6318;
   border-radius: 50px;
+  min-width: 20px;
 }
 
 .list-product .item-wrap .sell-progress progress:after {
@@ -13207,24 +13208,43 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative;
 }
 
-.header-nav .nav a:hover {
-  color: #bf1616;
-  transition: 0.25s;
+.header-nav .nav > a:hover {
+  padding-left: 40px;
+  background-color: #2067C3;
 }
 
 .header-nav .nav > a {
-  border-left: 1px solid #fff;
+  display: inline-block;
+  height: 60px;
+  padding-top: 18px;
+  position: relative;
+}
+
+.header-nav .nav > a:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  height: 50%;
+  width: 1px;
+  background-color: #fff;
+  top: 25%;
 }
 
 .header-nav .nav > a:first-of-type {
   padding-left: 0px;
-  border-left: none;
+}
+
+.header-nav .nav > a:first-of-type:before {
+  content: none;
+}
+
+.header-nav .nav > a:first-of-type:hover {
+  padding-left: 10px;
 }
 
 .header-nav .nav .dropdown-menu {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   width: 20%;
-  top: 16px !important;
   border-radius: 0px;
   border: none;
 }
@@ -13246,6 +13266,10 @@ a.text-dark:hover, a.text-dark:focus {
   text-align: left;
   padding: 12px 14px;
   border-bottom: 1px solid #f5f8f7;
+}
+
+.header-nav .nav .dropdown-menu a:hover {
+  padding-left: 22px;
 }
 
 .header-nav .nav .dropdown-menu .dropdown-menu-broad {
@@ -13281,6 +13305,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .header-nav .nav .dropdown-menu .dropdown-menu-broad .dropdown-menu-broad-item a:hover {
   background-color: #f5f8f7;
+  padding-left: 15px;
 }
 
 .header-nav .nav .dropdown-menu .dropdown-menu-broad.show {
@@ -13622,11 +13647,19 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .customer-feedback-container .customer-feedback-wrap .customer-feedback .content {
-  padding: 10px 20px 20px;
+  padding: 20px;
   border-radius: 6px;
   border: solid 1px #08348c;
   position: relative;
   width: 73%;
+  position: relative;
+}
+
+.customer-feedback-container .customer-feedback-wrap .customer-feedback .content .background-quote {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: -1;
 }
 
 .video-thienthanh-container {
@@ -13712,6 +13745,26 @@ a.text-dark:hover, a.text-dark:focus {
 .customer-picture-container .customer-picture-wrap .customer-picture img {
   max-width: 100%;
   margin-bottom: 30px;
+}
+
+.home-logos-container .home-logos-wrap .logo-item {
+  background-color: #e9f1fb;
+  padding: 10px;
+  align-items: center;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.home-logos-container .home-logos-wrap .logo-item img {
+  width: 50px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.home-logos-container .home-logos-wrap .logo-item .label {
+  font-size: 16px;
+  color: #232323;
+  font-weight: bold;
 }
 
 .login .main .login-head {

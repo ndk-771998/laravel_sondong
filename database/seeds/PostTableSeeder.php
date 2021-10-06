@@ -143,5 +143,7 @@ class PostTableSeeder extends Seeder {
                 'thumbnail' => '/assets/images/avatar.jpg',
             ],
         ]);
+
+        factory(Post::class, 30)->state('customermedias')->create();
     }
 }

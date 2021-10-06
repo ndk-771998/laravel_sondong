@@ -31,7 +31,7 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Video kết nối cùng chúng tôi (footer)',
                 'key'   => 'connective-video',
-                'value' => '',
+                'value' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             ],
             [
                 'label' => 'Liên kết Facebook',
@@ -104,12 +104,97 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Video 1',
                 'key'   => 'video-1',
-                'va;ue'  => '',
+                'value'  => '<iframe width="560" height="315" src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             ],
             [
                 'label' => 'Tiêu đề video 1',
                 'key'   => 'title-video-1',
                 'value'  => '(Review) Lenovo Ideapad 5 (2021) Phá Đảo tầm giá 15 Triệu...!!!',
+            ],
+            [
+                'label' => 'Video 2',
+                'key'   => 'video-2',
+                'value'  => '<iframe width="560" height="315" src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            ],
+            [
+                'label' => 'Tiêu đề video 2',
+                'key'   => 'title-video-2',
+                'value'  => '(Review) Lenovo Ideapad 5 (2021) Phá Đảo tầm giá 15 Triệu...!!!',
+            ],
+            [
+                'label' => 'Video 3',
+                'key'   => 'video-3',
+                'value'  => '<iframe width="560" height="315" src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            ],
+            [
+                'label' => 'Tiêu đề video 3',
+                'key'   => 'title-video-3',
+                'value'  => '(Review) Lenovo Ideapad 5 (2021) Phá Đảo tầm giá 15 Triệu...!!!',
+            ],
+            [
+                'label' => 'Logo giảm giá',
+                'key'   => 'logo-giam-gia',
+                'value'  => '/assets/images/logo/logo-giam-gia.jpg',
+            ],
+            [
+                'label' => 'Logo vận chuyển',
+                'key'   => 'logo-van-chuyen',
+                'value'  => '/assets/images/logo/logo-freeship.jpg',
+            ],
+            [
+                'label' => 'Logo khách hàng tìn dùng',
+                'key'   => 'logo-khach-hang-tin-dung',
+                'value'  => '/assets/images/logo/logo-khach-hang-tin-dung.jpg',
+            ],
+            [
+                'label' => 'Logo bảo hành',
+                'key'   => 'logo-bao-hanh',
+                'value'  => '/assets/images/logo/logo-bao-hanh.jpg',
+            ],
+            [
+                'label' => 'Tiêu đề SEO sản phẩm',
+                'key'   => 'title-seo-product',
+                'value'  => '',
+            ],
+            [
+                'label' => 'Mô tả SEO sản phẩm',
+                'key'   => 'desc-seo-product',
+                'value'  => '',
+            ],
+            [
+                'label' => 'Tiêu đề SEO danh mục',
+                'key'   => 'title-seo-category',
+                'value'  => '',
+            ],
+            [
+                'label' => 'Mô tả SEO danh mục',
+                'key'   => 'desc-seo-category',
+                'value'  => '',
+            ],
+            [
+                'label' => 'Tiêu đề SEO hình ảnh khách hàng',
+                'key'   => 'title-seo-customer-media',
+                'value'  => '',
+            ],
+            [
+                'label' => 'Mô tả SEO hình ảnh khách hàng',
+                'key'   => 'desc-seo-customer-media',
+                'value'  => '',
+            ],
+            [
+                'label' => 'Tiêu đề SEO flash sale',
+                'key'   => 'title-seo-flash-sale',
+                'value'  => '',
+            ],
+            [
+                'label' => 'Mô tả SEO flash sale',
+                'key'   => 'desc-seo-flash-sale',
+                'value'  => '',
+            ],
+            [
+                'label' => 'Banner flash sale',
+                'key'   => 'banner-flash-sale',
+                'value'  => '/assets/images/banner-flashsale.jpg',
             ],
         ]);
     }

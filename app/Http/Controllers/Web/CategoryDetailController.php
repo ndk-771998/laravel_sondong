@@ -12,12 +12,12 @@ use VCComponent\Laravel\Category\Http\Controllers\Web\CategoryDetailController a
 
 class CategoryDetailController extends WebCategoryDetailController
 {
-    protected function viewManufacturer()
+    protected function view()
     {
         return 'pages.category-detail';
     }
 
-    protected function viewDataManufacturer($category, Request $request)
+    protected function viewData($category, Request $request)
     {
         SEOMeta::setTitle($category->name);
         SEOMeta::setDescription($category->description);
