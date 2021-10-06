@@ -41847,8 +41847,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     infinite: false,
     speed: 300,
     autoplay: false,
-    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/slide-arrow.svg'>",
-    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/slide-arrow.svg'>",
+    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/slide-arrow.svg' alt='prev'>",
+    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/slide-arrow.svg' alt='next'>",
     arrows: true,
     slidesToShow: 5,
     slidesToScroll: 5,
@@ -41882,8 +41882,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     infinite: false,
     speed: 300,
     autoplay: false,
-    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/slide-arrow.svg'>",
-    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/slide-arrow.svg'>",
+    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/slide-arrow.svg' alt='prev'>",
+    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/slide-arrow.svg' alt='next'>",
     arrows: true,
     slidesToShow: 5,
     slidesToScroll: 5,
@@ -41923,10 +41923,20 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     slidesToShow: 4,
     slidesToScroll: 1,
     asNavFor: '.thumbnail-silde-for',
-    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/chevron-up.svg'>",
-    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/chevron-up.svg'>",
+    prevArrow: "<img class='a-left control-c prev slick-prev' src='/assets/images/logo/chevron-up.svg' alt='prev'>",
+    nextArrow: "<img class='a-right control-c next slick-next' src='/assets/images/logo/chevron-up.svg' alt='next'>",
     arrows: true,
     focusOnSelect: true
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.slide-no-arrow').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    autoplay: true,
+    autoplaySpeed: 10000,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1
   });
 });
 
