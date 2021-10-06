@@ -38,27 +38,63 @@
                     <div class="customer-feedback-title">
                         Cảm nhận khách hàng
                     </div>
-                    @foreach ($customerfeedbacks as $customerfeedback)
-                    <div class="customer-feedback d-flex">
-                        <div class="info d-flex">
-                            <div class="avatar"><img src="{{ $customerfeedback->thumbnail }}" alt="avatar"></div>
-                            <div class="text d-flex flex-column">
-                                <div class="name">{{ $customerfeedback->title }}</div>
-                                <div class="caption">{{ $customerfeedback->description }}</div>
-                                <div class="vote d-flex flex-row flex-wrap">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
-                                    <img src="/assets/images/logo/star.svg" alt="star">
+                    <div class="slide-no-arrow d-none d-sm-block">
+                        @foreach ($customerfeedbacks as $index => $customerfeedback)
+                        @if ($index % 3 == 0)
+                        <div class="slide-no-arrow-item">
+                        @endif
+                            <div class="customer-feedback d-flex">
+                                <div class="info d-flex">
+                                    <div class="avatar"><img class="lazyload" data-src="{{ $customerfeedback->thumbnail }}" alt="avatar"></div>
+                                    <div class="text d-flex flex-column">
+                                        <div class="name">{{ $customerfeedback->title }}</div>
+                                        <div class="caption">{{ $customerfeedback->description }}</div>
+                                        <div class="vote d-flex flex-row flex-wrap">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    {!! $customerfeedback->content !!}
+                                    <img class="lazyload background-quote"  data-src="/assets/images/logo/doublequote.svg" alt="double_quote">
+                                </div>
+                            </div>
+                        @if ($index % 3 == 2)
+                        </div>
+                        @endif
+                        @endforeach
+                    </div>
+
+                    <div class="slide-no-arrow d-block d-sm-none">   
+                        @foreach ($customerfeedbacks as $index => $customerfeedback)
+                        <div class="slide-no-arrow-item">
+                            <div class="customer-feedback d-flex">
+                                <div class="info d-flex">
+                                    <div class="avatar"><img class="lazyload" data-src="{{ $customerfeedback->thumbnail }}" alt="avatar"></div>
+                                    <div class="text d-flex flex-column">
+                                        <div class="name">{{ $customerfeedback->title }}</div>
+                                        <div class="caption">{{ $customerfeedback->description }}</div>
+                                        <div class="vote d-flex flex-row flex-wrap">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                            <img src="/assets/images/logo/star.svg" alt="star">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    {!! $customerfeedback->content !!}
+                                    <img class="lazyload background-quote"  data-src="/assets/images/logo/doublequote.svg" alt="double_quote">
                                 </div>
                             </div>
                         </div>
-                        <div class="content">
-                            {!! $customerfeedback->content !!}
-                        </div>
+                        @endforeach
                     </div>
-                    @endforeach
                 </div>
             </div>
         </div>
@@ -108,7 +144,7 @@
             <div class="customer-picture row align-items-center">
                 @foreach ($customermedias as $item)
                 <div class="col-6 col-sm-4 col-md-3">
-                    <img src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
+                    <img class="lazyload" data-src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
                 </div>
                 @endforeach
             </div>
@@ -125,7 +161,7 @@
             <div class="col-padding-16px col-md-3 col-6">
                 <div class="d-flex flex-row logo-item">
                     <div class="logo">
-                        <img src="{{ getOption('logo-giam-gia') }}" alt="logo-giam-gia">
+                        <img class="lazyload" data-src="{{ getOption('logo-giam-gia') }}" alt="logo-giam-gia">
                     </div>
                     <div class="label">
                         Giảm giá cực sốc
@@ -135,7 +171,7 @@
             <div class="col-padding-16px col-md-3 col-6">
                 <div class="d-flex flex-row logo-item">
                     <div class="logo">
-                        <img src="{{ getOption('logo-van-chuyen') }}" alt="logo-van-chuyen">
+                        <img class="lazyload" data-src="{{ getOption('logo-van-chuyen') }}" alt="logo-van-chuyen">
                     </div>
                     <div class="label">
                         Miễn phí vận chuyển
@@ -145,7 +181,7 @@
             <div class="col-padding-16px col-md-3 col-6">
                 <div class="d-flex flex-row logo-item">
                     <div class="logo">
-                        <img src="{{ getOption('logo-khach-hang-tin-dung') }}" alt="logo-khach-hang-tin-dung">
+                        <img class="lazyload" data-src="{{ getOption('logo-khach-hang-tin-dung') }}" alt="logo-khach-hang-tin-dung">
                     </div>
                     <div class="label">
                         Khách hàng tin dùng
@@ -155,7 +191,7 @@
             <div class="col-padding-16px col-md-3 col-6">
                 <div class="d-flex flex-row logo-item">
                     <div class="logo">
-                        <img src="{{ getOption('logo-bao-hanh') }}" alt="logo-bao-hanh">
+                        <img class="lazyload" data-src="{{ getOption('logo-bao-hanh') }}" alt="logo-bao-hanh">
                     </div>
                     <div class="label">
                         Bảo hành dài hạn
