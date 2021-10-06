@@ -69,13 +69,15 @@ class MenuItemTableSeeder extends Seeder {
                 ['menu_id' => '1', 'label' => 'Phụ kiện, linh kiện', 'link' => '#', 'type' => 'menu-header', 'parent_id' => 47],
 
             //seeding footer 1
-            ['menu_id' => '2', 'label' => 'Giới thiệu', 'link' => '/pages/gioi-thieu', 'type' => 'menu-footer', 'parent_id' => 0],
-            ['menu_id' => '2', 'label' => 'Khuyến mại', 'link' => '/pages/dieu-khoan-su-dung', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Giới thiệu', 'link' => '/aboutus', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Khuyến mại', 'link' => '/promotion', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '2', 'label' => 'Liên hệ', 'link' => '/aboutus/lien-he', 'type' => 'menu-footer', 'parent_id' => 0],
             
             //seeding footer 2
-            ['menu_id' => '3', 'label' => 'Liên hệ', 'link' => '/pages/san-xuat', 'type' => 'menu-footer', 'parent_id' => 0],
-            ['menu_id' => '3', 'label' => 'Chính sách riêng tư', 'link' => '/pages/chinh-sach-rieng-tu', 'type' => 'menu-footer', 'parent_id' => 0],
-            ['menu_id' => '3', 'label' => 'Hợp tác', 'link' => '/pages/hop-tac', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Quy định đổi trả hàng', 'link' => '/policy/quy-dinh-doi-tra-hang', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Quy định thanh toán', 'link' => '/policy/quy-dinh-thanh-toan', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Chính sách giao hàng', 'link' => '/policy/chinh-sach-giao-hang', 'type' => 'menu-footer', 'parent_id' => 0],
+            ['menu_id' => '3', 'label' => 'Hướng dẫn mua hàng', 'link' => '/policy/huong-dan-mua-hang', 'type' => 'menu-footer', 'parent_id' => 0],
         ]);
     }
 }
