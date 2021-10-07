@@ -61,11 +61,13 @@
                 font-size: $font_size_small;
                 color: $default_bottom_link_color;
                 text-decoration-line: line-through;
+                position: relative;
+                top: 3px;
             }
         }
 
         .sell-progress {
-            margin: 10px;
+            margin: 20px 10px 10px;
 
             progress {
                 -webkit-appearance: none;

@@ -46,8 +46,12 @@
         border-radius: 6px;
         height: 40px;
         font-size: $font_size_small;
-        padding: 5px 15px;
-        width: fit-content;
+        padding: 5px 10px 5px 15px;
+        width: inherit;
+        
+        @media (min-width: 1200px){
+            margin-left: 57px;
+        }
         
         @media screen and (max-width:991px) {
             display: none !important;

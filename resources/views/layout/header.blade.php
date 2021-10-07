@@ -14,7 +14,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-5 d-flex justify-content-end">
+                <div class="col-lg-5 d-flex justify-content-end align-items-center">
                     <div class="giao-hang-toan-quoc-wrap">
                         <img src="/assets/images/logo/giao-hang-toan-quoc.svg" alt="">
                         Giao hàng toàn quốc
