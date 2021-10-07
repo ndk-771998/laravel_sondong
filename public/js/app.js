@@ -41460,6 +41460,12 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     }
 
     jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).click(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr('value') == "") {
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.filter-manufacturer-submit').not(obj).prop('checked', false);
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.filter-manufacturer-submit[value=""]').prop('checked', false);
+      }
+
       filter("");
     });
   });

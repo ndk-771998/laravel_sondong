@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('title')
-<title>{!! getOption('san-pham-title') !!}</title>
+<title>{!! getOption('title-seo-product') !!}</title>
 @endsection
 @section('content')
 
@@ -20,6 +20,11 @@
                 </div>
                 <div class="filter">
                     <form action="/search" method="GET" id="filter-manufacturer-form">
+                        <div class="form-check">
+                            <input type="checkbox" value=""
+                                class="form-check-input filter-manufacturer-submit" id="all-manufacturers">
+                            <label class="form-check-label" for="all-manufacturers">Tất cả</label>
+                        </div>
                         @foreach ($manufacturers as $manufacturer)
                         <div class="form-check">
                             <input type="checkbox" name="manufacturer"
