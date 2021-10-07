@@ -21,9 +21,9 @@
                 <div class="col-title">Kết nối chúng tôi</div>
                 {!! getOption('connective-video') !!}
             </div>
-            <div class="col-12 col-sm-6 col-md-3 d-flec flex-colum">
+            <div class="col-12 col-sm-6 col-md-auto ml-auto">
                 <div class="col-title"></div>
-                <div class="d-flex flex-column contact">
+                <div class="d-flex flex-column contact mr-lg-5">
                     <a class="d-flex flex-row align-items-center" href="{{ getOption('link-facebook') }}" title="facebook">
                         <span>
                             <img class="lazyload" data-src="/assets/images/logo/facebook.svg" alt="logo-facebook">

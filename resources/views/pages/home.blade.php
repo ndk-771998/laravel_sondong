@@ -2,19 +2,19 @@
 @section('content')
 <section>
     <div class="banner-container container">
-        <div class="row">
-            <div class="col-12 col-md-8">
+        <div class="row row-padding-18px">
+            <div class="col-12 col-md-8 col-padding-18px mb-3 mb-md-0">
                 <a href="{{ getOption('link-banner-1')}}">
                     <img class="lazyload" data-src="{{ getOption('banner-1') }}" alt="banner-home-page-1">
                 </a>
             </div>
-            <div class="col-12 col-md-4 d-flex flex-column">
+            <div class="col-12 col-md-4 d-flex flex-column col-padding-18px">
                 <div>
                     <a href="{{getOption('link-banner-2')}}">
                         <img class="lazyload" data-src="{{ getOption('banner-2') }}" alt="banner-home-page-2">
                     </a>
                 </div>
-                <div class="mt-auto">
+                <div class="" style="margin-top: 18px">
                     <a href="{{ getOption('link-banner-3') }}">
                         <img class="lazyload" data-src="{{ getOption('banner-3') }}" alt="banner-home-page-3">
                     </a>
