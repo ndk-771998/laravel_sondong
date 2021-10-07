@@ -45,6 +45,11 @@ $(document).ready(function() {
             $(obj).attr("checked", "checked");
         }
         $(obj).click(function() {
+            if ($(obj).attr('value') == "") {
+                $('.filter-manufacturer-submit').not(obj).prop('checked', false);
+            } else {
+                $('.filter-manufacturer-submit[value=""]').prop('checked', false);
+            }
             filter("");
         });
     });
