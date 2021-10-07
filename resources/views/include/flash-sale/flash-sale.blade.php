@@ -1,4 +1,4 @@
-<div class="flash-sale-container container">
+<div class="flash-sale-container container" id="flash-sale">
     <div class="flash-sale-wrap">
         <div class="flash-sale-title d-flex flex-row">
             <div class="logo">
@@ -11,6 +11,9 @@
                 <div id="hours"></div>
                 <div id="minutes"></div>
                 <div id="seconds"></div>
+            </div>
+            <div class="view-all ml-auto">
+                <a href="/flash-sale">Xem tất cả <img src="/assets/images/logo/chevron-up.svg" alt="up"></a>
             </div>
         </div>
         <div class="flash-sale">
@@ -34,7 +37,7 @@
 
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("10-01-2021").getTime();
+    var countDownDate = new Date("10-31-2021").getTime();
     
     // Update the count down every 1 second
     var x = setInterval(function() {

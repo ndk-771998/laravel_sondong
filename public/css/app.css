@@ -12365,6 +12365,18 @@ a.text-dark:hover, a.text-dark:focus {
   padding-right: 8px;
 }
 
+.row-padding-18px {
+  margin-left: -9px;
+  margin-right: -9px;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.row-padding-18px .col-padding-18px {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
 .row-padding-20px {
   margin-left: -10px;
   margin-right: -10px;
@@ -12513,10 +12525,12 @@ a.text-dark:hover, a.text-dark:focus {
   color: #707070;
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
+  position: relative;
+  top: 3px;
 }
 
 .list-product .item-wrap .sell-progress {
-  margin: 10px;
+  margin: 20px 10px 10px;
 }
 
 .list-product .item-wrap .sell-progress progress {
@@ -13151,10 +13165,14 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 6px;
   height: 40px;
   font-size: 14px;
-  padding: 5px 15px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  padding: 5px 10px 5px 15px;
+  width: inherit;
+}
+
+@media (min-width: 1200px) {
+  .header-top .giao-hang-toan-quoc-wrap {
+    margin-left: 57px;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -13189,7 +13207,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav {
-  height: 60px;
+  min-height: 60px;
   background: #0c7eed;
   display: flex;
   align-items: center;
@@ -13209,21 +13227,22 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav .nav > a:hover {
-  padding-left: 40px;
   background-color: #2067C3;
+  transition: ease-in-out 0.25s;
 }
 
 .header-nav .nav > a {
   display: inline-block;
   height: 60px;
-  padding-top: 18px;
+  padding: 18px 20px 20px;
   position: relative;
+  margin: 0px 10px;
 }
 
 .header-nav .nav > a:before {
   content: "";
   position: absolute;
-  left: 0px;
+  left: -10px;
   height: 50%;
   width: 1px;
   background-color: #fff;
@@ -13231,15 +13250,11 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav .nav > a:first-of-type {
-  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .header-nav .nav > a:first-of-type:before {
   content: none;
-}
-
-.header-nav .nav > a:first-of-type:hover {
-  padding-left: 10px;
 }
 
 .header-nav .nav .dropdown-menu {
@@ -13269,6 +13284,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav .nav .dropdown-menu a:hover {
+  transition: ease-in-out 0.25s;
   padding-left: 22px;
 }
 
@@ -13304,6 +13320,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .header-nav .nav .dropdown-menu .dropdown-menu-broad .dropdown-menu-broad-item a:hover {
+  transition: ease-in-out 0.25s;
   background-color: #f5f8f7;
   padding-left: 15px;
 }
@@ -13418,6 +13435,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .banner-container img {
   width: 100%;
+  height: 100%;
 }
 
 .flash-sale-container {
@@ -13441,6 +13459,19 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 20px;
   font-weight: bold;
   margin: 0px 10px;
+}
+
+.flash-sale-container .flash-sale-wrap .flash-sale-title .view-all a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.flash-sale-container .flash-sale-wrap .flash-sale-title .view-all a img {
+  height: 12px;
+  transform: translateY(-2px) rotate(90deg);
+  -webkit-filter: brightness(10);
+          filter: brightness(10);
 }
 
 .flash-sale-container .flash-sale-wrap .flash-sale-title .count-down div {
@@ -13501,7 +13532,6 @@ a.text-dark:hover, a.text-dark:focus {
 .product-slide-container .product-slide-wrap .product-slide-title .title {
   font-size: 20px;
   font-weight: bold;
-  margin: 0px 10px;
 }
 
 .product-slide-container .product-slide-wrap .product-slide-title .filter {

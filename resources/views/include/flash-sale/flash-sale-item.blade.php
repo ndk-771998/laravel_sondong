@@ -1,7 +1,7 @@
 <div class="flash-sale-item list-product">
     <div class="item-wrap">
         <div class="thumbnail">
-            <img src="/assets/images/LA_4894.png" alt="item">
+            <img class="lazyload" data-src="/assets/images/LA_4894.png" alt="item">
             <div class="sale-tag">10%</div>
         </div>
         <div class="name">HP EliteBook 850 G2 i7-5600U /Ram 8Gb/SSD . . .</div>
@@ -10,7 +10,7 @@
             <div class="origin-price">287.000 ₫</div>
         </div>
         <div class="sell-progress">
-            <progress max="1000" value="299"></progress>
+            <progress max="{{ rand(5, 10) }}" value="{{ rand(0, 10) }}"></progress>
         </div>
     </div>
 </div>
