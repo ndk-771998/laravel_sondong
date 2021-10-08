@@ -35,10 +35,10 @@ class HomeController extends Controller
         $customermedias = Post::where('type', 'customermedias')->paginate(12);
 
         return view('index', [
-            'flash_sale'         => $flash_sale,
-            'new_products'             => $new_products,
-            'old_products'            => $old_products,
-            'printers'       => $printer,
+            'flash_sale'        => $flash_sale,
+            'new_products'      => $new_products,
+            'old_products'      => $old_products,
+            'printers'          => $printer,
             'customerfeedbacks' => $customerfeedbacks,
             'customermedias'    => $customermedias
         ]);
