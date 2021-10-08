@@ -115,9 +115,10 @@
             &:before {
                 content: "";
                 position: absolute;
-                left: -10px;
+                left: -13px;
                 height: 50%;
-                width: 1px;
+                width: 0.5px;
+                border: 0.25px solid $default_bg_color;
                 background-color: $default_bg_color;
                 top: 25%;
             }

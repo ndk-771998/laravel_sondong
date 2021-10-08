@@ -10,7 +10,7 @@
                 <a href="#">15 triệu - 18 triệu</a>
                 <a href="#">Trên 18 triệu</a>
             </div>
-            <div class="view-all">
+            <div class="view-all d-flex align-items-center">
                 <a href="#">Xem tất cả <img src="/assets/images/logo/chevron-up.svg" alt="up"></a>
             </div>
         </div>
