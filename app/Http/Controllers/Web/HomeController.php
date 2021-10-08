@@ -5,13 +5,18 @@ namespace App\Http\Controllers\Web;
 use App\Entities\Post;
 use App\Entities\Product;
 use App\Http\Controllers\Controller;
+use App\Traits\PrepareOption;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 
 class HomeController extends Controller
 {
+    use PrepareOption;
+
     public function __invoke()
     {
+        $this->prepareOption();
+
         SEOMeta::setTitle(getOption('title-seo-home'));
         SEOMeta::setDescription(getOption('desc-seo-home'));
         OpenGraph::setTitle(getOption('title-seo-home'));

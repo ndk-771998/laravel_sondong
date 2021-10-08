@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Entities\Category;
 use App\Entities\Product;
+use App\Traits\PrepareOption;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ use VCComponent\Laravel\Product\Traits\Helpers;
 
 class ProductListController extends BaseProductListController implements ViewProductListControllerInterface
 {
-    use Helpers;
+    use Helpers, PrepareOption;
     
     protected function beforeQuery(Request $request) {
         $request->merge([
@@ -29,11 +30,14 @@ class ProductListController extends BaseProductListController implements ViewPro
 
     protected function viewData($products, Request $request)
     {
+        $this->prepareOption();
+
         SEOMeta::setTitle(getOption('title-seo-product'));
         SEOMeta::setDescription(getOption('desc-seo-product'));
         OpenGraph::setTitle(getOption('title-seo-product'));
         OpenGraph::setDescription(getOption('desc-seo-product'));
         OpenGraph::addImage(getOption('header-logo'));
+
         $query           = Product::where('product_type', 'products');
         $query           = $this->applyOrderByFromRequest($query, $request);
         $products = $query->where('status', '1')->with('productMetas')->paginate(12);
@@ -51,43 +55,9 @@ class ProductListController extends BaseProductListController implements ViewPro
         return 'pages.products';
     }
 
-    protected function viewDataPrinter($products, Request $request)
-    {
-        SEOMeta::setTitle(getOption('titlle-seo-product'));
-        SEOMeta::setDescription(getOption('title-seo-product'));
-        OpenGraph::setTitle(getOption('titlle-seo-product'));
-        OpenGraph::setDescription(getOption('title-seo-product'));
-        OpenGraph::addImage(getOption('header-logo'));
-        $query           = Product::where('product_type', 'printer');
-        $query           = $this->applyOrderByFromRequest($query, $request);
-        $products = $query->where('status', '1')->with('productMetas')->paginate(12);
-
-        return [
-            'products' => $products,
-            'product_type' => $this->getTypeProduct($request)
-        ];
-    }
-
     public function viewAccessory() 
     {
         return 'pages.products';
-    }
-
-    protected function viewDataAccessory($products, Request $request)
-    {
-        SEOMeta::setTitle(getOption('titlle-seo-product'));
-        SEOMeta::setDescription(getOption('title-seo-product'));
-        OpenGraph::setTitle(getOption('titlle-seo-product'));
-        OpenGraph::setDescription(getOption('title-seo-product'));
-        OpenGraph::addImage(getOption('header-logo'));
-        $query           = Product::where('product_type', 'accessory');
-        $query           = $this->applyOrderByFromRequest($query, $request);
-        $products = $query->where('status', '1')->with('productMetas')->paginate(12);
-
-        return [
-            'products'   => $products,
-            'product_type' => $this->getTypeProduct($request)
-        ];
     }
 
     protected function applyOrderByFromRequest($query, Request $request)

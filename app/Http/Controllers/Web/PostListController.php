@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Entities\Post;
 use App\Entities\Product;
+use App\Traits\PrepareOption;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
@@ -13,6 +14,8 @@ use VCComponent\Laravel\Post\Http\Controllers\Web\PostListController as BasePost
 
 class PostListController extends BasePostListController implements ViewPostListControllerInterface
 {
+    use PrepareOption;
+
     protected function beforeQuery(Request $request) {
         $request->merge([
             'per_page' => 12,
@@ -26,22 +29,30 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewDataPolicy($posts, Request $request)
     {
-        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', 'policy')->paginate(12);
+        $this->prepareOption();
 
         $post = new Post();
         $post_type_label = array_search('policy' ,$post->postTypes());
-        
+
         if(count($posts)) {
+            $post = $posts[0];
+
+            SEOMeta::setTitle($post->getMetaField('seo_title'));
+            SEOMeta::setDescription($post->getMetaField('seo_desc'));
+            OpenGraph::setTitle($post->getMetaField('seo_title'));
+            OpenGraph::setDescription($post->getMetaField('seo_desc'));
+            OpenGraph::addImage($post->thumbnail);
+
             return [
-                'post'              => $posts[0],
-                'posts_menu'        => $posts_menu,
+                'post'              => $post,
+                'posts_menu'        => $posts,
                 'post_type_label'   => $post_type_label,
             ];
         }
         return [
             'post'              => $post,
             'post_type_label'   => $post_type_label,
-            'posts_menu'        => $posts_menu,
+            'posts_menu'        => $posts,
         ];
     }
     
@@ -52,22 +63,30 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewDataPromotion($posts, Request $request)
     {
-        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', 'promotion')->paginate(12);
+        $this->prepareOption();
 
         $post = new Post();
         $post_type_label = array_search('promotion' ,$post->postTypes());
         
         if(count($posts)) {
+            $post = $posts[0];
+
+            SEOMeta::setTitle($post->getMetaField('seo_title'));
+            SEOMeta::setDescription($post->getMetaField('seo_desc'));
+            OpenGraph::setTitle($post->getMetaField('seo_title'));
+            OpenGraph::setDescription($post->getMetaField('seo_desc'));
+            OpenGraph::addImage($post->thumbnail);
+
             return [
-                'post'              => $posts[0],
-                'posts_menu'        => $posts_menu,
+                'post'              => $post,
+                'posts_menu'        => $posts,
                 'post_type_label'   => $post_type_label,
             ];
         }
         return [
             'post'              => $post,
             'post_type_label'   => $post_type_label,
-            'posts_menu'        => $posts_menu,
+            'posts_menu'        => $posts,
         ];
     }
     
@@ -78,22 +97,30 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewDataAboutus($posts, Request $request)
     {
-        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', 'aboutus')->paginate(12);
-
+        $this->prepareOption();
+        
         $post = new Post();
         $post_type_label = array_search('aboutus' ,$post->postTypes());
         
         if(count($posts)) {
+            $post = $posts[0];
+
+            SEOMeta::setTitle($post->getMetaField('seo_title'));
+            SEOMeta::setDescription($post->getMetaField('seo_desc'));
+            OpenGraph::setTitle($post->getMetaField('seo_title'));
+            OpenGraph::setDescription($post->getMetaField('seo_desc'));
+            OpenGraph::addImage($post->thumbnail);
+
             return [
-                'post'              => $posts[0],
-                'posts_menu'        => $posts_menu,
+                'post'              => $post,
+                'posts_menu'        => $posts,
                 'post_type_label'   => $post_type_label,
             ];
         }
         return [
             'post'              => $post,
             'post_type_label'   => $post_type_label,
-            'posts_menu'        => $posts_menu,
+            'posts_menu'        => $posts,
         ];
     }
     
@@ -104,22 +131,30 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewDataRepairservice($posts, Request $request)
     {
-        $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', 'repairservice')->paginate(12);
-
+        $this->prepareOption();
+        
         $post = new Post();
         $post_type_label = array_search('repairservice' ,$post->postTypes());
-        
+
         if(count($posts)) {
+            $post = $posts[0];
+
+            SEOMeta::setTitle($post->getMetaField('seo_title'));
+            SEOMeta::setDescription($post->getMetaField('seo_desc'));
+            OpenGraph::setTitle($post->getMetaField('seo_title'));
+            OpenGraph::setDescription($post->getMetaField('seo_desc'));
+            OpenGraph::addImage($post->thumbnail);
+
             return [
-                'post'              => $posts[0],
-                'posts_menu'        => $posts_menu,
+                'post'              => $post,
+                'posts_menu'        => $posts,
                 'post_type_label'   => $post_type_label,
             ];
         }
         return [
             'post'              => $post,
             'post_type_label'   => $post_type_label,
-            'posts_menu'        => $posts_menu,
+            'posts_menu'        => $posts,
         ];
     }
     
@@ -130,6 +165,8 @@ class PostListController extends BasePostListController implements ViewPostListC
 
     public function viewDataCustomermedias($posts, Request $request)
     {
+        $this->prepareOption();
+        
         SEOMeta::setTitle(getOption('title-seo-customer-media'));
         SEOMeta::setDescription(getOption('desc-seo-customer-media'));
         OpenGraph::setTitle(getOption('title-seo-customer-media'));

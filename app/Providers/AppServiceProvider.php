@@ -14,7 +14,6 @@ use App\Http\Controllers\Web\ProductListController;
 use App\Http\View\Composers\CartComposer;
 use App\Http\View\Composers\MenuComposer;
 use App\Http\View\Composers\NewsComposer;
-use App\Http\View\Composers\OptionComposer;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -61,6 +60,5 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', CartComposer::class);
         View::composer(['layout.header', 'layout.footer', 'layout.nav-left'], MenuComposer::class);
         View::composer('layout.nav-right', NewsComposer::class);
-        View::composer('*', OptionComposer::class);
     }
 }
