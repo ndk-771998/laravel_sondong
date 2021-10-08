@@ -2,7 +2,6 @@
 @import "~font-awesome/css/font-awesome.css";
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-@import "./page/style";
 @import "./ui/font";
 @import "./ui/color";
 @import "./ui/button";
@@ -11,6 +10,7 @@
 @import "./includes/product-list.scss";
 @import "./includes/breadcrumb.scss";
 @import "./includes/sidebar-filter.scss";
+@import "./page/style";
 @import "./page/about";
 @import "./page/cart";
 @import "./page/contact";
