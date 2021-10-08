@@ -241,7 +241,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="phone">Số điện thoại:<span class="required">*</span></label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone">
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone">
                                 @error('phone')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
