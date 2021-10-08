@@ -108,4 +108,15 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
     });
+    
+    $('.dot-slide').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    });
 });

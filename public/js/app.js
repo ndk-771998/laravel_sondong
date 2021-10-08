@@ -41460,6 +41460,12 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     }
 
     jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).click(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr('value') == "") {
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.filter-manufacturer-submit').not(obj).prop('checked', false);
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.filter-manufacturer-submit[value=""]').prop('checked', false);
+      }
+
       filter("");
     });
   });
@@ -41930,6 +41936,16 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.slide-no-arrow').slick({
     dots: false,
+    infinite: true,
+    speed: 300,
+    autoplay: true,
+    autoplaySpeed: 10000,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dot-slide').slick({
+    dots: true,
     infinite: true,
     speed: 300,
     autoplay: true,

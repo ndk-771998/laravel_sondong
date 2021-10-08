@@ -56,3 +56,36 @@
 .my-24 {
     margin: 24px 0;
 }
+
+.slide-no-arrow {
+    margin-right: -1px;
+    margin-left: -1px;
+
+    .slide-no-arrow-item {
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+}
+
+.dot-slide {
+    margin-bottom: 18px !important;
+
+    @media (min-width: 768px) {
+        margin-bottom: -6px !important;
+    }
+
+    .slick-dots {
+        bottom: 20px;
+
+        li.slick-active button:before, li:hover button::before{
+            color: $main_header_bg_color;
+        }
+
+        button:before {
+            opacity: 1;
+            color: $default_bg_color;
+            width: 18px;
+            height: 18px;
+        }
+    } 
+}

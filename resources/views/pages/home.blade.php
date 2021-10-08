@@ -3,12 +3,24 @@
 <section>
     <div class="banner-container container">
         <div class="row row-padding-18px">
-            <div class="col-12 col-md-8 col-padding-18px mb-3 mb-md-0">
-                <a href="{{ getOption('link-banner-1')}}">
-                    <img class="lazyload" data-src="{{ getOption('banner-1') }}" alt="banner-home-page-1">
-                </a>
+            <div class="col-12 col-md-8 col-padding-18px dot-slide">
+                <div class="dot-slide-item">
+                    <a href="{{ getOption('link-banner-1')}}">
+                        <img class="lazyload home-slide-img" data-src="{{ getOption('banner-1') }}" alt="banner-home-page-1">
+                    </a>
+                </div>
+                <div class="dot-slide-item">
+                    <a href="{{ getOption('link-banner-1')}}">
+                        <img class="lazyload home-slide-img" data-src="{{ getOption('banner-1') }}" alt="banner-home-page-1">
+                    </a>
+                </div>
+                <div class="dot-slide-item">
+                    <a href="{{ getOption('link-banner-1')}}">
+                        <img class="lazyload home-slide-img" data-src="{{ getOption('banner-1') }}" alt="banner-home-page-1">
+                    </a>
+                </div>
             </div>
-            <div class="col-12 col-md-4 d-flex flex-column col-padding-18px">
+            <div class="col-12 col-md-4 col-padding-18px">
                 <div>
                     <a href="{{getOption('link-banner-2')}}">
                         <img class="lazyload" data-src="{{ getOption('banner-2') }}" alt="banner-home-page-2">
@@ -125,7 +137,7 @@
                         </div>
                         <div class="video-right video">
                             {!! getOption('video-3') !!}
-                            <div class="video-title">
+                            <div class="video-title" style="margin-top: 10px">
                                 {{ getOption('title-video-3')}}
                             </div>
                         </div>

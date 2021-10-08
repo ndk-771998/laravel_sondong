@@ -12,7 +12,7 @@
                 <div id="minutes"></div>
                 <div id="seconds"></div>
             </div>
-            <div class="view-all ml-auto">
+            <div class="view-all ml-auto d-flex align-items-center">
                 <a href="/flash-sale">Xem tất cả <img src="/assets/images/logo/chevron-up.svg" alt="up"></a>
             </div>
         </div>
