@@ -12663,6 +12663,127 @@ a.text-dark:hover, a.text-dark:focus {
   color: #2372d9;
 }
 
+#type-hint-list {
+  position: absolute;
+  background: white;
+  z-index: 1;
+  width: 100%;
+  max-height: 0px;
+  overflow-y: scroll;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
+  opacity: 0;
+  transition: 0.25s ease-in-out;
+  top: 62px;
+  right: 15px;
+}
+
+@media (min-width: 991px) {
+  #type-hint-list {
+    width: 132%;
+  }
+}
+
+@media (min-width: 576px) {
+  #type-hint-list {
+    right: unset;
+  }
+
+  #type-hint-list.show {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+#type-hint-list.show {
+  max-height: 420px;
+  opacity: 1;
+}
+
+#type-hint-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+#type-hint-list::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #ccc;
+  margin: 10px 0px;
+}
+
+#type-hint-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #707070;
+}
+
+#type-hint-list .list-product .item-wrap {
+  min-height: 90px;
+  padding: 5px 20px;
+}
+
+@media (min-width: 576px) {
+  #type-hint-list .list-product .item-wrap {
+    padding: 10px 40px;
+  }
+}
+
+#type-hint-list .list-product .item-wrap:hover {
+  background-color: #f5f8f7;
+  transition: 0.25s ease-in-out;
+  border-color: transparent;
+}
+
+#type-hint-list .list-product .item-wrap .thumbnail {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  float: left;
+  margin-right: 20px;
+}
+
+@media (min-width: 576px) {
+  #type-hint-list .list-product .item-wrap .thumbnail {
+    margin-right: 60px;
+  }
+}
+
+#type-hint-list .list-product .item-wrap .thumbnail img {
+  height: 70px;
+}
+
+#type-hint-list .list-product .item-wrap .thumbnail .sale-tag {
+  display: none;
+}
+
+#type-hint-list .list-product .item-wrap .vote {
+  display: none !important;
+}
+
+#type-hint-list .list-product .item-wrap .name {
+  margin-top: 0px;
+  font-weight: normal;
+  color: #333;
+}
+
+#type-hint-list .list-product .item-wrap .price {
+  justify-content: start !important;
+  margin-bottom: 0px;
+}
+
+#type-hint-list .list-product .item-wrap .price .discount {
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+#type-hint-list .list-product .item-wrap .price .origin-price {
+  top: 0px;
+}
+
+@media (max-width: 576px) {
+  #type-hint-list .list-product .item-wrap .price .origin-price {
+    display: none;
+  }
+}
+
 .row-padding-12px {
   margin-left: -6px;
   margin-right: -6px;

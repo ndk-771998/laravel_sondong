@@ -6,13 +6,14 @@
                     <a href="/"><img src="{{getOption('header-logo')}}" title="Quay lại trang chủ" class="logo"
                             alt="logo"></a></div>
                 <div class="col-9 col-lg-5">
-                    <form action="{{ route('search') }}" method="get">
+                    <form action="{{ route('search') }}" method="get" id="search-form">
                         <div class="input-group d-flex justify-content-start header-search-wrap">
                             <button type="submit" class="btn d-flex input-group-append" title='Tìm kiếm'><img
                                     src="/assets/images/logo/search.svg" alt=""></button>
-                            <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control">
+                            <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control" id="search-form-input">
                         </div>
                     </form>
+                    <div id="type-hint-list"></div>
                 </div>
                 <div class="col-lg-5 d-flex justify-content-end align-items-center">
                     <div class="giao-hang-toan-quoc-wrap">
