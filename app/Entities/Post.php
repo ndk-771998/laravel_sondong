@@ -2,6 +2,7 @@
 
 namespace App\Entities;
 
+use Exception;
 use Illuminate\Support\Str;
 use VCComponent\Laravel\Category\Traits\HasCategoriesTrait;
 use VCComponent\Laravel\Comment\Traits\HasCommentTrait;
@@ -97,5 +98,18 @@ class Post extends BasePost
     public function scopeGetBy($query, $type, $status)
     {
         return $query->where('type', $type)->where('status', $status)->orderBy('id', 'desc');
+    }
+
+    public function getMetaField($key)
+    {
+        if (!$this->postMetas->count()) {
+            return '';
+        }
+
+        try {
+            return $this->postMetas->where('key', $key)->first()->value;
+        } catch (Exception $e) {
+            return '';
+        }
     }
 }
