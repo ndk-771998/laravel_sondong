@@ -13,7 +13,6 @@ use App\Http\Controllers\Web\ProductDetailController;
 use App\Http\Controllers\Web\ProductListController;
 use App\Http\View\Composers\CartComposer;
 use App\Http\View\Composers\MenuComposer;
-use App\Http\View\Composers\NewsComposer;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -24,8 +23,6 @@ use VCComponent\Laravel\Post\Contracts\ViewPostDetailControllerInterface;
 use VCComponent\Laravel\Post\Contracts\ViewPostListControllerInterface;
 use VCComponent\Laravel\Product\Contracts\ViewProductDetailControllerInterface;
 use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
-
-// use App\Http\View\Composers\SlideComposer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -57,8 +54,7 @@ class AppServiceProvider extends ServiceProvider
             'products' => Product::class,
         ]);
 
-        View::composer('*', CartComposer::class);
-        View::composer(['layout.header', 'layout.footer', 'layout.nav-left'], MenuComposer::class);
-        View::composer('layout.nav-right', NewsComposer::class);
+        // View::composer('*', CartComposer::class);
+        View::composer(['layout.header', 'layout.footer', ], MenuComposer::class);
     }
 }
