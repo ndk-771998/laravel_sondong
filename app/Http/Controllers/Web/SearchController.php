@@ -42,7 +42,7 @@ class SearchController extends Controller
         ]);
     }
 
-    public function ajaxsearch(Request $request)
+    public function ajaxfilter(Request $request)
     {
         $products         = Product::query();
         if ($request->has('product_type')) {
@@ -68,7 +68,18 @@ class SearchController extends Controller
 
         $products_result  = $products->with('productMetas')->paginate(12);
 
-        return view('include.ajax-search', [
+        return view('include.ajax-filter-result', [
+            'products'         => $products_result,
+        ]);
+    }
+
+    public function ajaxsearch(Request $request) {
+        
+        $products         = Product::query();
+        $products         = $this->applySearchFromRequest($products, ['name'], $request);
+        $products_result  = $products->with('productMetas')->limit(12)->get();
+
+        return view('include.ajax-type-hint-result', [
             'products'         => $products_result,
         ]);
     }

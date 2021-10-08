@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    @include('utility::hotline-fixed', ['hotline' =>getOption('hotline')])
     @section('header')
     @include('layout.header')
     @show

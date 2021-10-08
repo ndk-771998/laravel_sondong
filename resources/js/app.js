@@ -30,8 +30,14 @@ $(document).ready(function() {
     var url = window.location.href;
     let order_by;
     $(".filter-price-submit").each(function(i, obj) {
-        var filter_rq = url.slice(url.indexOf("price="), url.indexOf("&"));
-        if (filter_rq.replace("price=", "") === $(obj).attr("value")) {
+        var filter_rq = url.slice(url.indexOf("price=")+6); // index of parameter= string + its length, this line will cut ur url to your parameter.
+        var price;
+        if(filter_rq.indexOf('&') == -1) {
+            price = filter_rq;
+        } else {
+            price = filter_rq.slice(0, filter_rq.indexOf('&'));
+        }
+        if (price === $(obj).attr("value")) {
             $(obj).attr("checked", "checked");
         }
         $(obj).click(function() {
@@ -70,7 +76,7 @@ $(document).ready(function() {
     function filter(price = "", manufacturer = "", order_by = "", page = 1) {
         price = $("form#filter-price-form").serialize();
         manufacturer = $("form#filter-manufacturer-form").serialize();
-        var url = "/ajax-search";
+        var url = "/ajax-filter";
         var val = "";
         var category_url = "";
         var search = new URLSearchParams(window.location.search).get('search');
@@ -101,6 +107,43 @@ $(document).ready(function() {
                 element.scrollIntoView({
                     behavior: "smooth",
                 });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+            }
+        });
+    }
+
+    $('#search-form-input').focusin(function() {
+        if ( $('#type-hint-list').children().length > 0) {
+            $('#type-hint-list').addClass('show');
+        }
+    })
+    $('#search-form-input').focusout(function() {
+        $('#type-hint-list').removeClass('show');
+    })
+
+    $('#search-form-input').on('input',function() {
+        if($(this).val().length >= 3) {
+            typeHint($(this).val());
+            $('#type-hint-list').addClass('show');
+        }
+    });
+    function typeHint(search = "") {
+        var url = "/ajax-search";
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: {
+                search: search,
+            },
+            success: function(data) {
+                $("#type-hint-list").html(data);
             },
             error: function(jqXHR, textStatus, errorThrown) {
             }

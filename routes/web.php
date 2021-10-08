@@ -18,14 +18,15 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', 'Web\HomeController');
 
-Route::get('search', 'Web\SearchController')->name('search');
-
 Route::get('/contact', 'Web\ContactController@index');
 Route::post('/contact', 'Web\ContactController@store');
 
 Route::get('/product/{slug}', 'Web\ProductDetailController@show');
 Route::get('/product', 'Web\ProductListController@index');
 Route::post('/register', 'Web\UserController@register')->name("web.register");
+
+Route::get('search', 'Web\SearchController')->name('search');
+Route::get('/ajax-filter', 'Web\SearchController@ajaxfilter');
 Route::get('/ajax-search', 'Web\SearchController@ajaxsearch');
 
 Route::post('/order-create', 'Web\OrderController@create')->name('order.create');

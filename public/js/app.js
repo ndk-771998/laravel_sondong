@@ -41442,9 +41442,17 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   var url = window.location.href;
   var order_by;
   jquery__WEBPACK_IMPORTED_MODULE_2___default()(".filter-price-submit").each(function (i, obj) {
-    var filter_rq = url.slice(url.indexOf("price="), url.indexOf("&"));
+    var filter_rq = url.slice(url.indexOf("price=") + 6); // index of parameter= string + its length, this line will cut ur url to your parameter.
 
-    if (filter_rq.replace("price=", "") === jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr("value")) {
+    var price;
+
+    if (filter_rq.indexOf('&') == -1) {
+      price = filter_rq;
+    } else {
+      price = filter_rq.slice(0, filter_rq.indexOf('&'));
+    }
+
+    if (price === jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr("value")) {
       jquery__WEBPACK_IMPORTED_MODULE_2___default()(obj).attr("checked", "checked");
     }
 
@@ -41486,7 +41494,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     var page = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
     price = jquery__WEBPACK_IMPORTED_MODULE_2___default()("form#filter-price-form").serialize();
     manufacturer = jquery__WEBPACK_IMPORTED_MODULE_2___default()("form#filter-manufacturer-form").serialize();
-    var url = "/ajax-search";
+    var url = "/ajax-filter";
     var val = "";
     var category_url = "";
     var search = new URLSearchParams(window.location.search).get('search');
@@ -41516,6 +41524,42 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
         element.scrollIntoView({
           behavior: "smooth"
         });
+      },
+      error: function error(jqXHR, textStatus, errorThrown) {}
+    });
+  }
+
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#search-form-input').focusin(function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('#type-hint-list').children().length > 0) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('#type-hint-list').addClass('show');
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#search-form-input').focusout(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('#type-hint-list').removeClass('show');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#search-form-input').on('input', function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).val().length >= 3) {
+      typeHint(jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).val());
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('#type-hint-list').addClass('show');
+    }
+  });
+
+  function typeHint() {
+    var search = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    var url = "/ajax-search";
+    jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
+      headers: {
+        "X-CSRF-TOKEN": jquery__WEBPACK_IMPORTED_MODULE_2___default()('meta[name="csrf-token"]').attr("content")
+      }
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajax({
+      type: "GET",
+      url: url,
+      data: {
+        search: search
+      },
+      success: function success(data) {
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()("#type-hint-list").html(data);
       },
       error: function error(jqXHR, textStatus, errorThrown) {}
     });
