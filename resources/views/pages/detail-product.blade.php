@@ -22,22 +22,22 @@
                             @endif
                             <div class="thumbnail-silde-for">
                                 <div class="item">
-                                    <img src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
+                                    <img class="lazyload" data-src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
                                 </div>
                                 @foreach ($product->media as $media)
                                     <div class="item">
-                                        <img src="{!! $media->getFullUrl() !!}" id="{{ $media->id }}"
+                                        <img class="lazyload" data-src="{!! $media->getFullUrl() !!}" id="{{ $media->id }}"
                                             alt="{!! $media->alt_img !!}" />
                                     </div>
                                 @endforeach
                             </div>
                             <div class="thumbnail-silde-nav">
                                 <div class="item">
-                                    <img src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
+                                    <img class="lazyload" data-src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
                                 </div>
                                 @foreach ($product->media as $media)
                                     <div class="item">
-                                        <img src="{!! $media->getFullUrl() !!}" id="{{ $media->id }}"
+                                        <img class="lazyload" data-src="{!! $media->getFullUrl() !!}" id="{{ $media->id }}"
                                             alt="{!! $media->alt_img !!}" />
                                     </div>
                                 @endforeach
@@ -148,7 +148,7 @@
                 <div class="modal-body">
                     <div class="product-info d-flex flex-row align-items-center">
                         <div class="thumbnail">
-                            <img src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
+                            <img class="lazyload" data-src="{{ $product->thumbnail }}" alt="{{ $product->name }}">
                         </div>
                         <div class="label">
                             <div class="title">{{ $product->name }}</div>
@@ -241,7 +241,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="phone">Số điện thoại:<span class="required">*</span></label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone">
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone">
                                 @error('phone')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror

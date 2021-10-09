@@ -5,13 +5,18 @@ namespace App\Http\Controllers\Web;
 use App\Entities\Post;
 use App\Entities\Product;
 use App\Http\Controllers\Controller;
+use App\Traits\PrepareOption;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 
 class HomeController extends Controller
 {
+    use PrepareOption;
+
     public function __invoke()
     {
+        $this->prepareOption();
+
         SEOMeta::setTitle(getOption('title-seo-home'));
         SEOMeta::setDescription(getOption('desc-seo-home'));
         OpenGraph::setTitle(getOption('title-seo-home'));
@@ -30,10 +35,10 @@ class HomeController extends Controller
         $customermedias = Post::where('type', 'customermedias')->paginate(12);
 
         return view('index', [
-            'flash_sale'         => $flash_sale,
-            'new_products'             => $new_products,
-            'old_products'            => $old_products,
-            'printers'       => $printer,
+            'flash_sale'        => $flash_sale,
+            'new_products'      => $new_products,
+            'old_products'      => $old_products,
+            'printers'          => $printer,
             'customerfeedbacks' => $customerfeedbacks,
             'customermedias'    => $customermedias
         ]);

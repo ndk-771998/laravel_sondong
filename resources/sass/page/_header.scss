@@ -46,9 +46,12 @@
         border-radius: 6px;
         height: 40px;
         font-size: $font_size_small;
-        padding: 5px 10px 5px 15px;
+        padding: 5px 5px 5px 15px;
         width: inherit;
         
+        img {
+            margin-right: 4px;
+        }
         @media (min-width: 1200px){
             margin-left: 57px;
         }
@@ -115,12 +118,11 @@
             &:before {
                 content: "";
                 position: absolute;
+                top: 25%;
                 left: -13px;
                 height: 50%;
                 width: 0.5px;
-                border: 0.25px solid $default_bg_color;
-                background-color: $default_bg_color;
-                top: 25%;
+                background-color: #f3f3f3;
             }
         }
     

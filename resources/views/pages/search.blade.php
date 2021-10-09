@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('title')
-<title>{!! getOption('san-pham-title') !!}</title>
+<title>{!! getOption('title-seo-home') !!}</title>
 @endsection
 @section('content')
 

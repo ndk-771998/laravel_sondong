@@ -64,10 +64,10 @@
                                 <div class="dropdown-menu-broad d-flex justify-content-row" custom-data-toggle="menu-{!! $menu->id  !!}-{!! $sub_menu_lvl_2->id!!}">
                                     @foreach ($sub_menu_lvl_2->subMenus as $sub_menu_lvl_3)
                                     <div class="dropdown-menu-broad-item">
-                                        <a class="menu-broad-header" href="{{ $sub_menu_lvl_3->link }}"> {{$sub_menu_lvl_3->label}}</a>
+                                        <a class="menu-broad-header" href="{{ $sub_menu_lvl_3->link ? $sub_menu_lvl_3->link : '#' }}"> {{$sub_menu_lvl_3->label}}</a>
                                         @if (count($sub_menu_lvl_3->subMenus))
                                         @foreach ($sub_menu_lvl_3->subMenus as $item)
-                                        <a href="{{ $item->link }}">{{$item->label}}</a>
+                                        <a href="{{ $item->link ? $item->link : '#' }}">{{$item->label}}</a>
                                         @endforeach
                                         @endif
                                     </div>
