@@ -79,6 +79,7 @@ steps:
       domain: thienthanhjsc
       server_url: http://sv1devapp.webpress.vn
       server_port: 30001
+      run_post_install_script: false
 volumes:
   - name: cache
     host:
