@@ -18,6 +18,10 @@
     i {
         color: $default_input_color;
         font-size: $font_size_smaller;
-        font-weight: lighter;
+        font-weight: 100;
+    }
+
+    >i, >a {
+        margin-right: 7px;
     }
 }

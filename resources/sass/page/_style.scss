@@ -77,6 +77,10 @@
     .slick-dots {
         bottom: 20px;
 
+        li {
+            margin: 0px;
+        }
+
         li.slick-active button:before, li:hover button::before{
             color: $main_header_bg_color;
         }

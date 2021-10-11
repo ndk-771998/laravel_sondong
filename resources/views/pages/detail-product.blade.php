@@ -13,8 +13,8 @@
             
             <div class="col-padding-16px w-100 product-info-wrap">
                 <div class="product-info">
-                    <div class="row">
-                        <div class="col-12 col-md-5 medias">
+                    <div class="row row-padding-16px">
+                        <div class="col-12 col-md-5 col-padding-16px medias">
                             @if ($product->price && $product->original_price)
                                 <div class="tag-sale">
                                     {{floor(($product->price - $product->original_price)/$product->original_price*100)}}%
@@ -43,7 +43,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="col-12 col-md-7 info">
+                        <div class="col-12 col-md-7 col-padding-16px info">
                             <div class="title">{{ $product->name }}</div>
                             <div class="price">
                                 <div class="discount">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
@@ -139,8 +139,8 @@
         </div>
     </div>
 
-    @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng', 'products' => $accressories])
-    @include('include.product.product-slide', ['list_title' => 'Các sản phẩm tương tự', 'products' => $relatedProducts])
+    @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng', 'product_type' => 'accessory', 'products' => $accressories])
+    @include('include.product.product-slide', ['list_title' => 'Các sản phẩm tương tự', 'product_type' => $product->product_type, 'products' => $relatedProducts])
 
     <div class="modal fade buy-now-modal" id="buyNow" role="dialog">
         <div class="modal-dialog" role="document">

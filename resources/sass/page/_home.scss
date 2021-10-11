@@ -4,6 +4,7 @@
 }
 
 @mixin section-wrap() {
+    border-radius: 2px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     padding: 0px 20px 20px;
     background-color: $default_bg_color;
@@ -112,8 +113,8 @@
 
     .product-slide-wrap {
         box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-        border: solid 1px $default-product-header-bg-color;
         background-color: $default_bg_color;
+        border-radius: 2px;
 
         .product-slide-title {
             background-color: $default-product-header-bg-color;
@@ -145,11 +146,20 @@
                     color: $default_text_color;
                     border-radius: 100px;
                     margin-right: 10px;
+                    display: inline-block;
+
+                    &:hover {
+                        background-color: $default_hover_color;
+                        transition: ease-in-out 0.25s;
+                        color: $default_bg_color;
+                    }
                 }
             }
 
             .view-all {
-                margin-left: 25px;
+                @media (min-width: 991px) {
+                    margin-left: 25px;
+                }
 
                 a {
                     color: $default_link_color;
@@ -201,6 +211,7 @@
         box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
         padding: 0px 20px 20px;
         background-color: $default_bg_color;
+        border-radius: 2px;
 
         .customer-feedback-title {
             @include section-title();
