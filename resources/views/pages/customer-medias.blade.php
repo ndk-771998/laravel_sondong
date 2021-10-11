@@ -17,5 +17,5 @@
     </div>
 </div>
 
-@include('include.product.product-slide', ['list_title' => 'Sản phẩm được mua nhiều nhất', 'products' => $products_best_buy])
+@include('include.product.product-slide', ['list_title' => 'Sản phẩm được mua nhiều nhất', 'product_type' => 'product', 'products' => $products_best_buy])
 @endsection

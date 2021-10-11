@@ -31,7 +31,7 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Video kết nối cùng chúng tôi (footer)',
                 'key'   => 'connective-video',
-                'value' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                'value' => '<iframe width="560" height="315" class="lazyload" data-src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             ],
             [
                 'label' => 'Liên kết Facebook',
@@ -104,7 +104,7 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Video 1',
                 'key'   => 'video-1',
-                'value'  => '<iframe width="560" height="315" src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                'value'  => '<iframe width="560" height="315" class="lazyload" data-src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             ],
             [
                 'label' => 'Tiêu đề video 1',
@@ -114,7 +114,7 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Video 2',
                 'key'   => 'video-2',
-                'value'  => '<iframe width="560" height="315" src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                'value'  => '<iframe width="560" height="315" class="lazyload" data-src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             ],
             [
                 'label' => 'Tiêu đề video 2',
@@ -124,7 +124,7 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Video 3',
                 'key'   => 'video-3',
-                'value'  => '<iframe width="560" height="315" src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                'value'  => '<iframe width="560" height="315" class="lazyload" data-src="https://www.youtube.com/embed/EHkozMIXZ8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             ],
             [
                 'label' => 'Tiêu đề video 3',
