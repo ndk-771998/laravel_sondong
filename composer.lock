@@ -184,16 +184,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.196.0",
+            "version": "3.198.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3128df6b0b68b1c4704321777332473642b749e0"
+                "reference": "79bf3298bd2893eb0b4614c2463e9f675d07118b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3128df6b0b68b1c4704321777332473642b749e0",
-                "reference": "3128df6b0b68b1c4704321777332473642b749e0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/79bf3298bd2893eb0b4614c2463e9f675d07118b",
+                "reference": "79bf3298bd2893eb0b4614c2463e9f675d07118b",
                 "shasum": ""
             },
             "require": {
@@ -269,9 +269,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.196.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.198.1"
             },
-            "time": "2021-09-30T18:15:45+00:00"
+            "time": "2021-10-08T18:28:30+00:00"
         },
         {
             "name": "brick/math",
@@ -766,30 +766,32 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.10.1",
+            "version": "2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8"
+                "reference": "adce7a954a1c2f14f85e94aed90c8489af204086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8",
-                "reference": "c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/adce7a954a1c2f14f85e94aed90c8489af204086",
+                "reference": "adce7a954a1c2f14f85e94aed90c8489af204086",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.0",
                 "doctrine/event-manager": "^1.0",
                 "ext-pdo": "*",
-                "php": "^7.2"
+                "php": "^7.3 || ^8"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^6.0",
+                "doctrine/coding-standard": "^8.1",
                 "jetbrains/phpstorm-stubs": "^2019.1",
-                "phpstan/phpstan": "^0.11.3",
-                "phpunit/phpunit": "^8.4.1",
-                "symfony/console": "^2.0.5|^3.0|^4.0|^5.0"
+                "phpstan/phpstan": "^0.12.40",
+                "phpunit/phpunit": "^9.4",
+                "psalm/plugin-phpunit": "^0.10.0",
+                "symfony/console": "^2.0.5|^3.0|^4.0|^5.0",
+                "vimeo/psalm": "^3.17.2"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -800,8 +802,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.10.x-dev",
-                    "dev-develop": "3.0.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -856,9 +857,23 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/2.10"
+                "source": "https://github.com/doctrine/dbal/tree/2.12.1"
             },
-            "time": "2020-01-04T12:56:21+00:00"
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdbal",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-11-14T20:26:58+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -1581,16 +1596,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.214.0",
+            "version": "v0.216.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "f3823c7d217a0fae0da661df9f92f937bdd10a95"
+                "reference": "ea990973edf24d959c9e9f550182a53672d5a4bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/f3823c7d217a0fae0da661df9f92f937bdd10a95",
-                "reference": "f3823c7d217a0fae0da661df9f92f937bdd10a95",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/ea990973edf24d959c9e9f550182a53672d5a4bc",
+                "reference": "ea990973edf24d959c9e9f550182a53672d5a4bc",
                 "shasum": ""
             },
             "require": {
@@ -1619,9 +1634,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.214.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.216.0"
             },
-            "time": "2021-09-26T11:20:28+00:00"
+            "time": "2021-10-06T11:20:29+00:00"
         },
         {
             "name": "google/auth",
@@ -1752,16 +1767,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.4.1",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
                 "shasum": ""
             },
             "require": {
@@ -1773,7 +1788,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -1790,9 +1805,24 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
             "description": "Guzzle promises library",
@@ -1801,22 +1831,36 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.4.1"
+                "source": "https://github.com/guzzle/promises/tree/1.5.0"
             },
-            "time": "2021-03-07T09:25:29+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/promises",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-07T13:05:22+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.8.2",
+            "version": "1.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "dc960a912984efb74d0a90222870c72c87f10c91"
+                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dc960a912984efb74d0a90222870c72c87f10c91",
-                "reference": "dc960a912984efb74d0a90222870c72c87f10c91",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
+                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
                 "shasum": ""
             },
             "require": {
@@ -1854,12 +1898,33 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
+                    "name": "George Mponos",
+                    "email": "gmponos@gmail.com",
+                    "homepage": "https://github.com/gmponos"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://github.com/sagikazarmark"
+                },
+                {
                     "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
                     "homepage": "https://github.com/Tobion"
                 }
             ],
@@ -1876,22 +1941,36 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/1.8.2"
+                "source": "https://github.com/guzzle/psr7/tree/1.8.3"
             },
-            "time": "2021-04-26T09:17:50+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/psr7",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-05T13:56:00+00:00"
         },
         {
             "name": "intervention/image",
-            "version": "2.6.1",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "0925f10b259679b5d8ca58f3a2add9255ffcda45"
+                "reference": "9a8cc99d30415ec0b3f7649e1647d03a55698545"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/0925f10b259679b5d8ca58f3a2add9255ffcda45",
-                "reference": "0925f10b259679b5d8ca58f3a2add9255ffcda45",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/9a8cc99d30415ec0b3f7649e1647d03a55698545",
+                "reference": "9a8cc99d30415ec0b3f7649e1647d03a55698545",
                 "shasum": ""
             },
             "require": {
@@ -1950,7 +2029,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
-                "source": "https://github.com/Intervention/image/tree/2.6.1"
+                "source": "https://github.com/Intervention/image/tree/2.7.0"
             },
             "funding": [
                 {
@@ -1962,7 +2041,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-07-22T14:31:53+00:00"
+            "time": "2021-10-03T14:17:12+00:00"
         },
         {
             "name": "knplabs/knp-menu",
@@ -3413,16 +3492,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "437e7a1c50044b92773b361af77620efb76fff59"
+                "reference": "fd4380d6fc37626e2f799f29d91195040137eba9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/437e7a1c50044b92773b361af77620efb76fff59",
-                "reference": "437e7a1c50044b92773b361af77620efb76fff59",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd4380d6fc37626e2f799f29d91195040137eba9",
+                "reference": "fd4380d6fc37626e2f799f29d91195040137eba9",
                 "shasum": ""
             },
             "require": {
@@ -3438,7 +3517,7 @@
                 "elasticsearch/elasticsearch": "^7",
                 "graylog2/gelf-php": "^1.4.2",
                 "mongodb/mongodb": "^1.8",
-                "php-amqplib/php-amqplib": "~2.4",
+                "php-amqplib/php-amqplib": "~2.4 || ^3",
                 "php-console/php-console": "^3.1.3",
                 "phpspec/prophecy": "^1.6.1",
                 "phpstan/phpstan": "^0.12.91",
@@ -3496,7 +3575,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.3.4"
+                "source": "https://github.com/Seldaek/monolog/tree/2.3.5"
             },
             "funding": [
                 {
@@ -3508,7 +3587,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-15T11:27:21+00:00"
+            "time": "2021-10-01T21:08:31+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -4174,16 +4253,16 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "30f38bffc6f24293dadd1823936372dfa9e86e2f"
+                "reference": "a12f7e301eb7258bb68acd89d4aefa05c2906cae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/30f38bffc6f24293dadd1823936372dfa9e86e2f",
-                "reference": "30f38bffc6f24293dadd1823936372dfa9e86e2f",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/a12f7e301eb7258bb68acd89d4aefa05c2906cae",
+                "reference": "a12f7e301eb7258bb68acd89d4aefa05c2906cae",
                 "shasum": ""
             },
             "require": {
@@ -4218,9 +4297,9 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.5.0"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.5.1"
             },
-            "time": "2021-09-17T15:28:14+00:00"
+            "time": "2021-10-02T14:08:47+00:00"
         },
         {
             "name": "phpoffice/phpspreadsheet",
@@ -4916,16 +4995,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.10.8",
+            "version": "v0.10.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "e4573f47750dd6c92dca5aee543fa77513cbd8d3"
+                "reference": "01281336c4ae557fe4a994544f30d3a1bc204375"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/e4573f47750dd6c92dca5aee543fa77513cbd8d3",
-                "reference": "e4573f47750dd6c92dca5aee543fa77513cbd8d3",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/01281336c4ae557fe4a994544f30d3a1bc204375",
+                "reference": "01281336c4ae557fe4a994544f30d3a1bc204375",
                 "shasum": ""
             },
             "require": {
@@ -4985,9 +5064,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.10.8"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.10.9"
             },
-            "time": "2021-04-10T16:23:39+00:00"
+            "time": "2021-10-10T13:37:39+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5035,16 +5114,16 @@
         },
         {
             "name": "ramsey/collection",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/collection.git",
-                "reference": "eaca1dc1054ddd10cbd83c1461907bee6fb528fa"
+                "reference": "cccc74ee5e328031b15640b51056ee8d3bb66c0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/collection/zipball/eaca1dc1054ddd10cbd83c1461907bee6fb528fa",
-                "reference": "eaca1dc1054ddd10cbd83c1461907bee6fb528fa",
+                "url": "https://api.github.com/repos/ramsey/collection/zipball/cccc74ee5e328031b15640b51056ee8d3bb66c0a",
+                "reference": "cccc74ee5e328031b15640b51056ee8d3bb66c0a",
                 "shasum": ""
             },
             "require": {
@@ -5098,7 +5177,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ramsey/collection/issues",
-                "source": "https://github.com/ramsey/collection/tree/1.2.1"
+                "source": "https://github.com/ramsey/collection/tree/1.2.2"
             },
             "funding": [
                 {
@@ -5110,7 +5189,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-06T03:41:06+00:00"
+            "time": "2021-10-10T03:01:02+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -8318,16 +8397,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v4.2.0",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "da64796370fc4eb03cc277088f6fede9fde88482"
+                "reference": "d38f4d1edcbe32515a0ad593cbd4c858e337263c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/da64796370fc4eb03cc277088f6fede9fde88482",
-                "reference": "da64796370fc4eb03cc277088f6fede9fde88482",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/d38f4d1edcbe32515a0ad593cbd4c858e337263c",
+                "reference": "d38f4d1edcbe32515a0ad593cbd4c858e337263c",
                 "shasum": ""
             },
             "require": {
@@ -8339,7 +8418,7 @@
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
                 "ext-pcre": "*",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20"
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.21"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator.",
@@ -8348,7 +8427,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -8363,13 +8442,11 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-                    "email": "graham@alt-three.com",
-                    "homepage": "https://gjcampbell.co.uk/"
+                    "email": "hello@gjcampbell.co.uk"
                 },
                 {
                     "name": "Vance Lucas",
-                    "email": "vance@vancelucas.com",
-                    "homepage": "https://vancelucas.com/"
+                    "email": "vance@vancelucas.com"
                 }
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
@@ -8380,7 +8457,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v4.2.0"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v4.2.1"
             },
             "funding": [
                 {
@@ -8392,7 +8469,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-20T15:11:48+00:00"
+            "time": "2021-10-02T19:17:08+00:00"
         },
         {
             "name": "voku/portable-ascii",
@@ -8528,21 +8605,21 @@
         },
         {
             "name": "webpress/analytics",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/analytics.git",
-                "reference": "ea925ce07dd6d3f93a2b03430a767ecc4772aa50"
+                "reference": "60cac495374668c886e896073c4636922ba23ec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/analytics/zipball/ea925ce07dd6d3f93a2b03430a767ecc4772aa50",
-                "reference": "ea925ce07dd6d3f93a2b03430a767ecc4772aa50",
+                "url": "https://api.github.com/repos/webpress-vn/analytics/zipball/60cac495374668c886e896073c4636922ba23ec7",
+                "reference": "60cac495374668c886e896073c4636922ba23ec7",
                 "shasum": ""
             },
             "require": {
                 "spatie/laravel-analytics": "3.9.0",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -8575,29 +8652,28 @@
             "description": "Webpress analytics packages",
             "support": {
                 "issues": "https://github.com/webpress-vn/analytics/issues",
-                "source": "https://github.com/webpress-vn/analytics/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/analytics/tree/3.1.11"
             },
-            "time": "2021-08-20T10:34:55+00:00"
+            "time": "2021-10-05T07:50:57+00:00"
         },
         {
             "name": "webpress/category-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/category-manager.git",
-                "reference": "774535dccbd133553f589960cc004decf937baee"
+                "reference": "c78218be3fe8dc74ae59ff70bafbf7e1af89f891"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/category-manager/zipball/774535dccbd133553f589960cc004decf937baee",
-                "reference": "774535dccbd133553f589960cc004decf937baee",
+                "url": "https://api.github.com/repos/webpress-vn/category-manager/zipball/c78218be3fe8dc74ae59ff70bafbf7e1af89f891",
+                "reference": "c78218be3fe8dc74ae59ff70bafbf7e1af89f891",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "doctrine/dbal": "v2.10.1",
-                "webpress/core": "^3.0",
-                "webpress/user-manager": "^3.0"
+                "doctrine/dbal": "v2.12.1",
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0"
@@ -8628,27 +8704,28 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/category-manager/issues",
-                "source": "https://github.com/webpress-vn/category-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/category-manager/tree/3.1.11"
             },
-            "time": "2021-09-28T02:42:25+00:00"
+            "time": "2021-10-05T07:53:16+00:00"
         },
         {
             "name": "webpress/comment-manager",
-            "version": "3.0.5",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/comment-manager.git",
-                "reference": "50bf10a4549e1a2d5fef9c997c0c4bb1e2b893be"
+                "reference": "6bb738a7665cca19f8503049d4f2974a92ffb3e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/comment-manager/zipball/50bf10a4549e1a2d5fef9c997c0c4bb1e2b893be",
-                "reference": "50bf10a4549e1a2d5fef9c997c0c4bb1e2b893be",
+                "url": "https://api.github.com/repos/webpress-vn/comment-manager/zipball/6bb738a7665cca19f8503049d4f2974a92ffb3e4",
+                "reference": "6bb738a7665cca19f8503049d4f2974a92ffb3e4",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/core": "^3.0"
+                "doctrine/dbal": "2.12.1",
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -8680,22 +8757,22 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/comment-manager/issues",
-                "source": "https://github.com/webpress-vn/comment-manager/tree/3.0.5"
+                "source": "https://github.com/webpress-vn/comment-manager/tree/3.1.11"
             },
-            "time": "2021-07-08T06:36:44+00:00"
+            "time": "2021-10-06T03:47:18+00:00"
         },
         {
             "name": "webpress/configuration",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/configuration.git",
-                "reference": "24037c3bd6ca1ae389006b298045928caab41842"
+                "reference": "162a092e5dfd679269d40c4ad94364af42ad5282"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/configuration/zipball/24037c3bd6ca1ae389006b298045928caab41842",
-                "reference": "24037c3bd6ca1ae389006b298045928caab41842",
+                "url": "https://api.github.com/repos/webpress-vn/configuration/zipball/162a092e5dfd679269d40c4ad94364af42ad5282",
+                "reference": "162a092e5dfd679269d40c4ad94364af42ad5282",
                 "shasum": ""
             },
             "require": {
@@ -8734,28 +8811,28 @@
             "description": "Configuration step for web app",
             "support": {
                 "issues": "https://github.com/webpress-vn/configuration/issues",
-                "source": "https://github.com/webpress-vn/configuration/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/configuration/tree/3.1.11"
             },
-            "time": "2021-08-13T05:20:15+00:00"
+            "time": "2021-10-06T01:30:18+00:00"
         },
         {
             "name": "webpress/contact-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/contact-manager.git",
-                "reference": "e5881f0d8292cd93c921102f286bac7f5e63216a"
+                "reference": "0305d305fb469c4962437358b7f30206f9acb052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/contact-manager/zipball/e5881f0d8292cd93c921102f286bac7f5e63216a",
-                "reference": "e5881f0d8292cd93c921102f286bac7f5e63216a",
+                "url": "https://api.github.com/repos/webpress-vn/contact-manager/zipball/0305d305fb469c4962437358b7f30206f9acb052",
+                "reference": "0305d305fb469c4962437358b7f30206f9acb052",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0",
-                "webpress/export-excel": "^3.0",
-                "webpress/user-manager": "^3.0"
+                "webpress/core": "^3.1",
+                "webpress/export-excel": "^3.1",
+                "webpress/user-manager": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -8788,13 +8865,13 @@
             "description": "Vicoders package for contacts management",
             "support": {
                 "issues": "https://github.com/webpress-vn/contact-manager/issues",
-                "source": "https://github.com/webpress-vn/contact-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/contact-manager/tree/3.1.11"
             },
-            "time": "2021-09-28T02:31:15+00:00"
+            "time": "2021-10-05T07:57:55+00:00"
         },
         {
             "name": "webpress/core",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/core.git",
@@ -8863,27 +8940,27 @@
             "description": "Webpress Core Module",
             "support": {
                 "issues": "https://github.com/webpress-vn/core/issues",
-                "source": "https://github.com/webpress-vn/core/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/core/tree/3.1.11"
             },
             "time": "2021-07-27T03:45:48+00:00"
         },
         {
             "name": "webpress/dynamic",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/dynamic-menu.git",
-                "reference": "94c8c1ac263337722efbe9016e6f1fe4db696442"
+                "reference": "f20435cf72c85ccfefc1465c01ad6cc51da7662b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/dynamic-menu/zipball/94c8c1ac263337722efbe9016e6f1fe4db696442",
-                "reference": "94c8c1ac263337722efbe9016e6f1fe4db696442",
+                "url": "https://api.github.com/repos/webpress-vn/dynamic-menu/zipball/f20435cf72c85ccfefc1465c01ad6cc51da7662b",
+                "reference": "f20435cf72c85ccfefc1465c01ad6cc51da7662b",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0",
-                "webpress/user-manager": "^3.0"
+                "webpress/core": "^3.1",
+                "webpress/user-manager": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -8914,26 +8991,26 @@
             "description": "Boilerplate template for laravel package",
             "support": {
                 "issues": "https://github.com/webpress-vn/dynamic-menu/issues",
-                "source": "https://github.com/webpress-vn/dynamic-menu/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/dynamic-menu/tree/3.1.11"
             },
-            "time": "2021-07-17T03:16:17+00:00"
+            "time": "2021-10-05T07:59:06+00:00"
         },
         {
             "name": "webpress/dynamic-contact-form",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/dynamic-contact-form.git",
-                "reference": "7cd35e84757c164f49a13d3f938f701416dc5796"
+                "reference": "8955b8c836b2b16a0d08994f60ac9b1444b353f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/dynamic-contact-form/zipball/7cd35e84757c164f49a13d3f938f701416dc5796",
-                "reference": "7cd35e84757c164f49a13d3f938f701416dc5796",
+                "url": "https://api.github.com/repos/webpress-vn/dynamic-contact-form/zipball/8955b8c836b2b16a0d08994f60ac9b1444b353f5",
+                "reference": "8955b8c836b2b16a0d08994f60ac9b1444b353f5",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -8966,27 +9043,27 @@
             "description": "Dynamic-Contact-Form Package for Laravel",
             "support": {
                 "issues": "https://github.com/webpress-vn/dynamic-contact-form/issues",
-                "source": "https://github.com/webpress-vn/dynamic-contact-form/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/dynamic-contact-form/tree/3.1.11"
             },
-            "time": "2021-09-29T05:56:52+00:00"
+            "time": "2021-10-05T08:26:51+00:00"
         },
         {
             "name": "webpress/email-config",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/email-config.git",
-                "reference": "a5c9e3c01994bb9607fdd0140db469c6f54db08f"
+                "reference": "c126ca2fc88bcfa1413dfbcedbcc87766f931bee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/email-config/zipball/a5c9e3c01994bb9607fdd0140db469c6f54db08f",
-                "reference": "a5c9e3c01994bb9607fdd0140db469c6f54db08f",
+                "url": "https://api.github.com/repos/webpress-vn/email-config/zipball/c126ca2fc88bcfa1413dfbcedbcc87766f931bee",
+                "reference": "c126ca2fc88bcfa1413dfbcedbcc87766f931bee",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0",
-                "webpress/user-manager": "^3.0"
+                "webpress/core": "^3.1",
+                "webpress/user-manager": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9019,27 +9096,27 @@
             "description": "Vicoders package for email config",
             "support": {
                 "issues": "https://github.com/webpress-vn/email-config/issues",
-                "source": "https://github.com/webpress-vn/email-config/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/email-config/tree/3.1.11"
             },
-            "time": "2021-09-28T02:41:34+00:00"
+            "time": "2021-10-05T08:28:07+00:00"
         },
         {
             "name": "webpress/export-excel",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/export-excel.git",
-                "reference": "335eb34a75587a91b6792c871d11fe42b9a576dc"
+                "reference": "d73cf1e5ddde2e7f07e3697997e70483cbd1e1bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/export-excel/zipball/335eb34a75587a91b6792c871d11fe42b9a576dc",
-                "reference": "335eb34a75587a91b6792c871d11fe42b9a576dc",
+                "url": "https://api.github.com/repos/webpress-vn/export-excel/zipball/d73cf1e5ddde2e7f07e3697997e70483cbd1e1bb",
+                "reference": "d73cf1e5ddde2e7f07e3697997e70483cbd1e1bb",
                 "shasum": ""
             },
             "require": {
                 "maatwebsite/excel": "^3.1",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9070,56 +9147,56 @@
             "description": "Boilerplate template for laravel package",
             "support": {
                 "issues": "https://github.com/webpress-vn/export-excel/issues",
-                "source": "https://github.com/webpress-vn/export-excel/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/export-excel/tree/3.1.11"
             },
-            "time": "2021-09-29T03:10:54+00:00"
+            "time": "2021-10-05T08:23:25+00:00"
         },
         {
             "name": "webpress/framework",
-            "version": "3.1.0",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/framework.git",
-                "reference": "f6649145515a7d8234b0ae575903723efa3677c3"
+                "reference": "c18c2671240a39bb7e8e84e5fa74732e31361cfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/framework/zipball/f6649145515a7d8234b0ae575903723efa3677c3",
-                "reference": "f6649145515a7d8234b0ae575903723efa3677c3",
+                "url": "https://api.github.com/repos/webpress-vn/framework/zipball/c18c2671240a39bb7e8e84e5fa74732e31361cfe",
+                "reference": "c18c2671240a39bb7e8e84e5fa74732e31361cfe",
                 "shasum": ""
             },
             "require": {
-                "webpress/analytics": "^3.0",
-                "webpress/category-manager": "^3.0",
-                "webpress/comment-manager": "^3.0",
-                "webpress/configuration": "^3.0",
-                "webpress/contact-manager": "^3.0",
-                "webpress/core": "^3.0",
-                "webpress/dynamic": "^3.0",
-                "webpress/dynamic-contact-form": "^3.0",
-                "webpress/email-config": "^3.0",
-                "webpress/export-excel": "^3.0",
-                "webpress/language": "^3.0",
-                "webpress/media-manager": "^3.0",
-                "webpress/menu-manager": "^3.0",
-                "webpress/notification": "^3.0",
-                "webpress/order-manager": "^3.0",
-                "webpress/payment": "^3.0",
-                "webpress/post-manager": "^3.0",
-                "webpress/product-manager": "^3.0",
-                "webpress/promotion": "^3.0",
-                "webpress/redirector": "^3.0",
-                "webpress/review": "^3.0",
-                "webpress/script-manager": "^3.0",
-                "webpress/search": "^3.0",
-                "webpress/seo": "^3.0",
-                "webpress/site-protection": "^3.0",
-                "webpress/sitemap": "^3.0",
-                "webpress/static-file": "^3.0",
-                "webpress/tag-manager": "^3.0",
-                "webpress/user-manager": "^3.0",
-                "webpress/utility": "^3.0",
-                "webpress/view-model": "^3.0"
+                "webpress/analytics": "^3.1",
+                "webpress/category-manager": "^3.1",
+                "webpress/comment-manager": "^3.1",
+                "webpress/configuration": "^3.1",
+                "webpress/contact-manager": "^3.1",
+                "webpress/core": "^3.1",
+                "webpress/dynamic": "^3.1",
+                "webpress/dynamic-contact-form": "^3.1",
+                "webpress/email-config": "^3.1",
+                "webpress/export-excel": "^3.1",
+                "webpress/language": "^3.1",
+                "webpress/media-manager": "^3.1",
+                "webpress/menu-manager": "^3.1",
+                "webpress/notification": "^3.1",
+                "webpress/order-manager": "^3.1",
+                "webpress/payment": "^3.1",
+                "webpress/post-manager": "^3.1",
+                "webpress/product-manager": "^3.1",
+                "webpress/promotion": "^3.1",
+                "webpress/redirector": "^3.1",
+                "webpress/review": "^3.1",
+                "webpress/script-manager": "^3.1",
+                "webpress/search": "^3.1",
+                "webpress/seo": "^3.1",
+                "webpress/site-protection": "^3.1",
+                "webpress/sitemap": "^3.1",
+                "webpress/static-file": "^3.1",
+                "webpress/tag-manager": "^3.1",
+                "webpress/user-manager": "^3.1",
+                "webpress/utility": "^3.1",
+                "webpress/view-model": "^3.1"
             },
             "type": "library",
             "extra": {
@@ -9143,29 +9220,29 @@
             "description": "A Package With All Webpress Package",
             "support": {
                 "issues": "https://github.com/webpress-vn/framework/issues",
-                "source": "https://github.com/webpress-vn/framework/tree/3.1.0"
+                "source": "https://github.com/webpress-vn/framework/tree/3.1.11"
             },
-            "time": "2021-08-31T01:35:43+00:00"
+            "time": "2021-09-28T03:11:08+00:00"
         },
         {
             "name": "webpress/language",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/language.git",
-                "reference": "0e3f5a373be291af588224efdce9140ea251fa8f"
+                "reference": "289bb240710cfe39cc06b655b89c4ca090cd11d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/language/zipball/0e3f5a373be291af588224efdce9140ea251fa8f",
-                "reference": "0e3f5a373be291af588224efdce9140ea251fa8f",
+                "url": "https://api.github.com/repos/webpress-vn/language/zipball/289bb240710cfe39cc06b655b89c4ca090cd11d1",
+                "reference": "289bb240710cfe39cc06b655b89c4ca090cd11d1",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
-                "doctrine/dbal": "v2.4.2",
+                "doctrine/dbal": "v2.12.1",
                 "orchestra/testbench": "5.0.0",
                 "phpunit/phpunit": "8.5.13",
                 "spatie/phpunit-watcher": "1.23.0"
@@ -9196,27 +9273,27 @@
             "description": "Webpress multiple languages",
             "support": {
                 "issues": "https://github.com/webpress-vn/language/issues",
-                "source": "https://github.com/webpress-vn/language/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/language/tree/3.1.11"
             },
-            "time": "2021-09-09T04:04:33+00:00"
+            "time": "2021-10-05T08:25:45+00:00"
         },
         {
             "name": "webpress/media-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/media-manager.git",
-                "reference": "5a0cf1f1e21dbc3a8574209392b79f248f3d234e"
+                "reference": "03666cf5c4c405b78322cd18377bc4e9b01c0610"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/media-manager/zipball/5a0cf1f1e21dbc3a8574209392b79f248f3d234e",
-                "reference": "5a0cf1f1e21dbc3a8574209392b79f248f3d234e",
+                "url": "https://api.github.com/repos/webpress-vn/media-manager/zipball/03666cf5c4c405b78322cd18377bc4e9b01c0610",
+                "reference": "03666cf5c4c405b78322cd18377bc4e9b01c0610",
                 "shasum": ""
             },
             "require": {
                 "spatie/laravel-medialibrary": "7.19.5",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0"
@@ -9246,26 +9323,27 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/media-manager/issues",
-                "source": "https://github.com/webpress-vn/media-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/media-manager/tree/3.1.11"
             },
-            "time": "2021-08-02T08:17:40+00:00"
+            "time": "2021-10-05T08:00:35+00:00"
         },
         {
             "name": "webpress/menu-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/menu-manager.git",
-                "reference": "a395a701bbe0237a01a15ef96e5a5749a73c1d3a"
+                "reference": "f2834f80c13cc8e549cf97267e569c35de99fef8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/menu-manager/zipball/a395a701bbe0237a01a15ef96e5a5749a73c1d3a",
-                "reference": "a395a701bbe0237a01a15ef96e5a5749a73c1d3a",
+                "url": "https://api.github.com/repos/webpress-vn/menu-manager/zipball/f2834f80c13cc8e549cf97267e569c35de99fef8",
+                "reference": "f2834f80c13cc8e549cf97267e569c35de99fef8",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1",
+                "webpress/user-manager": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0"
@@ -9296,26 +9374,26 @@
             "description": "Vicoders Menu Manager",
             "support": {
                 "issues": "https://github.com/webpress-vn/menu-manager/issues",
-                "source": "https://github.com/webpress-vn/menu-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/menu-manager/tree/3.1.11"
             },
-            "time": "2021-07-10T01:46:11+00:00"
+            "time": "2021-10-06T03:47:51+00:00"
         },
         {
             "name": "webpress/notification",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/notification.git",
-                "reference": "5871baf080f8f2d471e6a581ca3304cdf9c539b2"
+                "reference": "1fb48240624430b4f739998dbf093388843ae0d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/notification/zipball/5871baf080f8f2d471e6a581ca3304cdf9c539b2",
-                "reference": "5871baf080f8f2d471e6a581ca3304cdf9c539b2",
+                "url": "https://api.github.com/repos/webpress-vn/notification/zipball/1fb48240624430b4f739998dbf093388843ae0d8",
+                "reference": "1fb48240624430b4f739998dbf093388843ae0d8",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9346,32 +9424,32 @@
             "description": "Webpress additional notification functionalities package",
             "support": {
                 "issues": "https://github.com/webpress-vn/notification/issues",
-                "source": "https://github.com/webpress-vn/notification/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/notification/tree/3.1.11"
             },
-            "time": "2021-09-25T04:18:54+00:00"
+            "time": "2021-10-05T08:29:30+00:00"
         },
         {
             "name": "webpress/order-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/order-manager.git",
-                "reference": "9432838cd9755b99ad8deeb2458c2780163bec8e"
+                "reference": "8d88f31fbf4d98341671b78b1f4eb0e36e3899c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/order-manager/zipball/9432838cd9755b99ad8deeb2458c2780163bec8e",
-                "reference": "9432838cd9755b99ad8deeb2458c2780163bec8e",
+                "url": "https://api.github.com/repos/webpress-vn/order-manager/zipball/8d88f31fbf4d98341671b78b1f4eb0e36e3899c0",
+                "reference": "8d88f31fbf4d98341671b78b1f4eb0e36e3899c0",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/core": "^3.0",
-                "webpress/export-excel": "^3.0",
-                "webpress/payment": "^3.0",
-                "webpress/product-manager": "^3.0",
-                "webpress/user-manager": "^3.0",
-                "webpress/view-model": "^3.0"
+                "webpress/core": "^3.1",
+                "webpress/export-excel": "^3.1",
+                "webpress/payment": "^3.1",
+                "webpress/product-manager": "^3.1",
+                "webpress/user-manager": "^3.1",
+                "webpress/view-model": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9406,22 +9484,22 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/order-manager/issues",
-                "source": "https://github.com/webpress-vn/order-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/order-manager/tree/3.1.11"
             },
-            "time": "2021-09-28T02:39:59+00:00"
+            "time": "2021-10-05T08:05:58+00:00"
         },
         {
             "name": "webpress/payment",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/payment.git",
-                "reference": "1cc002504a94cb3770e6c7a7412fa67d7bffbf91"
+                "reference": "bb6731b169b184231d896d1b59e67206b09e0ff7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/payment/zipball/1cc002504a94cb3770e6c7a7412fa67d7bffbf91",
-                "reference": "1cc002504a94cb3770e6c7a7412fa67d7bffbf91",
+                "url": "https://api.github.com/repos/webpress-vn/payment/zipball/bb6731b169b184231d896d1b59e67206b09e0ff7",
+                "reference": "bb6731b169b184231d896d1b59e67206b09e0ff7",
                 "shasum": ""
             },
             "require": {
@@ -9457,32 +9535,32 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/payment/issues",
-                "source": "https://github.com/webpress-vn/payment/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/payment/tree/3.1.11"
             },
-            "time": "2021-01-08T07:11:47+00:00"
+            "time": "2021-10-05T08:07:14+00:00"
         },
         {
             "name": "webpress/post-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/post-manager.git",
-                "reference": "fecf4f1710c483cccac15efad0e4b3cd4ea2ac52"
+                "reference": "8e7c98645ebfd1f9c9e4d430bc4df5a5bdeff955"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/post-manager/zipball/fecf4f1710c483cccac15efad0e4b3cd4ea2ac52",
-                "reference": "fecf4f1710c483cccac15efad0e4b3cd4ea2ac52",
+                "url": "https://api.github.com/repos/webpress-vn/post-manager/zipball/8e7c98645ebfd1f9c9e4d430bc4df5a5bdeff955",
+                "reference": "8e7c98645ebfd1f9c9e4d430bc4df5a5bdeff955",
                 "shasum": ""
             },
             "require": {
                 "caseyamcl/toc": "2.3.1",
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/category-manager": "^3.0",
-                "webpress/core": "^3.0",
-                "webpress/tag-manager": "^3.0",
-                "webpress/user-manager": "^3.0",
-                "webpress/view-model": "^3.0"
+                "webpress/category-manager": "^3.1",
+                "webpress/core": "^3.1",
+                "webpress/tag-manager": "^3.1",
+                "webpress/user-manager": "^3.1",
+                "webpress/view-model": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9514,32 +9592,32 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/post-manager/issues",
-                "source": "https://github.com/webpress-vn/post-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/post-manager/tree/3.1.11"
             },
-            "time": "2021-09-28T03:17:50+00:00"
+            "time": "2021-10-05T08:09:28+00:00"
         },
         {
             "name": "webpress/product-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/product-manager.git",
-                "reference": "8e58fd6a70efb104fb85b894decba8cc49dc050e"
+                "reference": "45e5344d09d88aa06603f2a2ab1289d05bff6c38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/product-manager/zipball/8e58fd6a70efb104fb85b894decba8cc49dc050e",
-                "reference": "8e58fd6a70efb104fb85b894decba8cc49dc050e",
+                "url": "https://api.github.com/repos/webpress-vn/product-manager/zipball/45e5344d09d88aa06603f2a2ab1289d05bff6c38",
+                "reference": "45e5344d09d88aa06603f2a2ab1289d05bff6c38",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/category-manager": "^3.0",
-                "webpress/core": "^3.0",
-                "webpress/export-excel": "^3.0",
-                "webpress/tag-manager": "^3.0",
-                "webpress/user-manager": "^3.0",
-                "webpress/view-model": "^3.0"
+                "webpress/category-manager": "^3.1",
+                "webpress/core": "^3.1",
+                "webpress/export-excel": "^3.1",
+                "webpress/tag-manager": "^3.1",
+                "webpress/user-manager": "^3.1",
+                "webpress/view-model": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0"
@@ -9571,27 +9649,27 @@
             "description": "Webpress product manager",
             "support": {
                 "issues": "https://github.com/webpress-vn/product-manager/issues",
-                "source": "https://github.com/webpress-vn/product-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/product-manager/tree/3.1.11"
             },
-            "time": "2021-09-28T02:41:02+00:00"
+            "time": "2021-10-05T08:12:05+00:00"
         },
         {
             "name": "webpress/promotion",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/promotion.git",
-                "reference": "75a0c30710dee2c55ccb485ec5fd848e7308c30e"
+                "reference": "d0a4e300c45ca1186a9a9944c7efe0e40f4b5dbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/promotion/zipball/75a0c30710dee2c55ccb485ec5fd848e7308c30e",
-                "reference": "75a0c30710dee2c55ccb485ec5fd848e7308c30e",
+                "url": "https://api.github.com/repos/webpress-vn/promotion/zipball/d0a4e300c45ca1186a9a9944c7efe0e40f4b5dbe",
+                "reference": "d0a4e300c45ca1186a9a9944c7efe0e40f4b5dbe",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0",
-                "webpress/user-manager": "^3.0"
+                "webpress/core": "^3.1",
+                "webpress/user-manager": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9623,27 +9701,27 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/promotion/issues",
-                "source": "https://github.com/webpress-vn/promotion/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/promotion/tree/3.1.11"
             },
-            "time": "2021-09-28T02:52:09+00:00"
+            "time": "2021-10-05T08:31:14+00:00"
         },
         {
             "name": "webpress/redirector",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/redirector.git",
-                "reference": "e8572c110031778e65bc2f435a51e825941240ca"
+                "reference": "c02b6fd0f81e883e047eafbadccf44b2670219d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/redirector/zipball/e8572c110031778e65bc2f435a51e825941240ca",
-                "reference": "e8572c110031778e65bc2f435a51e825941240ca",
+                "url": "https://api.github.com/repos/webpress-vn/redirector/zipball/c02b6fd0f81e883e047eafbadccf44b2670219d2",
+                "reference": "c02b6fd0f81e883e047eafbadccf44b2670219d2",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9676,26 +9754,26 @@
             "description": "Webpress redirecter pacakges",
             "support": {
                 "issues": "https://github.com/webpress-vn/redirector/issues",
-                "source": "https://github.com/webpress-vn/redirector/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/redirector/tree/3.1.11"
             },
-            "time": "2021-08-03T11:38:33+00:00"
+            "time": "2021-10-05T08:21:50+00:00"
         },
         {
             "name": "webpress/review",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/review.git",
-                "reference": "b5e187326f3333be6d47f69692c872bb9dfd063d"
+                "reference": "652e238963614fc8bd536cdd066f93c113d031f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/review/zipball/b5e187326f3333be6d47f69692c872bb9dfd063d",
-                "reference": "b5e187326f3333be6d47f69692c872bb9dfd063d",
+                "url": "https://api.github.com/repos/webpress-vn/review/zipball/652e238963614fc8bd536cdd066f93c113d031f9",
+                "reference": "652e238963614fc8bd536cdd066f93c113d031f9",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9727,27 +9805,27 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/review/issues",
-                "source": "https://github.com/webpress-vn/review/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/review/tree/3.1.11"
             },
-            "time": "2021-08-31T02:45:28+00:00"
+            "time": "2021-10-05T08:30:17+00:00"
         },
         {
             "name": "webpress/script-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/script-manager.git",
-                "reference": "5e345a5f6212bcadb2e31adbc7822c1715fd62d0"
+                "reference": "fc3d45e196b400791956b465af694505a548b270"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/script-manager/zipball/5e345a5f6212bcadb2e31adbc7822c1715fd62d0",
-                "reference": "5e345a5f6212bcadb2e31adbc7822c1715fd62d0",
+                "url": "https://api.github.com/repos/webpress-vn/script-manager/zipball/fc3d45e196b400791956b465af694505a548b270",
+                "reference": "fc3d45e196b400791956b465af694505a548b270",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9783,22 +9861,22 @@
             "description": "Script manager package",
             "support": {
                 "issues": "https://github.com/webpress-vn/script-manager/issues",
-                "source": "https://github.com/webpress-vn/script-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/script-manager/tree/3.1.11"
             },
-            "time": "2021-08-03T11:38:47+00:00"
+            "time": "2021-10-06T03:48:38+00:00"
         },
         {
             "name": "webpress/search",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/search.git",
-                "reference": "8e7556e8637daf889a663e66bcd0d20637d30b3d"
+                "reference": "8478ebcf9557924cfd681b410d283e2d17b4f7dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/search/zipball/8e7556e8637daf889a663e66bcd0d20637d30b3d",
-                "reference": "8e7556e8637daf889a663e66bcd0d20637d30b3d",
+                "url": "https://api.github.com/repos/webpress-vn/search/zipball/8478ebcf9557924cfd681b410d283e2d17b4f7dd",
+                "reference": "8478ebcf9557924cfd681b410d283e2d17b4f7dd",
                 "shasum": ""
             },
             "require-dev": {
@@ -9831,27 +9909,27 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/search/issues",
-                "source": "https://github.com/webpress-vn/search/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/search/tree/3.1.11"
             },
-            "time": "2021-01-08T07:12:49+00:00"
+            "time": "2021-10-05T08:13:38+00:00"
         },
         {
             "name": "webpress/seo",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/seo.git",
-                "reference": "8da2447e099458c77512cfbb2e9c0f7debee71ed"
+                "reference": "2617406d8b8fd9b5c22dcea97e1332b9289603ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/seo/zipball/8da2447e099458c77512cfbb2e9c0f7debee71ed",
-                "reference": "8da2447e099458c77512cfbb2e9c0f7debee71ed",
+                "url": "https://api.github.com/repos/webpress-vn/seo/zipball/2617406d8b8fd9b5c22dcea97e1332b9289603ad",
+                "reference": "2617406d8b8fd9b5c22dcea97e1332b9289603ad",
                 "shasum": ""
             },
             "require": {
                 "artesaos/seotools": "v0.17.2",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9884,13 +9962,13 @@
             "description": "Vicoders SEO package for laravel",
             "support": {
                 "issues": "https://github.com/webpress-vn/seo/issues",
-                "source": "https://github.com/webpress-vn/seo/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/seo/tree/3.1.11"
             },
-            "time": "2021-07-08T06:44:50+00:00"
+            "time": "2021-10-05T08:14:25+00:00"
         },
         {
             "name": "webpress/site-protection",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/site-protection.git",
@@ -9934,27 +10012,27 @@
             "description": "Package for internal company",
             "support": {
                 "issues": "https://github.com/webpress-vn/site-protection/issues",
-                "source": "https://github.com/webpress-vn/site-protection/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/site-protection/tree/3.1.11"
             },
             "time": "2021-08-03T11:38:16+00:00"
         },
         {
             "name": "webpress/sitemap",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/sitemap.git",
-                "reference": "8783de5deb656f4342413acd66735be31410439a"
+                "reference": "c60c415bf618125461c8f80d51eb6972db88e24a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/sitemap/zipball/8783de5deb656f4342413acd66735be31410439a",
-                "reference": "8783de5deb656f4342413acd66735be31410439a",
+                "url": "https://api.github.com/repos/webpress-vn/sitemap/zipball/c60c415bf618125461c8f80d51eb6972db88e24a",
+                "reference": "c60c415bf618125461c8f80d51eb6972db88e24a",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -9986,26 +10064,26 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/sitemap/issues",
-                "source": "https://github.com/webpress-vn/sitemap/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/sitemap/tree/3.1.11"
             },
-            "time": "2021-08-03T11:37:55+00:00"
+            "time": "2021-10-05T08:15:08+00:00"
         },
         {
             "name": "webpress/static-file",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/static-file.git",
-                "reference": "7acd05abe9c5e02f56ab3bcdae036339b34a1adb"
+                "reference": "f909c6391dff1d09f45d22e88d3235830d6c8025"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/static-file/zipball/7acd05abe9c5e02f56ab3bcdae036339b34a1adb",
-                "reference": "7acd05abe9c5e02f56ab3bcdae036339b34a1adb",
+                "url": "https://api.github.com/repos/webpress-vn/static-file/zipball/f909c6391dff1d09f45d22e88d3235830d6c8025",
+                "reference": "f909c6391dff1d09f45d22e88d3235830d6c8025",
                 "shasum": ""
             },
             "require": {
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -10036,27 +10114,27 @@
             "description": "Boilerplate template for laravel package",
             "support": {
                 "issues": "https://github.com/webpress-vn/static-file/issues",
-                "source": "https://github.com/webpress-vn/static-file/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/static-file/tree/3.1.11"
             },
-            "time": "2021-08-03T11:37:36+00:00"
+            "time": "2021-10-05T08:22:47+00:00"
         },
         {
             "name": "webpress/tag-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/tag-manager.git",
-                "reference": "5ee8ba4bc71cdeb7b39c903159d9a1cd66fea468"
+                "reference": "62052a9c0361e9e6f748e3b327574332686399a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/tag-manager/zipball/5ee8ba4bc71cdeb7b39c903159d9a1cd66fea468",
-                "reference": "5ee8ba4bc71cdeb7b39c903159d9a1cd66fea468",
+                "url": "https://api.github.com/repos/webpress-vn/tag-manager/zipball/62052a9c0361e9e6f748e3b327574332686399a6",
+                "reference": "62052a9c0361e9e6f748e3b327574332686399a6",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -10089,30 +10167,30 @@
             "description": "Webpress tag manager",
             "support": {
                 "issues": "https://github.com/webpress-vn/tag-manager/issues",
-                "source": "https://github.com/webpress-vn/tag-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/tag-manager/tree/3.1.11"
             },
-            "time": "2021-08-03T11:37:19+00:00"
+            "time": "2021-10-05T08:17:05+00:00"
         },
         {
             "name": "webpress/user-manager",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/user-manager.git",
-                "reference": "9e6ae0d26f6a585e3df0d27d975833875d8a6bb4"
+                "reference": "27bf89a240fabe448e9dbd607f1d499898d46e3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/user-manager/zipball/9e6ae0d26f6a585e3df0d27d975833875d8a6bb4",
-                "reference": "9e6ae0d26f6a585e3df0d27d975833875d8a6bb4",
+                "url": "https://api.github.com/repos/webpress-vn/user-manager/zipball/27bf89a240fabe448e9dbd607f1d499898d46e3e",
+                "reference": "27bf89a240fabe448e9dbd607f1d499898d46e3e",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "v2.10.1",
+                "doctrine/dbal": "v2.12.1",
                 "illuminate/support": "^7.0|^8.0",
                 "laravel/socialite": "v4.4.0",
                 "laravel/ui": "^2.1",
-                "webpress/core": "^3.0"
+                "webpress/core": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -10153,28 +10231,28 @@
             "description": "User component for Laravel / Lumen",
             "support": {
                 "issues": "https://github.com/webpress-vn/user-manager/issues",
-                "source": "https://github.com/webpress-vn/user-manager/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/user-manager/tree/3.1.11"
             },
-            "time": "2021-09-28T02:42:32+00:00"
+            "time": "2021-10-05T08:18:42+00:00"
         },
         {
             "name": "webpress/utility",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/utility.git",
-                "reference": "07681ce568c54763fbfa92cb5752c4ebcada3939"
+                "reference": "02f44ce3980723ab22bf33d9bac2125523bf98df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webpress-vn/utility/zipball/07681ce568c54763fbfa92cb5752c4ebcada3939",
-                "reference": "07681ce568c54763fbfa92cb5752c4ebcada3939",
+                "url": "https://api.github.com/repos/webpress-vn/utility/zipball/02f44ce3980723ab22bf33d9bac2125523bf98df",
+                "reference": "02f44ce3980723ab22bf33d9bac2125523bf98df",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "7.0.1",
-                "webpress/core": "^3.0",
-                "webpress/post-manager": "^3.0"
+                "webpress/core": "^3.1",
+                "webpress/post-manager": "^3.1"
             },
             "require-dev": {
                 "orchestra/testbench": "5.0.0",
@@ -10206,13 +10284,13 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/utility/issues",
-                "source": "https://github.com/webpress-vn/utility/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/utility/tree/3.1.11"
             },
-            "time": "2021-07-08T06:48:21+00:00"
+            "time": "2021-10-05T08:20:02+00:00"
         },
         {
             "name": "webpress/view-model",
-            "version": "3.1.7",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webpress-vn/view-model.git",
@@ -10257,7 +10335,7 @@
             ],
             "support": {
                 "issues": "https://github.com/webpress-vn/view-model/issues",
-                "source": "https://github.com/webpress-vn/view-model/tree/3.1.7"
+                "source": "https://github.com/webpress-vn/view-model/tree/3.1.11"
             },
             "time": "2021-08-03T11:41:45+00:00"
         }
@@ -10484,16 +10562,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.13.1",
+            "version": "2.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "e3f49bef7b4165fa4b8a9dc579e7b63fa06aef78"
+                "reference": "6d89c4c99537f487ad29f646d57ebf107ef714ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/e3f49bef7b4165fa4b8a9dc579e7b63fa06aef78",
-                "reference": "e3f49bef7b4165fa4b8a9dc579e7b63fa06aef78",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/6d89c4c99537f487ad29f646d57ebf107ef714ed",
+                "reference": "6d89c4c99537f487ad29f646d57ebf107ef714ed",
                 "shasum": ""
             },
             "require": {
@@ -10556,7 +10634,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-09-13T13:01:30+00:00"
+            "time": "2021-10-08T12:34:52+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -10613,21 +10691,21 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.14.3",
+            "version": "2.14.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "89584ce67dd32307f1063cc43846674f4679feda"
+                "reference": "f056f1fe935d9ed86e698905a957334029899895"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/89584ce67dd32307f1063cc43846674f4679feda",
-                "reference": "89584ce67dd32307f1063cc43846674f4679feda",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/f056f1fe935d9ed86e698905a957334029899895",
+                "reference": "f056f1fe935d9ed86e698905a957334029899895",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9 || ^7.0 || ^8.0",
-                "psr/log": "^1.0.1"
+                "psr/log": "^1.0.1 || ^2.0 || ^3.0"
             },
             "require-dev": {
                 "mockery/mockery": "^0.9 || ^1.0",
@@ -10672,7 +10750,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.14.3"
+                "source": "https://github.com/filp/whoops/tree/2.14.4"
             },
             "funding": [
                 {
@@ -10680,7 +10758,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-19T12:00:00+00:00"
+            "time": "2021-10-03T12:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",

@@ -17,12 +17,16 @@ return [
     ],
     'auth_middleware' => [
         'admin'    => [
-            'middleware' => '',
-            'except'     => [],
+            [
+                'middleware' => 'jwt.auth',
+                'except'     => [],    
+            ]
         ],
         'frontend' => [
-            'middleware' => '',
-            'except'     => [],
+            // [
+            //     'middleware' => '',
+            //     'except'     => [],    
+            // ]
         ],
     ],
 
