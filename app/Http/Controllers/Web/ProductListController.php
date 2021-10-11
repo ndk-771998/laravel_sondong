@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Entities\Category;
 use App\Entities\Product;
+use App\Pipes\ApplyPriceRange;
 use App\Traits\PrepareOption;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -11,6 +12,9 @@ use Illuminate\Http\Request;
 use VCComponent\Laravel\Config\Services\Facades\Option;
 use VCComponent\Laravel\Product\Contracts\ViewProductListControllerInterface;
 use VCComponent\Laravel\Product\Http\Controllers\Web\ProductListController as BaseProductListController;
+use VCComponent\Laravel\Product\Pipes\ApplyConstraints;
+use VCComponent\Laravel\Product\Pipes\ApplyOrderBy;
+use VCComponent\Laravel\Product\Pipes\ApplySearch;
 use VCComponent\Laravel\Product\Traits\Helpers;
 
 class ProductListController extends BaseProductListController implements ViewProductListControllerInterface
@@ -38,13 +42,9 @@ class ProductListController extends BaseProductListController implements ViewPro
         OpenGraph::setDescription(getOption('desc-seo-product'));
         OpenGraph::addImage(getOption('header-logo'));
 
-        $query           = Product::where('product_type', 'products');
-        $query           = $this->applyOrderByFromRequest($query, $request);
-        $products = $query->where('status', '1')->with('productMetas')->paginate(12);
         $manufacturers = Category::ofType('manufacturer')->where('status', '1')->get();
 
         return [
-            'products' => $products,
             'product_type' => $this->getTypeProduct($request),
             'manufacturers' => $manufacturers
         ];
@@ -73,5 +73,15 @@ class ProductListController extends BaseProductListController implements ViewPro
             $query = $query->orderBy('id', 'desc');
         }
         return $query;
+    }
+
+    protected function pipes()
+    {
+        return [
+            ApplyConstraints::class,
+            ApplySearch::class,
+            ApplyOrderBy::class,
+            ApplyPriceRange::class,
+        ];
     }
 }

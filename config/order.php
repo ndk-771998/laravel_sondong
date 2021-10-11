@@ -22,7 +22,7 @@ return [
 
     'auth_middleware' => [
         'admin'    => [
-            'middleware' => '',
+            'middleware' => 'jwt.auth',
             'except'     => [],
         ],
         'frontend' => [
