@@ -91,10 +91,19 @@
                     }
 
                     .origin {
-                        color: $secondary_text_color;
+                        color: $default_bottom_link_color;
+                        font-weight: normal;
                         margin-left: 20px;
                         text-decoration: line-through;
                     }
+                }
+
+                .manufacturer {
+                    margin-bottom: 10px;
+                }
+
+                .sold {
+                    margin-bottom: 20px;
                 }
 
                 .bonus {
@@ -115,6 +124,8 @@
                 }
 
                 .color {
+                    margin-top: 5px;
+
                     select {
                         font-size: $font_size_large;
                         margin: 10px;
