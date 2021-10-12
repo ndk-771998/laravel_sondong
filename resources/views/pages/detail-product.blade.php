@@ -14,7 +14,7 @@
             <div class="col-padding-16px w-100 product-info-wrap">
                 <div class="product-info">
                     <div class="row row-padding-16px">
-                        <div class="col-12 col-md-5 col-padding-16px medias">
+                        <div class="col-12 col-md-5 col-padding-16px medias ">
                             @if ($product->price && $product->original_price)
                                 <div class="tag-sale">
                                     {{floor(($product->price - $product->original_price)/$product->original_price*100)}}%
@@ -43,7 +43,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="col-12 col-md-7 col-padding-16px info">
+                        <div class="col-12 col-md-7 col-padding-16px info ">
                             <div class="title">{{ $product->name }}</div>
                             <div class="price">
                                 <div class="discount">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
