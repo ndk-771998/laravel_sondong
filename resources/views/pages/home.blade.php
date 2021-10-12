@@ -57,7 +57,7 @@
                         @endif
                             <div class="customer-feedback d-flex">
                                 <div class="info d-flex">
-                                    <div class="avatar"><img class="lazyload" data-src="{{ $customerfeedback->thumbnail }}" alt="avatar"></div>
+                                    <div class="avatar"><img width="50" height="50" class="lazyload" data-src="{{ $customerfeedback->thumbnail }}" alt="avatar"></div>
                                     <div class="text d-flex flex-column">
                                         <div class="name">{{ $customerfeedback->title }}</div>
                                         <div class="caption">{{ $customerfeedback->description }}</div>
@@ -156,14 +156,14 @@
             <div class="customer-picture row align-items-center">
                 @foreach ($customermedias as $item)
                 <div class="col-6 col-sm-4 col-md-3">
-                    <img class="lazyload" data-src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
+                    <img width="247" height="162" class="lazyload" data-src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
                 </div>
                 @endforeach
             </div>
 
             <a class="btn-primary mb-3" href="/customermedias">
                 Xem tất cả 
-                <img src="/assets/images/logo/chevron-up.svg" alt="chevron">
+                <img width="16" height="16" src="/assets/images/logo/chevron-up.svg" alt="chevron">
             </a>
         </div>
     </div>

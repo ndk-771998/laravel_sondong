@@ -2,7 +2,7 @@
     <div class="flash-sale-wrap">
         <div class="flash-sale-title d-flex flex-row">
             <div class="logo">
-                <img src="/assets/images/logo/flash-sale.svg" alt="Flash sale">
+                <img width="20" height="30" src="/assets/images/logo/flash-sale.svg" alt="Flash sale">
             </div>
             <div class="title">
                 Flash sale
@@ -13,7 +13,7 @@
                 <div id="seconds"></div>
             </div>
             <div class="view-all ml-auto d-flex align-items-center">
-                <a href="/flash-sale">Xem tất cả <img src="/assets/images/logo/chevron-up.svg" alt="up"></a>
+                <a href="/flash-sale">Xem tất cả <img width="10" height="10" src="/assets/images/logo/chevron-up.svg" alt="up"></a>
             </div>
         </div>
         <div class="flash-sale">

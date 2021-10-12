@@ -6,7 +6,7 @@
         <div class="media row-padding-20px">
             @foreach ($posts as $post)
             <div class="image col-padding-20px">
-                <img class="lazyload" data-src="{{ $post->thumbnail }}" alt="{{ $post->title }}">
+                <img width="247" height="162" class="lazyload" data-src="{{ $post->thumbnail }}" alt="{{ $post->title }}">
             </div>
             @endforeach
         </div>

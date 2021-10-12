@@ -2,7 +2,7 @@
     <a href="/{{ $product->product_type }}/{{ $product->slug }}">
         <div class="item-wrap">
             <div class="thumbnail">
-                <img class="lazyload" data-src="{{$product->thumbnail}}" alt="{{$product->name}}">
+                <img width="208" height="208" class="lazyload" data-src="{{$product->thumbnail}}" alt="{{$product->name}}">
                 @if ($product->price && $product->original_price)
                     <div class="sale-tag">
                         {{floor(($product->price - $product->original_price)/$product->original_price*100)}}%

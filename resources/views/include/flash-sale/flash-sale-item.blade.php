@@ -1,7 +1,7 @@
 <div class="flash-sale-item list-product">
     <div class="item-wrap">
         <div class="thumbnail">
-            <img class="lazyload" data-src="/assets/images/LA_4894.png" alt="item">
+            <img width="206" height="206" class="lazyload" data-src="/assets/images/LA_4894.png" alt="item">
             <div class="sale-tag">10%</div>
         </div>
         <div class="name">HP EliteBook 850 G2 i7-5600U /Ram 8Gb/SSD . . .</div>
