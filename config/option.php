@@ -18,10 +18,10 @@ return [
             // ],
         ],
         'admin_update' => [
-            // [
-            //     'middleware' => '',
-            //     'except'     => [],
-            // ],
+            [
+                'middleware' => 'jwt.auth',
+                'except'     => [],
+            ],
         ],
 
     ],

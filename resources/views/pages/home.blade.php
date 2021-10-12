@@ -37,11 +37,11 @@
 
     @include('include.flash-sale.flash-sale')
 
-    @include('include.product.product-slide', ['list_title' => 'Laptop mới', 'product_type' => 'products', 'products' => $new_products])
+    @include('include.product.product-slide', ['list_title' => 'Laptop mới', 'product_type' => 'products', 'products' => $new_products, 'price_filter' => true])
 
-    @include('include.product.product-slide', ['list_title' => 'Laptop cũ', 'product_type' => 'products', 'products' => $old_products])
+    @include('include.product.product-slide', ['list_title' => 'Laptop cũ', 'product_type' => 'products', 'products' => $old_products, 'price_filter' => true])
 
-    @include('include.product.product-slide', ['list_title' => 'Máy in', 'product_type' => 'printer', 'products' => $printers])
+    @include('include.product.product-slide', ['list_title' => 'Máy in', 'product_type' => 'printer', 'products' => $printers, 'price_filter' => true])
 
     <div class="customer-feedback-container container">
         <div class="row">

@@ -16,7 +16,9 @@
             margin-bottom: 30px;
 
             .medias {
-                margin-bottom: 30px;
+                @media (max-width: 767px) {
+                    margin-bottom: 30px;
+                };
                 .item {
                     aspect-ratio: 1;
                     align-items: center;
@@ -93,12 +95,12 @@
                     .origin {
                         color: $default_bottom_link_color;
                         font-weight: normal;
-                        margin-left: 20px;
+                        margin-left: 30px;
                         text-decoration: line-through;
                     }
                 }
 
-                .manufacturer {
+                .status, .manufacturer {
                     margin-bottom: 10px;
                 }
 
@@ -189,7 +191,7 @@
                 margin-bottom: 10px;
                 
                 tr:nth-child(2n) {
-                    background-color: $second-table-bg-color;
+                    background-color: $default_bg_color;
                 }
 
                 tr:nth-child(2n + 1) {
