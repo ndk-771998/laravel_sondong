@@ -173,11 +173,9 @@ class PostListController extends BasePostListController implements ViewPostListC
         OpenGraph::setDescription(getOption('desc-seo-customer-media'));
         OpenGraph::addImage(getOption('header-logo'));
 
-        $posts = Post::where('type', 'customermedias')->paginate(12);
         $products_best_buy = Product::where('status', 1)->orderBy('sold_quantity')->limit(5)->get();
 
         return [
-            'posts' => $posts,
             'products_best_buy' => $products_best_buy
         ];
     }
