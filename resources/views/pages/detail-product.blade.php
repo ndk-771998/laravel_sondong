@@ -49,9 +49,10 @@
                                 <div class="discount">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
                                 <div class="origin">{{preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->original_price)}} ₫</div>
                             </div>
-                            @if ($product->getFirstCategoryLabelByType('manufacturer'))
+                            <div class="status">Tình trạng: {{ $product->quantity ? "Còn hàng" : "Đã bán hết"}}</div>
+                            {{-- @if ($product->getFirstCategoryLabelByType('manufacturer'))
                             <div class="manufacturer">Hãng sản xuất: <a href="/categories/{{ $product->getFirstCategoryLabelByType('manufacturer') }}">{{ $product->getFirstCategoryLabelByType('manufacturer') }}</a></div>
-                            @endif
+                            @endif --}}
                             <div class="sold">Lượt mua: {{ $product->sold_quantity }}</div>
                             <div class="bonus">
                                 Tặng Balo Laptop
@@ -139,8 +140,8 @@
         </div>
     </div>
 
-    @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng', 'product_type' => 'accessory', 'products' => $accressories])
-    @include('include.product.product-slide', ['list_title' => 'Các sản phẩm tương tự', 'product_type' => $product->product_type, 'products' => $relatedProducts])
+    @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng', 'product_type' => 'accessory', 'products' => $accressories, 'price_filter' => false])
+    @include('include.product.product-slide', ['list_title' => 'Các sản phẩm tương tự', 'product_type' => $product->product_type, 'products' => $relatedProducts, 'price_filter' => false])
 
     <div class="modal fade buy-now-modal" id="buyNow" role="dialog">
         <div class="modal-dialog" role="document">
