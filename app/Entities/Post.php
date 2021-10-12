@@ -4,8 +4,10 @@ namespace App\Entities;
 
 use Exception;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\Models\Media;
 use VCComponent\Laravel\Category\Traits\HasCategoriesTrait;
 use VCComponent\Laravel\Comment\Traits\HasCommentTrait;
+use VCComponent\Laravel\MediaManager\Entities\MediaDimension;
 use VCComponent\Laravel\MediaManager\HasMediaTrait;
 use VCComponent\Laravel\Post\Entities\Post as BasePost;
 use VCComponent\Laravel\Tag\Traits\HasTagsTraits;
@@ -110,6 +112,15 @@ class Post extends BasePost
             return $this->postMetas->where('key', $key)->first()->value;
         } catch (Exception $e) {
             return '';
+        }
+    }
+    
+    public function registerMediaConversions(Media $media = null)
+    {
+        $media_dimension = MediaDimension::where('model', 'post')->get();
+
+        foreach ($media_dimension as $item) {
+            $this->addMediaConversion($item->name)->width($item->width)->height($item->height)->sharpen(10);
         }
     }
 }

@@ -6,8 +6,10 @@ use Exception;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\Models\Media;
 use VCComponent\Laravel\Category\Traits\HasCategoriesTrait;
 use VCComponent\Laravel\Comment\Traits\HasCommentTrait;
+use VCComponent\Laravel\MediaManager\Entities\MediaDimension;
 use VCComponent\Laravel\MediaManager\HasMediaTrait;
 use VCComponent\Laravel\Product\Contracts\ProductManagement;
 use VCComponent\Laravel\Product\Contracts\ProductSchema;
@@ -114,6 +116,15 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
             }
         } else {
             return $this->categories()->where('type', $type)->first()->name;
+        }
+    }
+
+    public function registerMediaConversions(Media $media = null)
+    {
+        $media_dimension = MediaDimension::where('model', 'product')->get();
+
+        foreach ($media_dimension as $item) {
+            $this->addMediaConversion($item->name)->width($item->width)->height($item->height)->sharpen(10);
         }
     }
 }

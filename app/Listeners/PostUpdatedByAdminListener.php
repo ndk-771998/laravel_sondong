@@ -3,10 +3,12 @@
 namespace App\Listeners;
 
 use App\Entities\User;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
 use VCComponent\Laravel\Notification\Entities\Notification as EntitiesNotification;
 use VCComponent\Laravel\Notification\Notifications\Notification;
 
-class ProductUpdatedByAdminListener
+class PostUpdatedByAdminListener
 {
     /**
      * Create the event listener.
@@ -26,59 +28,71 @@ class ProductUpdatedByAdminListener
      */
     public function handle($event)
     {
-        $product = $event->product;
+        $post    = $event->post;
         $request = request();
 
         if ($request->has('media_ids')) {
-            $medias = $product->getMedia();
+            $medias = $post->getMedia();
             if ($medias->count()) {
                 $media_ids = $medias->map(function ($media) {
                     return $media->id;
                 })->toArray();
-                $product->detachMedia($media_ids);
+                $post->detachMedia($media_ids);
             }
-            $product->attachMedia($request->input('media_ids'));
+            $post->attachMedia($request->input('media_ids'));
         }
 
         if ($request->has('category_ids')) {
-            $categories = $product->categories;
+            $categories = $post->categories;
             if ($categories->count()) {
-                $category_ids = $product->categories->map(function ($cate) {
+                $category_ids = $post->categories->map(function ($cate) {
                     return $cate->id;
                 })->toArray();
-                $product->detachCategories($category_ids);
+                $post->detachCategories($category_ids);
             }
-            $product->attachCategories($request->input('category_ids'));
+            $post->attachCategories($request->input('category_ids'));
         }
+
+        if ($request->has('tag_ids')) {
+            $tags = $post->tags;
+            if ($tags->count()) {
+                $tag_ids = $post->tags->map(function ($tag) {
+                    return $tag->id;
+                })->toArray();
+                $post->detachtags($tag_ids);
+            }
+            $post->attachtags($request->input('tag_ids'));
+        }
+
         if ($request->has('media_urls')) {
 
-            $medias = $product->getMedia();
+            $medias = $post->getMedia();
             if ($medias->count()) {
                 $media_ids = $medias->map(function ($media) {
                     return $media->id;
                 })->toArray();
-                $product->detachMedia($media_ids);
+                $post->detachMedia($media_ids);
             }
 
             foreach ($request->media_urls as $item) {
                 if($item != null) {
                     $image_path = explode($request->getSchemeAndHttpHost().'/', $item);
-                    $medias = $product->addMedia(public_path($image_path[1]))->preservingOriginal()->toMediaCollection();
-                    $product->attachMedia($medias->id);
+                    $medias = $post->addMedia(public_path($image_path[1]))->preservingOriginal()->toMediaCollection();
+                    $post->attachMedia($medias->id);
                 }
 
             }
         }
 
         if ($request->has('tag_ids')) {
-            $product->syncTag($request->input('tag_ids'));
+            $post->syncTag($request->input('tag_ids'));
         }
 
         $users = User::whereHas('roles', function ($q) {
             $q->where('slug', 'admin');
         })->get();
 
-        $notification = EntitiesNotification::where('slug', 'thong-bao-co-admin-cap-nhat-san-pham')->first();
+        $notification = EntitiesNotification::where('slug', 'thong-bao-co-admin-cap-nhat-bai-viet')->first();
 
         if($users->count() && $notification) {
             $user = new User();
