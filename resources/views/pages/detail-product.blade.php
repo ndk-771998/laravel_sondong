@@ -49,10 +49,7 @@
                                 <div class="discount">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
                                 <div class="origin">{{preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->original_price)}} ₫</div>
                             </div>
-                            <div class="status">Tình trạng: {{ $product->quantity ? "Còn hàng" : "Đã bán hết"}}</div>
-                            {{-- @if ($product->getFirstCategoryLabelByType('manufacturer'))
-                            <div class="manufacturer">Hãng sản xuất: <a href="/categories/{{ $product->getFirstCategoryLabelByType('manufacturer') }}">{{ $product->getFirstCategoryLabelByType('manufacturer') }}</a></div>
-                            @endif --}}
+                            <div class="status">Tình trạng: {{ $product->quantity ? "Còn hàng" : "Đã bán hết"}}</div> 
                             <div class="sold">Lượt mua: {{ $product->sold_quantity }}</div>
                             <div class="bonus">
                                 Tặng Balo Laptop
