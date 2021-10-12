@@ -48,7 +48,7 @@
                 {!! getOption('website-info') !!}
             </div>
             <div class="col-12 col-lg-3">
-                <img src="/assets/images/logo/dathongbao.png" alt="đã thông báo">
+                <img width="188" height="58" src="/assets/images/logo/dathongbao.png" alt="đã thông báo">
             </div>
         </div>
     </div>

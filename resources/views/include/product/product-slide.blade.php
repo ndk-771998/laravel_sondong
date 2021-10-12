@@ -13,7 +13,7 @@
             </div>
             @endif
             <div class="view-all d-flex align-items-center">
-                <a href="/{{ $product_type }}">Xem tất cả <img src="/assets/images/logo/chevron-up.svg" alt="up"></a>
+                <a href="/{{ $product_type }}">Xem tất cả <img width="10" height="10" src="/assets/images/logo/chevron-up.svg" alt="up"></a>
             </div>
         </div>
         <div class="product-slide">

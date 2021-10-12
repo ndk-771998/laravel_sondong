@@ -3,12 +3,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class=" col-3 col-lg-2">
-                    <a href="/"><img src="{{getOption('header-logo')}}" title="Quay lại trang chủ" class="logo"
+                    <a href="/"><img width="87" height="80" src="{{getOption('header-logo')}}" title="Quay lại trang chủ" class="logo"
                             alt="logo"></a></div>
                 <div class="col-9 col-lg-5">
                     <form action="{{ route('search') }}" method="get" id="search-form">
                         <div class="input-group d-flex justify-content-start header-search-wrap">
                             <button type="submit" class="btn d-flex input-group-append" title='Tìm kiếm'><img
+                                    width="20" height="20"
                                     src="/assets/images/logo/search.svg" alt=""></button>
                             <input type="search" placeholder="Tìm kiếm..." name="search" class="form-control" id="search-form-input">
                         </div>
@@ -17,13 +18,13 @@
                 </div>
                 <div class="col-lg-5 d-flex justify-content-end align-items-center">
                     <div class="giao-hang-toan-quoc-wrap">
-                        <img src="/assets/images/logo/giao-hang-toan-quoc.svg" alt="">
+                        <img width="30" height="30" src="/assets/images/logo/giao-hang-toan-quoc.svg" alt="">
                         Giao hàng toàn quốc
                     </div>
                     <div class="header-hotline-wrap">
                         <div class="d-flex flex-row">
                             <div class="header-hotline-logo">
-                                <img src="/assets/images/logo/header-hotline.svg" alt="">
+                                <img  width="30" height="30" src="/assets/images/logo/header-hotline.svg" alt="">
                             </div>
                             <div class="">
                                 <div class="header-hotline-label">Đường dây nóng</div>
