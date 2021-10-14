@@ -8,6 +8,7 @@
         background-color: $default_bg_color;
         padding: 10px 16px;
         margin-bottom: 12px;
+        border-radius: 2px;
     }
 
     .filter {
@@ -32,6 +33,7 @@
         background-color: $default_bg_color;
         padding: 14px;
         margin-bottom: 30px;
+        border: 2px;
 
         a {
             color: $default_text_color;
