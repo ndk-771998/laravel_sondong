@@ -11,8 +11,11 @@
 
     form .header-search-wrap {
         width: 100%;
+        border-radius: 6px;
+        transition: 0.25s ease-in-out;
+        box-shadow: rgba(255, 255, 255, 100%) 0px 0px 0px 0;
         .form-control:focus {
-            outline: none;
+            box-shadow: none;
         }
         ::-webkit-input-placeholder {
             font-style: italic;

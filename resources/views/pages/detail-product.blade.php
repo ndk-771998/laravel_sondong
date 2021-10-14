@@ -49,8 +49,9 @@
                                 <div class="discount">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
                                 <div class="origin">{{preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->original_price)}} ₫</div>
                             </div>
-                            <div class="status">Tình trạng: {{ $product->quantity ? "Còn hàng" : "Đã bán hết"}}</div> 
-                            <div class="sold">Lượt mua: {{ $product->sold_quantity }}</div>
+                            <div class="guarantee"><strong>Bảo hành:</strong> 24 tháng</div> 
+                            <div class="status"><strong>Tình trạng:</strong> {{ $product->quantity ? "Còn hàng" : "Đã bán hết"}}</div> 
+                            <div class="parameters-link"><a href="#parameters">Xem cấu hình chi tiết</a></div>
                             <div class="bonus">
                                 Tặng Balo Laptop
                             </div>
@@ -60,15 +61,38 @@
                             <div class="bonus">
                                 Tặng PMH 100.000đ mua Microsoft 365 Personal/Family/Home & Student khi mua Online đến 30/09
                             </div>
-                            <div class="color">
+                            {{-- <div class="color">
                                 Chọn màu: 
                                 <select name="color" id="">
                                     <option value="1">Xám</option>
                                     <option value="2">Đen</option>
                                     <option value="3">Hường</option>
                                 </select>
+                            </div> --}}
+                            
+                            <div class="logos-wrap row-padding-16px">
+                                <div class="col-padding-16px col-6">
+                                    <div class="d-flex flex-row logo-item">
+                                        <div class="logo">
+                                            <img class="lazyload" data-src="{{ getOption('logo-van-chuyen') }}" alt="logo-van-chuyen">
+                                        </div>
+                                        <div class="label">
+                                            Miễn phí vận chuyển
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-padding-16px col-6">
+                                    <div class="d-flex flex-row logo-item">
+                                        <div class="logo">
+                                            <img class="lazyload" data-src="{{ getOption('logo-bao-hanh') }}" alt="logo-bao-hanh">
+                                        </div>
+                                        <div class="label">
+                                            Bảo hành dài hạn
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="btn-buy mt-4" data-toggle="modal" data-target="#buyNow">
+                            <div class="btn-buy" data-toggle="modal" data-target="#buyNow">
                                 Mua ngay
                             </div>
                         </div>
@@ -87,7 +111,7 @@
                 </div>
             </div>
             <div class="col-padding-16px product-parameter-wrap">
-                <div class="product-parameter">
+                <div class="product-parameter" id="parameters">
                     <div class="product-parameter-title">
                         Thông số kỹ thuật
                     </div>

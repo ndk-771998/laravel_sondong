@@ -92,9 +92,11 @@ $(document).ready(function() {
         if ( $('#type-hint-list').children().length > 0) {
             $('#type-hint-list').addClass('show');
         }
+        $('.header-search-wrap').css('box-shadow', '0 0 0 0.2rem rgba(0, 123, 255, 20%)');
     })
     $('#search-form-input').focusout(function() {
         $('#type-hint-list').removeClass('show');
+        $('.header-search-wrap').css('box-shadow', 'rgba(255, 255, 255, 100%) 0px 0px 0px 0');
     })
 
     $('#search-form-input').on('input',function() {

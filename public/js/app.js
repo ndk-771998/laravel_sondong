@@ -22396,9 +22396,12 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#type-hint-list').children().length > 0) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#type-hint-list').addClass('show');
     }
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header-search-wrap').css('box-shadow', '0 0 0 0.2rem rgba(0, 123, 255, 20%)');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#search-form-input').focusout(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#type-hint-list').removeClass('show');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header-search-wrap').css('box-shadow', 'rgba(255, 255, 255, 100%) 0px 0px 0px 0');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#search-form-input').on('input', function () {
     if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val().length >= 3) {

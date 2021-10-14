@@ -8,17 +8,17 @@
     margin-bottom: 30px;
 
     .product-info-wrap {
-
         .product-info {
             box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
             padding: 30px;
             background-color: $default_bg_color;
             margin-bottom: 30px;
+            border-radius: 2px;
 
             .medias {
                 @media (max-width: 767px) {
                     margin-bottom: 30px;
-                };
+                }
                 .item {
                     aspect-ratio: 1;
                     align-items: center;
@@ -45,7 +45,8 @@
                     width: 80%;
                     margin: auto;
 
-                    .slick-next, .slick-prev {
+                    .slick-next,
+                    .slick-prev {
                         height: 10px;
                         filter: grayscale(1) brightness(1.5);
                     }
@@ -82,7 +83,6 @@
                 }
 
                 .price {
-                    font-size: $font_size_normal;
                     font-weight: bold;
                     margin-bottom: 20px;
                     display: flex;
@@ -90,17 +90,23 @@
 
                     .discount {
                         color: $default_price_color;
+                        font-size: 32px;
                     }
 
                     .origin {
                         color: $default_bottom_link_color;
+                        font-size: $font_size_large;
                         font-weight: normal;
-                        margin-left: 30px;
+                        margin-left: 20px;
+                        margin-top: 7px;
                         text-decoration: line-through;
                     }
                 }
 
-                .status, .manufacturer {
+                .parameters-link,
+                .guarantee,
+                .status,
+                .manufacturer {
                     margin-bottom: 10px;
                 }
 
@@ -133,8 +139,27 @@
                         margin: 10px;
                     }
                 }
+                .logos-wrap {
+                    margin-bottom: 50px;
+                    margin-top: 15px;
+                    .logo-item {
+                        align-items: center;
 
-                >div {
+                        img {
+                            width: 50px;
+                            margin-right: 20px;
+                            border-radius: 10px;
+                        }
+
+                        .label {
+                            font-size: $font_size_normal;
+                            color: $default_text_color;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                > div {
                     margin-bottom: 5px;
                 }
             }
@@ -148,6 +173,7 @@
 
         .product-content {
             box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+            border-radius: 2px;
             background-color: $default_bg_color;
             width: 100%;
             padding: 12px 20px;
@@ -175,6 +201,7 @@
 
         .product-parameter {
             box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+            border-radius: 2px;
             background-color: $default_bg_color;
             width: 100%;
             padding: 12px 20px;
@@ -189,7 +216,7 @@
                 font-weight: bold;
                 width: 100%;
                 margin-bottom: 10px;
-                
+
                 tr:nth-child(2n) {
                     background-color: $default_bg_color;
                 }
@@ -232,7 +259,7 @@
             .thumbnail {
                 width: 60%;
                 margin-right: 12px;
-    
+
                 img {
                     width: auto;
                     height: auto;
@@ -246,7 +273,7 @@
                 .title {
                     margin-bottom: 12px;
                 }
-                
+
                 .price {
                     font-weight: bold;
                     font-size: $font_size_large;
@@ -302,13 +329,15 @@
     text-align: center;
 
     .modal-body {
-        padding: 40px; 
+        padding: 40px;
 
-        h2, p, img {
+        h2,
+        p,
+        img {
             margin-bottom: 30px;
         }
 
-        h2{
+        h2 {
             font-size: $font_size_larger;
         }
 
