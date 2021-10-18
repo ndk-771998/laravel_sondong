@@ -30,7 +30,9 @@ class HomeController extends Controller
         $old_products          = Product::where('product_type', 'products')->whereHas('categories', function($query) {
             $query->where('slug', 'laptop-cu');
         })->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
-        $printer          = Product::where('product_type', 'printer')->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
+        $printer          = Product::where('product_type', 'products')->whereHas('categories', function($query) {
+            $query->where('slug', 'may-in');
+        })->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
         $customerfeedbacks = Post::where('type', 'customerfeedback')->where('status', '1')->limit(9)->get();
         $customermedias = Post::where('type', 'customermedias')->paginate(12);
 

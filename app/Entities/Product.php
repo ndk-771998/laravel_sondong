@@ -25,8 +25,8 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
     public function productTypes()
     {
         return [
-            'Máy in'                => 'printer',
-            'Link kiện máy tính'    => 'accessory',
+            // 'Máy in'                => 'printer',
+            // 'Link kiện máy tính'    => 'accessory',
         ];
     }
 

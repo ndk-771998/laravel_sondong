@@ -42,8 +42,12 @@ class ProductListController extends BaseProductListController implements ViewPro
         OpenGraph::setDescription(getOption('desc-seo-product'));
         OpenGraph::addImage(getOption('header-logo'));
 
-        $manufacturers = Category::ofType('manufacturer')->where('status', '1')->get();
-
+        $manufacturers_parent_id = Category::ofType('products')->where('slug', 'hang-san-xuat')->first();
+        if ($manufacturers_parent_id) {
+            $manufacturers = Category::ofType('products')->where('parent_id', $manufacturers_parent_id->id)->where('status', 1)->get();
+        } else {
+            $manufacturers = [];
+        }
         return [
             'product_type' => $this->getTypeProduct($request),
             'manufacturers' => $manufacturers

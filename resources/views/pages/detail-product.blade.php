@@ -178,8 +178,8 @@
             </div>
         </div>
     </div>
-    
-    @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng', 'product_type' => 'accessory', 'products' => $accressories, 'price_filter' => false])
+
+    @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng', 'product_type' => 'categories/phu-kien', 'products' => $accressories, 'price_filter' => false])
     @include('include.product.product-slide', ['list_title' => 'Các sản phẩm tương tự', 'product_type' => $product->product_type, 'products' => $relatedProducts, 'price_filter' => false])
 
     <div class="modal fade buy-now-modal" id="buyNow" role="dialog">

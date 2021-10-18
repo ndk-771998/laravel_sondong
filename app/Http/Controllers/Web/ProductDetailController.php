@@ -33,10 +33,12 @@ class ProductDetailController extends BaseProductDetailController implements Vie
             ->latest()
             ->limit(5)
             ->get();
-        $accressories = Product::where('product_type', 'accessory')->where('id', '<>', $product->id)->with('productMetas')
-            ->latest()
-            ->limit(5)
-            ->get();
+        $accressories          = Product::where('product_type', 'products')->whereHas('categories', function($query) {
+            $query->where('slug', 'phu-kien');
+        })->orderBy('id', 'desc')->where('id', '<>', $product->id)->where('status', '1')->with('productMetas')
+        ->latest()
+        ->limit(5)
+        ->get();
         return [
             'relatedProducts' => $relatedProducts,
             'accressories'    => $accressories,

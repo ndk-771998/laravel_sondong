@@ -235,6 +235,11 @@
                     padding: 14px 10px;
                     border: solid 0.5px $second-table-bg-color;
                 }
+
+                tbody {
+                    display: table;
+                    width: 100%;
+                }
             }
             .detail {
                 text-align: center;
