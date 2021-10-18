@@ -44,7 +44,7 @@ class ProductListController extends BaseProductListController implements ViewPro
 
         $manufacturers_parent_id = Category::ofType('products')->where('slug', 'hang-san-xuat')->first();
         if ($manufacturers_parent_id) {
-            $manufacturers = Category::ofType('pdocuts')->where('parent_id', $manufacturers_parent_id->id)->where('status', 1)->get();
+            $manufacturers = Category::ofType('products')->where('parent_id', $manufacturers_parent_id->id)->where('status', 1)->get();
         } else {
             $manufacturers = [];
         }

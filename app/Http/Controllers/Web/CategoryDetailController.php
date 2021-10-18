@@ -30,7 +30,14 @@ class CategoryDetailController extends WebCategoryDetailController
         OpenGraph::setDescription($category->description);
         OpenGraph::addImage($category->thumbnail);
 
-        $children_categories = $category->children()->get();
+        $children_categories = $category->children()->where('status', '1')->get();
+
+        $manufacturers_parent_id = Category::ofType('products')->where('slug', 'hang-san-xuat')->first();
+        if ($manufacturers_parent_id) {
+            $manufacturers = Category::ofType('products')->where('parent_id', $manufacturers_parent_id->id)->where('status', 1)->get();
+        } else {
+            $manufacturers = [];
+        }
 
         $products = Product::ofCategory($category->id);
         $products = $this->applyPriceRangeFromRequest($products, $request);
@@ -39,6 +46,7 @@ class CategoryDetailController extends WebCategoryDetailController
         return [
             'products' => $products,
             'children_categories' => $children_categories,
+            'manufacturers' => $manufacturers,
         ];
     }
     

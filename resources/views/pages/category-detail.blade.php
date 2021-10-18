@@ -16,7 +16,7 @@
 
                 @if (count($children_categories))
                 <div class="title">
-                    Hãng sản xuất
+                    Phân loại
                 </div>
                 <div class="filter">
                     <form action="/search" method="GET" id="filter-manufacturer-form">
@@ -36,6 +36,28 @@
                 </div>
                 @endif
 
+                @if (count($manufacturers))
+                <div class="title">
+                    Hãng sản xuất
+                </div>
+                <div class="filter">
+                    <form action="/search" method="GET" id="filter-manufacturer-form">
+                        <div class="form-check">
+                            <input type="checkbox" value=""
+                                class="form-check-input filter-manufacturer-submit" id="all-manufacturers">
+                            <label class="form-check-label" for="all-manufacturers">Tất cả</label>
+                        </div>
+                        @foreach ($manufacturers as $manufacturer)
+                        <div class="form-check">
+                            <input type="checkbox" name="manufacturer"
+                                class="form-check-input filter-manufacturer-submit" value="{{ $manufacturer->slug }}" id="{{ $manufacturer->slug }}">
+                            <label class="form-check-label" for="{{ $manufacturer->slug }}">{{ $manufacturer->name }}</label>
+                        </div>
+                        @endforeach
+                    </form>
+                </div>
+                @endif
+                
             </div>
             <div class="main col-padding-12px">
                 <div class="breadcrumb d-flex flex-row align-items-center">

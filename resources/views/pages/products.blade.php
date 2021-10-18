@@ -45,8 +45,8 @@
                     <div class="ml-auto order-by">
                         Sắp xếp theo:
                         <select name="order_by" id="filter_order_by">
-                            <option value="price_asc">Giá từ cao đến thấp</option>
-                            <option value="price_desc">Giá từ thấp đến cao</option>
+                            <option value="price_desc">Giá từ cao đến thấp</option>
+                            <option value="price_asc">Giá từ thấp đến cao</option>
                         </select>
                     </div>
                 </div>

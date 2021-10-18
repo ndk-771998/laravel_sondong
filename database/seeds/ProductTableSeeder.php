@@ -33,7 +33,9 @@ class ProductTableSeeder extends Seeder
 
         $manufacturers = Category::whereIn('slug', ['hp', 'dell', 'asus', 'lenovo', 'apple'])->get()->pluck('id')->toArray();
         $laptops = Category::whereIn('slug', ['laptop-moi', 'laptop-cu', 'laptop-do-hoa', 'laptop-mong-nhe', 'laptop-gaming'])->get()->pluck('id')->toArray();
-        factory(Product::class, 50)->create()->each(function ($product) use ($manufacturers, $laptops) {
+        $laptop_id = Category::where('slug', 'laptop')->first()->id;
+        factory(Product::class, 50)->create()->each(function ($product) use ($manufacturers, $laptops, $laptop_id) {
+            $product->attachCategories([$laptop_id]);
             $product->productMetas()->createMany([
                 [
                     'key'   => 'cpu',

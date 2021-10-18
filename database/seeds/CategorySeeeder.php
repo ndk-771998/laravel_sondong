@@ -30,8 +30,8 @@ class CategorySeeder extends Seeder
         ]);
         Category::insert([
             [
-                'name' => 'Hãng sản xuất laptop',
-                'slug' => 'hang-san-xuat-laptop',
+                'name' => 'Hãng sản xuất',
+                'slug' => 'hang-san-xuat',
                 'type' => 'products',
                 'status' => 2,
                 'parent_id' => 1,
