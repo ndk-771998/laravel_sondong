@@ -4,6 +4,7 @@ use App\Entities\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Arr;
 use VCComponent\Laravel\Category\Entities\Category;
+use VCComponent\Laravel\Product\Entities\ProductSchema;
 use VCComponent\Laravel\Product\Entities\Variant;
 use VCComponent\Laravel\Product\Traits\ProductSchemaTrait;
 
@@ -17,9 +18,22 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        $manufacturers = Category::where('type', 'manufacturer')->get()->pluck('id')->toArray();
-        $laptops = Category::where('type', 'laptop')->get()->pluck('id')->toArray();
-        factory(Product::class, 50)->create()->each(function ($product) use($manufacturers, $laptops) {
+        ProductSchema::insert([
+            ['name' => 'cpu', 'Label' => 'CPU', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'ram', 'Label' => 'Ram', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'screen', 'Label' => 'Màn hình', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'graphics', 'Label' => 'Đồ họa', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'driver', 'Label' => 'Ổ cứng', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'os', 'Label' => 'Hệ điều hành', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'weight', 'Label' => 'Trọng lượng', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'size', 'Label' => 'Kích thước', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'origin', 'Label' => 'Xuất xứ', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+        ]);
+
+
+        $manufacturers = Category::whereIn('slug', ['hp', 'dell', 'asus', 'lenovo', 'apple'])->get()->pluck('id')->toArray();
+        $laptops = Category::whereIn('slug', ['laptop-moi', 'laptop-cu', 'laptop-do-hoa', 'laptop-mong-nhe', 'laptop-gaming'])->get()->pluck('id')->toArray();
+        factory(Product::class, 50)->create()->each(function ($product) use ($manufacturers, $laptops) {
             $product->productMetas()->createMany([
                 [
                     'key'   => 'cpu',
@@ -61,7 +75,13 @@ class ProductTableSeeder extends Seeder
             $product->attachCategories(Arr::random($manufacturers));
             $product->attachCategories(Arr::random($laptops));
         });
-        factory(Product::class, 10)->state('printer')->create();
-        factory(Product::class, 10)->state('accessory')->create();
+        $printer_category_id = Category::where('slug', 'may-in')->first()->id;
+        factory(Product::class, 10)->create()->each(function ($product) use ($printer_category_id) {
+            $product->attachCategories($printer_category_id);
+        });
+        $accessory_category_id = Category::where('slug', 'phu-kien')->first()->id;
+        factory(Product::class, 10)->create()->each(function ($product) use ($accessory_category_id) {
+            $product->attachCategories($accessory_category_id);
+        });;
     }
 }

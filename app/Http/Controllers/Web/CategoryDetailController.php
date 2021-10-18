@@ -31,11 +31,40 @@ class CategoryDetailController extends WebCategoryDetailController
         OpenGraph::addImage($category->thumbnail);
 
         $children_categories = $category->children()->get();
-        $arr = Product::ofCategory($category->id)->where('status', '1')->orderBy('order', 'asc')->latest()->paginate(12);
-    
+
+        $products = Product::ofCategory($category->id);
+        $products = $this->applyPriceRangeFromRequest($products, $request);
+        $products = $products->where('status', '1')->orderBy('order', 'asc')->latest()->paginate(12);
+
         return [
-            'products' => $arr,
+            'products' => $products,
             'children_categories' => $children_categories,
         ];
+    }
+    
+    protected function applyPriceRangeFromRequest($query, Request $request) 
+    {
+        if ($request->get("price") !== null && $request->get('price') !== '') {
+            $prices = explode("&", $request->get("price"));
+            $price_range = [];
+            collect($prices)->map(function($price) use (&$price_range) {
+                array_push($price_range, explode("-", str_replace('price=', '', $price)));
+            });
+
+            return $query->where(function ($query) use ($price_range) {
+                foreach ($price_range as $item) {
+                    if (array_key_exists("1", $item)) {
+                        $query = $query->orWhere(function($query) use ($item) {
+                            $query->where('price', '>=', $item[0])->where('price', '<=', $item[1]);
+                        });
+                    } else {
+                        $query = $query->orWhere(function($query) use ($item) {
+                            $query->where('price', '>=', $item[0]);
+                        });
+                    }
+                }
+            });
+        }
+        return $query;
     }
 }

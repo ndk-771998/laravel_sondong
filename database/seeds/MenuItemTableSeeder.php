@@ -20,10 +20,10 @@ class MenuItemTableSeeder extends Seeder {
             ['menu_id' => '1', 'label' => 'Liên hệ', 'link' => '/aboutus/lien-he', 'type' => 'menu-header', 'parent_id' => 0],
             
             //seeding sản phẩm's items id(7, 8, 9, 10)
-            ['menu_id' => '1', 'label' => 'Laptop/ Máy tính', 'link' => '/products', 'type' => 'menu-header', 'parent_id' => 1],
-            ['menu_id' => '1', 'label' => 'Máy photocoppy', 'link' => '/printer', 'type' => 'menu-header', 'parent_id' => 1],
-            ['menu_id' => '1', 'label' => 'Link kiện máy tính', 'link' => '/accessory', 'type' => 'menu-header', 'parent_id' => 1],
-            ['menu_id' => '1', 'label' => 'Mực máy tính', 'link' => '/accessory', 'type' => 'menu-header', 'parent_id' => 1],
+            ['menu_id' => '1', 'label' => 'Laptop/ Máy tính', 'link' => '/categories/laptop', 'type' => 'menu-header', 'parent_id' => 1],
+            ['menu_id' => '1', 'label' => 'Máy photocoppy', 'link' => '/categories/may-in', 'type' => 'menu-header', 'parent_id' => 1],
+            ['menu_id' => '1', 'label' => 'Link kiện máy tính', 'link' => '/categories/phu-kien', 'type' => 'menu-header', 'parent_id' => 1],
+            ['menu_id' => '1', 'label' => 'Mực máy tính', 'link' => '/categories/phu-kien', 'type' => 'menu-header', 'parent_id' => 1],
             
             //seeding laptop/ máy tính item
             ['menu_id' => '1', 'label' => 'Laptop cũ', 'link' => '/categories/laptop-cu', 'type' => 'menu-header', 'parent_id' => 7],//11
