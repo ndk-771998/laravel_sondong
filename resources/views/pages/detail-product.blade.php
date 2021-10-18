@@ -116,51 +116,69 @@
                         Thông số kỹ thuật
                     </div>
                     <table class="parameter table-striped">
+                        @if ($product->getMetaField('cpu'))
                         <tr>
-                            <td>CPU</td>
-                            <td>{{ $product->getMetaField('cpu') }}</td>
+                            <td><div>CPU</div></td>
+                            <td><div>{{ $product->getMetaField('cpu') }}</div></td>
                         </tr>
+                        @endif
+                        @if ($product->getMetaField('ram'))
                         <tr>
-                            <td>RAM</td>
-                            <td>{{ $product->getMetaField('ram') }}</td>
+                            <td><div>RAM</div></td>
+                            <td><div>{{ $product->getMetaField('ram') }}</div></td>
                         </tr>
+                        @endif
+                        @if ($product->getMetaField('screen'))
                         <tr>
-                            <td>Màn hình</td>
-                            <td>{{ $product->getMetaField('screen') }}</td>
+                            <td><div>Màn hình</div></td>
+                            <td><div>{{ $product->getMetaField('screen') }}</div></td>
                         </tr>
+                        @endif
+                        @if ($product->getMetaField('graphics'))
                         <tr>
-                            <td>Đồ họa</td>
-                            <td>{{ $product->getMetaField('graphics') }}</td>
+                            <td><div>Đồ họa</div></td>
+                            <td><div>{{ $product->getMetaField('graphics') }}</div></td>
                         </tr>
+                        @endif
+                        @if ($product->getMetaField('hard_drive'))
                         <tr>
-                            <td>Ổ cứng</td>
-                            <td>{{ $product->getMetaField('hard_drive') }}</td>
+                            <td><div>Ổ cứng</div></td>
+                            <td><div>{{ $product->getMetaField('hard_drive') }}</div></td>
                         </tr>
+                        @endif
+                        @if ($product->getMetaField('os'))
                         <tr>
-                            <td>Hệ điều hành</td>
-                            <td>{{ $product->getMetaField('os') }}</td>
+                            <td><div>Hệ điều hành</div></td>
+                            <td><div>{{ $product->getMetaField('os') }}</div></td>
                         </tr>
+                        @endif
+                        @if ($product->getMetaField('weight'))
                         <tr>
-                            <td>Trọng lượng</td>
-                            <td>{{ $product->getMetaField('weight') }}</td>
+                            <td><div>Trọng lượng</div></td>
+                            <td><div>{{ $product->getMetaField('weight') }}</div></td>
                         </tr>
+                        @endif
+                        @if ($product->getMetaField('size'))
                         <tr>
-                            <td>Kích thước (mm)</td>
-                            <td>{{ $product->getMetaField('size') }}</td>
+                            <td><div>Kích thước (mm)</div></td>
+                            <td><div>{{ $product->getMetaField('size') }}</div></td>
                         </tr>
+                        @endif
+                        @if ($product->getMetaField('origin'))
                         <tr>
-                            <td>Xuất xứ</td>
-                            <td>{{ $product->getMetaField('origin') }}</td>
+                            <td><div>Xuất xứ</div></td>
+                            <td><div>{{ $product->getMetaField('origin') }}</div></td>
                         </tr>
+                        @endif
                     </table>
-                    <div class="detail">
-                        <a href="#">Xem cấu hình chi tiết <i class="fa fa-chevron-down"></i></a>
+                    <div class="detail show-more-parameter">
+                        <a href="#parameters" class="hide">Xem cấu hình chi tiết <i class="fa fa-chevron-down"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
     @include('include.product.product-slide', ['list_title' => 'Các phụ kiện thường được mua cùng', 'product_type' => 'accessory', 'products' => $accressories, 'price_filter' => false])
     @include('include.product.product-slide', ['list_title' => 'Các sản phẩm tương tự', 'product_type' => $product->product_type, 'products' => $relatedProducts, 'price_filter' => false])
 

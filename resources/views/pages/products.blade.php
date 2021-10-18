@@ -8,7 +8,7 @@
     <div class="container product-container" id="anchor-name">
         <div class="product-wrap row-padding-12px">
             <div class="col-padding-12px w-100">
-                @include('include.breadcrumb', ['breadcrumb' => ['Sản phẩm' => '/products', 'HP Book ...']])
+                @include('include.breadcrumb', ['breadcrumb' => ['Sản phẩm' => '/products']])
             </div>
 
             <div class="sidebar col-padding-12px">

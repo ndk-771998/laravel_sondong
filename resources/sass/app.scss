@@ -22,6 +22,11 @@
 @import "./page/search";
 @import "./page/page";
 @import "./page/error-404";
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     color: $default_text_color;
     background-color: $bg_color;
