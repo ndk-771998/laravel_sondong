@@ -10,7 +10,7 @@
     .product-info-wrap {
         .product-info {
             box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-            padding: 30px;
+            padding: 20px 30px;
             background-color: $default_bg_color;
             margin-bottom: 30px;
             border-radius: 2px;
@@ -103,13 +103,16 @@
                     }
                 }
 
-                .parameters-link,
                 .guarantee,
                 .status,
                 .manufacturer {
-                    margin-bottom: 10px;
+                    margin-bottom: 6px;
                 }
 
+                .parameters-link {
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                }
                 .sold {
                     margin-bottom: 20px;
                 }
@@ -141,7 +144,7 @@
                 }
                 .logos-wrap {
                     margin-bottom: 50px;
-                    margin-top: 15px;
+                    margin-top: 20px;
                     .logo-item {
                         align-items: center;
 
@@ -216,6 +219,9 @@
                 font-weight: bold;
                 width: 100%;
                 margin-bottom: 10px;
+                display: block;
+                overflow: hidden;
+                transition: ease-in-out 0.5s;
 
                 tr:nth-child(2n) {
                     background-color: $default_bg_color;
@@ -234,6 +240,16 @@
                 text-align: center;
                 font-size: $font_size_smaller;
                 font-weight: bold;
+            }
+
+            &.hide {
+                .parameter {
+                    max-height: 150px;
+
+                    td div {
+                        @include limitRowToDisplay(1);
+                    }
+                }
             }
         }
     }
