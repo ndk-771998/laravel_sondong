@@ -47,9 +47,13 @@
                             <div class="title">{{ $product->name }}</div>
                             <div class="price">
                                 <div class="discount">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
+                                @if ($product->original_price)
                                 <div class="origin">{{preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->original_price)}} ₫</div>
+                                @endif
                             </div>
-                            <div class="guarantee"><strong>Bảo hành:</strong> 24 tháng</div> 
+                            @if ($product->getMetaField('guarantee'))
+                            <div class="guarantee"><strong>Bảo hành:</strong> {{ $product->getMetaField('guarantee') }} tháng</div> 
+                            @endif
                             <div class="status"><strong>Tình trạng:</strong> {{ $product->quantity ? "Còn hàng" : "Đã bán hết"}}</div> 
                             <div class="parameters-link"><a href="#parameters">Xem cấu hình chi tiết</a></div>
                             <div class="bonus">

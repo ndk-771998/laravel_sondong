@@ -33,9 +33,9 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
     public function schema()
     {
         return [
-            'hightlights'   => [
-                'type'  => 'TinyMCE',
-                'label' => 'Đặc điểm nổi bật',
+            'guarantee'   => [
+                'type'  => 'text',
+                'label' => 'Bảo hành',
                 'rule'  => [],
             ],
             'cpu'           => [

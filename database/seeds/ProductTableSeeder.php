@@ -28,15 +28,22 @@ class ProductTableSeeder extends Seeder
             ['name' => 'weight', 'Label' => 'Trọng lượng', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
             ['name' => 'size', 'Label' => 'Kích thước', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
             ['name' => 'origin', 'Label' => 'Xuất xứ', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'guarantee', 'Label' => 'Bảo hành', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
         ]);
 
 
         $manufacturers = Category::whereIn('slug', ['hp', 'dell', 'asus', 'lenovo', 'apple'])->get()->pluck('id')->toArray();
         $laptops = Category::whereIn('slug', ['laptop-moi', 'laptop-cu', 'laptop-do-hoa', 'laptop-mong-nhe', 'laptop-gaming'])->get()->pluck('id')->toArray();
         $laptop_id = Category::where('slug', 'laptop')->first()->id;
-        factory(Product::class, 50)->create()->each(function ($product) use ($manufacturers, $laptops, $laptop_id) {
+        $flash_sale_id = Category::where('slug', 'flash-sale')->first()->id;
+        factory(Product::class, 50)->create()->each(function ($product) use ($manufacturers, $laptops, $laptop_id, $flash_sale_id) {
+            $product->attachCategories([$flash_sale_id]);
             $product->attachCategories([$laptop_id]);
             $product->productMetas()->createMany([
+                [
+                    'key'   => 'guarantee',
+                    'value' => '24',
+                ],
                 [
                     'key'   => 'cpu',
                     'value' => 'AMD Ryzen 5-5600H',

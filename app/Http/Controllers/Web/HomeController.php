@@ -23,7 +23,9 @@ class HomeController extends Controller
         OpenGraph::setDescription(getOption('desc-seo-home'));
         OpenGraph::addImage(getOption('header-logo'));
 
-        $flash_sale          = Product::where('product_type', 'products')->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(10)->get();
+        $flash_sales          = Product::where('product_type', 'products')->whereHas('categories', function($query) {
+            $query->where('slug', 'flash-sale');
+        })->orderBy('is_hot', 'desc')->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(10)->get();
         $new_products          = Product::where('product_type', 'products')->whereHas('categories', function($query) {
             $query->where('slug', 'laptop-moi');
         })->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(5)->get();
@@ -37,7 +39,7 @@ class HomeController extends Controller
         $customermedias = Post::where('type', 'customermedias')->paginate(12);
 
         return view('index', [
-            'flash_sale'        => $flash_sale,
+            'flash_sales'        => $flash_sales,
             'new_products'      => $new_products,
             'old_products'      => $old_products,
             'printers'          => $printer,

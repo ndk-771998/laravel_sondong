@@ -39,6 +39,7 @@ trait PrepareOption {
             'title-seo-flash-sale',
             'desc-seo-flash-sale',
             'banner-flash-sale',
+            'count-down-flash-sale',
         ]);
     }
 }
