@@ -23,8 +23,12 @@ class FlashsaleController extends Controller
         OpenGraph::setDescription(getOption('desc-seo-flash-sale'));
         OpenGraph::addImage(getOption('header-logo'));
 
-        return view('pages.flash-sale', [
+        $flash_sales          = Product::where('product_type', 'products')->whereHas('categories', function($query) {
+            $query->where('slug', 'flash-sale');
+        })->orderBy('is_hot', 'desc')->orderBy('id', 'desc')->where('status', '1')->with('productMetas')->limit(10)->paginate(15);
 
+        return view('pages.flash-sale', [
+            'flash_sales' => $flash_sales, 
         ]);
     }
 }

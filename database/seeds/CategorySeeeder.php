@@ -99,5 +99,13 @@ class CategorySeeder extends Seeder
                 'parent_id' => 1,
             ],
         ]);
+        Category::insert([
+            [
+                'name' => 'Flash sale',
+                'slug' => 'flash-sale',
+                'type' => 'products',
+                'status' => 1,
+            ],
+        ]);
     }
 }

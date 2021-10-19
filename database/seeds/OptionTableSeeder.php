@@ -196,6 +196,11 @@ class OptionTableSeeder extends Seeder
                 'key'   => 'banner-flash-sale',
                 'value'  => '/assets/images/banner-flashsale.jpg',
             ],
+            [
+                'label' => 'Count down (ngày)',
+                'key'   => 'count-down-flash-sale',
+                'value'  => '2',
+            ],
         ]);
     }
 }

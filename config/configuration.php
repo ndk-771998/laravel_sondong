@@ -189,6 +189,11 @@ return [
                 'key'   => 'banner-flash-sale',
                 'type'  => 'image',
             ],
+            [
+                'label' => 'Count down (ngày)',
+                'key'   => 'count-down-flash-sale',
+                'type'  => 'text',
+            ]
         ],
     ],
 ];

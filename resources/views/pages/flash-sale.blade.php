@@ -27,44 +27,29 @@
 
             <div class="flash-sale-list">
                 
+                @foreach ($flash_sales as $flash_sale)
                 @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
-                @include('include.flash-sale.flash-sale-item')
+                @endforeach
+
+                <div class="d-flex justify-content-center w-100">
+                    {{ $flash_sales->links('include.pagination') }}
+                </div>
             </div>
         </div>
     </div>
-    
     <script>
         // Set the date we're counting down to
-        var countDownDate = new Date("10-15-2021").getTime();
-        
+    
+        Date.prototype.addDays = function(days) {
+            var date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        };
+        var date = new Date();
+        date.setHours(10);
+        date.setMinutes(00);
+        date.setSeconds(00);
+        var countDownDate = date.addDays({{ getOption('count-down-flash-sale')}} - 1).getTime();
         // Update the count down every 1 second
         var x = setInterval(function() {
         

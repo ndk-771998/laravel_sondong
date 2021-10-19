@@ -19,7 +19,9 @@
             <div class="name">{{$product->name}}</div>
             <div class="price d-flex flex-row justify-content-between">
                 <div class="discount">{{ preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->price )}} ₫</div>
+                @if ($product->original_price)
                 <div class="origin-price">{{preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $product->original_price)}} ₫</div>
+                @endif
             </div>
         </div>
     </a>

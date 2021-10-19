@@ -20,14 +20,16 @@ $(document).ready(function() {
     //     }
     // });
 
-    $('.custom-dropdown-toggle').hover(function(){
-        if ($(".dropdown-menu-broad").attr('custom-data-toggle') == $(this).attr('id')) {
-            $(".dropdown-menu-broad").toggleClass("show");
-        }
-    });
+    $('.nav .dropdown-menu').each(function (i, obj) {
+        $(obj).find('.custom-dropdown-toggle').hover(function(){
+            if ($(".dropdown-menu-broad").attr('custom-data-toggle') == $(this).attr('id')) {
+                $(".dropdown-menu-broad").toggleClass("show");
+            }
+        });
     
-    $('.dropdown-menu-broad').hover(function(){
-        $(this).toggleClass("show");
+        $(obj).find('.dropdown-menu-broad').hover(function(){
+            $(this).toggleClass("show");
+        });
     });
 
     $('.nav-mini-icon').click(function () {
