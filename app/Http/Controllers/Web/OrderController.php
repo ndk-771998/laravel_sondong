@@ -17,8 +17,8 @@ class OrderController extends OrderOrderController implements ViewOrderControlle
     {
         $product = Product::where('slug', $request->get('slug'))->first();
 
-        if (!$product) {
-            return redirect()->back();
+        if (!$product || !$product->quantity) {
+            return redirect()->back()->with('message-create-order-error', true);
         }
 
         $message = [

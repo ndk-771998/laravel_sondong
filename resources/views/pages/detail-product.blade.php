@@ -249,6 +249,21 @@
         </div>
     </div>
     @endif
+
+    @if (Session::has('message-create-order-error'))
+    <div class="modal fade order-successfully" id="orderSuccessfully" role="dialog" aria-modal="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    {{-- <img src="/assets/images/logo/success.svg" alt="error"> --}}
+                    <h2>Lỗi đặt hàng</h2>
+                    <p>Có lỗi khi tạo mới đơn hàng. Sản phẩm đã được bán hết.</p>
+                    <button type="button" class="btn btn-primary p-2 w-25 m-auto d-block order-submit" id="orderSuccessfullySubmit">Đồng ý</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
     
     @if ($errors->any())
     <div class="modal fade buy-now-modal" id="buyNowError" role="dialog">

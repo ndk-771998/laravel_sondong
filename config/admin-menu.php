@@ -53,42 +53,42 @@ return [
             ]
         ]
     ],
+    // [
+    //     "title" => 'Bài viết',
+    //     "icon" => ["icon" => 'post', "pack" => 'social-networks'],
+    //     "modules" => 'post',
+    //     "children" => [
+    //         [
+    //             "title" => 'Danh sách',
+    //             "link" => '/admin/posts'
+    //         ],
+    //         [
+    //             "title" => 'Tạo mới',
+    //             "link" => '/admin/posts/create'
+    //         ],
+    //         [
+    //             "title" => 'Danh mục',
+    //             "link" => '/admin/posts/categories'
+    //         ],
+    //         [
+    //             "title" => 'Cấu hình',
+    //             "link" => '/admin/posts/schema-posts'
+    //         ]
+    //     ]
+    // ],
     [
         "title" => 'Bài viết',
-        "icon" => ["icon" => 'post', "pack" => 'social-networks'],
-        "modules" => 'post',
-        "children" => [
-            [
-                "title" => 'Danh sách',
-                "link" => '/admin/posts'
-            ],
-            [
-                "title" => 'Tạo mới',
-                "link" => '/admin/posts/create'
-            ],
-            [
-                "title" => 'Danh mục',
-                "link" => '/admin/posts/categories'
-            ],
-            [
-                "title" => 'Cấu hình',
-                "link" => '/admin/posts/schema-posts'
-            ]
-        ]
-    ],
-    [
-        "title" => 'Bài viết khác',
         "icon" => ["icon" => 'post', "pack" => 'social-networks'],
         "modules" => 'other_post',
         "children" => [
             [
                 "title" => 'Danh sách',
-                "link" => '/admin/post-types'
+                "link" => '/admin/post-types?postType=policy'
             ],
-            [
-                "title" => 'Tạo mới',
-                "link" => '/admin/post-types/create'
-            ],
+            // [
+            //     "title" => 'Tạo mới',
+            //     "link" => '/admin/post-types/create'
+            // ],
             [
                 "title" => 'Danh mục',
                 "link" => '/admin/post-types/categories'
