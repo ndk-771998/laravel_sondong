@@ -49,6 +49,38 @@ class Post extends BasePost
         ];
     }
 
+    public function customermediasSchema()
+    {
+        return [
+            'seo_title' => [
+                'type'  => 'text',
+                'label' => 'Tiêu đề SEO',
+                'rule'  => [],
+            ],
+            'seo_desc' => [
+                'type'  => 'textarea',
+                'label' => 'Mô tả SEO',
+                'rule'  => [],
+            ],
+        ];
+    }
+
+    public function customerfeedbackSchema()
+    {
+        return [
+            'seo_title' => [
+                'type'  => 'text',
+                'label' => 'Tiêu đề SEO',
+                'rule'  => [],
+            ],
+            'seo_desc' => [
+                'type'  => 'textarea',
+                'label' => 'Mô tả SEO',
+                'rule'  => [],
+            ],
+        ];
+    }
+
     public function repairserviceSchema()
     {
         return [
@@ -82,6 +114,22 @@ class Post extends BasePost
     }
 
     public function promotionSchema()
+    {
+        return [
+            'seo_title' => [
+                'type'  => 'text',
+                'label' => 'Tiêu đề SEO',
+                'rule'  => [],
+            ],
+            'seo_desc' => [
+                'type'  => 'textarea',
+                'label' => 'Mô tả SEO',
+                'rule'  => [],
+            ],
+        ];
+    }
+
+    public function aboutUsSchema()
     {
         return [
             'seo_title' => [
