@@ -243,7 +243,7 @@
                     <img src="/assets/images/logo/success.svg" alt="success">
                     <h2>Xác nhận đặt hàng</h2>
                     <p>Đơn hàng của bạn đã được gửi đi thành công, trong giờ mở cửa, chúng tôi sẽ liên hệ với quý khách trong ít phút.</p>
-                    <button type="button" class="btn btn-primary p-2 w-25 m-auto d-block order-submit" id="orderSuccessfullySubmit">Đồng ý</button>
+                    <button type="button" class="btn btn-primary p-2 w-25 m-auto d-block order-submit" id="orderSuccessfullySubmit" data-dismiss="modal">Đồng ý</button>
                 </div>
             </div>
         </div>
@@ -258,7 +258,7 @@
                     {{-- <img src="/assets/images/logo/success.svg" alt="error"> --}}
                     <h2>Lỗi đặt hàng</h2>
                     <p>Có lỗi khi tạo mới đơn hàng. Sản phẩm đã được bán hết.</p>
-                    <button type="button" class="btn btn-primary p-2 w-25 m-auto d-block order-submit" id="orderSuccessfullySubmit">Đồng ý</button>
+                    <button type="button" class="btn btn-primary p-2 w-25 m-auto d-block order-submit" id="orderSuccessfullySubmit" data-dismiss="modal">Đồng ý</button>
                 </div>
             </div>
         </div>

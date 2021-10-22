@@ -40,6 +40,11 @@
                         margin: auto;
                     }
                 }
+                .thumbnail-silde-for {
+                    .item:hover {
+                        border-right: 2px solid $default_border_color;
+                    }
+                }
 
                 .thumbnail-silde-nav {
                     width: 80%;
