@@ -5,7 +5,7 @@ return [
     'namespace'       => env('ORDER_COMPONENT_NAMESPACE', 'order-management'),
 
     'models'          => [
-        'order'     => VCComponent\Laravel\Order\Entities\Order::class,
+        'order'     => App\Entities\Order::class,
         'cart'      => VCComponent\Laravel\Order\Entities\Cart::class,
         'cartItem'  => VCComponent\Laravel\Order\Entities\CartItem::class,
         'orderItem' => VCComponent\Laravel\Order\Entities\OrderItem::class,
