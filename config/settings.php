@@ -4,7 +4,7 @@ return [
     'auth_middleware' => [
         'admin'   => [
             [
-                'middleware' => 'jwt.auth',
+                'middleware' => null,
                 'except'     => [],
             ],
         ],
