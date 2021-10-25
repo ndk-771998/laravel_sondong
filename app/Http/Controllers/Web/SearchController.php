@@ -20,7 +20,7 @@ class SearchController extends Controller
     {
         $this->prepareOption();
 
-        SEOMeta::setTitle('Kết quả tìm kiếm ' . $request->search);
+        SEOMeta::setTitle('Kết quả tìm kiếm "' . $request->search . '"');
         SEOMeta::setDescription(getOption('trang-chu-description'));
         OpenGraph::setTitle('Kết quả tìm kiếm "' . $request->search . '"');
         OpenGraph::setDescription(getOption('trang-chu-description'));

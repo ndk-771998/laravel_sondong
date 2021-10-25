@@ -29,6 +29,15 @@ class ProductTableSeeder extends Seeder
             ['name' => 'size', 'Label' => 'Kích thước', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
             ['name' => 'origin', 'Label' => 'Xuất xứ', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
             ['name' => 'guarantee', 'Label' => 'Bảo hành', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'battery', 'Label' => 'Pin', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'material', 'Label' => 'Chất liệu', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'resolution', 'Label' => 'Độ phân giải', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'tourchscreen', 'Label' => 'Màn hình cảm ứng', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'lightkeybroad', 'Label' => 'Đèn bàn phím', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'webcam', 'Label' => 'Webcam', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'sound', 'Label' => 'Công nghệ âm thanh', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'bluetooth', 'Label' => 'bluetooth', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
+            ['name' => 'specialfunction', 'Label' => 'Tính năng đặc biệt', 'schema_type_id' => 1, 'schema_rule_id' => 3, 'product_type' => 'products'],
         ]);
 
 
@@ -80,17 +89,209 @@ class ProductTableSeeder extends Seeder
                     'key'   => 'origin',
                     'value' => 'Trung Quốc',
                 ],
+                [
+                    'key'   => 'bettery',
+                    'value' => '3 Cell, 42 Wh',
+                ],
+                [
+                    'key'   => 'material',
+                    'value' => 'Vỏ carbon',
+                ],
+                [
+                    'key'   => 'resolution',
+                    'value' => '4k',
+                ],
+                [
+                    'key'   => 'touchscreen',
+                    'value' => 'Có',
+                ],
+                [
+                    'key'   => 'lightkeybroad',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'webcam',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'sound',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'bluetooth',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'specialfunction',
+                    'value' => 'Không',
+                ],
             ]);
             $product->attachCategories(Arr::random($manufacturers));
             $product->attachCategories(Arr::random($laptops));
         });
         $printer_category_id = Category::where('slug', 'may-in')->first()->id;
-        factory(Product::class, 10)->create()->each(function ($product) use ($printer_category_id) {
+        factory(Product::class, 10)->state('printer')->create()->each(function ($product) use ($printer_category_id) {
             $product->attachCategories($printer_category_id);
+            $product->productMetas()->createMany([
+                [
+                    'key'   => 'guarantee',
+                    'value' => '24',
+                ],
+                [
+                    'key'   => 'cpu',
+                    'value' => 'AMD Ryzen 5-5600H',
+                ],
+                [
+                    'key'   => 'ram',
+                    'value' => '8 GB, DDR4, 3200 MHz',
+                ],
+                [
+                    'key'   => 'screen',
+                    'value' => '15.6", 1920 x 1080 Pixel, IPS, 144 Hz',
+                ],
+                [
+                    'key'   => 'graphics',
+                    'value' => 'AMD Radeon RX 5500M 4 GB',
+                ],
+                [
+                    'key'   => 'hard_drive',
+                    'value' => 'SSD 512 GB',
+                ],
+                [
+                    'key'   => 'os',
+                    'value' => 'Window 10s',
+                ],
+                [
+                    'key'   => 'weight',
+                    'value' => '2.35',
+                ],
+                [
+                    'key'   => 'size',
+                    'value' => '359 x 254 x 24.9',
+                ],
+                [
+                    'key'   => 'origin',
+                    'value' => 'Trung Quốc',
+                ],
+                [
+                    'key'   => 'bettery',
+                    'value' => '3 Cell, 42 Wh',
+                ],
+                [
+                    'key'   => 'material',
+                    'value' => 'Vỏ carbon',
+                ],
+                [
+                    'key'   => 'resolution',
+                    'value' => '4k',
+                ],
+                [
+                    'key'   => 'touchscreen',
+                    'value' => 'Có',
+                ],
+                [
+                    'key'   => 'lightkeybroad',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'webcam',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'sound',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'bluetooth',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'specialfunction',
+                    'value' => 'Không',
+                ],
+            ]);
         });
         $accessory_category_id = Category::where('slug', 'phu-kien')->first()->id;
-        factory(Product::class, 10)->create()->each(function ($product) use ($accessory_category_id) {
+        factory(Product::class, 10)->state('printer')->create()->each(function ($product) use ($accessory_category_id) {
             $product->attachCategories($accessory_category_id);
+            $product->productMetas()->createMany([
+                [
+                    'key'   => 'guarantee',
+                    'value' => '24',
+                ],
+                [
+                    'key'   => 'cpu',
+                    'value' => 'AMD Ryzen 5-5600H',
+                ],
+                [
+                    'key'   => 'ram',
+                    'value' => '8 GB, DDR4, 3200 MHz',
+                ],
+                [
+                    'key'   => 'screen',
+                    'value' => '15.6", 1920 x 1080 Pixel, IPS, 144 Hz',
+                ],
+                [
+                    'key'   => 'graphics',
+                    'value' => 'AMD Radeon RX 5500M 4 GB',
+                ],
+                [
+                    'key'   => 'hard_drive',
+                    'value' => 'SSD 512 GB',
+                ],
+                [
+                    'key'   => 'os',
+                    'value' => 'Window 10s',
+                ],
+                [
+                    'key'   => 'weight',
+                    'value' => '2.35',
+                ],
+                [
+                    'key'   => 'size',
+                    'value' => '359 x 254 x 24.9',
+                ],
+                [
+                    'key'   => 'origin',
+                    'value' => 'Trung Quốc',
+                ],
+                [
+                    'key'   => 'bettery',
+                    'value' => '3 Cell, 42 Wh',
+                ],
+                [
+                    'key'   => 'material',
+                    'value' => 'Vỏ carbon',
+                ],
+                [
+                    'key'   => 'resolution',
+                    'value' => '4k',
+                ],
+                [
+                    'key'   => 'touchscreen',
+                    'value' => 'Có',
+                ],
+                [
+                    'key'   => 'lightkeybroad',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'webcam',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'sound',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'bluetooth',
+                    'value' => 'Không',
+                ],
+                [
+                    'key'   => 'specialfunction',
+                    'value' => 'Không',
+                ],
+            ]);
         });;
     }
 }

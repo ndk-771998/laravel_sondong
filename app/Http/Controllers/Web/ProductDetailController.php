@@ -23,10 +23,10 @@ class ProductDetailController extends BaseProductDetailController implements Vie
     {
         $this->prepareOption();
 
-        SEOMeta::setTitle($product->getMetaField('seo_title'));
-        SEOMeta::setDescription($product->getMetaField('seo_desc'));
-        OpenGraph::setTitle($product->getMetaField('seo_title'));
-        OpenGraph::setDescription($product->getMetaField('seo_desc'));
+        SEOMeta::setTitle($product->name);
+        SEOMeta::setDescription(getOption('desc-seo-product'));
+        OpenGraph::setTitle($product->name);
+        OpenGraph::setDescription(getOption('desc-seo-product'));
         OpenGraph::addImage($product->thumbnail);
 
         $relatedProducts = Product::where('product_type', $product->product_type)->where('id', '<>', $product->id)->with('productMetas')

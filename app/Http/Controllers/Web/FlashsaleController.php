@@ -16,7 +16,7 @@ class FlashsaleController extends Controller
     public function __invoke()
     {
         $this->prepareOption();
-
+        dd(getOption('title-seo-flash-sale'));
         SEOMeta::setTitle(getOption('title-seo-flash-sale'));
         SEOMeta::setDescription(getOption('desc-seo-flash-sale'));
         OpenGraph::setTitle(getOption('title-seo-flash-sale'));
