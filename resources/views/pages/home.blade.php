@@ -156,7 +156,7 @@
             <div class="customer-picture row align-items-center">
                 @foreach ($customermedias as $item)
                 <div class="col-6 col-sm-4 col-md-3">
-                    <img width="247" height="162" class="lazyload" data-src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
+                    <img class="lazyload" data-src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
                 </div>
                 @endforeach
             </div>
