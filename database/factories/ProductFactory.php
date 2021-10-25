@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 $factory->define(Product::class, function (Faker $faker) {
+    $price = rand(500, 2500)*10000;
     return [
         'name'           => $faker->randomElement([
             'HP EliteBook 850 G2 i7-5600U /Ram 8Gb/SSD . . .',
@@ -26,8 +27,8 @@ $factory->define(Product::class, function (Faker $faker) {
             <p>Đây là chất lượng mà bạn vẫn thường thấy ở những chiếc xe hơi. Trong khi đó, phần thân được làm từ nhôm bóng màu bạc cao cấp tạo cho máy sự sang trọng, bóng bẩy. Ngoài ra, HP Elitebook 850 G2 được thiết kế với việc đáp ứng tiêu chuẩn MIL-STD-810 về độ bền. Vì thế, máy vẫn có thể chịu đựng được nhiệt độ khắc nghiệt hay áp suất cao. Đồng thời, bạn vẫn sẽ yên tâm máy hoàn toàn “khỏe mạnh” dù bị va đập nhẹ hay bị xóc trong balo khi bạn di chuyển trên đường.</p>',
         'quantity'       => rand(0, 20),
         'code'           => $faker->swiftBicNumber,
-        'price'          => rand(500, 2500)*10000,
-        'original_price' => 2000000,
+        'price'          => $price,
+        'original_price' => $price + rand(10, 250)*10000,
         'author_id'      => rand(1, 3),
         'thumbnail'      => $faker->randomElement([
             '/assets/images/products/laptop-1.png',
@@ -47,7 +48,6 @@ $factory->define(Product::class, function (Faker $faker) {
 
 $factory->state(Product::class, 'printer', function (Faker $faker) {
     return [
-        'product_type'      => 'printer',
         'thumbnail'         => $faker->randomElement([
             '/assets/images/products/printer-1.png',
             '/assets/images/products/printer-2.png',
@@ -61,7 +61,6 @@ $factory->state(Product::class, 'printer', function (Faker $faker) {
 
 $factory->state(Product::class, 'accessory', function (Faker $faker) {
     return [
-        'product_type'      => 'accessory',
         'thumbnail'         => $faker->randomElement([
             '/assets/images/products/printer-1.png',
             '/assets/images/products/printer-2.png',

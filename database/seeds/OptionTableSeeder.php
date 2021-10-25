@@ -154,17 +154,17 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Tiêu đề SEO sản phẩm',
                 'key'   => 'title-seo-product',
-                'value'  => '',
+                'value'  => 'Sản phẩm',
             ],
             [
                 'label' => 'Mô tả SEO sản phẩm',
                 'key'   => 'desc-seo-product',
-                'value'  => '',
+                'value'  => 'Danh sách sản phẩm thienthanhjsc',
             ],
             [
                 'label' => 'Tiêu đề SEO danh mục',
                 'key'   => 'title-seo-category',
-                'value'  => '',
+                'value'  => 'Sản phẩm',
             ],
             [
                 'label' => 'Mô tả SEO danh mục',
@@ -174,22 +174,22 @@ class OptionTableSeeder extends Seeder
             [
                 'label' => 'Tiêu đề SEO hình ảnh khách hàng',
                 'key'   => 'title-seo-customer-media',
-                'value'  => '',
+                'value'  => 'Hình ảnh khách hàng',
             ],
             [
                 'label' => 'Mô tả SEO hình ảnh khách hàng',
                 'key'   => 'desc-seo-customer-media',
-                'value'  => '',
+                'value'  => 'Danh sách hình ảnh khách hàng của chúng tôi.',
             ],
             [
                 'label' => 'Tiêu đề SEO flash sale',
                 'key'   => 'title-seo-flash-sale',
-                'value'  => '',
+                'value'  => 'Flash sale',
             ],
             [
                 'label' => 'Mô tả SEO flash sale',
                 'key'   => 'desc-seo-flash-sale',
-                'value'  => '',
+                'value'  => 'Mô tả flash sale',
             ],
             [
                 'label' => 'Banner flash sale',

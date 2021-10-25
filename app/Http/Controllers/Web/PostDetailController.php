@@ -23,10 +23,10 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
     {
         $this->prepareOption();
 
-        SEOMeta::setTitle($post->getMetaField('seo_title'));
-        SEOMeta::setDescription($post->getMetaField('seo_desc'));
-        OpenGraph::setTitle($post->getMetaField('seo_title'));
-        OpenGraph::setDescription($post->getMetaField('seo_desc'));
+        SEOMeta::setTitle($post->title);
+        SEOMeta::setDescription($post->description);
+        OpenGraph::setTitle($post->title);
+        OpenGraph::setDescription($post->description);
         OpenGraph::addImage($post->thumbnail);
 
         $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', $post->type)->paginate(12);
@@ -46,10 +46,10 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
     {
         $this->prepareOption();
 
-        SEOMeta::setTitle($post->getMetaField('seo_title'));
-        SEOMeta::setDescription($post->getMetaField('seo_desc'));
-        OpenGraph::setTitle($post->getMetaField('seo_title'));
-        OpenGraph::setDescription($post->getMetaField('seo_desc'));
+        SEOMeta::setTitle($post->title);
+        SEOMeta::setDescription($post->description);
+        OpenGraph::setTitle($post->title);
+        OpenGraph::setDescription($post->description);
         OpenGraph::addImage($post->thumbnail);
 
         $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', $post->type)->paginate(12);
@@ -69,10 +69,10 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
     {
         $this->prepareOption();
 
-        SEOMeta::setTitle($post->getMetaField('seo_title'));
-        SEOMeta::setDescription($post->getMetaField('seo_desc'));
-        OpenGraph::setTitle($post->getMetaField('seo_title'));
-        OpenGraph::setDescription($post->getMetaField('seo_desc'));
+        SEOMeta::setTitle($post->title);
+        SEOMeta::setDescription($post->description);
+        OpenGraph::setTitle($post->title);
+        OpenGraph::setDescription($post->description);
         OpenGraph::addImage($post->thumbnail);
 
         $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', $post->type)->paginate(12);
@@ -92,10 +92,10 @@ class PostDetailController extends BasePostDetailController implements ViewPostD
     {
         $this->prepareOption();
 
-        SEOMeta::setTitle($post->getMetaField('seo_title'));
-        SEOMeta::setDescription($post->getMetaField('seo_desc'));
-        OpenGraph::setTitle($post->getMetaField('seo_title'));
-        OpenGraph::setDescription($post->getMetaField('seo_desc'));
+        SEOMeta::setTitle($post->title);
+        SEOMeta::setDescription($post->description);
+        OpenGraph::setTitle($post->title);
+        OpenGraph::setDescription($post->description);
         OpenGraph::addImage($post->thumbnail);
 
         $posts_menu = Post::select(['title', 'slug', 'type'])->where('type', $post->type)->paginate(12);

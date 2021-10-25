@@ -77,13 +77,13 @@ return [
     //     ]
     // ],
     [
-        "title" => 'Bài viết',
+        "title" => 'Bài viết khác',
         "icon" => ["icon" => 'post', "pack" => 'social-networks'],
         "modules" => 'other_post',
         "children" => [
             [
                 "title" => 'Danh sách',
-                "link" => '/admin/post-types?postType=policy'
+                "link" => '/admin/post-types'
             ],
             // [
             //     "title" => 'Tạo mới',

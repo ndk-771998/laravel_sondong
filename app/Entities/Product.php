@@ -83,6 +83,51 @@ class Product extends BaseProduct implements Transformable, ProductSchema, Produ
                 'label' => 'Xuất xứ',
                 'rule'  => [],
             ],
+            'battery'   => [
+                'type'  => 'text',
+                'label' => 'Pin',
+                'rule'  => [],
+            ],
+            'material'           => [
+                'type'  => 'text',
+                'label' => 'Chất liệu',
+                'rule'  => [],
+            ],
+            'resolution'           => [
+                'type'  => 'text',
+                'label' => 'Độ phân giải',
+                'rule'  => [],
+            ],
+            'touchscreen'           => [
+                'type'  => 'text',
+                'label' => 'Màn hình cảm ứng',
+                'rule'  => [],
+            ],
+            'lightkeybroad'           => [
+                'type'  => 'text',
+                'label' => 'Đèn bàn phím',
+                'rule'  => [],
+            ],
+            'webcam'           => [
+                'type'  => 'text',
+                'label' => 'Webcam',
+                'rule'  => [],
+            ],
+            'sound'           => [
+                'type'  => 'text',
+                'label' => 'Công nghệ âm thanh',
+                'rule'  => [],
+            ],
+            'bluetooth'           => [
+                'type'  => 'text',
+                'label' => 'Bluetooth',
+                'rule'  => [],
+            ],
+            'specialfunction'           => [
+                'type'  => 'text',
+                'label' => 'Tính năng đặc biệt',
+                'rule'  => [],
+            ],
         ];
     }
 
