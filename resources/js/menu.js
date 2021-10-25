@@ -20,9 +20,6 @@ $(document).ready(function() {
     //     }
     // });
 
-    var nav_pos_left = $('.nav').offset().left;
-    var nav_pos_top = $('.nav').offset().top;
-
     $('.nav .dropdown-menu').each(function (i, obj) {
         $(obj).hover(function () {
             $(obj).addClass('show');
@@ -30,6 +27,8 @@ $(document).ready(function() {
             $(obj).removeClass("show");
         });
         $('.menu-item').hover(function(){
+            var nav_pos_left = $('.nav').offset().left;
+            var nav_pos_top = $('.nav').offset().top;
             var pos_left = $(this).offset().left - nav_pos_left;
             var pos_top = $(this).offset().top - nav_pos_top + $(this).outerHeight() - 1;
             if ($(this).attr('id') == $(obj).attr('aria-labelledby')) {
