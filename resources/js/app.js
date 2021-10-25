@@ -28,7 +28,7 @@ $(document).ready(function () {
             $(this).removeClass('hide');
         } else {
             $('.product-parameter').addClass('hide');
-            $('.parameter').css('max-height', '150px');
+            $('.parameter').css('max-height', '450px');
             $(this).html('Xem cấu hình chi tiết <i class="fa fa-chevron-down"></i>');
             $(this).addClass('hide');
         }

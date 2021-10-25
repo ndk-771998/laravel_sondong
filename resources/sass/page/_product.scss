@@ -254,7 +254,7 @@
 
             &.hide {
                 .parameter {
-                    max-height: 150px;
+                    max-height: 450px;
 
                     td div {
                         @include limitRowToDisplay(1);

@@ -174,6 +174,54 @@
                             <td><div>{{ $product->getMetaField('origin') }}</div></td>
                         </tr>
                         @endif
+                        @if ($product->getMetaField('battery'))
+                        <tr>
+                            <td><div>Pin</div></td>
+                            <td><div>{{ $product->getMetaField('battery') }}</div></td>
+                        </tr>
+                        @endif
+                        @if ($product->getMetaField('material'))
+                        <tr>
+                            <td><div>Chất liệu</div></td>
+                            <td><div>{{ $product->getMetaField('material') }}</div></td>
+                        </tr>
+                        @endif
+                        @if ($product->getMetaField('resolution'))
+                        <tr>
+                            <td><div>Độ phân giải</div></td>
+                            <td><div>{{ $product->getMetaField('resolution') }}</div></td>
+                        </tr>
+                        @endif
+                        @if ($product->getMetaField('touchscreen'))
+                        <tr>
+                            <td><div>Màn hình cảm ứng</div></td>
+                            <td><div>{{ $product->getMetaField('touchscreen') }}</div></td>
+                        </tr>
+                        @endif
+                        @if ($product->getMetaField('lightkeybroad'))
+                        <tr>
+                            <td><div>Đèn bàn phím</div></td>
+                            <td><div>{{ $product->getMetaField('lightkeybroad') }}</div></td>
+                        </tr>
+                        @endif
+                        @if ($product->getMetaField('sound'))
+                        <tr>
+                            <td><div>Công nghệ âm thanh</div></td>
+                            <td><div>{{ $product->getMetaField('sound') }}</div></td>
+                        </tr>
+                        @endif
+                        @if ($product->getMetaField('bluetooth'))
+                        <tr>
+                            <td><div>Bluetooth</div></td>
+                            <td><div>{{ $product->getMetaField('bluetooth') }}</div></td>
+                        </tr>
+                        @endif
+                        @if ($product->getMetaField('specialfunction'))
+                        <tr>
+                            <td><div>Tính năng đặc biệt</div></td>
+                            <td><div>{{ $product->getMetaField('specialfunction') }}</div></td>
+                        </tr>
+                        @endif
                     </table>
                     <div class="detail show-more-parameter">
                         <a href="#parameters" class="hide">Xem cấu hình chi tiết <i class="fa fa-chevron-down"></i></a>
