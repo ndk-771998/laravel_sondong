@@ -70,10 +70,6 @@ return [
     //             "title" => 'Danh mục',
     //             "link" => '/admin/posts/categories'
     //         ],
-    //         [
-    //             "title" => 'Cấu hình',
-    //             "link" => '/admin/posts/schema-posts'
-    //         ]
     //     ]
     // ],
     [
@@ -89,39 +85,43 @@ return [
             //     "title" => 'Tạo mới',
             //     "link" => '/admin/post-types/create'
             // ],
+            // [
+            //     "title" => 'Danh mục',
+            //     "link" => '/admin/post-types/categories'
+            // ],
             [
-                "title" => 'Danh mục',
-                "link" => '/admin/post-types/categories'
-            ],
-        ]
-    ],
-    [
-        "title" => 'Khách hàng',
-        "icon" => ["icon" => 'customer', "pack" => 'social-networks'],
-        "modules" => 'customer',
-        "children" => [
-            [
-                "title" => 'Danh sách',
-                "link" => '/admin/customer'
-            ],
-            [
-                "title" => 'Hộp thư đến',
-                "link" => '/admin/customer/inbox'
-            ],
-            [
-                "title" => 'Bình Luận',
-                "link" => '/admin/customer/comment'
-            ],
-            [
-                "title" => 'Đánh giá',
-                "link" => '/admin/customer/review'
-            ],
-            [
-                "title" => 'Tạo mới',
-                "link" => '/admin/customer/create'
+                "title" => 'Cấu hình',
+                "link" => '/admin/posts/schema-posts'
             ]
         ]
     ],
+    // [
+    //     "title" => 'Khách hàng',
+    //     "icon" => ["icon" => 'customer', "pack" => 'social-networks'],
+    //     "modules" => 'customer',
+    //     "children" => [
+    //         [
+    //             "title" => 'Danh sách',
+    //             "link" => '/admin/customer'
+    //         ],
+    //         [
+    //             "title" => 'Hộp thư đến',
+    //             "link" => '/admin/customer/inbox'
+    //         ],
+    //         [
+    //             "title" => 'Bình Luận',
+    //             "link" => '/admin/customer/comment'
+    //         ],
+    //         [
+    //             "title" => 'Đánh giá',
+    //             "link" => '/admin/customer/review'
+    //         ],
+    //         [
+    //             "title" => 'Tạo mới',
+    //             "link" => '/admin/customer/create'
+    //         ]
+    //     ]
+    // ],
     [
         "title" => 'Thống kê',
         "icon" => ["icon" => 'chart', "pack" => 'social-networks'],
@@ -137,12 +137,12 @@ return [
             ]
         ]
     ],
-    [
-        "title" => 'Tối ưu tìm kiếm',
-        "icon" => ["icon" => 'optimal', "pack" => 'social-networks'],
-        "modules" => 'search-optimization',
-        "link" => '/admin/search-optimization'
-    ],
+    // [
+    //     "title" => 'Tối ưu tìm kiếm',
+    //     "icon" => ["icon" => 'optimal', "pack" => 'social-networks'],
+    //     "modules" => 'search-optimization',
+    //     "link" => '/admin/search-optimization'
+    // ],
     [
         "title" => 'Thiết lập',
         "icon" => ["icon" => 'setting', "pack" => 'social-networks'],
