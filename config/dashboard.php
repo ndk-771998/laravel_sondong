@@ -56,32 +56,32 @@ return [
                     "label" => "Kho hàng",
                     "type" => "shortcut",
                     "order" => 3,
-                    "url" => "#",
+                    "url" => "/admin/products",
                     "color" => "#eca03c",
                     "icon" => "/assets/icons/icon-white/warehouse.svg"
                 ],
-                [
-                    "label" => "Tạo mới bài viết",
-                    "type" => "shortcut",
-                    "order" => 4,
-                    "url" => "/admin/posts/create",
-                    "color" => "#09f",
-                    "icon" => "/assets/icons/icon-white/addpage.svg"
-                ]
+                // [
+                //     "label" => "Tạo mới bài viết",
+                //     "type" => "shortcut",
+                //     "order" => 4,
+                //     "url" => "/admin/posts/create",
+                //     "color" => "#09f",
+                //     "icon" => "/assets/icons/icon-white/addpage.svg"
+                // ]
             ]
         ],
         [
             "label" => "Chiến dịch",
             "order" => 3,
             "widgets" => [
-                [
-                    "label" => "Tạo mới chiến dịch",
-                    "type" => "shortcut",
-                    "order" => 1,
-                    "url" => "#",
-                    "color" => "#04d587",
-                    "icon" => "/assets/icons/icon-white/marketing.svg"
-                ],
+                // [
+                //     "label" => "Tạo mới chiến dịch",
+                //     "type" => "shortcut",
+                //     "order" => 1,
+                //     "url" => "#",
+                //     "color" => "#04d587",
+                //     "icon" => "/assets/icons/icon-white/marketing.svg"
+                // ],
                 [
                     "label" => "Thống kê",
                     "type" => "shortcut",
@@ -98,13 +98,13 @@ return [
                     "color" => "#ff5d7f",
                     "icon" => "/assets/icons/icon-white/report.svg"
                 ],
-                [
-                    "label" => "Thanh toán",
-                    "type" => "shortcut",
-                    "order" => 4,
-                    "url" => "#",
-                    "color" => "#2b4def",
-                    "icon" => "/assets/icons/icon-white/pay.svg"
+                // [
+                //     "label" => "Thanh toán",
+                //     "type" => "shortcut",
+                //     "order" => 4,
+                //     "url" => "#",
+                //     "color" => "#2b4def",
+                //     "icon" => "/assets/icons/icon-white/pay.svg"
                 ]
             ]
         ],
@@ -112,14 +112,14 @@ return [
             "label" => "Thiết lập",
             "order" => 4,
             "widgets" => [
-                [
-                    "label" => "Banner",
-                    "type" => "shortcut",
-                    "order" => 1,
-                    "url" => "#",
-                    "color" => "#00b894",
-                    "icon" => "/assets/icons/icon-white/banner.svg"
-                ],
+                // [
+                //     "label" => "Banner",
+                //     "type" => "shortcut",
+                //     "order" => 1,
+                //     "url" => "#",
+                //     "color" => "#00b894",
+                //     "icon" => "/assets/icons/icon-white/banner.svg"
+                // ],
                 [
                     "label" => "Cấu hình nhanh",
                     "type" => "shortcut",
@@ -132,7 +132,7 @@ return [
                     "label" => "Người dùng",
                     "type" => "shortcut",
                     "order" => 3,
-                    "url" => "#",
+                    "url" => "/admin/system/users",
                     "color" => "#00b894",
                     "icon" => "/assets/icons/icon-white/customer.svg"
                 ],
@@ -140,7 +140,7 @@ return [
                     "label" => "Menu danh mục",
                     "type" => "shortcut",
                     "order" => 4,
-                    "url" => "#",
+                    "url" => "/admin/menus",
                     "color" => "#00b894",
                     "icon" => "/assets/icons/icon-white/menucategory.svg"
                 ]
