@@ -105,47 +105,45 @@ return [
                 //     "url" => "#",
                 //     "color" => "#2b4def",
                 //     "icon" => "/assets/icons/icon-white/pay.svg"
-                ]
             ]
-        ],
-        [
-            "label" => "Thiết lập",
-            "order" => 4,
-            "widgets" => [
-                // [
-                //     "label" => "Banner",
-                //     "type" => "shortcut",
-                //     "order" => 1,
-                //     "url" => "#",
-                //     "color" => "#00b894",
-                //     "icon" => "/assets/icons/icon-white/banner.svg"
-                // ],
-                [
-                    "label" => "Cấu hình nhanh",
-                    "type" => "shortcut",
-                    "order" => 2,
-                    "url" => "/admin/system/configuration",
-                    "color" => "#00b894",
-                    "icon" => "/assets/icons/icon-white/layer.svg"
-                ],
-                [
-                    "label" => "Người dùng",
-                    "type" => "shortcut",
-                    "order" => 3,
-                    "url" => "/admin/system/users",
-                    "color" => "#00b894",
-                    "icon" => "/assets/icons/icon-white/customer.svg"
-                ],
-                [
-                    "label" => "Menu danh mục",
-                    "type" => "shortcut",
-                    "order" => 4,
-                    "url" => "/admin/menus",
-                    "color" => "#00b894",
-                    "icon" => "/assets/icons/icon-white/menucategory.svg"
-                ]
+        ]
+    ],
+    [
+        "label" => "Thiết lập",
+        "order" => 4,
+        "widgets" => [
+            // [
+            //     "label" => "Banner",
+            //     "type" => "shortcut",
+            //     "order" => 1,
+            //     "url" => "#",
+            //     "color" => "#00b894",
+            //     "icon" => "/assets/icons/icon-white/banner.svg"
+            // ],
+            [
+                "label" => "Cấu hình nhanh",
+                "type" => "shortcut",
+                "order" => 2,
+                "url" => "/admin/system/configuration",
+                "color" => "#00b894",
+                "icon" => "/assets/icons/icon-white/layer.svg"
+            ],
+            [
+                "label" => "Người dùng",
+                "type" => "shortcut",
+                "order" => 3,
+                "url" => "/admin/system/users",
+                "color" => "#00b894",
+                "icon" => "/assets/icons/icon-white/customer.svg"
+            ],
+            [
+                "label" => "Menu danh mục",
+                "type" => "shortcut",
+                "order" => 4,
+                "url" => "/admin/menus",
+                "color" => "#00b894",
+                "icon" => "/assets/icons/icon-white/menucategory.svg"
             ]
         ]
     ]
-
 ];
