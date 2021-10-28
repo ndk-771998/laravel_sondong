@@ -18,7 +18,6 @@ $(document).ready(function () {
     })
 
     var param_height = $('.product-parameter .parameter').height();
-    console.log(param_height);
     $('.product-parameter').addClass('hide');
     $('.show-more-parameter a').click(function() {
         if ($(this).hasClass('hide')) {

@@ -21,7 +21,11 @@ $(document).ready(function() {
     });
 
     $(".filter-manufacturer-submit").each(function(i, obj) {
-        var filter_rq = url.slice(url.indexOf("manufacturer="), url.indexOf("&"));
+        var filter_rq = url.slice(url.indexOf("manufacturer="));
+
+        if (filter_rq.indexOf('&') != -1) {
+            filter_rq = filter_rq.slice(0, filter_rq.indexOf('&'));
+        }
         if (filter_rq.replace("manufacturer=", "") === $(obj).attr("value")) {
             $(obj).attr("checked", "checked");
         }

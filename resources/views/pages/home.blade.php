@@ -153,10 +153,10 @@
                 Hình ảnh khách hàng
             </div>
 
-            <div class="customer-picture row align-items-center">
+            <div class="customer-picture row align-items-center row-padding-20px">
                 @foreach ($customermedias as $item)
-                <div class="col-6 col-sm-4 col-md-3">
-                    <img class="lazyload" data-src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
+                <div class="col-6 col-sm-4 col-md-3 col-padding-20px" style="cursor: pointer">
+                    <img class="customer-picture-toggle lazyload" data-src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
                 </div>
                 @endforeach
             </div>
@@ -167,6 +167,8 @@
             </a>
         </div>
     </div>
+
+    @include('include.customer-media-popup');
 
     <div class="home-logos-container container">
         <div class="home-logos-wrap row-padding-16px">

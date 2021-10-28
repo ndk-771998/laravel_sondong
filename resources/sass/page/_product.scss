@@ -19,16 +19,13 @@
                 @media (max-width: 767px) {
                     margin-bottom: 30px;
                 }
+
                 .item {
                     aspect-ratio: 1;
                     align-items: center;
                     display: flex !important;
                     margin-bottom: 6px;
                     border: 1px transparent;
-
-                    &:hover {
-                        border: 1px solid $default_border_color;
-                    }
 
                     img {
                         width: auto;
@@ -38,15 +35,23 @@
                         margin: auto;
                     }
                 }
+
                 .thumbnail-silde-for {
-                    .item:hover {
-                        border-right: 2px solid $default_border_color;
+                    border: 1px solid transparent;
+                    
+                    &:hover {
+                        transition: ease-in-out 0.25s;
+                        border-color: $default_border_color;
                     }
                 }
 
                 .thumbnail-silde-nav {
                     width: 80%;
                     margin: auto;
+
+                    .item:hover {
+                        border: 1px solid $default_border_color;
+                    }
 
                     .slick-next,
                     .slick-prev {

@@ -6,7 +6,7 @@
         <div class="media row-padding-20px">
             @foreach ($posts as $post)
             <div class="image col-padding-20px">
-                <img width="247" height="162" class="lazyload" data-src="{{ $post->thumbnail }}" alt="{{ $post->title }}">
+                <img class="customer-picture-toggle lazyload" data-src="{{ $post->thumbnail }}" alt="{{ $post->title }}">
             </div>
             @endforeach
         </div>
@@ -16,6 +16,8 @@
         </div>
     </div>
 </div>
+
+@include('include.customer-media-popup', ['customermedias' => $posts]);
 
 @include('include.product.product-slide', ['list_title' => 'Sản phẩm được mua nhiều nhất', 'product_type' => 'product', 'products' => $products_best_buy, 'price_filter' => true])
 @endsection

@@ -121,4 +121,37 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
     });
+
+    $('.fixed-slide').slick({
+        speed: 300,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='/assets/images/logo/chevron-up.svg' alt='prev'>",
+        nextArrow:"<img class='a-right control-c next slick-next' src='/assets/images/logo/chevron-up.svg' alt='next'>",
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrow: false
+                }
+            },
+        ]
+    });
+
+    $('.customer-picture-toggle').click(function () {
+        $('.fixed-slide-container').addClass('show');
+    });
+    var mouse_is_inside;
+    $('.fixed-slide-container .slick-arrow').hover(function(){ 
+        mouse_is_inside=true; 
+    }, function(){ 
+        mouse_is_inside=false; 
+    });
+
+    $("body").mouseup(function(){ 
+        if(! mouse_is_inside) {
+            $('.fixed-slide-container').removeClass('show');
+        } 
+    });
 });
