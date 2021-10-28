@@ -17,7 +17,7 @@ class OrderController extends OrderOrderController implements ViewOrderControlle
     {
         $product = Product::where('slug', $request->get('slug'))->first();
 
-        if (!$product || !$product->quantity) {
+        if (!$product || !$product->quantity < 1) {
             return redirect()->back()->with('message-create-order-error', true);
         }
 
@@ -25,19 +25,21 @@ class OrderController extends OrderOrderController implements ViewOrderControlle
             'username.required' => 'Nhập họ và tên của bạn.',
             'phone.required'    => 'Nhập số điện thoại của bạn.',
             'phone.numeric'     => 'Số điện thoại phải là các chữ số.',
+            'phone.regex'       => 'Số điện thoại không hợp lệ',
             'email.required'    => 'Nhập địa chỉ email của bạn.',
             'email.email'       => 'Email phải nhập đúng định dạng.',
+            'email.regex'       => 'Email phải nhập đúng định dạng.',
             'address.required'  => 'Nhập địa chỉ giao hàng hoặc ghi chú.'
         ];
         $validator = Validator::make($request->all(), [
             'username' => 'required',
-            'phone'     => 'required|numeric',
+            'phone'     => 'required|regex:/0(\d){9}$/',
             'address' => 'required',
-            'email'     => 'required|email',
+            'email'     => 'required|email|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
         ], $message);
 
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return redirect()->back()->withErrors($validator)->withInput($request->input());
         }
 
         if ($request->input('note') == null) {

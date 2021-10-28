@@ -54,7 +54,7 @@
                             @if ($product->getMetaField('guarantee'))
                             <div class="guarantee"><strong>Bảo hành:</strong> {{ $product->getMetaField('guarantee') }} tháng</div> 
                             @endif
-                            <div class="status"><strong>Tình trạng:</strong> {{ $product->quantity ? "Còn hàng" : "Đã bán hết"}}</div> 
+                            <div class="status"><strong>Tình trạng:</strong> {{ $product->quantity < 1 ? "Còn hàng" : "Đã bán hết"}}</div> 
                             <div class="parameters-link"><a href="#parameters">Xem cấu hình chi tiết</a></div>
                             <div class="bonus">
                                 Tặng Balo Laptop
@@ -341,28 +341,28 @@
                             </div>
                             <div class="form-group">
                                 <label for="username">Họ và tên:<span class="required">*</span></label>
-                                <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username">
+                                <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}">
                                 @error('username')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="phone">Số điện thoại:<span class="required">*</span></label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone">
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone" value="{{ old('phone') }}">
                                 @error('phone')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:<span class="required">*</span></label>
-                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email">
+                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}">
                                 @error('email')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="address">Địa chỉ giao hàng/ ghi chú:<span class="required">*</span></label>
-                                <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" id="address">
+                                <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" id="address" value="{{ old('address') }}">
                                 @error('address')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
