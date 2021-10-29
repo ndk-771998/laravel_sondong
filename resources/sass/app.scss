@@ -1,3 +1,116 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-@import "./ui/color";
 @import "./ui/font";
+@import "./ui/color";
+@import "./ui/button";
+@import "./pages/header";
+@import "./pages/footer";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: $font_family_regular;
+}
+
+.content-news{
+    margin: 15px auto;
+    max-width: 1170px;
+    .main-content{
+        max-width: 870px;
+        float: left;
+        .news{
+            background-color: $color-bg-hd;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            .newest{
+                display: block;
+                float: left;
+                height: 100%;
+                a{
+                    img{
+                        width: 460px;
+                        height: 277px;
+                    }
+                }
+                p{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $color-bg-default;
+                    padding: 10px 0;
+                }
+            }
+            .news-list{
+                padding-left: 30px;
+                text-align: left;
+                font-size: 14px;
+                line-height: 20px;
+                .first-new{
+                    p{
+                        padding-bottom: 10px;
+                        color: #0d77ba;
+                        span{
+                            color: $color-bg-default;
+                        }
+                    }
+                }
+                .list-title{
+                    p{
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        .common-title{
+            max-width: 870px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: solid 2px #b70002;
+            .title{
+                padding: 10px 0 10px 10px;
+                h3{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $color-title-bg;
+                    border-bottom: solid 2px $color-title-bg;
+                    display: inline-block;
+                }
+            }
+        }
+        .videos{
+            .content{
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 20px;
+                .sub-video{
+                a{
+                    img{
+                        width: 166px;
+                        height: 94px;
+                        display: block;
+                    }
+                    text-align: left;
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: $color-bg-default;
+                }
+            }
+            }
+        }
+        .highlights{
+            .div-highlight{
+                a{
+                    img{
+                        
+                    }
+                }
+            }
+        }
+    }
+    .sidebar{
+        max-width: 270px;
+    }
+}
