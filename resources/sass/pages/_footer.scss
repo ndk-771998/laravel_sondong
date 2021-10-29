@@ -1,0 +1,93 @@
+footer{
+    margin-top: 50px;
+    background-color: $color-header-bg;
+    border-top: solid 10px $color-title-bg;
+    .footer{
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        .left-footer{
+            margin: 30px 0;
+            .logo-footer{
+                display: flex;
+                a{
+                    margin: auto 0;
+                    img{
+                        width: 70px;
+                        height: auto;
+                        float: left;
+                    }
+                }
+                p{
+                    margin: auto 0;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $color-primary;
+                    line-height: 23px;
+                    padding-left: 20px;
+                }
+            }
+            .content-info-footer{
+                margin-top: 20px;
+                p{
+                    font-size: 14px;
+                    color: $color-secondary;
+                    line-height: 18px;
+                }
+            }
+        }
+        .middle-footer{
+            margin-top: 110px;
+            font-size: 14px;
+            width: 250px;
+            .middle-footer-up{
+                display: flex;
+                justify-content: space-between;
+                .left{
+                    font-family: $font_family_semibold;
+                }
+                .right{
+                    ul{
+                        li{
+                            list-style: none;
+                        }
+                    }
+                }
+            }
+            .middle-footer-down{
+                display: flex;
+                justify-content: space-between;
+                .left{
+                    font-family: $font_family_semibold;
+                }
+                .right{
+                    ul{
+                        li{
+                            list-style: none;
+                        }
+                    }
+                }
+            }
+        }
+        .right-footer{
+            margin-top: 110px;
+            h3{
+                font-size: 14px;
+                font-family: $font_family_semibold;
+                color: $color-default;
+            }
+            .link-icon-block{
+                display: flex;
+                justify-content: left;
+                a{
+                    font-size: 24px;
+                    padding-left: 20px;
+                    .fa-youtube-play{
+                        color:red;
+                    }
+                }
+            }
+        }
+    }
+}
