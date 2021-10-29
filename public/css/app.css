@@ -9945,13 +9945,33 @@ header .menu .navbar ul li .home {
   max-width: 270px;
 }
 
+@font-face {
+  font-family: Muli-Regular;
+  src: url(/fonts/Muli-Regular.ttf?c13b4f4e51057e813d4962aa7195e863);
+}
+
+@font-face {
+  font-family: Muli-Italic;
+  src: url(/fonts/Muli-Italic.ttf?d5315cf48420ee1068015caed6353edf);
+}
+
+@font-face {
+  font-family: Muli-Bold;
+  src: url(/fonts/Muli-Bold.ttf?8f3730aee971cd31827526c8d40d4d9d);
+}
+
+@font-face {
+  font-family: Muli-SemiBold;
+  src: url(/fonts/Muli-SemiBold.ttf?bcf4b6f4b6cdc780f20d3b2f414b450e);
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: Muli-Regular;
 }
 
 header {

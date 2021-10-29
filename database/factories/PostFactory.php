@@ -12,19 +12,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'content'     => $faker->paragraphs(rand(4, 7), true),
         'status'      => Arr::random($status),
         'thumbnail'         => $faker->randomElement([
-            '/assets/images/products/printer-1.png',
-            '/assets/images/products/printer-2.png',
-            '/assets/images/products/printer-3.png',
-            '/assets/images/products/printer-4.png',
-            '/assets/images/products/printer-5.png',
-            '/assets/images/products/laptop-1.png',
-            '/assets/images/products/laptop-2.png',
-            '/assets/images/products/laptop-3.png',
-            '/assets/images/products/laptop-4.png',
-            '/assets/images/products/laptop-5.png',
-            '/assets/images/products/laptop-6.png',
-            '/assets/images/products/laptop-7.png',
-            '/assets/images/products/laptop-8.png',
         ]),
     ];
 });
