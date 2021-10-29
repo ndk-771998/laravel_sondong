@@ -5,7 +5,7 @@
             <p>Trung tâm văn hoá - Thông tin và Thể thao <br>Sơn Động, Bắc Giang</p>
         </div>
         <div class="header-middle">
-            <a href=""> <i class="fa fa-play-circle" aria-hidden="true"></i> Chương trình truyền thanh</a>
+            <a href=""> <i class="fa fa-volume-up" aria-hidden="true"></i> Chương trình truyền thanh</a>
             <a href=""> <i class="fa fa-play-circle" aria-hidden="true"></i> Video truyền hình</a>
         </div>
         <div class="header-right">
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="menu">
-        <div class="navbar">
+        <div class="_menu">
             <ul>
                 <li><a class="home" href="#"><i class="fa fa-fw fa-home"></i></a></li>
                 <li class="active"><a href="#">Giới thiệu</a></li>
