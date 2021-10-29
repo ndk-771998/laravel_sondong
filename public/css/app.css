@@ -9765,6 +9765,7 @@ header .header .header-middle a {
   background-color: #0D77BA;
   line-height: 30px;
   border-radius: 7px;
+  font-size: 14px;
   padding: 10px;
   font-weight: 600;
   color: #fff;
@@ -9774,24 +9775,19 @@ header .header .header-middle a {
 header .header .header-right {
   width: 270px;
   margin: auto 0;
+  height: 72px;
 }
 
-header .header .header-right .time {
-  margin: 5px 0;
-  display: flex;
-  justify-content: left;
-}
-
-header .header .header-right .time h4 {
-  color: #B70002;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-header .header .header-right .time p {
+header .header .header-right .time h3 {
   font-size: 14px;
   font-weight: 600;
   margin-left: 10px;
+}
+
+header .header .header-right .time h3 span {
+  color: #B70002;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 header .header .header-right .form {
@@ -9808,6 +9804,7 @@ header .header .header-right .form form input {
   width: 100%;
   border: none;
   border-radius: 30px;
+  padding-left: 5%;
 }
 
 header .header .header-right .form form button {
@@ -9918,6 +9915,7 @@ footer .footer .left-footer .content-info-footer p {
 footer .footer .middle-footer {
   margin-top: 110px;
   font-size: 14px;
+  width: 250px;
 }
 
 footer .footer .middle-footer .middle-footer-up {
@@ -9931,6 +9929,43 @@ footer .footer .middle-footer .middle-footer-up .left {
 
 footer .footer .middle-footer .middle-footer-up .right ul li {
   list-style: none;
+}
+
+footer .footer .middle-footer .middle-footer-down {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer .middle-footer .middle-footer-down .left {
+  font-family: Muli-SemiBold;
+}
+
+footer .footer .middle-footer .middle-footer-down .right ul li {
+  list-style: none;
+}
+
+footer .footer .right-footer {
+  margin-top: 110px;
+}
+
+footer .footer .right-footer h3 {
+  font-size: 14px;
+  font-family: Muli-SemiBold;
+  color: #232323;
+}
+
+footer .footer .right-footer .link-icon-block {
+  display: flex;
+  justify-content: left;
+}
+
+footer .footer .right-footer .link-icon-block a {
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+footer .footer .right-footer .link-icon-block a .fa-youtube-play {
+  color: red;
 }
 
 * {

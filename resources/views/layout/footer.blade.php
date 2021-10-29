@@ -14,7 +14,7 @@
         </div>
         <div class="middle-footer">
             <div class="middle-footer-up">
-                <div class="left">Chỉ đạo nội dung</div>
+                <div class="left">Chỉ đạo nội dung:</div>
                 <div class="right">
                     <ul>
                         <li>La Triệu Vân</li>

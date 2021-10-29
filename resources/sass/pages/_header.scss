@@ -34,6 +34,7 @@ header{
                 background-color: $color-link;
                 line-height: 30px;
                 border-radius: 7px;
+                font-size: 14px;
                 padding: 10px;
                 font-weight: 600;
                 color: #fff;
@@ -43,19 +44,17 @@ header{
         .header-right{
             width: 270px;
             margin: auto 0;
+            height: 72px;
             .time{
-                margin: 5px 0;
-                display: flex;
-                justify-content: left;
-                h4{
-                    color: $color-title-bg;
-                    font-size: 15px;
-                    font-weight: 600;
-                }
-                p{
+                h3{
                     font-size: 14px;
                     font-weight: 600;
                     margin-left: 10px;
+                    span{
+                        color: $color-title-bg;
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
                 }
             }
             .form{
@@ -68,6 +67,7 @@ header{
                         width: 100%;
                         border: none;
                         border-radius: 30px;
+                        padding-left: 5%;
                     }
                     button{
                         position: absolute;

@@ -10,8 +10,7 @@
         </div>
         <div class="header-right">
             <div class="time">
-                <h4>13:51</h4>
-                <p>Thứ năm, 18 tháng 3 năm 2021</p>
+                <h3> <span>13:51 </span> Thứ năm, 18 tháng 3 năm 2021</h3>
             </div>
             <div class="form">
                 <form action="">

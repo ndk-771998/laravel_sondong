@@ -40,7 +40,22 @@ footer{
         .middle-footer{
             margin-top: 110px;
             font-size: 14px;
+            width: 250px;
             .middle-footer-up{
+                display: flex;
+                justify-content: space-between;
+                .left{
+                    font-family: $font_family_semibold;
+                }
+                .right{
+                    ul{
+                        li{
+                            list-style: none;
+                        }
+                    }
+                }
+            }
+            .middle-footer-down{
                 display: flex;
                 justify-content: space-between;
                 .left{
@@ -56,7 +71,23 @@ footer{
             }
         }
         .right-footer{
-
+            margin-top: 110px;
+            h3{
+                font-size: 14px;
+                font-family: $font_family_semibold;
+                color: $color-default;
+            }
+            .link-icon-block{
+                display: flex;
+                justify-content: left;
+                a{
+                    font-size: 24px;
+                    padding-left: 20px;
+                    .fa-youtube-play{
+                        color:red;
+                    }
+                }
+            }
         }
     }
 }
