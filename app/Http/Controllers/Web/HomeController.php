@@ -11,6 +11,6 @@ class HomeController extends Controller
 
     public function __invoke()
     {
-        echo "hello world!";
+        return view('index');
     }
 }

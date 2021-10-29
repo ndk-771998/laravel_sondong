@@ -1,24 +1,27 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-$font_family: "SegoeUI", sans-serif;
-
 @font-face{
-    font-family: SegoeUI;
-    src: url("../../fonts/SegoeUI.ttf");
+font-family: Muli-Regular;
+src: url("../../fonts/Muli-Regular.ttf");
 }
 @font-face {
-    font-family: SegoeUI-Light;
-    src: url("../../fonts/segoeui-light.ttf");
+font-family: Muli-Italic;
+src: url("../../fonts/Muli-Italic.ttf");
 }
 
 @font-face {
-    font-family: SegoeUI-bold;
-    src: url("../../fonts/SegoeUIBold.ttf");
+font-family: Muli-Bold;
+src: url("../../fonts/Muli-Bold.ttf");
 }
 
 @font-face {
-    font-family: SegoeUI-Semibold;
-    src: url("../../fonts/seguisb.ttf");
+font-family: Muli-SemiBold;
+src: url("../../fonts/Muli-SemiBold.ttf");
 }
+
+// font-family
+$font_family_regular: Muli-Regular;
+$font_family_italic: Muli-Italic;
+$font_family_bold: Muli-Bold;
+$font_family_semibold: Muli-SemiBold;
 
 // font-size
 $font_size_smaller: 12px;
@@ -26,3 +29,4 @@ $font_size_small: 14px;
 $font_size_normal: 16px;
 $font_size_large: 18px;
 $font_size_larger: 20px;
+$font_size_extra_large: 32px;
