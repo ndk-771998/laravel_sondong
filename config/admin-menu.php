@@ -89,10 +89,10 @@ return [
             //     "title" => 'Danh mục',
             //     "link" => '/admin/post-types/categories'
             // ],
-            [
-                "title" => 'Cấu hình',
-                "link" => '/admin/posts/schema-posts'
-            ]
+            // [
+            //     "title" => 'Cấu hình',
+            //     "link" => '/admin/posts/schema-posts'
+            // ]
         ]
     ],
     // [

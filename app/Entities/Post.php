@@ -19,12 +19,9 @@ class Post extends BasePost
     public function postTypes()
     {
         return [
-            'Chính sách'            => 'policy',
-            'Khuyến mại'            => 'promotion',
-            'Giới thiệu'            => 'aboutus',
-            'Dịch vụ sửa chữa'      => 'repairservice',
-            'Hình ảnh khách hàng'   => 'customermedias',
-            'Cảm nhận khách hàng'   => 'customerfeedback',
+            'Bản tin truyền thanh'          => 'ban-tin-truyen-thanh',
+            'Bản tin truyền hình'           => 'ban-tin-truyen-hinh',
+            'Cơ quan ban ngành liên kết'    => 'co-quan-ban-quanh-lien-ket',
         ];
     }
 
