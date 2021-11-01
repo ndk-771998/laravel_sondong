@@ -19,9 +19,10 @@ class Post extends BasePost
     public function postTypes()
     {
         return [
-            'Bản tin truyền thanh'          => 'ban-tin-truyen-thanh',
-            'Bản tin truyền hình'           => 'ban-tin-truyen-hinh',
-            'Cơ quan ban ngành liên kết'    => 'co-quan-ban-quanh-lien-ket',
+            'Bản tin truyền thanh'          => 'audios',
+            'Bản tin truyền hình'           => 'televisions',
+            'Cơ quan ban ngành liên kết'    => 'commitees',
+            'Văn bản chính sách'            => 'documents'
         ];
     }
 
@@ -30,7 +31,7 @@ class Post extends BasePost
         return Str::limit($this->name, $limit);
     }
 
-    public function contactSchema()
+    public function schema()
     {
         return [
             'seo_title' => [
@@ -46,7 +47,7 @@ class Post extends BasePost
         ];
     }
 
-    public function customermediasSchema()
+    public function pagesSchema()
     {
         return [
             'seo_title' => [
@@ -62,7 +63,7 @@ class Post extends BasePost
         ];
     }
 
-    public function customerfeedbackSchema()
+    public function audiosSchema()
     {
         return [
             'seo_title' => [
@@ -78,7 +79,7 @@ class Post extends BasePost
         ];
     }
 
-    public function repairserviceSchema()
+    public function televisionsSchema()
     {
         return [
             'seo_title' => [
@@ -94,7 +95,7 @@ class Post extends BasePost
         ];
     }
 
-    public function policySchema()
+    public function commiteesSchema()
     {
         return [
             'seo_title' => [
@@ -107,10 +108,15 @@ class Post extends BasePost
                 'label' => 'Mô tả SEO',
                 'rule'  => [],
             ],
+            'link'      => [
+                'type'  => 'text',
+                'label' => 'Liên kết ban ngành',
+                'rule'  => ['require'],
+            ]
         ];
     }
 
-    public function promotionSchema()
+    public function documentsSchema()
     {
         return [
             'seo_title' => [
@@ -123,22 +129,36 @@ class Post extends BasePost
                 'label' => 'Mô tả SEO',
                 'rule'  => [],
             ],
-        ];
-    }
-
-    public function aboutUsSchema()
-    {
-        return [
-            'seo_title' => [
+            'agency_issued'      => [
                 'type'  => 'text',
-                'label' => 'Tiêu đề SEO',
+                'label' => 'Cơ quan ban hành',
                 'rule'  => [],
             ],
-            'seo_desc' => [
-                'type'  => 'textarea',
-                'label' => 'Mô tả SEO',
+            'release_date'      => [
+                'type'  => 'text',
+                'label' => 'Ngày ban hành',
                 'rule'  => [],
             ],
+            'effective_date'      => [
+                'type'  => 'text',
+                'label' => 'Ngày hiệu lực',
+                'rule'  => [],
+            ],
+            'document_file_1'   => [
+                'type'  => 'image',
+                'label' => 'File văn bản đính kèm',
+                'rule'  => []
+            ],
+            'document_file_2'   => [
+                'type'  => 'image',
+                'label' => 'File văn bản đính kèm',
+                'rule'  => []
+            ],
+            'document_file_2'   => [
+                'type'  => 'image',
+                'label' => 'File văn bản đính kèm',
+                'rule'  => []
+            ]
         ];
     }
 

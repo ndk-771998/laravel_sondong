@@ -14,10 +14,10 @@ class CategoryableSeeder extends Seeder
     public function run()
     {
         $posts = Post::ofType('posts')->get();
-        $categories = Category::ofType('posts')->pluck('id');
+        $categories = Category::ofType('posts')->pluck('id')->toArray();
 
         foreach ($posts as $post) {
-            $post->attachCategories([array_rand($categories, 2)]);
+            $post->attachCategories([$categories[array_rand($categories)], $categories[array_rand($categories)]]);
         }
     }
 }
