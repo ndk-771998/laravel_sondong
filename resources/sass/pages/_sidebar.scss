@@ -1,31 +1,32 @@
 .right-sidebar{
     .common-title{
-        // margin-bottom: 30px;
+        margin-bottom: 30px;
         border-radius: 10px;
         border: solid 2px $color-title-bg;
+        border-top: none;
         .title{
             width: 100%;
+            border-radius: 10px 10px 0 0;
             font-family: $font_family_semibold;
             background-color: $color-title-bg;
-            border-radius: 7px;
             h3{
                 font-size: 18px;
                 color: #fff;
                 font-family: $font_family_semibold;
-                background-color: $color-title-bg;
                 padding: 10px;
             }
         }
         .content{
-            // margin: auto;
+            padding: 10px;
+            margin: auto;
             .type-content{
-                width: 250px;
+                max-width: 100%;
             }
             .sub-content{
-                // margin-bottom: 10px;
+                margin-bottom: 10px;
                 a{
                     img{
-                        width: 100%;
+                        max-width: 100%;
                         height: auto;
                     }
                 }
@@ -37,8 +38,8 @@
     .block-video{
         .content{
             video{
-                width: 250px;
-                height: 150px;
+                max-width: 100%;
+                height: auto;
             }
         }
     }
@@ -46,7 +47,7 @@
     .block-audio{
         .content{
             p{
-                font-size: 14px;
+                font-size: 13px;
                 text-align: left;
             }
         }

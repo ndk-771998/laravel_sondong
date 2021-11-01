@@ -9788,7 +9788,7 @@ header .header .header-right .time h3 span {
 }
 
 header .header .header-right .form {
-  width: 270px;
+  max-width: 100%;
   height: 30px;
 }
 
@@ -9798,7 +9798,7 @@ header .header .header-right .form form {
 
 header .header .header-right .form form input {
   line-height: 30px;
-  width: 100%;
+  max-width: 100%;
   border: none;
   border-radius: 30px;
   padding-left: 5%;
@@ -9926,6 +9926,12 @@ header .menu #toggle {
     width: -moz-max-content;
     width: max-content;
   }
+
+  header .header .header-right .form {
+    width: 175px;
+    height: 30px;
+    margin: auto;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -9977,7 +9983,7 @@ header .menu #toggle {
 @media screen and (max-width: 800px) {
   header .header .header-right .form form input {
     line-height: 30px;
-    width: 100%;
+    max-width: 100%;
     border: none;
     border-radius: 30px;
     padding-left: 5%;
@@ -10004,13 +10010,23 @@ header .menu #toggle {
 }
 
 @media screen and (max-width: 1024px) {
+  header .header .header-right .form {
+    width: 100%;
+    height: 30px;
+  }
+
+  header .header .header-left .name {
+    margin: auto;
+    padding-left: 15px;
+  }
+
   header .menu ._menu .nav {
     padding: 0 0.5rem;
   }
 
-  header .header .header-right .form form input {
+  .header-right .form form input {
     line-height: 20px;
-    width: 100%;
+    max-width: 75%;
     border: none;
     border-radius: 30px;
     padding-left: 5%;
@@ -10022,7 +10038,7 @@ header .menu #toggle {
     background-color: #fff;
     border: none;
     right: 8px;
-    top: 2px;
+    top: 3px;
   }
 
   header .header .header-middle a {
@@ -10034,12 +10050,6 @@ header .menu #toggle {
     height: 28px;
     font-family: Muli-SemiBold;
     border-radius: 7px;
-  }
-
-  header .header .header-left .name {
-    margin: auto;
-    padding: 0;
-    display: none;
   }
 
   header .menu ._menu ul li a {
@@ -10114,9 +10124,8 @@ footer .footer .left-footer .content-info-footer p {
 }
 
 footer .footer .middle-footer {
-  margin-top: 110px;
   font-size: 14px;
-  width: 250px;
+  margin: auto;
 }
 
 footer .footer .middle-footer .middle-footer-up {
@@ -10146,7 +10155,8 @@ footer .footer .middle-footer .middle-footer-down .right ul li {
 }
 
 footer .footer .right-footer {
-  margin-top: 110px;
+  margin: auto;
+  height: 135px;
 }
 
 footer .footer .right-footer h3 {
@@ -10169,42 +10179,67 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
   color: red;
 }
 
+@media screen and (max-width: 380px) {
+  footer .footer .right-footer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer .right-footer {
+    text-align: center;
+    margin: auto;
+    height: 175px;
+  }
+}
+
 .right-sidebar .common-title {
+  margin-bottom: 30px;
   border-radius: 10px;
   border: solid 2px #B70002;
+  border-top: none;
 }
 
 .right-sidebar .common-title .title {
   width: 100%;
+  border-radius: 10px 10px 0 0;
   font-family: Muli-SemiBold;
   background-color: #B70002;
-  border-radius: 7px;
 }
 
 .right-sidebar .common-title .title h3 {
   font-size: 18px;
   color: #fff;
   font-family: Muli-SemiBold;
-  background-color: #B70002;
   padding: 10px;
 }
 
+.right-sidebar .common-title .content {
+  padding: 10px;
+  margin: auto;
+}
+
 .right-sidebar .common-title .content .type-content {
-  width: 250px;
+  max-width: 100%;
+}
+
+.right-sidebar .common-title .content .sub-content {
+  margin-bottom: 10px;
 }
 
 .right-sidebar .common-title .content .sub-content a img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
 .right-sidebar .block-video .content video {
-  width: 250px;
-  height: 150px;
+  max-width: 100%;
+  height: auto;
 }
 
 .right-sidebar .block-audio .content p {
-  font-size: 14px;
+  font-size: 13px;
   text-align: left;
 }
 
@@ -10222,8 +10257,6 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 }
 
 .main-content .news .newest {
-  display: block;
-  float: left;
   height: 100%;
 }
 
@@ -10242,8 +10275,8 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 }
 
 .main-content .news .newest a img {
-  width: 460px;
-  height: 277px;
+  width: 100%;
+  height: auto;
 }
 
 .main-content .news .news-list {
@@ -10293,9 +10326,11 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 }
 
 .main-content .videos .content {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
+  padding: 0 20px 10px 20px;
+}
+
+.main-content .videos .content .sub-video {
+  overflow: hidden;
 }
 
 .main-content .videos .content .sub-video a {
@@ -10409,9 +10444,12 @@ body a:hover {
   transition: 1s;
 }
 
+body img {
+  transition: all 0.2s ease-in-out;
+}
+
 body img:hover {
   opacity: 0.8;
-  transition: 1s;
 }
 
 ._main-content {

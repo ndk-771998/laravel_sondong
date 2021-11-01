@@ -53,13 +53,13 @@ header {
                 }
             }
             .form {
-                width: 270px;
+                max-width: 100%;
                 height: 30px;
                 form {
                     position: relative;
                     input {
                         line-height: 30px;
-                        width: 100%;
+                        max-width: 100%;
                         border: none;
                         border-radius: 30px;
                         padding-left: 5%;
@@ -163,59 +163,21 @@ header {
     background-color: $color-title-bg-hover;
 }
 
-// @media screen and (max-width: 1024px) {
-//     header .header .header-left p {
-//         margin: auto 0;
-//         font-size: 15px;
-//         font-weight: 600;
-//         padding-left: 10px;
-//         color: #222222;
-//         line-height: 23px;
-//     }
-//     header .header .header-right .form {
-//         width: 100%;
-//         height: 30px;
-//     }
-//     header .header .header-right .time h3 span {
-//         color: #b70002;
-//         font-size: 13px;
-//         font-weight: 600;
-//     }
-//     header .header .header-right .time h3 {
-//         font-size: 11px;
-//         font-weight: 600;
-//     }
-
-//     header .header .header-middle a {
-//         padding: 7px;
-//         background-color: #0d77ba;
-//         font-size: 11px;
-//         color: #ffffff;
-//         font-family: Muli-SemiBold;
-//         border-radius: 7px;
-//     }
-//     header .header .header-left p {
-//         margin: auto 0;
-//         font-size: 15px;
-//         font-weight: 600;
-//         padding-left: 10 px;
-//         color: #222222;
-//         line-height: 23px;
-//     }
-// }
-
-
-
-
 @media screen and (max-width: 320px) {
     header{
         width: max-content;
     }
+
 }
 
 @media screen and (max-width: 480px) {
     header{
         width: max-content;
+    }
+    header .header .header-right .form {
+        width: 175px;
+        height: 30px;
+        margin: auto;
     }
 }
 
@@ -261,7 +223,7 @@ header {
 @media screen and (max-width: 800px) {
     header .header .header-right .form form input {
         line-height: 30px;
-        width: 100%;
+        max-width: 100%;
         border: none;
         border-radius: 30px;
         padding-left: 5%;
@@ -285,12 +247,20 @@ header {
 }
 
 @media screen and (max-width: 1024px) {
+    header .header .header-right .form {
+        width: 100%;
+        height: 30px;
+    }
+    header .header .header-left .name {
+        margin: auto;
+        padding-left: 15px;
+    }
     header .menu ._menu .nav {
         padding: 0 0.5rem;
     }
-    header .header .header-right .form form input {
+    .header-right .form form input {
         line-height: 20px;
-        width: 100%;
+        max-width: 75%;
         border: none;
         border-radius: 30px;
         padding-left: 5%;
@@ -301,7 +271,7 @@ header {
         background-color: #fff;
         border: none;
         right: 8px;
-        top: 2px;
+        top: 3px;
     }
     header .header .header-middle a {
         padding: 7px;
@@ -312,11 +282,6 @@ header {
         height: 28px;
         font-family: Muli-SemiBold;
         border-radius: 7px;
-    }
-    header .header .header-left .name {
-        margin: auto;
-        padding: 0;
-        display: none;
     }
     header .menu ._menu ul li a {
         text-decoration: none;

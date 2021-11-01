@@ -38,9 +38,8 @@ footer{
             }
         }
         .middle-footer{
-            margin-top: 110px;
             font-size: 14px;
-            width: 250px;
+            margin: auto;
             .middle-footer-up{
                 display: flex;
                 justify-content: space-between;
@@ -71,7 +70,8 @@ footer{
             }
         }
         .right-footer{
-            margin-top: 110px;
+            margin: auto;
+            height: 135px;
             h3{
                 font-size: 14px;
                 font-family: $font_family_semibold;
@@ -89,5 +89,20 @@ footer{
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    footer .footer .right-footer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer .footer .right-footer {
+        text-align: center;
+        margin: auto;
+        height: 175px;
     }
 }

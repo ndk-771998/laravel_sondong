@@ -16,18 +16,14 @@
 
 <body>
     @section('header')
-    <div class="row">
-        <div class="col-md-12">
-            @include('layout.header')
-        </div>
-    </div>
+    @include('layout.header')
     @show 
     <div class="container _main-content">
         <div class="row">
-            <div class="left col-md-9 col-sm-9 col-12">
+            <div class="left col-xs-12 col-sm-12 col-md-9 col-lg-9">
                 @yield('content')
             </div>
-            <div class="right col-md-3 col-sm-3">
+            <div class="right col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 @include('layout/right-sidebar')
             </div>
         </div>

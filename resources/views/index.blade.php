@@ -1,13 +1,16 @@
 @extends('layout.master')
 @section('content')
-<div class="main-content col-md-12 col-sm-12 col-12">
+<div class="main-content col-xs-12 col-xs-12 col-md-12">
    <div class="row">
-   <div class="news">
-         <div class="newest">
+   <div class="news col-xs-12 col-sm-12 col-md-12">
+         <div class="newest col-xs-12 col-sm-12 col-md-6">
+            <div class="row">
             <div><a href=""><img src="{{ url('/image/1.png') }}" alt=""></a></div>
             <div><a href="">Sơn Động: Khởi công gói thầu số 8a thuộc dự án cải tạo, nâng cấp đường tỉnh 291</a></div>
+            </div>
          </div>
-         <div class="news-list">
+         <div class="news-list col-xs-12 col-sm-12 col-md-6">
+            <div class="row">
             <div class="first-new">
                <a href="">Đồng chí Chu Quang Khanh được bầu giữ chức Phó bí thư Huyện Đoàn Sơn Động <span> - 6/10/2021</span></a>
             </div>
@@ -19,37 +22,40 @@
                <div class="text"><a href="">Thu nhập hơn 500 triệu đồng nhờ nuôi bò và trồng cây ăn quả <span> - 6/10/2021</span></a></div>
                <div class="text"><a href="">Sơn Động: Nâng cao kỹ năng phòng cháy, chữa cháu rừng <span> - 25/09/2021</span></a></div>
             </div>
+            </div>
          </div>
    </div>
-   <div class="videos common-title">
+   <div class="videos common-title col-xs-12 col-sm-12 col-md-12 p-0">
          <div class="title">
             <h3>Videos</h3>
          </div>
-         <div class="content">
-         <div class="sub-video">
-            <a href=""><img src="{{ url('/image/2.png') }}" alt=""></a>
-            <a href="">Phụ nữ Sơn Động: Biến điểm tồn lưu rác thải thành đường hoa</a>
-         </div>
-         <div class="sub-video">
-            <a href=""><img src="{{ url('/image/2.png') }}" alt=""></a>
-            <a href="">Phụ nữ Sơn Động: Biến điểm tồn lưu rác thải thành đường hoa</a>
-         </div>
-         <div class="sub-video">
-            <a href=""><img src="{{ url('/image/2.png') }}" alt=""></a>
-            <a href="">Phụ nữ Sơn Động: Biến điểm tồn lưu rác thải thành đường hoa</a>
-         </div>
-         <div class="sub-video">
-            <a href=""><img src="{{ url('/image/2.png') }}" alt=""></a>
-            <a href="">Phụ nữ Sơn Động: Biến điểm tồn lưu rác thải thành đường hoa</a>
-         </div>
+         <div class="content col-xs-12 col-sm-12 col-md-12">
+            <div class="row">
+            <div class="sub-video col-xs-12 col-sm-6 col-md-3">
+               <a href=""><img src="{{ url('/image/2.png') }}" alt=""></a>
+               <a href="">Phụ nữ Sơn Động: Biến điểm tồn lưu rác thải thành đường hoa</a>
+            </div>
+            <div class="sub-video col-xs-12 col-sm-6 col-md-3">
+               <a href=""><img src="{{ url('/image/2.png') }}" alt=""></a>
+               <a href="">Phụ nữ Sơn Động: Biến điểm tồn lưu rác thải thành đường hoa</a>
+            </div>
+            <div class="sub-video col-xs-12 col-sm-6 col-md-3">
+               <a href=""><img src="{{ url('/image/2.png') }}" alt=""></a>
+               <a href="">Phụ nữ Sơn Động: Biến điểm tồn lưu rác thải thành đường hoa</a>
+            </div>
+            <div class="sub-video col-xs-12 col-sm-6 col-md-3">
+               <a href=""><img src="{{ url('/image/2.png') }}" alt=""></a>
+               <a href="">Phụ nữ Sơn Động: Biến điểm tồn lưu rác thải thành đường hoa</a>
+            </div>
+            </div>
          </div>
    </div>
-   <div class="category common-title">
+   <div class="category common-title col-xs-12 col-sm-12 col-md-12 p-0">
          <div class="title">
             <h3>Tin tiêu biểu</h3>
          </div>
-         <div class="content">
-         <div class="div-highlight col-md-6">
+         <div class="content col-xs-12 col-sm-12 col-md-12 p-0">
+         <div class="div-highlight col-xs-12 col-sm-12 col-md-6">
             <div class="img-content">
                <a href=""><img src="{{ url('/image/3.png') }}" alt=""></a>
             </div>
@@ -60,7 +66,7 @@
                <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
             </div>
          </div>
-         <div class="sub-highlight col-md-6">
+         <div class="sub-highlight col-xs-12 col-sm-12 col-md-6">
             <div class="sub-new">
                <div class="img">
                   <a href=""><img src="{{ url('/image/4.png') }}" alt=""></a>
@@ -152,46 +158,9 @@
             </div>
          </div>
    </div>
-   <!-- <div class="social_culture common-title">
-         <div class="title">
-            <h3>Tin văn hoá</h3>
-         </div>
-         <div class="div-highlight">
-               <a href=""><img src="{{ url('/image/6.png') }}" alt=""></a>
-               <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
-            </div>
-            <div class="sub-highlight">
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/7.png') }}" alt=""></a>
-                     <a href="">Hội nghị "Công an lắng nghe ý kiến nhân dân" <span>- 06/10/2021</span></a>
-               </div>
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/5.png') }}" alt=""></a>
-                     <a href="">Sơn Động: Huy động nguồn lực kiên cố trường lớp học <span>- 04/10/2021</span></a>
-               </div>
-            </div>
-   </div> -->
    <div class="banner">
          <a href=""><img class="img-responsive" src="{{ url('/image/banner.png') }}" alt=""></a>
    </div>
-   <!-- <div class="economy common-title">
-   <div class="div-highlight">
-               <a href=""><img src="{{ url('/image/6.png') }}" alt=""></a>
-               <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
-            </div>
-            <div class="sub-highlight">
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/7.png') }}" alt=""></a>
-                     <a href="">Hội nghị "Công an lắng nghe ý kiến nhân dân" <span>- 06/10/2021</span></a>
-               </div>
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/5.png') }}" alt=""></a>
-                     <a href="">Sơn Động: Huy động nguồn lực kiên cố trường lớp học <span>- 04/10/2021</span></a>
-               </div>
-            </div>
-   </div> -->
    <div class="category common-title">
          <div class="title">
             <h3>Kinh tế</h3>
@@ -337,57 +306,6 @@
             </div>
          </div>
    </div>
-   <!-- <div class="security common-title">
-   <div class="div-highlight">
-               <a href=""><img src="{{ url('/image/6.png') }}" alt=""></a>
-               <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
-            </div>
-            <div class="sub-highlight">
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/7.png') }}" alt=""></a>
-                     <a href="">Hội nghị "Công an lắng nghe ý kiến nhân dân" <span>- 06/10/2021</span></a>
-               </div>
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/5.png') }}" alt=""></a>
-                     <a href="">Sơn Động: Huy động nguồn lực kiên cố trường lớp học <span>- 04/10/2021</span></a>
-               </div>
-            </div>
-   </div>
-   <div class="law common-title">
-   <div class="div-highlight">
-               <a href=""><img src="{{ url('/image/6.png') }}" alt=""></a>
-               <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
-            </div>
-            <div class="sub-highlight">
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/7.png') }}" alt=""></a>
-                     <a href="">Hội nghị "Công an lắng nghe ý kiến nhân dân" <span>- 06/10/2021</span></a>
-               </div>
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/5.png') }}" alt=""></a>
-                     <a href="">Sơn Động: Huy động nguồn lực kiên cố trường lớp học <span>- 04/10/2021</span></a>
-               </div>
-            </div>
-   </div>
-   <div class="health common-title">
-   <div class="div-highlight">
-               <a href=""><img src="{{ url('/image/6.png') }}" alt=""></a>
-               <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
-            </div>
-            <div class="sub-highlight">
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/7.png') }}" alt=""></a>
-                     <a href="">Hội nghị "Công an lắng nghe ý kiến nhân dân" <span>- 06/10/2021</span></a>
-               </div>
-               <div class="sub-new">
-                     <a href=""><img src="{{ url('/image/5.png') }}" alt=""></a>
-                     <a href="">Sơn Động: Huy động nguồn lực kiên cố trường lớp học <span>- 04/10/2021</span></a>
-               </div>
-            </div>
-   </div> -->
    <div class="document common-title" id="document">
          <div class="title">
             <h3>Văn bản chính sách</h3>
@@ -455,6 +373,6 @@
             </table>
          </div>
    </div>
-</div>
+   </div>
 </div>
 @endsection
