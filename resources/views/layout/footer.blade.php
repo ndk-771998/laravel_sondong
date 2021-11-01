@@ -1,4 +1,5 @@
 <footer>
+<div class="col-md-12">
     <div class="footer">
         <div class="left-footer">
             <div class="logo-footer">
@@ -42,4 +43,5 @@
             </div>
         </div>
     </div>
+</div>
 </footer>
