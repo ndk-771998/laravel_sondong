@@ -16,5 +16,9 @@ class DatabaseSeeder extends Seeder
         $this->call(GendersTableSeeder::class);
         $this->call(MediaDimentionSeeder::class);
         $this->call(AnalyticsQuerySeeder::class);
+        $this->call(MenuSeeder::class);
+        $this->call(PostSeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(CategoryableSeeder::class);
     }
 }
