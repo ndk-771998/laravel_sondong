@@ -15,4 +15,42 @@ use VCComponent\Laravel\Post\Http\Controllers\Web\PostListController as BasePost
 class PostListController extends BasePostListController implements ViewPostListControllerInterface
 {
     use PrepareOption;
+
+    /**
+     * return view name of posts list page, or the orther posttype without specific view function.
+     * 
+     * @return string
+     */
+    // public function view() {
+    //     return 'posts-list';
+    // }
+
+    /**
+     * return data which will be include in view or the orther posttype without specific viewData function.
+     * 
+     * @return array
+     */
+    public function viewData($posts, Request $request) {
+        
+        return [];
+    }
+
+    // public function viewPages() 
+    // {
+    //     return 'p'
+    // }
+    // public function viewDataPages($posts, Request $request) {
+        
+    //     return [];
+    // }
+
+    /**
+     * return data which will be include in view or the orther posttype without specific viewData function.
+     * 
+     * @return array
+     */
+    public function viewDataRadios($posts, Request $request)
+    {
+
+    }
 }
