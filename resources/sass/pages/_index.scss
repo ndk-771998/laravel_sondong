@@ -2,10 +2,8 @@
     .news{
         background-color: #F7F7F7;
         padding: 10px;
-        display: flex;
-        justify-content: space-between;
         .newest{
-            height: 100%;
+            padding: 10px 25px;
             .title{
                 padding-top: 10px;
                 a{
@@ -25,10 +23,10 @@
             }
         }
         .news-list{
-            padding-left: 30px;
             text-align: left;
             font-size: 14px;
             line-height: 20px;
+            padding: 10px 15px;
             .first-new{
                 padding-bottom: 10px;
                 a{
@@ -55,6 +53,7 @@
         margin: 20px 0;
         border-radius: 10px;
         border: solid 2px #b70002;
+        overflow-x: hidden;
         .title{
             padding: 10px 0 10px 10px;
             h3{
@@ -94,7 +93,7 @@
             margin-bottom: 10px;
             .div-highlight{
                 padding-right: 10px;
-                border-right: 2px solid rgb(147, 147, 221);
+                border-right: 2px solid $color-header-bg;
                 .img-content{
                     float: left;
                     a{
@@ -164,5 +163,20 @@
                 font-family: $font_family_regular;
             }
         }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .main-content .news .news-list {
+        text-align: left;
+        font-size: 13px;
+        line-height: 20px;
+         padding: 10px 35px;
+    }
+    .main-content .news .newest .title a {
+        font-size: 16px;
+        font-weight: 600;
+        color: #232323;
+        padding: 10px 0;
     }
 }

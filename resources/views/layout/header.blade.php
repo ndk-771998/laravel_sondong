@@ -14,15 +14,15 @@
             </div>
             <div class="header-middle d-none d-md-block col-12 col-md-5 col-sm-12">
                 <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-12 col-lg-6">
                     <a href=""> <i class= "fa fa-volume-up"></i> Chương trình truyền thanh</a>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-12 col-lg-6">
                     <a href=""> <i class= "fa fa-play-circle"></i> Video truyền hình</a>
                 </div>
                 </div>
             </div>
-            <div class="header-right col-9 col-xs-9 col-md-3">
+            <div class="header-right col-9 col-sm-12 col-md-3">
                 <div class="time">
                     <h3> <span>13:51 </span> Thứ năm, 18 tháng 3 năm 2021</h3>
                 </div>
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div>
-                            <li class="nav-item"><a class="" href="#">Tin chính trị</a></li>
+                            <li class="nav-item"><a class="" href="/chinh-tri">Tin chính trị</a></li>
                         </div>
                         <div>
                             <li class="nav-item"><a class="" href="#">Văn hoá - xã hội</a></li>
