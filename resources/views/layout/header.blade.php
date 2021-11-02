@@ -2,7 +2,7 @@
     <div class="header">
         <div class="container _header" style="background-color: #F8E6E6;">
             <div class="row">
-            <div class="header-left col-3 col-md-4 col-sm-12">
+            <div class="header-left col-3 col-md-4 col-sm-3">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-12 image">
                         <a href=""><img src="{{ url('/image/logo.png') }}" alt=""></a>
@@ -12,17 +12,11 @@
                     </div>
                 </div>
             </div>
-            <div class="header-middle d-none d-md-block col-12 col-md-5 col-sm-12">
-                <div class="row">
-                <div class="col-md-12 col-lg-6">
-                    <a href=""> <i class= "fa fa-volume-up"></i> Chương trình truyền thanh</a>
-                </div>
-                <div class="col-md-12 col-lg-6">
-                    <a href=""> <i class= "fa fa-play-circle"></i> Video truyền hình</a>
-                </div>
-                </div>
+            <div class="header-middle d-none d-md-flex col-12 col-md-5 col-sm-12">
+                <a href=""><i class= "fa fa-volume-up"></i> Chương trình truyền thanh</a>
+                <a href=""><i class= "fa fa-play-circle"></i> Video truyền hình</a>
             </div>
-            <div class="header-right col-9 col-sm-12 col-md-3">
+            <div class="header-right col-9 col-sm-9 col-md-3">
                 <div class="time">
                     <h3> <span>13:51 </span> Thứ năm, 18 tháng 3 năm 2021</h3>
                 </div>

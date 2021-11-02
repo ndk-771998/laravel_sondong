@@ -20,13 +20,13 @@
             padding: 10px;
             margin: auto;
             .type-content{
-                max-width: 100%;
+                width: 100%;
             }
             .sub-content{
                 margin-bottom: 10px;
                 a{
                     img{
-                        max-width: 100%;
+                        width: 100%;
                         height: auto;
                     }
                 }
@@ -38,7 +38,7 @@
     .block-video{
         .content{
             video{
-                max-width: 100%;
+                width: 100%;
                 height: auto;
             }
         }

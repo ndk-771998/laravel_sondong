@@ -8,8 +8,7 @@ header {
         .header-left {
             margin: auto 0;
             .name {
-                margin: auto;
-                padding: 0;
+                margin: auto 0;
             }
             a {
                 margin: auto 0;
@@ -29,8 +28,7 @@ header {
             }
         }
         .header-middle {
-            padding-top: 30px;
-            text-align: right;
+            justify-content: flex-end;
             a {
                 padding: 7px;
                 background-color: $color-link;
@@ -39,6 +37,9 @@ header {
                 font-family: $font_family_semibold;
                 border-radius: 7px;
                 display: table;
+                margin-top: auto;
+                height: 30px;
+                margin-left: 10px;
             }
         }
         .header-right {
@@ -85,7 +86,6 @@ header {
         height: auto;
         background-color: $color-title-bg;
         ._menu {
-            max-width: 1170px;
             height: 100%;
             .nav {
                 padding: 0 0.5rem;
@@ -167,51 +167,26 @@ header {
     background-color: $color-title-bg-hover;
 }
 
-@media screen and (max-width: 320px) {
-    header{
-        width: -webkit-maxcontent;
-    }
-
-}
-
-@media screen and (max-width: 480px) {
-    header{
-        width: 100%;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    header .header .header-left a img {
+        width: 80px;
+        height: auto;
+        margin-left: 15px;
+        float: left;
     }
     header .header .header-right .form {
-        width: 175px;
+        max-width: 80%;
         height: 30px;
-        margin: auto;
     }
 }
 
-@media screen and (max-width: 600px) {
-    header{
-        width: 100%;
-    }
-}
 
-@media screen and (max-width: 768px) {
-    header .header .header-left .image {
-        margin: 0 auto;
-        margin-bottom: 15px;
-    }
-    header .header .header-left .image {
-        margin: 0 auto;
-        margin-bottom: 15px;
-        display: flex;
-        justify-content: center;
-    }
-    header .header .header-right .form {
-        width: 100%;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-    }
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
     header .menu #toggle {
         font-size: 20px;
         color: #FFFFFF;
-        text-align: right;
         cursor: pointer;
         padding: 10px;
         display: block;
@@ -222,141 +197,30 @@ header {
     header .menu ._menu .nav {
         flex-direction: column;
     }
-}
 
-@media screen and (max-width: 800px) {
-    header .header .header-right .form form input {
-        line-height: 30px;
-        max-width: 100%;
-        border: none;
-        border-radius: 30px;
-        padding-left: 5%;
-    }
-    header .header .header-right .form form button {
-        position: absolute;
-        font-size: 15px;
-        background-color: #fff;
-        border: none;
-        right: 12px;
-        top: 3px;
-    }
-    header .header .header-right .time h3 {
-        text-align: center;
-        font-size: 13px;
-        font-weight: 600;
-    }
-    header .header ._header {
-        padding: 15px;
-    }
-}
-
-@media screen and (max-width: 803px) {
-    header .menu ._menu ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 23px;
-    width: 74%;
-    height: 72%;
-    }
-}
-
-@media screen and (max-width: 992px) {
     header .header .header-middle {
-        margin: auto 0;
-        align-items: center;
+        flex-direction: column;
+        justify-content: right;
     }
-    header .header .header-middle a {
-        padding: 7px;
-        background-color: #0D77BA;
-        font-size: 11px;
-        color: #FFFFFF;
-        font-family: Muli-SemiBold;
-        border-radius: 7px;
-        text-align: center;
-        display: table;
-        margin-bottom: 10px;
+    header .header .header-middle a{
+        font-size: 13px;
+        width: 75%;
     }
-    header .menu ._menu ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 23px;
-        width: 74%;
-        height: 72%;
-    }
-}
-@media only screen and (max-width: 1184px) {
-    header .header .header-middle a {
-        padding: 7px;
-        background-color: #0D77BA;
-        font-size: 11px;
-        color: #FFFFFF;
-        font-family: Muli-SemiBold;
-        border-radius: 7px;
-        display: table;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    header .header .header-right .form {
-        width: 100%;
-        height: 30px;
-    }
-    header .header .header-left .name {
-        margin: auto;
-        padding-left: 15px;
-    }
-    header .menu ._menu .nav {
-        padding: 0 0.5rem;
-    }
-    .header-right .form form input {
-        line-height: 20px;
-        max-width: 75%;
-        border: none;
-        border-radius: 30px;
-        padding-left: 5%;
-    }
-    header .header .header-right .form form button {
-        position: absolute;
+    header .header .header-left a {
         font-size: 14px;
-        background-color: #fff;
-        border: none;
-        right: 8px;
-        top: 3px;
-    }
-    header .header .header-middle a {
-        padding: 7px;
-        background-color: #0d77ba;
-        display: inline-table;
-        font-size: 11px;
-        color: #ffffff;
-        height: 28px;
-        font-family: Muli-SemiBold;
-        border-radius: 7px;
-    }
-    header .menu ._menu ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 12px;
         font-weight: 600;
-        line-height: 23px;
-        width: 74%;
-        height: 72%;
+        text-align: center;
+        color: #222222;
     }
-    header .header .header-left a img {
-        width: 80px;
-        height: auto;
-        float: left;
+    header .header .header-left a {
+        line-height: normal;
+        font-size: 13px;
     }
-    header .header .header-left .image {
-        margin: 0 auto;
-    }
+
 }
 
-@media screen and (max-width: 1165px){
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
     header .header .header-middle a {
         padding: 7px;
         background-color: #0D77BA;
@@ -365,10 +229,28 @@ header {
         font-family: Muli-SemiBold;
         border-radius: 7px;
         display: table;
+        max-width: 100%;
     }
-    header .header .header-left a img {
-        width: 70px;
-        height: auto;
-        float: left;
+    header .header .header-middle {
+        flex-direction: column;
+        justify-content: right;
+    }
+    header .header .header-middle a{
+        width: 75%;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+    header .header .header-middle a {
+        padding: 7px;
+        background-color: #0D77BA;
+        font-size: 13px;
+        color: #FFFFFF;
+        font-family: Muli-SemiBold;
+        border-radius: 7px;
+        display: table;
     }
 }
+

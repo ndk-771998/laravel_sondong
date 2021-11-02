@@ -90,13 +90,13 @@
          </div>
          <div class="content">
             <div class="div-highlight col-md-6">
-               <div class="img-content">
-               <a href=""><img src="{{ url('/image/6.png') }}" alt=""></a>
+               <div class="img-content col-md-6">
+                  <a href=""><img src="{{ url('/image/6.png') }}" alt=""></a>
                </div>
-               <div class="title-content">
+               <div class="title-content col-md-6">
                <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
                </div>
-               <div class="description">
+               <div class="description col-md-12">
                <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
                </div>
             </div>
