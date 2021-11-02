@@ -16,13 +16,12 @@
                 }
             }
             .img{
-                a{
-                    img{
+               a{
+                   img{
                         width: 100%;
                         height: auto;
-                        display: none;
-                    }
-                }
+                   }
+               }
             }
         }
         .news-list{
@@ -100,7 +99,7 @@
                     float: left;
                     a{
                         img{
-                            width: 180px;
+                            width: 170px;
                             height: auto;
                             padding: 0 10px 0 0 ;
                         }
@@ -123,9 +122,9 @@
             }
             .sub-highlight{
                 .sub-new{
+                    height: 50%;
                     display: inline-block;
-                    padding-left: 20px;
-                    padding-bottom: 10px;
+                    flex-direction: column;
                     .img{
                         float: left;
                         a{
@@ -137,11 +136,10 @@
                         }
                     }
                     .title-sub{
-                        font-size: 16px;
                         padding-left: 10px;
                         a{
                             color: $color-default;
-                            font-size: 16px;
+                            font-size: 14px;
                             font-family: $font_family_semibold;
                         }
                     }

@@ -1,30 +1,30 @@
 @extends('layout.master')
 @section('content')
-<div class="main-content col-xs-12 col-xs-12 col-md-12">
+<div class="col-xs-12 col-xs-12 col-md-12 main-content">
    <div class="row">
-   <div class="news col-xs-12 col-sm-12 col-md-12">
+      <div class="col-xs-12 col-sm-12 col-md-12 news">
          <div class="newest col-xs-12 col-sm-12 col-md-6">
             <div class="row">
-            <div class="img"><a href=""><img src="{{ url('/image/1.png') }}" alt=""></a></div>
-            <div class="title"><a href="">Sơn Động: Khởi công gói thầu số 8a thuộc dự án cải tạo, nâng cấp đường tỉnh 291</a></div>
+               <div class="img"><a href=""><img src="{{ url('/image/1.png') }}" alt=""></a></div>
+               <div class="title"><a href="">Sơn Động: Khởi công gói thầu số 8a thuộc dự án cải tạo, nâng cấp đường tỉnh 291</a></div>
             </div>
          </div>
          <div class="news-list col-xs-12 col-sm-12 col-md-6">
             <div class="row">
-            <div class="first-new">
-               <a href="">Đồng chí Chu Quang Khanh được bầu giữ chức Phó bí thư Huyện Đoàn Sơn Động <span> - 6/10/2021</span></a>
-            </div>
-            <div class="list-title">
-               <div class="text"><a href="">Thu nhập hơn 500 triệu đồng nhờ nuôi bò và trồng cây ăn quả <span> - 6/10/2021</span></a></div>
-               <div class="text"><a href="">Sơn Động: Huy động nguồn lực kiên cố trường lớp học <span> - 6/10/2021</span></a></div>
-               <div class="text"><a href="">Sơn Động cấp gần 6 nghìn cây giống cho người dân <span> - 6/10/2021</span></a></div>
-               <div class="text"><a href="">Hơn 9,2 tỷ đồng phát triển vùng Ba kích tím tại huyện Sơn Động <span> - 6/10/2021</span></a></div>
-               <div class="text"><a href="">Thu nhập hơn 500 triệu đồng nhờ nuôi bò và trồng cây ăn quả <span> - 6/10/2021</span></a></div>
-               <div class="text"><a href="">Sơn Động: Nâng cao kỹ năng phòng cháy, chữa cháu rừng <span> - 25/09/2021</span></a></div>
-            </div>
+               <div class="first-new">
+                  <a href="">Đồng chí Chu Quang Khanh được bầu giữ chức Phó bí thư Huyện Đoàn Sơn Động <span> - 6/10/2021</span></a>
+               </div>
+               <div class="list-title">
+                  <div class="text"><a href="">Thu nhập hơn 500 triệu đồng nhờ nuôi bò và trồng cây ăn quả <span> - 6/10/2021</span></a></div>
+                  <div class="text"><a href="">Sơn Động: Huy động nguồn lực kiên cố trường lớp học <span> - 6/10/2021</span></a></div>
+                  <div class="text"><a href="">Sơn Động cấp gần 6 nghìn cây giống cho người dân <span> - 6/10/2021</span></a></div>
+                  <div class="text"><a href="">Hơn 9,2 tỷ đồng phát triển vùng Ba kích tím tại huyện Sơn Động <span> - 6/10/2021</span></a></div>
+                  <div class="text"><a href="">Thu nhập hơn 500 triệu đồng nhờ nuôi bò và trồng cây ăn quả <span> - 6/10/2021</span></a></div>
+                  <div class="text"><a href="">Sơn Động: Nâng cao kỹ năng phòng cháy, chữa cháu rừng <span> - 25/09/2021</span></a></div>
+               </div>
             </div>
          </div>
-   </div>
+      </div>
    <div class="videos common-title col-xs-12 col-sm-12 col-md-12 p-0">
          <div class="title">
             <h3>Videos</h3>
@@ -67,7 +67,7 @@
             </div>
          </div>
          <div class="sub-highlight col-xs-12 col-sm-12 col-md-6">
-            <div class="sub-new">
+            <div class="sub-new col-xs-12 col-sm-12 col-md-12">
                <div class="img">
                   <a href=""><img src="{{ url('/image/4.png') }}" alt=""></a>
                </div>
@@ -75,7 +75,7 @@
                   <a href="">Hội nghị "Công an lắng nghe ý kiến nhân dân" <span>- 06/10/2021</span></a>
                </div>
             </div>
-            <div class="sub-new">
+            <div class="sub-new col-xs-12 col-sm-12 col-md-12">
                <div class="img">
                      <a href=""><img src="{{ url('/image/4.png') }}" alt=""></a>
                   </div>
