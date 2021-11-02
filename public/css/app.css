@@ -10368,13 +10368,9 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
   padding: 0 10px 0 0;
 }
 
-.main-content .category .content .div-highlight .title-content {
-  line-height: 16px;
-}
-
 .main-content .category .content .div-highlight .title-content a {
   color: #232323;
-  font-size: 16px;
+  font-size: 14px;
   font-family: Muli-SemiBold;
   text-align: justify;
 }

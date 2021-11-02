@@ -5,8 +5,8 @@
    <div class="news col-xs-12 col-sm-12 col-md-12">
          <div class="newest col-xs-12 col-sm-12 col-md-6">
             <div class="row">
-            <div><a href=""><img src="{{ url('/image/1.png') }}" alt=""></a></div>
-            <div><a href="">Sơn Động: Khởi công gói thầu số 8a thuộc dự án cải tạo, nâng cấp đường tỉnh 291</a></div>
+            <div class="img"><a href=""><img src="{{ url('/image/1.png') }}" alt=""></a></div>
+            <div class="title"><a href="">Sơn Động: Khởi công gói thầu số 8a thuộc dự án cải tạo, nâng cấp đường tỉnh 291</a></div>
             </div>
          </div>
          <div class="news-list col-xs-12 col-sm-12 col-md-6">
@@ -99,7 +99,7 @@
                <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
                </div>
                <div class="description">
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
+               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
                </div>
             </div>
             <div class="sub-highlight col-md-6">
@@ -135,7 +135,7 @@
                <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
                </div>
                <div class="description">
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
+               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
                </div>
             </div>
             <div class="sub-highlight col-md-6">
@@ -174,7 +174,7 @@
                <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
                </div>
                <div class="description">
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
+               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
                </div>
             </div>
             <div class="sub-highlight col-md-6">
@@ -210,7 +210,7 @@
                <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
                </div>
                <div class="description">
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
+               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
                </div>
             </div>
             <div class="sub-highlight col-md-6">
@@ -247,7 +247,7 @@
                <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
                </div>
                <div class="description">
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
+               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
                </div>
             </div>
             <div class="sub-highlight col-md-6">
@@ -283,7 +283,7 @@
                <a href="">Hội nghị sơ kết mô hình "Cựu công an xã tham gia bảo đảm ANTT, phòng chống  thiên tai, dịch bệnh"</a>
                </div>
                <div class="description">
-               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, <br> khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
+               <p class="description">Chiều 7/10, Ban Chấp hành Huyện đoàn Sơn Động tổ chức Hội nghị lần thứ 12, khoá XXI, nhiệm kỳ 2017 - 2022 bầu kiện toàn chức danh Phó Bí thư</p>
                </div>
             </div>
             <div class="sub-highlight col-md-6">
