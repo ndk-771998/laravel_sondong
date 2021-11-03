@@ -2,10 +2,15 @@
 @import "./ui/font";
 @import "./ui/color";
 @import "./ui/button";
+@import "./mixins/text.scss";
+@import "./includes/item-post.scss";
 @import "./pages/header";
 @import "./pages/footer";
 @import "./pages/sidebar";
 @import "./pages/index-main";
+@import "./pages/post-list";
+@import "./pages/post-detail";
+
 *{
     margin: 0;
     padding: 0;
@@ -13,6 +18,7 @@
 
 
 body{
+    line-height: normal;
     font-family: $font_family_regular;
     a:hover{
         text-decoration: none;

@@ -1,0 +1,40 @@
+.item-post {
+    max-height: 180px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    border-top: 1px dashed $color-border-input;
+    overflow: hidden;
+    font-size: $font_size_small;
+
+    .thumbnail {
+        float: left;
+        max-width: 33.333333%;
+        margin-right: 30px;
+        margin-bottom: 10px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    .title {
+        font-family: $font_family_semibold;
+        color: $color-default;
+        margin-bottom: 10px;
+        @include limitRowToDisplay(2);
+    }
+
+    .publish-date {
+        color: $color-secondary;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        font-family: $font_family_regular;
+        color: $color-default;
+        @include limitRowToDisplay(7);
+    }
+}
