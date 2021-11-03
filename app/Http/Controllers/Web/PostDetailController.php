@@ -13,4 +13,18 @@ use VCComponent\Laravel\Post\Http\Controllers\Web\PostDetailController as BasePo
 class PostDetailController extends BasePostDetailController implements ViewPostDetailControllerInterface
 {
     use PrepareOption;
+
+    public function view() {
+        return 'pages.post-detail';
+    }
+
+    public function viewData($post, Request $request) {
+        $hot_posts = Post::where('is_hot', 1)->limit(5)->get();
+        $related_posts = Post::limit(5)->get();
+
+        return [
+            'hot_posts' => $hot_posts,
+            'related_posts' => $related_posts
+        ];
+    }
 }

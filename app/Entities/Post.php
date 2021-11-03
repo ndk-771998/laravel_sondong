@@ -2,6 +2,7 @@
 
 namespace App\Entities;
 
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\Models\Media;
@@ -187,5 +188,10 @@ class Post extends BasePost
         foreach ($media_dimension as $item) {
             $this->addMediaConversion($item->name)->width($item->width)->height($item->height)->sharpen(10);
         }
+    }
+
+    public function getPublishedDate() {
+        $publish_date = $this->published_date ? $this->published_date : $this->created_at;
+        return Carbon::parse($publish_date)->format('d-m-Y');
     }
 }
