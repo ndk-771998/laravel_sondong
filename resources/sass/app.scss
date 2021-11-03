@@ -5,7 +5,7 @@
 @import "./pages/header";
 @import "./pages/footer";
 @import "./pages/sidebar";
-@import "./pages/index-main";
+@import "./pages/index";
 *{
     margin: 0;
     padding: 0;
@@ -19,9 +19,11 @@ body{
         opacity: 0.8;
         transition: 1s;
     }
+    img{
+        transition: all .2s ease-in-out;
+    }
     img:hover{
         opacity: 0.8;
-        transition: 1s;
     }
 }
 ._main-content{

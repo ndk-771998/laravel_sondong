@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'Web\HomeController');
+Route::get('/chinh-tri', 'Web\HomeController');
