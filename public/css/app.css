@@ -10244,7 +10244,7 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
   font-size: 18px;
   font-weight: 600;
   color: #232323;
-  border-bottom: solid 2px #232323;
+  border-bottom: solid 2px #B70002;
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -10382,6 +10382,121 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.audio-content .audio-list-content ._pagination {
+  padding-top: 50px;
+}
+
+.audio-content .audio-list-content ._pagination nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.audio-content .audio-list-content ._pagination nav ul li {
+  border-radius: 4px;
+  width: auto;
+  overflow: hidden;
+  height: 24px;
+  background-color: #E5E5E5;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.audio-content .audio-list-content ._pagination nav ul li a {
+  text-align: center;
+  line-height: 14px;
+  padding: 10px;
+  font-size: 14px;
+  color: #232323;
+  font-family: Muli-Regular;
+}
+
+.audio-content .audio-list-content ._pagination nav ul .active {
+  background-color: #0D77BA;
+}
+
+.audio-content .audio-list-content ._pagination nav ul .normal {
+  background: none;
+}
+
+.audio-content .audio-list-content .title {
+  font-family: Muli-Bold;
+  font-size: 32px;
+  color: #B70002;
+  padding-bottom: 13.5px;
+}
+
+.audio-content .audio-list-content .title h3 {
+  border-bottom: 2px solid #F8E6E6;
+  padding-bottom: 10px;
+}
+
+.audio-content .audio-list-content .content .sub-audio-content {
+  border-bottom: 2px dashed #F8E6E6;
+  padding: 10px 0;
+}
+
+.audio-content .audio-list-content .content .sub-audio-content .sub-title {
+  display: flex;
+  align-items: center;
+}
+
+.audio-content .audio-list-content .content .sub-audio-content .sub-title a {
+  font-size: 14px;
+  font-family: Muli-SemiBold;
+  color: #232323;
+}
+
+.audio-content .audio-list-content .content .sub-audio-content .sub-audio audio {
+  width: 100%;
+  height: 40px;
+}
+
+.audio-detail .audio-detail-content .title-detail {
+  display: flex;
+  align-items: center;
+}
+
+.audio-detail .audio-detail-content .title-detail p {
+  font-size: 14px;
+  font-family: Muli-Bold;
+  color: #0D77BA;
+}
+
+.audio-detail .audio-detail-content .sub-detail audio {
+  width: 100%;
+  height: 40px;
+}
+
+.audio-detail .views-author {
+  color: #757575;
+  font-size: 14px;
+}
+
+.audio-detail .views-author .views {
+  float: left;
+  text-align: left;
+}
+
+.audio-detail .views-author .author {
+  text-align: right;
+}
+
+._title {
+  border-bottom: 2px solid #F8E6E6;
+  margin-bottom: 20px;
+}
+
+._title h3 {
+  transform: translate(0, 1px);
+  font-size: 18px;
+  font-family: Muli-SemiBold;
+  color: #232323;
+  border-bottom: solid 2px #B70002;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 
 * {

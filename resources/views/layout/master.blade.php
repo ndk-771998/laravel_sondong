@@ -24,7 +24,7 @@
                 @yield('content')
             </div>
             <div class="right col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                @include('layout/right-sidebar')
+                @include('layout.right-sidebar')
             </div>
         </div>
     </div>

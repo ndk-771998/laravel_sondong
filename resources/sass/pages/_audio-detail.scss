@@ -1,0 +1,45 @@
+.audio-detail{
+    .audio-detail-content{
+        .title-detail{
+            display: flex;
+            align-items: center;
+            p{
+                font-size: $font_size_small;
+                font-family: $font_family_bold;
+                color: $color-link;
+            }
+        }
+        .sub-detail{
+            audio{
+                width: 100%;
+                height: 40px;
+            }
+        }
+    }
+    .views-author{
+        color: $color-secondary;
+        font-size: $font-size-small;
+        .views{
+            float: left;
+            text-align: left;
+        }
+        .author{
+            text-align: right;
+        }
+    }
+}
+
+._title{
+    border-bottom: 2px solid $color-header-bg;
+    margin-bottom: 20px;
+    h3{
+        transform: translate(0 , 1px);
+        font-size: $font-size-large;
+        font-family: $font_family_semibold;
+        color: $color-default;
+        border-bottom: solid 2px $color-title-bg;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+}

@@ -5,15 +5,15 @@
             <div class="header-left col-3 col-md-4 col-sm-3">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-12 image">
-                        <a href=""><img src="{{ url('/image/logo.png') }}" alt=""></a>
+                        <a href="{{URL::to('/trang-chu')}}"><img src="{{ url('/image/logo.png') }}" alt=""></a>
                     </div>
                     <div class="col-md-9 name">
-                        <a class=" d-none d-md-block" href="">Trung tâm văn hoá - Thông tin và Thể thao Sơn Động, Bắc Giang</a>
+                        <a class="d-none d-md-block" href="{{URL::to('/trang-chu')}}">Trung tâm văn hoá - Thông tin và Thể thao Sơn Động, Bắc Giang</a>
                     </div>
                 </div>
             </div>
             <div class="header-middle d-none d-md-flex col-12 col-md-5 col-sm-12">
-                <a href=""><i class= "fa fa-volume-up"></i> Chương trình truyền thanh</a>
+                <a href="{{URL::to('/chuong-trinh-truyen-thanh')}}"><i class= "fa fa-volume-up"></i> Chương trình truyền thanh</a>
                 <a href=""><i class= "fa fa-play-circle"></i> Video truyền hình</a>
             </div>
             <div class="header-right col-9 col-sm-9 col-md-3">
@@ -38,10 +38,10 @@
                 <nav id="nav" class="nav navbar">
                     <ul class="nav p-0">
                         <div>
-                            <li class="nav-item"><a class="home" href="#"><i class="fa fa-fw fa-home"></i></a></li>
+                            <li class="nav-item"><a class="home" href="{{URL::to('/trang-chu')}}"><i class="fa fa-fw fa-home"></i></a></li>
                         </div>
                         <div class="dropdown">
-                            <li class="active dropbtn"><a href="#">Giới thiệu</a></li>
+                            <li class="active dropbtn"><a href="{{URL::to('/gioi-thieu')}}">Giới thiệu</a></li>
                             <div class="dropdown-content">
                                 <li>
                                     <a href="">Link 1</a>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div>
-                            <li class="nav-item"><a class="" href="/chinh-tri">Tin chính trị</a></li>
+                            <li class="nav-item"><a class="" href="">Tin chính trị</a></li>
                         </div>
                         <div>
                             <li class="nav-item"><a class="" href="#">Văn hoá - xã hội</a></li>
