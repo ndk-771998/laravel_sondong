@@ -28,6 +28,21 @@ steps:
         from_secret: CLOUDFLARE_TOKEN
       cloudflare_zone_id:
         from_secret: CLOUDFLARE_ZONE_ID
+  - name: env:staging
+    image: nightfuryest/drone-plugin-secret-to-env
+    settings:
+      template: .deploy/.env.staging.template
+      file: .env
+      envs:
+        - DB_USERNAME
+        - DB_PASSWORD
+      DB_USERNAME:
+        from_secret: DEFAULT_DB_ROOT_USER_DEV
+      DB_PASSWORD:
+        from_secret: DEFAULT_DB_ROOT_PASSWORD_DEV
+    when:
+      branch:
+        - staging/*
   - name: env:prod
     image: nightfuryest/drone-plugin-secret-to-env
     settings:
