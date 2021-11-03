@@ -10175,18 +10175,18 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 
 .main-content .news {
   background-color: #F7F7F7;
-  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .main-content .news .newest {
   padding: 10px 25px;
 }
 
-.main-content .news .newest .title {
+.main-content .news .newest .title-slide {
   padding-top: 10px;
 }
 
-.main-content .news .newest .title a {
+.main-content .news .newest .title-slide a {
   font-size: 18px;
   font-weight: 600;
   color: #232323;
@@ -10226,27 +10226,28 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 }
 
 .main-content .common-title {
-  max-width: 870px;
-  margin: 20px 0;
+  max-width: 100%;
+  margin: 10px 0;
   border-radius: 10px;
   border: solid 2px #b70002;
   overflow-x: hidden;
+  padding: 10px;
 }
 
 .main-content .common-title .title {
-  padding: 10px 0 10px 10px;
+  border-bottom: 2px solid #F8E6E6;
+  margin-bottom: 20px;
 }
 
 .main-content .common-title .title h3 {
+  transform: translate(0, 1px);
   font-size: 18px;
   font-weight: 600;
   color: #232323;
   border-bottom: solid 2px #232323;
   display: inline-block;
-}
-
-.main-content .videos .content {
-  padding: 0 20px 10px 20px;
+  padding: 0;
+  margin: 0;
 }
 
 .main-content .videos .content .sub-video {
@@ -10263,8 +10264,8 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 }
 
 .main-content .videos .content .sub-video a img {
-  width: 166px;
-  height: 94px;
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -10275,7 +10276,8 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 }
 
 .main-content .category .content .div-highlight {
-  padding-right: 10px;
+  padding-right: 20px;
+  padding-left: 0;
   border-right: 2px solid #F8E6E6;
 }
 
@@ -10285,7 +10287,7 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 
 .main-content .category .content .div-highlight .img-content a img {
   width: 170px;
-  height: auto;
+  height: 102px;
   padding: 0 10px 0 0;
 }
 
@@ -10315,7 +10317,7 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 
 .main-content .category .content .sub-highlight .sub-new .img a img {
   width: 110px;
-  height: auto;
+  height: 60px;
   padding-right: 10px;
 }
 
@@ -10330,16 +10332,12 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 }
 
 .main-content .banner {
-  display: block;
+  margin: 10px 0;
 }
 
 .main-content .banner a img {
   width: 100%;
   height: 125px;
-}
-
-.main-content #document .content {
-  margin: 0 10px;
 }
 
 .main-content #document .content table {
@@ -10360,6 +10358,29 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
     font-weight: 600;
     color: #232323;
     padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .main-content .category .content .div-highlight .img-content a img {
+    width: 100%;
+    height: auto;
+    padding: 0 10px 0 0;
+  }
+
+  .main-content .category .content .sub-highlight .sub-new {
+    height: 45%;
+    display: inline-block;
+    flex-direction: column;
+  }
+
+  .main-content .category .content .sub-highlight .sub-new .img a img {
+    width: 80%;
+    height: auto;
+    padding-right: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
