@@ -16,21 +16,18 @@ steps:
     volumes:
       - name: cache
         path: /cache
-  - name: env:staging
-    image: nightfuryest/drone-plugin-secret-to-env
+  - name: Setup Domain
+    image: nightfuryest/drone-plugin-webpress-dns
     settings:
-      template: .deploy/.env.staging.template
-      file: .env
-      envs:
-        - DB_USERNAME
-        - DB_PASSWORD
-      DB_USERNAME:
-        from_secret: DEFAULT_DB_ROOT_USER_DEV
-      DB_PASSWORD:
-        from_secret: DEFAULT_DB_ROOT_PASSWORD_DEV
-    when:
-      branch:
-        - staging/*
+      domain: sondong
+      domain_destination: sv1devapp.webpress.vn
+      admin_domain_destination: sv1devadmin.webpress.vn
+      cloudflare_email:
+        from_secret: CLOUDFLARE_EMAIL
+      cloudflare_token:
+        from_secret: CLOUDFLARE_TOKEN
+      cloudflare_zone_id:
+        from_secret: CLOUDFLARE_ZONE_ID
   - name: env:prod
     image: nightfuryest/drone-plugin-secret-to-env
     settings:
