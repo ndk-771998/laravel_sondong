@@ -76,7 +76,7 @@ steps:
   - name: deploy
     image: nightfuryest/drone-plugin-webpress-manager
     settings:
-      domain: thienthanhjsc
+      domain: sondong
       server_url: http://sv1devapp.webpress.vn
       server_port: 30001
       run_post_install_script: false
