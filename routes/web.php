@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'Web\HomeController');
-Route::get('/trang-chu', 'Web\HomeController');
 
 Route::get('/chuong-trinh-truyen-thanh','Web\AudioListController@view');
 
@@ -24,3 +23,7 @@ Route::get('/television-detail', function () {
     return view('pages.televisoin-detail');
 });
 Route::get('/search', 'Web\SearchController@search')->name('search');
+
+Route::get('/danh-sach-van-ban','Web\DocumentListController@view');
+
+Route::get('/chi-tiet-danh-sach-van-ban','Web\DocumentListController@viewdetail');

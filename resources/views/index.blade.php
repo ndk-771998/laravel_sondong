@@ -306,69 +306,10 @@
    </div>
    <div class="document common-title" id="document">
          <div class="title">
-            <h3>Văn bản chính sách</h3>
+            <a href="{{URL::to('/danh-sach-van-ban')}}"><h3>Văn bản chính sách</h3></a>
          </div>
          <div class="content col-12 col-sm-12 col-md-12 p-0">
-         <table class="table table-sm">
-            <thead>
-               <tr>
-                  <th scope="col">Ký hiệu</th>
-                  <th scope="col">Trích yếu</th>
-                  <th scope="col">Cơ quan ban hành</th>
-                  <th scope="col">Ngày ban hành</th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr>
-                  <th scope="row"><a href="">1389/QĐ-UBND</a></th>
-                  <td><a href="">QĐ v/v thành lập Ban chỉ đạo kiểm kê đất đai, lập bản đồ hiện trạng sử dụng đất năm 2019</a></td>
-                  <td>Sở TT&TT</td>
-                  <td>06/10/2021</td>
-               </tr>
-               <tr>
-                  <th scope="row"><a href="">1389/QĐ-UBND</a></th>
-                  <td><a href="">QĐ v/v thành lập Ban chỉ đạo kiểm kê đất đai, lập bản đồ hiện trạng sử dụng đất năm 2019</a></td>
-                  <td>Sở TT&TT</td>
-                  <td>06/10/2021</td>
-               </tr>
-               <tr>
-                  <th scope="row"><a href="">1389/QĐ-UBND</a></th>
-                  <td><a href="">QĐ v/v thành lập Ban chỉ đạo kiểm kê đất đai, lập bản đồ hiện trạng sử dụng đất năm 2019</a></td>
-                  <td>Sở TT&TT</td>
-                  <td>06/10/2021</td>
-               </tr>
-               <tr>
-                  <th scope="row"><a href="">1389/QĐ-UBND</a></th>
-                  <td><a href="">QĐ v/v thành lập Ban chỉ đạo kiểm kê đất đai, lập bản đồ hiện trạng sử dụng đất năm 2019</a></td>
-                  <td>Sở TT&TT</td>
-                  <td>06/10/2021</td>
-               </tr>
-               <tr>
-                  <th scope="row"><a href="">1389/QĐ-UBND</a></th>
-                  <td><a href="">QĐ v/v thành lập Ban chỉ đạo kiểm kê đất đai, lập bản đồ hiện trạng sử dụng đất năm 2019</a></td>
-                  <td>Sở TT&TT</td>
-                  <td>06/10/2021</td>
-               </tr>
-               <tr>
-                  <th scope="row"><a href="">1389/QĐ-UBND</a></th>
-                  <td><a href="">QĐ v/v thành lập Ban chỉ đạo kiểm kê đất đai, lập bản đồ hiện trạng sử dụng đất năm 2019</a></td>
-                  <td>Sở TT&TT</td>
-                  <td>06/10/2021</td>
-               </tr>
-               <tr>
-                  <th scope="row"><a href="">1389/QĐ-UBND</a></th>
-                  <td><a href="">QĐ v/v thành lập Ban chỉ đạo kiểm kê đất đai, lập bản đồ hiện trạng sử dụng đất năm 2019</a></td>
-                  <td>Sở TT&TT</td>
-                  <td>06/10/2021</td>
-               </tr>
-               <tr>
-                  <th scope="row"><a href="">1389/QĐ-UBND</a></th>
-                  <td><a href="">QĐ v/v thành lập Ban chỉ đạo kiểm kê đất đai, lập bản đồ hiện trạng sử dụng đất năm 2019</a></td>
-                  <td>Sở TT&TT</td>
-                  <td>06/10/2021</td>
-               </tr>
-            </tbody>
-            </table>
+         @include('include.post.table-document')
          </div>
    </div>
    </div>
