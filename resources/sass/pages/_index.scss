@@ -1,10 +1,10 @@
 .main-content{ 
     .news{
         background-color: #F7F7F7;
-        padding: 10px;
+        margin-bottom: 10px;
         .newest{
             padding: 10px 25px;
-            .title{
+            .title-slide{
                 padding-top: 10px;
                 a{
                     font-size: 18px;
@@ -49,31 +49,35 @@
     }
 
     .common-title{
-        max-width: 870px;
-        margin: 20px 0;
+        max-width: 100%;
+        margin: 10px 0;
         border-radius: 10px;
         border: solid 2px #b70002;
         overflow-x: hidden;
+        padding: 10px;
         .title{
-            padding: 10px 0 10px 10px;
+            border-bottom: 2px solid $color-header-bg;
+            margin-bottom: 20px;
             h3{
+                transform: translate(0 , 1px);
                 font-size: 18px;
                 font-weight: 600;
                 color: $color-default;
-                border-bottom: solid 2px $color-default;
+                border-bottom: solid 2px $color-title-bg;
                 display: inline-block;
+                padding: 0;
+                margin: 0;
             }
         }
     }
     .videos{
         .content{
-            padding: 0 20px 10px 20px;
             .sub-video{
                 overflow: hidden;
             a{
                 img{
-                    width: 166px;
-                    height: 94px;
+                    width: 100%;
+                    height: auto;
                     display: block;
                 }
                 text-align: left;
@@ -92,14 +96,15 @@
             justify-content: space-between;
             margin-bottom: 10px;
             .div-highlight{
-                padding-right: 10px;
+                padding-right: 20px;
+                padding-left: 0;
                 border-right: 2px solid $color-header-bg;
                 .img-content{
                     float: left;
                     a{
                         img{
                             width: 170px;
-                            height: auto;
+                            height: 102px;
                             padding: 0 10px 0 0 ;
                         }
                     }
@@ -129,7 +134,7 @@
                         a{
                             img{
                                 width: 110px;
-                                height: auto;
+                                height: 60px;
                                 padding-right: 10px;
                             }
                         }
@@ -147,7 +152,7 @@
         }
     }
     .banner{
-        display: block;
+        margin: 10px 0;
         a{
             img{
                 width: 100%;
@@ -157,7 +162,6 @@
     }
     #document{
         .content{
-            margin: 0 10px;
             table{
                 font-size: 14px;
                 font-family: $font_family_regular;
@@ -178,5 +182,26 @@
         font-weight: 600;
         color: #232323;
         padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-content .category .content .div-highlight .img-content a img {
+        width: 100%;
+        height: auto;
+        padding: 0 10px 0 0;
+    }
+    .main-content .category .content .sub-highlight .sub-new {
+        height: 45%;
+        display: inline-block;
+        flex-direction: column;
+    }
+    .main-content .category .content .sub-highlight .sub-new .img a img {
+        width: 80%;
+        height: auto;
+        padding-right: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
