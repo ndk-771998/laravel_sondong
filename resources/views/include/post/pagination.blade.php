@@ -15,7 +15,6 @@
                 @else
                 <li class="page-item"><a class="" href="#">{{$i}}</a></li>
             @endif
-
         @endfor
         <li class="normal">...</li>
         <li class="page-item next"><a class="" href="#">Sau ></a></li>

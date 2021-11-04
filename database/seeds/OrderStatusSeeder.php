@@ -19,7 +19,6 @@ class OrderStatusSeeder extends Seeder
             ["name"=>"Giao lại đơn","slug" => "return-order","is_active" => 1, "status_id" => "6"],
             ["name"=>"Khiếu nại","slug" => "complain","is_active" => 1, "status_id" => "7"],
             ["name"=>"Đang xử lý khiếu lại","slug" => "process-complain","is_active" => 1, "status_id" => "8"],
-
         ]);
     }
 }
