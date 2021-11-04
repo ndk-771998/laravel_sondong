@@ -1,0 +1,89 @@
+.document-content{
+    .document-list-content{
+        .title{
+            padding-bottom: 10px;
+            a{
+                h3{
+                    position: relative;
+                    font-family: $font_family_bold;
+                    font-size: $font_size_extra_large;
+                    color: $color-title-bg;
+                    border-bottom: 2px solid $color-header-bg;
+                    span{
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        text-align: right;
+                        font-size: $font-size-small;
+                        color: $color-secondary;
+                        font-family: $font_family_regular;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.table-document{
+    font-size: $font-size-small;
+    font-family: $font_family_regular;
+    thead tr{
+        background-color: $color-link;
+        th{
+            border-right: 2px solid $color-bg-default;
+            padding: 10px;
+            color: $color-bg-default;
+        }
+    }
+    tbody{
+        tr{
+        
+            th{
+                padding: 10px;
+                text-align: center;
+            }
+            td{
+                padding: 10px;
+                line-height: normal;
+                a{
+                    color: $color-secondary;
+                }
+            }
+        }
+        tr:nth-child(even){
+            background-color: $color-bg-hd;
+        }
+    }
+}
+
+.detail-document{
+    .detail-table{
+        tbody{
+            font-size: $font-size-small;
+            tr{
+                th{
+                    width: 25%;
+                    padding: 10px;
+                    font-family: $font_family_regular;
+                }
+                td{
+                    color: $color-secondary;
+                    width: 75%;
+                    padding: 10px;
+                }
+            }
+            tr:nth-child(odd){
+                background-color: $color-bg-hd;
+            }
+        }
+    }
+}
+
+.views-document{
+    margin: 20px 0;
+    p{
+        font-size: $font-size-small;
+        color: $color-secondary;
+        font-family: $font_family_semibold;
+    }
+}

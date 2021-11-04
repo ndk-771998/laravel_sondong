@@ -1,40 +1,5 @@
 .audio-content{
     .audio-list-content{
-        ._pagination{
-            padding-top: 50px;
-            nav{
-                ul{
-                    display: flex;
-                    justify-content: flex-end;
-                    li{
-                        border-radius: 4px;
-                        width: auto;
-                        overflow: hidden;
-                        height: 24px;
-                        background-color: $color-bg-paginate;
-                        margin-right: 10px;
-                        align-items: center;
-                        a{
-                            text-align: center;
-                            line-height: 14px;
-                            padding: 10px;
-                            font-size: $font-size-small;
-                            color: $color-default;
-                            font-family: $font_family_regular;
-                        }
-                    }
-                    .active{
-                        background-color: $color-link;
-                        a{
-                            color: $color-bg-default;
-                        }
-                    }
-                    .normal{
-                        background: none;
-                    }
-                }
-            }
-        }
         .title{
             font-family: $font-family-bold;
             font-size: $font-size-extra-large;
@@ -64,6 +29,42 @@
                         height: 40px;
                     }
                 }
+            }
+        }
+    }
+}
+
+._pagination{
+    padding-top: 50px;
+    nav{
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            li{
+                border-radius: 4px;
+                width: auto;
+                overflow: hidden;
+                height: 24px;
+                background-color: $color-bg-paginate;
+                margin-right: 10px;
+                align-items: center;
+                a{
+                    text-align: center;
+                    line-height: 14px;
+                    padding: 10px;
+                    font-size: $font-size-small;
+                    color: $color-default;
+                    font-family: $font_family_regular;
+                }
+            }
+            .active{
+                background-color: $color-link;
+                a{
+                    color: $color-bg-default;
+                }
+            }
+            .normal{
+                background: none;
             }
         }
     }
