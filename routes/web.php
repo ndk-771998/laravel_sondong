@@ -23,3 +23,4 @@ Route::get('/chuong-trinh-truyen-thanh-chi-tiet','Web\AudioListController@viewde
 Route::get('/television-detail', function () {
     return view('pages.televisoin-detail');
 });
+Route::get('/search', 'Web\SearchController@search')->name('search');

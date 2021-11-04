@@ -10849,6 +10849,58 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
   color: #757575;
 }
 
+.search-container .search-wrap .search-title {
+  font-family: Muli-Bold;
+  font-size: 32px;
+  color: #B70002;
+}
+
+.search-container .search-wrap .search-form {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.search-container .search-wrap .search-form .search-input {
+  height: 30px;
+  width: 100%;
+  position: relative;
+  border: 1px solid #DDDDDD;
+  border-radius: 15px;
+  padding: 6px 20px;
+  font-size: 14px;
+}
+
+.search-container .search-wrap .search-form .search-input:focus {
+  outline: 2px #F8E6E6 solid;
+}
+
+.search-container .search-wrap .search-form .search-submit {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border-radius: 15px;
+  border: none;
+  right: 25px;
+  outline: none;
+}
+
+.search-container .search-wrap .search-filter {
+  display: flex;
+  align-items: center;
+}
+
+.search-container .search-wrap .search-filter .filter {
+  font-size: 14px;
+  margin-right: 7px;
+}
+
+.search-container .search-wrap .search-filter .filter .form-check-input {
+  margin-top: 3px;
+  margin-left: -15px;
+}
+
 * {
   margin: 0;
   padding: 0;
