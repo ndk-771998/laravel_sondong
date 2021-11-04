@@ -9719,6 +9719,84 @@ a.text-dark:hover, a.text-dark:focus {
   src: url(/fonts/Muli-SemiBold.ttf?bcf4b6f4b6cdc780f20d3b2f414b450e);
 }
 
+.btn-show-more-post {
+  float: right;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #B70002;
+  border-radius: 4px;
+  color: #B70002;
+  font-family: Muli-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.btn-show-more-post img {
+  transform: translateY(-2px);
+}
+
+.btn-show-more-post:hover {
+  background-color: #B70002;
+  color: #FFFFFF;
+}
+
+.btn-show-more-post:hover img {
+  -webkit-filter: contrast(0) brightness(9.5);
+          filter: contrast(0) brightness(9.5);
+}
+
+.item-post {
+  max-height: 180px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px dashed #DDDDDD;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.item-post .thumbnail {
+  float: left;
+  max-width: 33.333333%;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.item-post .thumbnail img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.item-post .title {
+  font-family: Muli-SemiBold;
+  color: #232323;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.item-post .publish-date {
+  color: #757575;
+  margin-bottom: 10px;
+}
+
+.item-post .description {
+  font-family: Muli-Regular;
+  color: #232323;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
 header {
   background-color: #F8E6E6;
 }
@@ -10173,6 +10251,182 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
   border: solid 1px #B70002;
 }
 
+.post-list-container .post-list-wrap .post-list-title {
+  font-family: Muli-Bold;
+  font-size: 32px;
+  color: #B70002;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul {
+  position: relative;
+  display: block;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .item-category {
+  display: inline-block;
+  font-family: Muli-Regular;
+  font-size: 14px;
+  color: #000;
+  margin-right: 20px;
+  position: relative;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .item-category:hover {
+  color: #B70002;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .item-category:hover:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #B70002;
+  left: 0px;
+  bottom: -8px;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .show-more-categories {
+  display: none;
+  float: right;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .show-more-categories .label {
+  font-family: Muli-Regular;
+  font-size: 14px;
+  color: #000;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .show-more-categories .label img {
+  transform: rotate(90deg);
+  transition: 0.25s ease-in-out;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .show-more-categories ul {
+  display: none;
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  right: 0px;
+  padding: 20px;
+  background-color: #F6F6F6;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.16);
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .show-more-categories .item-category {
+  max-width: 100%;
+  display: none;
+  padding: 4px 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .show-more-categories .item-category:hover:after {
+  bottom: -3px;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .show-more-categories:hover ul {
+  display: block;
+}
+
+.post-list-container .post-list-wrap .post-list-categories ul .show-more-categories:hover .label img {
+  transform: rotate(-90deg);
+}
+
+.post-list-container .post-list-wrap .post-list .item-post:nth-of-type(1) {
+  max-height: 300px;
+  border-top: 1px solid #DDDDDD;
+}
+
+.post-list-container .post-list-wrap .post-list .item-post:nth-of-type(1) .detail {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.post-list-container .post-list-wrap .post-list .item-post:nth-of-type(1) .thumbnail {
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+.post-detail-container .post-detail-wrap .post-category-title {
+  font-family: Muli-Bold;
+  font-size: 32px;
+  color: #B70002;
+  display: inline-block;
+}
+
+.post-detail-container .post-detail-wrap .post-publish-date {
+  font-size: 14px;
+  font-family: Muli-Regular;
+  color: #757575;
+  float: right;
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.post-detail-container .post-detail-wrap hr {
+  height: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.post-detail-container .post-detail-wrap .post-title {
+  font-size: 24px;
+  color: #232323;
+  font-family: Muli-Bold;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.post-detail-container .post-detail-wrap .description {
+  color: #232323;
+  font-size: 18px;
+  font-family: Muli-Regular;
+  margin-bottom: 20px;
+}
+
+.post-detail-container .post-detail-wrap .content {
+  color: #757575;
+  font-size: 18px;
+  font-family: Muli-Regular;
+}
+
+.post-detail-container .post-detail-wrap .content img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.post-detail-container .post-detail-wrap .post-author {
+  font-family: Muli-Bold;
+  font-size: 18px;
+  display: block;
+  text-align: right;
+}
+
+.post-detail-container .post-detail-wrap .view {
+  font-family: Muli-Regular;
+  font-size: 14px;
+  color: #757575;
+}
+
+.related-posts-container {
+  margin: 40px 0px;
+}
+
+.related-posts-container .related-posts-wrap .related-posts-title {
+  font-family: Muli-Bold;
+  color: #222222;
+  font-size: 18px;
+  border-bottom: 2px solid #B70002;
+  padding-bottom: 3px;
+  display: inline-block;
+}
+
 .main-content .news {
   background-color: #F7F7F7;
   margin-bottom: 10px;
@@ -10531,6 +10785,7 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
 }
 
 body {
+  line-height: normal;
   font-family: Muli-Regular;
 }
 

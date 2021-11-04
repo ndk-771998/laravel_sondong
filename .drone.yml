@@ -16,6 +16,18 @@ steps:
     volumes:
       - name: cache
         path: /cache
+  - name: Setup Domain
+    image: nightfuryest/drone-plugin-webpress-dns
+    settings:
+      domain: sondong
+      domain_destination: sv1devapp.webpress.vn
+      admin_domain_destination: sv1devadmin.webpress.vn
+      cloudflare_email:
+        from_secret: CLOUDFLARE_EMAIL
+      cloudflare_token:
+        from_secret: CLOUDFLARE_TOKEN
+      cloudflare_zone_id:
+        from_secret: CLOUDFLARE_ZONE_ID
   - name: env:staging
     image: nightfuryest/drone-plugin-secret-to-env
     settings:
@@ -76,7 +88,7 @@ steps:
   - name: deploy
     image: nightfuryest/drone-plugin-webpress-manager
     settings:
-      domain: thienthanhjsc
+      domain: sondong
       server_url: http://sv1devapp.webpress.vn
       server_port: 30001
       run_post_install_script: false

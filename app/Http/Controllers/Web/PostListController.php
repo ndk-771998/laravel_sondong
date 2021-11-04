@@ -21,9 +21,9 @@ class PostListController extends BasePostListController implements ViewPostListC
      * 
      * @return string
      */
-    // public function view() {
-    //     return 'posts-list';
-    // }
+    public function view() {
+        return 'pages.post-list';
+    }
 
     /**
      * return data which will be include in view or the orther posttype without specific viewData function.
