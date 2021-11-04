@@ -9797,6 +9797,48 @@ a.text-dark:hover, a.text-dark:focus {
   -webkit-box-orient: vertical;
 }
 
+.item-television {
+  margin: 20px 0px;
+}
+
+.item-television .thumbnail {
+  margin-bottom: 10px;
+}
+
+.item-television .thumbnail img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.item-television .title {
+  font-family: Muli-SemiBold;
+  font-size: 14px;
+  color: #232323;
+  margin-bottom: 10px;
+}
+
+.item-television .publish-date {
+  font-family: Muli-Regular;
+  font-size: 14px;
+  color: #757575;
+}
+
+.item-television .video-thumbnail {
+  position: relative;
+}
+
+.item-television .video-thumbnail .play img {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 header {
   background-color: #F8E6E6;
 }
@@ -10777,6 +10819,34 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
     color: #232323;
     font-family: Muli-Regular;
   }
+}
+
+.television-container .television-wrap .television-list-title {
+  font-family: Muli-Bold;
+  font-size: 32px;
+  color: #B70002;
+}
+
+.television-container .television-wrap .television-title {
+  font-size: 24px;
+  color: #232323;
+  font-family: Muli-Bold;
+  margin-bottom: 20px;
+}
+
+.television-container .television-wrap .television-video {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.television-container .television-wrap .television-info {
+  margin-bottom: 40px;
+}
+
+.television-container .television-wrap .television-info .view,
+.television-container .television-wrap .television-info .author {
+  font-size: 14px;
+  color: #757575;
 }
 
 * {

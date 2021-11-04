@@ -29,5 +29,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 @include('include.television.item-television')
             </div>    
+            <div class="col-12 col-md-6 col-lg-4">
+                @include('include.television.item-television')
+            </div>    
     </div>
 </div>

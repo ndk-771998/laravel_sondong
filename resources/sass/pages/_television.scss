@@ -1,0 +1,31 @@
+.television-container {
+    .television-wrap {
+        .television-list-title {
+            font-family: $font_family_bold;
+            font-size: $font_size_extra_large;
+            color: $color-title-bg;
+        }
+
+        .television-title {
+            font-size: $font_size_extra;
+            color: $color-default;
+            font-family: $font_family_bold;
+            margin-bottom: 20px;
+        }
+
+        .television-video {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .television-info {
+            margin-bottom: 40px;
+
+            .view, .author {
+                font-size: $font_size_small;
+                color: $color-secondary;
+            }
+        }
+        
+    }
+}
