@@ -25,6 +25,9 @@
                     }
                     .active{
                         background-color: $color-link;
+                        a{
+                            color: $color-bg-default;
+                        }
                     }
                     .normal{
                         background: none;

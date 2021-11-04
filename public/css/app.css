@@ -10416,6 +10416,10 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
   background-color: #0D77BA;
 }
 
+.audio-content .audio-list-content ._pagination nav ul .active a {
+  color: #FFFFFF;
+}
+
 .audio-content .audio-list-content ._pagination nav ul .normal {
   background: none;
 }
@@ -10497,6 +10501,28 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
   display: inline-block;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .page-item {
+    display: none;
+  }
+
+  .previous,
+  .next,
+  .active {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .audio-content .audio-list-content ._pagination nav ul li a {
+    text-align: center;
+    padding: 10px;
+    font-size: 8px;
+    color: #232323;
+    font-family: Muli-Regular;
+  }
 }
 
 * {

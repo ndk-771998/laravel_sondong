@@ -13,7 +13,7 @@
     </div>
     <div class="block-audio common-title">
     <div class="title">
-            <h3>Video truyền hình</h3>
+            <h3>Truyền thanh</h3>
         </div>
         <div class="content">
             <div class="sub-content">
