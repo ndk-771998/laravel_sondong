@@ -53,4 +53,13 @@ class PostListController extends BasePostListController implements ViewPostListC
     {
 
     }
+
+    public function viewTelevisions() {
+        return 'pages.television-list';
+    }
+
+    public function viewDataTelevisions($posts, Request $request)
+    {
+        return [];
+    }
 }
