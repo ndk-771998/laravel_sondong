@@ -19,6 +19,10 @@ Route::get('/', 'Web\HomeController');
 Route::get('/chuong-trinh-truyen-thanh','Web\AudioListController@view');
 
 Route::get('/chuong-trinh-truyen-thanh-chi-tiet','Web\AudioListController@viewdetail');
+Route::get('/television-detail', function () {
+    return view('pages.televisoin-detail');
+});
+Route::get('/search', 'Web\SearchController@search')->name('search');
 
 Route::get('/danh-sach-van-ban','Web\DocumentListController@view');
 

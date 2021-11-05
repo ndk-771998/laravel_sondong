@@ -4,6 +4,7 @@
 @import "./ui/button";
 @import "./mixins/text.scss";
 @import "./includes/item-post.scss";
+@import "./includes/item-television.scss";
 @import "./pages/header";
 @import "./pages/footer";
 @import "./pages/sidebar";
@@ -12,7 +13,10 @@
 @import "./pages/index";
 @import "./pages/audio-list";
 @import "./pages/audio-detail";
+@import "./pages/television";
+@import "./pages/search";
 @import "./pages/document-list";
+
 *{
     margin: 0;
     padding: 0;
