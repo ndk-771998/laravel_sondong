@@ -106,5 +106,4 @@ class PostSeeder extends Seeder
             Đối với công tác phòng chống dịch bệnh Covid -19, từ ngày 10/7 đến 31/10 đã kiểm soát 4.139 trường hợp đến, về địa phương, thực hiện xét nghiệm PCR 43.988 mẫu, đã tiêm 35.025 liều vắc xin cho 25.473 người, huyện có 1 khu cách ly tập trung đang cách ly 14 người, 4 công dân đang điều trị tại khu cách ly của Trung tâm Y tế huyện, 161 người đang thực hiện cách ly tại nhà, 287 người theo dõi sức khỏe tại nhà.', 'type' => 'audios', 'thumbnail' => '/audio/sondong.mp3'],
         ]);
     }
-
 }
