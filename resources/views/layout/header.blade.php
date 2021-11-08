@@ -7,9 +7,9 @@
                     <div class="col-md-3 col-sm-6 col-12 image">
                         <a href="{{URL::to('/')}}"><img src="{{ url('/assets/logo.png') }}" alt=""></a>
                     </div>
-                    <!-- <div class="col-md-9 name p-0">
+                    <div class="col-md-9 name p-0">
                         <a class="d-none d-md-block" href="{{URL::to('/')}}">Trung tâm văn hoá - Thông tin và Thể thao Sơn Động, Bắc Giang</a>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <div class="header-middle d-none d-md-flex col-12 col-md-5 col-sm-12">
