@@ -1,19 +1,19 @@
 <header>
     <div class="header">
-        <div class="container _header" style="background-color: #F8E6E6;">
+        <div class="container _header">
             <div class="row">
             <div class="header-left col-3 col-md-4 col-sm-3">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-12 image">
                         <a href="{{URL::to('/')}}"><img src="{{ url('/image/logo.png') }}" alt=""></a>
                     </div>
-                    <div class="col-md-9 name">
+                    <div class="col-md-9 name p-0">
                         <a class="d-none d-md-block" href="{{URL::to('/')}}">Trung tâm văn hoá - Thông tin và Thể thao Sơn Động, Bắc Giang</a>
                     </div>
                 </div>
             </div>
             <div class="header-middle d-none d-md-flex col-12 col-md-5 col-sm-12">
-                <a href="{{URL::to('/chuong-trinh-truyen-thanh')}}"><i class= "fa fa-volume-up"></i> Chương trình truyền thanh</a>
+                <a href="{{URL::to('/chuong-trinh-truyen-thanh')}}"><img src="{{URL('/assets/logos/audio.svg')}}" alt=""> Chương trình truyền thanh</a>
                 <a href=""><i class= "fa fa-play-circle"></i> Video truyền hình</a>
             </div>
             <div class="header-right col-9 col-sm-9 col-md-3">

@@ -2,13 +2,15 @@
 @section('content')
 <div class="col-12 col-sm-12 col-md-12 main-content">
    <div class="row">
-      <div class="news col-12 col-sm-12 col-md-12 p-0">
+      <div class="news col-12 col-sm-12 col-md-12">
          <div class="row">
-         <div class="newest col-12 col-sm-12 col-md-6">
-            <div class="img"><a href=""><img src="{{ url('/image/1.png') }}" alt=""></a></div>
-            <div class="title-slide"><a href="">Sơn Động: Khởi công gói thầu số 8a thuộc dự án cải tạo, nâng cấp đường tỉnh 291</a></div>
+         <div class="newest col-12 col-sm-12 col-md-7">
+            <div class="row">
+               <div class="img"><a href=""><img src="{{ url('/image/1.png') }}" alt=""></a></div>
+               <div class="title-slide"><a href="">Sơn Động: Khởi công gói thầu số 8a thuộc dự án cải tạo, nâng cấp đường tỉnh 291</a></div>
+            </div>
          </div>
-         <div class="news-list col-12 col-sm-12 col-md-6">
+         <div class="news-list col-12 col-sm-12 col-md-5">
             <div class="first-new">
                <a href="">Đồng chí Chu Quang Khanh được bầu giữ chức Phó bí thư Huyện Đoàn Sơn Động <span> - 6/10/2021</span></a>
             </div>

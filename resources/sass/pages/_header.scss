@@ -3,7 +3,7 @@ header {
     .header {
         height: 100%;
         ._header {
-            padding: 20px 15px;
+            padding: 6px 15px;
         }
         .header-left {
             margin: auto 0;
@@ -22,13 +22,14 @@ header {
                 margin: auto 0;
                 font-size: 14px;
                 font-weight: 600;
-                text-align: center;
+                text-align: left;
                 color: $color-primary;
                 line-height: 23px;
             }
         }
         .header-middle {
             justify-content: flex-end;
+            margin-bottom: 10px;
             a {
                 padding: 7px;
                 background-color: $color-link;
@@ -40,10 +41,15 @@ header {
                 margin-top: auto;
                 height: 30px;
                 margin-left: 10px;
+                img{
+                    width: 14px;
+                    height: 14px;
+                }
             }
         }
         .header-right {
             margin: auto 0;
+            margin-bottom: 10px;
             .time {
                 h3 {
                     font-size: 14px;
@@ -60,12 +66,14 @@ header {
                 height: 30px;
                 form {
                     position: relative;
-                    background-color: #fff;
                     border-radius: 30px;
+                    overflow: hidden;
                     input {
+                        background-color: #fff;
                         line-height: 30px;
-                        max-width: 100%;
+                        width: 100%;
                         border: none;
+                        float: left;
                         border-radius: 30px;
                         padding-left: 5%;
                     }
@@ -73,9 +81,13 @@ header {
                         position: absolute;
                         font-size: 14px;
                         background-color: #fff;
+                        background: none;
                         border: none;
                         right: 12px;
-                        top: 3px;
+                        line-height: 30px;
+                    }
+                    input:focus{
+                        border: solid #fff;
                     }
                 }
             }

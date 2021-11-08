@@ -9848,7 +9848,7 @@ header .header {
 }
 
 header .header ._header {
-  padding: 20px 15px;
+  padding: 6px 15px;
 }
 
 header .header .header-left {
@@ -9873,13 +9873,14 @@ header .header .header-left a {
   margin: auto 0;
   font-size: 14px;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
   color: #222222;
   line-height: 23px;
 }
 
 header .header .header-middle {
   justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
 header .header .header-middle a {
@@ -9895,8 +9896,14 @@ header .header .header-middle a {
   margin-left: 10px;
 }
 
+header .header .header-middle a img {
+  width: 14px;
+  height: 14px;
+}
+
 header .header .header-right {
   margin: auto 0;
+  margin-bottom: 10px;
 }
 
 header .header .header-right .time h3 {
@@ -9917,14 +9924,16 @@ header .header .header-right .form {
 
 header .header .header-right .form form {
   position: relative;
-  background-color: #fff;
   border-radius: 30px;
+  overflow: hidden;
 }
 
 header .header .header-right .form form input {
+  background-color: #fff;
   line-height: 30px;
-  max-width: 100%;
+  width: 100%;
   border: none;
+  float: left;
   border-radius: 30px;
   padding-left: 5%;
 }
@@ -9933,9 +9942,14 @@ header .header .header-right .form form button {
   position: absolute;
   font-size: 14px;
   background-color: #fff;
+  background: none;
   border: none;
   right: 12px;
-  top: 3px;
+  line-height: 30px;
+}
+
+header .header .header-right .form form input:focus {
+  border: solid #fff;
 }
 
 header .menu {
