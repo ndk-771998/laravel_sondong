@@ -14,7 +14,6 @@
                     <div class="view">Lượt xem: 3545</div>
                     <div class="author">Đăng bởi:  Admin, ngày 05/10/2021 10:30</div>
                 </div>
-
                 {{-- @dd(last(explode('/','http://sondong.local.com/uploads/documents/1635930954_getting_started_with_one_drive.pdf'))) --}}
             </div>
         </div>

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +21,8 @@ Route::get('/', 'Web\HomeController');
 
 Route::get('/chuong-trinh-truyen-thanh','Web\AudioListController@view');
 
-Route::get('/chuong-trinh-truyen-thanh-chi-tiet','Web\AudioListController@viewdetail');
+Route::get('/chuong-trinh-truyen-thanh-chi-tiet/{slug}','Web\AudioListController@viewdetail');
+
 Route::get('/television-detail', function () {
     return view('pages.televisoin-detail');
 });
