@@ -30,50 +30,52 @@
             </div>
         </div>
     </div>
-    <div class="menu col-md-12">
+    <div class="menu col-md-12 p-0">
             <div class="_menu container">
-                <div id="toggle">
-                   <i class="fa fa-bars"></i>
-                </div>
-                <nav id="nav" class="nav navbar">
-                    <ul class="nav p-0">
-                        <div>
-                            <li class="nav-item"><a class="home" href="{{URL::to('/')}}"><i class="fa fa-fw fa-home"></i></a></li>
-                        </div>
-                        <div class="dropdown">
-                            <li class="active dropbtn"><a href="#">Giới thiệu</a></li>
-                            <div class="dropdown-content">
-                                <li>
-                                    <a href="">Link 1</a>
-                                </li>
-                                <li>
-                                    <a href="">Link 1</a>
-                                </li>
-                                <li>
-                                    <a href="">Link 1</a>
-                                </li>
+                <div class="row">
+                    <div id="toggle">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <nav id="nav" class="nav navbar">
+                        <ul class="nav p-0">
+                            <div>
+                                <li class="nav-item"><a class="home" href="{{URL::to('/')}}"><i class="fa fa-fw fa-home"></i></a></li>
                             </div>
-                        </div>
-                        <div>
-                            <li class="nav-item"><a class="" href="">Tin chính trị</a></li>
-                        </div>
-                        <div>
-                            <li class="nav-item"><a class="" href="#">Văn hoá - xã hội</a></li>
-                        </div>
-                        <div>
-                            <li class="nav-item"><a class="" href="#">Kinh kế</a></li>
-                        </div>
-                        <div>
-                            <li class="nav-item"><a class="" href="#">Quốc phòng an ninh</a></li>
-                        </div>
-                        <div>
-                            <li class="nav-item"><a class="" href="#">Pháp luật</a></li>
-                        </div>
-                        <div>
-                            <li class="nav-item"><a class="" href="#">Sức khoẻ</a></li>
-                        </div>
-                    </ul>
-                </nav>
+                            <div class="dropdown">
+                                <li class="active dropbtn"><a href="#">Giới thiệu</a></li>
+                                <div class="dropdown-content">
+                                    <li>
+                                        <a href="">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Link 1</a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div>
+                                <li class="nav-item"><a class="" href="">Tin chính trị</a></li>
+                            </div>
+                            <div>
+                                <li class="nav-item"><a class="" href="#">Văn hoá - xã hội</a></li>
+                            </div>
+                            <div>
+                                <li class="nav-item"><a class="" href="#">Kinh kế</a></li>
+                            </div>
+                            <div>
+                                <li class="nav-item"><a class="" href="#">Quốc phòng an ninh</a></li>
+                            </div>
+                            <div>
+                                <li class="nav-item"><a class="" href="#">Pháp luật</a></li>
+                            </div>
+                            <div>
+                                <li class="nav-item"><a class="" href="#">Sức khoẻ</a></li>
+                            </div>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
 </header>
