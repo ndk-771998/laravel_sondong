@@ -10736,6 +10736,46 @@ footer .footer .right-footer .link-icon-block a .fa-youtube-play {
   justify-content: right;
 }
 
+._pagination nav {
+  height: 100%;
+}
+
+._pagination nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+._pagination nav ul li {
+  border-radius: 4px;
+  width: auto;
+  overflow: hidden;
+  height: 24px;
+  background-color: #E5E5E5;
+  margin-right: 10px;
+  align-items: center;
+}
+
+._pagination nav ul li a {
+  text-align: center;
+  line-height: 14px;
+  padding: 10px;
+  font-size: 14px;
+  color: #232323;
+  font-family: Muli-Regular;
+}
+
+._pagination nav ul .active {
+  background-color: #0D77BA;
+}
+
+._pagination nav ul .active a {
+  color: #FFFFFF;
+}
+
+._pagination nav ul .normal {
+  background: none;
+}
+
 .audio-detail .audio-detail-content .title-detail {
   display: flex;
   align-items: center;

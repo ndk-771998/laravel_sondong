@@ -1,7 +1,20 @@
 <div class="_pagination col-xs-12 col-sm-12 col-md-12">       
-        @if(isset($postlist))
-            {{$postlist->links()}}
-        @else
-            {{$dpostlist->links()}}
-        @endif
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item first"><a class="" href="#"><< Đầu</a></li>
+        <li class="page-item previous"><a class="" href="#">< Trước</a></li>
+        <li class="normal">...</li>
+        @for($i=7; $i<=11;$i++)
+            @if($i==8)
+                <li class="page-item {{'active'}}"><a class="" href="#">{{$i}}</a></li>
+                @else
+                <li class="page-item"><a class="" href="#">{{$i}}</a></li>
+            @endif
+
+        @endfor
+        <li class="normal">...</li>
+        <li class="page-item next"><a class="" href="#">Sau ></a></li>
+        <li class="page-item last"><a class="" href="#">Cuối >></a></li>
+    </ul>
+</nav>
 </div>

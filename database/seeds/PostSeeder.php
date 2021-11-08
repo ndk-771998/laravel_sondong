@@ -13,6 +13,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
+        $this->insertPosts();
         $this->insertAudio();
         $this->insertPages();
         $this->insertDocuments();

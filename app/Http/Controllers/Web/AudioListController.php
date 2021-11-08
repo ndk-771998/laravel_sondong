@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Traits\PrepareOption;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Entities\Post;
 

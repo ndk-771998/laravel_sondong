@@ -5,7 +5,7 @@
             <div class="header-left col-3 col-md-4 col-sm-3">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-12 image">
-                        <a href="{{URL::to('/')}}"><img src="{{ url('/image/logo.png') }}" alt=""></a>
+                        <a href="{{URL::to('/')}}"><img src="{{ url('/assets/logo.png') }}" alt=""></a>
                     </div>
                     <div class="col-md-9 name p-0">
                         <a class="d-none d-md-block" href="{{URL::to('/')}}">Trung tâm văn hoá - Thông tin và Thể thao Sơn Động, Bắc Giang</a>
